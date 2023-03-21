@@ -91,7 +91,7 @@ var jelek = {
   vegignezte: ["✓","végignézted"],
   frissult: ["⭐","frissült a legutóbbi megtekintés óta"],
   folder: ["📁","több fejezetet magába foglaló témacsoport"],
-  tcs_idx: ["ⓝ","témacsoport számmal jelzett fejezete"] //téma csoport index
+  tcs_idx: ["ⓝ","témacsoport számmal jelzett fejezete"] //témacsoporton belüli index
 }
 
 function jelmagyarazat(option) {
