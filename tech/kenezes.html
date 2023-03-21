@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="Segédlet a bekeverendő kénmennyiség kiszámolására: adott a must, cefre vagy bor térfogata, amihez a megfelelő mennyiségű SO2 tartalmú anyagot adagolva a kívánt kén-dioxid szint beállítható.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css?v=l">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
+</head>
+<style>
+#fejlec {resize:none;overflow:hidden;}
+#info {resize:none;}
+.balra {
+  display: flex;
+  flex-flow: row;
+  width: inherit;
+  height: auto;
+  justify-content: flex-start;
+}
+</style>
+<body>
+  <div id="overlay"><p id="forgo" class="loader"></p></div>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="home" class="nav-link-wrapper" >
+            <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          </div>
+          <table><tr><td id="holtart">📝</td></tr></table>
+        </div>
+        <select name="tech"></select>
+      </div>
+    </div>
+    <div class="content">
+      <div id="tartalom" class="box" style="display:none">
+        <div class="box-text-update">
+          <p>
+            Fontos figyelmeztetés!
+            <br>
+            Olyan megoldás született e segédlet létrehozásánál, ami használja a személyiségi jogaikra érzékeny polgárok nyugalmának megzavarására alkalmas, hírhedten félelmetes, és ezért a <a href="https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX%3A32016R0679&qid=1672580877783">GDPR</a>-ben szabályozott "<a href="https://hu.wikipedia.org/wiki/HTTP-s%C3%BCti">cookie</a>" technikát.
+            Azonban itt kivételesen nem statisztikai- vagy marketigcélokra tárolok adatokat a böngészőt futtató eszközön (számítógép, laptop, okostelefon, tablet stb.), hanem kizárólag a kénezendő tételekkel kapcsolatosan.
+            Azért, hogy ezek később jegyzet gyanánt rendelkezésre álljanak.
+            <br>
+            Ha nem szeretnél ilyet, akkor hagyd el ezt a weboldalt.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Must vagy cefre kénezésénél nincs szükség magas tudományokra, se laborvizsgálatra. Adott a kezelendő anyag térfogata, amihez a megfelelő mennyiségű SO<sub>2</sub> tartalmú anyagot keverve a kívánt kén-dioxid szint beállítható.
+            Szélsőségesen egyszerű feladat, mert nulláról indulva, SO<sub>2</sub> tartalom hiányában kell meghatározni a kénezőanyag mértékét.
+            <br>
+            Bonyolódik az ügy, ha elillant vagy lekötött SO<sub>2</sub> pótlására adagolnám a hiányzó mennyiséget. Ennek első lépése a mérés, a jelenlegi szabad kén-dioxid szint megállapítása.
+            Ekkor az elérendő szint és a mérési eredmény különbsége az egyik tényező abban a képletben, amiben szerepel a kénezendő tétel mennyisége, és a kénezéshez használt anyag töménysége is.
+            <br>
+            ⚠️A megcélzott szint eléréséhez a kiszámolt mennyiség dupláját kell adagolni.⚠️<br>
+            Miért? Mert kb. a fele azonnal lekötődik. A kénezőadag kiszámolt mennyisége egy ideális, pusztán matematikai alapon nyugvó világban érvényes elméleti érték,
+            de a mi tökéletlen világunkban a kémiának is van jelentősége, ezért a folyamatokra gyakorolt hatását nem hagyhatjuk figyelmen kívül. Ha nem veszed figyelembe ezt az ajánlást, akkor <a href="/borok/04.html#:~:text=2023.%20janu%C3%A1r%2031.-,Nem%20el%C3%A9g%20a%20matek,-.%20Bor%C3%A1szathoz%20elengedhetetlen%20a">úgy jársz, mint én.</a>
+          </p>
+        </div>
+        <div class="box-text">
+          <fieldset>
+            <legend>alapadatok</legend>
+            <table border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td align="right">dátum</td>
+                <td>
+                  <input id="dtm" name="dtm" type="text" size="11" disabled />
+                  <input id="dt" name="dt" type="number" disabled style="display:none" />
+                </td>
+              </tr>
+              <tr>
+                <td align="right">tétel neve</td>
+                <td>
+                  <input id="nev" name="nev" type="text" size="11" maxlength="11" />
+                </td>
+              </tr>
+              <tr>
+                <td align="right">állapot</td>
+                <td>
+                  <select id="mit" name="mit" style="font-size:large">
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td align="right">kénezőanyag</td>
+                <td>
+                  <select id="mivel" name="mivel" style="font-size:large">
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td align="right">töménység (%)</td>
+                <td>
+                  <input type="range" id="tomeny_r" min="1" max="100" value="5" oninput="tomeny.value=this.value" />
+                  <input type="number" id="tomeny" name="tomeny" min="1" max="100" value="5" oninput="tomeny_r.value=this.value" />
+                </td>
+              </tr>
+              <tr id="jelenleg" style="display:none">
+                <td align="right">jelenlegi SO<sub>2</sub> szint (mg/l)</td>
+                <td>
+                  <input type="range" id="jelen_r" min="0" max="200" value="0" oninput="jelen.value=this.value" />
+                  <input type="number" id="jelen" name="jelen" min="0" max="200" value="0" oninput="jelen_r.value=this.value" />
+                </td>
+              </tr>
+              <tr>
+                <td align="right">elérendő SO<sub>2</sub> szint (mg/l)</td>
+                <td>
+                  <input type="range" id="eler_r" min="1" max="200" value="40" oninput="eler.value=this.value" />
+                  <input type="number" id="eler" name="eler" min="1" max="200" value="40" oninput="eler_r.value=this.value" />
+                </td>
+              </tr>
+              <tr>
+                <td align="right">kénezendő mennyiség (liter)</td>
+                <td>
+                  <input type="range" id="mennyi_r" min="1" max="999" value="100" oninput="mennyi.value=this.value" />
+                  <input type="number" id="mennyi" name="mennyi" min="1" max="999" value="100" oninput="mennyi_r.value=this.value" />
+                </td>
+              </tr>
+            </table>
+          </fieldset>
+        </div>
+        <button id="szamol" class="nagybutton" disabled>számolás</button>
+        <textarea class="tarea teljes" id="fejlec" readonly="readonly" rows="1" wrap="off"></textarea>
+        <textarea class="tarea teljes" id="info" readonly="readonly" rows="12" wrap="off"></textarea>
+        <br>
+        <div class="box-text">
+          <p>
+            Nem merül ki ennyiben a segédlet "funkciógazdagsága", mert szűrhető a jegyzet.
+            Ennek persze akkor van jelentősége, ha tekintélyes számú kénezésről áll rendelkezésre adat.
+          </p>
+        </div>
+        <div class="box-text">
+          <fieldset>
+            <legend id="csik">&#9657;</legend>
+            <table border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td align="right">fordított szűrés&nbsp;</td>
+                <td>
+                  <input id="fordit" type="checkbox">
+                </td>
+              </tr>
+              <tr>
+                <td align="right">szűrő&nbsp;</td>
+                <td>
+                  <input id="szuro" type="text" size="11"/>
+                </td>
+              </tr>
+              <tr>
+                <td align="right">+szűrő&nbsp;</td>
+                <td>
+                  <input id="szuro2" type="text" size="11" disabled/>
+                </td>
+              </tr>
+              <tr>
+                <td align="right">megfelel&nbsp;</td>
+                <td>
+                  <div id="stimmel"></div>
+                </td>
+              </tr>
+              <tr>
+                <td align="right">lista törlése&nbsp;</td>
+                <td>
+                  <input id="enged" type="checkbox">
+                  <button id="torol" disabled>kampec</button>
+                </td>
+              </tr>
+            </table>
+          </fieldset>
+        </div>
+        <div class="box-text">
+          <p>
+            Nincs mennyiségi korlátja a feljegyezhető adatok számának, viszont az időbeli korlát <a href="https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#attribute-expires">400 nap</a>, aminek elteltével a bejegyzett sor törlődik (<a href="https://en.wikipedia.org/wiki/Time_to_live">TTL</a>).
+            A "lista törlése" lehetőséggel azonnal eltávolíthatók a kénezési jegyzet listázott elemei. Ha ez egy szűrt lista, akkor csupán a szűrőnek megfelelő tételekre vonatkozik, de szűretlen listára alkalmazva minden adat ugrik.
+            Ugyanígy eltünteti az összes adatot a böngésző "cookie-k törlése" műveletének indítása.
+            A böngészők inkognitó üzemmódjában nem marad nyoma semminek, ezért az ebben az üzemmódban rögzített kénezési adatokat sem őrzi meg.
+            <br>
+            Látszólag nincs sok haszna a fordított szűrésnek, de ha például azokra a tételekre vagy kíváncsi, amikhez nem térfogatra (ml), hanem súlyra (mg) adagoltad a kénezőanyagot, akkor ez nem fog menni az "mg" szerinti szűréssel, mert az "mg/l" szöveg minden sorban szerepel.
+            Szűrj "ml" szerint, majd vedd az eredmény fordítottját, amikor minden olyan sor megjelenik a találatok között, amik nem tartalmazzák az "ml" szöveget. Így máris megvan a kívánt eredmény, amit "kálium"-ra szűrve egyszerűbben is megkaphatsz, de az nem világít rá a fordított szűrés lényegére.
+            <br>
+            Hasznos lehet egy mentés/betöltés funkció, mert a <a href="https://support.google.com/chrome/answer/185277?hl=hu&co=GENIE.Platform%3DDesktop">szinkronizálás</a> nem viszi át a cookie tár tartalmát egyik eszközről a másikra.
+          </p>
+        </div>
+        <button id="ment" class="nagybutton">mentés</button>
+        <button id="betolt" class="nagybutton">betöltés</button>
+        <div class="box-text">
+          <p>
+            Ez idő szerint (2022dec) a betöltés a Chrome, Edge és Opera böngészőkben működik. A többiből (például Chrome for Android) hiányzik a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker"><code>showOpenFilePicker</code></a> API.
+            Üres lista esetén nem szorul magyarázatra az adatok betöltésének hatása, ellenben létező adatokra töltve összefésülöm a két kénezési adatsort azt az egyszerű szabályt alkalmazva, hogy egy dátumhoz nem tartozhat többször ugyanaz a tétel név, mint ahogy nem is kénezzük ugyanazt naponta többször.
+            Ilyen esetben a listában lévő marad, a file-ból betöltött sor viszont nem lesz hasznosítva.
+            <br>
+            Van a betöltésnek egy mellékhatása: újraindul a 400 napos számláló a betöltött adat törlődéséig.
+          </p>
+        </div>
+      </div>
+      <div id="ertekel" class="box" style="display:none">
+        <div class="box-text">
+          <p>
+            Működését tekintve alapvetően elégedett vagyok az eredménnyel, bár szakmai (programozói) szemszögből vizsgálva egy kicsit rendetlen, mert az ötletek java menet közben született, ami az előrelátó, alapos tervezés fonákja.
+            Ebben a stílusban is szabad alkotni, de kiterjedtebb, összetettebb munkán dolgozva érdemes napokig-hetekig gondolkodni és tervezni anélkül, hogy akár egy fia programsor keletkezne közben.
+            Bőven megtérül a megfontolt viselkedés, amikor az alaposan átgondolt struktúra esetleges bővítése, fejlesztése kerül napirendre.
+            <br><br>
+            Egy eszesen tervezett rendszerben már eleve megvan a helye mindennek, csak a részletek kidolgozása várat magára. Az autógyártók újabban ennél is továbbmennek.
+            Nem csak a helyét tervezik be bizonyos extra alkatrészeknek, hanem – némi kockázatot vállalva – kéretlenül beépítik a gyártásnál. Aztán addig nem adnak hozzáférést, amíg a kuncsaft nem hajlandó <a href="https://www.bbc.com/news/technology-62142208">havi-</a> vagy <a href="https://www.bbc.com/news/technology-63743597">éves</a> díjat fizetni érte.
+            Nem újdonság ez a fajta lehúzás. Ősi találmány. Bizonyos nők is csak akkor szolgáltatnak lelkesen bizonyos férjeknek, ha az a szerencsétlen rendszeresen "meglepi" őket valami aprósággal. Gyűrű, nyakék, karkötő, táska, egzotikus utazás, 800 kilós széf az emeleten – mindegy, csak jó drága és menő legyen.
+            Különben megvonják a hozzáférést a pinához, pedig ugye az gyárilag be van építve.
+          </p>
+        </div>
+      </div>
+      <div id="nincs_kapcsolat" class="box" style="display:none">
+        <div class="box-text-update">
+          <p>
+            Jelenleg nem lehet kapcsolódni a szolgáltatáshoz. Próbálkozz később, remélhetőleg javulnak a körülmények.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script>
+  var csomag = null;
+  var time_out = null;
+  var exp_tick = null;
+  var betakarva = false;
+  var adag_tb = [];
+  var jel_tb = [];
+  var jel_tb2 = [];
+  var cookie_eloke = "kén:";
+  var ttl_nap = 400;
+
+  const download = (path, file_nev) => {
+    const kamu = document.createElement('a');
+    kamu.href = path;
+    kamu.download = file_nev;
+    document.body.appendChild(kamu);
+    kamu.click();
+    document.body.removeChild(kamu);
+    window.alert(file_nev+" néven mentve");
+  }
+
+  function mentes() {
+    const data = JSON.stringify(adag_tb,null,2);
+    const blob = new Blob([data],{type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    download(url,'kénezési_adatok.json');
+    URL.revokeObjectURL(url);
+  }
+
+  var ment = document.getElementById("ment");
+  ment.addEventListener("click",mentes);
+
+  function adag_kulcs(dat) {
+    return cookie_eloke+dat.dtm+'.'+dat.nev;
+  }
+
+  function kulcs_index(kulcs) {
+    var i = 0;
+    var talalt = false;
+    while (i < adag_tb.length && !talalt) {
+      talalt = (kulcs == adag_kulcs(adag_tb[i]));
+      i++;
+    }
+    if (talalt) return i-1;
+      else return -1;
+  }
+
+  function adag_tarol(dat) {
+    var d = new Date();
+    dat.lejarat = d.getTime() + (ttl_nap*86400000);
+    d.setTime(dat.lejarat);
+    var expires = "expires="+ d.toUTCString();
+    adag_tb.push(dat);
+    document.cookie = adag_kulcs(dat) + "=" + JSON.stringify(dat) + ";" + expires + ";path=/";
+  }
+
+  function megfelel(i) {
+    if (jel_tb2.length > 0) {
+      return jel_tb2[i];
+    } else return jel_tb[i];
+  }
+
+  function ttl(t) {
+    var d = new Date();
+    return Math.floor((t-d.getTime())/86400000).toString().padStart(6,' ')+"  ";
+  }
+
+  function adag_sorok(dat) {
+    if ((dat != undefined) && (dat.sor != "")) {
+      info.innerHTML += dat.sor+ttl(dat.lejarat)+"\n";
+    } else {
+      info.innerHTML = "";
+      for (var i = 0; i < adag_tb.length; i++)
+        if (megfelel(i)) info.innerHTML += adag_tb[i].sor+ttl(adag_tb[i].lejarat)+"\n";
+    }
+    info.scrollTop = info.scrollHeight;
+    info.focus();
+  }
+
+  var betolt = document.getElementById("betolt");
+  const pick_opt = {
+    types: [{description:'JSON',accept:{'json/*': ['.json']}}],
+    excludeAcceptAllOption: true,
+    startIn: 'downloads',
+    multiple: false
+  }
+  betolt.addEventListener("click", async () => {
+    var fileHandle;
+    [fileHandle] = await window.showOpenFilePicker(pick_opt);
+    const file = await fileHandle.getFile();
+    const szoveg = await file.text();
+    try {
+      var kihagyott_db = 0;
+      var alap_db = adag_tb.length;
+      var json = JSON.parse(szoveg);
+      for (var i = 0; i < json.length; i++) {
+        if (kulcs_index(adag_kulcs(json[i])) < 0) adag_tarol(json[i]);
+          else kihagyott_db++;
+      }
+      if (adag_tb.length > alap_db) {
+        adag_tb.sort(function(a,b) {
+          if(a.dtm > b.dtm) return 1;
+          if(a.dtm < b.dtm) return -1;
+          return 0;
+        });
+        szuro_nullaz();
+        adag_sorok();
+      }
+      window.alert((adag_tb.length-alap_db)+" kénezett tétel helyretéve, "+kihagyott_db+" kihagyva");
+    } catch(hiba) {window.alert(hiba)}
+  });
+
+  var fejlec = document.getElementById("fejlec");
+  var info = document.getElementById("info");
+  info.onscroll = function (e) {
+    //fejlec.scrollTop = info.scrollTop;
+    fejlec.scrollLeft = info.scrollLeft;
+  };
+
+  function helyben_tarolt_adatok_cookiebol() {
+    try {
+      var adagok = document.cookie.split(";");
+      for (var i = 0; i < adagok.length; i++) {
+        if (adagok[i].trim().indexOf(cookie_eloke) == 0) {
+          var p = adagok[i].indexOf('=');
+          adag_tb.push(JSON.parse(adagok[i].substring(p+1)));
+        }
+      }
+      adag_tb.sort(function(a,b) {
+        if(a.dtm > b.dtm) return 1;
+        if(a.dtm < b.dtm) return -1;
+        return 0;
+      });
+      for (var i = 0; i < adag_tb.length; i++) jel_tb.push(true);
+      adag_sorok();
+    } catch(hiba) {window.alert("nem sikerült beolvasni a helyben tárolt kénezési adatokat")};
+  }
+  
+  var csik = document.getElementById("csik");
+  var szuro = document.getElementById("szuro");
+  var szuro2 = document.getElementById("szuro2");
+  var stimmel = document.getElementById("stimmel");
+  var fordit = document.getElementById("fordit");
+  var enged = document.getElementById("enged");
+  var torol = document.getElementById("torol");
+  var sz_lmk = 12; //szűrt lista megjelenés késleltetése x100 ms
+  var csik_hossz = 0;
+  var cajger = null;
+  var kesleltet = null;
+
+  function kijelolt_db() {
+    var db = 0;
+    for (var i = 0; i < jel_tb.length; i++)
+      if (megfelel(i)) db++;
+    return db;
+  }
+
+  function talalat_db() {
+    jel_tb = [];
+    if (szuro.value != "") {
+      var viszony = !fordit.checked;
+      var db = 0;
+      for (var i = 0; i < adag_tb.length; i++)
+        if ((adag_tb[i].sor.indexOf(szuro.value) > -1) == viszony) {
+          jel_tb.push(true);
+          db++;
+        } else jel_tb.push(false);
+      stimmel.innerHTML = db+'/'+adag_tb.length+" sor";
+    } else {
+      stimmel.innerHTML = "mind ("+adag_tb.length+" sor)";
+      for (var i = 0; i < adag_tb.length; i++) jel_tb.push(true);
+    }
+  }
+
+  function talalat_db2() {
+    jel_tb2 = [];
+    if (szuro2.value != "") {
+      var viszony = !fordit.checked;
+      var db = kijelolt_db();
+      for (var i = 0; i < adag_tb.length; i++) {
+        jel_tb2.push(jel_tb[i]);
+        if (jel_tb[i]) {
+          if ((adag_tb[i].sor.indexOf(szuro2.value) > -1) != viszony) {
+            jel_tb2[i] = false;
+            db--;
+          }
+        }
+      }
+      stimmel.innerHTML = db+'/'+adag_tb.length+" sor";
+    } else talalat_db();
+  }
+
+  function mutato() {
+    if (csik_hossz > 1) {
+      csik_hossz--;
+      csik.innerHTML = ("&#9667;").repeat(csik_hossz);
+    } else {
+      clearInterval(cajger);
+      csik.innerHTML = "&#9657;";
+    }
+  }
+
+  function szuro_ugy() {
+    if (cajger) clearInterval(cajger);
+    if (kesleltet) clearTimeout(kesleltet);
+    csik_hossz = sz_lmk;
+    cajger = setInterval(mutato,100);
+    kesleltet = setTimeout(adag_sorok,sz_lmk*100);
+    torol.disabled = true;
+    enged.checked = false;
+  }
+
+  function szuro_nullaz() {
+    enged.checked = false;
+    torol.disabled = true;
+    szuro.value = "";
+    szuro2.value = "";
+    szuro2.disabled = true;
+    talalat_db();
+    talalat_db2();
+  }
+
+  szuro.addEventListener("input",function() {
+    szuro.value = szuro.value.trim().toLowerCase();
+    szuro_ugy();
+    if (szuro.value == "") szuro_nullaz();
+      else szuro2.disabled = false;
+    talalat_db();
+  });
+
+  szuro2.addEventListener("input",function() {
+    szuro2.value = szuro2.value.trim().toLowerCase();
+    szuro_ugy();
+    talalat_db2();
+  });
+
+  fordit.addEventListener("change",function() {
+    if (szuro.value != "") {
+      talalat_db();
+      talalat_db2();
+      adag_sorok();
+    }
+  });
+
+  enged.addEventListener("change",function() {
+    torol.disabled = (!enged.checked || (kijelolt_db() == 0));
+  });
+
+  torol.addEventListener("click",function() {
+    var torolt_db = 0;
+    try {
+      for (var i = adag_tb.length-1; i > -1; i--)
+        if (megfelel(i)) {
+          cookieStore.delete(adag_kulcs(adag_tb[i]));
+          adag_tb.splice(i,1);
+          torolt_db++;
+        }
+      szuro_nullaz();
+      adag_sorok();
+      window.alert(torolt_db+" sor törölve");
+    } catch(hiba) {window.alert(hiba)}
+  });
+
+  var nev = document.getElementById("nev");
+  nev.addEventListener("input",function() {
+    nev.value = nev.value.trim().toLowerCase();
+    szamol.disabled = (nev.value == "");
+  });
+
+  function input_adatok() {
+    var inputok = document.getElementsByTagName("*");
+    var dat = {};
+    var mezo;
+    var i;
+    for (i = 0; i < inputok.length; i++) {
+      mezo = inputok[i];
+      if (mezo.tagName == 'INPUT' || mezo.tagName == 'SELECT')
+        if ((mezo.name != null) && (mezo.name != "")) {
+          if ((mezo.type != null) && (mezo.type == "number")) dat[mezo.name] = mezo.value*1;
+            else dat[mezo.name] = mezo.value;
+        }
+    }
+    return dat;
+  }
+  
+  var szamol = document.getElementById("szamol");
+  szamol.addEventListener("click",function() {
+    var dat = input_adatok();
+    var uj_kulcs = adag_kulcs(dat);
+    if (kulcs_index(uj_kulcs) < 0) { //nincs még ilyen
+      fetch("https://nuxi.hu/ken?_="+new Date().getTime(),{
+        method: 'POST',
+        body: JSON.stringify({fnct:csomag.fn.szamol,adatok:input_adatok()}),
+        headers: new Headers({
+          "Content-Type":"application/json; charset=UTF-8",
+          "Cache-Control":"no-cache"
+        })
+      })
+      .then(res => res.json())
+      .then(json => {
+        if (json.hiba == "") {
+          dat.adag = json.adag;
+          dat.sor = json.sor;
+          adag_tarol(dat);
+          if (szuro.value) {
+            szuro_nullaz();
+            adag_sorok();
+          } else adag_sorok(dat);
+          nev.value = "";
+          szamol.disabled = true;
+          talalat_db();
+          talalat_db2();
+        } else window.alert(json.hiba);
+        kitakar();
+        //nev.focus();
+      })
+      .catch(function(error) {
+        window.alert(error);
+      });
+    } else window.alert(uj_kulcs+" már szerepel a jegyzetben\nhasználj eltérő nevet, ha másik tétellel számolnál");
+  });
+
+  function betakar() {
+    if (betakarva) return;
+    betakarva = true;
+    overlay.style.display = "block";
+    time_out = setTimeout(gebasz_eseten,6000);
+  }
+
+  function kitakar() {
+    overlay.style.display = "none";
+    clearTimeout(time_out);
+    betakarva = false;
+  }
+
+  function gebasz_eseten() {
+    kitakar();
+    //rendben_befejez();
+    setTimeout(function(){alert("sikertelen művelet")},200);
+  }
+
+  function mit_valasztas(index) {
+    var jelenleg = document.getElementById("jelenleg");
+    if (csomag.mit_tb[index].nulla) {
+      jelen.value = 0;
+      jelen_r.value = 0;
+      jelenleg.style.display = "none";
+    } else jelenleg.style.display = "";
+  }
+
+  function mit_lista_gyarto() {
+    var select = document.getElementById("mit");
+    select.setAttribute("onchange","mit_valasztas(this.value)");
+    for (var i = 0; i < csomag.mit_tb.length; i++) {
+      var option = document.createElement("option");
+      option.value = i;
+      option.text = csomag.mit_tb[i].txt;
+      select.appendChild(option);
+    }
+    select.value = 0;
+  }
+
+  function anyag_valasztas(index) {
+    var tomeny = document.getElementById("tomeny");
+    tomeny.value = csomag.anyag_tb[index].tomeny;
+    tomeny_r.value = tomeny.value;
+  }
+
+  function anyag_lista_gyarto() {
+    var select = document.getElementById("mivel");
+    select.setAttribute("onchange","anyag_valasztas(this.value)");
+    for (var i = 0; i < csomag.anyag_tb.length; i++) {
+      var option = document.createElement("option");
+      option.value = i;
+      option.text = csomag.anyag_tb[i].txt;
+      select.appendChild(option);
+    }
+    select.value = 0;
+  }
+
+  function cucc_jon() {
+    var t = document.getElementById("tartalom");
+    betakar();
+    fetch("https://nuxi.hu/ken?_="+new Date().getTime(),{
+      method: 'POST',
+      body: JSON.stringify({fnct:0}),
+      headers: new Headers({
+        "Content-Type":"application/json; charset=UTF-8",
+        "Cache-Control":"no-cache"
+      })
+    })
+    .then(res => res.json())
+    .then(json => {
+      if (json.hiba == "") {
+        csomag = {...json}
+        var dtm = document.getElementById("dtm");
+        dtm.value = csomag.dtm;
+        var dt = document.getElementById("dt");
+        dt.value = csomag.dt;
+        mit_lista_gyarto();
+        anyag_lista_gyarto();
+        if (fejlec.innerHTML == "") fejlec.innerHTML = csomag.fejlec;
+        helyben_tarolt_adatok_cookiebol();
+        talalat_db(); //megfelel miatt
+        var ertekel = document.getElementById("ertekel");
+        ertekel.style.display = "";
+      } else {
+        t = document.getElementById("nincs_kapcsolat");
+        window.alert(json.hiba);
+      }
+      t.style.display = "";
+      kitakar();
+      //nev.focus();
+    })
+    .catch(function(error) {
+      t = document.getElementById("nincs_kapcsolat");
+      t.style.display = "";
+      window.alert(error);
+    });
+  }
+
+  cucc_jon();
+</script>
+<script src="/fejezetek.js"></script>

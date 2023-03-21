@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="Az internetnek nincs meghatározható közepe, de ha mégis a tűz közelébe szeretnél kerülni, akkor: Cloudflare.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
+</head>
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="home" class="nav-link-wrapper" >
+            <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          </div>
+          <table><tr><td id="holtart">📝</td></tr></table>
+        </div>
+        <select name="olv"></select>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Sebességhajhász kaland az IT világában</h1>
+      <div class="box">
+        <div class="box-text">
+          <p><a name="elozo"></a></p>
+        </div>
+      </div>
+      <h1>1.1.1.1</h1>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Nehéz dolga van annak, aki az internet forró pontját keresi. Középpontjának keresése is hasztalan, mert működési elvéből fakadóan nincs központja, és ez nem bug, hanem feature. Ez a jellegzetesség éppen hogy előny akkor, mikor egy ilyen rendszerben biztos pontot keresek. Rengeteg van belőle, válogatni is lehet.
+            <br>
+            Nem sokat válogattam. Ösztönösen bedrótoztam magamat az egyikbe, és nagy valószínűséggel jól választottam. Ismerek valakit, aki aszerint házasodott, azt választotta, aki képes volt meghámozni az almát úgy, hogy egyben maradjon a héja.
+            Én meg arra figyeltem fel, hogy ha valaki képes megcsípni a legnevezetesebb IP címet (<a href="https://1.1.1.1/">1.1.1.1</a>) és a <a href="https://one.one.one.one">one.one.one.one</a> domain nevet, ráadásul ezekhez kiváló szolgáltatásokat rendel, az tudhat valamit,
+            továbbá elég innovatív lehet abból kiindulva, hogy volt mersze használatba venni a Silicon Graphics speciális <a href="https://blog.cloudflare.com/lavarand-in-production-the-nitty-gritty-technical-details/">véletlenszám-generátorát</a>.
+            Ez a rendkívül ígéretes társaság a <a href="https://www.cloudflare.com/what-is-cloudflare/">Cloudflare</a>.
+          </p>
+          <div class="box-img">
+            <a href="https://www.cloudflare.com/what-is-cloudflare/"><img src="https://kep.pince.eu/cf_logo.png"></a>
+          </div>
+          <p>
+            Első kísérletként <a href="https://www.cloudflare.com/en-gb/dns/">DNS szolgáltatásukat</a> vettem igénybe. Mivel az itthoni internetkapcsolat IP címe naponta többször is változhat, szükségem van egy saját <a href="https://hu.wikipedia.org/wiki/Dinamikus_DNS">dinamikus DNS-re</a>.
+            Ennek kivitelezéséhez rendelkezésemre áll a <a href="https://developers.cloudflare.com/api/operations/dns-records-for-a-zone-update-dns-record">Cloudflare API</a>, ami mindenre kiterjedő lehetőséget biztosít ahhoz, hogy ne csak dashboardon (irányítópult) keresztül állíthassak be működési jellemzőket, hanem emberi közreműködés nélkül, programozottan, önműködően is.
+            Megfelelően paraméterezett API-hívással frissítem a DNS szerver adatbázisát a változással érintett domain új IP-címével, így az internetről folyamatosan elérhető marad az itthon üzemelő kiszolgáló gépezet.
+            Régóta kínálnak ilyen szolgáltatást erre szakosodott profik (noip, dyndns, duckdns stb.), de én egészen biztosan jobban ismerem saját igényeimet náluk, és jobban meg tudok felelni ezeknek.
+            <br>
+            Ha az általam gyártott algoritmus sokat késne az IP-cím változásának észlelésével, és ebből összejönne évente 8 óra 45 perc üzemszünet, akkor pont ott lennék rendelkezésre állási mutatóban, mint az általam nagyra becsült Invitech a büszkén hirdetett 99.999%-kal.
+            A Cloudflare "unparalleled redundancy and 100% uptime" szöveggel ajánlja szolgáltatását, ami irigylésre méltó önbizalomról árulkodik. Azt kell feltételeznem, hogy emögött van elegendő tudás, tapasztalat és erőforrás, noha nekik is van sötét folt a múltjukban. Ők sem tudnak mit kezdeni olyan tényezőkkel, amik rafináltabban támadnak annál, mint amire szokványos észjárás mellett számítani lehet.
+            <br><br>
+            1997 újév napjának első órái rémálomszerűen telhettek a cég szolgálatban lévő munkatársainak. Ekkor ütött be a szökőmásodperc gebaszból eredő "software panic", amit az "<code>rtt := time.Now().Sub(start)</code>" utasítás végrehajtása eredményezett egy olyan helyzetben, amikor a <code>time.Now()</code> korábbi időpontot adott vissza a start értékénél.
+            Ebből persze kijött egy oda nem illő negatív szám, amire senki nem számított, hiszen normális körülmények között az idő előre halad, nem visszafelé (<a href="https://blog.cloudflare.com/how-and-why-the-leap-second-affected-cloudflare-dns/">az autentikus történet</a>).
+            Egy ilyen eset vagy összetör vagy megerősít, de hatás nélkül nem marad.
+          </p>
+        </div>
+        <div class="box-text-update">
+          <p>
+            Bizonyos körökben úgy gondolják, hogy reménytelen helyzetekben segíthet a hit, annak is egy minősített fajtája, a szilárd hit.
+            <a href="https://hu.wikipedia.org/wiki/Kar%C3%A1csonyi_orat%C3%B3rium">J.S.Bach Karácsonyi oratóriumának</a> VI. kantátájából való a következő szövegrészlet:
+            <br><br><i>
+            "Herr, wenn die stolzen Feinde schnauben,
+            <br>
+            So gib, daß wir im festen Glauben
+            <br>
+            Nach deiner Macht und Hülfe sehn!
+            <br>
+            Wir wollen dir allein vertrauen,
+            <br>
+            So können wir den scharfen Klauen
+            <br>
+            Des Feindes unversehrt entgehn"
+            </i>
+            <br><br>
+            Magyar fordítása a <a href="http://doulos.hu/szovegkonyvek/bach248.pdf">szövegkönyv</a> hatodik részének elejéről:
+            <br><br><i>
+            Uram, ha a kevély ellenség köröttünk dúl,
+            <br>
+            add, hogy szilárd hitben
+            <br>
+            lássuk meg hatalmadat és segítségedet!
+            <br>
+            Csak Tebenned bízunk egyedül,
+            <br>
+            így tudjuk az ellenség éles karmát
+            <br>
+            sértetlenül elkerülni.
+            </i>
+            <br><br>
+            Ennek a szilárd hitnek figyelemre méltó példája, ahogy ezt a barokk zeneművet méltó környezetben adja elő derék német polgárok szakavatott csoportja.
+            Öröm nézni, öröm hallgatni. Különös ízt ad előadásuknak, hogy a méltó környezet nem más, mint a kevély ellenség által a második világháború végén felperzselt és porig rombolt drezdai Frauenkirche 1992 és 2005 között helyreállított épülete.
+            <br>
+            Egy mindenre elszánt ellenség éles karmát sértetlenül elkerülni? Szilárd hittel? Szerencsétlen hívőket minden korban megtalálják az éppen időszerű, nagy dumás ígérgetők. Most sincs ez másképpen, de manapság elsődlegesen nem szószékről prédikálva győzik meg a népet, hanem óriásplakátokról, TV-ből, rádióból, napilapokból és a közösségi médiából hirdetik az igét.
+            <br>
+          </p>
+          <div class="video-container marg">
+            <iframe src="https://www.youtube.com/embed/ojAjYfafyjk" allowfullscreen></iframe>
+          </div>
+          <p>
+            A németek 1990-es újraegyesítése előtt hosszú évtizedekig romhalmazként álló, monumentális szemétdomb formáját mutató templom újjáépítése és a Cloudflare kieső szolgáltatásainak helyreállítása rokonságot mutat abban, hogy a munkák elvégzését igazából nem a szilárd hit, és nem is felsőbb hatalom segítette.
+            Sokkal inkább tudás, tapasztalat, szorgalom és mindezek mellé (nem helyettük) némi intuíció. A drezdaiaknak nehezebb dolguk volt, mert ők szó szerint minden követ megmozgattak a siker érdekében.
+            Ezzel szemben a programhiba kijavításához mindössze egy karaktert kellett cserélni a megfelelő helyen:
+            <br>
+            <span style="white-space: nowrap;">"<code>if rttMax == 0</code>"</span> helyett <span style="white-space: nowrap;">"<code>if rttMax &lt;= 0</code>"</span> került egy feltétel teljesülésének vizsgálatához. Nagyon tanulságos, hogy egy ilyen apróság mekkora galibát képes okozni. Ne vállaljon rendszerprogramozói munkát az, akinek nincs elég fantáziája olyasmire is felkészülni, ami elvileg be sem következhet.
+            <br>
+            Az ördög nem alszik.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Mint azt már meséltem, ösztöneimre hallgatva bízom ebben a csapatban, és egyre-másra veszem igénybe különböző szolgáltatásaikat.
+            Előnyőket-hátrányokat mérlegelve, hosszas vívódás után döntöttem úgy, hogy a statikus weboldalakat saját webszerverről a <a href="https://developers.cloudflare.com/pages/">Cloudflare Pages</a> által biztosított tárhelyre költöztetem.
+            A rendszeres frissítésre nem szoruló, változatlan tartalmat (jellemzően képanyag) nem itt helyezem el, mert kitaláltak arra egy másik megoldást, a <a href="https://developers.cloudflare.com/r2/">Cloudflare R2</a>-t. Milyen előnyökkel jár mindez? Csupa olyannal, mint amiért hajdani BBS szerveremet telefonközpontban üzemeltettem volna.
+            100% rendelkezésre állás, gyakorlatilag korlátlan erőforrások, irgalmatlan sávszélesség, iszonyatos sebesség, <a href="https://www.cloudflare.com/network/">275 adatközpont</a> világszerte (folyamatosan szaporodnak – tegnap még 250 szerepelt a brosúrában). Elég rendesen odateszik magukat azért, hogy a <code>pince.eu</code> domain alatt közzétett tartalomhoz a világ internetre csatlakozott népességének 95%-a 0.05 másodpercen belül hozzáférhessen.
+          </p>
+          <div class="box-img">
+            <a href="https://www.cloudflare.com/network/"><img src="https://kep.pince.eu/webp_12_network_map.webp"></a>
+          </div>
+          <p>
+            Így valósul meg évtizedekkel az első <a href="/olv/it_kaland/adalek.html#:~:text=saj%C3%A1t%20BBS%20szolg%C3%A1ltat%C3%A1st">BBS szerverem</a> telepítése után, egy sokkal fejlettebb technikát alkalmazó korban a "közel lenni a tűzhöz, masszív erőforrásokhoz" vágyam.
+            Olyan érzés ez, mintha ott lennék egyszerre mindenhol, annak is a kellős közepén, villámgyors elérhetőséggel. Annak ellenére, hogy az internetnek ugye nincsen közepe, én meg csóró vagyok, mint a templom egere.
+          </p>
+        </div>
+      </div>
+      <div class="box-text">
+        <p><a name="kovetkezo"></a></p>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/fejezetek.js"></script>

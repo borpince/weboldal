@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="A borospince webes megjelenése nem maradhat el túlságosan az itt készült boroktól, de ezért tenni is kell valamit.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
+</head>
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="home" class="nav-link-wrapper" >
+            <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          </div>
+          <table><tr><td id="holtart">📝</td></tr></table>
+        </div>
+        <select name="olv"></select>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Sebességhajhász kaland az IT világában</h1>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Nem csak cipőinket tapossuk ki, és cseréljük rendszeresen újakra, de bizonyos módszerek, eljárások felett is eljár az idő.
+            A számítógépes iparágban alkalmazott megoldásokra ez fokozottan érvényes. Nyughatatlan emberek művelik ezt a szakmát, ezért a legfrissebb technológiák naprakész követése nagy kihívás.
+            Nekem sem megy úgy, ahogy elvárható lenne, de rendszeresen belefutok megoldásért kiáltó helyzetekbe, és ezenközben érdekes felfedezéseket teszek, rácsodálkozok változásokra – mint például most, amikor a weboldalak betöltésének sebességét srófolnám feljebb, mert jelenleg hosszasabban kell várakozni az elfogadhatónál egy-egy oldal maradéktalan megjelenésére.
+            A cél érdekében csökkenteni fogom a megjelenített képek méretét, amit a jelenleg használtnál fejlettebb tömörítéssel oldok meg.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Újabb eljárások a korábbi hatékonyságot is képesek jelentősen fokozni, pedig a képeket tömörítő algoritmusok eddig is remekeltek. Számomra felfoghatatlan tudomány rejtezik ezekben a módszerekben.
+            Az alábbi példa szélsőségesen eredményes tömörítés gyümölcsét mutatja, szinte változatlan képminőség mellett. A JPEG eljárással kódolt eredeti kép méretének a tizedénél is kisebbre tömörített (361 KiB &rarr; 28 KiB) WebP változat alig észrevehető eltéréssel mutatja ugyanazt.
+            <br>
+            (mozgasd a képeket elválasztó függőleges vonalat jobbra-balra a különbségek vizsgálatához)
+          </p>
+        </div>
+        <iframe frameborder="0" class="juxtapose" width="100%" height="683" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=afbbe7f6-6f02-11ed-b5bd-6595d9b17862"></iframe>
+        <!--iframe frameborder="0" class="juxtapose" width="90%" height="683" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7523a6de-6a01-11ed-b5bd-6595d9b17862"></iframe-->
+        <br>
+        <div class="box-text">
+          <p>
+            A következő összehasonlításban szereplő képről hiányoznak a nagy, egybefüggő, sötét felületek. Ennek ellenére a WebP eljárásal tömörített kép és az eredeti között jelentős a méretkülönbség (47 KiB &lt; 102 KiB).
+          </p>
+        </div>
+        <iframe frameborder="0" class="juxtapose" width="100%" height="683" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=3e4c490c-6f03-11ed-b5bd-6595d9b17862"></iframe>
+        <!--iframe frameborder="0" class="juxtapose" width="90%" height="683" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=8186e9da-6a02-11ed-b5bd-6595d9b17862"></iframe-->
+        <br>
+        <div class="box-text">
+          <p>
+            Láttál szembeötlő eltérést az összehasonlított képek között? Ha láttál is, kigúvadt szemmel és közelről kellett figyelned, különben nem fedezhetők fel különbségek. Na, ezért tértem át a JPEG-ről a WebP képtömörítésre.
+            Várakozáson felüli sikerrel járt a fejlesztés, mert nem álltam le a WebP-ig eljutva. Gyors elérést biztosító tárhelyre töltöttem fel az optimalizált képeket, és az erdőszéli webszerverről új helyre költöztettem a pince.eu-t – evés közben jön meg az étvágy. Ennek történetét, érdekességeit mesélem el a következő fejezetekben, amihez hozzáfűzök néhány keresetlen gondolatot.
+          </p>
+        </div>
+      </div>
+      <h1>Fejezetek</h1>
+      <div class="box">
+        <div class="box-text">
+          <p>
+          <a href="/olv/it_kaland/webp.html">WebP</a><br>
+          <a href="/olv/it_kaland/kutatas.html">Alapkutatás, mérés</a><br>
+          <a href="/olv/it_kaland/konvert.html">Konvertálás (JPEG &rarr; WebP)</a><br>
+          <a href="/olv/it_kaland/biztonsag.html">Gondolatok a biztonságról</a><br>
+          <a href="/olv/it_kaland/adalek.html">Adalék a sikerhez</a><br>
+          <a href="/olv/it_kaland/one.html">1.1.1.1</a><br>
+        </p>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/fejezetek.js"></script>

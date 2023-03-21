@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="JPEG és WebP tömörítés hatékonysága – összehasonlítás">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
+</head>
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="home" class="nav-link-wrapper" >
+            <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          </div>
+          <table><tr><td id="holtart">📝</td></tr></table>
+        </div>
+        <select name="olv"></select>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Sebességhajhász kaland az IT világában</h1>
+      <div class="box">
+        <div class="box-text">
+          <p><a name="elozo"></a></p>
+        </div>
+      </div>
+      <h1>WebP</h1>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Képek digitális tárolására már jó ideje használjuk a <a href="https://hu.wikipedia.org/wiki/JPEG">JPEG</a> formátumot, ami nagy áldás az ősi <a href="https://hu.wikipedia.org/wiki/BMP">BMP</a>-hez viszonyítva.
+            Rengeteg tárhely megtakarítását eredményezi, s emellett a számítógépes adatátviteli vonalakon mozgó adattömeg méretének kordában tartásából is rendesen kiveszik részüket a képi anyagok tömörítésére hivatott algoritmusok.
+            <br>
+            Jócskán meg vannak tűzdelve látványos elemekkel a webes tartalmak, amik a weboldalak technikai megítélésére vegyes hatást gyakorolnak. Egyrészt örülünk, ha nem csupán száraz szövegekből tájékozódhatunk.
+            Másrészt ennek több síkon fizetjük meg az árát. A hiányzó türelem nagyobb sávszélességgel pótolható, amit nem adnak ingyen, de ne hidd, hogy a pénzedért mindent megkaphatsz. Az idő múlása, az öregedés, mindenkire egyformán hat, ezen nem segít a pénztárca vastagsága.
+            Keményen küzdünk az idővel. Már a mérésével kezdődnek a gondok – most épp a <a href="https://hu.wikipedia.org/wiki/Sz%C3%B6k%C5%91m%C3%A1sodperc">szökőmásodperc</a> eltörlését tervezik, de nem ez a legnagyobb gond vele, hanem az, hogy egyénre szabottan véges.
+            Nincs mit tenni, ami nem megy erőből vagy nagycímletű bankjegyeket lobogtatva, azt ésszel kell megoldani. Szervezéssel jobban kihasználhatjuk azt az időt, amit kimértek nekünk.
+            <br><br>
+            Weboldalak betöltésének időigényét nem csak a sávszélesség fokozásával lehet csökkenteni, hanem a betöltendő tartalom méretének redukálásával is. Mi foglalja a legtöbb helyet? A képek. Ezeknek helyigénye a minőség rovására hatékonyan csökkenthető, de hol lenne ebben a kihívás?
+            <br>
+            Törekvő, nagy tudású szakemberek szívós munkával folyamatosan viszik előre a tudományt. Nekem csak annyi a dolgom, hogy alkalmazzam a legújabb találmányokat, és ezzel egy kicsit jobb lesz a világ. Marha kényelmes.
+            Viszont arra oda kell figyelnem, hogy ezekhez a vívmányokhoz hozzáférjek, egyáltalán tudjak róluk, ha már nem vagyok elég tehetséges ahhoz, hogy önállóan jussak eredményre bizonyos feladatok megoldásához szükséges technikák kidolgozása terén. Olvasni kell, figyelni kell a szakmai híreket.
+            Aztán meg felbátorodni, és használni az újdonságokat. Félretenni a kényelemszeretetet, és belenyúlni olyasmibe, ami kifogástalanul működik, bár egy kicsit elavult.
+            Jelen esetben a <code>pince.eu</code> weboldal illusztrációiként tárolt néhány száz, JPEG formátumú képet feldolgozni, és átalakítani korszerűbbre, tömörebbre. Aztán a HTML file-ok tartalmát hozzáigazítani a megváltozott körülményekhez, és már kész is. Mi lenne a korszerűbb képtömörítési eljárás?
+            Erről árulkodik ennek a fejezetnek a címe: <a href="https://developers.google.com/speed/webp">WebP</a>.
+            Egyelőre nem találni róla magyar nyelvű wikipedia cikket, amiből arra lehetne következtetni, hogy ez valami nagyon új cucc, pedig nem az. Olyannyira nem új, hogy 2010 óta létezik, és napjainkban (2022-ben) már a 2-es változattal <a href="https://chromium.googlesource.com/codecs/libwebp2/">kísérleteznek</a>.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Manapság két módszer közül érdemes választani, ha fejlett képtömörítés a feladat. A WebP mellett ott van még a több lehetőséget nyújtó, sokoldalúbb <a href="https://en.wikipedia.org/wiki/AVIF">AVIF</a>. Miért a WebP használata mellett döntöttem mégis, ha az AVIF lenne a jobb választás?
+            Azért, amiért a csúnya lányok is elkelnek, ha kedvesek, háziasak és kellően színes az egyéniségük (a jó hozomány is gyakorolhat erőteljes csáberőt), de szolgálhatok a témához jobban illő példával is.
+            A múlt század 80-as éveiben a VHS lett a legelterjedtebb mozgóképrögzítési és -lejátszási eljárás annak ellenére, hogy léteztek a piacon fejlettebb rendszerek is, mint például a Sony Betamax vagy a Grundig-Philips páros Video 2000 fantázianevű megoldása.
+            Műszakilag (képminőség, lejátszási időtartam stb.) a VHS volt a legkevésbé vonzó lehetőség, mégis ez került ki nyertesen a küzdelemből (árulkodik a különbségről, hogy a profi stúdiókban Betamax készülékeket használtak, eszükbe nem jutott volna VHS-t alkalmazni).
+            <br>
+            Ha nem a műszaki tartalom, akkor mi tette vonzóvá a VHS-t? A leghihetőbb magyarázat arról szól, hogy a korabeli kalózkazetta gyártók döntötték el a versenyt, akik VHS kazettákon terjesztették a mozgóképes anyagokat, közöttük a pornófilmeket is.
+            Aki pornót akart nézni akkoriban, az alkalmazkodott. Megvette a VHS-rendszerű készüléket, és így könnyen hozzájutott az őt érdeklő műsorokhoz. Tudott csereberélni a szomszédokkal, haverokkal – a rendszer saját magát gerjesztette.
+            <br><br>
+            A WebP azzal teszi vonzóvá magát, hogy az összes valamire való böngésző <a href="https://developers.google.com/speed/webp/faq">támogatja</a>, míg az AVIF formátumú képekkel némelyik  jelenleg <a href="https://caniuse.com/avif">nem tud mit kezdeni</a>. A WebP-nek 10 évnél is több kellett ahhoz, hogy rávegyen a JPEG formátumban keletkezett és tárolt képeim konvertálására.
+            Ebből adódik a következtetés, hogy 2019-es indulásával az AVIF talán ennek az évtizednek a vége felé terjed el olyan mértékben, amire érdemes lesz odafigyelni. Vagy nem.
+          </p>
+        </div>
+      </div>
+      <div class="box-text">
+        <p><a name="kovetkezo"></a></p>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/fejezetek.js"></script>

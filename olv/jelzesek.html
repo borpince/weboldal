@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="Gondolatok a programozásról, algoritmusokról, optimalizálásról. A célt előbb fel kell fedezni, és csak ezután kezdődik a kaland, a tájékozódás. Ezért látom el az elolvasott szövegeket különböző jelzésekkel, amikből megtudod, hogy hol tartasz, van-e újabb változat stb.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
+</head>
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="home" class="nav-link-wrapper" >
+            <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          </div>
+          <table><tr><td id="holtart">📝</td></tr></table>
+        </div>
+        <select name="olv"></select>
+      </div>
+    </div>
+    <div class="content">
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Kiskoromban rengeteget ültem a TV előtt, így volt szerencsém végignézni a Kockázat című történetet, ami figyelemre méltó értékelést kapott az <a href="https://www.imdb.com/title/tt0065035/">IMDB</a>-n.
+            Ebből a filmsorozatból emlékszem arra a jelenetre, amiben nyilvánvaló rendezői túlkapás folytán zajlott úgy a cselekmény, ahogy az a valóságban soha nem történne.
+            Nem CGI-effektekre vagy zöld háttér előtt madzagon lógó szereplőkre gondolok, mert akkoriban nem léteztek ezek a módszerek.
+            Hans Kloss (a keleti James Bond) határozott léptekkel halad a járdán. Még nem tud róla, hogy a találkahelyen a Gestapo csapdát állított neki.
+            Úgy menekül meg a leleplezéstől, hogy a nácik által sakkban tartott társa egy óvatlan pillanatban lelök egy virágcserepet a második emeleti lakás ablakpárkányáról, ami a járdára zuhan. Pontosan Kloss kapitány lába elé.
+            Nem sokon múlik, hogy nem a fejére, de a hős nem jön zavarba, és mintha mi sem történt volna, rezzenéstelenül, katonás léptekkel halad tovább.
+            Már eszében sincs bemenni a házba, és ott fogságba esni. Jelzést kapott.
+            <br>
+            Ennél jóval egyszerűbben is jelezhetünk. Bringások karjelzéssel kanyarodási szándékot, elégedetlen emberek felemelt középső ujjal véleményüket, kacsintással meg bármit, amiben korábban megegyeztünk.
+            Egy jól kidolgozott jelzésrendszer segít eligazodni a világban, jelzések nélkül pedig nehezedik az élet. Persze hiába a jelzés, ha nem érti a címzett.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Túl nagy jelentőséget tulajdonítok a <code>pince.eu</code> weboldalon megjelent közléseknek, mert azt feltételezem, hogy anyámon kívül mások is ide tévednek hébe-hóba, akiknek igyekszem a kedvükben járni.
+            A hosszan elhúzódó folyamatokról tudósító írások időről időre újabb történések jegyzeteivel bővülnek (a borkészítés a szürettől a hordós érlelésig tipikusan ilyen), s ezeknél nem árt elhelyezni valamilyen jelzést arról, hogy a legutóbbi megtekintés óta változott-e a tartalom.
+            Ha igen, akkor érdemes az írást újból megnyitni, és ránézni a friss részre. Menne ez úgy is, hogy a kedves látogató fejben tartja az olvasottakat, és az itteni írásokat újból és újból megnyitva összeveti a tartalmat emlékeivel.
+            Újdonságot észlelve magába szívja az új részeket, naprakészen tartva ezzel ismereteit. Lelkesen és fáradhatatlanul. Na, ennyit nem érnek meg ezek a történetek, nem lenne érdemes nagy figyelmet szánni rájuk, ezért ha valaki visszatérő vendégként olvasgat, akkor a következő jelzésekkel segítem a tájékozódást:
+            <br><br>
+            <object name="jmtabla"></object>
+            <br>
+            Mi az, amit érdemes az olvasmányokról számontartani? Elsőként a nézettséget. Láttam már vagy ismeretlen? Ha megjelent már előttem, akkor meddig jutottam a megtekintésben? Szándékosan nem olvasottságnak nevezem az állapotot, mert azt nem tudom megállapítani, sem mérni.
+            Ellenben a megjelenítés motorháztető alatti jellemzőiből (<code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight">scrollHeight</a>,
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY">scrollY</a>,
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight">innerHeight</a></code>)
+            bizonyos következtetések levonhatók. Szerencsés esetben a megjelenített tartalmat elolvassák, befogadják, de erre nem érdemes mérget venni.
+            Egy téma frissülését (update) is érdemes jelezni. Ehhez persze tárolni kell a megtekintéskor fennálló helyzet jellemző adatait, ami a weboldal újbóli látogatásakor összevethető a legfrissebb állapottal, és használható a megjelenítés kényelmes vezérléséhez is.
+            <br>
+            Ezeknek az igényeknek kielégítését rá lehet bízni egy alkalmas algoritmusra, ami a szükséges jelzéseket odabiggyeszti az elérhető tartalmak címei elé, segítve ezzel jó döntések gyors meghozatalát – az emlékek felidézése nélkül.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            A weboldal megjelenése, a terv (divatosan a "design") és az ezt tükröző HTML és CSS kód kedvesem munkája (ő egy meglehetősen sokoldalú teremtés, egy igazi tündér, akire az <a href="/olv/arculat.html">arculati elem</a> kivitelezését is rábízhattam).
+            Erre építkezek, ezt alakítom át enyhén a programozói észjárásnak és igényeknek megfelelően, mert a szükséges algoritmusok <a href="https://hu.wikipedia.org/wiki/JavaScript">Javascript</a> formát öltve fognak megtestesülni.
+            <br>
+            Megfelelő alapokat építve átalakítom a történeteket kínáló menü koncepcióját, aminek következtében az eddig HTML szövegkonstansokként szereplő címek és hivatkozások JSON szerkezettel vegyes tömbökbe kerülnek.
+            Programból könnyen kezelhető, rugalmas megoldás. A fejlesztés mellékhatásaként a weboldalak egyéb tényezői is önműködően, a programban deklarált JSON listából kapnak értéket.
+            Ez kizárja a bambulás-tévesztés-elírás lehetőségéből eredő hibákat, ami a szokványos "beírom kézzel az összes helyre" megoldás esetén bizony néha nem vezet kifogástalan eredményre, és az esetlegesen megváltozott adatok átvezetésének elmaradásakor fellépő összevisszaságot is kiküszöböli.
+            <br>
+            A weboldal témaválasztékának megjelenítését intéző <code>menu.html</code> lényegi része (24-68 sorok alakítják a választékot) eredetileg nagyjából így nézett ki:
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/jelzes_01.webp">
+          </div>
+          <p>
+            Ezzel a megoldással nem kétséges, hogy ha változik a téma címe, akkor annak módosításáról nem csak itt kell gondoskodni, hanem át kell vezetni a változást a témát feldolgozó fejezet címsorában is (heading tag), és az érintett HTML file <code>&lt;title&gt;</code> tartalmának átírása sem maradhat el.
+            Továbbá módosítani kell az összetartozó témák elején és végén elhelyezett előző/következő fejezetre mutató címeket, hivatkozásokat is. Egy új fejezet beszúrása a meglévők közé pedig kaotikus helyzetet teremt, ha nem figyelek kellőképpen.
+            Sok munka, nagy felelősség, el lehet rontani. Ha elrontom, annak nyoma van. A világhálón csúfoskodik, ami nem ad okot arra, hogy a mellemet döngetve büszkélkedjek az eredménnyel.
+            <br>
+            Nem értek a matematikához, de ott is érdemes egyszerűsítéssel kezdeni egy bonyolultnak tűnő egyenlet megoldását. Hatékony fegyver, nosza, alkalmazzuk.
+            Az egyszerűsített <code>menu.html</code> szemmel láthatóan letisztult tartalmat mutat, mindössze 25 sor az egész. A 17-21 sorok képviselik azt a részt, ami alapján a böngésző a témaválasztékot megjeleníti.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/jelzes_02.webp">
+          </div>
+          <p>
+            Amíg nem változik a tartalom témafelosztása, addig ehhez nem kell hozzányúlni. Az üres <code>&lt;select&gt;</code> elemeket a 25. sorban hivatkozott program tölti fel időszerű tartalommal, ami alapján a legfrissebb kínálat jelenik meg a menüben.
+            Egyszer kell megálmodni, majd megfogalmazni a végrehajtandó utasításokat, aztán megy minden magától.
+            <br>
+            A programozás lényegét valamikor régen úgy fogalmazták meg, hogy erőfeszítéseket teszünk annak érdekében, hogy elkerüljük az erőfeszítéseket. Egyetértek ezzel a megállapítással.
+            Kényelmesen hátradőlni, és önelégülten vigyorogva élvezni a helyzetet. Ez a magatartás megengedhető, ha előtte megteremtem a kedvező körülményeket azzal, hogy miután elvégzem a szükséges munkákat, learatom befektetésem hasznát.
+            Legyenek bármily bonyolultak, az elkészült programok nem kérnek enni. Tévedhetetlenül, pontosan, hibátlanul és fáradhatatlanul végzik dolgukat, mint a gépek általában – amennyiben nem egy fércmű születik az elvégzett munkából.
+            Van lehetőség alapos tesztelésre az éles bevezetés előtt, nem szabad elmulasztani vagy félvállról venni.
+            Aki nem veszi komolyan, az úgy jár, mint például az <a href="https://24.hu/belfold/2023/03/10/idomsof-orfk-gepkocsi-atiras-leallas/">Idomsoft</a>, akinek szakemberei szívós munkával elérték, hogy a napokban <a href="https://telex.hu/belfold/2023/03/10/nem-lehet-autot-atirni-es-forgalomba-helyezni-magyarorszagon">összeomlott</a> a gépjármű ügyintézést támogató kormányhivatali rendszer.
+            Üdítő újdonság, hogy ők nem <a href="https://www.google.com/search?q=korm%C3%A1ny+t%C3%BAlterhel%C3%A9ses+t%C3%A1mad%C3%A1s">túlterheléses támadásra</a> hivatkozva védik becsületüket, hanem egy kapcsolódó rendszert neveznek meg a hiba okaként.
+            <br>
+            Lehet készíteni tesztelési tervet, aminek mentén az elkészült program minden ága bejárható, de véleményem szerint kevésbé lehet elrontani az eredményt, ha minden elkészült modult önmagában és a rendszerbe építve is azonnal kipróbálok.
+            Szélsőséges adatokkal, olyan helyzeteket is szimulálva, amiknek bekövetkeztére szokványos körülmények közepette nem is lehet számítani. Ezt egyszer kell tisztességesen és nagy figyelemmel elvégezni. Ha átment a vizsgán, utána már nem lehet baj.
+            <br>
+            Mostantól megúszom ugyan a <code>menu.html</code> szerkesztgetését, de valahonnan a helyükre kell kerülniük a választható fejezetcímeknek és a hozzájuk vezető hivatkozásoknak.
+            Ezek forrása a <code>fejezetek.js</code>, amiben a szerkezetét tekintve nagyjából az alábbival azonos listából nyerem az adatokat.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/jelzes_03.webp">
+          </div>
+          <p>
+            Elég ezt karbantartani, és innen garantáltan időszerű adatok kerülnek a HTML file-okban elhelyezett összes hivatkozásba. Ha erre az egy adatforrásra elegendő figyelmet fordítok, akkor nyilván hibátlan lesz az összes hivatkozás tartalma is.
+            Nincs elírás, nincs figyelmetlenségből vagy kapkodásból fakadó gebasz, nincs kalamajka.
+            <br>
+            Van még egy hozadéka ennek az új koncepciónak. Erre építve pofonegyszerűen létrehozható a mindig friss oldaltérkép, aminek elkészítésével mostantól nem kell külön bajlódni.
+            Az oldaltérképnek ebben a környezetben több értelmezése lehetséges.
+          </p>
+          <ul>
+            <li><p>Érthetem rajta azt a térképet, ami segít a keresőmotoroknak (<a href="https://en.wikipedia.org/wiki/Search_engine">search engine</a>) eligazodni a weboldal fejezetei között.</p></li>
+            <li><p>Lehet szó arról a segédletről, amivel a weboldal látogatóit segítem abban, hogy könnyen áttekinthessék a kínált tartalmakat, és kedvükre válogathassanak ezek közül.</p></li>
+          </ul>
+          <p>
+            Utóbbi megjelenítéséhez elég elhelyezni egy <code>&lt;select name="*"&gt;&lt;/select&gt;</code> sort a HTML file-ban, és megjelenik az oldaltérkép (a témaválasztékok összevont listája), ami a korábban ismertetett adatszerkezetből, a <code>fejezetek.js</code> programfile-ban deklarált JSON adatokból nyeri tartalmát:
+            <br><br>
+            <select name="*"></select>
+            <br><br>
+            Az eredetileg kopasz SELECT elem tehát a JSON adatokból lett megtűzdelve OPTION listával, de ebben nem csak a fejezetek címei láthatók.
+            A címek elé kerülnek azok a jelek, amiket kiértékelve pontos képet kapunk a megjeleníthető tartalom egyéb tulajdonságairól.
+            Rettegek attól (romantikus túlzás, mert igazából nem rettegek, de tartok tőle), hogy valamelyik jelzéshez felfedezek egy pofásabb, kifejezőbb ikont,
+            ezt a szöveget meg elfelejtem hozzáigazítani a megváltozott jelhez. Máris pöszén néz ki, ahogy megszűnik az összhang a leírás, és a tényleges működés között.
+            Elébe menve ennek a rémisztő lehetőségnek, a jelmagyarázat is mindig a legfrissebb deklaráció szellemében készül, amit az <code>&lt;object name="jmtabla"&gt;&lt;/object&gt;</code> sor elhelyezésével illeszthetek be a HTML szövegbe.
+            Most már nem nyomaszt ez az eshetőség, máris jobban érzem magam.
+            <br><br>
+            <object name="jmtabla"></object>
+            <br>
+            A böngésző ablakának bal felső sarkában elhelyezett házikó ikon alatti százalékos érték arról tájékoztat, hogy az olvasható tartalomnak hányad része volt eddig látható.
+            Ezen kívül a megjelenítést is vezérelheted vele. Rányomva egyet oda gördül a tartalom, ameddig korábban eljutottál a megtekintésben.
+            Frissültnek jelzett fejezetnél a 100%-os értékre nyomva nem a végére gördül, hanem a korábbi látogatás alkalmával a fejezet végének minősülő rész és a hozzátoldott szakasz határára.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Ez a fejlesztés szolgálja úgy a látogatók kényelmét, mint a weboldal karbantartásával, a tartalom elhelyezésével foglalkozó személyzetét.
+            Bizonyos funkciók megvalósításához szükséges tárolni a megjelenítés adatait, amikből praktikusan cookie-k készülnek.
+            E technika használatának azonban következményei vannak. Ezek közül a kínosabb az, hogy a cookie-k törlésével megsemmisülnek ezek az adatok, tehát a korábbi megtekintésekre vonatkozó jelzések eltünnek.
+            A másik következmény, hogy a GDPR megjelenése óta a cookie-t használó weboldalak veszélyesnek számítanak. A minduntalan megjelenő "ez a weboldal sütiket használ" figyelmeztetésekről a középkori leprások jutnak eszembe,
+            akiknek kolomppal, csengettyűvel kellett jelezniük veszélyes állapotukat. Talán jobb egy fokkal, ha erről inkább a "vigyázz, a kutya harap" figyelmeztetés ugrik be.
+            <br><br>
+            ⚠️Vigyázz, a weboldal sütiket használ!
+            <br>
+            ⚠️Sérülhetnek a személyiségi jogaid!
+            <br>
+            ⚠️Zu Risiken und Nebenwirkungen lesen Sie die Packungsbeilage und fragen Sie Ihren Arzt oder Apotheker!
+            <br>
+            ⚠️Mikrohullámú sütőben ne száríts macskát!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/fejezetek.js"></script>

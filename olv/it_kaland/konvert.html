@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="A JPEG képek átalkítása WebP formátumra sima ügynek tűnt, de közben akadtak buktatók.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
+</head>
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="home" class="nav-link-wrapper" >
+            <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          </div>
+          <table><tr><td id="holtart">📝</td></tr></table>
+        </div>
+        <select name="olv"></select>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Sebességhajhász kaland az IT világában</h1>
+      <div class="box">
+        <div class="box-text">
+          <p><a name="elozo"></a></p>
+        </div>
+      </div>
+      <h1>Konvertálás (JPEG &rarr; WebP)</h1>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Adott a feladat. A JPEG nyersanyag és a WebP átalakítást végző <a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a> program (<code>cwebp.exe</code> <a href="https://developers.google.com/speed/webp/download">innen</a>) rendelkezésre áll, már csak cselekedni kell.
+            Első lépésben kíváncsi vagyok, hogyan teszi a dolgát, valóban működik-e? Egy kis kételkedés még nem ártott meg senkinek.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/webp_06_cli.webp">
+          </div>
+          <p>
+            Jól kezdődött ismerkedésünk, mert illedelmes programhoz méltóan tájékoztatott alapvető paraméterezéséről, így a következő parancsot már ennek megfelelően adtam ki: dolgozzuk fel a "jpeg" mappában lévő összes JPG típusú file-t, és az eredmény az eredeti névhez ragasztott ".webp" végződéssel kerüljön a "webp" mappába.
+            Hagyományosan így kell értelmezni a parancsot követő paramétereket, amikre hibajelzésekkel válaszolt a program, tehát helyesen értelmezni ebben a formában nem képes.
+            Nézzük, mit kezd olyan paraméterekkel, amikben nem használok helyettesítő karaktert (<a href="https://en.wikipedia.org/wiki/Wildcard_character">wildcard</a>), hanem egy bizonyos file-t jelölök meg inputként, és pontosan határozom meg az output file nevét.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/webp_07_cli.webp">
+          </div>
+          <p>
+            Egyesével prímán működik. A WebP stílusban újragondolt kép file az eredeti JPEG méretének töredékére zsugorodott (112 KiB  &rarr; 41 KiB), és felületes vizsgálattal nem látni különbséget a JPEG és a WebP változat megjelenésében (a <code>cwebp.exe</code> elhagyott <span style="white-space: nowrap;">-q</span> paramétere 75-ös default minőségi fokozatot eredményez a 0-100-as skálán).
+            A tömörítés eredményével elégedett vagyok, de azt ne gondolja senki, hogy elszántan és kitartóan, kihagyás és ismétlés nélkül, egy teljes műszakon át nem csinálok mást, mint többszázszor elindítom a <code>cwebp</code>-t különböző paraméterekkel.
+            Rábízom a feladatot egy <a href="https://en.wikipedia.org/wiki/PowerShell">PowerShell</a> scriptre, ami hibátlanul elvégzi helyettem ezt a nem embernek való, egyhangú munkát.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/webp_08_cli.webp">
+          </div>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/webp_09_cli.webp">
+          </div>
+          <p>
+            Hoppá! A szekérderéknyi JPEG kép konvertálása felé vezető úton több csapdát is elhelyeztek, de az első lépések megtétele még akadálymentes volt.
+            Szolgai hűséggel végzett végrehajtás helyett most már csúnya szavakkal kevert hibaüzenet jelenik meg. Disabled, error, unauthorized. Ezek általában semmi jót nem jelentenek.
+            A világ nem csak veszélyes, de bonyolult is, mert jelen esetben a script indítását megfelelően elő kell készíteni. Vállalni kell a felelősséget az esetlegesen bekövetkező káros hatásokért, ami ennek a műveletnek a végrehajtásával jár.
+            Úgy, mint amikor "R" beszélgetésre hívnak telefonon, és a kapcsolás előtt a kezelő megkérdezi, hogy vállalom-e a hívás költségét. Jó ez így, mert úgy érezhetem, hogy uralom a helyzetet, kezemben a döntés.
+            Az engedélyezés műveletéhez rendszerfelügyelői (<a href="https://en.wikipedia.org/wiki/System_administrator">admin</a>) jogosítvánnyal kell rendelkezni, ami egy hierarchikus szervezetben azt jelenti, hogy hívni kell a főnököt – a felelősség magasabb szintre kerül.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/webp_10_cli.webp">
+          </div>
+          <p>
+            A kellő figyelemmel előkészített folyamat csont nélkül lefut, és a néhány JPEG képet tartalmazó tesztkörnyezetben előállnak a jóval tömörebb WebP file-ok. Ez többszáz file esetében is ilyen simán fog működni.
+            Nem fájdalmas, nem unalmas, már szinte vidám. Elindítom, aztán teszem a dolgomat, ez meg egyszer elkészül.
+          </p>
+        </div>
+      </div>
+      <div class="box-text">
+        <p><a name="kovetkezo"></a></p>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/fejezetek.js"></script>
