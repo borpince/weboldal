@@ -85,7 +85,7 @@
           <p>
             Ezzel a megoldással nem kétséges, hogy ha változik a téma címe, vagy új téma keletkezik, akkor annak módosításáról, beiktatásáról nem csak itt kell gondoskodni, hanem át kell vezetni a változást a témát feldolgozó fejezet címsorában is (heading tag), és az érintett HTML file <code>&lt;title&gt;</code> tartalmának meghatározása sem maradhat el.
             Továbbá helyre kell tenni az összetartozó témák elején és végén szereplő, előző és következő fejezetekre mutató címeket, hivatkozásokat is. Egy új fejezet beszúrása a meglévők közé kaotikus helyzetet teremt, ha nem figyelek kellőképpen.
-            Sok munka, nagy felelősség, el lehet rontani. Ha elrontom, annak nyoma van. A világhálón csúfoskodik, ami nem ad okot arra, hogy a mellemet döngetve büszkélkedjek az eredménnyel.
+            Sok munka, nagy felelősség, el lehet rontani. Ha elrontom, annak nyoma van. A világhálón csúfoskodik, ami nem ad okot arra, hogy mellemet döngetve büszkélkedjek az eredménnyel.
             <br>
             Nem értek a matematikához, de egy bonyolultnak tűnő egyenlet megoldásánál is csodát tesz az egyszerűsítés. Hatékony fegyver, nosza, alkalmazzuk.
             Az egyszerűsített <code>menu.html</code> szemmel láthatóan letisztult tartalmat mutat, mindössze 25 sor az egész. A 17-21 sorok képviselik azt a részt, ami alapján a böngésző a témaválasztékot megjeleníti.
@@ -117,7 +117,7 @@
             <br>
             Erre mondják a bölcsek, hogy egy számítógépes program nem az elképzeléseinket váltja valóra, hanem az utasításainkat végrehajtva működik. Szabatosabban kell fogalmazni, és jó lesz.
             Egyszerű recept a megoldáshoz, de egyelőre fingom sincs, hogy miért dolgozza fel másképpen ugyanaz a program a különböző webszerverekről betöltődő, de azonos tartalmú anyagot? Aztán kiderítettem, hogy a Pages-ről betöltött cucc esetén az URL nem tartalmazza a szokásos végződést, és például
-            "https://pince.eu/olv/jelzesek.html" helyett "https://pince.eu/olv/jelzesek" lesz a <code>location.href</code> értéke, amit most is láthatsz, ha rápillantasz a böngésző címsorára.
+            "https://pince.eu/olv/jelzesek.html" helyett "https://pince.eu/olv/jelzesek" lesz a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/href"><code>location.href</code></a> értéke, amit most is láthatsz, ha rápillantasz a böngésző címsorára.
             <br>
             Nincs mit tenni, alkalmazkodni kell ehhez a viselkedéshez is, aztán jó lesz. Nem akarok annyira érteni hozzá, hogy a miértre is tudjam a választ, megelégszem azzal, hogy a 116. sorba írt kiegészítéssel megszűnt a hibajelenség.
           </p>
@@ -125,7 +125,7 @@
         <div class="box-text">
           <p>
             Mostantól megúszom ugyan a <code>menu.html</code> szerkesztgetését, de valahonnan a helyükre kell kerülniük a választható fejezetcímeknek és a hozzájuk vezető hivatkozásoknak.
-            Ezek forrása a <code>fejezetek.js</code>, amiben a szerkezetét tekintve nagyjából az alábbival azonos listából nyerem az adatokat.
+            Ezek forrása a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js"><code>fejezetek.js</code></a>, amiben a szerkezetét tekintve nagyjából az alábbival azonos listából nyerem az adatokat.
           </p>
           <div class="box-img">
             <img src="https://kep.pince.eu/jelzes_03.webp">
