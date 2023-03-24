@@ -73,6 +73,7 @@ var temak = {
     }
   }
 }
+
 var glob = {
   href_nev: "",
   cim: "",
@@ -80,8 +81,7 @@ var glob = {
   ttl_nap: 400,
   vegleges: null,
   hol_tart: document.getElementById("holtart"),
-  href_nev_tb: [],
-  nezett_tb: [],
+  nezett: new Map(),
   select_tb: [],
   obj_tb: []
 }
@@ -139,30 +139,30 @@ function letezik(nev,sub) {
   return tmdex;
 }
 
-function hanyad_tar(i) {
-  var hanyad = (glob.nezett_tb[i].scy+glob.nezett_tb[i].inh)/glob.nezett_tb[i].y;
+function hanyad_tar(nev) {
+  var dat = glob.nezett.get(nev);
+  var hanyad = (dat.scy+dat.inh)/dat.y;
   return (hanyad > 1.0) ? 1.0:hanyad;
 }
 
-function hanyad_most(i) {
+function hanyad_most() {
   var hanyad = (window.scrollY+window.innerHeight)/document.body.scrollHeight;
   return (hanyad > 1.0) ? 1.0:hanyad;
 }
 
-function frissult(tmdex,i) {
-  return (temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver > glob.nezett_tb[i].ver);
+function frissult(tmdex,nev) {
+  return (temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver > glob.nezett.get(nev).ver);
 }
 
 function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
   var jel = "&#8195;" //EM SPACE
   if (csnj) jel = csnj;
     else {
-    var i = glob.href_nev_tb.indexOf(le.nev);
-    if (i > -1) {
-      var mennyi = hanyad_tar(i);
+    if (glob.nezett.has(le.nev)) {
+      var mennyi = hanyad_tar(le.nev);
       jel = jelek.megnezte[0];
       if (mennyi >= 0.98) jel = jelek.vegignezte[0]+"&#8197;"; //+FOUR-PER-EM SPACE
-      if (le.ver > glob.nezett_tb[i].ver) jel = jelek.frissult[0];
+      if (le.ver > glob.nezett.get(le.nev).ver) jel = jelek.frissult[0];
     } else if (le.nev.indexOf('/') > -1) jel = jelek.web[0];
   }
   return jel+"&#8197;"; //+FOUR-PER-EM SPACE
@@ -180,9 +180,9 @@ function lista_gyarto(select,ref_nev) {
     var jel = "";
     if (lista.length > 1) {
       for (var i = 0; i < lista.length; i++) {
-        var idx = glob.href_nev_tb.indexOf(lista[i].nev);
-        if (idx > -1) {
-          if (lista[i].ver > glob.nezett_tb[idx].ver) return jelek.frissult[0];
+        //var idx = glob.href_nev_tb.indexOf(lista[i].nev);
+        if (glob.nezett.has(lista[i].nev)) {
+          if (lista[i].ver > glob.nezett.get(lista[i].nev).ver) return jelek.frissult[0];
           jel = jelek.megnezte[0];
         }
       }
@@ -330,10 +330,7 @@ function nezettseg_betolt() {
     for (var i = 0; i < adatok.length; i++) {
       if (adatok[i].trim().indexOf(glob.cookie_eloke) == 0) {
         var p = adatok[i].trim().indexOf('=');
-        glob.href_nev_tb.push(adatok[i].trim().substring(glob.cookie_eloke.length,p));
-        glob.nezett_tb.push(JSON.parse(adatok[i].trim().substring(p+1)));
-        //var tmdex = letezik(glob.href_nev_tb[i],true);
-        //if (glob.nezett_tb[i].ver > temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver)
+        glob.nezett.set(adatok[i].trim().substring(glob.cookie_eloke.length,p),JSON.parse(adatok[i].trim().substring(p+1)));
       }
     }
   } catch(hiba) { window.alert("nem sikerült beolvasni a nézettségi adatokat") };
@@ -352,45 +349,36 @@ function nezettseg_frissit() {
   if (tmdex.tema) { //index és menu kizárva
     clearTimeout(glob.vegleges);
     glob.vegleges = setTimeout(function() {
-      var i = glob.href_nev_tb.indexOf(glob.href_nev);
-      if (i < 0) {
-        glob.href_nev_tb.push(glob.href_nev);
-        glob.nezett_tb.push({y:1,scy:0,inh:0});
-        i = glob.href_nev_tb.length-1;
+      if (!glob.nezett.has(glob.href_nev)) {
+        glob.nezett.set(glob.href_nev,{y:1,scy:0,inh:0});
       }
-      if (hanyad_most(i) > hanyad_tar(i)) {
-        if (glob.nezett_tb[i].inh == 0) //nézettségi előzmény nélküli téma
-          glob.nezett_tb[i].ver = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver;
-
-        glob.nezett_tb[i].x = document.body.scrollWidth;
-        glob.nezett_tb[i].y = document.body.scrollHeight;
-        glob.nezett_tb[i].scy = Math.round(window.scrollY);
-        glob.nezett_tb[i].inh = window.innerHeight;
-        glob.nezett_tb[i].hanyad = hanyad_most(i).toFixed(3);
-        nezettseget_tarol(glob.nezett_tb[i]);
+      if (hanyad_most() > hanyad_tar(glob.href_nev)) {
+        var dat = {x:document.body.scrollWidth,y:document.body.scrollHeight,scy:Math.round(window.scrollY),inh:window.innerHeight,hanyad:hanyad_most().toFixed(3)}
+        if (glob.nezett.get(glob.href_nev).inh == 0) //nézettségi előzmény nélküli téma
+          dat.ver = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver;
+        glob.nezett.set(glob.href_nev,dat);
+        nezettseget_tarol(dat);
       }
       if (glob.hol_tart) {
-        if ((hanyad_most(i) > 0.97) && frissult(tmdex,i)) {
-          glob.nezett_tb[i].ver = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver;
-          nezettseget_tarol(glob.nezett_tb[i]);
+        var dat = glob.nezett.get(glob.href_nev);
+        if ((hanyad_most() > 0.97) && frissult(tmdex,glob.href_nev)) {
+          dat.ver = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver;
+          nezettseget_tarol(dat);
         }
-        glob.hol_tart.innerHTML = (frissult(tmdex,i) ? jelek.frissult[0]:"")+`${(glob.nezett_tb[i].hanyad*100).toFixed(0)}%`;
+        glob.hol_tart.innerHTML = (frissult(tmdex,glob.href_nev) ? jelek.frissult[0]:"")+`${(dat.hanyad*100).toFixed(0)}%`;
       }
     },2000);
   }
 }
 
-function ipszilon(i) {
-  //itt nem áll rendelketzésre a tmdex, ezért a jelek.frissult[0] utal a megváltozott "ver" értékre
-  //ez esetben a korábbi %-os értéket arányosítom, és így lehetséges a folytatás a megfelelő helytől
-  //addig, amíg "ver" értéke nem frissül
-  return (glob.hol_tart.innerHTML.indexOf(jelek.frissult[0]) > -1) ? ((document.body.scrollHeight*(glob.nezett_tb[i].y/document.body.scrollHeight)*glob.nezett_tb[i].hanyad)-window.innerHeight):(document.body.scrollHeight*glob.nezett_tb[i].hanyad)-window.innerHeight;
-}
-
 function folytat() {
-  var i = glob.href_nev_tb.indexOf(glob.href_nev);
-  if (i > -1) {
-    window.scrollTo(0,ipszilon(i));
+  if (glob.nezett.has(glob.href_nev)) {
+    var dat = glob.nezett.get(glob.href_nev);
+//itt nem áll rendelkezésre a tmdex, ezért a jelek.frissult[0] utal a megváltozott "ver" értékre
+//ez esetben a korábbi %-os értéket arányosítom, és így lehetséges a folytatás a megfelelő helytől
+//addig, amíg "ver" értéke nem frissül
+    var y = (glob.hol_tart.innerHTML.indexOf(jelek.frissult[0]) > -1) ? ((document.body.scrollHeight*(dat.y/document.body.scrollHeight)*dat.hanyad)-window.innerHeight):(document.body.scrollHeight*dat.hanyad)-window.innerHeight;
+    window.scrollTo(0,y);
   }
 }
 
@@ -414,7 +402,6 @@ parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
 
 window.addEventListener("scroll",() => {nezettseg_frissit();});
 if (glob.hol_tart) glob.hol_tart.addEventListener("click",() => {folytat();});
-
 
 //https://stackoverflow.com/questions/43043113/how-to-force-reloading-a-page-when-using-browser-back-button
 window.addEventListener("pageshow", function (event) {
