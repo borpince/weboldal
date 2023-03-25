@@ -94,7 +94,7 @@ var jelek = {
   tcs_idx: ["ⓝ","témacsoport számmal jelzett fejezete"] //témacsoporton belüli index
 }
 
-function jelmagyarazat(option) {
+function jelmagyarazat(object) {
   var tabla = document.createElement('table');
   tabla.setAttribute("border","1");
   for (var jel in jelek) {
@@ -107,7 +107,7 @@ function jelmagyarazat(option) {
     }
     tabla.appendChild(sor);
   }
-  option.appendChild(tabla);
+  object.appendChild(tabla);
 }
 
 function href_nev() {
@@ -140,8 +140,11 @@ function letezik(nev,sub) {
 }
 
 function hanyad_tar(nev) {
-  var dat = glob.nezett.get(nev);
-  var hanyad = (dat.scy+dat.inh)/dat.y;
+  var hanyad = 0;
+  if (glob.nezett.has(nev)) {
+    var dat = glob.nezett.get(nev);
+    var hanyad = (dat.scy+dat.inh)/dat.y;
+  }
   return (hanyad > 1.0) ? 1.0:hanyad;
 }
 
@@ -151,7 +154,13 @@ function hanyad_most() {
 }
 
 function frissult(tmdex,nev) {
-  return (temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver > glob.nezett.get(nev).ver);
+  var t_ver = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver;
+  if (glob.nezett.has(nev)) {
+    var dat = glob.nezett.get(nev);
+    //korábbi programhiba miatt előfordulhatnak "ver" nélkül tárolt rekordok
+    t_ver = (dat.hasOwnProperty("ver")) ? dat.ver:0;
+  }
+  return (temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver > t_ver);
 }
 
 function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
@@ -180,7 +189,6 @@ function lista_gyarto(select,ref_nev) {
     var jel = "";
     if (lista.length > 1) {
       for (var i = 0; i < lista.length; i++) {
-        //var idx = glob.href_nev_tb.indexOf(lista[i].nev);
         if (glob.nezett.has(lista[i].nev)) {
           if (lista[i].ver > glob.nezett.get(lista[i].nev).ver) return jelek.frissult[0];
           jel = jelek.megnezte[0];
@@ -349,35 +357,30 @@ function nezettseg_frissit() {
   if (tmdex.tema) { //index és menu kizárva
     clearTimeout(glob.vegleges);
     glob.vegleges = setTimeout(function() {
-      if (!glob.nezett.has(glob.href_nev)) {
-        glob.nezett.set(glob.href_nev,{y:1,scy:0,inh:0});
-      }
-      if (hanyad_most() > hanyad_tar(glob.href_nev)) {
-        var dat = {x:document.body.scrollWidth,y:document.body.scrollHeight,scy:Math.round(window.scrollY),inh:window.innerHeight,hanyad:hanyad_most().toFixed(3)}
-        if (glob.nezett.get(glob.href_nev).inh == 0) //nézettségi előzmény nélküli téma
-          dat.ver = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver;
+      var ht = hanyad_tar(glob.href_nev);
+      if ((hanyad_most() > ht) || frissult(tmdex,glob.href_nev)) {
+        var hanyad_idomitott = hanyad_most().toFixed(3);
+        if (glob.nezett.has(glob.href_nev) && frissult(tmdex,glob.href_nev)) {
+          var y = glob.nezett.get(glob.href_nev).y;
+          if (document.body.scrollHeight > y) hanyad_idomitott = ht * (y/document.body.scrollHeight);
+        }
+        var dat = {y: document.body.scrollHeight,
+                   scy: Math.round(window.scrollY),
+                   inh: window.innerHeight,
+                   hanyad: hanyad_idomitott,
+                   ver: temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver}
         glob.nezett.set(glob.href_nev,dat);
         nezettseget_tarol(dat);
+        ht = dat.hanyad;
       }
-      if (glob.hol_tart) {
-        var dat = glob.nezett.get(glob.href_nev);
-        if ((hanyad_most() > 0.97) && frissult(tmdex,glob.href_nev)) {
-          dat.ver = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver;
-          nezettseget_tarol(dat);
-        }
-        glob.hol_tart.innerHTML = (frissult(tmdex,glob.href_nev) ? jelek.frissult[0]:"")+`${(dat.hanyad*100).toFixed(0)}%`;
-      }
+      if (glob.hol_tart) glob.hol_tart.innerHTML = `${(ht*100).toFixed(0)}%`;
     },2000);
   }
 }
 
 function folytat() {
   if (glob.nezett.has(glob.href_nev)) {
-    var dat = glob.nezett.get(glob.href_nev);
-//itt nem áll rendelkezésre a tmdex, ezért a jelek.frissult[0] utal a megváltozott "ver" értékre
-//ez esetben a korábbi %-os értéket arányosítom, és így lehetséges a folytatás a megfelelő helytől
-//addig, amíg "ver" értéke nem frissül
-    var y = (glob.hol_tart.innerHTML.indexOf(jelek.frissult[0]) > -1) ? ((document.body.scrollHeight*(dat.y/document.body.scrollHeight)*dat.hanyad)-window.innerHeight):(document.body.scrollHeight*dat.hanyad)-window.innerHeight;
+    var y = (document.body.scrollHeight*glob.nezett.get(glob.href_nev).hanyad)-window.innerHeight;
     window.scrollTo(0,y);
   }
 }
