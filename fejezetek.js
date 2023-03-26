@@ -3,7 +3,7 @@ var temak = {
   "borok": {
     cim:"– – borok, évjáratok",
     lista:{
-      "2020": [{cim:"#01: cabernet sauvignon", nev:"01",ver:1}],
+      "2020": [{cim:"#01: cabernet sauvignon", nev:"01",ver:0}],
       "2022": [
         {cim:"#02: oportó",nev:"02",ver:0},
         {cim:"#03: rozé",nev:"03",ver:0},
