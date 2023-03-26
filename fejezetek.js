@@ -415,8 +415,6 @@ glob.href_nev = href_nev();
 elore_hatra();
 nezettseg_betolt();
 nezettseg_frissit(true);
-//Chrome for Androidon késleltetés nélkül nem működik a könyvjelző:
-setTimeout(function() {kjelzo_frissit(true);},100);
 
 glob.select_tb = document.getElementsByTagName("SELECT");
 for (var i = 0; i < glob.select_tb.length; i++)
@@ -427,6 +425,7 @@ for (var i = 0; i < glob.obj_tb.length; i++) {
   if (glob.obj_tb[i].name == "jmtabla") jelmagyarazat(glob.obj_tb[i]);
 }
 
+kjelzo_frissit(true);
 parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
 
 window.addEventListener("scroll",() => {nezettseg_frissit();});
