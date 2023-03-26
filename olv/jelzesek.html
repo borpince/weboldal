@@ -21,6 +21,7 @@
           <div id="home" class="nav-link-wrapper" >
             <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
           </div>
+          <button id="kjelzo"></button>
           <table><tr><td id="holtart"></td></tr></table>
         </div>
         <select name="olv"></select>
@@ -110,7 +111,7 @@
         </div>
         <div class="box-text-update">
           <p>
-            Minden valamirevaló szakember tud mesélni legalább egy történetet, amivel ezt cáfolja. Nem kell messzire menni, mert a <code>fejezetek.js</code> <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L116">116. sorára</a> eredetileg nem volt szükség, enélkül is kifogástalanul működött a program.
+            Minden valamirevaló szakember tud mesélni legalább egy történetet, amivel ezt cáfolja. Nem kell messzire menni, mert a <code>fejezetek.js</code> <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L118">118. sorára</a> eredetileg nem volt szükség, enélkül is kifogástalanul működött a program.
             Aztán elérkezett az a lépés, hogy alapos tesztelés után (nem laborkörülmények között, hanem egy vadon élő NGINX webszerveren) a Cloudflare Pages szolgáltatásán belül nyomtam egy "Save and Deploy"-t.
             Príma. Kihúzza a GitHubról, és a helyére teszi a legfrissebb változatot, ami már működik is, elérhető a webről. Nem is az elérhetőséggel van a baj, hanem az okoz meglepetést, hogy minden téma legördülő választéka helyett az oldaltérkép jelenik meg,
             ami nem az eredeti elképzelésem szerinti működés, de a teszteredményekhez képest is merőben más.
@@ -119,7 +120,7 @@
             Egyszerű recept a megoldáshoz, de egyelőre fingom sincs, hogy miért dolgozza fel másképpen ugyanaz a program a különböző webszerverekről betöltődő, de azonos tartalmú anyagot? Aztán kiderítettem, hogy a Pages-ről betöltött cucc esetén az URL nem tartalmazza a szokásos végződést, és például
             "https://pince.eu/olv/jelzesek.html" helyett "https://pince.eu/olv/jelzesek" lesz a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/href"><code>location.href</code></a> értéke, amit most is láthatsz, ha rápillantasz a böngésző címsorára.
             <br>
-            Nincs mit tenni, alkalmazkodni kell ehhez a viselkedéshez is, aztán jó lesz. Nem akarok annyira érteni hozzá, hogy a miértre is tudjam a választ, megelégszem azzal, hogy a 116. sorba írt kiegészítéssel megszűnt a hibajelenség.
+            Nincs mit tenni, alkalmazkodni kell ehhez a viselkedéshez is, aztán jó lesz. Nem akarok annyira érteni hozzá, hogy a miértre is tudjam a választ, megelégszem azzal, hogy a 118. sorba írt kiegészítéssel megszűnt a hibajelenség.
           </p>
         </div>
         <div class="box-text">
@@ -155,11 +156,15 @@
             <br><br>
             <object name="jmtabla"></object>
             <br>
-            A böngésző ablakának bal felső sarkában elhelyezett házikó ikon alatti százalékos érték arról tájékoztat, hogy az olvasható tartalomnak hányad része volt eddig látható.
+            A böngésző ablakának bal felső sarkában elhelyezett házikó ikon alatt kapcsolhatod ki/be a könyvjelzőt. Bekapcsolva a weboldal következő betöltésekor a megjelölt szakasz jelenik meg, innen folytathatod az olvasást.
+            A könyvjelző kapcsolója alatti százalékos érték arról tájékoztat, hogy az olvasható tartalomnak hányad része volt eddig látható.
             Ezen kívül a megjelenítést is vezérelheted vele. Rányomva egyet oda gördül a tartalom, ameddig korábban eljutottál a megtekintésben.
+            Tovább lapozva az érték növekszik, a könyvjelző önműködően kikapcsol. A könyvjelzővel ellátott fejezetek címei piros jelölést kapnak a menüben.
+            Nem érvényesül ez a jelölés a Chrome for Android böngészőben, de a könyvjelző hatása ott is működik: a fejezetet betöltve a megjelölt szakaszhoz gördül a tartalom.
             <br><br>
-            Ismert hibája/hiányossága az ismertetett megoldásnak, hogy csak a korábbi tartalom végéhez toldott változások, bővítések esetén mutatja helyesen a megtekintési arányt az egészhez viszonyítva.
-            Még mindig gondolkodnék a megoldáson, és valószínűleg soha nem készülne el, ha a betoldásos bővítést is kezelhetővé kívánnám tenni. Nem bonyolítom.
+            Ismert hibája/hiányossága az elkészült programnak, hogy csak a korábbi tartalom végéhez toldott változások, bővítések esetén mutatja helyesen a megtekintési arányt az egészhez viszonyítva.
+            További tökéletlenséggel kell számolni, ha átméretezed a böngészőablakot, megváltoztatod az oldalarányt. Ez esetben a korábbi pozíciókhoz görgetés pontossága romolhat, különösen a képeket is tartalmazó fejezeteknél.
+            Tökéletességre törekedve még mindig gondolkodnék a megoldáson, és valószínűleg soha nem érnék a végére, ha a betoldásos bővítést is kezelhetővé kívánnám tenni. Így viszont elég hamar elkészült, és a hiányosságok ellenére jól használható.
           </p>
         </div>
       </div>

@@ -73,7 +73,6 @@ var temak = {
     }
   }
 }
-
 var glob = {
   href_nev: "",
   cim: "",
@@ -81,6 +80,7 @@ var glob = {
   ttl_nap: 400,
   vegleges: null,
   hol_tart: document.getElementById("holtart"),
+  kjelzo: document.getElementById("kjelzo"),
   nezett: new Map(),
   select_tb: [],
   obj_tb: []
@@ -91,7 +91,9 @@ var jelek = {
   vegignezte: ["✓","végignézted"],
   frissult: ["⭐","frissült a legutóbbi megtekintés óta"],
   folder: ["📁","több fejezetet magába foglaló témacsoport"],
-  tcs_idx: ["ⓝ","témacsoport számmal jelzett fejezete"] //témacsoporton belüli index
+  tcs_idx: ["ⓝ","témacsoport számmal jelzett fejezete"], //témacsoporton belüli index
+  konyv: ["📖","könyvjelző kikapcsolva"],
+  jelzo: ["🔖","könyvjelző bekapcsolva"]
 }
 
 function jelmagyarazat(object) {
@@ -168,7 +170,8 @@ function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
   if (csnj) jel = csnj;
     else {
     if (glob.nezett.has(le.nev)) {
-      var mennyi = hanyad_tar(le.nev);
+      var dat = glob.nezett.get(le.nev);
+      var mennyi = (dat.scy+dat.inh)/dat.y; //hanyad_tar helyett
       jel = jelek.megnezte[0];
       if (mennyi >= 0.98) jel = jelek.vegignezte[0]+"&#8197;"; //+FOUR-PER-EM SPACE
       if (le.ver > glob.nezett.get(le.nev).ver) jel = jelek.frissult[0];
@@ -198,6 +201,11 @@ function lista_gyarto(select,ref_nev) {
     return jel;
   }
   
+  function jelzett(nev) {
+    if (glob.nezett.has(nev)) return glob.nezett.get(nev).hasOwnProperty("mem");
+    return false;
+  }
+
   function valasztek(tk) { //tk: téma kulcs (pl. borok)
     for (var lek in temak[tk].lista) { //lek: lista elem kulcs (pl. "2020", "a", "b" stb.)
       if (lek.length > 1) { //csoportokba szedett témák (leginkább a "borok")
@@ -209,7 +217,8 @@ function lista_gyarto(select,ref_nev) {
           option.folder = tk;
           option.subfolder = le.hasOwnProperty("subfolder") ? le.subfolder:"";
           option.value = le.nev;
-          option.innerHTML = nj(le)+le.cim;
+          option.innerHTML = "<u>"+nj(le)+le.cim+"</u>";
+          if (jelzett(le.nev)) option.setAttribute("style","color:goldenrod");
           optgroup.appendChild(option);
           if (ref_nev == le.nev) glob.cim = le.cim;
         }
@@ -225,6 +234,7 @@ function lista_gyarto(select,ref_nev) {
           option.value = le.nev;
           var fejezet = (select.name == '*') ? `${karikas_szam(i+1)}&#8197;`:jelek.folder[0];
           option.innerHTML = nj(le,csnj)+(temak[tk].lista[lek].length > 1 ? fejezet:"")+le.cim;
+          if (jelzett(le.nev)) option.setAttribute("style","color:goldenrod");
           select.appendChild(option);
           if (ref_nev == le.nev) glob.cim = le.cim;
          }
@@ -352,7 +362,20 @@ function nezettseget_tarol(dat) {
   document.cookie = tema_kulcs() + "=" + JSON.stringify(dat) + ";" + expires + ";path=/";
 }
 
-function nezettseg_frissit() {
+function kjelzo_frissit(elso=false) {
+  if (glob.kjelzo) {
+    if (glob.nezett.has(glob.href_nev)) {
+      glob.kjelzo.style.display = "block";
+      var dat = glob.nezett.get(glob.href_nev);
+      if (dat.hasOwnProperty("mem")) {
+        glob.kjelzo.innerHTML = jelek.jelzo[0];
+        if (elso) window.scrollTo(0,dat.mem);
+      } else glob.kjelzo.innerHTML = jelek.konyv[0];
+    } else glob.kjelzo.style.display = "none";
+  }
+}
+
+function nezettseg_frissit(elso=false) {
   var tmdex = letezik(glob.href_nev,false);
   if (tmdex.tema) { //index és menu kizárva
     clearTimeout(glob.vegleges);
@@ -374,6 +397,7 @@ function nezettseg_frissit() {
         ht = dat.hanyad;
       }
       if (glob.hol_tart) glob.hol_tart.innerHTML = `${(ht*100).toFixed(0)}%`;
+      if (!elso) kjelzo_frissit();
     },2000);
   }
 }
@@ -390,7 +414,9 @@ function folytat() {
 glob.href_nev = href_nev();
 elore_hatra();
 nezettseg_betolt();
-nezettseg_frissit();
+nezettseg_frissit(true);
+//Chrome for Androidon késleltetés nélkül nem működik a könyvjelző:
+setTimeout(function() {kjelzo_frissit(true);},100);
 
 glob.select_tb = document.getElementsByTagName("SELECT");
 for (var i = 0; i < glob.select_tb.length; i++)
@@ -404,7 +430,23 @@ for (var i = 0; i < glob.obj_tb.length; i++) {
 parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
 
 window.addEventListener("scroll",() => {nezettseg_frissit();});
-if (glob.hol_tart) glob.hol_tart.addEventListener("click",() => {folytat();});
+if (glob.hol_tart) {
+  glob.hol_tart.addEventListener("click",() => {folytat();});
+  glob.hol_tart.innerHTML = "&#8195;&#8195;";
+}
+
+if (glob.kjelzo) glob.kjelzo.addEventListener("click",() => {
+  if (glob.nezett.has(glob.href_nev)) {
+    var dat = glob.nezett.get(glob.href_nev);
+    if (dat.hasOwnProperty("mem")) delete dat.mem;
+      else {
+      dat.mem = Math.round(window.scrollY);
+      glob.nezett.set(glob.href_nev,dat);
+    }
+    nezettseget_tarol(dat);
+    kjelzo_frissit();
+  }
+});
 
 //https://stackoverflow.com/questions/43043113/how-to-force-reloading-a-page-when-using-browser-back-button
 window.addEventListener("pageshow", function (event) {
