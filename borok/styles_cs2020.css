@@ -4,6 +4,7 @@
   background-color:rgba(69, 81, 134, 0.747);
   border-radius: 16%;
   border: 1px solid black;
+  cursor: pointer;
 }
 .nagybutton {
   margin: 0 0 20px;

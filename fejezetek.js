@@ -3,7 +3,7 @@ var temak = {
   "borok": {
     cim:"– – borok, évjáratok",
     lista:{
-      "2020": [{cim:"#01: cabernet sauvignon", nev:"01",ver:0}],
+      "2020": [{cim:"#01: cabernet sauvignon", nev:"01",ver:1}],
       "2022": [
         {cim:"#02: oportó",nev:"02",ver:0},
         {cim:"#03: rozé",nev:"03",ver:0},
@@ -367,6 +367,7 @@ function kjelzo_frissit(elso=false) {
     if (glob.nezett.has(glob.href_nev)) {
       glob.kjelzo.style.display = "block";
       var dat = glob.nezett.get(glob.href_nev);
+      glob.kjelzo.setAttribute("title",`könyvjelző ${dat.hasOwnProperty("mem") ? "be":"ki"}kapcsolva`);
       if (dat.hasOwnProperty("mem")) {
         glob.kjelzo.innerHTML = jelek.jelzo[0];
         if (elso) window.scrollTo(0,dat.mem);
@@ -381,8 +382,9 @@ function nezettseg_frissit(elso=false) {
     clearTimeout(glob.vegleges);
     glob.vegleges = setTimeout(function() {
       var ht = hanyad_tar(glob.href_nev);
-      if ((hanyad_most() > ht) || frissult(tmdex,glob.href_nev)) {
-        var hanyad_idomitott = hanyad_most().toFixed(3);
+      var kul = hanyad_most()-ht;
+      if ((kul > 0.0002) || frissult(tmdex,glob.href_nev)) { //0.0002: toFixed(3) miatti pontatlanság
+        var hanyad_idomitott = hanyad_most();
         if (glob.nezett.has(glob.href_nev) && frissult(tmdex,glob.href_nev)) {
           var y = glob.nezett.get(glob.href_nev).y;
           if (document.body.scrollHeight > y) hanyad_idomitott = ht * (y/document.body.scrollHeight);
@@ -390,7 +392,7 @@ function nezettseg_frissit(elso=false) {
         var dat = {y: document.body.scrollHeight,
                    scy: Math.round(window.scrollY),
                    inh: window.innerHeight,
-                   hanyad: hanyad_idomitott,
+                   hanyad: hanyad_idomitott.toFixed(3),
                    ver: temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].ver}
         glob.nezett.set(glob.href_nev,dat);
         nezettseget_tarol(dat);
@@ -425,13 +427,14 @@ for (var i = 0; i < glob.obj_tb.length; i++) {
   if (glob.obj_tb[i].name == "jmtabla") jelmagyarazat(glob.obj_tb[i]);
 }
 
-kjelzo_frissit(true);
+addEventListener("load", () => {kjelzo_frissit(true);});
 parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
 
 window.addEventListener("scroll",() => {nezettseg_frissit();});
 if (glob.hol_tart) {
   glob.hol_tart.addEventListener("click",() => {folytat();});
   glob.hol_tart.innerHTML = "&#8195;&#8195;";
+  glob.hol_tart.setAttribute("title","a megtekintés eddigi legmagasabb aránya a teljes terjedelemhez viszonyítva\n(ha megnyomod, odagördül)");
 }
 
 if (glob.kjelzo) glob.kjelzo.addEventListener("click",() => {
@@ -455,4 +458,5 @@ window.addEventListener("pageshow", function (event) {
 
 //https://css-tricks.com/can-javascript-detect-the-browsers-zoom-level/
 window.visualViewport.addEventListener("resize", nezettseg_frissit);
+
 })();
