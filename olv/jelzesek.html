@@ -135,12 +135,17 @@
             Elég ezt karbantartani, és innen garantáltan időszerű adatok kerülnek a HTML file-okban elhelyezett összes hivatkozásba. Ha erre az egy adatforrásra elegendő figyelmet fordítok, akkor nyilván hibátlan lesz az összes hivatkozás tartalma is.
             Nincs elírás, nincs figyelmetlenségből vagy kapkodásból fakadó gebasz, nincs kalamajka.
             <br>
-            Van még egy hozadéka ennek az új koncepciónak. Erre építve pofonegyszerűen létrehozható a mindig friss oldaltérkép, aminek elkészítésével mostantól nem kell külön bajlódni.
+            Van még egy hozadéka ennek az új koncepciónak. Erre építve pofonegyszerűen létrehozható a mindig friss és hibátlan oldaltérkép, aminek elkészítésével mostantól nem kell külön bajlódni.
             Az oldaltérképnek ebben a környezetben több értelmezése lehetséges.
           </p>
           <ul>
-            <li><p>Érthetem rajta azt a térképet, ami segít a keresőmotoroknak (<a href="https://en.wikipedia.org/wiki/Search_engine">search engine</a>) eligazodni a weboldal fejezetei között.</p></li>
-            <li><p>Lehet szó arról a segédletről, amivel a weboldal látogatóit segítem abban, hogy könnyen áttekinthessék a kínált tartalmakat, és kedvükre válogathassanak ezek közül.</p></li>
+            <li><p>Érthetem rajta azt a térképet, ami segít a keresőmotoroknak (<a href="https://en.wikipedia.org/wiki/Search_engine">search engine</a>) eligazodni a weboldal fejezetei között.
+              <br>
+              Google Search Console, Bing Webmaster Tools – ezeken a helyeken adnak lehetőséget arra, hogy a <a href="https://en.wikipedia.org/wiki/Search_engine_optimization">SEO</a>-műveletek részeként feltöltsem az oldaltérképet
+              (webhelytérképnek is hívják), ezért az időszerű térkép legyártására beidomítottam a programot.
+              Az egyszerűség jegyében az URL megfelelő paraméterezésével kérhetem az anyagot: <code><a href="https://pince.eu/?terkep">pince.eu/?terkep</a></code> (rajtam kívül senkit nem érdekel, ezért nincs szükség kidolgozott kezelőfelületre).
+            </p></li>
+            <li><p>Lehet szó arról a segédletről, amivel a weboldal látogatóinak teszem könnyen áttekinthetővé a kínált tartalmakat, hogy kedvükre válogathassanak ezek közül.</p></li>
           </ul>
           <p>
             Utóbbi megjelenítéséhez elég elhelyezni egy <code>&lt;select name="*"&gt;&lt;/select&gt;</code> sort a HTML file-ban, és megjelenik az oldaltérkép (a témaválasztékok összevont listája), ami a korábban ismertetett adatszerkezetből, a <code>fejezetek.js</code> programfile-ban deklarált JSON adatokból nyeri tartalmát:

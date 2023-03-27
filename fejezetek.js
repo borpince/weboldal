@@ -427,7 +427,27 @@ for (var i = 0; i < glob.obj_tb.length; i++) {
   if (glob.obj_tb[i].name == "jmtabla") jelmagyarazat(glob.obj_tb[i]);
 }
 
-addEventListener("load", () => {kjelzo_frissit(true);});
+addEventListener("load", () => {
+  if (window.location.search.substring(1).trim() == "terkep") {
+    var cim = "https://"+window.location.hostname+"/";
+    var txt = cim+"index.html\n"; //ez nem szerepel a témák listájában
+    for (tk in temak)
+      for (lek in temak[tk].lista)
+        for (le_sub_idx in temak[tk].lista[lek]) {
+          var le = temak[tk].lista[lek][le_sub_idx]; //le: lista elem
+          var subfolder = (le.hasOwnProperty("subfolder")) ? le.subfolder:"";
+          if (le.nev.indexOf('/') == -1) //nem külső link
+            txt += cim+tk+subfolder+"/"+le.nev+".html\n";
+        }
+    var elem = document.createElement('a');
+    elem.href = 'data:attachment/text,' + encodeURI(txt);
+    elem.target = '_blank';
+    elem.download = 'sitemap.txt';
+    elem.click();
+    elem.remove();
+  }
+  kjelzo_frissit(true);
+});
 parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
 
 window.addEventListener("scroll",() => {nezettseg_frissit();});
