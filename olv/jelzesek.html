@@ -112,13 +112,13 @@
         <div class="box-text-update">
           <p>
             Minden valamirevaló szakember tud mesélni legalább egy történetet, amivel ezt cáfolja. Nem kell messzire menni, mert a <code>fejezetek.js</code> <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L118">118. sorára</a> eredetileg nem volt szükség, enélkül is kifogástalanul működött a program.
-            Aztán elérkezett az a lépés, hogy alapos tesztelés után (nem laborkörülmények között, hanem egy vadon élő NGINX webszerveren) a Cloudflare Pages szolgáltatásán belül nyomtam egy "Save and Deploy"-t.
-            Príma. Kihúzza a GitHubról, és a helyére teszi a legfrissebb változatot, ami már működik is, elérhető a webről. Nem is az elérhetőséggel van a baj, hanem az okoz meglepetést, hogy minden téma legördülő választéka helyett az oldaltérkép jelenik meg,
+            Aztán megtettem azt a lépést, hogy alapos tesztelés után (nem laborkörülmények között, hanem egy vadon élő NGINX webszerveren) nyomtam egy "Commit & Push"-t a GitHubon.
+            Ennek eredményeként a <a href="https://developers.cloudflare.com/pages/platform/git-integration/">Cloudflare Pages</a> helyére teszi a legfrissebb változatot, ami rögtön elérhető a webről. Príma. Nem is az elérhetőséggel van baj, hanem az okoz meglepetést, hogy minden téma legördülő választéka helyett az oldaltérkép jelenik meg,
             ami nem az eredeti elképzelésem szerinti működés, de a teszteredményekhez képest is merőben más.
             <br>
             Erre mondják a bölcsek, hogy a számítógépes programok nem az elképzeléseinket váltják valóra, hanem az utasításainkat végrehajtva működnek. Szabatosabban kell fogalmazni, és jó lesz.
             Egyszerű recept a megoldáshoz, de egyelőre fingom sincs, hogy miért dolgozza fel másképpen ugyanaz a program a különböző webszerverekről betöltődő, de azonos tartalmú anyagot? Aztán kiderítettem, hogy a Pages-ről betöltött cucc esetén az URL nem tartalmazza a szokásos végződést, és például
-            "https://pince.eu/olv/jelzesek.html" helyett "https://pince.eu/olv/jelzesek" lesz a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/href"><code>location.href</code></a> értéke, amit most is láthatsz, ha rápillantasz a böngésző címsorára.
+            "pince.eu/olv/jelzesek.html" helyett "pince.eu/olv/jelzesek" lesz a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/href"><code>location.href</code></a> értéke, amit most is láthatsz, ha rápillantasz a böngésző címsorára.
             <br>
             Nincs mit tenni, alkalmazkodni kell ehhez a viselkedéshez is, aztán jó lesz. Nem akarok annyira érteni hozzá, hogy a miértre is tudjam a választ, megelégszem azzal, hogy a 118. sorba írt kiegészítéssel megszűnt a hibajelenség.
           </p>
