@@ -365,14 +365,13 @@ function nezettseget_tarol(dat) {
 function kjelzo_frissit(elso=false) {
   if (glob.kjelzo) {
     if (glob.nezett.has(glob.href_nev)) {
-      glob.kjelzo.style.display = "block";
       var dat = glob.nezett.get(glob.href_nev);
       glob.kjelzo.setAttribute("title",`könyvjelző ${dat.hasOwnProperty("mem") ? "be":"ki"}kapcsolva`);
       if (dat.hasOwnProperty("mem")) {
         glob.kjelzo.innerHTML = jelek.jelzo[0];
         if (elso) window.scrollTo(0,dat.mem);
       } else glob.kjelzo.innerHTML = jelek.konyv[0];
-    } else glob.kjelzo.style.display = "none";
+    } else glob.kjelzo.innerHTML = jelek.konyv[0];
   }
 }
 

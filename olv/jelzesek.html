@@ -167,9 +167,14 @@
             Tovább lapozva az érték növekszik, a könyvjelző önműködően kikapcsol. A könyvjelzővel ellátott fejezetek címei színjelölést kapnak a menüben.
             Nem érvényesül ez a jelölés a Chrome for Android böngészőben, de a könyvjelző hatása ott is működik: a fejezetet betöltve a megjelölt szakaszhoz gördül a tartalom.
             <br><br>
-            Ismert hibája/hiányossága az elkészült programnak, hogy csak a korábbi tartalom végéhez toldott változások, bővítések esetén mutatja helyesen a megtekintési arányt az egészhez viszonyítva.
+            Ismert hibák, hiányosságok.
+            <br>
+            A megjelenítés adatait feldolgozó algoritmus csak a korábbi tartalom végéhez toldott változások, bővítések esetén mutatja helyesen a megtekintési arányt az egészhez viszonyítva.
             További tökéletlenséggel kell számolni, ha átméretezed a böngészőablakot, megváltoztatod az oldalarányt. Ez esetben a korábbi pozíciókhoz görgetés pontossága romolhat, különösen a képeket is tartalmazó fejezeteknél.
             Tökéletességre törekedve még mindig gondolkodnék a megoldáson, és valószínűleg soha nem érnék a végére, ha a betoldásos bővítést is kezelhetővé kívánnám tenni. Így viszont elég hamar elkészült, és a hiányosságok ellenére jól használható.
+            <br>
+            A könyvjelző működéséhez szükséges adatot a megjelenítés számaival együtt tárolom, ezért a könyvjelző csak attól kezdve működik, hogy ez a cookie elkészül (amikor a megtekintési arány százalékos értéke első alkalommal megjelenik).
+            Rövid időről van szó, ezért ez a jelenség talán nem is hiányosság, hanem sajátosság.
           </p>
         </div>
       </div>
