@@ -1,3 +1,11 @@
+.bg {
+  background-image: url("https://kep.pince.eu/alak11sz_tegla.webp");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .tlan {display:none}
 details {
   margin: 0;
@@ -32,17 +40,9 @@ body {
 	width: 100%;
 }
 
-.bg {
-  background-image: url("https://kep.pince.eu/alak11sz_tegla.webp");
-  height: 100%; 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .background {
 	width: 100%;
-	min-height: 250px;	/*iframe magassága*/
+	min-height: 250px;
 	height: 100vh;
 	margin: 0;
 }
@@ -52,10 +52,9 @@ body {
 	flex-flow: column wrap;
 	position: absolute;
 	top: -32px;
-	
 	text-align: left;
 	width: 100%;
-	min-height: 250px;	/*iframe magassága*/
+	min-height: 250px;
 	height: inherit;
 	margin: 0;
 	background-color: transparent;
@@ -64,14 +63,12 @@ body {
 .down {
 	display: flex;
 	justify-content: left;
-
 }
 
 .deta {
 	text-align: left;
 	align-self: flex-start;
-	margin: 10px 20px 0px 20px;		/*0px 20px*/
-	/*margin: 5px 0 0 20px*/
+	margin: 10px 20px 0px 20px;
 	color: lightgrey;
 	font-size: 26px;	
 	text-decoration: none;
@@ -81,9 +78,6 @@ body {
 dl {
 	position: relative;
 	margin-left: 0px;
-	/*height: auto;
-	border-bottom: 1px solid whitesmoke;
-	transition: border-bottom 0.5s;*/
 }
 
 dd {
@@ -109,7 +103,6 @@ dd {
 		margin: 0px;
 		width: auto;
 		height: auto;
-		/*border-radius: 20px;*/
 		background-color: black;
 		opacity: 60%;
 	}
@@ -124,7 +117,7 @@ dd {
 
 	h1 {
 		display: flex;
-		margin: 10px 20px 5px 20px;		/*20px 40px 5px 40px;*/
+		margin: 10px 20px 5px 20px;
 		line-height: 40px;
 		font-size: 35px;
 		font-weight: 400;
@@ -141,7 +134,7 @@ dd {
 		font-weight: 400;
 		font-style: italic;
 		text-align: left;
-		margin: 20px 20px 5px 20px;		/*40px 40px 5px 40px;*/
+		margin: 20px 20px 5px 20px;
 		color: lightgrey;
 	}	
 
@@ -175,7 +168,7 @@ dd {
 		align-items: center;
 		justify-content: left;
 		text-align: left;
-		margin: 7px 0px;	/*15px 0px;*/
+		margin: 7px 0px;
 		color: lightgrey;
 		font-size: 12px;	
 		text-decoration: none;
@@ -187,15 +180,13 @@ dd {
 	}
 
 	a > span {
-		/*margin-left: 10px;
-		margin-right: 10px;*/
 		margin: 0px 10px 0px 0px;
 	}
 
 	a {
 		text-align: left;
 		align-self: flex-start;
-		margin: 0px 0px;		/*0px 20px*/
+		margin: 0px 0px;
 		color: lightgrey;
 		font-size: 20px;	
 		text-decoration: none;
@@ -239,9 +230,8 @@ dd {
 		position: absolute;
 		top: 32px;
 		margin: 0px;
-		width: auto;	/*auto*/
+		width: auto;
 		height: auto;
-		/*border-radius: 20px;*/
 		background-color: black;
 		opacity: 60%;
 	}
@@ -256,25 +246,25 @@ dd {
 
 	h1 {
 		display: flex;
-		margin: 10px 20px 10px 20px;	/*20px 40px 20px 40px;*/
+		margin: 10px 20px 10px 20px;
 		line-height: 40px;
 		font-size: 45px;
 		font-weight: 400;
 		text-align: left;
 		color: lightgrey;
-		width: 90%;		/*90%*/
+		width: 90%;
 	}
 
 	h2 {
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: left;
-		width: 90%;		/*90%*/
+		width: 90%;
 		font-size: 22px;
 		font-weight: 400;
 		font-style: italic;
 		text-align: left;
-		margin: 20px 20px 10px 20px;	/*40px 40px 20px 40px;*/
+		margin: 20px 20px 10px 20px;
 		color: lightgrey;
 	}
 
@@ -309,7 +299,7 @@ dd {
 		align-items: center;
 		justify-content: left;
 		text-align: left;
-		margin: 10px 0px 20px 0px;	/*20px 0px 40px 0px;*/
+		margin: 10px 0px 20px 0px;
 		color: lightgrey;
 		font-size: 12px;	
 		text-decoration: none;
@@ -321,15 +311,13 @@ dd {
 	}
 
 	a > span {
-		/*margin-left: 10px;
-		margin-right: 10px;*/
 		margin: 0px 10px 0px 0px;
 	}
 
 	a {
 		text-align: left;
 		align-self: flex-start;
-		margin: 0px;		/*0px 20px;*/
+		margin: 0px;
 		color: lightgrey;
 		font-size: 20px;	
 		text-decoration: none;
@@ -373,9 +361,8 @@ dd {
 		position: absolute;
 		top: 32px;
 		margin: 0px;
-		width: 35%;	/*auto*/
+		width: 35%;
 		height: auto;
-		/*border-radius: 20px;*/
 		background-color: black;
 		opacity: 60%;
 	}
@@ -390,13 +377,13 @@ dd {
 
 	h1 {
 		display: flex;
-		margin: 10px 20px 10px 20px;	/*20px 40px 20px 40px;*/
+		margin: 10px 20px 10px 20px;
 		line-height: 40px;
 		font-size: 45px;
 		font-weight: 400;
 		text-align: left;
 		color: lightgrey;
-		width: 90%;		/*90%*/
+		width: 90%;
 	}
 
 	h2 {
@@ -408,7 +395,7 @@ dd {
 		font-weight: 400;
 		font-style: italic;
 		text-align: left;
-		margin: 20px 20px 10px 20px;	/*40px 40px 20px 40px;*/
+		margin: 20px 20px 10px 20px;
 		color: lightgrey;
 	}
 
@@ -443,7 +430,7 @@ dd {
 		align-items: center;
 		justify-content: left;
 		text-align: left;
-		margin: 10px 0px 20px 0px;	/*20px 0px 40px 0px;*/
+		margin: 10px 0px 20px 0px;
 		color: lightgrey;
 		font-size: 12px;	
 		text-decoration: none;
@@ -455,15 +442,13 @@ dd {
 	}
 
 	a > span {
-		/*margin-left: 10px;
-		margin-right: 10px;*/
 		margin: 0px 10px 0px 0px;
 	}
 
 	a {
 		text-align: left;
 		align-self: flex-start;
-		margin: 0px;		/*0px 20px;*/
+		margin: 0px;
 		color: lightgrey;
 		font-size: 20px;	
 		text-decoration: none;
@@ -507,9 +492,8 @@ dd {
 		position: absolute;
 		top: 32px;
 		margin: 0px;
-		width: 35%;	/*auto*/
+		width: 35%;
 		height: auto;
-		/*border-radius: 20px;*/
 		background-color: black;
 		opacity: 60%;
 	}
@@ -524,7 +508,7 @@ dd {
 
 	h1 {
 		display: flex;
-		margin: 10px 20px 10px 20px;	/*20px 40px 20px 40px;*/
+		margin: 10px 20px 10px 20px;
 		line-height: 50px;
 		font-size: 60px;
 		font-weight: 400;
@@ -542,7 +526,7 @@ dd {
 		font-weight: 400;
 		font-style: italic;
 		text-align: left;
-		margin: 20px 20px 10px 20px;	/*40px 40px 20px 40px;*/
+		margin: 20px 20px 10px 20px;
 		color: lightgrey;
 	}
 
@@ -577,7 +561,7 @@ dd {
 		align-items: center;
 		justify-content: left;
 		text-align: left;
-		margin: 10px 0px 20px 0px;	/*20px 0px 40px 0px;*/
+		margin: 10px 0px 20px 0px;
 		color: lightgrey;
 		font-size: 12px;	
 		text-decoration: none;
@@ -589,15 +573,13 @@ dd {
 	}
 
 	a > span {
-		/*margin-left: 10px;
-		margin-right: 10px;*/
 		margin: 0px 10px 0px 0px;
 	}
 
 	a {
 		text-align: left;
 		align-self: flex-start;
-		margin: 0px;		/*0px 20px;*/
+		margin: 0px;
 		color: lightgrey;
 		font-size: 20px;	
 		text-decoration: none;
@@ -657,7 +639,7 @@ dd {
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	top: 0vh;	/*10vh*/
+	top: 0vh;
 	margin: 0;
 	padding: 0;
 	align-items: center;
@@ -687,15 +669,6 @@ dd {
 	margin: 0px 5% 60px 5%;
 	color: goldenrod
 }
-/*
-.box-text-index a {
-	color: goldenrod;
-	font-size: 24px;
-	font-weight: 400;
-	text-decoration: underline;
-	margin: 0;
-}
-*/
 .box-text-index a:hover {
 	color: rgb(235, 37, 103);
 }
@@ -706,14 +679,14 @@ ol,ul {list-style:none;}
 .slideshow:after {
   position: fixed;
   width: 100%;
-  height: 100vh;		/*height: 100%;*/
+  height: 100vh;
   top: 0px;
   left: 0px;
   z-index: 0;
 }
 .slideshow li span {
   width: 100%;
-  height: 100vh;		/*height: 100%;*/
+  height: 100vh;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -738,8 +711,6 @@ ol,ul {list-style:none;}
   line-height: 200px;
 	color: rgba(255,255,255, 0.8);
 }
-/*.slideshow li:nth-child(1) span { background-image: url(https://kep.pince.eu/dia_1_IMG_9051.webp) }*/
-/*.slideshow li:nth-child(1) span { background-image: url(https://kep.pince.eu/dia_0_alak.webp) }*/
 .slideshow li:nth-child(2) span {
   background-image: url(https://kep.pince.eu/dia_1_IMG_9051.webp);
   -webkit-animation-delay: 2s;
