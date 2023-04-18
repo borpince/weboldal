@@ -1,5 +1,14 @@
 (function() {
-var temak = {
+
+  function href_nev() {
+    var p = document.location.href.lastIndexOf('/');
+    var p2 = document.location.href.lastIndexOf('.html');
+    if (p2 < 0) p2 = document.location.href.length; //CF levágja a végződést?
+    if ((p > -1) && (p < p2)) return document.location.href.substring(++p,p2);
+      else return "";
+  }
+  
+  var temak = {
   "borok": {
     cim:"– – borok, évjáratok",
     lista:{
@@ -45,19 +54,26 @@ var temak = {
         {cim:"lépcső", subfolder:"/igykeszult", nev:"lepcso",ver:0},
         {cim:"horganyzás", subfolder:"/igykeszult", nev:"horgany",ver:0}
       ],
-      "b": [{cim:"szárnypróbálgatás", nev:"00",ver:0}],
-      "c": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021",ver:0}],
-      "d": [{cim:"hitvallás", nev:"semmiflanc",ver:0}],
-      "e": [{cim:"arculati elem", nev:"arculat",ver:0}],
-      "f": [
-        // subfolder elé azért került "/", mert a path összeállítása így egyszerűbb
+      "b": [{cim:"cseppköves emlékek", nev:"cseppkovek",ver:0}],
+      "c": [
         {cim:"tavaszodik", subfolder:"/igykeszult", nev:"tavasz",ver:0},
         {cim:"tavaszodik I", subfolder:"/igykeszult", nev:"tavaszodik",ver:0},
         {cim:"tavaszodik II", subfolder:"/igykeszult", nev:"tavaszodik2",ver:0},
         {cim:"tavaszodik III", subfolder:"/igykeszult", nev:"tavaszodik3",ver:0}
       ],
-      "g": [{cim:"ülni babérokon, kényelmesen", nev:"baber",ver:0}],
-      "h": [
+      "d": [{cim:"szárnypróbálgatás", nev:"00",ver:0}],
+      "e": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021",ver:0}],
+      "f": [{cim:"hitvallás", nev:"semmiflanc",ver:0}],
+      "g": [{cim:"arculati elem", nev:"arculat",ver:0}],
+      "h": [{cim:"tengöri nóta", nev:"tengori",ver:0}],
+      "i": [
+        {cim:"borok versenye", subfolder:"/bv", nev:"borverseny",ver:0},
+        {cim:"XI. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2022",ver:0},
+        {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023",ver:0}
+      ],
+      "j": [{cim:"ülni babérokon, kényelmesen", nev:"baber",ver:0}],
+      "k": [{cim:"jelzések haszna", nev:"jelzesek",ver:1}],
+      "l": [
         {cim:"IT-kaland", subfolder:"/it_kaland", nev:"kaland",ver:0},
         {cim:"WebP", subfolder:"/it_kaland", nev:"webp",ver:0},
         {cim:"alapkutatás, mérés", subfolder:"/it_kaland", nev:"kutatas",ver:0},
@@ -65,11 +81,7 @@ var temak = {
         {cim:"gondolatok a biztonságról", subfolder:"/it_kaland", nev:"biztonsag",ver:0},
         {cim:"adalék a sikerhez", subfolder:"/it_kaland", nev:"adalek",ver:0},
         {cim:"1.1.1.1", subfolder:"/it_kaland", nev:"one",ver:0}
-      ],
-      "i": [{cim:"cseppköves emlékek", nev:"cseppkovek",ver:0}],
-      "j": [{cim:"tengöri nóta", nev:"tengori",ver:0}],
-      "k": [{cim:"XI. Bormustra", nev:"bm2022",ver:0}],
-      "l": [{cim:"jelzések haszna", nev:"jelzesek",ver:0}]
+      ]
     }
   }
 }
@@ -110,14 +122,6 @@ function jelmagyarazat(object) {
     tabla.appendChild(sor);
   }
   object.appendChild(tabla);
-}
-
-function href_nev() {
-  var p = document.location.href.lastIndexOf('/');
-  var p2 = document.location.href.lastIndexOf('.html');
-  if (p2 < 0) p2 = document.location.href.length; //CF levágja a végződést?
-  if ((p > -1) && (p < p2)) return document.location.href.substring(++p,p2);
-    else return "";
 }
 
 function letezik(nev,sub) {
@@ -182,6 +186,23 @@ function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
 
 function karikas_szam(szam) {
   return "&#"+(9311+szam);
+}
+
+function tcs_sf_lista(object) { //témacsoport subfolder list
+  var tmdex = letezik(glob.href_nev,true);
+  for (var i = 0; i < tmdex.tema.length; i++) {
+    var elotte = document.createElement('SPAN');
+    elotte.setAttribute("style","font-size:large");
+    elotte.innerHTML = `${karikas_szam(i+1)}&#8194;`; //EN SPACE
+    object.appendChild(elotte);
+    var cim;
+    if (i > 0) {
+      cim = document.createElement('A');
+      cim.setAttribute("href",`/${tmdex.tk}${tmdex.tema[i].subfolder}/${tmdex.tema[i].nev}.html`);
+    } else cim = document.createElement('SPAN');
+    cim.innerHTML = `${tmdex.tema[i].cim}<br>`;
+    object.appendChild(cim);
+  }
 }
 
 function lista_gyarto(select,ref_nev) {
@@ -424,6 +445,7 @@ for (var i = 0; i < glob.select_tb.length; i++)
 glob.obj_tb = document.getElementsByTagName("OBJECT");
 for (var i = 0; i < glob.obj_tb.length; i++) {
   if (glob.obj_tb[i].name == "jmtabla") jelmagyarazat(glob.obj_tb[i]);
+  if (glob.obj_tb[i].name == "tcs_sf_lista") tcs_sf_lista(glob.obj_tb[i]);
 }
 
 addEventListener("load", () => {

@@ -111,16 +111,16 @@
         </div>
         <div class="box-text-update">
           <p>
-            Minden valamirevaló szakember tud mesélni legalább egy történetet, amivel ezt cáfolja. Nem kell messzire menni, mert a <code>fejezetek.js</code> <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L118">118. sorára</a> eredetileg nem volt szükség, enélkül is kifogástalanul működött a program.
-            Aztán megtettem azt a lépést, hogy alapos tesztelés után (nem laborkörülmények között, hanem egy vadon élő NGINX webszerveren) nyomtam egy "Commit & Push"-t a GitHubon.
+            Minden valamirevaló szakember tud mesélni legalább egy történetet, amivel ezt cáfolja. Nem kell messzire menni, mert a <code>fejezetek.js</code> <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L6">6. sorára</a> eredetileg nem volt szükség, enélkül is kifogástalanul működött a program.
+            Aztán megtettem azt a lépést, hogy alapos tesztelés után nyomtam egy "Commit & Push"-t a GitHubon.
             Ennek eredményeként a <a href="https://developers.cloudflare.com/pages/platform/git-integration/">Cloudflare Pages</a> helyére teszi a legfrissebb változatot, ami rögtön elérhető a webről. Príma. Nem is az elérhetőséggel van baj, hanem az okoz meglepetést, hogy minden téma legördülő választéka helyett az oldaltérkép jelenik meg,
-            ami nem az eredeti elképzelésem szerinti működés, de a teszteredményekhez képest is merőben más.
+            ami nem az eredeti elképzelésem szerinti működés, de a teszteredményekhez képest is merőben más, pedig egy vadon élő NGINX webszerveren próbálgattam, nem laborkörülmények között.
             <br>
             Erre mondják a bölcsek, hogy a számítógépes programok nem az elképzeléseinket váltják valóra, hanem az utasításainkat végrehajtva működnek. Szabatosabban kell fogalmazni, és jó lesz.
             Egyszerű recept a megoldáshoz, de egyelőre fingom sincs, hogy miért dolgozza fel másképpen ugyanaz a program a különböző webszerverekről betöltődő, de azonos tartalmú anyagot? Aztán kiderítettem, hogy a Pages-ről betöltött cucc esetén az URL nem tartalmazza a szokásos végződést, és például
             "pince.eu/olv/jelzesek.html" helyett "pince.eu/olv/jelzesek" lesz a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/href"><code>location.href</code></a> értéke, amit most is láthatsz, ha rápillantasz a böngésző címsorára.
             <br>
-            Nincs mit tenni, alkalmazkodni kell ehhez a viselkedéshez is, aztán jó lesz. Nem akarok annyira érteni hozzá, hogy a miértre is tudjam a választ, megelégszem azzal, hogy a 118. sorba írt kiegészítéssel megszűnt a hibajelenség.
+            Nincs mit tenni, alkalmazkodni kell ehhez a viselkedéshez is, aztán jó lesz. Nem akarok annyira érteni hozzá, hogy a miértre is tudjam a választ, megelégszem azzal, hogy a 6. sorba írt kiegészítéssel megszűnt a rendellenes működés.
           </p>
         </div>
         <div class="box-text">
@@ -194,6 +194,34 @@
             ⚠️Zu Risiken und Nebenwirkungen lesen Sie die Packungsbeilage und fragen Sie Ihren Arzt oder Apotheker!
             <br>
             ⚠️Mikrohullámú sütőben ne száríts macskát!
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Itt egyszer már véget ért a cselekmény, de most folytatódik a história.
+            Ami elméleti síkon nem kerül felszínre, azt majd a gyakorlat kihozza. Ez történt most is, miután elégedetten hátradőltem, és késznek nyilvánítottam ezt a fejlesztést.
+            <br>
+            A <a href="/olv/bv/podumon2023.html">hétvégi borkóstólóról</a> szóló tudósítás elkészültével észszerűnek tűnt egy új, a borversenyek történeteit összefoglaló témacsoport létrehozása.
+            Ezzel a témacsoportok tartalomjegyzékeinek gondozása már félelmet keltő mértékű feladattá duzzadt, ami kellően rémisztő ahhoz, hogy érdemes legyen megoldani az automatizálását.
+            Megvannak az alapok, minden adott hozzá, mindössze egy néhány sorból álló eljárást kell megfogalmazni.
+            <br>
+            Eddig a szokásos favágó módszerrel készült a tartalomjegyzék, aminek összes adata rendelkezésre áll a program által használt JSON listában.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/jelzes_toc.webp">
+          </div>
+          <p>
+            A régi szemlélet terhes örökségnek kiirtására most érett meg a világ. Egyrészt megszűnik a redundancia, másrészt lekerül rólam a teher és a felelősség, hogy az időről időre változó tartalomjegyzékeket aktualizáljam.
+            Miután megkomponáltam azt a néhány programsort, ami ezentúl helyettem foglalkozik ezzel az üggyel, a korábbi vaskos szakasz helyett csupán ezt a sort kell elhelyezni minden témacsoport index oldalán:
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/jelzes_toc2.webp">
+          </div>
+          <p>
+            Egyszerűbb? Hát hogy a fenébe ne lenne az! Ráadásul garantáltan pontos és hibátlan eredményt ad, szemben egy szerény képességű, lankadó figyelmű emberszabású teljesítményével.
+            Különös, hogy eddig nem vetettem be ezt a megoldást, de amikor fárasztó munka rémével fenyegetnek, akkor mindig összeszedem magam.
           </p>
         </div>
       </div>
