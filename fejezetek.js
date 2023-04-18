@@ -188,7 +188,7 @@ function karikas_szam(szam) {
   return "&#"+(9311+szam);
 }
 
-function tcs_sf_lista(object) { //témacsoport subfolder list
+function toc(object) {
   var tmdex = letezik(glob.href_nev,true);
   for (var i = 0; i < tmdex.tema.length; i++) {
     var elotte = document.createElement('SPAN');
@@ -445,7 +445,7 @@ for (var i = 0; i < glob.select_tb.length; i++)
 glob.obj_tb = document.getElementsByTagName("OBJECT");
 for (var i = 0; i < glob.obj_tb.length; i++) {
   if (glob.obj_tb[i].name == "jmtabla") jelmagyarazat(glob.obj_tb[i]);
-  if (glob.obj_tb[i].name == "tcs_sf_lista") tcs_sf_lista(glob.obj_tb[i]);
+  if (glob.obj_tb[i].name == "toc") toc(glob.obj_tb[i]);
 }
 
 addEventListener("load", () => {
