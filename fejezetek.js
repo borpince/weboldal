@@ -190,7 +190,7 @@ function karikas_szam(szam) {
 
 function toc(object) {
   var tmdex = letezik(glob.href_nev,true);
-  for (var i = 0; i < tmdex.tema.length; i++) {
+  if (tmdex.tema) for (var i = 0; i < tmdex.tema.length; i++) {
     var elotte = document.createElement('SPAN');
     elotte.setAttribute("style","font-size:large");
     elotte.innerHTML = `${karikas_szam(i+1)}&#8194;`; //EN SPACE
