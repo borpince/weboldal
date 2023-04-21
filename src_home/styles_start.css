@@ -7,18 +7,6 @@
 }
 
 .tlan {display:none}
-details {
-  margin: 0;
-  padding: 0;
-  width: 90%;
-  cursor: pointer;
-}
-
-summary {
-  font-size: 20px;
-  text-align: left;
-  float: left;
-}
 
 .vonal {
   margin:10px 20px;

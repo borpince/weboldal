@@ -39,6 +39,7 @@
   "olv": {
     cim:"– – olvasnivaló",
     lista:{
+      "@": [{cim:"borászatról, weboldalról", nev:"gondolatok",ver:0}],
       "a": [
         // subfolder elé azért került "/", mert a path összeállítása így egyszerűbb (select.onchange)
         {cim:"magad uram...", subfolder:"/igykeszult", nev:"magad",ver:0},
