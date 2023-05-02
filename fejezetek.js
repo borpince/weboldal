@@ -1,11 +1,34 @@
 (function() {
 
   function href_nev() {
-    var p = document.location.href.lastIndexOf('/');
-    var p2 = document.location.href.lastIndexOf('.html');
-    if (p2 < 0) p2 = document.location.href.length; //CF levágja a végződést?
-    if ((p > -1) && (p < p2)) return document.location.href.substring(++p,p2);
+    var href = document.location.href;
+    var p = href.lastIndexOf('/');
+    var p1 = href.lastIndexOf('#');
+    var p2 = href.lastIndexOf('.html');
+    if (p1 > p2) { //lapon belüli ugrás
+      glob.url_page_jump = true;
+      href = href.substring(0,p1);
+    }
+    if (p2 < 0) p2 = href.length; //CF levágja a végződést?
+    if ((p > -1) && (p < p2)) return href.substring(++p,p2);
       else return "";
+  }
+  
+  var glob = {
+    href_nev: "",
+    url_page_jump: false,
+    cim: "",
+    cookie_eloke: "nézett:",
+    ttl_nap: 400,
+    vegleges: null,
+    hamburger: document.getElementById("hamburger"),
+    naptar: document.getElementById("naptar"),
+    hol_tart: document.getElementById("holtart"),
+    kjelzo: document.getElementById("kjelzo"),
+    alcimek: new Map(),
+    nezett: new Map(),
+    select_tb: [],
+    obj_tb: []
   }
   
   var temak = {
@@ -86,27 +109,17 @@
     }
   }
 }
-var glob = {
-  href_nev: "",
-  cim: "",
-  cookie_eloke: "nézett:",
-  ttl_nap: 400,
-  vegleges: null,
-  hol_tart: document.getElementById("holtart"),
-  kjelzo: document.getElementById("kjelzo"),
-  nezett: new Map(),
-  select_tb: [],
-  obj_tb: []
-}
 var jelek = {
   web: ["🌐","külső hivatkozás (external link)"],
+  link: ["🔗","hivatkozás (link)"],
   megnezte: ["👁","megnyitottad, megnézted, feltételezhetően beleolvastál"],
   vegignezte: ["✓","végignézted"],
   frissult: ["⭐","frissült a legutóbbi megtekintés óta"],
   folder: ["📁","több fejezetet magába foglaló témacsoport"],
   tcs_idx: ["ⓝ","témacsoport számmal jelzett fejezete"], //témacsoporton belüli index
   konyv: ["📖","könyvjelző kikapcsolva"],
-  jelzo: ["🔖","könyvjelző bekapcsolva"]
+  jelzo: ["🔖","könyvjelző bekapcsolva"],
+  naptar: ["📆","eseménynaptár"]
 }
 
 function jelmagyarazat(object) {
@@ -203,6 +216,33 @@ function toc(object) {
     } else cim = document.createElement('SPAN');
     cim.innerHTML = `${tmdex.tema[i].cim}<br>`;
     object.appendChild(cim);
+  }
+}
+
+function alcim_lista_gyarto(object) {
+  if (glob.alcimek.size > 0) {
+    object.setAttribute("class","box box-text");
+    object.setAttribute("style",`margin-left:0;align-items:center;justify-content:center;text-align:left;font-size:20px;flex-flow:column wrap`);
+    var ul = document.createElement('ul');
+    ul.setAttribute("style",`margin-left:30px;padding-left:0;list-style-type:"${jelek.link[0]}"`);
+    var elso_nap = null;
+    var utolso_nap = null;
+    glob.alcimek.forEach((value, key) => {
+      if (!elso_nap) elso_nap = key;
+      utolso_nap = key;
+      var li = document.createElement('li');
+      var cim = document.createElement('a');
+      cim.setAttribute("href",`#${key}`);
+      cim.innerHTML = `&#8201;${key.substring(0,10)}`;  //thin space
+      var span = document.createElement('span');
+      span.innerHTML = `&#8194;${value}`;
+      li.appendChild(cim);
+      li.appendChild(span);
+      ul.appendChild(li);
+    });
+    var idotartam = Math.round((new Date(utolso_nap) - new Date(elso_nap)) / 86400000);
+    object.innerHTML = object.innerHTML.replace("{x}",idotartam);
+    object.appendChild(ul);
   }
 }
 
@@ -338,22 +378,22 @@ function elore_hatra() {
     var halad_tb = document.getElementsByTagName("A");
     var idx = 0;
     for (var i = 0; i < halad_tb.length; i++) {
+
+      function kitolt(txt) {
+        halad_tb[i].setAttribute("href",`/${tmdex.tk}${tmdex.tema[idx].subfolder}/${tmdex.tema[idx].nev}.html`);
+        halad_tb[i].innerHTML = `(${txt} fejezet: ${tmdex.tema[idx].cim})`;
+      }
+
       switch (halad_tb[i].name) {
         case "elozo":
           idx = tmdex.le_sub_idx;
           idx--;
-          if ((idx > -1) && (idx < tmdex.tema.length)) {
-            halad_tb[i].setAttribute("href",`/${tmdex.tk}${tmdex.tema[idx].subfolder}/${tmdex.tema[idx].nev}.html`);
-            halad_tb[i].innerHTML = `(előző fejezet: ${tmdex.tema[idx].cim})`;
-          }
+          if ((idx > -1) && (idx < tmdex.tema.length)) kitolt("előző");
         break;
         case "kovetkezo":
           idx = tmdex.le_sub_idx;
           idx++;
-          if ((idx > -1) && (idx < tmdex.tema.length)) {
-            halad_tb[i].setAttribute("href",`/${tmdex.tk}${tmdex.tema[idx].subfolder}/${tmdex.tema[idx].nev}.html`);
-            halad_tb[i].innerHTML = `(következőző fejezet: ${tmdex.tema[idx].cim})`;
-          }
+          if ((idx > -1) && (idx < tmdex.tema.length)) kitolt("következő");
         break;
       }
     }
@@ -391,7 +431,7 @@ function kjelzo_frissit(elso=false) {
       glob.kjelzo.setAttribute("title",`könyvjelző ${dat.hasOwnProperty("mem") ? "be":"ki"}kapcsolva`);
       if (dat.hasOwnProperty("mem")) {
         glob.kjelzo.innerHTML = jelek.jelzo[0];
-        if (elso) window.scrollTo(0,dat.mem);
+        if (elso && !glob.url_page_jump) window.scrollTo(0,dat.mem);
       } else glob.kjelzo.innerHTML = jelek.konyv[0];
     } else glob.kjelzo.innerHTML = jelek.konyv[0];
   }
@@ -419,37 +459,55 @@ function nezettseg_frissit(elso=false) {
         nezettseget_tarol(dat);
         ht = dat.hanyad;
       }
-      if (glob.hol_tart) glob.hol_tart.innerHTML = `${(ht*100).toFixed(0)}%`;
+      if (glob.hol_tart) glob.hol_tart.innerHTML = (ht > 0.99) ? `✅`:`${(ht*100).toFixed(0)}%`;
       if (!elso) kjelzo_frissit();
     },2000);
   }
 }
 
-function folytat() {
+function folytat() { //megtekintés %-os határához ugrik
   if (glob.nezett.has(glob.href_nev)) {
     var y = (document.body.scrollHeight*glob.nezett.get(glob.href_nev).hanyad)-window.innerHeight;
     window.scrollTo(0,y);
   }
 }
 
-// –  –  –  –  –  –  –  –  –  –  –  –  –  –  – 
-
-glob.href_nev = href_nev();
-elore_hatra();
-nezettseg_betolt();
-nezettseg_frissit(true);
-
-glob.select_tb = document.getElementsByTagName("SELECT");
-for (var i = 0; i < glob.select_tb.length; i++)
-  if ((temak[glob.select_tb[i].name] != undefined) || (glob.select_tb[i].name == '*')) lista_gyarto(glob.select_tb[i],glob.href_nev);
-
-glob.obj_tb = document.getElementsByTagName("OBJECT");
-for (var i = 0; i < glob.obj_tb.length; i++) {
-  if (glob.obj_tb[i].name == "jmtabla") jelmagyarazat(glob.obj_tb[i]);
-  if (glob.obj_tb[i].name == "toc") toc(glob.obj_tb[i]);
+function nap_index(d) {
+  return Math.floor((d - new Date(d.getFullYear(),0,1)) / 86400000);
 }
 
-addEventListener("load", () => {
+function alcim_gyujto() {
+  var cimke_tb = document.querySelectorAll("h1, div");
+  var gyujto = new Map();
+  for (var i = 0; i < cimke_tb.length; i++) {
+    if (cimke_tb[i].hasAttribute("id")) try {
+      var d = new Date(cimke_tb[i].id);
+      if (!isNaN(d)) {
+        var datum_str = d.toLocaleDateString("hu-HU", {year:'numeric',month:'long',day:'numeric'});
+        gyujto.set(cimke_tb[i].id, cimke_tb[i].getAttribute("alcim"));
+        switch (cimke_tb[i].nodeName) {
+          case "H1":
+            cimke_tb[i].innerHTML = datum_str;
+          break;
+          case "DIV":
+            //cimke_tb[i].getAttribute("alcim");
+          break;
+        }
+      }
+    } catch (err) {}
+  }
+  glob.alcimek = new Map([...gyujto.entries()].sort());
+  if (glob.naptar && (glob.alcimek.size > 0)) {
+    glob.naptar.setAttribute("title","eseménynaptár");
+    glob.naptar.setAttribute("style","display:inline");
+    glob.naptar.innerHTML = jelek.naptar[0];
+    glob.naptar.addEventListener("click",() => {
+      window.location = "/naptar.html";
+    });
+  }
+}
+
+function terkep_gyarto() {
   if (window.location.search.substring(1).trim() == "terkep") {
     var cim = "https://"+window.location.hostname+"/";
     var txt = cim+"index.html\n"; //ez nem szerepel a témák listájában
@@ -468,11 +526,66 @@ addEventListener("load", () => {
     elem.click();
     elem.remove();
   }
+}
+// –  –  –  –  –  –  –  –  –  –  –  –  –  –  – 
+
+glob.href_nev = href_nev();
+elore_hatra();
+nezettseg_betolt();
+nezettseg_frissit(true);
+
+var y_elozo = window.pageYOffset;
+var alcimek_helye = null;
+var nav_wrapper = null;
+var left_side = null;
+var balmenu = null;
+var latszik = true;
+
+addEventListener("load", () => {
+  terkep_gyarto();
+  alcim_gyujto();
   kjelzo_frissit(true);
+  glob.select_tb = document.getElementsByTagName("SELECT");
+  for (var i = 0; i < glob.select_tb.length; i++)
+    if ((temak[glob.select_tb[i].name] != undefined) || (glob.select_tb[i].name == '*')) lista_gyarto(glob.select_tb[i],glob.href_nev);
+  glob.obj_tb = document.getElementsByTagName("OBJECT");
+  for (var i = 0; i < glob.obj_tb.length; i++) {
+    if (glob.obj_tb[i].name == "jmtabla") jelmagyarazat(glob.obj_tb[i]);
+    if (glob.obj_tb[i].name == "toc") toc(glob.obj_tb[i]);
+    if (glob.obj_tb[i].name == "alcimek") {
+      if (alcimek_helye == null) alcimek_helye = glob.obj_tb[i]; //csak az elsővel foglalkozom, ha több lenne belőle
+      alcim_lista_gyarto(glob.obj_tb[i]);
+    }
+  }
+  nav_wrapper = document.getElementsByClassName("nav-wrapper");
+  balmenu = document.getElementById("balmenu");
+  var eltuntet_y = "-250px"; //egyszerűbb a számolgatásnál
+  window.addEventListener("scroll",() => {
+    nezettseg_frissit();
+    if (nav_wrapper && alcimek_helye) {
+      //ha megjelennek az alcímek, akkor eltüntetem a nav-wrappert, mert különben a "kitakart" linkek nem működnek
+      var rect_al = alcimek_helye.getBoundingClientRect();
+      var rect_bal = balmenu.getBoundingClientRect();
+      var y_most = window.pageYOffset;
+      var kilog_fent = rect_al.top < 0;
+      var kilog_lent = rect_al.bottom > window.innerHeight;
+      var bmym = latszik ? rect_bal.height+20:0; //balmenu y méret, +20:alcímek font-size
+      var lathato = ((rect_al.top < window.innerHeight) && !kilog_fent) || (!kilog_lent && ((rect_al.bottom - 30) > 0) || (kilog_fent && kilog_lent));
+      if (((y_elozo > y_most) && (rect_al.top > bmym)) || !lathato) nav_wrapper[0].style.top = "20px";
+        else if (lathato && (rect_al.top < bmym)) nav_wrapper[0].style.top = eltuntet_y;
+      y_elozo = y_most;
+    }
+  });
+  left_side = document.getElementsByClassName("left-side");
+  left_side[0].style.top = "0"; //első alkalommal nem működik a "transition"
+  if (glob.hamburger && left_side) glob.hamburger.addEventListener("click",() => {
+    latszik = !latszik;
+    left_side[0].style.top = (latszik ? "0":eltuntet_y);
+  });
 });
+
 parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
 
-window.addEventListener("scroll",() => {nezettseg_frissit();});
 if (glob.hol_tart) {
   glob.hol_tart.addEventListener("click",() => {folytat();});
   glob.hol_tart.innerHTML = "&#8195;&#8195;";

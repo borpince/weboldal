@@ -16,13 +16,17 @@
   </div>
   <section id="container_cs2020">
     <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
       <div class="left-side">
         <div id="bigyo">
-          <div id="home" class="nav-link-wrapper" >
-            <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
           </div>
-          <button id="kjelzo"></button>
-          <table><tr><td id="holtart"></td></tr></table>
         </div>
         <select name="borok"></select>
       </div>
@@ -36,11 +40,12 @@
             Esetemben jelentős technológiai fejlődésnek számít, hogy ennél a boromnál már külön kezelem a színlét és a préslét. A kezdeti ügyetlenkedések ismétlésére nincs igény, mert azzal nagy kockázatot vállalnék. A bor minősége még hagyján, de ha ez a tétel sem lesz élvezhető, akkor elválik tőlem az asszony. Ha van erős ösztönző, ami jó teljesítményre sarkall, akkor az a hitves megtartásának masszív igénye.
           </p>
         </div>
-        <div class="box-img-wide">
-          <img src="https://kep.pince.eu/evja_01_image002.webp">
-        </div>
       </div>
-      <h1>2020. október 21.</h1>
+      <object name="alcimek">A borkészítés {x} napos folyamata</object>
+      <div class="box-img-wide">
+        <img src="https://kep.pince.eu/evja_01_image002.webp">
+      </div>
+      <h1 id="2020-10-21T14:00" alcim="szüret, szállítás"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -59,7 +64,7 @@
           <img src="https://kep.pince.eu/evja_01_image014.webp">
         </div>
       </div>
-      <h1>2020. október 22.</h1>
+      <h1 id="2020-10-22" alcim="feldolgozás"></h1>
       <div class="box">
         <div class="box-text">
           <p>Ennél a hobbimennyiségnél belefér az időbe, hogy levelek és poloskák után kutatva, fürtönként átnéztem a szállítmányt, és kihajítottam néhány csúnya bogyót. Néhányat.</p>
@@ -108,7 +113,7 @@
           <img src="https://kep.pince.eu/evja_01_image024.webp">
         </div>            
       </div>
-      <h1>2020. október 23.</h1>
+      <h1 id="2020-10-23" alcim="cefre beoltása"></h1>
       <div class="box">
         <div class="box-text">
           <p>Reggel beoltottam a cefrét: Red Fruit, DAP. Most egy ideig nem igényel további gondoskodást, ezért lesz idő a mindenkinek oly kedves tevékenységre, a takarításra. Rengeteg szutyokkal járt az előkészítő tevékenység. Minden edény csupa ragacs, csőstül jönnek a darazsak.</p>
@@ -120,7 +125,7 @@
           <img src="https://kep.pince.eu/evja_01_image028.webp">
         </div>                               
       </div>
-      <h1>2020. október 25.</h1>
+      <h1 id="2020-10-25" alcim="erjedés aktiválás"></h1>
       <div class="box">
         <div class="box-text">
           <p>Erjedés aktiválás: SpringFerm</p>
@@ -129,13 +134,13 @@
           <img src="https://kep.pince.eu/evja_01_image030.webp">
         </div>            
       </div>
-      <h1>2020. november 1. </h1>
+      <h1 id="2020-11-01" alcim="tápsó"></h1>
       <div class="box">
         <div class="box-text">
           <p>Tápsó: BCW</p>
         </div>            
       </div>
-      <h1>2020. november 8.</h1>
+      <h1 id="2020-11-08" alcim="erjedés vége"></h1>
       <div class="box">
         <div class="box-text">
           <p>Rendben lezajlott az erjedés. Közben semmit nem bíztam a véletlenre, reggel és este csömöszöltem, valamint mértem a pince és a cefre hőmérsékletét. Így alakult:</p>
@@ -153,7 +158,7 @@
             <p>Frissen vásárolt eszközeivel ismerkedő, az első borát készítő naiv civil azt hiszi, hogy egy 260 literesként vásárolt tartályba gond nélkül belefér 228 liter színlé. Aztán az utóerjedésre számítva rászereli a légzőszelepet a tömlős úszófedélre, és rájön, hogy a kiálló szelepnek 12 centi a helyigénye felfelé. Ha a porvédő fedelet billegésmentesen kívánom elhelyezni a tartály tetején, akkor 39 literrel csökken a hasznos űrtartalom (6.4x6.4xπ/4x1.2), ami eleve nem a terméklapon hirdetett 260 liter, hanem csupán 257. A maradék tárolóhely: 218 liter. Ha beletöltöm mind a 228-at, akkor a szelep 3 centit kilóg a tartály fölé, tehát ekkora rés tátong a fedél és a tartály teteje között. Apró szépséghiba. A préslé egy 145 literes tartályba került, ebben nem kell szűkölködni.</p>
         </div>                       
       </div>
-      <h1>2020. november 10.</h1>
+      <h1 id="2020-11-10" alcim="1. analízis, almasavbontás kezdődik"></h1>
       <div class="box">
         <div class="box-text">
           <p>Első analízis.</p>
@@ -170,7 +175,7 @@
           <br>A fémtartály biztosítja a közvetett fűtés lehetőségét, ráadásul nagy felületen, a merülőforralóhoz vagy a pincét fűtő nagy teljesítményű fűtőkészülékhez képest egy nagyságrenddel alacsonyabb teljesítménnyel lehet melegíteni a kívánt hőfok eléréséhez. Így esett a választás a hőtükörrel kombinált fűtőfóliára, ami szinte ideális a feladathoz.</p>
         </div>
       </div>
-      <h1>2020. november 16.</h1>
+      <h1 id="2020-11-16" alcim="fűtőköpeny felszerelve"></h1>
       <div class="box">
         <div class="box-text">
           <p><a href="/tech/futokopeny.html">Fűtőköpeny</a> felszerelve, termosztát 18 fokra állítva.</p>
@@ -179,7 +184,7 @@
           <img src="https://kep.pince.eu/evja_01_image040.webp">
         </div>
       </div>
-      <h1>2020. december 11.</h1>
+      <h1 id="2020-12-11" alcim="2. analízis"></h1>
       <div class="box">
         <div class="box-text">
           <p>Második analízis.</p>
@@ -191,7 +196,7 @@
           <p>Az almasav jelentős része átalakult tejsavvá, de a teljes átalakulástól még messze van. A baktériumok kedvében járva erjesztés után még nem kéneztem a bort, ennek ellenére jó állapotban van. Zárt tartályban, oxigéntől elzárva, viszonylag steril körülmények között tárolom. Nem illósodik, nincs szükség azonnali kénezésre, ezért szakemberek javaslatára az almasavbontást egy hónappal meghosszabbítottam. A hőfokot fölnyomtam 19 fokra. Biztos, ami biztos.</p>
         </div>
       </div>
-      <h1>2021. január 6.</h1>
+      <h1 id="2021-01-06" alcim="3. analízis"></h1>
       <div class="box">
         <div class="box-text">
           <p>Harmadik analízis.</p>
@@ -209,7 +214,7 @@
           </p>
         </div>
       </div>
-      <h1>2021. január 8.</h1>
+      <h1 id="2021-01-08" alcim="almasavbontás vége"></h1>
       <div class="box">
         <div class="box-text">
           <p>Végre kikapcsolhattam a fűtőköpenyeket. 112 kWh villamos energiát emésztett fel a művelet, ami egy takarékos háztartásnak kb. 1 havi fogyasztása (ha két hónapon keresztül az egész pincét fűtöm villannyal, mint az első napokban, arra a gatyám is ráment volna). Fejtés, kénezés, hordómosás. A hordót néhány napra feltöltöttem vízzel – inkább ezt igya, mint később a bort.</p>
@@ -224,13 +229,13 @@
           <img src="https://kep.pince.eu/evja_01_image046.webp">
         </div>
       </div>
-      <h1>2021. január 13.</h1>
+      <h1 id="2021-01-13" alcim="fejtés tölgyfa hordóba"></h1>
       <div class="box">
         <div class="box-text">
           <p>Hordóba töltve 226 liter színlé (szabad SO<sub>2</sub> 36 mg/l), tartályba 68 liter préslé (szabad SO<sub>2</sub> 39 mg/l).</p>
         </div>
       </div>
-      <h1>2021. augusztus 4.</h1>
+      <h1 id="2021-08-04" alcim="mérés"></h1>
       <div class="box">
         <div class="box-text">
           <p>Az elmúlt hónapokban nem történt semmi azon kívül, hogy kéthetente színültig töltöttem a hordót, elégettem néhány kénlapot a pincében, és néha kiöntöttem a páraelszívóból a kondenzvizet. Persze kóstoltam is alkalmanként. Ízéből is érezhetően külön úton jár a hordós tétel és a tartályos, de az analízis eredményei alapján nagyon közel állnak egymáshoz. Egypetéjű ikrek. Az egyik Oxfordban tanul, a másik beállt inasnak egy cipészműhelybe, de mindketten életrevalók.
@@ -238,7 +243,7 @@
           <br>Vittem mintát a hordóból a laborba, ahol 37 mg/liter SO<sub>2</sub> értéket mutattak ki. Ez egy kicsit meghaladja a januárban mért értéket, ami jó eséllyel a ±5 mg/literes mérési pontatlanságból adódik. Lehet ez akár 32 is, ami hihetőbb. Egyelőre nem teszek bele több ként. Szakember javaslatára még fél évig érik a hordóban, tehát ebből 2022 tavaszára várható eredmény.</p>
         </div>
       </div>
-      <h1>2021. augusztus 15.</h1>
+      <h1 id="2021-08-15" alcim="palackozás ajándékba"></h1>
       <div class="box">
         <div class="box-text">
           <p>Ma megtöltöttem néhány palackot a tartályból, amiket felcímkéztem kedves ismerőseimnek, hogy addig is legyen mit lefitymálniuk, amíg a hordós tételre várni kell. A címkék felragasztása embert próbáló feladat. Egyik sem sikerült tökéletesen. Ehhez a művelethez gyártanom kell valami <a href="/tech/cimkezo.html">segédeszközt</a>, mert különben a rendetlenül felragasztott címkék szégyent hoznak rám.</p>
@@ -247,7 +252,7 @@
           <img src="https://kep.pince.eu/evja_01_image048.webp">
         </div>
       </div>
-      <h1>2022. március 21.</h1>
+      <h1 id="2022-03-21" alcim="hordós érlelés vége"></h1>
       <div class="box">
         <div class="box-text">
           <p>Ma erősen elgondolkodtam azon, hogy mikor kell a hordós érlelést abbahagyni? Több tényező befolyásolja a döntést, és ezek közül csak az egyik szól úgy, hogy már 14 hónapja tart. Ez az adat egyedül is elegendő lenne annak indoklására, hogy itt az ideje átfejteni tartályba. A kóstolás sem mutatott változást a korábbi élményhez viszonyítva, jobb már nem lesz. Ha mégis, akkor ennek igazolása akadályba ütközik, mert más is szerepel abban a képletben, amit megoldva kijön az eredmény, és ez önmagában is elég súlyos: elfogyott a töltögetős anyag. Ha elfogyott, akkor abból se töltögetni, se inni sem lehet, tehát cselekedni kell.
@@ -261,14 +266,14 @@
           <img src="https://kep.pince.eu/evja_01_P1050863.webp">
         </div>
       </div>
-      <h1>2022. március 23.</h1>
+      <h1 id="2022-03-23" alcim="fejtés, kénezés"></h1>
       <div class="box">
         <div class="box-text">
           <p>Tartályba került, kénezés megvolt. Úszófedél rajta, oxigéntől paraffinolajjal elzárva. Különös, hogy akiket eddig közelről láttam borral foglalkozni, ők kivétel nélkül a hagyományos, por alakú borkén alkalmazására esküsznek, és kanállal adagolják azzal a kísérőszöveggel, hogy "mindig ennyit teszek bele". Kálium-diszulfit, K<sub>2</sub>S<sub>2</sub>O<sub>5</sub>. Kétségtelen, hogy ezzel az anyaggal kálium is jut a borba. A kénessav oldattal is kerül a borba az SO<sub>2</sub>-n kívül haszontalan anyag (a mostani adagolással kb. másfél deci víz egy hordónyi mennyiséghez), de ettől nem viszolygok annyira.
           <br>Most két hét kényszerű várakozás következik.</p>
         </div>
       </div>
-      <h1>2022. április 13.</h1>
+      <h1 id="2022-04-13" alcim="mérés"></h1>
       <div class="box">
         <div class="box-text">
           <p>Egy újabb mérés szerint jól sikerült a kénezés, mert 42 mg/l lett a vizsgálat eredménye. Úgy tűnik, hogy az oldat töménysége nem csökkent a tárolás alatt, és a 40-et meghaladó értékhez köze lehet annak, hogy a szivattyúzás során fellépő veszteséget tetéztem 4 liternyi mennyiség kénezés előtti, előrelátó levételével, amivel a két hetes várakozási idő alatt sem maradtunk bor nélkül.
@@ -277,6 +282,7 @@
           </p>
         </div>
       </div>
+      <div id="2022-04-13T14:00" alcim="az öreg másképp csinálta"></div>
       <div class="box">
         <div class="box-text-update">
           <p>
@@ -290,11 +296,9 @@
             <br>
             &bull;néhány óra múlva hozzáadni fajélesztőt, pektinbontót, tápsót – az élesztőt 10 percig állni hagyni, hogy beinduljon (kézmeleg vízben)
             <br>
-            &bull;kb. 3 nap múlva forrásnak indul, ekkor
+            kb. 3 nap múlva forrásnak indul, ekkor:
             <br>
-            &bull;1.3 kg cukor/+fok (pl. 17 fokos must, +6.5 kg cukor = 22 fokos must)
-            <br>
-            ha már forr a must:
+            &bull;1.3 kg cukor/hl/+fok (pl. 17 fokos must, +6.5 kg cukor = 22 fokos must)
             <br>
             &bull;1 vödör must szűrőn keresztül, ebbe a cukrot belekeverni, cefrébe visszaönteni, csömöszölni
             <br><br>

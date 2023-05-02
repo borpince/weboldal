@@ -16,13 +16,17 @@
   </div>
   <section id="container_cs2020">
     <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
       <div class="left-side">
         <div id="bigyo">
-          <div id="home" class="nav-link-wrapper" >
-            <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
           </div>
-          <button id="kjelzo"></button>
-          <table><tr><td id="holtart"></td></tr></table>
         </div>
         <select name="olv"></select>
       </div>
@@ -111,7 +115,7 @@
         </div>
         <div class="box-text-update">
           <p>
-            Minden valamirevaló szakember tud mesélni legalább egy történetet, amivel ezt cáfolja. Nem kell messzire menni, mert a <code>fejezetek.js</code> <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L6">6. sorára</a> eredetileg nem volt szükség, enélkül is kifogástalanul működött a program.
+            Minden valamirevaló szakember tud mesélni legalább egy történetet, amivel ezt cáfolja. Nem kell messzire menni, mert a <code>fejezetek.js</code> <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L12">12. sorára</a> eredetileg nem volt szükség, enélkül is kifogástalanul működött a program.
             Aztán megtettem azt a lépést, hogy alapos tesztelés után nyomtam egy "Commit & Push"-t a GitHubon.
             Ennek eredményeként a <a href="https://developers.cloudflare.com/pages/platform/git-integration/">Cloudflare Pages</a> helyére teszi a legfrissebb változatot, ami rögtön elérhető a webről. Príma. Nem is az elérhetőséggel van baj, hanem az okoz meglepetést, hogy minden téma legördülő választéka helyett az oldaltérkép jelenik meg,
             ami nem az eredeti elképzelésem szerinti működés, de a teszteredményekhez képest is merőben más, pedig egy vadon élő NGINX webszerveren próbálgattam, nem laborkörülmények között.
@@ -120,7 +124,7 @@
             Egyszerű recept a megoldáshoz, de egyelőre fingom sincs, hogy miért dolgozza fel másképpen ugyanaz a program a különböző webszerverekről betöltődő, de azonos tartalmú anyagot? Aztán kiderítettem, hogy a Pages-ről betöltött cucc esetén az URL nem tartalmazza a szokásos végződést, és például
             "pince.eu/olv/jelzesek.html" helyett "pince.eu/olv/jelzesek" lesz a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/href"><code>location.href</code></a> értéke, amit most is láthatsz, ha rápillantasz a böngésző címsorára.
             <br>
-            Nincs mit tenni, alkalmazkodni kell ehhez a viselkedéshez is, aztán jó lesz. Nem akarok annyira érteni hozzá, hogy a miértre is tudjam a választ, megelégszem azzal, hogy a 6. sorba írt kiegészítéssel megszűnt a rendellenes működés.
+            Nincs mit tenni, alkalmazkodni kell ehhez a viselkedéshez is, aztán jó lesz. Nem akarok annyira érteni hozzá, hogy a miértre is tudjam a választ, megelégszem azzal, hogy a kiegészítéssel megszűnt a rendellenes működés.
           </p>
         </div>
         <div class="box-text">

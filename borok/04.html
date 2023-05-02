@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="hu">
-
 <head>
   <title>borospince</title>
   <meta name="description" content="A borospincében kékfrankos is készült 2022-ben.">
@@ -11,20 +10,23 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
   <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
 </head>
-
 <body>
   <div class="active-footer">
     <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
   </div>
   <section id="container_cs2020">
     <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
       <div class="left-side">
         <div id="bigyo">
-          <div id="home" class="nav-link-wrapper" >
-            <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
           </div>
-          <button id="kjelzo"></button>
-          <table><tr><td id="holtart"></td></tr></table>
         </div>
         <select name="borok"></select>
       </div>
@@ -41,7 +43,8 @@
           </p>
         </div>
       </div>
-      <h1>2022. szeptember 19.</h1>
+      <object name="alcimek">A borkészítés {x} napos folyamata</object>
+      <h1 id="2022-09-19" alcim="új tartály"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -85,7 +88,7 @@
           </p>
         </div>
       </div>
-      <h1>2022. szeptember 23.</h1>
+      <h1 id="2022-09-23" alcim="szüret, szállítás"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -114,7 +117,7 @@
         <div class="box-img">
           <img src="https://kep.pince.eu/evja_04_05_IMG_9564.webp">
         </div>
-        <div class="box-text">
+        <div id="2022-09-23T14:00" alcim="feldolgozás" class="box-text">
           <p>
             Darálás után, a fajsúlymérős fokolóval 19-es cukorfokot mértem, ami kb. 12%-os alkoholtartalmat ígér. Elfogadjuk ilyennek, ebbe sem teszek cukrot.
           </p>
@@ -136,7 +139,7 @@
           </p>
         </div>
       </div>
-      <h1>2022. szeptember 24.</h1>
+      <h1 id="2022-09-24" alcim="egérlátogatás"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -168,7 +171,7 @@
           </p>
         </div>
       </div>
-      <h1>2022. szeptember 28.</h1>
+      <h1 id="2022-09-28" alcim="erjedés indul"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -194,8 +197,7 @@
           </p>
         </div>
       </div>
-
-      <h1>2022. szeptember 29.</h1>
+      <h1 id="2022-09-29" alcim="csömöszölős baleset"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -238,8 +240,7 @@
           <img src="https://kep.pince.eu/evja_04_13_P1070167.webp">
         </div>
       </div>
-
-      <h1>2022. október 7.</h1>
+      <h1 id="2022-10-07" alcim="erjedés vége"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -250,7 +251,7 @@
         <div class="box-img">
           <img src="https://kep.pince.eu/evja_04_16_hofok_graf.webp">
         </div>
-        <div class="box-text">
+        <div id="2022-10-07T14:00" alcim="fejtés, kénezés" class="box-text">
           <p>
             A gravitációs fejtés és a kénezés után a vadonatúj tartályt optimálisan tölti ki 292 liter színlé, préseléssel még további 46 liter került üvegballonba (kihozatal: 74%, 456 kg szőlőből).
           </p>
@@ -262,7 +263,7 @@
           <img src="https://kep.pince.eu/evja_04_14_P1070256.webp">
         </div>
       </div>
-      <h1>2022. október 10.</h1>
+      <h1 id="2022-10-10" alcim="törkölyszárítás"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -287,7 +288,7 @@
           <img src="https://kep.pince.eu/evja_04_19_P1070286.webp">
         </div>
       </div>
-      <h1>2022. október 17.</h1>
+      <h1 id="2022-10-17" alcim="szárított törköly"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -301,7 +302,7 @@
           <img src="https://kep.pince.eu/evja_04_20_P1070369.webp">
         </div>
       </div>
-      <h1>2022. december 2.</h1>
+      <h1 id="2022-12-02" alcim="fejtés, levegőztetés"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -317,7 +318,7 @@
             <br>
             Jól vizsgázott a zsomp a tartálymosást követő visszatöltésnél.
           </p>
-          <div class="box-img">
+          <div id="2022-12-04" alcim="bökszer" class="box-img">
             <img src="https://kep.pince.eu/zsomp_08_P1070632.webp">
           </div>
           <p>
@@ -331,7 +332,7 @@
           </p>
         </div>
       </div>
-      <h1>2022. december 19.</h1>
+      <h1 id="2022-12-19" alcim="mérés, kénezés"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -342,7 +343,7 @@
           </div>
         </div>
       </div>
-      <h1>2023. január 31.</h1>
+      <h1 id="2023-01-31" alcim="fejtés tölgyfa hordóba"></h1>
       <div class="box">
         <div class="box-text">
           <p>

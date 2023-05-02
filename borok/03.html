@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="hu">
-
 <head>
   <title>borospince</title>
   <meta name="description" content="A borospincében rozé is készült 2022-ben.">
@@ -11,20 +10,23 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
   <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
 </head>
-
 <body>
   <div class="active-footer">
     <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
   </div>
   <section id="container_cs2020">
     <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
       <div class="left-side">
         <div id="bigyo">
-          <div id="home" class="nav-link-wrapper" >
-            <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
           </div>
-          <button id="kjelzo"></button>
-          <table><tr><td id="holtart"></td></tr></table>
         </div>
         <select name="borok"></select>
       </div>
@@ -41,7 +43,8 @@
           </p>
         </div>
       </div>
-      <h1>2022. augusztus 27.</h1>
+      <object name="alcimek">A borkészítés {x} napos folyamata</object>
+      <h1 id="2022-08-27" alcim="szüret, szállítás"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -58,7 +61,7 @@
         <div class="box-img">
           <img src="https://kep.pince.eu/evja_03_02_P1060860.webp">
         </div>
-        <div class="box-text">
+        <div id="2022-08-27T14:00" alcim="feldolgozás" class="box-text">
           <p>
             A következő képen látszik, hogy még a darálás kezdete előtt odakészítettem minden eszközt, ha hirtelen használni kellene.
             <br>
@@ -69,7 +72,7 @@
         <div class="box-img">
           <img src="https://kep.pince.eu/evja_03_05_P1060873.webp">
         </div>
-        <div class="box-text">
+        <div id="2022-08-27T16:00" alcim="bonyodalom" class="box-text">
           <p>
             Megúszhattam volna a szűrőkosár használatát, ha nem bonyolódnak a körülmények. Nem találtam sehol a bordó dézsa alján fúrt lyukba szerelhető csaphoz tartozó anyacsavart, márpedig enélkül a jól tömített rögzítés – oldható kötéssel – nem megoldható feladat. Rövid gondolkodás után meglett a csavar: a tavasszal acéltartályba fejtett, és paraffinos úszófedéllel lezárt <a href="/borok/01.html#:~:text=2022.%20m%C3%A1rcius%2023.-,Tart%C3%A1lyba%20ker%C3%BClt,-%2C%20k%C3%A9nez%C3%A9s%20megvolt.%20%C3%9Asz%C3%B3fed%C3%A9l">cabernet sauvignon</a> fölött, az úszófedél vakdugójának menetes részére csavarva. Mert ez igazából egy tömlős úszófedél, amire légzőszelepet is szerelhetek. Ilyen méretben nem árulnak sima úszófedelet, ezért levettem róla a tömlőt, a légzőszelephez kialakított likjába meg egy vakdugót tettem.
           </p>
@@ -107,7 +110,7 @@
             Szőlő ledarálva, must tartályba szivattyúzva. Cukorfok 19. Néztem refraktométerrel is néhány szemet darálás előtt, ami meglepő eredményekkel szolgált. Kedvesem megkóstolta, és az egyik fürtről savanyú szemet sikerült megízlelnie. Megmértem. 9-et mutatott a műszer, de azzal vigasztaltam, hogy összességében megfelelő lesz így is.
           </p>
         </div>
-        <div class="box-text">
+        <div id="2022-08-27T18:00" alcim="látogatók érkeznek" class="box-text">
           <p>
             Nem volt rendkívüli eseményektől mentes ez a művelet, ami kétségessé teszi a kialakítandó rozéság sikerét. A darálás befejeztével úgy döntöttünk, hogy azonnal leszívjuk a levet, mert már akkor is előrehaladott színt mutatott ahhoz, hogy ne várjunk tovább. Szűrőkosár, szivattyúzás. Megy ez, mint a karikacsapás.
             <br>
@@ -121,7 +124,7 @@
           </p>
         </div>
       </div>
-      <h1>2022. augusztus 31.</h1>
+      <h1 id="2022-08-31" alcim="nem mozdul a must"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -151,7 +154,7 @@
           <img src="https://kep.pince.eu/evja_03_08_P1060943.webp">
         </div>
       </div>
-      <h1>2022. szeptember 1.</h1>
+      <h1 id="2022-09-01" alcim="erjedés indul"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -161,7 +164,7 @@
           </p>
         </div>
       </div>
-      <h1>2022. szeptember 17.</h1>
+      <h1 id="2022-09-17" alcim="erjedés vége"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -182,7 +185,7 @@
           </p>
         </div>
       </div>
-      <h1>2022. október 19.</h1>
+      <h1 id="2022-10-19" alcim="ülepedett, tisztult"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -199,7 +202,7 @@
           <img src="https://kep.pince.eu/evja_03_13_P1070356a.webp">
         </div>
       </div>
-      <h1>2022. december 9.</h1>
+      <h1 id="2022-12-09" alcim="fejtés, levegőztetés"></h1>
       <div class="box">
         <div class="box-text">
           <p>
@@ -208,7 +211,7 @@
           </p>
         </div>
       </div>
-      <h1>2022. december 19.</h1>
+      <h1 id="2022-12-19" alcim="mérés, kénezés"></h1>
       <div class="box">
         <div class="box-text">
           <p>

@@ -1,3 +1,11 @@
+#naptar, #holtart {
+  margin-top: 10px;
+  font-size: x-large;
+  background-color:rgba(69, 81, 134, 0.747);
+  border-radius: 16%;
+  border: 1px solid black;
+  cursor: pointer;
+}
 #kjelzo {
   margin-top: 15px;
   font-size: x-large;
@@ -112,6 +120,7 @@ body {
   opacity: 80%;
   justify-content: space-between;
   z-index: 1;
+  transition: all .6s
 }
 
 .center, .right-side {
@@ -123,9 +132,12 @@ body {
 
 .left-side {
   display: flex;
-  margin: 0px 5px;
+  margin: 0px 0px;
   align-items: flex-start;
   justify-content: center;
+  position: absolute;
+  left: 0px;
+  transition: all .6s
 }
 
 .nav-wrapper > .left-side > div, .nav-wrapper > .right-side > div, .nav-wrapper > .center > div {
@@ -136,7 +148,15 @@ body {
 
 .nav-wrapper > .right-side > .brand > p {
   color: white;
+}
 
+#hamburger {
+  cursor: pointer;
+  z-index: 1;
+  color: white;
+  font-size: 50px;
+  top: -10;
+  display: flex;
 }
 
 #bigyo {
@@ -147,12 +167,9 @@ body {
   flex-flow: column wrap;
 }
 
-#bigyo > table {
-  margin-top: 10px;
-  cursor: pointer;
-  background-color:rgba(69, 81, 134, 0.747);
-  border-radius: 16%;
-  border: 1px solid black;
+#balmenu {
+  position: relative;
+  top: 45px;
 }
 
 .left-side > select {
