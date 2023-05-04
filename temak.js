@@ -1,6 +1,7 @@
 var temak =
 {
   "borok": {
+    folder: "borok",
     cim:"– – borok, évjáratok",
     lista:{
       "2020": [{cim:"#01: cabernet sauvignon", nev:"01",ver:0}],
@@ -12,25 +13,23 @@ var temak =
     }
   },
   "tech": {
+    folder: "tech",
     cim:"– – technológia",
     lista:{
       "a": [{cim:"kénezési segédlet", nev:"kenezes",ver:0}],
       "b": [{cim:"fűtőköpeny", nev:"futokopeny",ver:0}],
       "c": [{cim:'zúzó-bogyózó "downgrade"', nev:"hajtokerek",ver:0}],
-      "d": [{cim:"címke, borcímke", nev:"cimke",ver:0}],
-      "e": [{cim:"címkéző segédeszköz", nev:"cimkezo",ver:0}],
-      "f": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link",ver:0}],
-      "g": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g",ver:0}],
-      "h": [{cim:"életmentő ventilátor", nev:"vent",ver:0}],
-      "i": [{cim:"törkölykiszedő vasvilla", nev:"vasvilla",ver:0}],
-      "j": [{cim:"vödörsüllyesztő zsomp", nev:"zsomp",ver:0}],
-      "k": [{cim:"védőgáz", nev:"vedogaz",ver:0}]
+      "d": [{cim:"címkéző segédeszköz", nev:"cimkezo",ver:0}],
+      "e": [{cim:"életmentő ventilátor", nev:"vent",ver:0}],
+      "f": [{cim:"törkölykiszedő vasvilla", nev:"vasvilla",ver:0}],
+      "g": [{cim:"vödörsüllyesztő zsomp", nev:"zsomp",ver:0}],
+      "h": [{cim:"védőgáz", nev:"vedogaz",ver:0}]
     }
   },
   "olv": {
+    folder: "olv",
     cim:"– – olvasnivaló",
     lista:{
-      "@": [{cim:"borászatról, weboldalról", nev:"gondolatok",ver:0}],
       "a": [
         // subfolder elé azért került "/", mert a path összeállítása így egyszerűbb (select.onchange)
         {cim:"magad uram...", subfolder:"/igykeszult", nev:"magad",ver:0},
@@ -56,16 +55,27 @@ var temak =
       "d": [{cim:"szárnypróbálgatás", nev:"00",ver:0}],
       "e": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021",ver:0}],
       "f": [{cim:"hitvallás", nev:"semmiflanc",ver:0}],
-      "g": [{cim:"arculati elem", nev:"arculat",ver:0}],
-      "h": [{cim:"tengöri nóta", nev:"tengori",ver:0}],
-      "i": [
+      "g": [{cim:"tengöri nóta", nev:"tengori",ver:0}],
+      "h": [
         {cim:"borok versenye", subfolder:"/bv", nev:"borverseny",ver:0},
         {cim:"XI. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2022",ver:0},
         {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023",ver:0}
-      ],
-      "j": [{cim:"ülni babérokon, kényelmesen", nev:"baber",ver:0}],
-      "k": [{cim:"jelzések haszna", nev:"jelzesek",ver:1}],
-      "l": [
+      ]
+    }
+  },
+  "it": {
+    folder: "olv",
+    cim:"– – a pince és az IT",
+    lista:{
+      "a": [{cim:"borászatról, weboldalról", nev:"gondolatok",ver:0}],
+      "b": [{cim:"címke, borcímke", nev:"cimke",ver:0}],
+      "c": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link",ver:0}],
+      "d": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g",ver:0}],
+      "e": [{cim:"arculati elem", nev:"arculat",ver:0}],
+      "f": [{cim:"ülni babérokon, kényelmesen", nev:"baber",ver:0}],
+      "g": [{cim:"jelzések haszna", nev:"jelzesek",ver:1}],
+      "h": [{cim:"hamburger button", nev:"hamburger",ver:0}],
+      "i": [
         {cim:"IT-kaland", subfolder:"/it_kaland", nev:"kaland",ver:0},
         {cim:"WebP", subfolder:"/it_kaland", nev:"webp",ver:0},
         {cim:"alapkutatás, mérés", subfolder:"/it_kaland", nev:"kutatas",ver:0},
@@ -75,5 +85,5 @@ var temak =
         {cim:"1.1.1.1", subfolder:"/it_kaland", nev:"one",ver:0}
       ]
     }
-  }
+  },
 }

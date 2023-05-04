@@ -198,7 +198,7 @@ function lista_gyarto(select,ref_nev) {
         for (var le_sub_idx in temak[tk].lista[lek]) { //le_sub_idx: lista elemen belüli index
           var le = temak[tk].lista[lek][le_sub_idx]; //le: lista elem
           var option = document.createElement('option');
-          option.folder = tk;
+          option.folder = temak[tk].folder;
           option.subfolder = le.hasOwnProperty("subfolder") ? le.subfolder:"";
           option.value = le.nev;
           option.innerHTML = "<u>"+nj(le)+le.cim+"</u>";
@@ -213,7 +213,7 @@ function lista_gyarto(select,ref_nev) {
         for (var i = 0; i < utolso; i++) {
           var le = temak[tk].lista[lek][i]; //le: lista elem
           var option = document.createElement('option');
-          option.folder = tk;
+          option.folder = temak[tk].folder;
           option.subfolder = le.hasOwnProperty("subfolder") ? le.subfolder:"";
           option.value = le.nev;
           var fejezet = (select.name == '*') ? `${karikas_szam(i+1)}&#8197;`:jelek.folder[0];
@@ -264,19 +264,19 @@ function lista_gyarto(select,ref_nev) {
       valasztek(select.name);
     break;
     default: //történetből megjelenített lista
-      var tema = letezik(ref_nev,true).tema;
-      if (tema) { //több fejezetből álló téma
-        for (var le_sub_idx in tema) {
+      var tmdx = letezik(ref_nev,true);
+      if (tmdx.tema) { //több fejezetből álló téma
+        for (var le_sub_idx in tmdx.tema) {
           var option = document.createElement('option');
-          option.folder = select.name;
-          option.subfolder = tema[le_sub_idx].hasOwnProperty("subfolder") ? tema[le_sub_idx].subfolder:"";
-          option.value = tema[le_sub_idx].nev;
-          var fejezet = (tema.length > 1) ? `${karikas_szam((le_sub_idx*1)+1)}&#8197;`:"";
-          option.innerHTML = nj(tema[le_sub_idx])+fejezet+tema[le_sub_idx].cim;
+          option.folder = temak[tmdx.tk].folder;
+          option.subfolder = tmdx.tema[le_sub_idx].hasOwnProperty("subfolder") ? tmdx.tema[le_sub_idx].subfolder:"";
+          option.value = tmdx.tema[le_sub_idx].nev;
+          var fejezet = (tmdx.tema.length > 1) ? `${karikas_szam((le_sub_idx*1)+1)}&#8197;`:"";
+          option.innerHTML = nj(tmdx.tema[le_sub_idx])+fejezet+tmdx.tema[le_sub_idx].cim;
           select.appendChild(option);
-          if (ref_nev == tema[le_sub_idx].nev) glob.cim = tema[le_sub_idx].cim;
+          if (ref_nev == tmdx.tema[le_sub_idx].nev) glob.cim = tmdx.tema[le_sub_idx].cim;
         }
-      } else valasztek(select.name);
+      } else valasztek(tmdx.tk);
       select.value = ref_nev;
   }
 
@@ -439,7 +439,7 @@ function webhelyterkep_gyarto() {
           var le = temak[tk].lista[lek][le_sub_idx]; //le: lista elem
           var subfolder = (le.hasOwnProperty("subfolder")) ? le.subfolder:"";
           if (le.nev.indexOf('/') == -1) //nem külső link
-            txt += cim+tk+subfolder+"/"+le.nev+".html\n";
+            txt += cim+temak[tk].folder+subfolder+"/"+le.nev+".html\n";
         }
     var elem = document.createElement('a');
     elem.href = 'data:attachment/text,' + encodeURI(txt);
@@ -468,8 +468,9 @@ addEventListener("load", () => {
   alcim_gyujto();
   kjelzo_frissit(true);
   glob.select_tb = document.getElementsByTagName("SELECT");
-  for (var i = 0; i < glob.select_tb.length; i++)
+  for (var i = 0; i < glob.select_tb.length; i++) {
     if ((temak[glob.select_tb[i].name] != undefined) || (glob.select_tb[i].name == '*')) lista_gyarto(glob.select_tb[i],glob.href_nev);
+  }
   glob.obj_tb = document.getElementsByTagName("OBJECT");
   for (var i = 0; i < glob.obj_tb.length; i++) {
     if (glob.obj_tb[i].name == "jmtabla") jelmagyarazat(glob.obj_tb[i]);
