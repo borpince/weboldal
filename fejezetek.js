@@ -134,7 +134,7 @@ function toc(object) {
     var cim;
     if (i > 0) {
       cim = document.createElement('A');
-      cim.setAttribute("href",`/${tmdex.tk}${tmdex.tema[i].subfolder}/${tmdex.tema[i].nev}.html`);
+      cim.setAttribute("href",`/${temak[tmdex.tk].folder}${tmdex.tema[i].subfolder}/${tmdex.tema[i].nev}.html`);
     } else cim = document.createElement('SPAN');
     cim.innerHTML = `${tmdex.tema[i].cim}<br>`;
     object.appendChild(cim);
@@ -302,7 +302,7 @@ function elore_hatra() {
     for (var i = 0; i < halad_tb.length; i++) {
 
       function kitolt(txt) {
-        halad_tb[i].setAttribute("href",`/${tmdex.tk}${tmdex.tema[idx].subfolder}/${tmdex.tema[idx].nev}.html`);
+        halad_tb[i].setAttribute("href",`/${temak[tmdex.tk].folder}${tmdex.tema[idx].subfolder}/${tmdex.tema[idx].nev}.html`);
         halad_tb[i].innerHTML = `(${txt} fejezet: ${tmdex.tema[idx].cim})`;
       }
 

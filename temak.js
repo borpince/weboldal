@@ -68,14 +68,7 @@ var temak =
     cim:"– – a pince és az IT",
     lista:{
       "a": [{cim:"borászatról, weboldalról", nev:"gondolatok",ver:0}],
-      "b": [{cim:"címke, borcímke", nev:"cimke",ver:0}],
-      "c": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link",ver:0}],
-      "d": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g",ver:0}],
-      "e": [{cim:"arculati elem", nev:"arculat",ver:0}],
-      "f": [{cim:"ülni babérokon, kényelmesen", nev:"baber",ver:0}],
-      "g": [{cim:"jelzések haszna", nev:"jelzesek",ver:1}],
-      "h": [{cim:"hamburger button", nev:"hamburger",ver:0}],
-      "i": [
+      "b": [
         {cim:"IT-kaland", subfolder:"/it_kaland", nev:"kaland",ver:0},
         {cim:"WebP", subfolder:"/it_kaland", nev:"webp",ver:0},
         {cim:"alapkutatás, mérés", subfolder:"/it_kaland", nev:"kutatas",ver:0},
@@ -83,7 +76,14 @@ var temak =
         {cim:"gondolatok a biztonságról", subfolder:"/it_kaland", nev:"biztonsag",ver:0},
         {cim:"adalék a sikerhez", subfolder:"/it_kaland", nev:"adalek",ver:0},
         {cim:"1.1.1.1", subfolder:"/it_kaland", nev:"one",ver:0}
-      ]
+      ],
+      "c": [{cim:"ülni babérokon, kényelmesen", nev:"baber",ver:0}],
+      "d": [{cim:"jelzések haszna", nev:"jelzesek",ver:1}],
+      "e": [{cim:"hamburger button", nev:"hamburger",ver:0}],
+      "f": [{cim:"arculati elem", nev:"arculat",ver:0}],
+      "g": [{cim:"címke, borcímke", nev:"cimke",ver:0}],
+      "h": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link",ver:0}],
+      "i": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g",ver:0}]
     }
   },
 }
