@@ -8,7 +8,7 @@ var temak =
       "2022": [
         {cim:"#02: oportó",nev:"02",ver:0},
         {cim:"#03: rozé",nev:"03",ver:0},
-        {cim:"#04: kékfrankos",nev:"04",ver:0}
+        {cim:"#04: kékfrankos",nev:"04",ver:1}
       ]
     }
   },
@@ -50,7 +50,7 @@ var temak =
         {cim:"tavaszodik", subfolder:"/igykeszult", nev:"tavasz",ver:0},
         {cim:"tavaszodik I", subfolder:"/igykeszult", nev:"tavaszodik",ver:0},
         {cim:"tavaszodik II", subfolder:"/igykeszult", nev:"tavaszodik2",ver:0},
-        {cim:"tavaszodik III", subfolder:"/igykeszult", nev:"tavaszodik3",ver:0}
+        {cim:"tavaszodik III", subfolder:"/igykeszult", nev:"tavaszodik3",ver:1}
       ],
       "d": [{cim:"szárnypróbálgatás", nev:"00",ver:0}],
       "e": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021",ver:0}],
