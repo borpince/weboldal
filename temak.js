@@ -47,10 +47,10 @@ var temak =
       ],
       "b": [{cim:"cseppköves emlékek", nev:"cseppkovek",ver:0}],
       "c": [
-        {cim:"tavaszodik", subfolder:"/igykeszult", nev:"tavasz",ver:0},
-        {cim:"tavaszodik I", subfolder:"/igykeszult", nev:"tavaszodik",ver:0},
-        {cim:"tavaszodik II", subfolder:"/igykeszult", nev:"tavaszodik2",ver:0},
-        {cim:"tavaszodik III", subfolder:"/igykeszult", nev:"tavaszodik3",ver:1}
+        {cim:"tavaszodik", subfolder:"/kert", nev:"tavasz",ver:0},
+        {cim:"tavaszodik I", subfolder:"/kert", nev:"tavaszodik",ver:0},
+        {cim:"tavaszodik II", subfolder:"/kert", nev:"tavaszodik2",ver:0},
+        {cim:"tavaszodik III", subfolder:"/kert", nev:"tavaszodik3",ver:1}
       ],
       "d": [{cim:"szárnypróbálgatás", nev:"00",ver:0}],
       "e": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021",ver:0}],
@@ -64,18 +64,18 @@ var temak =
     }
   },
   "it": {
-    folder: "olv",
-    cim:"– – a pince és az IT",
+    folder: "it",
+    cim:"– – IT a pincében",
     lista:{
       "a": [{cim:"borászatról, weboldalról", nev:"gondolatok",ver:0}],
       "b": [
-        {cim:"IT-kaland", subfolder:"/it_kaland", nev:"kaland",ver:0},
-        {cim:"WebP", subfolder:"/it_kaland", nev:"webp",ver:0},
-        {cim:"alapkutatás, mérés", subfolder:"/it_kaland", nev:"kutatas",ver:0},
-        {cim:"JPEG &rarr; WebP", subfolder:"/it_kaland", nev:"konvert",ver:0},
-        {cim:"gondolatok a biztonságról", subfolder:"/it_kaland", nev:"biztonsag",ver:0},
-        {cim:"adalék a sikerhez", subfolder:"/it_kaland", nev:"adalek",ver:0},
-        {cim:"1.1.1.1", subfolder:"/it_kaland", nev:"one",ver:0}
+        {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland",ver:0},
+        {cim:"WebP", subfolder:"/kaland", nev:"webp",ver:0},
+        {cim:"alapkutatás, mérés", subfolder:"/kaland", nev:"kutatas",ver:0},
+        {cim:"JPEG &rarr; WebP", subfolder:"/kaland", nev:"konvert",ver:0},
+        {cim:"gondolatok a biztonságról", subfolder:"/kaland", nev:"biztonsag",ver:0},
+        {cim:"adalék a sikerhez", subfolder:"/kaland", nev:"adalek",ver:0},
+        {cim:"1.1.1.1", subfolder:"/kaland", nev:"one",ver:0}
       ],
       "c": [{cim:"ülni babérokon, kényelmesen", nev:"baber",ver:0}],
       "d": [{cim:"jelzések haszna", nev:"jelzesek",ver:1}],
