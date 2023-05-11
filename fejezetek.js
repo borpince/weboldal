@@ -424,7 +424,12 @@ function alcim_gyujto() {
     glob.naptar.setAttribute("style","display:inline");
     glob.naptar.innerHTML = jelek.naptar[0];
     glob.naptar.addEventListener("click",() => {
-      window.location = "/naptar.html";
+      var tmdex = letezik(glob.href_nev,false);
+      var csomag = {
+        cim: tmdex.tema[tmdex.le_sub_idx].cim,
+        esemenyek: Object.fromEntries(glob.alcimek)
+      }
+      window.location = `/naptar.html?${btoa(encodeURI(JSON.stringify(csomag)))}`;
     });
   }
 }
