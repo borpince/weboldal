@@ -23,7 +23,8 @@ var temak =
       "e": [{cim:"életmentő ventilátor", nev:"vent",ver:0}],
       "f": [{cim:"törkölykiszedő vasvilla", nev:"vasvilla",ver:0}],
       "g": [{cim:"vödörsüllyesztő zsomp", nev:"zsomp",ver:0}],
-      "h": [{cim:"védőgáz", nev:"vedogaz",ver:0}]
+      "h": [{cim:"védőgáz", nev:"vedogaz",ver:0}],
+      "i": [{cim:"penész a pincében", nev:"sarkany",ver:0}]
     }
   },
   "olv": {
