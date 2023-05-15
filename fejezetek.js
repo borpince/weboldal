@@ -163,7 +163,7 @@ function alcim_lista_gyarto(object) {
       ul.appendChild(li);
     });
     var idotartam = Math.round((new Date(utolso_nap) - new Date(elso_nap)) / 86400000);
-    object.innerHTML = object.innerHTML.replace("{x}",idotartam);
+    object.innerHTML = object.innerHTML.replace("{x}",++idotartam); //legalább 1 napos időtartam
     object.appendChild(ul);
   }
 }
@@ -409,7 +409,7 @@ function alcim_gyujto() {
         gyujto.set(cimke_tb[i].id, cimke_tb[i].getAttribute("alcim"));
         switch (cimke_tb[i].nodeName) {
           case "H1":
-            cimke_tb[i].innerHTML = datum_str;
+            if (cimke_tb[i].innerHTML == "") cimke_tb[i].innerHTML = datum_str;
           break;
           case "DIV":
             //cimke_tb[i].getAttribute("alcim");
