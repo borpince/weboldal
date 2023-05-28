@@ -373,7 +373,7 @@ function nap_index(d) {
 function webhelyterkep_gyarto() {
   if (window.location.search.substring(1).trim() == "terkep") {
     var cim = "https://"+window.location.hostname;
-    var txt = cim+"index.html\n"; //ez nem szerepel a témák listájában
+    var txt = cim+"/index.html\n"; //ez nem szerepel a témák listájában
     for (tk in temak)
       for (lek in temak[tk].lista)
         for (le_sub_idx in temak[tk].lista[lek]) {
