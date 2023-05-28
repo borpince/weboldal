@@ -1,57 +1,43 @@
 <!DOCTYPE html>
 <html lang="hu-HU">
-  <head>
-    <title>eseménynaptár</title>
-    <meta name="robots" content="noindex">
-		<meta charset='utf-8' />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">
-    /* https://www.bennadel.com/blog/4338-rotating-table-headers-with-css-transform.htm */
-    .forg {
-			height: 60px ;
-			position: relative ;
-		}
-		.forg_ {
-			bottom: 5px ;
-			left: 50% ;
-			position: absolute ;
-			transform: rotate( -45deg ) ;
-			transform-origin: center left ;
-			white-space: nowrap ;
-		}
-    @keyframes pulse {
-      0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-      }
-      70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-      }
-      100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-      }
-    }    
-/* https://love2dev.com/blog/css-background-stripes/ */
-    .jelol_hk {
-      background-image: repeating-linear-gradient(-30deg,#fff, #fff 10px, #BDC3C7 20px, #BDC3C7 40px);
-      animation: pulse 3s infinite;
-    }
-    .jelol_hv {
-      background-image: repeating-linear-gradient(-30deg,#fff, #fff 10px, MediumSeaGreen 20px, MediumSeaGreen 40px);
-      animation: pulse 3s infinite;
-    }
-    .jelol_unn {
-      background-image: repeating-linear-gradient(-30deg,#fff, #fff 10px, #E04343 20px, #E04343 40px);
-      animation: pulse 3s infinite;
-    }
-  </style>
-  </head>
-  <body>
-    <h1>eseménynaptár (fejlesztés alatt)</h1>
-    <font face="Arial"><object name="naptar"></object></font>
+<head>
+  <title>eseménynaptár</title>
+  <meta name="robots" content="noindex">
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
+  <link rel="stylesheet" href="/src_home/styles_nap.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
+</head>
+<body>
+  <div id="overlay"><p id="forgo" class="loader"></p></div>
+  <section id="container">
+    <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="utmut"></button><br>
+          </div>
+        </div>
+        <select name="*"></select>
+      </div>
+    </div>
+    <div id="honnan"></div>
+    <object name="naptar" style="margin-top:55px"></object>
     <!--font face="Arial"><object name="naptar" mutat="allo"></object></font-->
-  </body>
+    <div id="popup" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="esemenyek"></div>
+      </div>
+    </div>
+  </section>
+</body>
 </html>
-<script src="naptar.js"></script>
+<script src="/temak.js"></script>
+<script src="/naptar.js"></script>
+<script src="/fejezetek.js"></script>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="Mit meg nem tesz az ember, hogy bekerüljön a történelemkönyvekbe.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
+</head>
+<style>
+li::marker {
+  font-size: x-large;
+}
+</style>  
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
+          </div>
+        </div>
+        <select name="it"></select>
+      </div>
+    </div>
+    <div id="popup" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="esemenyek"></div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="box">
+        <div id="2023-05-26T12:00" alcim="bevezető" class="box-text">
+          <p>
+            Kedvcsináló bevezető helyett most mindenkinek elveszem a kedvét attól, hogy ilyen fába vágja fejszéjét.
+            <br>
+            Az idő múlásával összefüggésben keletkező, dátum típusú adatokkal dolgozni a legkellemetlenebb, legfárasztóbb programozói munkák közé tartozik annak ellenére, hogy a széles körben használt programozási nyelvek remek függvényeket/metódusokat kínálnak az ilyen feladatok hatékony ellátásához.
+            Szerény képességekkel, korlátok közé szorult és földhözragadt gondolkodásmóddal nehezen birkózok meg a percek, órák, napok, hetek, hónapok és évek változatos méretű egységeivel, a hónapok eltérő hosszával, szökőmásodpercekkel és -évekkel (másnak is <a href="/it/kaland/one.html#:~:text=1997%20%C3%BAj%C3%A9v%20napj%C3%A1nak%20els%C5%91%20%C3%B3r%C3%A1i">beletört</a> már ebbe a bicskája).
+            Tovább fokozzák a kínos helyzetet az időzónák, valamint a téli és nyári időszámításból fakadó összevisszaság.
+            Amikor már nagyjából összeszedem magam, és azt hiszem, hogy uralom a helyzetet, akkor meg jönnek a változó dátumra eső ünnepek, mint a húsvét és a pünkösd. Nem lehet ezek fölött elegánsan elsiklani a naptár kirajzolásának abban a fázisában, amikor a piros betűs ünnepek jelölésénél tartok.
+            <br>
+            Tervezés, adatszerkezetek, algoritmusok, és a működés logikája elkészült – eddig tartott a sétagalopp. Ami igazán embert próbáló, az csak ezután következik: a feldolgozott adatok tálalása.
+            Ezek rendezett, áttekinthető megjelenítése, továbbá egy ergonomikus, nem túlbonyolított "user interface" megkomponálása a legkeményebb dió.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Nincs ínyedre az egyhangúság? Akkor az <a href="\naptar.html">eseménynaptár</a> szolgáltatás megnyeri tetszésedet, mert több módon is előhívhatod, kezdve az ebben a mondatban látható hivatkozással. Megtalálod az oldaltérképen is a <code>tájékozódás</code> téma alatt.
+            Ez a nagyon hasznos oldaltérkép a nyitóoldal aljára görgetve érhető el, valamint az esetlegesen megjelenő <a href="https://hu.wikipedia.org/wiki/404-es_hiba">404-es hibaoldalon</a>.
+            Az eseménynaptár többféle üzemmódot kínálva dolgozza fel, és változtatható megjelenéssel mutatja az adatokat.
+            Azoknál a történeteknél szolgáltat érdemleges eredményt, amiknél a leírt folyamatok résztevékenységeit alcímek alá szerveztem.
+            Jellemzően ilyenek a borkészítésről és az építkezésről szóló, hosszan elhúzódó, sokrétű cselekményt mesélő történetek. Ezeknél a <a href="/it/hamburger.html">hamburger menüben</a> feltűnik a naptár ikon, aminek révén a funkció előhívható.
+            Innen nem hiányozna, de a példa kedvéért alcímeket iktattam a szövegbe.
+          </p>
+          <object name="alcimek"></object>
+          <p>
+            Az alcímekkel egyrészt működik a lapon belüli ugrás, másrészt ezeket érzékelve elhelyezem a naptár ikont a történet hamburger menüjében, amivel olvasás közben az eseménynaptár kényelmesen elérhetővé válik.
+            Az év összes napja megjelenik, fölötte egyszerű kezelőfelület teszi irányíthatóvá a naptáron gyakorolható műveleteket.
+            Bal felső sarokban a hamburger, mellette az oldaltérkép legördíthető választéka. Alatta a nyitóoldalhoz vezető házikó. Mellette annak a történetnek vagy helyzetnek a megnevezése, amit az eseménynaptár ábrázol.
+            A naptár feletti sorban a [?] gomb a most olvasott weboldalt jeleníti meg. A jobbra látható évszámnál van lehetőség évet választani, amennyiben a feldolgozott dátumok több éves időszakot fednek le.
+            Kapcsolható a fejléc megjelenítése a kényelmesebb, gyorsabb, pontosabb tájékozódás érdekében, ha szükséged van a hónapok és a hét napjainak megnevezésére.
+          </p>
+          <div id="2023-05-26T12:15" alcim="kezelőfelület (UI)" class="box-img">
+            <img src="https://kep.pince.eu/esemenynaptar.webp">
+          </div>
+        </div>
+        <div id="2023-05-26T12:20" alcim="tájolás" class="box-text">
+          <p>
+            Szokványos naptárábrázolásból láttam már eleget – sablonosak, helypazarlók. Most ezeknél tömörebb változatot képzeltem el, aminek megvalósítását bonyolítja a használatos eszközök kijelzőinek eltérő tájolása.
+            A megjelenés fajtája elsődlegesen a kijelző szélességétől függ. Ha keskenyebb 1300 képpontnál, akkor az álló változatot mutatom, különben a fekvőt. Függhet a megjelenés tájolása a HTML file-ban elhelyezett
+            <code>&lt;object name="naptar"&gt;&lt;/object&gt;</code> sor attribútumaitól is, így a <code>tajol="allo"</code> szerepeltetésével a széles kijelzőn automatikusan fekvő tájolású megjelenítés felülírható.
+            Akármilyen tájolásban jelenik meg a naptár, ezt kedvedre váltogathatod a [▭] és a [▯] gombokkal.
+            <br>
+          </p>
+        </div>
+        <div  id="2023-05-26T12:30" alcim="üzemmódok" class="box-text">
+          <p>
+            A speciális naptár háromféle üzemmódban szolgáltat adatokat:
+          </p>
+        </div>
+        <div class="box-text">
+          <ol>
+            <li><p>A baloldali naptár ikonról indítva csak a történet alcímeihez tartozó napokat jelöli meg.</p></li>
+            <li><p>Az oldaltérképről indítva a weboldal összes történetének első közzétételi dátumai szerepelnek a naptárban.</p></li>
+            <li><p>Magából az eseménynaptárból indítható egy olyan adatfeldolgozás, ami a weboldalon tárolt összes történet szövegéből gyűjti ki az alcímeket, és ezek dátumai lesznek bejelölve a naptárban (több évet felölelő időszak, sok eseménnyel).
+              Ez a folyamat a [𝜮] gombbal indítható, és a weboldal jelenlegi mérete mellett néhány száz KiB adatforgalommal, és néhány másodpercnyi várakozással jár.
+            </p></li>
+          </ol>
+          <p>
+            A naptárban megjelölt napok azért különböznek a többitől, mert ezeken a napokon történt valami, és ezek a történetek a megjelölt napokra nyomva előcsalogathatók.
+            Elsőre az jelenik meg, hogy a  kiválasztott napon mi minden történt (akár több témában is), aztán ebből választva lehet továbblépni a történethez vagy a történeten belüli alcímhez.
+            Ha egy történet nem tartalmaz eseményekhez kapcsolódó alcímeket, akkor nyilván az ezekhez rendelhető dátumok is hiányoznak. Ilyen esetben a történetek az első közzététel dátumával kerülnek be az eseménynaptárba.
+            Akkor áll elő ilyen helyzet, ha nem egy időponthoz vagy időszakhoz köthető történést mesélek, hanem valami furcsa gondolatomat a világról – ilyen esetben a közzététel időpontja szolgál támpontul.
+          </p>
+        </div>
+        <div class="box-text-update">
+          <p>
+            Az egész munkát végigkísérte a weboldalon olvasható írásokhoz köthető dátumok kettősségéből fakadó gyötrelem.
+            Sima ügynek számít a történeti hűséggel dátumozható cselekmények kezelése, de az időponthoz szorosan nem köthető gondolatok, vélemények, ismertetők szövegénél csak a megjelenés dátumát rögzíthetem pontosan.
+            Ha nincs történés, akkor dátum sincs, ellenben az eseményeknél ez az adat jól megfogható, ráadásul a történeteket mesélő írásokhoz második dátumként kapcsolódik a megjelenés időpontja is.
+            <br>
+            Hogyan lehet ezeket az adatokat kavarodás nélkül kezelni, megmutatni?
+            <br>
+            Ennek a fejezetnek a fogalmazásába május 26-án kezdtem bele. Ekkor készült el a vázlat és a példaként szerepeltetett alcímek sora, amik mellett ez a dátum szerepel.
+            A baloldali menüből hívható eseménynaptár ebben az üzemmódban az alcímek dátumai alapján jelöli meg az érintett napot (vagy napokat), ami jelen esetben május 26.
+            Ez egy ilyen egyszerű eset, de több bejelölt napot láthatsz a naptárban, több éven keresztül, ha megnézed valamelyik bor készítésének eseménynaptárát (például a 2020-as <a href="/borok/01.html">cabernet sauvignon</a>).
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/esemenynaptar3.webp">
+          </div>
+          <p>
+            Aztán a szöveg bővült, kikerekedett, majd 28-án közzétettem a weboldalon. Ez az esemény is látható a 2023-as évben, amennyiben az oldaltérképről indítod, mert ebben az üzemmódban az első közzétételek dátumait mutatja a naptár (<a href="/naptar.html">itt</a> is hozzáférhetsz).
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/esemenynaptar2.webp">
+          </div>
+        </div>
+      </div>
+      <div id="2023-05-26T12:40" alcim="epilógus" class="box">
+        <div class="box-text">
+          <p>
+            A weboldalon olvasható történetek nem lettek tanulságosabbak, sem szórakoztatóbbak. Értelmetlenül dolgoztam volna ezen a kiegészítésen? Döntse el mindenki saját világlátása szerint.
+            Mindenesetre az eseménynaptárból ránézésre és azonnal kiderül, hogy mely napokon történt valami érdekesség, aminek leírására időt szántam. Ehhez képest egy listát végignézni, az abban feltűnő dátumokat elolvasni és kiértékelni fájdalmasan fárasztó.
+            <br>
+            Jól sikerült a szolgáltatás kivitelezése. Minden vágyam teljesült, ami ritka a mai világban, ahol nap mint nap szembesülök ótvar, kritikán aluli, esetleg elrontott, néha egyenesen működésképtelen megoldásokkal.
+            Jó ideje nem hagyom magam átverni az építőipari kivitelezések alkalmával sem – szinte minden munkát magam végzek. Az IT megoldások terén hasonló a helyzet, csupán a "szinte" hiányzik a kijelentésből.
+            Néhány éve a kerti munkákra és fejlesztésekre is kiterjesztettem az <a href="/olv/kert/tavaszodik2.html#:~:text=%C3%B6ner%C5%91s%20kivitelez%C3%A9snek">önerős kivitelezést</a>,
+            amivel a paraszti kultúrának egy vékony szeletét honosítom meg a hegyoldalban. Saját bor gyártását is előnyben részesítem a boltban kapható termékek megvásárlásával szemben, saját villanyt is termelek – jó úton járok az önellátás felé.
+          </p>
+        </div>
+        <div class="box-text-update">
+          <p>
+            A házilagos villanytermelés manapság nem egyszerű feladat Magyarországon, amit nem a műszaki megoldás bonyolultsága okoz. A technológiából fakadó szabályozásával semmi gond, mert azt az áram tulajdonságai határozzák meg.
+            Viszont az a része, ahogy politikusok bumfordian hozott törvényekkel, rendeletekkel igyekeznek palástolni egyéni érdekeik érvényesítését, az ellentmond nem csak a közérdeknek, de az észszerűségnek is.
+            A napelemes villanytermelés jelenlegi kerékkötő szabályozása tragikusan kártékony.
+            Ennek az ügynek a helyretétele önmagában megérne egy forradalmat, de legalább egy jól sikerült országgyűlési választást.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/temak.js"></script>
+<script src="/fejezetek.js"></script>

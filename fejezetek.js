@@ -17,7 +17,7 @@
   var glob = {
     href_nev: "",
     url_page_jump: false,
-    cim: "",
+    cim: "", //<title> kitöltéséhez
     cookie_eloke: "nézett:",
     ttl_nap: 400,
     vegleges: null,
@@ -31,54 +31,23 @@
     obj_tb: []
   }
   
-var jelek = {
-  web: ["🌐","külső hivatkozás (external link)"],
-  link: ["🔗","hivatkozás (link)"],
-  megnezte: ["👁","megnyitottad, megnézted, feltételezhetően beleolvastál"],
-  vegignezte: ["✓","végignézted"],
-  frissult: ["⭐","frissült a legutóbbi megtekintés óta"],
-  folder: ["📁","több fejezetet magába foglaló témacsoport"],
-  tcs_idx: ["ⓝ","témacsoport számmal jelzett fejezete"], //témacsoporton belüli index
-  konyv: ["📖","könyvjelző kikapcsolva"],
-  jelzo: ["🔖","könyvjelző bekapcsolva"],
-  naptar: ["📆","eseménynaptár"]
-}
-
 function jelmagyarazat(object) {
+  var szukit = object.getAttribute("szukit");
   var tabla = document.createElement('table');
   tabla.setAttribute("border","1");
   for (var jel in jelek) {
     var sor = document.createElement('tr');
-    for (var i = 0; i < 2; i++) {
-      var adat = document.createElement('td');
-      if (i == 0) adat.setAttribute("style","text-align:center");
-      adat.innerHTML = jelek[jel][i];
-      sor.appendChild(adat);
+    if (!szukit || (jelek[jel][1].indexOf(szukit) > -1)) {
+      for (var i = 0; i < 2; i++) {
+        var adat = document.createElement('td');
+        if (i == 0) adat.setAttribute("style","text-align:center");
+        adat.innerHTML = jelek[jel][i];
+        sor.appendChild(adat);
+      }
+      tabla.appendChild(sor);
     }
-    tabla.appendChild(sor);
   }
   object.appendChild(tabla);
-}
-
-function letezik(nev,sub) {
-  //sub false: csupán a nev mező egyezését keresem
-  var tmdex = {tema:null,tk:null,lek:null,le_sub_idx:-1} //tmdex: téma adatok/indexek
-  for (tmdex.tk in temak) //tmdex.tk: téma kulcs
-    for (tmdex.lek in temak[tmdex.tk].lista) //tmdex.lek: lista elem kulcs (pl. "2020", "a", "b" stb.)
-      for (tmdex.le_sub_idx in temak[tmdex.tk].lista[tmdex.lek])
-        //tmdex.le_sub_idx: lista elemen belüli index
-        if (temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].nev == nev) {
-          switch (sub) {
-            case true:
-              if (temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].hasOwnProperty("subfolder")) tmdex.tema = temak[tmdex.tk].lista[tmdex.lek];
-            break;
-            case false:
-              tmdex.tema = temak[tmdex.tk].lista[tmdex.lek];
-          }
-          return tmdex;
-        }
-  tmdex = {tema:null,tk:null,lek:null,le_sub_idx:-1}
-  return tmdex;
 }
 
 function hanyad_tar(nev) {
@@ -126,7 +95,7 @@ function karikas_szam(szam) {
 
 function toc(object) {
   var tmdex = letezik(glob.href_nev,true);
-  if (tmdex.tema) for (var i = 0; i < tmdex.tema.length; i++) {
+  if (tmdex.tortenet) for (var i = 0; i < tmdex.tortenet.length; i++) {
     var elotte = document.createElement('SPAN');
     elotte.setAttribute("style","font-size:large");
     elotte.innerHTML = `${karikas_szam(i+1)}&#8194;`; //EN SPACE
@@ -134,9 +103,9 @@ function toc(object) {
     var cim;
     if (i > 0) {
       cim = document.createElement('A');
-      cim.setAttribute("href",`/${temak[tmdex.tk].folder}${tmdex.tema[i].subfolder}/${tmdex.tema[i].nev}.html`);
+      cim.setAttribute("href",`${temak[tmdex.tk].folder}${tmdex.tortenet[i].subfolder}/${tmdex.tortenet[i].nev}.html`);
     } else cim = document.createElement('SPAN');
-    cim.innerHTML = `${tmdex.tema[i].cim}<br>`;
+    cim.innerHTML = `${tmdex.tortenet[i].cim}<br>`;
     object.appendChild(cim);
   }
 }
@@ -240,16 +209,19 @@ function lista_gyarto(select,ref_nev) {
     for (var tk in temak) { //tk: téma kulcs (pl. borok)
       var option = document.createElement('option');
       option.value = "";
-      option.innerHTML = temak[tk].cim;
+      option.innerHTML = "– – "+temak[tk].tema;
       option.setAttribute("style","font-weight:bold");
       option.setAttribute("disabled","");
       select.appendChild(option);
       valasztek(tk);
     }
+    var tmdex = letezik(glob.href_nev,true);
+    //az eseménynaptárt betöltve nem "oldaltérkép" szöveg jelenik meg:
+    if (glob.href_nev == "naptar") select.value = glob.href_nev;
   }
 
-  glob.cim = ""; //<title> kitöltéséhez
-  if ((ref_nev != "menu") && (!letezik(ref_nev,false).tema) || (select.name == "*")) ref_nev = "";
+  glob.cim = "";
+  if ((ref_nev != "menu") && (!letezik(ref_nev,false).tortenet) || (select.name == "*")) ref_nev = "";
   switch (ref_nev) {
     case "":
     case "index":
@@ -259,22 +231,22 @@ function lista_gyarto(select,ref_nev) {
     case "menu":
       var option = document.createElement('option');
       option.value = "";
-      option.innerHTML = temak[select.name].cim;
+      option.innerHTML = "– – "+temak[select.name].tema;
       select.appendChild(option);
       valasztek(select.name);
     break;
     default: //történetből megjelenített lista
       var tmdx = letezik(ref_nev,true);
-      if (tmdx.tema) { //több fejezetből álló téma
-        for (var le_sub_idx in tmdx.tema) {
+      if (tmdx.tortenet) { //több fejezetből álló téma
+        for (var le_sub_idx in tmdx.tortenet) {
           var option = document.createElement('option');
           option.folder = temak[tmdx.tk].folder;
-          option.subfolder = tmdx.tema[le_sub_idx].hasOwnProperty("subfolder") ? tmdx.tema[le_sub_idx].subfolder:"";
-          option.value = tmdx.tema[le_sub_idx].nev;
-          var fejezet = (tmdx.tema.length > 1) ? `${karikas_szam((le_sub_idx*1)+1)}&#8197;`:"";
-          option.innerHTML = nj(tmdx.tema[le_sub_idx])+fejezet+tmdx.tema[le_sub_idx].cim;
+          option.subfolder = tmdx.tortenet[le_sub_idx].hasOwnProperty("subfolder") ? tmdx.tortenet[le_sub_idx].subfolder:"";
+          option.value = tmdx.tortenet[le_sub_idx].nev;
+          var fejezet = (tmdx.tortenet.length > 1) ? `${karikas_szam((le_sub_idx*1)+1)}&#8197;`:"";
+          option.innerHTML = nj(tmdx.tortenet[le_sub_idx])+fejezet+tmdx.tortenet[le_sub_idx].cim;
           select.appendChild(option);
-          if (ref_nev == tmdx.tema[le_sub_idx].nev) glob.cim = tmdx.tema[le_sub_idx].cim;
+          if (ref_nev == tmdx.tortenet[le_sub_idx].nev) glob.cim = tmdx.tortenet[le_sub_idx].cim;
         }
       } else valasztek(tmdx.tk);
       select.value = ref_nev;
@@ -282,7 +254,7 @@ function lista_gyarto(select,ref_nev) {
 
   select.onchange = function() {
     if (select.value) {
-      var path = (select.value.indexOf('/') > -1) ? select.value:`/${select[select.selectedIndex].folder}${select[select.selectedIndex].subfolder}/${select.value}.html`;
+      var path = (select.value.indexOf('/') > -1) ? select.value:`${select[select.selectedIndex].folder}${select[select.selectedIndex].subfolder}/${select.value}.html`;
       if (glob.href_nev == "menu") { // menüből
         parent.valasztas(path);
       } else { // történetből
@@ -296,26 +268,26 @@ function lista_gyarto(select,ref_nev) {
 
 function elore_hatra() {
   var tmdex = letezik(glob.href_nev,true); //tmdex: téma adatok/indexek
-  if (tmdex.tema) {
+  if (tmdex.tortenet) {
     var halad_tb = document.getElementsByTagName("A");
     var idx = 0;
     for (var i = 0; i < halad_tb.length; i++) {
 
       function kitolt(txt) {
-        halad_tb[i].setAttribute("href",`/${temak[tmdex.tk].folder}${tmdex.tema[idx].subfolder}/${tmdex.tema[idx].nev}.html`);
-        halad_tb[i].innerHTML = `(${txt} fejezet: ${tmdex.tema[idx].cim})`;
+        halad_tb[i].setAttribute("href",`${temak[tmdex.tk].folder}${tmdex.tortenet[idx].subfolder}/${tmdex.tortenet[idx].nev}.html`);
+        halad_tb[i].innerHTML = `(${txt} fejezet: ${tmdex.tortenet[idx].cim})`;
       }
 
       switch (halad_tb[i].name) {
         case "elozo":
           idx = tmdex.le_sub_idx;
           idx--;
-          if ((idx > -1) && (idx < tmdex.tema.length)) kitolt("előző");
+          if ((idx > -1) && (idx < tmdex.tortenet.length)) kitolt("előző");
         break;
         case "kovetkezo":
           idx = tmdex.le_sub_idx;
           idx++;
-          if ((idx > -1) && (idx < tmdex.tema.length)) kitolt("következő");
+          if ((idx > -1) && (idx < tmdex.tortenet.length)) kitolt("következő");
         break;
       }
     }
@@ -361,7 +333,7 @@ function kjelzo_frissit(elso=false) {
 
 function nezettseg_frissit(elso=false) {
   var tmdex = letezik(glob.href_nev,false);
-  if (tmdex.tema) { //index és menu kizárva
+  if (tmdex.tortenet && glob.hol_tart) { //index, menu és érdektelen oldalak kizárva
     clearTimeout(glob.vegleges);
     glob.vegleges = setTimeout(function() {
       var ht = hanyad_tar(glob.href_nev);
@@ -381,7 +353,7 @@ function nezettseg_frissit(elso=false) {
         nezettseget_tarol(dat);
         ht = dat.hanyad;
       }
-      if (glob.hol_tart) glob.hol_tart.innerHTML = (ht > 0.99) ? `✅`:`${(ht*100).toFixed(0)}%`;
+      glob.hol_tart.innerHTML = (ht > 0.99) ? `✅`:`${(ht*100).toFixed(0)}%`;
       if (!elso) kjelzo_frissit();
     },2000);
   }
@@ -398,45 +370,9 @@ function nap_index(d) {
   return Math.floor((d - new Date(d.getFullYear(),0,1)) / 86400000);
 }
 
-function alcim_gyujto() {
-  var cimke_tb = document.querySelectorAll("h1, div");
-  var gyujto = new Map();
-  for (var i = 0; i < cimke_tb.length; i++) {
-    if (cimke_tb[i].hasAttribute("id")) try {
-      var d = new Date(cimke_tb[i].id);
-      if (!isNaN(d)) {
-        var datum_str = d.toLocaleDateString("hu-HU", {year:'numeric',month:'long',day:'numeric'});
-        gyujto.set(cimke_tb[i].id, cimke_tb[i].getAttribute("alcim"));
-        switch (cimke_tb[i].nodeName) {
-          case "H1":
-            if (cimke_tb[i].innerHTML == "") cimke_tb[i].innerHTML = datum_str;
-          break;
-          case "DIV":
-            //cimke_tb[i].getAttribute("alcim");
-          break;
-        }
-      }
-    } catch (err) {}
-  }
-  glob.alcimek = new Map([...gyujto.entries()].sort());
-  if (glob.naptar && (glob.alcimek.size > 0)) {
-    glob.naptar.setAttribute("title","eseménynaptár");
-    glob.naptar.setAttribute("style","display:inline");
-    glob.naptar.innerHTML = jelek.naptar[0];
-    glob.naptar.addEventListener("click",() => {
-      var tmdex = letezik(glob.href_nev,false);
-      var csomag = {
-        cim: tmdex.tema[tmdex.le_sub_idx].cim,
-        esemenyek: Object.fromEntries(glob.alcimek)
-      }
-      window.location = `/naptar.html?${btoa(encodeURI(JSON.stringify(csomag)))}`;
-    });
-  }
-}
-
 function webhelyterkep_gyarto() {
   if (window.location.search.substring(1).trim() == "terkep") {
-    var cim = "https://"+window.location.hostname+"/";
+    var cim = "https://"+window.location.hostname;
     var txt = cim+"index.html\n"; //ez nem szerepel a témák listájában
     for (tk in temak)
       for (lek in temak[tk].lista)
@@ -470,7 +406,7 @@ addEventListener("load", () => {
   nezettseg_betolt();
   nezettseg_frissit(true);
   webhelyterkep_gyarto();
-  alcim_gyujto();
+  alcim_gyujto(document,glob);
   kjelzo_frissit(true);
   glob.select_tb = document.getElementsByTagName("SELECT");
   for (var i = 0; i < glob.select_tb.length; i++) {
@@ -511,6 +447,14 @@ addEventListener("load", () => {
       latszik = !latszik;
       left_side[0].style.top = (latszik ? "0":eltuntet_y);
     });
+  }
+  //pontatlan page jump igazítás:
+  var p = window.location.href.lastIndexOf('#');
+  var cimke = document.getElementById(window.location.href.substring(p+1));
+  if ((p > -1) && cimke) {
+    setTimeout(function () {
+      cimke.scrollIntoView();
+    },900);
   }
 });
 
