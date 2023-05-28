@@ -51,12 +51,10 @@
     if (betakarva) return;
     betakarva = true;
     overlay.style.display = "block";
-    time_out = setTimeout(gebasz_eseten,15000);
   }
 
   function kitakar() {
     overlay.style.display = "none";
-    clearTimeout(time_out);
     betakarva = false;
   }
 
@@ -389,6 +387,7 @@
           };
           var kelt = (le.hasOwnProperty("kelt")) ? le.kelt:"";
           if (kelt && (le.nev.indexOf('/') == -1)) { //nem külső link
+            time_out = setTimeout(gebasz_eseten,6000); //ha megakadna a külső művelet
             glob.tortenet_db++;
             var url = csomag.folder+csomag.subfolder+"/"+le.nev+".html";
             const anyag = await fetch(url);
@@ -408,6 +407,7 @@
             gyujto_tb.push(csomag);
             tarea.innerHTML = sum_info;
             tarea.scrollTop = tarea.scrollHeight;
+            clearTimeout(time_out);
           }
         }
     kitakar();
