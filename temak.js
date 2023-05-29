@@ -68,7 +68,8 @@ var temak =
         {cim:"borok versenye", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
         {cim:"XI. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2022", ver:0, kelt:"2022-10-17"},
         {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023", ver:0, kelt:"2023-04-17"}
-      ]
+      ],
+      "i": [{cim:"hordólelet", nev:"hordo", ver:0, kelt:"2023-05-29"}],
     }
   },
   "it": {
