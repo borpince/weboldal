@@ -379,7 +379,7 @@ function webhelyterkep_gyarto() {
         for (le_sub_idx in temak[tk].lista[lek]) {
           var le = temak[tk].lista[lek][le_sub_idx]; //le: lista elem
           var subfolder = (le.hasOwnProperty("subfolder")) ? le.subfolder:"";
-          if (le.nev.indexOf('/') == -1) //nem külső link
+          if ((le.nev.indexOf('/') == -1) && (le.hasOwnProperty("kelt"))) //nem külső link, közzétéve
             txt += cim+temak[tk].folder+subfolder+"/"+le.nev+".html\n";
         }
     var elem = document.createElement('a');

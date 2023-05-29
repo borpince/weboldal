@@ -1,5 +1,4 @@
 https://pince.eu/index.html
-https://pince.eu/naptar.html
 https://pince.eu/borok/01.html
 https://pince.eu/borok/02.html
 https://pince.eu/borok/03.html
@@ -37,6 +36,7 @@ https://pince.eu/olv/tengori.html
 https://pince.eu/olv/bv/borverseny.html
 https://pince.eu/olv/bv/bm2022.html
 https://pince.eu/olv/bv/podumon2023.html
+https://pince.eu/olv/hordo.html
 https://pince.eu/it/gondolatok.html
 https://pince.eu/it/hmk_naptar.html
 https://pince.eu/it/kaland/kaland.html
