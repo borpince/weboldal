@@ -53,7 +53,7 @@ var temak =
         {cim:"lépcső", subfolder:"/igykeszult", nev:"lepcso", ver:0, kelt:"2022-08-15"},
         {cim:"horganyzás", subfolder:"/igykeszult", nev:"horgany", ver:0, kelt:"2022-11-11"}
       ],
-      "b": [{cim:"cseppköves emlékek", nev:"cseppkovek", ver:0, kelt:"2023-05-03"}],
+      "b": [{cim:"cseppköves emlékek", nev:"cseppkovek", ver:0, kelt:"2023-01-09"}],
       "c": [
         {cim:"tavaszodik", subfolder:"/kert", nev:"tavasz", ver:0, kelt:"2023-03-09"},
         {cim:"tavaszodik I", subfolder:"/kert", nev:"tavaszodik", ver:0, kelt:"2022-08-15"},
