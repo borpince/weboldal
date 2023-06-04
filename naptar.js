@@ -365,7 +365,26 @@
     //obj.setAttribute("style","margin-top:55px");
   }
   
+  const download = (path, file_nev) => {
+    const kamu = document.createElement('a');
+    kamu.href = path;
+    kamu.download = file_nev;
+    document.body.appendChild(kamu);
+    kamu.click();
+    document.body.removeChild(kamu);
+    window.alert(file_nev+" néven mentve");
+  }
+
+  function mentes(cucc) {
+    const data = JSON.stringify([...cucc.entries()],null,2);
+    const blob = new Blob([data],{type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    download(url,'cucc.json');
+    URL.revokeObjectURL(url);
+  }
+
   async function file_okbol_feltoltve(obj) {
+    //! var cucc = new Map(); //!
     tarea_gyarto(obj);
     sum_info = "https://"+window.location.hostname+" weboldalról összegyűjtött történetek:\n\n"
     window.scrollTo(0, document.body.scrollHeight);
@@ -403,6 +422,7 @@
             } else {
                 csomag.esemenyek = Object.fromEntries(glob.alcimek);
                 for (var key in csomag.esemenyek) sum_info += "&emsp;&emsp;&emsp;"+key.substring(0,10)+" "+csomag.esemenyek[key]+"\n";
+                //! cucc.set(`${tk}${csomag.subfolder}/${csomag.nev}`,csomag.esemenyek); //!
               }
             gyujto_tb.push(csomag);
             tarea.innerHTML = sum_info;
@@ -411,6 +431,7 @@
           }
         }
     kitakar();
+    //! mentes(cucc); //!
     return gyujto_tb;
   }
 

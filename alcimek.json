@@ -1,0 +1,321 @@
+[
+  [
+    "borok/01",
+    {
+      "2020-10-21T14:00": "szüret, szállítás",
+      "2020-10-22": "feldolgozás",
+      "2020-10-23": "cefre beoltása",
+      "2020-10-25": "erjedés aktiválás",
+      "2020-11-01": "tápsó",
+      "2020-11-08": "erjedés vége",
+      "2020-11-10": "1. analízis, almasavbontás kezdődik",
+      "2020-11-16": "fűtőköpeny felszerelve",
+      "2020-12-11": "2. analízis",
+      "2021-01-06": "3. analízis",
+      "2021-01-08": "almasavbontás vége",
+      "2021-01-13": "fejtés tölgyfa hordóba",
+      "2021-08-04": "mérés",
+      "2021-08-15": "palackozás ajándékba",
+      "2022-03-21": "hordós érlelés vége",
+      "2022-03-23": "fejtés, kénezés",
+      "2022-04-13": "mérés",
+      "2022-04-13T14:00": "az öreg másképp csinálta"
+    }
+  ],
+  [
+    "borok/02",
+    {
+      "2022-08-26": "szüret, szállítás",
+      "2022-08-26T14:00": "feldolgozás",
+      "2022-08-30": "erjesztés",
+      "2022-09-07": "erjedés vége",
+      "2022-09-11": "színlé fejtése, kénezés",
+      "2022-09-11T14:00": "préselés",
+      "2022-10-29": "fejtés, levegőztetés",
+      "2022-12-09": "fejtés, levegőztetés",
+      "2022-12-19": "mérés (kén, alkohol), kénezés",
+      "2023-05-12": "májusi kóstolás (színlé)"
+    }
+  ],
+  [
+    "borok/03",
+    {
+      "2022-08-27": "szüret, szállítás",
+      "2022-08-27T14:00": "feldolgozás",
+      "2022-08-27T16:00": "bonyodalom",
+      "2022-08-27T18:00": "látogatók érkeznek",
+      "2022-08-31": "nem mozdul a must",
+      "2022-09-01": "erjedés indul",
+      "2022-09-17": "erjedés vége",
+      "2022-10-19": "ülepedett, tisztult",
+      "2022-12-09": "fejtés, levegőztetés",
+      "2022-12-19": "mérés, kénezés"
+    }
+  ],
+  [
+    "borok/04",
+    {
+      "2022-09-19": "új tartály",
+      "2022-09-23": "szüret, szállítás",
+      "2022-09-23T14:00": "feldolgozás",
+      "2022-09-24": "egérlátogatás",
+      "2022-09-28": "erjedés indul",
+      "2022-09-29": "csömöszölős baleset",
+      "2022-10-07": "erjedés vége",
+      "2022-10-07T14:00": "fejtés, kénezés",
+      "2022-10-10": "törkölyszárítás",
+      "2022-10-17": "szárított törköly",
+      "2022-12-02": "fejtés, levegőztetés",
+      "2022-12-04": "bökszer",
+      "2022-12-19": "mérés, kénezés",
+      "2023-01-31": "fejtés tölgyfa hordóba",
+      "2023-05-07": "májusi kóstolás"
+    }
+  ],
+  [
+    "olv/igykeszult/fodem",
+    {
+      "2017-08-16": "fussunk neki mégegyszer",
+      "2017-09-12": "gerendák újraszintezve",
+      "2017-10-01T12:15": "gerendák bevasalva",
+      "2017-10-01T14:30": "betonozás",
+      "2017-10-10": "Multipor fuvar",
+      "2017-10-26": "betonozás befejezve",
+      "2018-10-20": "vízzáró szigetelés",
+      "2018-11-11": "Multipor hőszigetelés",
+      "2019-07-20": "elárasztásos szigetelésvizsgálat",
+      "2019-07-25": "polisztirol hőszigetelés",
+      "2019-07-30": "járható burkolat"
+    }
+  ],
+  [
+    "olv/igykeszult/pince",
+    {
+      "2020-01-17": "így kezdődött",
+      "2020-01-20": "síp (nyaktag) készül",
+      "2020-01-30": "pincetér – első fogás",
+      "2020-02-16": "pincetér – második fogás",
+      "2020-02-19": "síp fölötti üreg tömedékelése",
+      "2020-02-20": "szellőzőkürtő",
+      "2020-02-23": "kürtő kivezetés",
+      "2020-02-24T08:00": "van még tégla dögivel",
+      "2020-02-24T17:50": "hátfal emelkedik",
+      "2020-02-25": "elkészült a lépcső",
+      "2020-02-27T07:08": "téglapadló",
+      "2020-02-27T17:47": "villanyszerelés",
+      "2020-03-01": "UTP kábel – az IT előhírnöke"
+    }
+  ],
+  [
+    "olv/igykeszult/vizesblokk",
+    {
+      "2020-03-23": "van még tennivaló",
+      "2020-03-31": "földmunka, árokásás",
+      "2020-04-01": "csövek fektetése, aljzatbeton",
+      "2020-04-09": "burkolás",
+      "2020-04-12": "burkolás kész",
+      "2020-04-16": "vége a terméskő világnak",
+      "2020-05-11": "szaniterek",
+      "2020-05-13": "bútorok"
+    }
+  ],
+  [
+    "olv/igykeszult/padlo",
+    {
+      "2020-07-06": "tervezés, mérés, szintezés",
+      "2020-07-08": "lefolyó és bűzelzáró – maszek megoldások",
+      "2020-07-09": "K-szegély",
+      "2020-07-11": "az első burkolótéglák",
+      "2020-07-13": "földszállítás",
+      "2020-07-14T12:00": "elkészült a pince előtti hordómosó placc",
+      "2020-07-14T12:30": "tégla van dögivel",
+      "2020-07-15T12:00": "keserű tapasztalatok szakemberekről",
+      "2020-07-20": "keserves földmunka",
+      "2020-07-31": "K-szegély a másik oldalon",
+      "2020-08-19": "közel az udvarhoz",
+      "2020-08-21": "zúzottkő ágyazat az utolsó szakaszon",
+      "2020-09-08": "itt a vége"
+    }
+  ],
+  [
+    "olv/igykeszult/kapu",
+    {
+      "2020-08-14T12:00": "hiányzik egy alkatrész",
+      "2020-08-14T12:30": "szakemberekre megint nem számíthatok",
+      "2020-08-22": "hőhídmentes küszöb",
+      "2020-08-27": "pillér alap elkészült",
+      "2020-09-03": "pillérfalazás",
+      "2020-09-14": "áthidaló gerenda",
+      "2020-10-02": "bitumenes burkolat",
+      "2020-10-04T13:50": "gerenda felemelése ősi módszerekkel",
+      "2020-10-04T16:20": "terheléspróba",
+      "2020-10-07": "kapuszerelés indul",
+      "2020-10-11": "minden a helyén",
+      "2020-10-24": "motoros mozgatás"
+    }
+  ],
+  [
+    "olv/igykeszult/uvegteto",
+    {
+      "2020-09-17": "térdfal épül",
+      "2020-10-01": "az intelligens Doka láb",
+      "2021-07-18": "az üvegezést szakemberre bíztam"
+    }
+  ],
+  [
+    "olv/igykeszult/toloajto",
+    {
+      "2020-10-08": "tolóajtó beszerelés"
+    }
+  ],
+  [
+    "olv/igykeszult/hid",
+    {
+      "2021-07-14": "anyagok az udvaron",
+      "2021-08-14T15:25": "sorba kötött láncos emelők",
+      "2021-08-14T15:30": "elektromos csörlő",
+      "2021-08-14T15:40": "emelem a gerendát, közben a frász kerülget",
+      "2021-08-14T16:40": "művelet sikeres: gerendák a helyükön",
+      "2021-08-19": "speciális kefni",
+      "2021-08-26": "betonozás",
+      "2021-10-04": "vízzáró szigetelés",
+      "2022-06-07T12:50": "hőszigetelő XPS lemezek",
+      "2022-06-07T18:00": "járólapok"
+    }
+  ],
+  [
+    "olv/igykeszult/aknateto",
+    {
+      "2021-10-29": "pillérek, gerendák",
+      "2021-10-30": "konzerválás",
+      "2022-04-05": "egyszerűbb technológia: lazúr",
+      "2022-04-06": "artistatmutatvány szendvicspanelekkel",
+      "2022-04-08": "lekötözve, lecsavarozva",
+      "2022-05-27": "nyílászárók érkeznek – apró baleset",
+      "2022-06-04": "segítségem volt"
+    }
+  ],
+  [
+    "olv/igykeszult/lepcso",
+    {
+      "2020-07-26": "tervek",
+      "2022-07-11": "újratervezés",
+      "2022-07-13": "kurva drága anyagok óvatos vagdosása",
+      "2022-08-07T11:30": "terheléspróba",
+      "2022-08-07T15:10": "amit ember gyárt, az nem lehet tökéletes",
+      "2022-08-08": "elmélet és gyakorlat találkozása",
+      "2022-08-09T14:40": "az utolsó furat",
+      "2022-08-09T16:10": "összeszerelés",
+      "2022-08-09T16:45": "bátor emberek"
+    }
+  ],
+  [
+    "olv/igykeszult/horgany",
+    {
+      "2022-10-14T09:00": "a jó példa is lehet ragadós",
+      "2022-10-14T12:00": "előkészítés",
+      "2022-10-15": "szállítás",
+      "2022-10-21T12:00": "elkészült",
+      "2022-10-21T12:10": "néhány szó a felületkezelésről",
+      "2022-10-24T14:00": "már az eső sem a régi",
+      "2022-10-24T15:00": "végleges összeszerelés"
+    }
+  ],
+  [
+    "olv/kert/tavaszodik3",
+    {
+      "2023-03-21": "állapotfelmérés",
+      "2023-05-06": "kiültetés"
+    }
+  ],
+  [
+    "olv/tengori",
+    {
+      "2023-02-09T08:00": "foghíjas könyvgyűjtemény",
+      "2023-02-09T09:00": "alfahímek kiváltsága",
+      "2023-02-09T10:00": "ki miben jártas – a válási rutin",
+      "2023-02-09T11:00": "költözések járulékos vesztesége",
+      "2023-02-09T12:00": "az alku",
+      "2023-02-09T13:00": "mi lesz a tudománnyal?",
+      "2023-02-09T13:20": "gyúrunk vaze?",
+      "2023-02-09T14:00": "olvasójegy-gyűjtemény",
+      "2023-02-09T15:00": "könyvgyűjtők",
+      "2023-02-09T16:00": "a kölcsönzés veszélye",
+      "2023-02-09T17:00": "digitális világ, papírmentes iroda"
+    }
+  ],
+  [
+    "olv/hordo",
+    {
+      "2023-05-25T16:00": "a lelet",
+      "2023-05-25T16:30": "előzmények, régi emlékek",
+      "2023-05-25T17:00": "penészhántás",
+      "2023-05-25T17:30": "régészeti feltárás",
+      "2023-05-25T18:00": "megtisztulás",
+      "2023-05-25T18:30": "áztatás a diófa alatt"
+    }
+  ],
+  [
+    "it/hmk_naptar",
+    {
+      "2023-05-26T12:00": "bevezető",
+      "2023-05-26T12:15": "kezelőfelület (UI)",
+      "2023-05-26T12:20": "tájolás",
+      "2023-05-26T12:30": "üzemmódok",
+      "2023-05-26T12:40": "epilógus"
+    }
+  ],
+  [
+    "it/baber",
+    {
+      "2022-11-02T08:00": "szakadatlan fejlődés",
+      "2022-11-02T09:00": "egyszer minden elavul",
+      "2022-11-02T10:00": "résen kell lenni",
+      "2022-11-02T11:00": "hackertámadás?",
+      "2022-11-02T12:00": "a pokol felé vezető út",
+      "2022-11-02T13:00": "sok bába közt elvész a gyerek",
+      "2022-11-02T14:00": "nincs megállás, nincs megnyugvás"
+    }
+  ],
+  [
+    "it/jelzesek",
+    {
+      "2023-03-21T08:00": "jelzések",
+      "2023-03-21T09:00": "új koncepció",
+      "2023-03-21T10:00": "a programozás lényege",
+      "2023-03-21T11:00": "fejezetcímek forrása",
+      "2023-03-21T12:00": "hozadék: oldaltérkép",
+      "2023-03-21T13:00": "ismert hibák, hiányosságok",
+      "2023-03-21T14:00": "hozadék: tartalomjegyzék",
+      "2023-03-21T15:00": "kiaknázatlan lehetőségek"
+    }
+  ],
+  [
+    "it/hamburger",
+    {
+      "2023-05-03": "Benoît Mandelbrot",
+      "2023-05-03T12:00": "Norm Cox"
+    }
+  ],
+  [
+    "it/arculat",
+    {
+      "2022-11-27T08:00": "történelmi pillanat",
+      "2022-11-27T09:00": "a skicc",
+      "2022-11-27T10:00": "1. változat",
+      "2022-11-27T11:00": "2. változat",
+      "2022-11-27T12:00": "3. változat",
+      "2022-11-27T13:00": "4. változat"
+    }
+  ],
+  [
+    "it/cimke",
+    {
+      "2022-09-02T08:00": "kudarcos kísérlet",
+      "2022-09-02T09:00": "előnyök-hátrányok",
+      "2022-09-02T10:00": "beruházás",
+      "2022-09-02T11:00": "címketervezés",
+      "2022-09-02T12:00": "epilógus"
+    }
+  ]
+]

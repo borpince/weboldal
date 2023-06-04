@@ -1,21 +1,23 @@
 var temak =
 {
-  "nav": {
+  "keny": {
     folder: "",
-    tema:"tájékozódás",
+    tema:"kényelmi funkciók",
     lista:{
-      "a": [{cim:"eseménynaptár", nev:"naptar", ver:0}] //!
+      "a": [{cim:"oldaltérkép alcímek nélkül", nev:"", ver:0}],
+      "b": [{cim:"oldaltérkép alcímekkel", nev:"", ver:0}],
+      "c": [{cim:"eseménynaptár", nev:"naptar", ver:0}] //!
     }
   },
   "borok": {
     folder: "/borok",
     tema:"borok, évjáratok",
     lista:{
-      "2020": [{cim:"#01: cabernet sauvignon", nev:"01", ver:0, kelt:"2021-10-26"}],
+      "2020": [{cim:"№&#8198;1: cabernet sauvignon", nev:"01", ver:0, kelt:"2021-10-26"}],
       "2022": [
-        {cim:"#02: oportó",nev:"02",ver:1, kelt:"2022-10-14"},
-        {cim:"#03: rozé",nev:"03", ver:0, kelt:"2022-10-14"},
-        {cim:"#04: kékfrankos",nev:"04",ver:1, kelt:"2022-10-14"}
+        {cim:"№&#8198;2: oportó",nev:"02",ver:1, kelt:"2022-10-14"},
+        {cim:"№&#8198;3: rozé",nev:"03", ver:0, kelt:"2022-10-14"},
+        {cim:"№&#8198;4: kékfrankos",nev:"04",ver:1, kelt:"2022-10-14"}
       ]
     }
   },
@@ -88,12 +90,13 @@ var temak =
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:0, kelt:"2022-11-28"}
       ],
       "d": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "e": [{cim:"jelzések haszna", nev:"jelzesek",ver:1, kelt:"2023-03-21"}],
+      "e": [{cim:"jelzések haszna", nev:"jelzesek",ver:2, kelt:"2023-03-21"}],
       "f": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
-      "g": [{cim:"arculati elem", nev:"arculat", ver:0, kelt:"2022-12-06"}],
-      "h": [{cim:"címke, borcímke", nev:"cimke", ver:0, kelt:"2022-09-20"}],
-      "i": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link", ver:0, kelt:"2022-07-04"}],
-      "j": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}]
+      "g": [{cim:"nem hackernek való vidék", nev:"hacker", ver:0, kelt:"2023-06-04"}],
+      "h": [{cim:"arculati elem", nev:"arculat", ver:0, kelt:"2022-12-06"}],
+      "i": [{cim:"címke, borcímke", nev:"cimke", ver:0, kelt:"2022-09-20"}],
+      "j": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link", ver:0, kelt:"2022-07-04"}],
+      "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}]
     }
   },
 }
@@ -179,3 +182,5 @@ function alcim_gyujto(doc,glob) {
     });
   }
 }
+
+var alcimek_sum = null;
