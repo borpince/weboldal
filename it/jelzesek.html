@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="box">
-        <div class="box-text">
+        <div id="2023-03-21T08:00" alcim="jelzések" class="box-text">
           <p>
             Túl nagy jelentőséget tulajdonítok a <code>pince.eu</code> weboldalon megjelent közléseknek, mert azt feltételezem, hogy anyámon kívül mások is ide tévednek hébe-hóba.
             A hosszan elhúzódó folyamatokról tudósító, szakaszosan megjelenő írások időről időre újabb történések jegyzeteivel bővülnek (a borkészítés a szürettől a hordós érlelésig tipikusan ilyen), s ezeknél nem árt elhelyezni valamilyen jelzést arról, hogy a legutóbbi megtekintés óta változott-e a tartalom.
@@ -73,7 +73,7 @@
         </div>
       </div>
       <div class="box">
-        <div class="box-text">
+        <div id="2023-03-21T09:00" alcim="új koncepció" class="box-text">
           <p>
             A weboldal megjelenése, a terv (divatosan a "design") és az ezt tükröző HTML és CSS kód kedvesem munkája (ő egy meglehetősen sokoldalú teremtés, egy igazi tündér, akire az <a href="/it/arculat.html">arculati elem</a> kivitelezését is rábízhattam).
             Erre építkezek, ezt alakítom át enyhén a programozói észjárásnak és igényeknek megfelelően, mert a szükséges algoritmusok <a href="https://hu.wikipedia.org/wiki/JavaScript">Javascript</a> formát öltve fognak megtestesülni.
@@ -101,7 +101,10 @@
           <p>
             Amíg nem változik a tartalom témafelosztása, addig ehhez nem is kell hozzányúlni. Az üres <code>&lt;select&gt;</code> elemeket a 25. sorban hivatkozott program tölti fel időszerű tartalommal, ami alapján a legfrissebb kínálat jelenik meg a menüben.
             Egyszer kell megálmodni, majd megfogalmazni a végrehajtandó utasításokat, aztán megy minden magától.
-            <br>
+          </p>
+        </div>
+        <div id="2023-03-21T10:00" alcim="a programozás lényege" class="box-text">
+          <p>
             A programozás lényegét valamikor régen úgy fogalmazták meg, hogy erőfeszítéseket teszünk annak érdekében, hogy elkerüljük az erőfeszítéseket. Egyetértek ezzel a megállapítással.
             Kényelmesen hátradőlni, és önelégülten vigyorogva élvezni a helyzetet. Ez a magatartás megengedhető, ha előtte megteremtem a kedvező körülményeket azzal, hogy miután elvégzem a szükséges munkákat, learatom befektetésem hasznát.
             Legyenek bármily bonyolultak, az elkészült programok nem kérnek enni. Tévedhetetlenül, pontosan, hibátlanul és fáradhatatlanul végzik dolgukat, mint a gépek általában – amennyiben nem egy fércmű születik az elvégzett munkából.
@@ -127,14 +130,16 @@
             Nincs mit tenni, alkalmazkodni kell ehhez a viselkedéshez is, aztán jó lesz. Nem akarok annyira érteni hozzá, hogy a miértre is tudjam a választ, megelégszem azzal, hogy a kiegészítéssel megszűnt a rendellenes működés.
           </p>
         </div>
-        <div class="box-text">
+        <div id="2023-03-21T11:00" alcim="fejezetcímek forrása" class="box-text">
           <p>
             Mostantól megúszom ugyan a <code>menu.html</code> szerkesztgetését, de valahonnan a helyükre kell kerülniük a választható fejezetcímeknek és a hozzájuk vezető hivatkozásoknak.
-            Ezek forrása a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js"><code>fejezetek.js</code></a>, amiben a szerkezetét tekintve nagyjából az alábbival azonos listából nyerem az adatokat.
+            Ezek forrása a <a href="https://github.com/borpince/weboldal/blob/main/temak.js"><code>temak.js</code></a>, amiben a szerkezetét tekintve nagyjából az alábbival azonos listából nyerem az adatokat.
           </p>
           <div class="box-img">
             <img src="https://kep.pince.eu/jelzes_03.webp">
           </div>
+        </div>
+        <div id="2023-03-21T12:00" alcim="hozadék: oldaltérkép" class="box-text">
           <p>
             Elég ezt karbantartani, és innen garantáltan időszerű adatok kerülnek a HTML file-okban elhelyezett összes hivatkozásba. Ha erre az egy adatforrásra elegendő figyelmet fordítok, akkor nyilván hibátlan lesz az összes hivatkozás tartalma is.
             Nincs elírás, nincs figyelmetlenségből vagy kapkodásból fakadó gebasz, nincs kalamajka.
@@ -152,7 +157,7 @@
             <li><p>Lehet szó arról a segédletről, amivel a weboldal látogatóinak teszem könnyen áttekinthetővé a kínált tartalmakat, hogy kedvükre válogathassanak ezek közül.</p></li>
           </ul>
           <p>
-            Utóbbi megjelenítéséhez elég elhelyezni egy <code>&lt;select name="*"&gt;&lt;/select&gt;</code> sort a HTML file-ban, és megjelenik az oldaltérkép (a témaválasztékok összevont listája), ami a korábban ismertetett adatszerkezetből, a <code>fejezetek.js</code> programfile-ban deklarált JSON adatokból nyeri tartalmát:
+            Utóbbi megjelenítéséhez elég elhelyezni egy <code>&lt;select name="*"&gt;&lt;/select&gt;</code> sort a HTML file-ban, és megjelenik az oldaltérkép (a témaválasztékok összevont listája), ami a korábban ismertetett adatszerkezetből, a <code>temak.js</code> programfile-ban deklarált JSON adatokból nyeri tartalmát:
             <br><br>
             <select name="*"></select>
             <br><br>
@@ -170,7 +175,10 @@
             Ezen kívül a megjelenítést is vezérelheted vele. Rányomva egyet oda gördül a tartalom, ameddig korábban eljutottál a megtekintésben.
             Tovább lapozva az érték növekszik, a könyvjelző önműködően kikapcsol. A könyvjelzővel ellátott fejezetek címei színjelölést kapnak a menüben.
             Nem érvényesül ez a jelölés a Chrome for Android böngészőben, de a könyvjelző hatása ott is működik: a fejezetet betöltve a megjelölt szakaszhoz gördül a tartalom.
-            <br><br>
+          </p>
+        </div>
+        <div id="2023-03-21T13:00" alcim="ismert hibák, hiányosságok" class="box-text">
+          <p>
             Ismert hibák, hiányosságok.
             <br>
             A megjelenítés adatait feldolgozó algoritmus csak a korábbi tartalom végéhez toldott változások, bővítések esetén mutatja helyesen a megtekintési arányt az egészhez viszonyítva.
@@ -202,7 +210,7 @@
         </div>
       </div>
       <div class="box">
-        <div class="box-text">
+        <div id="2023-03-21T14:00" alcim="hozadék: tartalomjegyzék" class="box-text">
           <p>
             Itt egyszer már véget ért a cselekmény, de most folytatódik a história.
             Ami elméleti síkon nem kerül felszínre, azt majd a gyakorlat kihozza. Ez történt most is, miután elégedetten hátradőltem, és késznek nyilvánítottam ezt a fejlesztést.
@@ -218,7 +226,7 @@
           </div>
           <p>
             A régi szemlélet terhes örökségnek kiirtására most érett meg a világ. Egyrészt megszűnik a redundancia, másrészt lekerül rólam a teher és a felelősség, hogy az időről időre változó tartalomjegyzékeket aktualizáljam.
-            Miután megkomponáltam azt a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L96-L111">néhány programsort</a>, ami ezentúl helyettem foglalkozik ezzel az üggyel, a korábbi vaskos szakasz helyett csupán ezt a sort kell elhelyezni minden témacsoport index oldalán:
+            Miután megkomponáltam azt a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L97-L112">néhány programsort</a>, ami ezentúl helyettem foglalkozik ezzel az üggyel, a korábbi vaskos szakasz helyett csupán ezt a sort kell elhelyezni minden témacsoport index oldalán:
           </p>
           <div class="box-img">
             <img src="https://kep.pince.eu/jelzes_toc2.webp">
@@ -229,6 +237,42 @@
           </p>
         </div>
       </div>
+      <div class="box">
+        <div id="2023-03-21T15:00" alcim="kiaknázatlan lehetőségek" class="box-text">
+          <p>
+            Több lehetőség rejlik a történetek feldolgozása során keletkező adatokban, mint amennyit eddig kiaknáztam.
+            Nemrég <a href="/it/hmk_naptar.html">eseménynaptár</a> szolgáltatással bővítettem a weboldalt, aminek egyik üzemmódjában az összes HTML file-ból összegyűjtöm az alcímeket, hogy a hozzájuk kapcsolt dátumok alapján egyszerre szerepelhessenek a naptárban.
+            Öröm, boldogság, újabb kényelmi funkció. Aztán beugrott, hogy ezek az adatok máshol is hasznosak lehetnek, ha már ilyen szépen egy helyen vannak.
+            <br>
+            Az oldaltérkép egy ideje rendelkezésre áll, roppant hasznos segítség egy weboldal tartalmának gyors áttekintéséhez. Erre jó úgy, ahogy van, de a hím emberszabásúak telhetetlenségétől vezérelve elképzeltem egy bővített változatot.
+            Alaphelyzetben a témakörök, azon belül a fejezetek címei sorakoznak a listában, ami ehhez az áttekinthetőséghez pont elegendő. Mi lenne, ha a kopasz címek mellett az alcímek is megjelennének?
+            Rengeteg adat, káprázik a szemem – nem mindig vagyok abban a hangulatban, amikor ez okozza a legkéjesebb mámort, de ha erre vágyom, akkor ne hiányozzon. Legyen hát kapcsolható. Ha úgy tetszik, akkor alcímekkel, máskor anélkül.
+            <br>
+            Az eredetileg mindenféle olvasmányos történetekhez és témákhoz hozzáférést engedő oldaltérkép listájának elejére beiktattam egy ebből a sorból kilógó témát, ezen belül szintén tájidegen címeket.
+            Ezek biztosítják a lehetőséget az alcímekkel dúsított és az alcímek nélküli megjelenés közötti váltásra, valamint innen hívható az eseménynaptár. Ezek tehát nem történetek, hanem mint a téma elnevezéséből is kiderül: <b>kényelmi funkciók</b>.
+            <br><br>
+            <select name="*"></select>
+          </p>
+          <figure class="box-img">
+            <img src="https://kep.pince.eu/oltarkep.webp">
+            <figcaption>forrás: <a href="https://commons.wikimedia.org/wiki/File:Stefan_Lochner_-_Last_Judgement_-_circa_1435.jpg">wikimedia</a></figcaption>
+          </figure>
+          <p>
+            Régen rossz, amikor úgy érzed, hogy csak az ima segíthet szorult helyzetedben, ezért nem a fohász hatékonyságát javító tényezőként helyeztem el itt ezt a pompás oltárképet.
+            Az "option list" elemeinek <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L165-L184">gyártását intéző</a> eljárás <a href="https://hu.wikipedia.org/wiki/Rekurzi%C3%B3">rekurzív</a> hívásának paraméterezésébe már nem tudtam magamat kellő éberséggel beleélni, ezért nyugovóra tértem, és a következő néhány órát alvással töltöttem.
+            Van az úgy, hogy felébredvén nehezen szakadok ki az öntudatlan állapotból. Bambának és harcképtelennek érzem magam egy darabig, aztán lassan belerázódok az ébrenléti időszak kihívásaival terhelt nappali üzemmódomba.
+            Még bőven a bamba fázisban lehettem, amikor ránéztem a monitorra, és oltárképnek olvastam az oldaltérképet.
+            Klasszikus cselekményábrázolásban a szereplő ilyenkor hitetlenkedve megdörzsöli szemét, majd a reset után újból rátekint a tárgyra.
+            Nálam az életfunkciók ébredést követő újraindításához a hideg vizes mosakodás vált be.
+            <br>
+            Van itt nagyobb baj is a reggeli diszlexiánál. A kereken négy évtizedes számítógép-programozói gyakorlat nem volt elég ahhoz, hogy eljussak a szakmai fejlettségnek arra a szintjére, ahol már csak kifogástalan programsorokat írok be a masinába, azok pedig hibátlanul működnek.
+            Vannak hibák. A gyakorlat tehát nem biztosítja hibátlan kód keletkezését, de a felfedezésük és irtásuk hatékonyságában előnyt jelent.
+            Az angol terminológia szelíden a debugger szóval írja le ezt a műveletet, pedig a ghostbuster mintájára lehetne bugbuster is.
+          </p>
+        </div>
+      </div>
+
+
     </div>
     <div class="footer"></div>
   </section>    
