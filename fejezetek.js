@@ -417,24 +417,13 @@ var left_side = null;
 var balmenu = null;
 var latszik = true;
 
-function alcimek_konzerv() {
-  fetch("/alcimek.json")
-  .then((res) => res.text())
-  .then((text) => {
-    alcimek_sum = new Map(JSON.parse(text));
-  })
-  .catch(function(error) {
-    alcimek_sum = null;
-  });
-}
-
 addEventListener("load", () => {
   elore_hatra();
   nezettseg_betolt();
   nezettseg_frissit(true);
   webhelyterkep_gyarto();
   alcim_gyujto(document,glob);
-  alcimek_konzerv(); //!
+  alcimek_konzerv_betolt();
   kjelzo_frissit(true);
   glob.select_tb = document.getElementsByTagName("SELECT");
   for (var i = 0; i < glob.select_tb.length; i++) {

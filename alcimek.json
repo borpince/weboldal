@@ -222,6 +222,34 @@
     }
   ],
   [
+    "olv/kert/tavaszodik",
+    {
+      "2021-02-26": "szederirtás",
+      "2021-04-01": "földmunka",
+      "2021-04-28": "támfalépítés",
+      "2021-05-01T12:40": "háttöltés",
+      "2021-05-01T16:30": "ágyás-rétegek",
+      "2021-05-21": "szélesebb placc az ágyásnak",
+      "2021-05-26": "dréncsöves öntözés, palánták",
+      "2021-06-26": "a paradicsmot már kötözni kell"
+    }
+  ],
+  [
+    "olv/kert/tavaszodik2",
+    {
+      "2022-05-16": "konyhakert bővítés",
+      "2022-05-18": "bozótirtás",
+      "2022-05-22": "földmunka, támfalépítés",
+      "2022-05-27": "támfal elkészült",
+      "2022-05-31": "felesleges föld ládákban tárolva",
+      "2022-06-01": "vízszintes sík alakul a hegyoldalban",
+      "2022-06-02": "bevált rétegrend szerint készül az ágyás",
+      "2022-06-03": "víztartályok",
+      "2022-08-05": "termőre fordult",
+      "2022-10-31": "eperszörny"
+    }
+  ],
+  [
     "olv/kert/tavaszodik3",
     {
       "2023-03-21": "állapotfelmérés",
@@ -286,8 +314,8 @@
       "2023-03-21T11:00": "fejezetcímek forrása",
       "2023-03-21T12:00": "hozadék: oldaltérkép",
       "2023-03-21T13:00": "ismert hibák, hiányosságok",
-      "2023-03-21T14:00": "hozadék: tartalomjegyzék",
-      "2023-03-21T15:00": "kiaknázatlan lehetőségek"
+      "2023-04-18": "hozadék: tartalomjegyzék",
+      "2023-06-04": "kiaknázatlan lehetőségek"
     }
   ],
   [
@@ -298,24 +326,33 @@
     }
   ],
   [
+    "it/hacker",
+    {
+      "2023-06-04T08:00": "féltő gond és aggodalom",
+      "2023-06-04T09:00": "támadnak",
+      "2023-06-04T10:00": "védekezünk"
+    }
+  ],
+  [
     "it/arculat",
     {
-      "2022-11-27T08:00": "történelmi pillanat",
-      "2022-11-27T09:00": "a skicc",
-      "2022-11-27T10:00": "1. változat",
-      "2022-11-27T11:00": "2. változat",
-      "2022-11-27T12:00": "3. változat",
-      "2022-11-27T13:00": "4. változat"
+      "2020-02-16": "történelmi pillanat",
+      "2022-08-24": "az inspiráció",
+      "2022-11-27": "a skicc",
+      "2022-11-28": "1. változat",
+      "2022-12-03": "2. változat",
+      "2022-12-06": "3. változat",
+      "2023-02-14": "4. változat"
     }
   ],
   [
     "it/cimke",
     {
-      "2022-09-02T08:00": "kudarcos kísérlet",
-      "2022-09-02T09:00": "előnyök-hátrányok",
-      "2022-09-02T10:00": "beruházás",
-      "2022-09-02T11:00": "címketervezés",
-      "2022-09-02T12:00": "epilógus"
+      "2021-07-09T12:00": "kudarcos kísérlet",
+      "2021-07-09T14:00": "előnyök-hátrányok",
+      "2021-08-02": "beruházás",
+      "2021-08-10": "címketervezés",
+      "2022-09-20": "epilógus"
     }
   ]
 ]

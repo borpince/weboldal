@@ -184,3 +184,16 @@ function alcim_gyujto(doc,glob) {
 }
 
 var alcimek_sum = null;
+var alcimek_fl_nev = "/alcimek.json";
+
+function alcimek_konzerv_betolt() {
+  fetch(alcimek_fl_nev)
+  .then((res) => res.text())
+  .then((text) => {
+    alcimek_sum = new Map(JSON.parse(text));
+  })
+  .catch(function(error) {
+    alcimek_sum = null;
+  });
+}
+

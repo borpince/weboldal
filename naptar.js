@@ -379,14 +379,15 @@
     const data = JSON.stringify([...cucc.entries()],null,2);
     const blob = new Blob([data],{type:'application/json'});
     const url = URL.createObjectURL(blob);
-    download(url,'cucc.json');
+    download(url,alcimek_fl_nev);
     URL.revokeObjectURL(url);
   }
 
   async function file_okbol_feltoltve(obj) {
     //! var cucc = new Map(); //!
     tarea_gyarto(obj);
-    sum_info = "https://"+window.location.hostname+" weboldalról összegyűjtött történetek:\n\n"
+    var forras_nev = (alcimek_sum) ? alcimek_fl_nev+" konzervből":"https://"+window.location.hostname+" weboldalról";
+    sum_info = forras_nev+" összegyűjtött történetek:\n\n";
     window.scrollTo(0, document.body.scrollHeight);
     betakar();
     var meret = 0;
@@ -406,17 +407,24 @@
           };
           var kelt = (le.hasOwnProperty("kelt")) ? le.kelt:"";
           if (kelt && (le.nev.indexOf('/') == -1)) { //nem külső link
-            time_out = setTimeout(gebasz_eseten,6000); //ha megakadna a külső művelet
             glob.tortenet_db++;
             var url = csomag.folder+csomag.subfolder+"/"+le.nev+".html";
-            const anyag = await fetch(url);
-            const html_szoveg = await anyag.text();
-            var fl_meret = html_szoveg.length;
-            meret += fl_meret;
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(html_szoveg, "text/html");
-            alcim_gyujto(doc,glob);
-            sum_info += glob.tortenet_db+": "+url+", "+(fl_meret/1024).toFixed(2)+" KiB, "+le.kelt.substring(0,10)+"\n";
+            if (!alcimek_sum) {
+              time_out = setTimeout(gebasz_eseten,6000); //ha megakadna a külső művelet
+              const anyag = await fetch(url);
+              const html_szoveg = await anyag.text();
+              clearTimeout(time_out);
+              meret += html_szoveg.length;
+              var parser = new DOMParser();
+              var doc = parser.parseFromString(html_szoveg, "text/html");
+              alcim_gyujto(doc,glob);
+              sum_info += glob.tortenet_db+": "+url+", "+(html_szoveg.length/1024).toFixed(2)+" KiB, "+le.kelt.substring(0,10)+"\n";
+            } else {
+              glob.alcimek = new Map();
+              var alc = alcimek_sum.get(`${tk}${csomag.subfolder}/${le.nev}`);
+              for (var key in alc) glob.alcimek.set(key,alc[key]);
+              sum_info += glob.tortenet_db+": "+url+"\n";
+            }
             if (glob.alcimek.size == 0) {
               csomag.esemenyek[le.kelt] = le.cim;
             } else {
@@ -427,7 +435,6 @@
             gyujto_tb.push(csomag);
             tarea.innerHTML = sum_info;
             tarea.scrollTop = tarea.scrollHeight;
-            clearTimeout(time_out);
           }
         }
     kitakar();

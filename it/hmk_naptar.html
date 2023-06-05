@@ -61,19 +61,23 @@ li::marker {
       <div class="box">
         <div class="box-text">
           <p>
-            Nincs ínyedre az egyhangúság? Akkor az <a href="\naptar.html">eseménynaptár</a> szolgáltatás megnyeri tetszésedet, mert több módon is előhívhatod, kezdve az ebben a mondatban látható hivatkozással. Megtalálod az oldaltérképen is a <code>tájékozódás</code> téma alatt.
+            Nincs ínyedre az egyhangúság? Akkor az <a href="\naptar.html">eseménynaptár</a> szolgáltatás megnyeri tetszésedet, mert több módon is előhívhatod, kezdve az ebben a mondatban látható hivatkozással. Megtalálod az oldaltérképen is a <code>kényelmi funkciók</code> téma alatt.
             Ez a nagyon hasznos oldaltérkép a nyitóoldal aljára görgetve érhető el, valamint az esetlegesen megjelenő <a href="https://hu.wikipedia.org/wiki/404-es_hiba">404-es hibaoldalon</a>.
             Az eseménynaptár többféle üzemmódot kínálva dolgozza fel, és változtatható megjelenéssel mutatja az adatokat.
             Azoknál a történeteknél szolgáltat érdemleges eredményt, amiknél a leírt folyamatok résztevékenységeit alcímek alá szerveztem.
             Jellemzően ilyenek a borkészítésről és az építkezésről szóló, hosszan elhúzódó, sokrétű cselekményt mesélő történetek. Ezeknél a <a href="/it/hamburger.html">hamburger menüben</a> feltűnik a naptár ikon, aminek révén a funkció előhívható.
             Innen nem hiányozna, de a példa kedvéért alcímeket iktattam a szövegbe.
           </p>
-          <object name="alcimek"></object>
+        </div>
+      </div>
+      <object name="alcimek">A példa kedvéért</object>
+      <div class="box">
+        <div class="box-text">
           <p>
             Az alcímekkel egyrészt működik a lapon belüli ugrás, másrészt ezeket érzékelve elhelyezem a naptár ikont a történet hamburger menüjében, amivel olvasás közben az eseménynaptár kényelmesen elérhetővé válik.
             Az év összes napja megjelenik, fölötte egyszerű kezelőfelület teszi irányíthatóvá a naptáron gyakorolható műveleteket.
             Bal felső sarokban a hamburger, mellette az oldaltérkép legördíthető választéka. Alatta a nyitóoldalhoz vezető házikó. Mellette annak a történetnek vagy helyzetnek a megnevezése, amit az eseménynaptár ábrázol.
-            A naptár feletti sorban a [?] gomb a most olvasott weboldalt jeleníti meg. A jobbra látható évszámnál van lehetőség évet választani, amennyiben a feldolgozott dátumok több éves időszakot fednek le.
+            A naptár feletti sorban a [?] gomb a most olvasott, az eseménynaptár működését magyarázó weboldalt jeleníti meg. A jobbra látható évszámnál van lehetőség évet választani, amennyiben a feldolgozott dátumok több éves időszakot fednek le.
             Kapcsolható a fejléc megjelenítése a kényelmesebb, gyorsabb, pontosabb tájékozódás érdekében, ha szükséged van a hónapok és a hét napjainak megnevezésére.
           </p>
           <div id="2023-05-26T12:15" alcim="kezelőfelület (UI)" class="box-img">
@@ -100,6 +104,8 @@ li::marker {
             <li><p>Az oldaltérképről indítva a weboldal összes történetének első közzétételi dátumai szerepelnek a naptárban.</p></li>
             <li><p>Magából az eseménynaptárból indítható egy olyan adatfeldolgozás, ami a weboldalon tárolt összes történet szövegéből gyűjti ki az alcímeket, és ezek dátumai lesznek bejelölve a naptárban (több évet felölelő időszak, sok eseménnyel).
               Ez a folyamat a [𝜮] gombbal indítható, és a weboldal jelenlegi mérete mellett néhány száz KiB adatforgalommal, és néhány másodpercnyi várakozással jár.
+              <br>
+              Frissítés: időközben elkészült az <code>alcimek.json</code> file-ból dolgozó fejlesztés, ami minimális adatforgalommal és gyakorlatilag várakozási idő nélkül működik.
             </p></li>
           </ol>
           <p>
@@ -119,7 +125,7 @@ li::marker {
             <br>
             Ennek a fejezetnek a fogalmazásába május 26-án kezdtem bele. Ekkor készült el a vázlat és a példaként szerepeltetett alcímek sora, amik mellett ez a dátum szerepel.
             A baloldali menüből hívható eseménynaptár ebben az üzemmódban az alcímek dátumai alapján jelöli meg az érintett napot (vagy napokat), ami jelen esetben május 26.
-            Ez egy ilyen egyszerű eset, de több bejelölt napot láthatsz a naptárban, több éven keresztül, ha megnézed valamelyik bor készítésének eseménynaptárát (például a 2020-as <a href="/borok/01.html">cabernet sauvignon</a>).
+            Ez egy egyszerű eset, de több bejelölt napot láthatsz a naptárban, több éven keresztül, ha megnézed valamelyik bor készítésének eseménynaptárát (például a 2020-as <a href="/borok/01.html">cabernet sauvignon</a>).
           </p>
           <div class="box-img">
             <img src="https://kep.pince.eu/esemenynaptar3.webp">
