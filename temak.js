@@ -147,15 +147,17 @@ function alcim_gyujto(doc,glob) {
       var d = new Date(cimke_tb[i].id);
       if (!isNaN(d)) {
         var datum_str = d.toLocaleDateString("hu-HU", {year:'numeric',month:'long',day:'numeric'});
-        gyujto.set(cimke_tb[i].id, cimke_tb[i].getAttribute("alcim"));
+        var alcim = cimke_tb[i].hasAttribute("alcim") ? cimke_tb[i].getAttribute("alcim"):"";
         switch (cimke_tb[i].nodeName) {
           case "H1":
             if (cimke_tb[i].innerHTML == "") cimke_tb[i].innerHTML = datum_str;
+              else if (!alcim) alcim = cimke_tb[i].innerHTML;
           break;
           case "DIV":
             //cimke_tb[i].getAttribute("alcim");
           break;
         }
+        gyujto.set(cimke_tb[i].id, alcim);
       }
     } catch (err) {}
   }
