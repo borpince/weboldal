@@ -94,7 +94,7 @@ function karikas_szam(szam) {
   return "&#"+(9311+szam);
 }
 
-function toc(object) {
+function toc(object) { //! 97 jelzesek.html
   var tmdex = letezik(glob.href_nev,true);
   if (tmdex.tortenet) for (var i = 0; i < tmdex.tortenet.length; i++) {
     var elotte = document.createElement('SPAN');
@@ -109,7 +109,7 @@ function toc(object) {
     cim.innerHTML = `${tmdex.tortenet[i].cim}<br>`;
     object.appendChild(cim);
   }
-}
+} //! 112 jelzesek.html
 
 function alcim_lista_gyarto(object) {
   if (glob.alcimek.size > 0) {
@@ -162,7 +162,7 @@ function lista_gyarto(select,ref_nev) {
 
   function valasztek(tk,alcimekkel) { //tk: téma kulcs (pl. borok)
     
-    function opt_gyarto(le,elem,kulon_tema,kulcs,alcim) { //le: lista elem
+    function opt_gyarto(le,elem,kulon_tema,kulcs,alcim) { //le: lista elem //! 165 jelzesek.html
       var o = document.createElement('option');
       o.folder = temak[tk].folder;
       o.subfolder = le.hasOwnProperty("subfolder") ? le.subfolder:"";
@@ -175,13 +175,13 @@ function lista_gyarto(select,ref_nev) {
         } else o.innerHTML = nj(le)+le.cim;
       } else o.innerHTML = "&#8195;&#8195;"+jelek.link[0]+"&#8197;"+alcim;
       if (konyvjelzett(le.nev)) option.setAttribute("style","color:goldenrod");
-      if (ref_nev == le.nev) glob.cim = le.cim; //a kiválasztott elem címe része lesz a document.title tartalmának
+      if (le.nev && (ref_nev == le.nev)) glob.cim = le.cim; //a kiválasztott elem címe része lesz a document.title tartalmának
       elem.appendChild(o);
       if (alcimek_sum && alcimekkel && !kulcs) {
         var alc = alcimek_sum.get(`${tk}${o.subfolder}/${le.nev}`);
         if (alc) for (var key in alc) opt_gyarto(le,elem,kulon_tema,key,alc[key]);
       }
-    }
+    } //! 184 jelzesek.html
 
     for (var lek in temak[tk].lista) { //lek: lista elem kulcs (pl. "2020", "a", "b" stb.)
       if (lek.length > 1) { //csoportokba szedett témák (leginkább a "borok")
@@ -223,8 +223,8 @@ function lista_gyarto(select,ref_nev) {
       select.appendChild(option);
       valasztek(tk,glob.alcimekkel);
     }
-    //az eseménynaptárt betöltve nem "oldaltérkép" szöveg jelenik meg:
-    if (glob.href_nev == "naptar") select.value = glob.href_nev;
+    //az eseménynaptárt vagy naplót betöltve nem "oldaltérkép" szöveg jelenik meg:
+    if ((glob.href_nev == "naptar") || (glob.href_nev == "naplo")) select.value = glob.href_nev;
   }
 
   while (select.firstChild) select.removeChild(select.firstChild);
@@ -270,11 +270,11 @@ function lista_gyarto(select,ref_nev) {
         window.location = path;
       }
     } else {
+      //oldaltérkép: alcímmekkel vagy azok nélkül - váltás
       if (glob.alcimekkel != (select.selectedIndex == 3)) {
         glob.alcimekkel = (select.selectedIndex == 3);
-        for (var i = 0; i < glob.select_tb.length; i++) {
+        for (var i = 0; i < glob.select_tb.length; i++)
           if ((temak[glob.select_tb[i].name] != undefined) || (glob.select_tb[i].name == '*')) lista_gyarto(glob.select_tb[i],glob.href_nev);
-        }
       }
     }
     select.value = "";
@@ -437,7 +437,7 @@ addEventListener("load", () => {
       if (alcimek_helye == null) alcimek_helye = glob.obj_tb[i]; //csak az elsővel foglalkozom, ha több lenne belőle
       alcim_lista_gyarto(glob.obj_tb[i]);
     }
-  }
+  } //! 440 hamburger.html
   nav_wrapper = document.getElementsByClassName("nav-wrapper");
   balmenu = document.getElementById("balmenu");
   var eltuntet_y = "-250px"; //egyszerűbb a számolgatásnál
@@ -464,7 +464,7 @@ addEventListener("load", () => {
       latszik = !latszik;
       left_side[0].style.top = (latszik ? "0":eltuntet_y);
     });
-  }
+  } //! 467 hamburger.html
   //pontatlan page jump igazítás:
   var p = window.location.href.lastIndexOf('#');
   var cimke = document.getElementById(window.location.href.substring(p+1));
@@ -473,9 +473,8 @@ addEventListener("load", () => {
       cimke.scrollIntoView();
     },900);
   }
+  parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
 });
-
-parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
 
 if (glob.hol_tart) {
   glob.hol_tart.addEventListener("click",() => {folytat();});
