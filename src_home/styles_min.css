@@ -1,5 +1,5 @@
 select {
-	color: lightgray;
+	color: white; /* menu */
 	background: black;
 	font-size:x-large;
 	border-width: 0px;
@@ -79,7 +79,7 @@ body {
   /*align-self: flex-start;*/
   margin: 10px 20px 0px 20px;		/*0px 20px*/
   /*margin: 5px 0 0 20px*/
-  color: lightgrey;
+  color: white; /* menu */
   font-size: 26px;	
   text-decoration: none;
   max-width: 95%;
@@ -135,7 +135,7 @@ dd {
     line-height: 40px;
     font-size: 35px;
     font-weight: 400;
-    color: lightgrey;
+    color: white; /* menu */
     width: 90%;
   }
 
