@@ -384,7 +384,7 @@
   }
 
   async function file_okbol_feltoltve(obj) {
-    //! var cucc = new Map(); //!
+    //!var cucc = new Map(); //! alcimek.json-t ideiglenesen kitörölni/átnevezni!
     tarea_gyarto(obj);
     var forras_nev = (alcimek_sum) ? alcimek_fl_nev+" konzervből":"https://"+window.location.hostname+" weboldalról";
     sum_info = forras_nev+" összegyűjtött történetek:\n\n";
@@ -430,7 +430,7 @@
             } else {
                 csomag.esemenyek = Object.fromEntries(glob.alcimek);
                 for (var key in csomag.esemenyek) sum_info += "&emsp;&emsp;&emsp;"+key.substring(0,10)+" "+csomag.esemenyek[key]+"\n";
-                //! cucc.set(`${tk}${csomag.subfolder}/${csomag.nev}`,csomag.esemenyek); //!
+                //!cucc.set(`${tk}${csomag.subfolder}/${csomag.nev}`,csomag.esemenyek); //!
               }
             gyujto_tb.push(csomag);
             tarea.innerHTML = sum_info;
@@ -438,7 +438,7 @@
           }
         }
     kitakar();
-    //! mentes(cucc); //!
+    //!mentes(cucc); //!
     return gyujto_tb;
   }
 

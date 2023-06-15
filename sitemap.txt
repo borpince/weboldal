@@ -53,3 +53,4 @@ https://pince.eu/it/hamburger.html
 https://pince.eu/it/hacker.html
 https://pince.eu/it/arculat.html
 https://pince.eu/it/cimke.html
+https://pince.eu/it/nfc_helyzet.html

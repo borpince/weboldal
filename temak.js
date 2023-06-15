@@ -6,18 +6,19 @@ var temak =
     lista:{
       "a": [{cim:"oldaltérkép alcímek nélkül", nev:"", ver:0}],
       "b": [{cim:"oldaltérkép alcímekkel", nev:"", ver:0}],
-      "c": [{cim:"eseménynaptár", nev:"naptar", ver:0}] //!
+      "c": [{cim:"eseménynaptár", nev:"naptar", ver:0}]
+      //"d": [{cim:"napló", nev:"naplo", ver:0}]
     }
   },
   "borok": {
     folder: "/borok",
     tema:"borok, évjáratok",
     lista:{
-      "2020": [{cim:"№&#8198;1: cabernet sauvignon", nev:"01", ver:0, kelt:"2021-10-26"}],
+      "2020": [{cim:"№ 1: cabernet sauvignon", nev:"01", ver:0, kelt:"2021-10-26"}],
       "2022": [
-        {cim:"№&#8198;2: oportó",nev:"02",ver:1, kelt:"2022-10-14"},
-        {cim:"№&#8198;3: rozé",nev:"03", ver:0, kelt:"2022-10-14"},
-        {cim:"№&#8198;4: kékfrankos",nev:"04",ver:1, kelt:"2022-10-14"}
+        {cim:"№ 2: oportó",nev:"02",ver:1, kelt:"2022-10-14"},
+        {cim:"№ 3: rozé",nev:"03", ver:0, kelt:"2022-10-14"},
+        {cim:"№ 4: kékfrankos",nev:"04",ver:1, kelt:"2022-10-14"}
       ]
     }
   },
@@ -97,8 +98,8 @@ var temak =
       "h": [{cim:"arculati elem", nev:"arculat", ver:0, kelt:"2022-12-06"}],
       "i": [{cim:"címke, borcímke", nev:"cimke", ver:0, kelt:"2022-09-20"}],
       //"j": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link", ver:0, kelt:"2022-07-04"}],
-      "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}]
-      //"l": [{cim:"NFC-címke: helyzetelemzés", nev:"nfc_helyzet", ver:0, kelt:"2023-06-08"}]
+      "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}],
+      "l": [{cim:"NFC-címke: helyzetelemzés", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"}]
     }
   },
 }
