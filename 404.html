@@ -60,7 +60,7 @@ ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a 
     fetch(url, {method: 'HEAD'})
       .then((response) => {
         console.log(response.headers.get("content-type"));
-        if (response.ok) { //&& (response.headers.get("content-type") == "text/html")) {
+        if ((response.ok) && (response.headers.get("content-type").indexOf("text/html") > -1)) {
           console.log("átirányítás");
           //window.location = path;
         } else throw new Error();
