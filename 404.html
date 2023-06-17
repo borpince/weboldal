@@ -52,14 +52,18 @@ ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a 
   var hibaoldal = document.getElementById("container_cs2020");
   var nev = href_nev();
   var tmdex = letezik(nev,true);
+  console.log("a");
   if (tmdex.folder) {
     var path = `${tmdex.folder}${tmdex.subfolder}/${nev}.html`;
     var url = `https://${window.location.hostname}${path}`;
+    console.log("url:"+url);
     fetch(url, {method: 'HEAD'})
       .then((response) => {
-        if ((response.ok) && (response.headers.get("content-type") == "text/html")) window.location = path;
-          else throw new Error();
+        if ((response.ok) && (response.headers.get("content-type") == "text/html")) {
+          console.log("átirányítás");
+          window.location = path;
+        } else throw new Error();
       })
-      .catch((error) => {hibaoldal.setAttribute("style","display:block");});
-  } else hibaoldal.setAttribute("style","display:block");
+      .catch((error) => {console.log("catch"); hibaoldal.setAttribute("style","display:block");});
+  } else {console.log("null"); hibaoldal.setAttribute("style","display:block");}
 </script>
