@@ -1,19 +1,5 @@
 (function() {
 
-  function href_nev() {
-    var href = document.location.href;
-    var p = href.lastIndexOf('/');
-    var p1 = href.lastIndexOf('#');
-    var p2 = href.lastIndexOf('.html');
-    if (p1 > p2) { //lapon belüli ugrás
-      glob.url_page_jump = true;
-      href = href.substring(0,p1);
-    }
-    if (p2 < 0) p2 = href.length; //CF levágja a végződést?
-    if ((p > -1) && (p < p2)) return href.substring(++p,p2);
-      else return "";
-  }
-  
   var glob = {
     href_nev: "",
     url_page_jump: false,
@@ -94,7 +80,7 @@ function karikas_szam(szam) {
   return "&#"+(9311+szam);
 }
 
-function toc(object) { //! 97 jelzesek.html
+function toc(object) { //! 83 jelzesek.html
   var tmdex = letezik(glob.href_nev,true);
   if (tmdex.tortenet) for (var i = 0; i < tmdex.tortenet.length; i++) {
     var elotte = document.createElement('SPAN');
@@ -109,7 +95,7 @@ function toc(object) { //! 97 jelzesek.html
     cim.innerHTML = `${tmdex.tortenet[i].cim}<br>`;
     object.appendChild(cim);
   }
-} //! 112 jelzesek.html
+} //! 98 jelzesek.html
 
 function alcim_lista_gyarto(object) {
   if (glob.alcimek.size > 0) {
@@ -162,7 +148,7 @@ function lista_gyarto(select,ref_nev) {
 
   function valasztek(tk,alcimekkel) { //tk: téma kulcs (pl. borok)
     
-    function opt_gyarto(le,elem,kulon_tema,kulcs,alcim) { //le: lista elem //! 165 jelzesek.html
+    function opt_gyarto(le,elem,kulon_tema,kulcs,alcim) { //le: lista elem //! 151 jelzesek.html
       var o = document.createElement('option');
       o.folder = temak[tk].folder;
       o.subfolder = le.hasOwnProperty("subfolder") ? le.subfolder:"";
@@ -181,7 +167,7 @@ function lista_gyarto(select,ref_nev) {
         var alc = alcimek_sum.get(`${tk}${o.subfolder}/${le.nev}`);
         if (alc) for (var key in alc) opt_gyarto(le,elem,kulon_tema,key,alc[key]);
       }
-    } //! 184 jelzesek.html
+    } //! 170 jelzesek.html
 
     for (var lek in temak[tk].lista) { //lek: lista elem kulcs (pl. "2020", "a", "b" stb.)
       if (lek.length > 1) { //csoportokba szedett témák (leginkább a "borok")
@@ -437,8 +423,8 @@ addEventListener("load", () => {
       if (alcimek_helye == null) alcimek_helye = glob.obj_tb[i]; //csak az elsővel foglalkozom, ha több lenne belőle
       alcim_lista_gyarto(glob.obj_tb[i]);
     }
-  } //! 440 hamburger.html
-  nav_wrapper = document.getElementsByClassName("nav-wrapper");
+  }
+  nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 427 hamburger.html
   balmenu = document.getElementById("balmenu");
   var eltuntet_y = "-250px"; //egyszerűbb a számolgatásnál
   window.addEventListener("scroll",() => {
@@ -464,7 +450,7 @@ addEventListener("load", () => {
       latszik = !latszik;
       left_side[0].style.top = (latszik ? "0":eltuntet_y);
     });
-  } //! 467 hamburger.html
+  } //! 453 hamburger.html
   //pontatlan page jump igazítás:
   var p = window.location.href.lastIndexOf('#');
   var cimke = document.getElementById(window.location.href.substring(p+1));

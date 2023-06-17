@@ -6,8 +6,9 @@ var temak =
     lista:{
       "a": [{cim:"oldaltérkép alcímek nélkül", nev:"", ver:0}],
       "b": [{cim:"oldaltérkép alcímekkel", nev:"", ver:0}],
-      "c": [{cim:"eseménynaptár", nev:"naptar", ver:0}]
-      //"d": [{cim:"napló", nev:"naplo", ver:0}]
+      "c": [{cim:"eseménynaptár", nev:"naptar", ver:0}],
+      "d": [{cim:"napló", nev:"naplo", ver:0}]
+      //
     }
   },
   "borok": {
@@ -20,6 +21,7 @@ var temak =
         {cim:"№ 3: rozé",nev:"03", ver:0, kelt:"2022-10-14"},
         {cim:"№ 4: kékfrankos",nev:"04",ver:1, kelt:"2022-10-14"}
       ]
+      //
     }
   },
   "tech": {
@@ -35,6 +37,7 @@ var temak =
       "g": [{cim:"törkölykiszedő vasvilla", nev:"vasvilla", ver:0, kelt:"2022-09-12"}],
       "h": [{cim:"vödörsüllyesztő zsomp", nev:"zsomp", ver:0, kelt:"2022-12-06"}],
       "i": [{cim:"penész a pincében", nev:"sarkany", ver:0, kelt:"2023-05-13"}]
+      //
     }
   },
   "olv": {
@@ -73,7 +76,8 @@ var temak =
         {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023", ver:0, kelt:"2023-04-17"},
         {cim:"XIV. Pannon Borrégió Top25", subfolder:"/bv", nev:"top25pb2023", ver:0, kelt:"2023-06-12"}
       ],
-      "i": [{cim:"hordólelet", nev:"hordo", ver:0, kelt:"2023-05-29"}],
+      "i": [{cim:"hordólelet", nev:"hordo", ver:0, kelt:"2023-05-29"}]
+      //
     }
   },
   "it": {
@@ -92,7 +96,7 @@ var temak =
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:0, kelt:"2022-11-28"}
       ],
       "d": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "e": [{cim:"jelzések haszna", nev:"jelzesek",ver:2, kelt:"2023-03-21"}],
+      "e": [{cim:"jelzések haszna", nev:"jelzesek",ver:3, kelt:"2023-03-21"}],
       "f": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
       "g": [{cim:"nem hackernek való vidék", nev:"hacker", ver:0, kelt:"2023-06-04"}],
       "h": [{cim:"arculati elem", nev:"arculat", ver:0, kelt:"2022-12-06"}],
@@ -100,6 +104,7 @@ var temak =
       //"j": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link", ver:0, kelt:"2022-07-04"}],
       "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}],
       "l": [{cim:"NFC-címke: helyzetelemzés", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"}]
+      //
     }
   },
 }
@@ -118,9 +123,23 @@ var jelek = {
   sum: ["𝜮","összefoglaló"]
 }
 
+function href_nev() {
+  var href = document.location.href;
+  var p = href.lastIndexOf('/');
+  var p1 = href.lastIndexOf('#');
+  var p2 = href.lastIndexOf('.html');
+  if (p1 > p2) { //lapon belüli ugrás
+    glob.url_page_jump = true;
+    href = href.substring(0,p1);
+  }
+  if (p2 < 0) p2 = href.length; //CF levágja a végződést?
+  if ((p > -1) && (p < p2)) return href.substring(++p,p2);
+    else return "";
+}
+
 function letezik(nev,sub) {
   //sub false: csupán a nev mező egyezését keresem
-  var tmdex = {tk:null,tema:null,tcs:null,tortenet:null,folder:null,lek:null,le_sub_idx:-1} //tmdex: téma adatok/indexek
+  var tmdex = {tk:null,tema:null,tcs:null,tortenet:null,folder:null,subfolder:"",lek:null,le_sub_idx:-1} //tmdex: téma adatok/indexek
   for (tmdex.tk in temak) //tmdex.tk: téma kulcs
     for (tmdex.lek in temak[tmdex.tk].lista) //tmdex.lek: lista elem kulcs (pl. "2020", "a", "b" stb.)
       for (tmdex.le_sub_idx in temak[tmdex.tk].lista[tmdex.lek])
@@ -128,7 +147,10 @@ function letezik(nev,sub) {
         if (temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].nev == nev) {
           switch (sub) {
             case true:
-              if (temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].hasOwnProperty("subfolder")) tmdex.tortenet = temak[tmdex.tk].lista[tmdex.lek];
+              if (temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].hasOwnProperty("subfolder")) {
+                tmdex.tortenet = temak[tmdex.tk].lista[tmdex.lek];
+                tmdex.subfolder = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx].subfolder;
+              }
             break;
             case false:
               tmdex.tortenet = temak[tmdex.tk].lista[tmdex.lek];
@@ -138,7 +160,7 @@ function letezik(nev,sub) {
           if (tmdex.le_sub_idx > 0) tmdex.tcs = temak[tmdex.tk].lista[tmdex.lek][0].cim;
           return tmdex;
         }
-  tmdex = {tk:null,tema:null,tcs:null,tortenet:null,folder:null,lek:null,le_sub_idx:-1}
+  tmdex = {tk:null,tema:null,tcs:null,tortenet:null,folder:null,subfolder:"",lek:null,le_sub_idx:-1}
   return tmdex;
 }
 

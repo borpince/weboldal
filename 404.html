@@ -12,7 +12,7 @@
   <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
 </head>
 <body>
-  <section id="container_cs2020">
+  <section id="container_cs2020" style="display:none">
     <div class="nav-wrapper">
     <div class="left-side">
       <div id="home" class="nav-link-wrapper" >
@@ -29,7 +29,6 @@
             Elavult hivatkozásról jutottál ide, vagy rossz címet adtál meg?
             <br>
             Sebaj. Indulj el a kályhától, a <code><a href="https://pince.eu">pince.eu</a></code> nyitóoldalától!
-            <br>
             Ehhez nyomj egyet a házikóra vagy az alábbi képre célozva (a témák áttekintéséhez rendelkezésre áll az oldaltérkép is).
           </p>
         </div>
@@ -43,3 +42,24 @@
 </html>
 <script src="/temak.js"></script>
 <script src="/fejezetek.js"></script>
+<script>
+/*
+megesik, hogy az átláthatóbb rendre törekedve átszervezem a weboldalt alkotó lapokat, csakhogy ez esetben
+a keresőgépek által adott találat a korábbi állapot szerinti linket adja, ami rossz helyre mutat
+jön a 404-es hiba, de itt megvizsgálom a nevet, hogy szerepel-e a témák között
+ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a jó helyre
+*/
+  var hibaoldal = document.getElementById("container_cs2020");
+  var nev = href_nev();
+  var tmdex = letezik(nev,true);
+  if (tmdex.folder) {
+    var path = `${tmdex.folder}${tmdex.subfolder}/${nev}.html`;
+    var url = `https://${window.location.hostname}${path}`;
+    fetch(url, {method: 'HEAD'})
+      .then((response) => {
+        if ((response.ok) && (response.headers.get("content-type") == "text/html")) window.location = path;
+          else throw new Error();
+      })
+      .catch((error) => {hibaoldal.setAttribute("style","display:block");});
+  } else hibaoldal.setAttribute("style","display:block");
+</script>
