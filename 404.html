@@ -59,9 +59,10 @@ ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a 
     console.log("url:"+url);
     fetch(url, {method: 'HEAD'})
       .then((response) => {
-        if ((response.ok) && (response.headers.get("content-type") == "text/html")) {
+        console.log(response.headers.get("content-type"));
+        if (response.ok) { //&& (response.headers.get("content-type") == "text/html")) {
           console.log("átirányítás");
-          window.location = path;
+          //window.location = path;
         } else throw new Error();
       })
       .catch((error) => {console.log("catch"); hibaoldal.setAttribute("style","display:block");});
