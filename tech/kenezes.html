@@ -520,9 +520,9 @@
     var dat = input_adatok();
     var uj_kulcs = adag_kulcs(dat);
     if (kulcs_index(uj_kulcs) < 0) { //nincs még ilyen
-      fetch("https://nuxi.hu/ken?_="+new Date().getTime(),{
+      fetch("https://nuxi.hu/ken",{
         method: 'POST',
-        body: JSON.stringify({fnct:csomag.fn.szamol,adatok:input_adatok()}),
+        body: JSON.stringify({fnct:csomag.fn.szamol, adatok:dat}),
         headers: new Headers({
           "Content-Type":"application/json; charset=UTF-8",
           "Cache-Control":"no-cache"
