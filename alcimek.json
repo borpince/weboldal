@@ -73,6 +73,55 @@
     }
   ],
   [
+    "tech/vedogaz",
+    {
+      "2022-12-13": "végleges helyére került"
+    }
+  ],
+  [
+    "tech/cimkezo",
+    {
+      "2021-09-11": "elkészült a címkéző",
+      "2021-09-20": "parasztvakító lézershow"
+    }
+  ],
+  [
+    "tech/hajtokerek",
+    {
+      "2021-10-09T14:00": "az előzmény",
+      "2021-10-09T14:30": "sanyarú körülmények",
+      "2021-10-09T15:00": "buta konstrukció",
+      "2021-10-09T15:30": "a régiek értették a csíziót",
+      "2021-10-09T16:00": "megoldás: öntöttvas hajtókerék"
+    }
+  ],
+  [
+    "tech/futokopeny",
+    {
+      "2020-12-11": "tartálymelegítő fűtőköpeny"
+    }
+  ],
+  [
+    "tech/vent",
+    {
+      "2022-09-04": "ideje volt felszerelni"
+    }
+  ],
+  [
+    "tech/vasvilla",
+    {
+      "2022-09-12": "hatékony módszer"
+    }
+  ],
+  [
+    "tech/zsomp",
+    {
+      "2022-11-29": "rombolás",
+      "2022-12-01": "építés",
+      "2022-12-02": "működik"
+    }
+  ],
+  [
     "olv/igykeszult/fodem",
     {
       "2017-08-16": "fussunk neki mégegyszer",
@@ -222,6 +271,16 @@
     }
   ],
   [
+    "olv/igykeszult/korlat",
+    {
+      "2023-01-04": "belevágtam",
+      "2023-06-07": "ismét belevágtam",
+      "2023-06-09": "oldható kötések",
+      "2023-06-19": "vagdosás, hegesztés, reszelés",
+      "2023-06-23": "mi tartott ezen ennyi ideig?"
+    }
+  ],
+  [
     "olv/kert/tavaszodik",
     {
       "2021-02-26": "szederirtás",
@@ -254,6 +313,24 @@
     {
       "2023-03-21": "állapotfelmérés",
       "2023-05-06": "kiültetés"
+    }
+  ],
+  [
+    "olv/00",
+    {
+      "2020-09-21": "bedobtak a mélyvízbe",
+      "2020-10-06": "kalandos erjesztés",
+      "2020-10-10": "első fejtés",
+      "2020-11-10": "epilógus",
+      "2021-08-24": "megvilágosodás"
+    }
+  ],
+  [
+    "olv/elmaradt2021",
+    {
+      "2021-09-29": "előkészület",
+      "2021-10-09": "hajtókerék csere",
+      "2021-10-26": "pofára esés"
     }
   ],
   [

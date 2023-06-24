@@ -57,11 +57,12 @@ var temak =
         {cim:"híd", subfolder:"/igykeszult", nev:"hid", ver:0, kelt:"2022-08-15"},
         {cim:"aknatető", subfolder:"/igykeszult", nev:"aknateto", ver:0, kelt:"2022-08-15"},
         {cim:"lépcső", subfolder:"/igykeszult", nev:"lepcso", ver:0, kelt:"2022-08-15"},
-        {cim:"horganyzás", subfolder:"/igykeszult", nev:"horgany", ver:0, kelt:"2022-11-11"}
+        {cim:"horganyzás", subfolder:"/igykeszult", nev:"horgany", ver:0, kelt:"2022-11-11"},
+        {cim:"korlát", subfolder:"/igykeszult", nev:"korlat", ver:0, kelt:"2023-06-24"}
       ],
       "b": [{cim:"cseppköves emlékek", nev:"cseppkovek", ver:0, kelt:"2023-01-09"}],
       "c": [
-        {cim:"tavaszodik", subfolder:"/kert", nev:"tavasz", ver:0, kelt:"2023-03-09"},
+        {cim:"tavasz", subfolder:"/kert", nev:"tavasz", ver:0, kelt:"2023-03-09"},
         {cim:"tavaszodik I", subfolder:"/kert", nev:"tavaszodik", ver:0, kelt:"2022-08-15"},
         {cim:"tavaszodik II", subfolder:"/kert", nev:"tavaszodik2", ver:0, kelt:"2023-02-24"},
         {cim:"tavaszodik III", subfolder:"/kert", nev:"tavaszodik3",ver:1, kelt:"2023-03-11"}
@@ -86,7 +87,8 @@ var temak =
     lista:{
       "a": [{cim:"borászatról, weboldalról", nev:"gondolatok", ver:0, kelt:"2023-04-21"}],
       "b": [{cim:"hogyan működik: eseménynaptár", nev:"hmk_naptar", ver:0, kelt:"2023-05-28"}],
-      "c": [
+      "c": [{cim:"hogyan működik: napló", nev:"hmk_naplo", ver:0, kelt:"2023-06-20"}],
+      "d": [
         {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland", ver:0, kelt:"2022-11-28"},
         {cim:"WebP", subfolder:"/kaland", nev:"webp", ver:0, kelt:"2022-11-28"},
         {cim:"alapkutatás, mérés", subfolder:"/kaland", nev:"kutatas", ver:0, kelt:"2022-11-28"},
@@ -95,16 +97,15 @@ var temak =
         {cim:"adalék a sikerhez", subfolder:"/kaland", nev:"adalek", ver:0, kelt:"2022-11-28"},
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:0, kelt:"2022-11-28"}
       ],
-      "d": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "e": [{cim:"jelzések haszna", nev:"jelzesek",ver:3, kelt:"2023-03-21"}],
-      "f": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
-      "g": [{cim:"nem hackernek való vidék", nev:"hacker", ver:0, kelt:"2023-06-04"}],
-      "h": [{cim:"arculati elem", nev:"arculat", ver:0, kelt:"2022-12-06"}],
-      "i": [{cim:"címke, borcímke", nev:"cimke", ver:0, kelt:"2022-09-20"}],
+      "e": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
+      "f": [{cim:"jelzések haszna", nev:"jelzesek",ver:3, kelt:"2023-03-21"}],
+      "g": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
+      "h": [{cim:"nem hackernek való vidék", nev:"hacker", ver:0, kelt:"2023-06-04"}],
+      "i": [{cim:"arculati elem", nev:"arculat", ver:0, kelt:"2022-12-06"}],
+      "j": [{cim:"címke, borcímke", nev:"cimke", ver:0, kelt:"2022-09-20"}],
       //"j": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link", ver:0, kelt:"2022-07-04"}],
       "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}],
       "l": [{cim:"NFC-címke: helyzetelemzés", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"}]
-      //
     }
   },
 }
@@ -123,18 +124,24 @@ var jelek = {
   sum: ["𝜮","összefoglaló"]
 }
 
+var url_page_jump = false;
+
 function href_nev() {
   var href = document.location.href;
   var p = href.lastIndexOf('/');
   var p1 = href.lastIndexOf('#');
   var p2 = href.lastIndexOf('.html');
   if (p1 > p2) { //lapon belüli ugrás
-    glob.url_page_jump = true;
+    url_page_jump = true;
     href = href.substring(0,p1);
   }
   if (p2 < 0) p2 = href.length; //CF levágja a végződést?
   if ((p > -1) && (p < p2)) return href.substring(++p,p2);
     else return "";
+}
+
+function karikas_szam(szam) {
+  return "&#"+(9311+szam);
 }
 
 function letezik(nev,sub) {
@@ -213,14 +220,17 @@ function alcim_gyujto(doc,glob) {
 var alcimek_sum = null;
 var alcimek_fl_nev = "/alcimek.json";
 
-function alcimek_konzerv_betolt() {
-  fetch(alcimek_fl_nev)
-  .then((res) => res.text())
-  .then((text) => {
-    alcimek_sum = new Map(JSON.parse(text));
-  })
-  .catch(function(error) {
-    alcimek_sum = null;
-  });
+function alcimek_konzerv_betolt(cb) {
+  if (!alcimek_sum) {
+    fetch(alcimek_fl_nev)
+    .then((res) => res.text())
+    .then((text) => {
+      alcimek_sum = new Map(JSON.parse(text));
+      if (cb != undefined) cb();
+    })
+    .catch(function(error) {
+      alcimek_sum = null;
+      if (cb != undefined) cb();
+    });
+  }
 }
-

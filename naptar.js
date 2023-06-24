@@ -46,7 +46,8 @@
   var linkek_helye = document.getElementById("esemenyek");
   var betakarva = false;
   var time_out = null;
-  
+  var loc = undefined; //"hu-HU";
+
   function betakar() {
     if (betakarva) return;
     betakarva = true;
@@ -99,7 +100,7 @@
     var d_str = d.toISOString().substring(0,10);
     var datum = document.createElement("div");
     datum.setAttribute("style","font-size:x-large;color:black");
-    datum.innerHTML = d.toLocaleDateString("hu-HU", {year:'numeric',month:'long',day:'numeric'})+"<br><hr>";
+    datum.innerHTML = d.toLocaleDateString(loc, {year:'numeric',month:'long',day:'numeric'})+"<br><hr>";
     linkek_helye.appendChild(datum);
     var tema_elozo = "";
     var cim_elozo = "";
@@ -196,7 +197,7 @@
             var datum = new Date(hetfovel_kezdodik.addDays(i));
             var td = document.createElement('td');
             td.setAttribute("style","text-align:center");
-            td.innerHTML = `${datum.toLocaleDateString("hu-HU", {weekday:'short'})}`;
+            td.innerHTML = `${datum.toLocaleDateString(loc, {weekday:'short'})}`;
             f_lec.appendChild(td);
           }
         break;
@@ -204,7 +205,7 @@
           for (var ho = 0; ho < 12; ho++) {
             var datum = new Date(hetfovel_kezdodik.addDays(ho*31));
             var td = document.createElement('td');
-            td.innerHTML = `<div class="forg"><span class="forg_">${datum.toLocaleDateString("hu-HU", {month:'short'})}</span></div>`;
+            td.innerHTML = `<div class="forg"><span class="forg_">${datum.toLocaleDateString(loc, {month:'short'})}</span></div>`;
             f_lec.appendChild(td);
           }
         break;
@@ -239,7 +240,7 @@
             tabla.appendChild(sor);
             if (fejlec_kapcs.checked) {
               var td = document.createElement('td');
-              td.innerHTML = `${hetfovel_kezdodik.addDays(y*31).toLocaleDateString("hu-HU", {month:'short'})}`;
+              td.innerHTML = `${hetfovel_kezdodik.addDays(y*31).toLocaleDateString(loc, {month:'short'})}`;
               sor.appendChild(td);
             }
             for (var x = 0; x < napsor_hossz; x++) {
@@ -256,7 +257,7 @@
             tabla.appendChild(sor);
             if (fejlec_kapcs.checked) {
               var td = document.createElement('td');
-              td.innerHTML = `${hetfovel_kezdodik.addDays(y).toLocaleDateString("hu-HU", {weekday:'short'})}`;
+              td.innerHTML = `${hetfovel_kezdodik.addDays(y).toLocaleDateString(loc, {weekday:'short'})}`;
               sor.appendChild(td);
             }
             for (var x = 0; x < 12; x++) {
