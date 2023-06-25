@@ -192,15 +192,15 @@ select {
 /* https://love2dev.com/blog/css-background-stripes/ */
 .jelol_hk {
   background-image: repeating-linear-gradient(-30deg,#fff, #fff 10px, #BDC3C7 20px, #BDC3C7 40px);
-  animation: pulse 3s infinite;
+  animation: pulse 2s infinite;
 }
 .jelol_hv {
   background-image: repeating-linear-gradient(-30deg,#fff, #fff 10px, MediumSeaGreen 20px, MediumSeaGreen 40px);
-  animation: pulse 3s infinite;
+  animation: pulse 2s infinite;
 }
 .jelol_unn {
   background-image: repeating-linear-gradient(-30deg,#fff, #fff 10px, #E04343 20px, #E04343 40px);
-  animation: pulse 3s infinite;
+  animation: pulse 2s infinite;
 }
 /* https://www.w3schools.com/howto/howto_css_modals.asp */
 .modal {

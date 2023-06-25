@@ -1,10 +1,5 @@
 (function() {
   
-  var glob = {
-    naptar: null,
-    alcimek: new Map(),
-    tortenet_db: 0
-  }
   var fekvo = true;
   var tegla = {
     fekvo: "▭",
@@ -418,7 +413,7 @@
               meret += html_szoveg.length;
               var parser = new DOMParser();
               var doc = parser.parseFromString(html_szoveg, "text/html");
-              alcim_gyujto(doc,glob);
+              alcim_gyujto(doc);
               sum_info += glob.tortenet_db+": "+url+", "+(html_szoveg.length/1024).toFixed(2)+" KiB, "+le.kelt.substring(0,10)+"\n";
             } else {
               glob.alcimek = new Map();

@@ -124,7 +124,24 @@ var jelek = {
   sum: ["𝜮","összefoglaló"]
 }
 
-var url_page_jump = false;
+var glob = {
+  href_nev: "",
+  cim: "", //<title> kitöltéséhez
+  cookie_eloke: "nézett:",
+  ttl_nap: 400,
+  vegleges: null,
+  hamburger: document.getElementById("hamburger"),
+  naptar: document.getElementById("naptar"),
+  hol_tart: document.getElementById("holtart"),
+  kjelzo: document.getElementById("kjelzo"),
+  alcimek: new Map(),
+  nezett: new Map(),
+  select_tb: [],
+  obj_tb: [],
+  alcimekkel: false,
+  url_page_jump: false,
+  tortenet_db: 0
+}
 
 function href_nev() {
   var href = document.location.href;
@@ -132,12 +149,27 @@ function href_nev() {
   var p1 = href.lastIndexOf('#');
   var p2 = href.lastIndexOf('.html');
   if (p1 > p2) { //lapon belüli ugrás
-    url_page_jump = true;
+    glob.url_page_jump = true;
     href = href.substring(0,p1);
   }
-  if (p2 < 0) p2 = href.length; //CF levágja a végződést?
+  if (p2 < 0) p2 = href.length; //CF levágja a végződést? //! 155 jelzesek.html
   if ((p > -1) && (p < p2)) return href.substring(++p,p2);
     else return "";
+}
+
+function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
+  var jel = "&#8195;" //EM SPACE
+  if (csnj) jel = csnj;
+    else {
+    if (glob.nezett.has(le.nev)) {
+      var dat = glob.nezett.get(le.nev);
+      var mennyi = (dat.scy+dat.inh)/dat.y; //hanyad_tar helyett
+      jel = jelek.megnezte[0];
+      if (mennyi >= 0.98) jel = jelek.vegignezte[0]+"&#8197;"; //+FOUR-PER-EM SPACE
+      if (le.ver > glob.nezett.get(le.nev).ver) jel = jelek.frissult[0];
+    } else if (le.nev.indexOf('/') > -1) jel = jelek.web[0];
+  }
+  return jel+"&#8197;"; //+FOUR-PER-EM SPACE
 }
 
 function karikas_szam(szam) {
@@ -171,7 +203,7 @@ function letezik(nev,sub) {
   return tmdex;
 }
 
-function alcim_gyujto(doc,glob) {
+function alcim_gyujto(doc) {
   var cimke_tb = doc.querySelectorAll("h1, div");
   var gyujto = new Map();
   for (var i = 0; i < cimke_tb.length; i++) {

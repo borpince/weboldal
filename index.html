@@ -84,7 +84,7 @@ function halvanyit() {
   var sotetit = setInterval(function() {
     bg.style.opacity = szam;
     szam -= 0.02;
-    if (szam < 0.8) menu.style = "width:380px;height:340px;float:left;display:inline flex;opacity:60%;position:absolute;top:32px;";
+    if (szam < 0.8) menu.style = "width:380px;height:380px;float:left;display:inline flex;opacity:60%;position:absolute;top:32px;";
     if (szam <= 0) {
       bg.setAttribute("style","display:none");
       clearInterval(sotetit);
