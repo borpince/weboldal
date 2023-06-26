@@ -1,3 +1,38 @@
+/* https://code-boxx.com/html-css-news-ticker-horizontal-vertical */
+.vwrap, .vitem {
+  height: 30px;
+  line-height: 30px;
+  color: white;
+  background: black;
+  font-size:x-large;
+  white-space: nowrap;
+}
+.vwrap {
+  overflow: hidden;
+  margin: 10px 20px 0px 20px;
+}
+.vitem {
+  text-align: left;
+}
+.vmove {position: relative;}
+@keyframes tickerv {
+  0% {bottom: 0;}
+  10% {bottom: 30px;}
+  24% {bottom: 60px;}
+  38% {bottom: 90px;}
+  50% {bottom: 120px;}
+  64% {bottom: 150px;}
+  78% {bottom: 180px;}
+  100% {bottom: 0;}
+}
+.vmove {
+  animation-name: tickerv;
+  animation-duration: 18s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1, 0, .5, 0);
+}
+.vmove:hover { animation-play-state: paused; }
+  
 .bg {
   background-image: url("https://kep.pince.eu/alak11sz_tegla.webp");
   height: 100%; 
@@ -29,7 +64,7 @@ body {
 }
 
 .background {
-	width: 100%;
+  width: 100%;
 	min-height: 250px;
 	height: 100vh;
 	margin: 0;

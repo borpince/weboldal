@@ -359,6 +359,8 @@
   function legujabb_tortenetek() {
     var friss = document.getElementById("ajanlo");
     if (friss) {
+      var datummal = friss.hasAttribute("datummal");
+      var csakcimek = friss.hasAttribute("csakcimek");
       var lista = new Map();
       for (tk in temak)
         for (lek in temak[tk].lista)
@@ -368,22 +370,30 @@
             if (le.kelt != undefined) lista.set(le.kelt,{cim:le.cim,path:`${temak[tk].folder}${sf}/${le.nev}.html`});
           }
       var rend = new Map([...lista.entries()].sort().reverse());
-      var elso = document.createElement('div');
-      elso.setAttribute("class","vitem");
-      elso.innerHTML = "legújabb történetek:";
-      friss.appendChild(elso);
+      var utolso = 6;
+      if (!csakcimek) {
+        utolso = 7;
+        var elso = document.createElement('div');
+        elso.setAttribute("class","vitem");
+        elso.innerHTML = "a legújabb történetek:";
+        friss.appendChild(elso);
+      }
       var db = 0;
+      var utolso = (csakcimek ? 7:6);
       rend.forEach(function (value,key) {
-        if (db < 6) {
-          var a = document.createElement('a');
-          a.setAttribute("href",value.path);
-          a.setAttribute("target","_parent");
-          a.setAttribute("style","font-size:x-large");
-          a.innerHTML = value.cim;
+        if (db < utolso) {
+          var cim = document.createElement('a'); //! 385 jelzesek.html
+          cim.setAttribute("href",value.path);
+          cim.setAttribute("target","_parent");
+          cim.setAttribute("style","font-size:x-large");
+          cim.innerHTML = value.cim;
+          var span = document.createElement('span');
+          span.innerHTML = `${datummal ? key.substring(0,10)+" &#8196;":""}`;
           var sor = document.createElement('div');
           sor.setAttribute("class","vitem");
-          sor.appendChild(a);
-          friss.appendChild(sor);
+          sor.appendChild(span);
+          sor.appendChild(cim);
+          friss.appendChild(sor); //! 396 jelzesek.html
         }
         db++;
       });

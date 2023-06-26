@@ -55,7 +55,7 @@
       <div class="box">
         <div id="2023-03-21T08:00" alcim="jelzések" class="box-text">
           <p>
-            Túl nagy jelentőséget tulajdonítok a <code>pince.eu</code> weboldalon megjelent közléseknek, mert azt feltételezem, hogy anyámon kívül mások is ide tévednek hébe-hóba.
+            Túl nagy jelentőséget tulajdonítok a <code>pince.eu</code> webhelyen megjelent közléseknek, mert azt feltételezem, hogy anyámon kívül mások is ide tévednek hébe-hóba.
             A hosszan elhúzódó folyamatokról tudósító, szakaszosan megjelenő írások időről időre újabb történések jegyzeteivel bővülnek (a borkészítés a szürettől a hordós érlelésig tipikusan ilyen), s ezeknél nem árt elhelyezni valamilyen jelzést arról, hogy a legutóbbi megtekintés óta változott-e a tartalom.
             Mert ha változott, akkor érdemes az írást újból megnyitni, és ránézni a friss részre. Menne ez úgy is, hogy a kedves látogató fejben tartja az olvasottakat, és az itteni írásokat újból és újból megnyitva összeveti a tartalmat emlékeivel.
             Újdonságot észlelve magába szívja az új részeket, naprakészen tartva ezzel ismereteit. Lelkesen és fáradhatatlanul. Nem érnek ennyit ezek a történetek, nem érdemes túlzott figyelmet szánni rájuk, ezért ha valaki visszatérő vendégként olvasgat, akkor a következő jelzésekkel segítem a tájékozódást:
@@ -76,14 +76,14 @@
       <div class="box">
         <div id="2023-03-21T09:00" alcim="új koncepció" class="box-text">
           <p>
-            A weboldal megjelenése, a terv (divatosan a "design") és az ezt tükröző HTML és CSS kód kedvesem munkája (ő egy meglehetősen sokoldalú teremtés, egy igazi tündér, akire az <a href="/it/arculat.html">arculati elem</a> kivitelezését is rábízhattam).
+            A webhely megjelenése, a terv (divatosan a "design") és az ezt tükröző HTML és CSS kód kedvesem munkája (ő egy meglehetősen sokoldalú teremtés, egy igazi tündér, akire az <a href="/it/arculat.html">arculati elem</a> kivitelezését is rábízhattam).
             Erre építkezek, ezt alakítom át enyhén a programozói észjárásnak és igényeknek megfelelően, mert a szükséges algoritmusok <a href="https://hu.wikipedia.org/wiki/JavaScript">Javascript</a> formát öltve fognak megtestesülni.
             <br>
             Megfelelő alapokat építve átalakítom a történeteket kínáló menü koncepcióját, aminek következtében az eddig HTML szövegkonstansokként szereplő címek és hivatkozások JSON szerkezettel vegyes tömbökbe kerülnek.
             Programból könnyen kezelhető, rugalmas megoldás. A fejlesztés mellékhatásaként a weboldalak egyéb tényezői is önműködően, a programban deklarált JSON listából kapnak értéket.
             Ez kizárja a bambulás-tévesztés-elírás lehetőségéből eredő hibákat, ami a szokványos "beírom kézzel az összes helyre" megoldás esetén bizony néha nem vezet kifogástalan eredményre, és az esetlegesen megváltozott adatok átvezetésének elmaradásakor fellépő összevisszaságot is kiküszöböli.
             <br>
-            A weboldal témaválasztékának megjelenítését intéző <code>menu.html</code> lényegi része (24-64 sorok alakítják a választékot) eredetileg nagyjából így nézett ki:
+            A webhely témaválasztékának megjelenítését intéző <code>menu.html</code> lényegi része (24-64 sorok alakítják a választékot) eredetileg nagyjából így nézett ki:
           </p>
           <div class="box-img">
             <img src="https://kep.pince.eu/jelzes_01.webp">
@@ -149,13 +149,13 @@
             Az oldaltérképnek ebben a környezetben több értelmezése lehetséges.
           </p>
           <ul>
-            <li><p>Érthetem rajta azt a térképet, ami segít a keresőmotoroknak (<a href="https://en.wikipedia.org/wiki/Search_engine">search engine</a>) eligazodni a weboldal fejezetei között.
+            <li><p>Érthetem rajta azt a térképet, ami segít a keresőmotoroknak (<a href="https://en.wikipedia.org/wiki/Search_engine">search engine</a>) eligazodni a webhely fejezetei között.
               <br>
               Google Search Console, Bing Webmaster Tools – ezeken a helyeken adnak lehetőséget arra, hogy a <a href="https://en.wikipedia.org/wiki/Search_engine_optimization">SEO</a>-műveletek részeként feltöltsem az oldaltérképet
               (webhelytérképnek is hívják), ezért az időszerű térkép legyártására beidomítottam a programot.
               Az egyszerűség jegyében az URL megfelelő paraméterezésével kérhetem az anyagot: <code><a href="/?terkep">pince.eu/?terkep</a></code> (rajtam kívül senkit nem érdekel, ezért nincs szükség kidolgozott kezelőfelületre).
             </p></li>
-            <li><p>Lehet szó arról a segédletről, amivel a weboldal látogatóinak teszem könnyen áttekinthetővé a kínált tartalmakat, hogy kedvükre válogathassanak ezek közül.</p></li>
+            <li><p>Lehet szó arról a segédletről, amivel a webhely látogatóinak teszem könnyen áttekinthetővé a kínált tartalmakat, hogy kedvükre válogathassanak ezek közül.</p></li>
           </ul>
           <p>
             Utóbbi megjelenítéséhez elég elhelyezni egy <code>&lt;select name="*"&gt;&lt;/select&gt;</code> sort a HTML file-ban, és megjelenik az oldaltérkép (a témaválasztékok összevont listája), ami a korábban ismertetett adatszerkezetből, a <code>temak.js</code> programfile-ban deklarált JSON adatokból nyeri tartalmát:
@@ -194,7 +194,7 @@
       <div class="box">
         <div class="box-text">
           <p>
-            Ez a fejlesztés szolgálja úgy a látogatók kényelmét, mint a weboldal karbantartásával, a tartalom elhelyezésével foglalkozó személyzetét.
+            Ez a fejlesztés szolgálja úgy a látogatók kényelmét, mint a webhely karbantartásával, a tartalom elhelyezésével foglalkozó személyzetét.
             Bizonyos funkciók megvalósításához szükséges tárolni a megjelenítés adatait, amikből praktikusan cookie-k készülnek.
             E technika használatának azonban következményei vannak. Ezek közül a kínosabb az, hogy a cookie-k törlésével megsemmisülnek ezek az adatok, tehát a korábbi megtekintésekre vonatkozó jelzések eltűnnek.
             A másik következmény, hogy a GDPR megjelenése óta a cookie-t használó weboldalak veszélyesnek számítanak. A minduntalan megjelenő "ez a weboldal sütiket használ" figyelmeztetésekről a középkori leprások jutnak eszembe,
@@ -242,10 +242,10 @@
         <div id="2023-06-04" alcim="kiaknázatlan lehetőségek" class="box-text">
           <p>
             Több lehetőség rejlik a történetek feldolgozása során keletkező adatokban, mint amennyit eddig kiaknáztam.
-            Nemrég <a href="/it/hmk_naptar.html">eseménynaptár</a> szolgáltatással bővítettem a weboldalt, aminek egyik üzemmódjában az összes HTML file-ból összegyűjtöm az alcímeket, hogy a hozzájuk kapcsolt dátumok alapján egyszerre szerepelhessenek a naptárban.
+            Nemrég <a href="/it/hmk_naptar.html">eseménynaptár</a> szolgáltatással bővítettem a webhelyet, aminek egyik üzemmódjában az összes HTML file-ból összegyűjtöm az alcímeket, hogy a hozzájuk kapcsolt dátumok alapján egyszerre szerepelhessenek a naptárban.
             Öröm, boldogság, újabb kényelmi funkció. Aztán beugrott, hogy ezek az adatok máshol is hasznosak lehetnek, ha már ilyen szépen egy helyen vannak.
             <br>
-            Az oldaltérkép egy ideje rendelkezésre áll, roppant hasznos segítség egy weboldal tartalmának gyors áttekintéséhez. Erre jó úgy, ahogy van, de a hím emberszabásúak telhetetlenségétől vezérelve elképzeltem egy bővített változatot.
+            Az oldaltérkép egy ideje rendelkezésre áll, roppant hasznos segítség egy webhely tartalmának gyors áttekintéséhez. Erre jó úgy, ahogy van, de a hím emberszabásúak telhetetlenségétől vezérelve elképzeltem egy bővített változatot.
             Alaphelyzetben a témakörök, azon belül a fejezetek címei sorakoznak a listában, ami az áttekinthetőséghez pont elegendő. Mi lenne, ha a kopasz címek mellett az alcímek is megjelennének?
             Rengeteg adat, káprázik a szemem – nem mindig vagyok abban a hangulatban, amikor ez okozza a legkéjesebb mámort, de ha erre vágyom, akkor ne hiányozzon. Legyen hát kapcsolható. Ha úgy tetszik, akkor alcímekkel, máskor anélkül.
             <br>
@@ -275,13 +275,42 @@
       <div class="box">
         <div id="2023-06-18" alcim="újabb bőr" class="box-text">
           <p>
-            Újabb bőrt húzok le a weboldal adatbázisba szervezett szerkezetéről. Irtó kínos, amikor egy internetes keresőgép (Google, Bing stb.) találati listájából a weboldal valamelyik írására mutató hivatkozás nem létező helyre vezényli az érdeklődőt.
-            <a href="https://hu.wikipedia.org/wiki/404-es_hiba">404-es hiba</a> az eredmény, pedig az írás létezik. Hogy lehet ez? Úgy, hogy a weboldal gazdája néha észszerűsít és rendet tesz, aminek következtében egyes file-ok átkerülnek más mappákba, hogy a témacsoportok szerinti rendezettség javítsa az áttekinthetőséget.
+            Újabb bőrt húzok le a webhely adatbázisba szervezett szerkezetéről. Irtó kínos, amikor egy internetes keresőgép (Google, Bing stb.) találati listájából valamelyik itteni weboldalra mutató hivatkozás nem létező helyre vezényli az érdeklődőt.
+            <a href="https://hu.wikipedia.org/wiki/404-es_hiba">404-es hiba</a> az eredmény, pedig az írás létezik. Hogy lehet ez? Úgy, hogy a webhely gazdája néha észszerűsít és rendet tesz, aminek következtében egyes file-ok átkerülnek más mappákba, hogy a témacsoportok szerinti rendezettség javítsa az áttekinthetőséget.
             A keresőgépek indexállománya nem követi a változást, ők egy darabig a régi helyre mutatva hozzák fel a találatot, amíg egyszer újra nem indexelik a weboldalt. Addig is tenni kell valamit, mert a 404-es hibaoldal mutogatása csak végső esetben megengedhető.
             <br>
             Az adatbázisba szervezett struktúra adataiból azonnal kideríthető, hogy a régi helyre mutató, elavult hivatkozásból kinyerhető név szerepel-e a listában. Ha igen, akkor az időszerű elérési útvonalat összerakva betölthető a keresett tartalom.
             Ezt a feladatot végzi el a <code>404.html</code> végéhez ragasztott javascript <a href="https://github.com/borpince/weboldal/blob/main/404.html#L52-L64">toldalék</a>.
           </p>
+        </div>
+      </div>
+      <div class="box">
+        <div id="2023-06-20" alcim="napló" class="box-text">
+          <p>
+            Nagyon hálás újítása a <code>pince.eu</code> webhely JSON listában tárolt témanyilvántartása – címekkel, dátumokkal, file-nevekkel.
+            Minden benne van ahhoz, hogy az oldaltérkép mintájára, de időrendi szemléletben tálaljam a történeteket és az azokon belül egymástól időben elkülöníthető, alcímekkel jelzett tevékenységeket, mozzanatokat.
+            Az eseménynaptárhoz hasonló szerepet kap, de amíg az a nevéhez híven, a naptárnál megszokott külsővel ábrázolja a történeteket az időben, addig a most elkészült kényelmi funkció neve: <a href="/naplo.html">napló</a>.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div id="2023-06-25" alcim="ajánló" class="box-text">
+          <p>
+            Össze kéne számolnom (akkor tudnám), de számolja a rosseb, hogy eddig hány bőrt húztam le a JSON adatszerkezetben tárolt adatokról.
+            Mindegy is, mert itt egy újabb ötlet, ami erre az alapra építve, ezzel a technikai háttérrel oly egyszerűen megvalósítható, hogy nem is hagyom ki.
+            Régi vágyam elhelyezni a webhely nyitóoldalán egy tájékoztatót arról, hogy mi a legfrissebb olvasnivaló, mert ezzel leveszem az érdeklődő válláról azt a terhet,
+            amit a témakörökben felsorolt történetek címeinek átvizsgálása jelent a legújabb tartalom után vadászva.
+            <br>
+            Jó alapokra építkezve villámgyorsan előáll az "ajánlónak" nevezett kiegészítés, ami a legújabb történetek címeit jeleníti meg.
+            Az egyszerűségét jól jellemzi, hogy a legbonyolultabb része az a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L385-L396">néhány sor</a>, ami elválasztja egymástól a történet címét az előtte álló dátumtól.
+            Néhány napon belül már másodszor merült fel ugyanaz a kérdés: <a href="/olv/igykeszult/korlat.html#2023-06-23">mi tartott ezen ilyen sokáig?</a> Miért nem hegesztettem meg jóval korábban, ha csak ennyi az egész?
+            Ismét roppant elégedett vagyok az eredménnyel, ezért nem bírom megállni, hogy ne tegyek ide is egy példányt belőle:
+          </p>
+        </div>
+        <div class="box-text-update">
+          <div class="vwrap">
+            <div id="ajanlo" datummal class="vmove"></div>
+          </div>
         </div>
       </div>
     </div>

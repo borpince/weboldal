@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="Közzétételi dátum vagy történeti dátum alapján rendbe szedve mutatom az írások listáját.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/gif" sizes="65x65">
+</head>
+<style>
+li::marker {
+  font-size: x-large;
+}
+</style>  
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
+          </div>
+        </div>
+        <select name="it"></select>
+      </div>
+    </div>
+    <div id="popup" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="esemenyek"></div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Kereken egy hónapja fogalmaztam meg azt a <a href="/it/hmk_naptar.html#2023-05-26T12:40">véleményemet</a>, amiben fárasztó tevékenységnek minősítem száraz adatsorok olvasását és értelmezését.
+            Ezt figyelembe véve értelmetlennek hat, ha most mégis azon dolgozom, hogy egy ilyen "száraz lista" álljon elő, aminek kiértékelése sokat kivesz az emberből.
+            Még úgy is, hogy találékonyan nem listának, hanem <a href="/naplo.html">naplónak</a> nevezem.
+            <br>
+            Azzal bátorítom magam, hogy az autók műszerfalán is ott van a fordulatszámmérő, ami felesleges, hiszen ha fontos volna, akkor nem hiányozhatna egy gépjárműből sem.
+            Gyönyörű gondolat az is, hogy ha valami nem áll rendelkezésre, de erős vágyat érzek iránta, az sokkal keservesebb állapot annál, mintha ott van előttem, de nem veszem igénybe.
+            Az előbbi, sanyarú állapot a lehetőség hiánya, míg az utóbbi helyzet sokkal vidámabb: kihasználatlan lehetőség. Még kifejezőbb példával: az üres pénztárca nem sok lehetőséget ad költekezésre,
+            de hiába vastag a buksza, ha nem költök belőle. Pénzforgalom tekintetében a két helyzet azonos, a vaskos pénzköteg puszta birtoklása mégis jobb közérzetet biztosít.
+            Így vagyok a webhely funkciógazdagságával is. Inkább dolgozzak feleslegesen, és ne használja senki az elkészült lehetőségeket, minthogy akár egyszer is bárkinek hiányozzon. Roppant bölcs gondolatok ezek, estig tudnék sorolni hasonlókat, de minek.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            A kényelmi funkciók között szerepel, és az oldaltérkép lehetőségei között érhető el, amit például a <a href="/index.html#oldalterkep">nyitóoldal alján</a>, az <a href="/naptar.html">eseménynaptárnál</a>
+            és a <a href="/it/jelzesek.html#2023-03-21T12:00">jelzések haszna</a> című fejezetben is megtalálsz, amiben többek között az itt taglalt naplóról is <a href="/it/jelzesek.html#2023-06-20">ejtek néhány szót</a>.
+            <br>
+            A napló funkció által előállított listában a <code>pince.eu</code> webhelyen közzétett történetek, írások címei sorakoznak a közzétételük időpontja szerinti rendezettségben, időben előre haladva.
+            Az egyszerű kezelőfelület első lehetősége a rendezettség megfordítását eredményezi a [&gt;] és [&lt;] gombok nyomogatásával.
+            A dátumokat mutató oszlopban a közzététel napja szerepel, ami átadja helyét a történés idejének, ha az alcímekkel kiegészített listát kérem.
+            A "minden bogár rovar" kezdetű szabályhoz hasonlóan itt az érvényes, hogy minden írás megjelent egyszer, tehát ennek révén kapcsolódik hozzá dátum is.
+            Történeti dátum azonban csak akkor tartozik az íráshoz, ha az valaminek az elkészítéséről, megtörténtéről szól. Az említésre méltó történések alcímeket kapnak a történetekben, ezekhez pedig dátum kapcsolódik
+            – ez a "történeti dátum", ami az átfutási idő miatt ritkán egyezik a közzététel dátumával.
+            Tehát ahol az alcím oszlopban szerepel adat, annak a sornak az elején valóban történeti dátum áll.
+            Ahol az alcím adat hiányzik, abban a sorban a dátum csak a közzététel ideje lehet – ne tévesszen meg a fejléc.
+            A rendezés szigorúan dátumok alapján megy végbe, nincs másodlagos rendezési kulcs. Ez azt a helyzetet eredményezi, hogy az elhúzódó történések eseményei közé becsúszhatnak időközben történt, idegen események, ami nem baj.
+            Ellenkezőleg. Ettől válik igazán érdekessé ez a lista.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Gondolni is rossz arra, hogy mi vár rám akkor, ha nem szervezem át időben az egyre kiterjedtebb tartalmú webhely szerkezetét, szemléletét.
+            Az új alapokon nyugvó helyzetben adatfeldolgozó algoritmusokat dolgoztathatok, s ez a megalkotott automatizmusoknak köszönhetően könnyen kezelhető, megbízható, jó eredményt ad.
+            Úgy saccolom, hogy az egyre nagyobb számú tényezők régimódi, nem adatbázisba szervezett kezelésével már nagyjából vért hugyoznék, hogy biztosíthassam ezeknek a tényezőknek a hibátlan összefüggéseit, ha úgy tetszik konzisztenciáját.
+            Vagy ott a másik lehetőség: kényelmes életet élve – ha úgy tetszik: nagy ívben beleszarva – , de egyre több hibával és hiányossággal néznék szembe nap mint nap.
+            <br>
+            Elébe menni a megoldandó feladatoknak nem haszontalan viselkedés. Nagyobb rendszerek üzemeltetésénél ezzel a hozzáállással nem csak az elérhető haszon nagyobb, de a károk is elkerülhetők, tehát megéri odafigyelni a részletekre, amikben ugye az ördög is lakik.
+            Elgondolkodtató, hogy az igazán nagy, sokakat érintő rendszereket semmihez sem értő politikusok irányítása mellett működtetik – látszik is az eredménye.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/temak.js"></script>
+<script src="/fejezetek.js"></script>
