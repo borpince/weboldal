@@ -158,18 +158,18 @@ function href_nev() {
 }
 
 function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
-  var jel = "&#8195;" //EM SPACE
+  var jel = "&#8195;&#8197;"
   if (csnj) jel = csnj;
     else {
     if (glob.nezett.has(le.nev)) {
       var dat = glob.nezett.get(le.nev);
       var mennyi = (dat.scy+dat.inh)/dat.y; //hanyad_tar helyett
-      jel = jelek.megnezte[0];
-      if (mennyi >= 0.98) jel = jelek.vegignezte[0]+"&#8197;"; //+FOUR-PER-EM SPACE
+      jel = jelek.megnezte[0]+"&#8196;";
+      if (mennyi >= 0.98) jel = jelek.vegignezte[0]+"&#8197;&#8196;";
       if (le.ver > glob.nezett.get(le.nev).ver) jel = jelek.frissult[0];
-    } else if (le.nev.indexOf('/') > -1) jel = jelek.web[0];
+    } else if (le.nev.indexOf("//") > -1) jel = jelek.web[0];
   }
-  return jel+"&#8197;"; //+FOUR-PER-EM SPACE
+  return jel;
 }
 
 function karikas_szam(szam) {

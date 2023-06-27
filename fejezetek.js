@@ -48,7 +48,7 @@
     if (tmdex.tortenet) for (var i = 0; i < tmdex.tortenet.length; i++) {
       var elotte = document.createElement('SPAN');
       elotte.setAttribute("style","font-size:large");
-      elotte.innerHTML = `${karikas_szam(i+1)}&#8194;`; //EN SPACE
+      elotte.innerHTML = `${nj(tmdex.tortenet[i])}${karikas_szam(i+1)}&#8194;`; //EN SPACE
       object.appendChild(elotte);
       var cim;
       if (i > 0) {
@@ -212,7 +212,7 @@
 
     select.onchange = function() {
       if (select.value) {
-        var path = (select.value.indexOf('/') > -1) ? select.value:`${select[select.selectedIndex].folder}${select[select.selectedIndex].subfolder}/${select.value}.html${select[select.selectedIndex].link}`;
+        var path = (select.value.indexOf("//") > -1) ? select.value:`${select[select.selectedIndex].folder}${select[select.selectedIndex].subfolder}/${select.value}.html${select[select.selectedIndex].link}`;
         if (glob.href_nev == "menu") { // menüből
           parent.valasztas(path);
         } else { // történetből
@@ -344,7 +344,7 @@
           for (le_sub_idx in temak[tk].lista[lek]) {
             var le = temak[tk].lista[lek][le_sub_idx]; //le: lista elem
             var subfolder = (le.hasOwnProperty("subfolder")) ? le.subfolder:"";
-            if ((le.nev.indexOf('/') == -1) && (le.hasOwnProperty("kelt"))) //nem külső link, közzétéve
+            if ((le.nev.indexOf("//") == -1) && (le.hasOwnProperty("kelt"))) //nem külső link, közzétéve
               txt += cim+temak[tk].folder+subfolder+"/"+le.nev+".html\n";
           }
       var elem = document.createElement('a');

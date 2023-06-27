@@ -402,7 +402,7 @@
             esemenyek: {}
           };
           var kelt = (le.hasOwnProperty("kelt")) ? le.kelt:"";
-          if (kelt && (le.nev.indexOf('/') == -1)) { //nem külső link
+          if (kelt && (le.nev.indexOf("//") == -1)) { //nem külső link
             glob.tortenet_db++;
             var url = csomag.folder+csomag.subfolder+"/"+le.nev+".html";
             if (!alcimek_sum) {
@@ -447,7 +447,7 @@
         for (le_sub_idx in temak[tk].lista[lek]) {
           var le = temak[tk].lista[lek][le_sub_idx]; //le: lista elem
           var subfolder = (le.hasOwnProperty("subfolder")) ? le.subfolder:"";
-          if (le.nev.indexOf('/') == -1) {//nem külső link
+          if (le.nev.indexOf("//") == -1) {//nem külső link
             var le = temak[tk].lista[lek][le_sub_idx];
             var csomag = {
               tema: temak[tk].tema,
