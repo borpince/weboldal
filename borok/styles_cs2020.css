@@ -34,6 +34,7 @@
 .vmove:hover { animation-play-state: paused; }
 
 #naptar, #holtart {
+  color: whitesmoke;
   margin-top: 10px;
   font-size: x-large;
   background-color:rgba(69, 81, 134, 0.747);
