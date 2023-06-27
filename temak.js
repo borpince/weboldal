@@ -58,7 +58,7 @@ var temak =
         {cim:"aknatető", subfolder:"/igykeszult", nev:"aknateto", ver:0, kelt:"2022-08-15"},
         {cim:"lépcső", subfolder:"/igykeszult", nev:"lepcso", ver:0, kelt:"2022-08-15"},
         {cim:"horganyzás", subfolder:"/igykeszult", nev:"horgany", ver:0, kelt:"2022-11-11"},
-        {cim:"korlát", subfolder:"/igykeszult", nev:"korlat", ver:0, kelt:"2023-06-24"}
+        {cim:"korlát", subfolder:"/igykeszult", nev:"korlat", ver:1, kelt:"2023-06-24"}
       ],
       "b": [{cim:"cseppköves emlékek", nev:"cseppkovek", ver:0, kelt:"2023-01-09"}],
       "c": [
