@@ -92,7 +92,7 @@ var temak =
         {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland", ver:0, kelt:"2022-11-28"},
         {cim:"WebP", subfolder:"/kaland", nev:"webp", ver:0, kelt:"2022-11-28"},
         {cim:"alapkutatás, mérés", subfolder:"/kaland", nev:"kutatas", ver:0, kelt:"2022-11-28"},
-        {cim:"JPEG &rarr; WebP", subfolder:"/kaland", nev:"konvert", ver:0, kelt:"2022-11-28"},
+        {cim:"JPEG ➔ WebP", subfolder:"/kaland", nev:"konvert", ver:0, kelt:"2022-11-28"},
         {cim:"gondolatok a biztonságról", subfolder:"/kaland", nev:"biztonsag", ver:0, kelt:"2022-11-28"},
         {cim:"adalék a sikerhez", subfolder:"/kaland", nev:"adalek", ver:0, kelt:"2022-11-28"},
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:0, kelt:"2022-11-28"}
