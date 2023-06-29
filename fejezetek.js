@@ -387,28 +387,29 @@
             db++;
           }
       var rend = new Map([...lista.entries()].sort().reverse());
+      db = 0;
       if (!csakcimek) {
         var elso = document.createElement('div');
         elso.setAttribute("class","vitem");
         elso.innerHTML = ((fajta == "ajanlo") ? "a legújabb":"új tartalommal bővült")+" történetek:";
         ajanlo.appendChild(elso);
+        db++;
       }
-      db = 0;
-      var utolso = (csakcimek ? 7:6);
+      var utolso = 6;
       rend.forEach(function (value,key) {
         if (db < utolso) {
-          var cim = document.createElement('a'); //! 400 jelzesek.html
+          var cim = document.createElement('a'); //! 401 jelzesek.html
           cim.setAttribute("href",value.path);
           cim.setAttribute("target","_parent");
           cim.setAttribute("style","font-size:x-large");
           cim.innerHTML = value.liem.cim;
           var span = document.createElement('span');
-          span.innerHTML = `${nj(value.liem)}${datummal ? key.substring(0,10)+" &#8196;":""}`;
+          span.innerHTML = `${datummal ? key.substring(0,10)+" &#8196;":""}${nj(value.liem)}`;
           var sor = document.createElement('div');
           sor.setAttribute("class","vitem");
           sor.appendChild(span);
           sor.appendChild(cim);
-          ajanlo.appendChild(sor); //! 411 jelzesek.html
+          ajanlo.appendChild(sor); //! 412 jelzesek.html
         }
         db++;
       });
@@ -446,7 +447,7 @@
         alcim_lista_gyarto(glob.obj_tb[i]);
       }
     }
-    nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 449 hamburger.html
+    nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 450 hamburger.html
     balmenu = document.getElementById("balmenu");
     var eltuntet_y = "-250px"; //egyszerűbb a számolgatásnál
     window.addEventListener("scroll",() => {
@@ -474,7 +475,7 @@
         latszik = !latszik;
         left_side[0].style.top = (latszik ? "0":eltuntet_y);
       });
-    } //! 477 hamburger.html
+    } //! 478 hamburger.html
     //pontatlan page jump igazítás:
     var p = window.location.href.lastIndexOf('#');
     var cimke = document.getElementById(window.location.href.substring(p+1));

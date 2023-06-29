@@ -27,19 +27,12 @@
     </div>
   </section>
 	<section class="prologue">
-    <div id="oldalterkep" class="box-text-index">
-      <select style="background-color:black;color:gray;font-size:x-large;" name="*"></select>
+    <div class="box-text-index">
       <p>a legújabb történetek:</p>
-      <div class="vwrap">
-        <div id="ajanlo" datummal csakcimek class="vmove"></div>
-      </div>
+      <div id="ajanlo" datummal csakcimek></div>
       <div class="vonal"></div>
-      <p>
-        új tartalommal bővült történetek:
-      </p>
-      <div class="vwrap">
-        <div id="bovult" datummal csakcimek class="vmove"></div>
-      </div>
+      <p>új tartalommal bővült történetek:</p>
+      <div id="bovult" datummal csakcimek></div>
       <br>
       <object name="jmtabla"></object>
       <br>
@@ -95,7 +88,7 @@ function halvanyit() {
   var sotetit = setInterval(function() {
     bg.style.opacity = szam;
     szam -= 0.02;
-    if (szam < 0.8) menu.style = "width:380px;height:380px;float:left;display:inline flex;opacity:70%;position:absolute;top:32px;";
+    if (szam < 0.8) menu.style = "width:380px;height:410px;float:left;display:inline flex;opacity:70%;position:absolute;top:32px;";
     if (szam <= 0) {
       bg.setAttribute("style","display:none");
       clearInterval(sotetit);

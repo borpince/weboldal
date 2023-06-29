@@ -87,7 +87,7 @@ var temak =
     lista:{
       "a": [{cim:"borászatról, weboldalról", nev:"gondolatok", ver:0, kelt:"2023-04-21"}],
       "b": [{cim:"hogyan működik: eseménynaptár", nev:"hmk_naptar", ver:0, kelt:"2023-05-28"}],
-      "c": [{cim:"hogyan működik: napló", nev:"hmk_naplo", ver:"2023-06-26", kelt:"2023-06-20"}],
+      "c": [{cim:"hogyan működik: napló", nev:"hmk_naplo", ver:0, kelt:"2023-06-20"}],
       "d": [
         {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland", ver:0, kelt:"2022-11-28"},
         {cim:"WebP", subfolder:"/kaland", nev:"webp", ver:0, kelt:"2022-11-28"},
@@ -158,7 +158,7 @@ function href_nev() {
 }
 
 function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
-  var jel = "&#8195;&#8197;"
+  var jel = "&#8195;&#8197;&#8201;"
   if (csnj) jel = csnj;
     else {
     if (glob.nezett.has(le.nev)) {
@@ -168,7 +168,7 @@ function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
       if (mennyi >= 0.98) jel = jelek.vegignezte[0]+"&#8197;&#8196;";
       var f_ver = new Date(le.ver).getTime();
       var t_ver = (dat.hasOwnProperty("ver")) ? new Date(dat.ver).getTime():0;
-      if (f_ver > t_ver) jel = jelek.bovult[0];
+      if (f_ver > t_ver) jel = jelek.bovult[0]+"&#8201;";
     } else if (le.nev.indexOf("//") > -1) jel = jelek.web[0];
   }
   return jel;
