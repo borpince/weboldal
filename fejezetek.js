@@ -182,7 +182,7 @@
     }
 
     while (select.firstChild) select.removeChild(select.firstChild);
-    glob.cim = "";
+    //glob.cim = "";
     if ((ref_nev != "menu") && (!letezik(ref_nev,false).tortenet) || (select.name == "*")) ref_nev = "";
     switch (ref_nev) {
       case "":
