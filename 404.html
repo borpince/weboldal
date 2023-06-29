@@ -55,7 +55,7 @@ ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a 
   if (tmdex.folder) {
     var path = `${tmdex.folder}${tmdex.subfolder}/${nev}.html`;
     var url = `https://${window.location.hostname}${path}`;
-    fetch(url, {method: 'HEAD'})
+    fetch(url, {method: 'HEAD'}) //biztos, ami biztos
       .then((response) => {
         if ((response.ok) && (response.headers.get("content-type").indexOf("text/html") > -1)) window.location = path;
           else throw new Error();

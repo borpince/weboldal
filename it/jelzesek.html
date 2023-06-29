@@ -99,6 +99,8 @@
           <div class="box-img">
             <img src="https://kep.pince.eu/jelzes_02.webp">
           </div>
+        </div>
+        <div class="box-text">
           <p>
             Amíg nem változik a tartalom témafelosztása, addig ehhez nem is kell hozzányúlni. Az üres <code>&lt;select&gt;</code> elemeket a 25. sorban hivatkozott program tölti fel időszerű tartalommal, ami alapján a legfrissebb kínálat jelenik meg a menüben.
             Egyszer kell megálmodni, majd megfogalmazni a végrehajtandó utasításokat, aztán megy minden magától.
@@ -136,9 +138,9 @@
             Mostantól megúszom ugyan a <code>menu.html</code> szerkesztgetését, de valahonnan a helyükre kell kerülniük a választható fejezetcímeknek és a hozzájuk vezető hivatkozásoknak.
             Ezek forrása a <a href="https://github.com/borpince/weboldal/blob/main/temak.js"><code>temak.js</code></a>, amiben a szerkezetét tekintve nagyjából az alábbival azonos listából nyerem az adatokat.
           </p>
-          <div class="box-img">
-            <img src="https://kep.pince.eu/jelzes_03.webp">
-          </div>
+        </div>
+        <div class="box-img">
+          <img src="https://kep.pince.eu/jelzes_03.webp">
         </div>
         <div id="2023-03-21T12:00" alcim="hozadék: oldaltérkép" class="box-text">
           <p>
@@ -157,6 +159,8 @@
             </p></li>
             <li><p>Lehet szó arról a segédletről, amivel a webhely látogatóinak teszem könnyen áttekinthetővé a kínált tartalmakat, hogy kedvükre válogathassanak ezek közül.</p></li>
           </ul>
+        </div>
+        <div class="box-text">
           <p>
             Utóbbi megjelenítéséhez elég elhelyezni egy <code>&lt;select name="*"&gt;&lt;/select&gt;</code> sort a HTML file-ban, és megjelenik az oldaltérkép (a témaválasztékok összevont listája), ami a korábban ismertetett adatszerkezetből, a <code>temak.js</code> programfile-ban deklarált JSON adatokból nyeri tartalmát:
             <br><br>
@@ -222,16 +226,20 @@
             <br>
             Eddig a szokásos favágó módszerrel készült a tartalomjegyzék, aminek összes adata rendelkezésre áll a program által használt JSON listában is.
           </p>
+        </div>
+        <div class="box-text">
           <div class="box-img">
             <img src="https://kep.pince.eu/jelzes_toc.webp">
           </div>
           <p>
             A régi szemlélet terhes örökségnek kiirtására most érett meg a világ. Egyrészt megszűnik a redundancia, másrészt lekerül rólam a teher és a felelősség, hogy az időről időre változó tartalomjegyzékeket aktualizáljam.
-            Miután megkomponáltam azt a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L46-L61">néhány programsort</a>, ami ezentúl helyettem foglalkozik ezzel az üggyel, a korábbi vaskos szakasz helyett csupán ezt a sort kell elhelyezni minden témacsoport index oldalán:
+            Miután megkomponáltam azt a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L48-L63">néhány programsort</a>, ami ezentúl helyettem foglalkozik ezzel az üggyel, a korábbi vaskos szakasz helyett csupán ezt a sort kell elhelyezni minden témacsoport index oldalán:
           </p>
-          <div class="box-img">
-            <img src="https://kep.pince.eu/jelzes_toc2.webp">
-          </div>
+        </div>
+        <div class="box-img">
+          <img src="https://kep.pince.eu/jelzes_toc2.webp">
+        </div>
+        <div class="box-text">
           <p>
             Egyszerűbb? Hát hogy a fenébe ne lenne az! Ráadásul garantáltan pontos és hibátlan eredményt ad, szemben egy szerény képességű, lankadó figyelmű emberszabású teljesítményével.
             Különös, hogy eddig nem vetettem be ezt a megoldást, de amikor fárasztó munka rémével fenyegetnek, akkor mindig összeszedem magam.
@@ -250,17 +258,19 @@
             Rengeteg adat, káprázik a szemem – nem mindig vagyok abban a hangulatban, amikor ez okozza a legkéjesebb mámort, de ha erre vágyom, akkor ne hiányozzon. Legyen hát kapcsolható. Ha úgy tetszik, akkor alcímekkel, máskor anélkül.
             <br>
             Az eredetileg mindenféle olvasmányos történetekhez és témákhoz hozzáférést engedő oldaltérkép listájának elejére beiktattam egy ebből a sorból kilógó témát, ezen belül szintén tájidegen címeket.
-            Ezek biztosítják a lehetőséget az alcímekkel dúsított és az alcímek nélküli megjelenés közötti váltásra, valamint innen is hívható az eseménynaptár. Ezek tehát nem történetek, hanem mint a téma elnevezéséből is kiderül: <b>kényelmi funkciók</b>.
+            Ezek biztosítják a lehetőséget az alcímekkel dúsított és az alcímek nélküli megjelenés közötti váltásra, valamint innen is hívható az eseménynaptár és a napló. Ezek tehát nem történetek, hanem mint a téma elnevezéséből is kiderül: <b>kényelmi funkciók</b>.
             <br><br>
             <select name="*"></select>
           </p>
-          <figure class="box-img">
-            <img src="https://kep.pince.eu/oltarkep.webp">
-            <figcaption>forrás: <a href="https://commons.wikimedia.org/wiki/File:Stefan_Lochner_-_Last_Judgement_-_circa_1435.jpg">wikimedia</a></figcaption>
-          </figure>
+        </div>
+        <figure class="box-img">
+          <img src="https://kep.pince.eu/oltarkep.webp">
+          <figcaption>forrás: <a href="https://commons.wikimedia.org/wiki/File:Stefan_Lochner_-_Last_Judgement_-_circa_1435.jpg">wikimedia</a></figcaption>
+        </figure>
+        <div class="box-text">
           <p>
             Régen rossz, amikor úgy érzed, hogy csak az ima segíthet szorult helyzetedben, ezért nem a fohász hatékonyságát javító tényezőként helyeztem el itt ezt a pompás oltárképet.
-            Az "option list" elemeinek <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L114-L133">gyártását intéző</a> eljárás <a href="https://hu.wikipedia.org/wiki/Rekurzi%C3%B3">rekurzív</a> hívásának paraméterezésébe már nem tudtam magamat kellő éberséggel beleélni, ezért nyugovóra tértem, és a következő néhány órát alvással töltöttem.
+            Az "option list" elemeinek <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L119-L138">gyártását intéző</a> eljárás <a href="https://hu.wikipedia.org/wiki/Rekurzi%C3%B3">rekurzív</a> hívásának paraméterezésébe már nem tudtam magamat kellő éberséggel beleélni, ezért nyugovóra tértem, és a következő néhány órát alvással töltöttem.
             Van az úgy, hogy felébredvén nehezen szakadok ki az öntudatlan állapotból. Bambának és harcképtelennek érzem magam egy darabig, aztán lassan belerázódok az ébrenléti időszak kihívásaival terhelt nappali üzemmódomba.
             Még bőven a bamba fázisban lehettem, amikor ránéztem a monitorra, és oltárképnek olvastam az oldaltérképet.
             Klasszikus cselekményábrázolásban a szereplő ilyenkor hitetlenkedve megdörzsöli szemét, majd a reset után újból rátekint a tárgyra.
@@ -289,7 +299,7 @@
           <p>
             Nagyon hálás újítás a <code>pince.eu</code> webhely JSON listában tárolt témanyilvántartása – címekkel, dátumokkal, file-nevekkel.
             Minden benne van ahhoz, hogy az oldaltérkép mintájára, de időrendi szemléletben tálaljam a történeteket és az azokon belül egymástól időben elkülöníthető, alcímekkel jelzett tevékenységeket, mozzanatokat.
-            Az eseménynaptárhoz hasonló szerepet kap, de amíg az a nevéhez híven, a naptárnál megszokott külsővel ábrázolja a történeteket az időben, addig a most elkészült kényelmi funkció neve: <a href="/naplo.html">napló</a>.
+            Az eseménynaptárhoz hasonló szerepet kap, de amíg az a nevéhez híven, a naptárnál megszokott külsővel ábrázolja a történeteket, addig a most elkészült kényelmi funkció neve: <a href="/naplo.html">napló</a>.
           </p>
         </div>
       </div>
@@ -302,7 +312,7 @@
             amit a témakörökben felsorolt történetek címeinek átvizsgálása jelent a legújabb tartalom után vadászva.
             <br>
             Jó alapokra építkezve villámgyorsan előáll az "ajánlónak" nevezett kiegészítés, ami a legújabb történetek címeit jeleníti meg.
-            Az egyszerűségét jól jellemzi, hogy a legbonyolultabb része az a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L385-L396">néhány sor</a>, ami elválasztja egymástól a történet címét az előtte álló dátumtól.
+            Az egyszerűségét jól jellemzi, hogy a legbonyolultabb része az a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L400-L411">néhány sor</a>, ami elválasztja egymástól a történet címét az előtte álló dátumtól.
             Néhány napon belül már másodszor merült fel ugyanaz a kérdés: <a href="/olv/igykeszult/korlat.html#2023-06-23">mi tartott ezen ilyen sokáig?</a> Miért nem hegesztettem meg jóval korábban, ha csak ennyi az egész?
             Ismét roppant elégedett vagyok az eredménnyel, ezért nem bírom megállni, hogy ne tegyek ide is egy példányt belőle:
           </p>
@@ -310,6 +320,69 @@
         <div class="box-text-update">
           <div class="vwrap">
             <div id="ajanlo" datummal class="vmove"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div id="2023-06-28" alcim="bővülő történetek" class="box-text">
+          <p>
+            Minden rendszer addig bonyolódik, amíg túl nem nő alkotója képességein. Jó úton haladok afelé, hogy így járjak a <code>pince.eu</code> fejlesztésével, mert már megint újabb ötletet valósítok meg.
+            Kezdettől fogva része a témaadatok JSON szerkezetbe foglalt rekordjainak a "ver" adatmező, ami eredetileg egy nulláról induló, és a témát kifejtő írás bővülésekor növekvő szám.
+            Ezt hasonlítom össze a weboldal korábbi beolvasásakor tárolt értékkel, amiből megállapítható a változás.
+            Ezt a értéket akkor növelem, amikor újabb szakasszal toldom meg a történetet, és a webhelyen működő algoritmus ebből következtet arra, hogy a legutóbbi megtekintés óta változott-e.
+            Ha igen, akkor a témaválaszték listájában (menü, opciók), a cím mellett elhelyezett jelzés figyelmeztet a változásra.
+            <br>
+            Nehezen uralható a rendszer, ha nem vagyok képes minden tényezőnek kifejező nevet adni. Ebben az esetben több lehetséges szó verseng egymással: változott, frissült, bővült, hízott, kiegészült, megtoldva.
+            A bővült lesz a nyertes, mert igazából a hosszan elhúzódó történéseket mesélő írásoknál látom lényegesnek azt, hogy a rendre új eseményeket mesélő szöveg gyarapodását jelezzem.
+            Az a véleményem, hogy a számítógépes rendszereket működtető programok készítését megkönnyíti, ha minden tényezőt beszédes és félreérthetetlen azonosítóval látok el.
+            Ez nagyban segíti a programsorok értelmezését, ami akkor kap különös jelentőséget, amikor egy régebben készült alkotás módosítására kerül sor.
+            A beszédes azonosítók rendszerint kényelmetlenül hosszúra sikerülnek, amin segít egy tisztességes programszöveg-szerkesztő használata, ahol működik az <a href="https://en.wikipedia.org/wiki/Autocomplete">automatikus kiegészítés</a>.
+            <br>
+            Programozói babérokra törnél? Ehhez az algoritmikus gondolkodás képessége mellett hajlamosnak kell lenned arra is, hogy mindent nevén nevezz.
+            A <code>"let a=(j+i)/x;"</code> stílusban megfogalmazott utasításokkal garantált a kudarc, mert az ABC betűi semmit nem árulnak el az adatok szerepéről.
+            Vannak persze kivételek, mint a rövid példában az "i", ami ősidőktől fogva elfogadott ciklusváltozóként (az index rövidítése).
+            Bennem is van késztetés rövidítések, mozaikszavak használatára, amiket remekül képes vagyok értelmezni abban a rövid időszakban, amíg a programon dolgozom.
+            Szerintem megengedhető ezek alkalmazása, amennyiben az első előfordulásánál egy megjegyzésben kifejtem a rövidítés jelentését, ami évekkel később is segíti az utasítások hatékony értelmezését.
+            <br>
+            Nem csupán az írás egyszerűsítése és a programszöveg méretének csökkentése indokolja rövidítések használatát.
+            Addig könnyen áttekinthető egy függvény/eljárás/metódus leírása, amíg elfér egy képernyőn – függőlegesen és vízszintesen egyaránt. Íme egy példa rövidítve és teljes pompájában:
+            <br><br>
+            <code style="font-size:medium;">temak[tk].lista[lek][i]
+            <br>
+            temak[tema_kulcs].lista[lista_elem_kulcs][sub_index]
+            </code>
+            <br><br>
+            Egymásba ágyazott, többelemű, indexelt adatszerkezet elemeire mutatnak az előző kifejezések – nekem könnyebb a rövidebbet olvasni, több is elfér ilyenből egymás mellett úgy, hogy nem lóg ki a képernyőről.
+            <br><br>
+            Ambivalens viselkedés, ahogy rövidítésekkel törekszem egyszerűbbé tenni annak a programnak a szövegét, amivel épp most bonyolítanám a webes szolgáltatás működését.
+            Bajos optimális döntést hozni akkor, amikor különböző szempontok feszülnek egymásnak.
+            Nekem különösen nehéz a dolgom, mert egyszerűnek távolról sem minősíthető megoldásaim néha visszaütnek, amire mutatok egy példát.
+            Tegnap pislákolni kezdett a világítás a konyhában, majd lőn sötétség. A lámpák tönkremenős eszközök, amire egy hagyományos háztartásban a villanykörte cseréje az ellenszer, de nem úgy van az minálunk.
+            A konyhai világítás működésének helyreállítása érdekében végzett munkához (sajátos körülményekhez igazodva) ennyi mindenre volt szükségem:
+          </p>
+        </div>
+        <div class="box-img">
+          <img src="https://kep.pince.eu/jelzes_P1080340.webp">
+        </div>
+        <div class="box-text">
+          <p>
+            Igen, körömvágó olló is kellett, mert az istennek sem találtam a bandázsszalag végét, nem tudtam letekerni, vágni kellett.
+            Csavarkulcsból elég lett volna kétféle méret, ami az indulásnál rendelkezésre állt, de menet közben a 17-es kulcsot sikerült elveszítenem úgy, hogy ki se mozdultam a konyhából.
+            Egy komplett készletet előkerítve orvosoltam a hiányt, aztán a végén persze az eltűnt kulcs is előkerült. Igyekezetemet természetesen siker koronázta, ismét működik a világítás.
+            Csupán a rend helyreállítása, a szerszámok helyretétele jóval több időt emésztett fel, mint egy szokványos "izzócsere". Bizarr szókapcsolat a LED izzó, pedig elterjedten használják, noha ettől a fajta lámpától távol áll az izzás jelensége.
+            Más elven működik, mégis megmaradt a régi elnevezés. Valahogy úgy, mint ahogy a WC-t is lehúzzuk, a telefonszámot meg tárcsázzuk, pedig WC-láncnak, számtárcsának híre-hamva sincs.
+            <br><br>
+            Elkanyarodtam az eredeti témától. Néhány napja elkészült a legfrissebb történeteket ajánló funkció, és szinte kínálja magát ennek kiegészítése, a régebben megjelent, de időközben újabb tartalommal bővült írások ajánlása.
+            Ennek kivitelezése a "ver" adatmező tartalma alapján lenne lehetséges, amennyiben az nem egy számot, hanem a bővítés dátumát tartalmazná.
+            Ezentúl így lesz, de gondoskodni kell az eddig cookie-ként tárolt adatokkal való kompatibilitásról, ami nem is olyan bonyolult, ha kihasználom a JavaScript Date objektumának szolgáltatásait,
+            ami létrehozásakor elfogad egész szám paramétert és dátumformátumú szöveget egyaránt. A "közös nevező" a <a href="https://en.wikipedia.org/wiki/Unix_time">unix time</a> – az egyneművé varázsolt adatok összehasonlíthatók.
+            <br>
+            A feladat megoldása ráhúzható az ajánló kaptafájára. Villámgyorsan elkészült, de a rendszer kicsit bonyolultabb lett, mert az írás közzétételi dátuma és a történeti dátum mellé bejött egy harmadik, ami arról árulkodik, hogy mikor bővült új tartalommal a történet.
+          </p>
+        </div>
+        <div class="box-text-update">
+          <div class="vwrap">
+            <div id="bovult" datummal class="vmove"></div>
           </div>
         </div>
       </div>

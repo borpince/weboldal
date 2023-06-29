@@ -17,9 +17,9 @@ var temak =
     lista:{
       "2020": [{cim:"№ 1: cabernet sauvignon", nev:"01", ver:0, kelt:"2021-10-26"}],
       "2022": [
-        {cim:"№ 2: oportó",nev:"02",ver:1, kelt:"2022-10-14"},
+        {cim:"№ 2: oportó",nev:"02",ver:"2023-05-12", kelt:"2022-10-14"},
         {cim:"№ 3: rozé",nev:"03", ver:0, kelt:"2022-10-14"},
-        {cim:"№ 4: kékfrankos",nev:"04",ver:1, kelt:"2022-10-14"}
+        {cim:"№ 4: kékfrankos",nev:"04",ver:"2023-05-07", kelt:"2022-10-14"}
       ]
       //
     }
@@ -58,14 +58,14 @@ var temak =
         {cim:"aknatető", subfolder:"/igykeszult", nev:"aknateto", ver:0, kelt:"2022-08-15"},
         {cim:"lépcső", subfolder:"/igykeszult", nev:"lepcso", ver:0, kelt:"2022-08-15"},
         {cim:"horganyzás", subfolder:"/igykeszult", nev:"horgany", ver:0, kelt:"2022-11-11"},
-        {cim:"korlát", subfolder:"/igykeszult", nev:"korlat", ver:1, kelt:"2023-06-24"}
+        {cim:"lépcsőkorlát", subfolder:"/igykeszult", nev:"korlat", ver:"2023-06-23", kelt:"2023-06-24"}
       ],
       "b": [{cim:"cseppköves emlékek", nev:"cseppkovek", ver:0, kelt:"2023-01-09"}],
       "c": [
         {cim:"tavasz", subfolder:"/kert", nev:"tavasz", ver:0, kelt:"2023-03-09"},
         {cim:"tavaszodik I", subfolder:"/kert", nev:"tavaszodik", ver:0, kelt:"2022-08-15"},
         {cim:"tavaszodik II", subfolder:"/kert", nev:"tavaszodik2", ver:0, kelt:"2023-02-24"},
-        {cim:"tavaszodik III", subfolder:"/kert", nev:"tavaszodik3",ver:2, kelt:"2023-03-11"}
+        {cim:"tavaszodik III", subfolder:"/kert", nev:"tavaszodik3",ver:"2023-05-26", kelt:"2023-03-11"}
       ],
       "d": [{cim:"szárnypróbálgatás", nev:"00", ver:0, kelt:"2021-10-13"}],
       "e": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021", ver:0, kelt:"2022-06-27"}],
@@ -87,7 +87,7 @@ var temak =
     lista:{
       "a": [{cim:"borászatról, weboldalról", nev:"gondolatok", ver:0, kelt:"2023-04-21"}],
       "b": [{cim:"hogyan működik: eseménynaptár", nev:"hmk_naptar", ver:0, kelt:"2023-05-28"}],
-      "c": [{cim:"hogyan működik: napló", nev:"hmk_naplo", ver:0, kelt:"2023-06-20"}],
+      "c": [{cim:"hogyan működik: napló", nev:"hmk_naplo", ver:"2023-06-26", kelt:"2023-06-20"}],
       "d": [
         {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland", ver:0, kelt:"2022-11-28"},
         {cim:"WebP", subfolder:"/kaland", nev:"webp", ver:0, kelt:"2022-11-28"},
@@ -98,10 +98,10 @@ var temak =
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:0, kelt:"2022-11-28"}
       ],
       "e": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "f": [{cim:"jelzések haszna", nev:"jelzesek",ver:4, kelt:"2023-03-21"}],
+      "f": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-06-25", kelt:"2023-03-21"}],
       "g": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
       "h": [{cim:"nem hackernek való vidék", nev:"hacker", ver:0, kelt:"2023-06-04"}],
-      "i": [{cim:"arculati elem", nev:"arculat", ver:0, kelt:"2022-12-06"}],
+      "i": [{cim:"arculati elem", nev:"arculat", ver:"2023-02-14", kelt:"2022-12-06"}],
       "j": [{cim:"címke, borcímke", nev:"cimke", ver:0, kelt:"2022-09-20"}],
       //"j": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link", ver:0, kelt:"2022-07-04"}],
       "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}],
@@ -110,11 +110,11 @@ var temak =
   },
 }
 var jelek = {
-  web: ["🌐","külső hivatkozás (external link)"],
-  link: ["🔗","hivatkozás (link)"],
   megnezte: ["👁","megnyitottad, megnézted, feltételezhetően beleolvastál"],
   vegignezte: ["✓","végignézted"],
-  frissult: ["⭐","frissült a legutóbbi megtekintés óta"],
+  bovult: ["⭐","bővült a legutóbbi megtekintés óta"],
+  web: ["🌐","külső hivatkozás (external link)"],
+  link: ["🔗","hivatkozás (link)"],
   folder: ["📁","több fejezetet magába foglaló témacsoport"],
   tcs_idx: ["ⓝ","témacsoport számmal jelzett fejezete"], //témacsoporton belüli index
   konyv: ["📖","könyvjelző kikapcsolva"],
@@ -166,7 +166,9 @@ function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
       var mennyi = (dat.scy+dat.inh)/dat.y; //hanyad_tar helyett
       jel = jelek.megnezte[0]+"&#8196;";
       if (mennyi >= 0.98) jel = jelek.vegignezte[0]+"&#8197;&#8196;";
-      if (le.ver > glob.nezett.get(le.nev).ver) jel = jelek.frissult[0];
+      var f_ver = new Date(le.ver).getTime();
+      var t_ver = (dat.hasOwnProperty("ver")) ? new Date(dat.ver).getTime():0;
+      if (f_ver > t_ver) jel = jelek.bovult[0];
     } else if (le.nev.indexOf("//") > -1) jel = jelek.web[0];
   }
   return jel;
