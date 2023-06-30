@@ -442,15 +442,15 @@
   [
     "it/jelzesek",
     {
-      "2023-03-21T08:00": "jelzések",
-      "2023-03-21T09:00": "új koncepció",
-      "2023-03-21T10:00": "a programozás lényege",
-      "2023-03-21T11:00": "fejezetcímek forrása",
-      "2023-03-21T12:00": "hozadék: oldaltérkép",
-      "2023-03-21T13:00": "ismert hibák, hiányosságok",
+      "2023-03-10T08:00": "jelzések",
+      "2023-03-10T09:00": "új koncepció",
+      "2023-03-10T11:00": "fejezetcímek forrása",
+      "2023-03-12": "hozadék: oldaltérkép",
+      "2023-04-10": "könyvjelző",
+      "2023-04-11": "ismert hibák, hiányosságok",
       "2023-04-18": "hozadék: tartalomjegyzék",
       "2023-06-04": "kiaknázatlan lehetőségek",
-      "2023-06-18": "újabb bőr",
+      "2023-06-18": "újabb bőr: átirányítás 404-es hibánál",
       "2023-06-20": "napló",
       "2023-06-25": "ajánló",
       "2023-06-28": "bővülő történetek"
