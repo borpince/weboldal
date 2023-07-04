@@ -77,7 +77,7 @@ var temak =
         {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023", ver:0, kelt:"2023-04-17"},
         {cim:"XIV. Pannon Borrégió Top25", subfolder:"/bv", nev:"top25pb2023", ver:0, kelt:"2023-06-12"}
       ],
-      "i": [{cim:"hordólelet", nev:"hordo", ver:0, kelt:"2023-05-29"}],
+      "i": [{cim:"hordólelet", nev:"hordo", ver:"2023-06-30", kelt:"2023-05-29"}],
       "j": [{cim:"fent vagy lent?", nev:"fent", ver:0, kelt:"2023-07-04"}]
       //
     }
