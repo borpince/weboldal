@@ -6,6 +6,7 @@
   var rendezes = document.createElement('button');
   var forditva = false;
   var alcimekkel = document.createElement('input');
+  var szuro = document.createElement('input');
   var naplo = null;
   var rendjel_tb = [">","<"];
   var time_out = null;
@@ -15,7 +16,7 @@
   var div = document.createElement('div');
   div.setAttribute("style","width:fit-content");
   var valaszt = document.createElement('div');
-  valaszt.setAttribute("style","margin: 5px 5px 8px 75px");
+  valaszt.setAttribute("style","margin: 5px 5px 8px 75px;display:flex;flex-flow: row nowrap;");
   valaszt.appendChild(rendezes);
   rendezes.setAttribute("style","font-size:x-large;margin-left:5px;border:3px solid lightgray");
   alcimekkel.setAttribute("id", "r_kapcs");
@@ -27,6 +28,14 @@
   duma.setAttribute("style","font-size:x-large;color:whitesmoke");
   duma.setAttribute("for","r_kapcs");
   valaszt.appendChild(duma);
+  szuro.setAttribute("id", "szuro");
+  szuro.setAttribute("type", "input");
+  szuro.setAttribute("size", "12");
+  szuro.setAttribute("placeholder", "szűrő...");
+  szuro.setAttribute("style", "font-size:x-large;margin-left:10px");
+  valaszt.appendChild(szuro);
+  var sz_lmk = 12; //szűrt lista megjelenés késleltetése x100 ms
+  var kesleltet = null;
   var tabla = document.createElement("table");
   tabla.setAttribute("style","white-space:nowrap;");
 
@@ -54,6 +63,16 @@
     while (div.firstChild) div.removeChild(div.firstChild);
     while (tabla.firstChild) tabla.removeChild(tabla.firstChild);
     while (obj_tb[oi].firstChild) obj_tb[oi].removeChild(obj_tb[oi].firstChild);
+
+    function megfelel(cim,alcim) {
+      var talalt = (szuro.value == "");
+      if (!talalt) {
+        talalt = (cim.toLowerCase().indexOf(szuro.value) > -1);
+        if (alcim && !talalt) talalt = (alcim.toLowerCase().indexOf(szuro.value) > -1);
+      }
+      return talalt;
+    }
+
     var gyujto = new Map();
     var db = 0;
     for (tk in temak) if (temak[tk].folder)
@@ -75,11 +94,11 @@
           if (alcimekkel.checked && alc) {
             for (var key in alc) {
               var csomag = {...alapadat,alcim:alc[key],obu:key}
-              gyujto.set(alcimekkel.checked ? key:le.kelt+db,csomag);
+              if (megfelel(alapadat.cim,csomag.alcim)) gyujto.set(key,csomag);
             }
           } else {
             var csomag = {...alapadat,alcim:""}
-            gyujto.set(le.kelt+db,csomag);
+            if (megfelel(alapadat.cim)) gyujto.set(le.kelt+db,csomag);
           }
           db++;
         }
@@ -147,6 +166,12 @@
     obj_tb[oi].appendChild(div);
     kitakar();
   }
+
+  szuro.addEventListener("input",function() {
+    szuro.value = szuro.value.trim().toLowerCase();
+    if (kesleltet) clearTimeout(kesleltet);
+    kesleltet = setTimeout(naplo_gyarto,sz_lmk*100);
+  });
 
   // –  –  –  –  –  –  –  –  –  –  –  –  –  –  – 
 

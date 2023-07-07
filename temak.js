@@ -89,7 +89,7 @@ var temak =
     lista:{
       "a": [{cim:"borászatról, weboldalról", nev:"gondolatok", ver:0, kelt:"2023-04-21"}],
       "b": [{cim:"hogyan működik: eseménynaptár", nev:"hmk_naptar", ver:0, kelt:"2023-05-28"}],
-      "c": [{cim:"hogyan működik: napló", nev:"hmk_naplo", ver:0, kelt:"2023-06-20"}],
+      "c": [{cim:"hogyan működik: napló", nev:"hmk_naplo", ver:"2023-07-07", kelt:"2023-06-20"}],
       "d": [
         {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland", ver:0, kelt:"2022-11-28"},
         {cim:"WebP", subfolder:"/kaland", nev:"webp", ver:0, kelt:"2022-11-28"},

@@ -44,7 +44,7 @@ li::marker {
     </div>
     <div class="content">
       <div class="box">
-        <div class="box-text">
+        <div id="2023-06-20T08:00" alcim="bevezető" class="box-text">
           <p>
             Egy hónapja fogalmaztam meg azt a <a href="/it/hmk_naptar.html#2023-05-26T12:40">véleményemet</a>, amiben fárasztó tevékenységnek minősítem száraz adatsorok olvasását és értelmezését.
             Ezzel a vélekedéssel egyetértve értelmetlennek hat, ha most mégis azon dolgozom, hogy egy ilyen "száraz lista" álljon elő, aminek kiértékelése sokat kivesz az emberből.
@@ -59,7 +59,7 @@ li::marker {
         </div>
       </div>
       <div class="box">
-        <div class="box-text">
+        <div id="2023-06-20T08:30" alcim="kezelőfelület (UI)" class="box-text">
           <p>
             A kényelmi funkciók között szerepel, és az oldaltérkép lehetőségei között érhető el, amit például a <a href="/index.html">nyitóoldalon</a>, az <a href="/naptar.html">eseménynaptárnál</a>
             és a <a href="/it/jelzesek.html#2023-03-21T12:00">jelzések haszna</a> című fejezetben is megtalálsz, amiben többek között az itt taglalt naplóról is <a href="/it/jelzesek.html#2023-06-20">ejtek néhány szót</a>.
@@ -76,7 +76,27 @@ li::marker {
             Ellenkezőleg. Ettől válik igazán érdekessé az egymástól független eseményeket időrendben összefésülő lista.
           </p>
         </div>
-        <div class="box-text">
+        <div id="2023-07-07" alcim="szűrő" class="box-text">
+          <p>
+            Több száz alcím sorakozik a naplóban, és az alcímek nélküli lista sem fér el már egy képernyőn.
+            Túl sok adat ez ahhoz, hogy ne használjam ki a számítógépnek azt a tulajdonságát, amiben a legjobb.
+            Kiegészítettem az egyszerű kezelőfelületet egy korlátozott képességű, de hatékony szűrővel.
+            Az alaphelyzetben "szűrő..." jelzésű input mező tartalma alapján csak azok a sorok jelennek meg, amiknek címében vagy alcímében a beírt szó szerepel.
+            A korlátozott képesség annyit tesz, hogy csak egy szó lehet a szűrés kulcsa, szóközök nem használhatók.
+            Akkor indul a szűrés, amikor befejezted a művelet alapjául szolgáló szöveg beírását. Ez a gyakorlatban úgy működik, hogy 1.2 másodperccel az utolsó billentyűzés után azt feltételezem, hogy végeztél a szó beírásával.
+            Ha azért telik el ennyi idő, mert nem találod a betűket, akkor érintőképernyős eszközön a szűrt lista megjelenésével egyidejűleg eltűnik a virtuális billentyűzet, de nem vész el az addig beírt szöveg - erőt gyűjtve folytathatod.
+            <br>
+            Félreértés ne essék, nem a történetek teljes szövegét feldolgozva működik a szűrés, hanem csakis a listában megjelenő címek és alcímek szövege alapján.
+            Szűretlen listát úgy kaphatsz újból, ha kitörlöd a szűrő tartalmát, vagy frissíted a weboldalt.
+            Nincs külön figyelmeztetés arra az esetre, ha egyik cím sem felel meg a szűrőfeltételnek. Ilyenkor csak a fejléc jelenik meg, a lista pedig üres.
+            <br>
+            Miben a legjobb egy számítógép? A nevéből kiindulva azt hihetnéd, hogy számolásban, de a mai világban erre használják legkevésbé.
+            A használatban lévő computerek többsége kereséssel tölti ideje javát. Szerintem ez manapság a legfontosabb funkciója, ebben a legjobb.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div id="2023-06-20T09:00" alcim="epilógus" class="box-text">
           <p>
             Gondolni is rossz arra, hogy mi vár rám akkor, ha nem szervezem át időben az egyre kiterjedtebb tartalmú webhely szerkezetét, szemléletét.
             Az új alapokon nyugvó helyzetben adatfeldolgozó algoritmusokat dolgoztathatok, s ez a megalkotott automatizmusoknak köszönhetően könnyen kezelhető, megbízható, jó eredményt ad.
