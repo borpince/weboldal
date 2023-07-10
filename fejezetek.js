@@ -128,7 +128,7 @@
             o.innerHTML = nj(le,csnj)+(temak[tk].lista[lek].length > 1 ? fejezet:"")+le.cim;
           } else o.innerHTML = nj(le)+le.cim;
         } else o.innerHTML = "&#8195;&#8195;"+jelek.link[0]+"&#8197;"+alcim;
-        if (konyvjelzett(le.nev)) option.setAttribute("style","color:goldenrod");
+        if (konyvjelzett(le.nev)) o.setAttribute("style","color:goldenrod");
         if (le.nev && (ref_nev == le.nev)) glob.cim = le.cim; //a kiválasztott elem címe része lesz a document.title tartalmának
         elem.appendChild(o);
         if (alcimek_sum && alcimekkel && !kulcs) {
