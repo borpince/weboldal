@@ -1,3 +1,4 @@
+html {scroll-behavior: smooth;}
 /* https://code-boxx.com/html-css-news-ticker-horizontal-vertical */
 .vwrap, .vitem {
   height: 30px;

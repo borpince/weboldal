@@ -4,8 +4,8 @@ var temak =
     folder: "",
     tema:"kényelmi funkciók",
     lista:{
-      "a": [{cim:"oldaltérkép alcímek nélkül", nev:"", ver:0}],
-      "b": [{cim:"oldaltérkép alcímekkel", nev:"", ver:0}],
+      "a": [{cim:"alcímek nélkül", nev:"", ver:0}],
+      "b": [{cim:"alcímekkel", nev:"", ver:0}],
       "c": [{cim:"eseménynaptár", nev:"naptar", ver:0}],
       "d": [{cim:"napló", nev:"naplo", ver:0}]
       //
