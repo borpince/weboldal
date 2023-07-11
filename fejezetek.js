@@ -74,13 +74,13 @@
         if (!elso_nap) elso_nap = key;
         utolso_nap = key;
         var li = document.createElement('li');
+        var span = document.createElement('span');
+        span.innerHTML = `&#8201;${key.substring(0,10)}&#8194;`;  //thin space
         var cim = document.createElement('a');
         cim.setAttribute("href",`#${key}`);
-        cim.innerHTML = `&#8201;${key.substring(0,10)}`;  //thin space
-        var span = document.createElement('span');
-        span.innerHTML = `&#8194;${value}`;
-        li.appendChild(cim);
+        cim.innerHTML = value;
         li.appendChild(span);
+        li.appendChild(cim);
         ul.appendChild(li);
       });
       var idotartam = Math.round((new Date(utolso_nap) - new Date(elso_nap)) / 86400000);
@@ -443,11 +443,13 @@
       if (glob.obj_tb[i].name == "jmtabla") jelmagyarazat(glob.obj_tb[i]);
       if (glob.obj_tb[i].name == "toc") toc(glob.obj_tb[i]);
       if (glob.obj_tb[i].name == "alcimek") {
-        if (alcimek_helye == null) alcimek_helye = glob.obj_tb[i]; //csak az elsővel foglalkozom, ha több lenne belőle
-        alcim_lista_gyarto(glob.obj_tb[i]);
+        if (alcimek_helye == null) {
+          alcimek_helye = glob.obj_tb[i]; //csak az elsővel foglalkozom, ha több lenne belőle
+          alcim_lista_gyarto(glob.obj_tb[i]);
+        }
       }
     }
-    nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 450 hamburger.html
+    nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 452 hamburger.html
     balmenu = document.getElementById("balmenu");
     var eltuntet_y = "-250px"; //egyszerűbb a számolgatásnál
     window.addEventListener("scroll",() => {
@@ -475,7 +477,7 @@
         latszik = !latszik;
         left_side[0].style.top = (latszik ? "0":eltuntet_y);
       });
-    } //! 478 hamburger.html
+    } //! 480 hamburger.html
     //pontatlan page jump igazítás:
     var p = window.location.href.lastIndexOf('#');
     var cimke = document.getElementById(window.location.href.substring(p+1));
