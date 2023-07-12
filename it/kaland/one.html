@@ -60,7 +60,10 @@
             <br>
             Ha az általam gyártott algoritmus sokat késne az IP-cím változásának észlelésével, és ebből összejönne évente 8 óra 45 perc üzemszünet, akkor pont ott lennék rendelkezésre állási mutatóban, mint az általam nagyra becsült Invitech a büszkén hirdetett 99.999%-kal.
             A Cloudflare "unparalleled redundancy and 100% uptime" szöveggel ajánlja szolgáltatását, ami irigylésre méltó önbizalomról árulkodik. Azt kell feltételeznem, hogy emögött van elegendő tudás, tapasztalat és erőforrás, noha nekik is van sötét folt a múltjukban. Ők sem tudnak mit kezdeni olyan tényezőkkel, amik rafináltabban támadnak annál, mint amire szokványos észjárás mellett számítani lehet.
-            <br><br>
+          </p>
+        </div>
+        <div id="ordog" class="box-text">
+          <p>
             1997 újév napjának első órái rémálomszerűen telhettek a cég szolgálatban lévő munkatársainak. Ekkor ütött be a szökőmásodperc gebaszból eredő "software panic", amit az "<code>rtt := time.Now().Sub(start)</code>" utasítás végrehajtása eredményezett egy olyan helyzetben, amikor a <code>time.Now()</code> korábbi időpontot adott vissza a start értékénél.
             Ebből persze kijött egy oda nem illő negatív szám, amire senki nem számított, hiszen normális körülmények között az idő előre halad, nem visszafelé (<a href="https://blog.cloudflare.com/how-and-why-the-leap-second-affected-cloudflare-dns/">az autentikus történet</a>).
             Egy ilyen eset vagy összetör vagy megerősít, de hatás nélkül nem marad.
