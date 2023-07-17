@@ -112,7 +112,7 @@ var temak =
   },
 }
 var jelek = {
-  megnezte: ["👁","megnyitottad, megnézted, feltételezhetően beleolvastál"],
+  megnezte: ["👁","megnyitottad, megnézted, vélhetően beleolvastál"],
   vegignezte: ["✓","végignézted"],
   bovult: ["⭐","bővült a legutóbbi megtekintés óta"],
   web: ["🌐","külső hivatkozás (external link)"],
