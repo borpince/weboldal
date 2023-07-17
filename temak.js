@@ -154,7 +154,7 @@ function href_nev() {
     glob.url_page_jump = true;
     href = href.substring(0,p1);
   }
-  if (p2 < 0) p2 = href.length; //CF levágja a végződést? //! 155 jelzesek.html
+  if (p2 < 0) p2 = href.length; //CF levágja a végződést? //! 157 jelzesek.html
   if ((p > -1) && (p < p2)) return href.substring(++p,p2);
     else return "";
 }
