@@ -19,7 +19,7 @@ var temak =
       "2022": [
         {cim:"№ 2: oportó",nev:"02",ver:"2023-05-12", kelt:"2022-10-14"},
         {cim:"№ 3: rozé",nev:"03", ver:0, kelt:"2022-10-14"},
-        {cim:"№ 4: kékfrankos",nev:"04",ver:"2023-05-07", kelt:"2022-10-14"}
+        {cim:"№ 4: kékfrankos",nev:"04",ver:"2023-07-23", kelt:"2022-10-14"}
       ]
       //
     }
