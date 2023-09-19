@@ -47,7 +47,7 @@ var temak =
       "a": [
         // subfolder elé azért került "/", mert a path összeállítása így egyszerűbb (select.onchange)
         {cim:"magad uram...", subfolder:"/igykeszult", nev:"magad", ver:0, kelt:"2022-07-04"},
-        {cim:"futófolyosó: födém", subfolder:"/igykeszult", nev:"fodem", ver:0, kelt:"2022-08-15"},
+        {cim:"futófolyosó: födém", subfolder:"/igykeszult", nev:"fodem", ver:"2023-09-12", kelt:"2022-08-15"},
         {cim:"borospince", subfolder:"/igykeszult", nev:"pince", ver:0, kelt:"2022-08-15"},
         {cim:"vizesblokk", subfolder:"/igykeszult", nev:"vizesblokk", ver:0, kelt:"2022-08-15"},
         {cim:"futófolyosó: padlóburkolat", subfolder:"/igykeszult", nev:"padlo", ver:0, kelt:"2022-08-15"},
@@ -155,7 +155,7 @@ function href_nev() {
     glob.url_page_jump = true;
     href = href.substring(0,p1);
   }
-  if (p2 < 0) p2 = href.length; //CF levágja a végződést? //! 157 jelzesek.html
+  if (p2 < 0) p2 = href.length; //CF levágja a végződést? //! 158 jelzesek.html
   if ((p > -1) && (p < p2)) return href.substring(++p,p2);
     else return "";
 }
