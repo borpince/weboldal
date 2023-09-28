@@ -49,7 +49,8 @@
       "2022-09-17": "erjedés vége",
       "2022-10-19": "ülepedett, tisztult",
       "2022-12-09": "fejtés, levegőztetés",
-      "2022-12-19": "mérés, kénezés"
+      "2022-12-19": "mérés, kénezés",
+      "2023-09-25": "fejtés"
     }
   ],
   [
@@ -71,6 +72,17 @@
       "2023-01-31": "fejtés tölgyfa hordóba",
       "2023-05-07": "májusi kóstolás",
       "2023-07-23": "családi bormustra"
+    }
+  ],
+  [
+    "borok/05",
+    {
+      "2023-09-25": "kalandos utazás",
+      "2023-09-25T14:00": "szőlőkombájn",
+      "2023-09-25T15:00": "Kopár-dűlő",
+      "2023-09-25T15:10": "Vinartis",
+      "2023-09-26": "beoltás",
+      "2023-09-27": "zajos erjedés indul"
     }
   ],
   [
@@ -403,6 +415,7 @@
     {
       "2023-04-15T15:00": "koncertre jöttünk?",
       "2023-04-15T15:20": "von Beöthy",
+      "2023-04-15T15:30": "szép remények",
       "2023-04-15T16:00": "Cseri Pincészet",
       "2023-04-15T18:00": "hangulat a tetőfokon"
     }
@@ -428,6 +441,19 @@
       "2023-06-10T17:40": "füstös Bock",
       "2023-06-10T18:00": "bor- és szépségverseny",
       "2023-06-10T19:00": "hazamennek a legények"
+    }
+  ],
+  [
+    "olv/bv/bm2023",
+    {
+      "2023-09-23T16:30": "köztéri szobrok",
+      "2023-09-23T16:40": "ördögi terv",
+      "2023-09-23T16:50": "házmesterek",
+      "2023-09-23T17:00": "Maczkó Borház",
+      "2023-09-23T17:20": "REDy",
+      "2023-09-23T17:40": "KőVilla",
+      "2023-09-23T18:00": "érdekességek",
+      "2023-09-23T18:45": "itt a vége, fuss el véle"
     }
   ],
   [

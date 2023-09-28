@@ -3,6 +3,7 @@ https://pince.eu/borok/01.html
 https://pince.eu/borok/02.html
 https://pince.eu/borok/03.html
 https://pince.eu/borok/04.html
+https://pince.eu/borok/05.html
 https://pince.eu/tech/kenezes.html
 https://pince.eu/tech/vedogaz.html
 https://pince.eu/tech/cimkezo.html
@@ -40,6 +41,7 @@ https://pince.eu/olv/bv/borverseny.html
 https://pince.eu/olv/bv/bm2022.html
 https://pince.eu/olv/bv/podumon2023.html
 https://pince.eu/olv/bv/top25pb2023.html
+https://pince.eu/olv/bv/bm2023.html
 https://pince.eu/olv/hordo.html
 https://pince.eu/olv/fent.html
 https://pince.eu/it/gondolatok.html
