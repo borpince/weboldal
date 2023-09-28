@@ -21,7 +21,7 @@ var temak =
         {cim:"№ 3: rozé",nev:"03", ver:0, kelt:"2022-10-14"},
         {cim:"№ 4: kékfrankos",nev:"04",ver:"2023-07-23", kelt:"2022-10-14"}
       ]
-      //
+
     }
   },
   "tech": {
@@ -77,7 +77,8 @@ var temak =
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
         {cim:"XI. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2022", ver:0, kelt:"2022-10-17"},
         {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023", ver:0, kelt:"2023-04-17"},
-        {cim:"XIV. Pannon Borrégió Top25", subfolder:"/bv", nev:"top25pb2023", ver:0, kelt:"2023-06-12"}
+        {cim:"XIV. Pannon Borrégió Top25", subfolder:"/bv", nev:"top25pb2023", ver:0, kelt:"2023-06-12"},
+        {cim:"XII. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2023", ver:0, kelt:"2023-09-28"}
       ],
       "i": [{cim:"hordólelet", nev:"hordo", ver:"2023-06-30", kelt:"2023-05-29"}],
       "j": [{cim:"fent vagy lent?", nev:"fent", ver:0, kelt:"2023-07-04"}]
@@ -106,7 +107,6 @@ var temak =
       "h": [{cim:"nem hackernek való vidék", nev:"hacker", ver:0, kelt:"2023-06-04"}],
       "i": [{cim:"arculati elem", nev:"arculat", ver:"2023-02-14", kelt:"2022-12-06"}],
       "j": [{cim:"címke, borcímke", nev:"cimke", ver:0, kelt:"2022-09-20"}],
-      //"j": [{cim:"NFC-címke (PDF)", nev:"https://drive.google.com/file/d/1TeNXiPKUOflse-ZD2G4SvAuZw3Kj9Rt3/view?usp=share_link", ver:0, kelt:"2022-07-04"}],
       "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}],
       "l": [{cim:"NFC-címke: helyzetelemzés", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"}]
     }
@@ -270,4 +270,11 @@ function alcimek_konzerv_betolt(cb) {
       if (cb != undefined) cb();
     });
   }
+}
+
+function koho(txt,max) { //korlátozott hossz
+  if (txt.length > max) {
+    txt = txt.substring(0,max)+"…"; //horizontal ellipsis
+  }
+  return txt;
 }

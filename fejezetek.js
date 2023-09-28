@@ -402,7 +402,7 @@
           cim.setAttribute("href",value.path);
           cim.setAttribute("target","_parent");
           cim.setAttribute("style","font-size:x-large");
-          cim.innerHTML = value.liem.cim;
+          cim.innerHTML = koho(value.liem.cim,28);
           var span = document.createElement('span');
           span.innerHTML = `${datummal ? key.substring(0,10)+" &#8196;":""}${nj(value.liem)}`;
           var sor = document.createElement('div');
