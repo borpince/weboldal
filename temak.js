@@ -1,3 +1,17 @@
+function href_nev() {
+  var href = document.location.href;
+  var p = href.lastIndexOf('/');
+  var p1 = href.lastIndexOf('#');
+  var p2 = href.lastIndexOf('.html');
+  if (p1 > p2) { //lapon belüli ugrás
+    glob.url_page_jump = true;
+    href = href.substring(0,p1);
+  }
+  if (p2 < 0) p2 = href.length; //CF levágja a végződést? //! 10 jelzesek.html
+  if ((p > -1) && (p < p2)) return href.substring(++p,p2);
+    else return "";
+}
+
 var temak =
 {
   "keny": {
@@ -82,7 +96,12 @@ var temak =
       ],
       "i": [{cim:"hordólelet", nev:"hordo", ver:"2023-06-30", kelt:"2023-05-29"}],
       "j": [{cim:"fent vagy lent?", nev:"fent", ver:0, kelt:"2023-07-04"}],
-      "k": [{cim:"próféták", nev:"profetak", ver:0, kelt:"2023-10-07"}]
+      "k": [{cim:"próféták", nev:"profetak", ver:0, kelt:"2023-10-07"}],
+      "l": [
+        {cim:"rémtörténetek", subfolder:"/rem", nev:"remtortenet", ver:0, kelt:"2023-10-08"},
+        {cim:"jöjjön azonnal!", subfolder:"/rem", nev:"jojjon", ver:0, kelt:"2022-10-08"},
+        {cim:"házirend", subfolder:"/rem", nev:"hazirend", ver:0, kelt:"2022-10-08"}
+      ]
     }
   },
   "it": {
@@ -144,20 +163,6 @@ var glob = {
   alcimekkel: false,
   url_page_jump: false,
   tortenet_db: 0
-}
-
-function href_nev() {
-  var href = document.location.href;
-  var p = href.lastIndexOf('/');
-  var p1 = href.lastIndexOf('#');
-  var p2 = href.lastIndexOf('.html');
-  if (p1 > p2) { //lapon belüli ugrás
-    glob.url_page_jump = true;
-    href = href.substring(0,p1);
-  }
-  if (p2 < 0) p2 = href.length; //CF levágja a végződést? //! 158 jelzesek.html
-  if ((p > -1) && (p < p2)) return href.substring(++p,p2);
-    else return "";
 }
 
 function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
