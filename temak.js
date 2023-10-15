@@ -101,6 +101,7 @@ var temak =
         {cim:"rémtörténetek", subfolder:"/rem", nev:"remtortenet", ver:0, kelt:"2023-10-08"},
         {cim:"jöjjön azonnal!", subfolder:"/rem", nev:"jojjon", ver:0, kelt:"2023-10-09"},
         {cim:"házirend", subfolder:"/rem", nev:"hazirend", ver:0, kelt:"2023-10-10"},
+        {cim:"az angoltanár bosszúja", subfolder:"/rem", nev:"angoltanar", ver:0, kelt:"2023-10-15"},
         {cim:"elveszve a nagyvilágban", subfolder:"/rem", nev:"elveszve", ver:0, kelt:"2023-10-13"}
       ]
     }
