@@ -35,7 +35,7 @@ var temak =
         {cim:"№ 3: rozé",nev:"03", ver:"2023-09-25", kelt:"2022-10-14"},
         {cim:"№ 4: kékfrankos",nev:"04",ver:"2023-07-23", kelt:"2022-10-14"}
       ],
-      "2023": [{cim:"№ 5: tramini", nev:"05", ver:"2023-10-06", kelt:"2023-09-29"}]
+      "2023": [{cim:"№ 5: tramini", nev:"05", ver:"2023-10-28", kelt:"2023-09-29"}]
     }
   },
   "tech": {
@@ -104,7 +104,8 @@ var temak =
         {cim:"az angoltanár bosszúja", subfolder:"/rem", nev:"angoltanar", ver:0, kelt:"2023-10-15"},
         {cim:"elveszve a nagyvilágban", subfolder:"/rem", nev:"elveszve", ver:0, kelt:"2023-10-13"},
         {cim:"apahiány", subfolder:"/rem", nev:"apahiany", ver:0, kelt:"2023-10-22"},
-        {cim:"játsszunk tellvilmost!", subfolder:"/rem", nev:"tellvilmos", ver:0, kelt:"2023-10-18"}
+        {cim:"játsszunk tellvilmost!", subfolder:"/rem", nev:"tellvilmos", ver:0, kelt:"2023-10-18"},
+        {cim:"adóhivatal", subfolder:"/rem", nev:"adohivatal", ver:0, kelt:"2023-10-28"}
       ],
       "m": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
