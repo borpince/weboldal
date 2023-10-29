@@ -135,7 +135,8 @@ var temak =
       "i": [{cim:"arculati elem", nev:"arculat", ver:"2023-02-14", kelt:"2022-12-06"}],
       "j": [{cim:"címke, borcímke", nev:"cimke", ver:0, kelt:"2022-09-20"}],
       "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}],
-      "l": [{cim:"NFC-címke: helyzetelemzés", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"}]
+      "l": [{cim:"NFC-címke: helyzetelemzés", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"}],
+      "m": [{cim:"AI avatar", nev:"avatar", ver:0, kelt:"2023-10-29"}]
     }
   },
 }
