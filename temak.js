@@ -109,7 +109,8 @@ var temak =
       ],
       "m": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
-        {cim:"kapisgálom", subfolder:"/orom", nev:"kapisgal", ver:0, kelt:"2023-11-04"}
+        {cim:"kapisgálom", subfolder:"/orom", nev:"kapisgal", ver:0, kelt:"2023-11-04"},
+        {cim:"gebasz", subfolder:"/orom", nev:"gebasz", ver:0, kelt:"2023-11-06"}
       ]
     }
   },
