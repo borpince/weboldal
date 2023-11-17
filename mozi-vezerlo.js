@@ -18,6 +18,7 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var href_tar = "";
 var mozi_jel ='🎞️';
+var mozi_txt = "mozi"; //yt.iframe player tag id, mozi link name
 var player = null;
 var betoltve = "";
 var cnt = 0;
@@ -65,10 +66,10 @@ function ugrik(event) {
   } else vid = id_tar.trim();
   mozi_mehet = false;
   if (!player) {
-    player = new YT.Player('mozi',{videoId:vid,playerVars:{rel:0},events:{'onReady':mehet_a_musor,'onStateChange':valtozik_a_helyzet,'onError':hiba_eseten}});
+    player = new YT.Player(mozi_txt,{videoId:vid,playerVars:{rel:0},events:{'onReady':mehet_a_musor,'onStateChange':valtozik_a_helyzet,'onError':hiba_eseten}});
   } else if (player.playerInfo.videoData.video_id != vid) {
     player.destroy();
-    player = new YT.Player('mozi',{videoId:vid,playerVars:{rel:0},events:{'onReady':mehet_a_musor,'onStateChange':valtozik_a_helyzet,'onError':hiba_eseten}});
+    player = new YT.Player(mozi_txt,{videoId:vid,playerVars:{rel:0},events:{'onReady':mehet_a_musor,'onStateChange':valtozik_a_helyzet,'onError':hiba_eseten}});
   } else mozi_mehet = true;
   cnt = 0;
   helyzet = {y: document.body.scrollHeight,scy: Math.round(window.scrollY),inh: window.innerHeight,hanyad: hanyad_most()}
@@ -99,6 +100,18 @@ function visszateres(marad=false) {
   helyzet = null;
 }
 
+function eredet(event) {
+  var hely = document.getElementById(event.target.name);
+  var y = hely.getBoundingClientRect().top + window.pageYOffset - (window.innerHeight/2);
+  window.scrollTo(0,y);
+  var szam = 0;
+  var villan = setInterval(function() {
+    hely.style.opacity = (szam % 2 > 0) ? 1:0;
+    szam++;
+    if (szam >= 6) clearInterval(villan);
+  },400);
+}
+
 function vege_a_musornak() {
   gombsor.setAttribute("style","display:none");
   player.pauseVideo();
@@ -117,14 +130,52 @@ function hiba_eseten(event) {
   console.log(event);
 }
 
+function mozi_link_inner(elem) {
+  return `${mozi_jel}&#xfeff;${elem.innerHTML}`; //ZERO WIDTH NO-BREAK SPACE
+}
+
+function vtoc(object) {
+  var tb = document.getElementsByName(mozi_txt);
+  for (var i = 0; i < tb.length; i++)
+    if (tb[i].hasAttribute("title")) {
+      var eredeti = document.createElement('a');
+      eredeti.innerHTML = '🔗'; //⊙, 🞖
+      eredeti.style.cursor = "pointer";
+      eredeti.setAttribute("name",tb[i].id);
+      object.appendChild(eredeti);
+      eredeti.addEventListener("click",(event) => {eredet(event)});
+      var elotte = document.createElement('SPAN');
+      elotte.innerHTML = `&#8194;${tb[i].title}:&#8194;`; //EN SPACE
+      object.appendChild(elotte);
+      var cim;
+      cim = document.createElement('A');
+      cim.setAttribute("id",`${tb[i].id} `); //szóköz fontos
+      cim.setAttribute("media",mozi_txt);
+      cim.innerHTML = `${tb[i].innerHTML}<br>`;
+      object.appendChild(cim);
+    }
+  tb = document.getElementsByTagName("a");
+  for (var i = 0; i < tb.length; i++) {
+    if (tb[i].hasAttribute("media") && (tb[i].getAttribute("media") == mozi_txt)) tb[i].setAttribute("name",mozi_txt);
+  }
+}
+
 addEventListener("load", () => {
   href_tar = document.location.href;
   vissza.innerHTML = mozi_jel; //▼ 🠇 &#x25bc;
-  var mozi_tb = document.querySelectorAll('.mozi');
+  var obj_tb = document.getElementsByTagName("OBJECT");
+  var vtoc_megvolt = false;
+  for (var i = 0; i < obj_tb.length; i++) {
+    if (!vtoc_megvolt && (obj_tb[i].name == "vtoc")) { //csak az első
+      vtoc(obj_tb[i]);
+      vtoc_megvolt = true;
+    }
+  }
+  var mozi_tb = document.getElementsByName(mozi_txt);
   for (var i = 0; i < mozi_tb.length; i++) {
     if (mozi_tb[i].hasAttribute("id")) {
       mozi_tb[i].addEventListener('click', (event) => ugrik(event));
-      mozi_tb[i].innerHTML = `${mozi_jel}&#xfeff;${mozi_tb[i].innerHTML}`;
+      mozi_tb[i].innerHTML = mozi_link_inner(mozi_tb[i]);
       mozi_tb[i].setAttribute("href",`#${mozi_keret}`);
     }
   }
@@ -136,7 +187,7 @@ addEventListener("load", () => {
   moziba.setAttribute("style","display:inline;");
   moziba.innerHTML = jelek.mozi[0];
   moziba.addEventListener("click",() => {keret.scrollIntoView();});
-  var mozi = document.getElementById("mozi");
+  var mozi = document.getElementById(mozi_txt);
   if (mozi && mozi.hasAttribute("alap")) {
     csomag.target.id = mozi.getAttribute("alap");
     terem.addEventListener("click",function(){ugrik(csomag);}); //alapmozi, ha kijelölted

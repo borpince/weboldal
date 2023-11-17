@@ -32,6 +32,11 @@
 }
 .vmove:hover { animation-play-state: paused; }
 
+details{margin-top:1em;font-size:x-large;}
+details>summary:first-of-type{cursor:pointer;display:flex;align-items:center;outline:none;} /*margin-bottom:.625rem;*/
+details>summary:first-of-type::before{content:"\25b6";margin-left:-1.25rem;position:absolute;margin-top:-.2rem;text-indent:.1rem;font-family:system-ui;font-size:.75em}
+details[open]>summary:first-of-type::before{content:"\25bc";margin-top:0;text-indent:0}
+
 #kilepes, #vissza {
   height:60px;width:60px;
   font-size:2rem;
