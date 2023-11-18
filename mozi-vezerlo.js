@@ -54,8 +54,8 @@ function hanyad_most() {
 }
 
 function ugrik(event) {
-  if (!event.hasOwnProperty("alap")) gombsor.setAttribute("style","display:inline;justify-content:center;");
   if (!mozi_mukodik) return;
+  if (!event.hasOwnProperty("alap")) gombsor.setAttribute("style","display:inline;justify-content:center;");
   id_tar = event.target.id;
   var vid = "";
   var sec = 0;
@@ -155,8 +155,16 @@ function vtoc(object) {
       object.appendChild(cim);
     }
   tb = document.getElementsByTagName("a");
-  for (var i = 0; i < tb.length; i++) {
-    if (tb[i].hasAttribute("media") && (tb[i].getAttribute("media") == mozi_txt)) tb[i].setAttribute("name",mozi_txt);
+  var db = 0;
+  for (var i = 0; i < tb.length; i++)
+    if (tb[i].hasAttribute("media") && (tb[i].getAttribute("media") == mozi_txt)) {
+      tb[i].setAttribute("name",mozi_txt);
+      db++;
+    }
+  if (db == 0) {
+    var elotte = document.createElement('SPAN');
+    elotte.innerHTML = "(üres)";
+    object.appendChild(elotte);
   }
 }
 
@@ -190,7 +198,8 @@ addEventListener("load", () => {
   var mozi = document.getElementById(mozi_txt);
   if (mozi && mozi.hasAttribute("alap")) {
     csomag.target.id = mozi.getAttribute("alap");
-    terem.addEventListener("click",function(){ugrik(csomag);}); //alapmozi, ha kijelölted
+    terem.style.cursor = "pointer";
+    terem.addEventListener("click",function(){ugrik(csomag);}); //alapmozi, ha meghatároztad
   }
 });
 

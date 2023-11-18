@@ -131,7 +131,7 @@ var temak =
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:0, kelt:"2022-11-28"}
       ],
       "e": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "f": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-06-25", kelt:"2023-03-21"}],
+      "f": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
       "g": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
       "h": [{cim:"nem hackernek való vidék", nev:"hacker", ver:0, kelt:"2023-06-04"}],
       "i": [{cim:"arculati elem", nev:"arculat", ver:"2023-02-14", kelt:"2022-12-06"}],
