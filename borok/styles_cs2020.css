@@ -37,11 +37,15 @@ details>summary:first-of-type{cursor:pointer;display:flex;align-items:center;out
 details>summary:first-of-type::before{content:"\25b6";margin-left:-1.25rem;position:absolute;margin-top:-.2rem;text-indent:.1rem;font-family:system-ui;font-size:.75em}
 details[open]>summary:first-of-type::before{content:"\25bc";margin-top:0;text-indent:0}
 
+#mozicim {
+  font-size:1rem;
+  color: limegreen;
+  background: black;
+}
 #kilepes, #vissza {
   height:60px;width:60px;
   font-size:2rem;
   font-family: system-ui;
-  border-radius: 8%;
   cursor:pointer;
 }
 #naptar, #holtart, #moziba {

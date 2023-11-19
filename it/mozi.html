@@ -37,7 +37,7 @@
       <div class="box">
         <div id="mozi_keret" class="box-text-update">
           <p>
-            A weboldalon közölt történetek némelyike hemzseg a látványos és izgalmas műveletektől, amiknek mozzanatait nálam tehetségesebbek képesek lennének olyan érzékletesen leírni, hogy akár magad elé is képzelhetnéd.
+            A weboldalon közölt történetek némelyike hemzseg a látványos és izgalmas műveletektől, amiknek mozzanatait nálam tehetségesebbek képesek lennének olyan érzékletesen leírni, hogy azzal magad elé képzelhetnéd.
             Tehetség híján mozgóképes anyagokkal szemléltetem a leírtakat, amit ebben a speciális moziban kínálok a szürke szöveg illusztrációjaként.
           </p>
           <div id="terem" class="box-img">
@@ -46,7 +46,11 @@
           <div id="video" style="display:none" class="video-container marg">
             <div id="mozi" alap="5_YUu0oLHTU"></div>
           </div>
-          <span id="gombsor" style="display:none;justify-content:center;"><button id="kilepes"></button>&nbsp;<button id="vissza"></button></span>
+          <span id="gombsor" style="display:none">
+            <button id="kilepes"></button>&nbsp;
+            <button id="vissza"></button>&nbsp;
+            <textarea id="mozicim" name="mozicim" readonly></textarea>
+          </span>
           <p>
             Úgy döntöttem, hogy nem fogok rengeteg YouTube videot beágyazni a HTML szövegbe.
             Ez a visszafogottság olyan előnnyel jár, hogy nem foglal helyet nagy mennyiségű beágyazott video indexképe a weboldalon, és természetesen ezek betöltésével sem küzd a böngésző az oldal megnyitásakor.
@@ -86,7 +90,7 @@
             (az egymás melletti ■ és 🎞️ gombok csak lejátszáskor jelennek meg a video alatt).
             Ha innen megint a mozira vagy kíváncsi, akkor sem kell keresgélned, mert a képernyő bal felső sarkában látható ikonok közül a házikó alatti 🎦 jelre nyomva máris a mozihoz kerülsz.
             <br>
-            A moziterem képét követő szöveg alatt megtalálod a hivatkozott 🎞️felvételek listáját, és innen is lejátszhatod őket. A lista minden sorát a hiperhivatkozás (link) nemzetközi, egyezményes jele 🔗 vezeti be, amivel a hivatkozott anyag szövegbeli előfordulásához jutsz.
+            A moziterem képét követő szöveg alatt megtalálod a hivatkozott 🎞️felvételek listáját, és innen is lejátszhatod őket. A lista minden sorát a hiperhivatkozás (link) nemzetközi, egyezményes 🔗 jele vezeti be, amivel a hivatkozott anyag szövegbeli előfordulásához jutsz.
           </p>
         </div>
       </div>
@@ -149,6 +153,7 @@
             Persze nem minden papsajt, mert amikor eljutottam oda, hogy a lejátszott videoról odatennék néhány adatot (cím, leírás, hányan nézték meg stb.), akkor pofára esek,
             mert az erre szolgáló getVideoData() metódust 2017-ben <a href="https://github.com/chrisblakley/Nebula/issues/1519">eltávolították</a> az API-ból.
             Természetesen van kerülőutas műszaki megoldás, de regisztrációhoz és API-key igényléséhez kötött – már nincs is kedvem hozzá, annyira nem fontos.
+            (Közben kiizzadtam az erdőszéli megoldást: a cím <a href="https://github.com/borpince/weboldal/blob/main/mozi-vezerlo.js#L13-L15">kibányászható</a> a <code>getVideoEmbedCode()</code> metódus által szolgáltatott értékből is.)
             <br>
             Az indulásnál sejtettem, hogy mit akarok, ami menet közben alakult, bonyolódott, finomodott és észszerűsödött. Elégedett vagyok az eredménnyel, mert pont úgy működik, ahogy elképzeltem, ahogy szerintem egy ilyen szolgáltatásnak működnie kell.
             Testreszabott.

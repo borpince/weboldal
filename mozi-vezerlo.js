@@ -2,18 +2,22 @@
 var mozi_mukodik = false;
 var mozi_mehet = false;
 var mozi_keret = "mozi_keret";
+var mozicim = document.getElementById("mozicim");
 
-function onYouTubePlayerAPIReady() {
+function onYouTubeIframeAPIReady() {
   mozi_mukodik = true;
 }
 
 function mehet_a_musor(event) {
   mozi_mehet = true;
+  var embedCode = event.target.getVideoEmbedCode();
+  var doc = new DOMParser().parseFromString(embedCode.replace("allowfullscreen",""),"text/xml");
+  mozicim.value = doc.firstChild.getAttribute("title");
 }
 
 (function() {
 var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/player_api";
+tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var href_tar = "";
@@ -34,10 +38,16 @@ var moziba = document.getElementById("moziba");
 var csomag = {target:{id:""},alap:true}
 var keret = document.getElementById(mozi_keret);
 
-function indit(sec) {
+function gombsor_meret() {
+  var x_meret = video.offsetWidth-((vissza.getBoundingClientRect().x-kilepes.getBoundingClientRect().x)*2)-6; //-40: fekete szegély
+  if (x_meret < 200) x_meret = 200;
+  mozicim.style.width = `${x_meret}px`;
+}
+
+function indit(sec,gombsorral) {
   if (cnt > 32) return;
   if (!mozi_mehet) {
-    setTimeout(function() {indit(sec);},200);
+    setTimeout(function() {indit(sec,gombsorral);},200);
     cnt++;
   } else {
     player.pauseVideo();
@@ -45,6 +55,10 @@ function indit(sec) {
     player.playVideo();
     video.style.display = "inline";
     terem.style.display = "none";
+    if (gombsorral) {
+      gombsor.setAttribute("style","display:flex;margin-top:-10px");
+      gombsor_meret();
+    }
   }
 }
 
@@ -55,15 +69,13 @@ function hanyad_most() {
 
 function ugrik(event) {
   if (!mozi_mukodik) return;
-  if (!event.hasOwnProperty("alap")) gombsor.setAttribute("style","display:inline;justify-content:center;");
-  id_tar = event.target.id;
   var vid = "";
   var sec = 0;
-  var p = id_tar.trim().indexOf(" ");
+  var p = event.target.id.trim().indexOf(" ");
   if (p > -1) {
-    vid = id_tar.substring(0,p);
-    sec = id_tar.substring(p).trim();
-  } else vid = id_tar.trim();
+    vid = event.target.id.substring(0,p);
+    sec = event.target.id.substring(p).trim();
+  } else vid = event.target.id.trim();
   mozi_mehet = false;
   if (!player) {
     player = new YT.Player(mozi_txt,{videoId:vid,playerVars:{rel:0},events:{'onReady':mehet_a_musor,'onStateChange':valtozik_a_helyzet,'onError':hiba_eseten}});
@@ -72,26 +84,30 @@ function ugrik(event) {
     player = new YT.Player(mozi_txt,{videoId:vid,playerVars:{rel:0},events:{'onReady':mehet_a_musor,'onStateChange':valtozik_a_helyzet,'onError':hiba_eseten}});
   } else mozi_mehet = true;
   cnt = 0;
+  if (!event.hasOwnProperty("alap")) //alap video linkje nem szerepel a szövegben, nincs hová visszatérni
+    id_tar = event.target.id;
   helyzet = {y: document.body.scrollHeight,scy: Math.round(window.scrollY),inh: window.innerHeight,hanyad: hanyad_most()}
-  indit(sec);
+  indit(sec,!event.hasOwnProperty("alap"));
 }
 
 var visszateres_folyamatban = false;
 function visszateres(marad=false) {
   if (!helyzet || visszateres_folyamatban) return;
   window.history.pushState("", "", href_tar);
-  var hely = document.getElementById(id_tar);
   window.scrollTo(0,(document.body.scrollHeight*helyzet.hanyad)-window.innerHeight);
-  var szam = 0;
-  var villan = setInterval(function() {
-    visszateres_folyamatban = true;
-    hely.style.opacity = (szam % 2 > 0) ? 1:0;
-    szam++;
-    if (szam >= 6) {
-      clearInterval(villan);
-      visszateres_folyamatban = false;
-    }
-  },400);
+  if (id_tar) { //alap video lejátszása után nincs mit villogtatni
+    var hely = document.getElementById(id_tar);
+    var szam = 0;
+    var villan = setInterval(function() {
+      visszateres_folyamatban = true;
+      hely.style.opacity = (szam % 2 > 0) ? 1:0;
+      szam++;
+      if (szam >= 6) {
+        clearInterval(villan);
+        visszateres_folyamatban = false;
+      }
+    },400);
+  }
   if (marad) return; //visszatérek a szöveghez, de a mozi marad
   id_tar = "";
   gombsor.setAttribute("style","display:none");
@@ -113,7 +129,6 @@ function eredet(event) {
 }
 
 function vege_a_musornak() {
-  gombsor.setAttribute("style","display:none");
   player.pauseVideo();
   if (document.fullscreenElement)
     document.exitFullscreen()
@@ -192,6 +207,21 @@ addEventListener("load", () => {
   kilepes.setAttribute("title","kilépés a moziból – visszatérsz a szöveghez");
   vissza.addEventListener("click",function() {visszateres(true)});
   vissza.setAttribute("title","vissza a mozit indító hivatkozáshoz – a lejátszás nem áll le");
+  mozicim.style.height = `${vissza.getBoundingClientRect().height-6}px`;
+/* az előző sor -6 értéke speciális (alap)esetben jó eredményt ad, de így álatalánosabb lenne:
+  var elem = document.getElementById('mozicim');
+  var pt = window.getComputedStyle(elem).getPropertyValue('padding-top');
+  var pb = window.getComputedStyle(elem).getPropertyValue('padding-bottom');
+  var bwt = window.getComputedStyle(elem).getPropertyValue('border-top-width');
+  var bwb = window.getComputedStyle(elem).getPropertyValue('border-bottom-width');
+  mozicim.style.height = 
+    `${vissza.getBoundingClientRect().height
+    -pt.replace("px","")
+    -pb.replace("px","")
+    -bwt.replace("px","")
+    -bwb.replace("px","")}px`;
+*/
+  onresize = (event) => {gombsor_meret()}
   moziba.setAttribute("style","display:inline;");
   moziba.innerHTML = jelek.mozi[0];
   moziba.addEventListener("click",() => {keret.scrollIntoView();});
