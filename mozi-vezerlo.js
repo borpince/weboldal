@@ -84,8 +84,8 @@ function ugrik(event) {
     player = new YT.Player(mozi_txt,{videoId:vid,playerVars:{rel:0},events:{'onReady':mehet_a_musor,'onStateChange':valtozik_a_helyzet,'onError':hiba_eseten}});
   } else mozi_mehet = true;
   cnt = 0;
-  if (!event.hasOwnProperty("alap")) //alap video linkje nem szerepel a szövegben, nincs hová visszatérni
-    id_tar = event.target.id;
+  if (!event.hasOwnProperty("alap")) id_tar = event.target.id; //van hová visszatérni (alap video linkje nem ilyen)
+    else keret.scrollIntoView();
   helyzet = {y: document.body.scrollHeight,scy: Math.round(window.scrollY),inh: window.innerHeight,hanyad: hanyad_most()}
   indit(sec,!event.hasOwnProperty("alap"));
 }
@@ -93,9 +93,9 @@ function ugrik(event) {
 var visszateres_folyamatban = false;
 function visszateres(marad=false) {
   if (!helyzet || visszateres_folyamatban) return;
-  window.history.pushState("", "", href_tar);
-  window.scrollTo(0,(document.body.scrollHeight*helyzet.hanyad)-window.innerHeight);
-  if (id_tar) { //alap video lejátszása után nincs mit villogtatni
+  if (id_tar) { //alap video lejátszása után nincs mit villogtatni, nincs hová visszaérni
+    window.history.pushState("", "", href_tar);
+    window.scrollTo(0,(document.body.scrollHeight*helyzet.hanyad)-window.innerHeight);
     var hely = document.getElementById(id_tar);
     var szam = 0;
     var villan = setInterval(function() {
