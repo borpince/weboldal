@@ -20,7 +20,6 @@ var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-var mozi_jel ='🎞️';
 var mozi_txt = "mozi"; //yt.iframe player tag id, mozi link name
 var player = null;
 var betoltve = "";
@@ -178,7 +177,7 @@ function vtoc(object) {
 }
 
 addEventListener("load", () => {
-  vissza.innerHTML = mozi_jel; //▼ 🠇 &#x25bc;
+  vissza.innerHTML = jelek.link[0]; //▼ 🠇 &#x25bc;
   var obj_tb = document.getElementsByTagName("OBJECT");
   var vtoc_megvolt = false;
   for (var i = 0; i < obj_tb.length; i++) {
@@ -191,7 +190,7 @@ addEventListener("load", () => {
   for (var i = 0; i < mozi_tb.length; i++) {
     if (mozi_tb[i].hasAttribute("id")) {
       mozi_tb[i].addEventListener('click', (event) => ugrik(event));
-      mozi_tb[i].innerHTML = `${mozi_jel}&#xfeff;${mozi_tb[i].innerHTML}`; //ZERO WIDTH NO-BREAK SPACE
+      mozi_tb[i].innerHTML = `${jelek.mozi[0]}&#xfeff;${mozi_tb[i].innerHTML}`; //ZERO WIDTH NO-BREAK SPACE
       mozi_tb[i].setAttribute("href",`#${mozi_keret}`);
     }
   }

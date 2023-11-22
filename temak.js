@@ -139,7 +139,7 @@ var temak =
       "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}],
       "l": [{cim:"NFC-címke: helyzetelemzés", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"}],
       "m": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
-      "n": [{cim:"🎞️a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}]
+      "n": [{cim:"🎦a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}]
     }
   },
 }
