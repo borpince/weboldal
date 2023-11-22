@@ -20,7 +20,6 @@ var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-var href_tar = "";
 var mozi_jel ='🎞️';
 var mozi_txt = "mozi"; //yt.iframe player tag id, mozi link name
 var player = null;
@@ -94,7 +93,6 @@ var visszateres_folyamatban = false;
 function visszateres(marad=false) {
   if (!helyzet || visszateres_folyamatban) return;
   if (id_tar) { //alap video lejátszása után nincs mit villogtatni, nincs hová visszaérni
-    window.history.pushState("", "", href_tar);
     window.scrollTo(0,(document.body.scrollHeight*helyzet.hanyad)-window.innerHeight);
     var hely = document.getElementById(id_tar);
     var szam = 0;
@@ -145,10 +143,6 @@ function hiba_eseten(event) {
   console.log(event);
 }
 
-function mozi_link_inner(elem) {
-  return `${mozi_jel}&#xfeff;${elem.innerHTML}`; //ZERO WIDTH NO-BREAK SPACE
-}
-
 function vtoc(object) {
   var tb = document.getElementsByName(mozi_txt);
   for (var i = 0; i < tb.length; i++)
@@ -184,7 +178,6 @@ function vtoc(object) {
 }
 
 addEventListener("load", () => {
-  href_tar = document.location.href;
   vissza.innerHTML = mozi_jel; //▼ 🠇 &#x25bc;
   var obj_tb = document.getElementsByTagName("OBJECT");
   var vtoc_megvolt = false;
@@ -198,7 +191,7 @@ addEventListener("load", () => {
   for (var i = 0; i < mozi_tb.length; i++) {
     if (mozi_tb[i].hasAttribute("id")) {
       mozi_tb[i].addEventListener('click', (event) => ugrik(event));
-      mozi_tb[i].innerHTML = mozi_link_inner(mozi_tb[i]);
+      mozi_tb[i].innerHTML = `${mozi_jel}&#xfeff;${mozi_tb[i].innerHTML}`; //ZERO WIDTH NO-BREAK SPACE
       mozi_tb[i].setAttribute("href",`#${mozi_keret}`);
     }
   }
@@ -231,6 +224,11 @@ addEventListener("load", () => {
     terem.style.cursor = "pointer";
     terem.addEventListener("click",function(){ugrik(csomag);}); //alapmozi, ha meghatároztad
   }
+  window.addEventListener('beforeunload', function (e) {
+    var href = document.location.href;
+    var p = href.indexOf('#');
+    if (p > -1) window.history.pushState("", "", href.substring(0,p));
+  });
 });
 
 })();
