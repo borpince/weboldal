@@ -162,20 +162,33 @@
             Az indulásnál sejtettem, hogy mit akarok, ami menet közben alakult, bonyolódott, finomodott és észszerűsödött. Elégedett vagyok az eredménnyel, mert pont úgy működik, ahogy elképzeltem, ahogy szerintem egy ilyen szolgáltatásnak működnie kell.
             Testreszabott.
             <br><br>
-            Ismert hibák, hiányosságok:
+            Ismert hibák, hiányosságok, furcsaságok:
             <br>
-            Az alapmozit csak egyszer lehet lejátszani, de ez már nem hiba, mert dolgoztam rajta. Kijavítottam, egyszerűsítettem, átszerveztem.
-            Alapmozi? Tartozhat a történethez olyan mutatvány, amire azonnal beülhetsz a mi mozinkba, ha nyomsz egyet a moziterem képére.
-            Ha elindul a vetítés, akkor rendeltem alapmozit a történethez. Ellenkező esetben csak a szövegben lévő hivatkozások visznek moziba.
-            <br>
-            Új lapon vagy új ablakban megnyitva a hivatkozást (mozilinket), nem indul a lejátszás.
-            <br>
-            Androidos eszközön, teljesképernyős lejátszásból nem tér vissza a szöveghez a videoanyag befejeztével.
-            <br>
-            Bizonyos hivatkozások nem működnek a képernyő tetejéhez közel. Görgesd lejjebb, akkor megjavul.
-            <br>
-            <i>"Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.youtube.com') does not match the recipient window's origin"</i>
-            – misztikus hiba. Néha (ritkán) megjelenik a színfalak mögött. Téged nem fog zavarni, a helyes működést nem befolyásolja, és nem tudok vele mit kezdeni.
+            <ul>
+              <li><p>Az alapmozit csak egyszer lehetett lejátszani, de ez már nem hiba, mert dolgoztam rajta. Kijavítottam, egyszerűsítettem, átszerveztem.
+                Alapmozi? Tartozhat a történethez olyan mutatvány, amire azonnal beülhetsz a mi mozinkba, ha nyomsz egyet a moziterem képére.
+                Ha elindul a vetítés, akkor rendeltem alapmozit a történethez. Ellenkező esetben csak a szövegben lévő hivatkozások visznek moziba.
+              </p></li>
+              </li>
+              <li><p>
+                Művészlelkű kedvesem úgy alkotta meg a weboldal keretét, hogy a sötét hátterű szövegrészeket <code>opacity:70%</code> értékkel jeleníti meg azért, hogy a háttér ne legyen annyira fekete, a szöveg ne legyen túl kontrasztos.
+                Ilyen keretben kapott helyet a mi mozinkat mutató <code>iframe</code>, és ennek következtében a lejátszott anyag az eredetinél halványabb, pasztell színezetű.
+                Nem változtattam rajta, mert a megjelenítést teljes képernyősre váltva megszűnik ez a hatás, és a látvány eredeti színében pompázik – van lehetőség választani.
+              </p></li>
+              <li><p>
+                Új lapon vagy új ablakban megnyitva a hivatkozást (mozilinket), nem indul a lejátszás.
+              </p></li>
+              <li><p>
+                Androidos eszközön, teljesképernyős lejátszásból nem tér vissza a szöveghez a videoanyag befejeztével.
+              </p></li>
+              <li><p>
+                Bizonyos hivatkozások nem működnek a képernyő tetejéhez közel. Görgesd lejjebb, akkor megjavul.
+              </p></li>
+              <li><p>
+                <i>"Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.youtube.com') does not match the recipient window's origin"</i>
+                – misztikus hiba. Néha (ritkán) megjelenik a színfalak mögött. Téged nem fog zavarni, a helyes működést nem befolyásolja, és nem tudok vele mit kezdeni.
+              </p></li>
+            </ul>
           </p>
         </div>
       </div>
