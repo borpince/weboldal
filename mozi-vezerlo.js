@@ -39,6 +39,30 @@ var keret;
 var csomag = {target:{id:""},alap:true}
 var scroll_ido = 0;
 var vid = "";
+var mozi_modul_html = '<div id="terem" class="box-img">\
+<img src="https://kep.pince.eu/mozi2.webp">\
+</div>\
+<div id="video" style="display:none" class="video-container marg">\
+<div id="mozi" alap="5_YUu0oLHTU"></div>\
+</div>\
+<span id="gombsor" style="display:none">\
+<button id="kilepes"></button>&nbsp;&nbsp;\
+<button id="vissza"></button>&nbsp;&nbsp;\
+<input type="image" id="youtube" src="https://kep.pince.eu/yt60.webp">\
+</span>\
+<p>\
+Videok beágyazása helyett 🎦 jellel bevezetett hivatkozások visznek a fenti moziba, hogy a látvánnyal kísért száraz szöveg jobban csússzon.\
+Így válik igazán élvezhetővé, izgalmassá és ismeretterjesztővé. Ha elfogadjuk a régi bölcsességet, hogy egy kép többet mond ezer szónál, akkor a hangosfilm ennél is nagyobb előnyét nem kell külön méltatni.\
+<br>\
+A szövegben található 🎦hivatkozásokról a megjelenítés mindig a fenti moziba ugrik, ahonnan kilépve, vagy a végére érve ismét az a szövegrész kerül eléd, ahonnan "moziba mentél".\
+Segít visszatalálni az olvasnivalóhoz a visszatéréskor villogó hivatkozás.\
+<span id="extra">Részletes leírását találod a technológiának <a href="/it/mozi.html">a mi mozink</a> című írásban.</span>\
+<details>\
+ <summary>a szövegből összegyűjtött 🎦hivatkozások listája</summary>\
+ <object name="vtoc"></object>\
+</details>\
+</p>\
+';
 
 function mozihoz() {
   if (helyzet) video.scrollIntoView(); else keret.scrollIntoView();
@@ -254,15 +278,19 @@ function elokeszites() {
 }
 
 async function mozi_modul() {
+  /*
   var time_out = setTimeout(function(){alert("sikertelen művelet")},6000); //ha megakadna a külső művelet
   const anyag = await fetch("/mozi-modul.html");
-  const html_szoveg = await anyag.text();
+  mozi_modul_html = await anyag.text();
   clearTimeout(time_out);
-  var parser = new DOMParser();
-  var modul = parser.parseFromString(html_szoveg,"text/html");
-  var bevezeto = document.getElementById("bevezeto");
+  //alternatív megoldás:
+  /*
+    mozi_modul_html = mozi_modul_html.replace(/  /g," ");
+    mozi_modul_html = tar.replace(/\r/g,"\\\r");
+    console.log(tar); //ez megy a mozi_modul_html-be
+  */
   var mozi_helye = document.getElementById(mozi_keret);
-  mozi_helye.innerHTML = mozi_helye.innerHTML+html_szoveg;
+  mozi_helye.innerHTML = mozi_helye.innerHTML+mozi_modul_html;
   elokeszites();
 }
 
