@@ -48,11 +48,16 @@ details[open]>summary:first-of-type::before{content:"\25bc";margin-top:0;text-in
   font-family: system-ui;
   cursor:pointer;
 }
+#youtube {
+  height:60px;width:137px;
+  border-radius: 2%;
+  cursor:pointer;
+}
 #naptar, #holtart, #moziba {
   /*color: whitesmoke;*/
   margin-top: 10px;
   font-size: x-large;
-  /*background-color:rgba(69, 81, 134, 0.747);*/*/
+  /*background-color:rgba(69, 81, 134, 0.747);*/
   border-radius: 8%;
   border: 1px solid black;
   cursor: pointer;
