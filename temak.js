@@ -110,7 +110,8 @@ var temak =
       "m": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
         {cim:"kapisgálom", subfolder:"/orom", nev:"kapisgal", ver:0, kelt:"2023-11-04"},
-        {cim:"gebasz", subfolder:"/orom", nev:"gebasz", ver:0, kelt:"2023-11-06"}
+        {cim:"gebasz", subfolder:"/orom", nev:"gebasz", ver:0, kelt:"2023-11-06"},
+        {cim:"🎦a baján Péter Bencéje", subfolder:"/orom", nev:"bayan", ver:0, kelt:"2023-12-10"}
       ]
     }
   },
@@ -296,3 +297,29 @@ function koho(txt,max) { //korlátozott hossz
   }
   return txt;
 }
+
+function valasztas(path) {
+  window.location = path;
+  //console.log("ez:",window.location = path);
+}
+
+function halvanyit() {
+  var bg = document.getElementById("hatter");
+  if (bg) { //csak a nyitóoldalon jelenik meg
+    var menu = document.getElementById("menu");
+    var szam = 1.0;
+    var sotetit = setInterval(function() {
+      bg.style.opacity = szam;
+      szam -= 0.02;
+      if (menu && (szam < 0.8)) menu.style = "width:380px;height:410px;float:left;display:inline flex;opacity:70%;position:absolute;top:32px;";
+      if (szam <= 0) {
+        bg.setAttribute("style","display:none");
+        clearInterval(sotetit);
+      }
+    },30);
+  }
+}
+
+addEventListener("load", () => {setTimeout(() => {halvanyit();},700)});
+
+//console.log(`>${document.referrer}<`);
