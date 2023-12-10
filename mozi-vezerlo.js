@@ -2,7 +2,7 @@
 var mozi_mukodik = false;
 var mozi_mehet = false;
 var mozi_keret = "mozi_keret";
-var mozicim = document.getElementById("mozicim");
+//var mozicim = document.getElementById("mozicim");
 
 function onYouTubeIframeAPIReady() {
   mozi_mukodik = true;
@@ -10,9 +10,9 @@ function onYouTubeIframeAPIReady() {
 
 function mehet_a_musor(event) {
   mozi_mehet = true;
-  var embedCode = event.target.getVideoEmbedCode();
-  var doc = new DOMParser().parseFromString(embedCode.replace("allowfullscreen",""),"text/xml");
-  mozicim.value = doc.firstChild.getAttribute("title");
+  //var embedCode = event.target.getVideoEmbedCode();
+  //var doc = new DOMParser().parseFromString(embedCode.replace("allowfullscreen",""),"text/xml");
+  //mozicim.value = doc.firstChild.getAttribute("title");
 }
 
 (function() {
@@ -21,31 +21,40 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var mozi_txt = "mozi"; //yt.iframe player tag id, mozi link name
+var moziba_txt = "moziba";
 var player = null;
 var betoltve = "";
 var cnt = 0;
 var helyzet = null;
 var id_tar = "";
 var vezerlo_tb = ["■","&#x25b6"]; //❙❙,⯈ &#x25b6
-var terem = document.getElementById("terem");
-var video = document.getElementById("video");
-var gombsor = document.getElementById("gombsor");
-var kilepes = document.getElementById("kilepes");
-var vissza = document.getElementById("vissza");
-var moziba = document.getElementById("moziba");
+var terem;
+var video;
+var gombsor;
+var kilepes;
+var vissza;
+var youtube;
+var moziba;
+var keret;
 var csomag = {target:{id:""},alap:true}
-var keret = document.getElementById(mozi_keret);
+var scroll_ido = 0;
+var vid = "";
 
-function gombsor_meret() {
-  var x_meret = video.offsetWidth-((vissza.getBoundingClientRect().x-kilepes.getBoundingClientRect().x)*2)-6; //-40: fekete szegély
-  if (x_meret < 200) x_meret = 200;
-  mozicim.style.width = `${x_meret}px`;
+function mozihoz() {
+  if (helyzet) video.scrollIntoView(); else keret.scrollIntoView();
+  var alma = setInterval(function() {
+    if (Date.now()-scroll_ido > 200) {
+      var modosit = ((window.innerHeight > window.innerWidth) && (window.innerWidth < 700)) ? -50:-10;
+      window.scrollBy(0,modosit);
+      clearInterval(alma);
+    }
+  },160);
 }
 
-function indit(sec,gombsorral) {
+function indit(sec,alapmozi) {
   if (cnt > 32) return;
   if (!mozi_mehet) {
-    setTimeout(function() {indit(sec,gombsorral);},200);
+    setTimeout(function() {indit(sec,alapmozi);},200);
     cnt++;
   } else {
     player.pauseVideo();
@@ -53,10 +62,9 @@ function indit(sec,gombsorral) {
     player.playVideo();
     video.style.display = "inline";
     terem.style.display = "none";
-    if (gombsorral) {
-      gombsor.setAttribute("style","display:flex;margin-top:-10px");
-      gombsor_meret();
-    }
+    gombsor.setAttribute("style","display:flex;margin-top:-10px");
+    vissza.disabled = !alapmozi;
+    mozihoz();
   }
 }
 
@@ -67,7 +75,6 @@ function hanyad_most() {
 
 function ugrik(event) {
   if (!mozi_mukodik) return;
-  var vid = "";
   var sec = 0;
   var p = event.target.id.trim().indexOf(" ");
   if (p > -1) {
@@ -105,6 +112,8 @@ function visszateres(marad=false) {
       }
     },400);
   }
+  var p = document.location.href.indexOf('#');
+  if (p > -1) window.history.replaceState("", "", document.location.href.substring(0,p));
   if (marad) return; //visszatérek a szöveghez, de a mozi marad
   id_tar = "";
   gombsor.setAttribute("style","display:none");
@@ -136,6 +145,11 @@ function vege_a_musornak() {
 
 function valtozik_a_helyzet(event) {
   if (player.getPlayerState() == YT.PlayerState.ENDED) vege_a_musornak();
+}
+
+function megtekintes() {
+  player.pauseVideo();
+  if (vid) window.open(`https://www.youtube.com/watch?v=${vid}`,"_blank");
 }
 
 function hiba_eseten(event) {
@@ -176,7 +190,14 @@ function vtoc(object) {
   }
 }
 
-addEventListener("load", () => {
+function elokeszites() {
+  terem = document.getElementById("terem");
+  video = document.getElementById("video");
+  gombsor = document.getElementById("gombsor");
+  kilepes = document.getElementById("kilepes");
+  vissza = document.getElementById("vissza");
+  youtube = document.getElementById("youtube");
+  keret = document.getElementById(mozi_keret);
   vissza.innerHTML = jelek.link[0]; //▼ 🠇 &#x25bc;
   var obj_tb = document.getElementsByTagName("OBJECT");
   var vtoc_megvolt = false;
@@ -189,9 +210,14 @@ addEventListener("load", () => {
   var mozi_tb = document.getElementsByName(mozi_txt);
   for (var i = 0; i < mozi_tb.length; i++) {
     if (mozi_tb[i].hasAttribute("id")) {
+      var span = document.createElement('span');
+      span.innerHTML = `${jelek.mozi[0]}&#xfeff;`;
+      var parentDiv = mozi_tb[i].parentNode;
+      parentDiv.insertBefore(span,mozi_tb[i]);
       mozi_tb[i].addEventListener('click', (event) => ugrik(event));
-      mozi_tb[i].innerHTML = `${jelek.mozi[0]}&#xfeff;${mozi_tb[i].innerHTML}`; //ZERO WIDTH NO-BREAK SPACE
+      //mozi_tb[i].innerHTML = `${jelek.mozi[0]}&#xfeff;${mozi_tb[i].innerHTML}`; //ZERO WIDTH NO-BREAK SPACE
       mozi_tb[i].setAttribute("href",`#${mozi_keret}`);
+      span.appendChild(mozi_tb[i]);
     }
   }
   kilepes.addEventListener("click",vege_a_musornak);
@@ -199,24 +225,19 @@ addEventListener("load", () => {
   kilepes.setAttribute("title","kilépés a moziból – visszatérsz a szöveghez");
   vissza.addEventListener("click",function() {visszateres(true)});
   vissza.setAttribute("title","vissza a mozit indító hivatkozáshoz – a lejátszás nem áll le");
-  mozicim.style.height = `${vissza.getBoundingClientRect().height-6}px`;
-/* az előző sor -6 értéke speciális (alap)esetben jó eredményt ad, de így álatalánosabb lenne:
-  var elem = document.getElementById('mozicim');
-  var pt = window.getComputedStyle(elem).getPropertyValue('padding-top');
-  var pb = window.getComputedStyle(elem).getPropertyValue('padding-bottom');
-  var bwt = window.getComputedStyle(elem).getPropertyValue('border-top-width');
-  var bwb = window.getComputedStyle(elem).getPropertyValue('border-bottom-width');
-  mozicim.style.height = 
-    `${vissza.getBoundingClientRect().height
-    -pt.replace("px","")
-    -pb.replace("px","")
-    -bwt.replace("px","")
-    -bwb.replace("px","")}px`;
-*/
-  onresize = (event) => {gombsor_meret()}
-  moziba.setAttribute("style","display:inline;");
+  youtube.addEventListener("click",megtekintes);
+  youtube.setAttribute("title","megtekinthető itt: YouTube");
+
+  var naptar = document.getElementById("naptar");
+  var br = null;
+  if (naptar && naptar.style.display) br = document.createElement("br");
+  var balmenu = document.getElementById("balmenu");
+  if (br) balmenu.appendChild(br);
+  moziba = document.createElement("button");
+  moziba.setAttribute("id",moziba_txt);
   moziba.innerHTML = jelek.mozi[0];
-  moziba.addEventListener("click",() => {keret.scrollIntoView();});
+  moziba.addEventListener("click",mozihoz);
+  balmenu.appendChild(moziba);
   var mozi = document.getElementById(mozi_txt);
   if (mozi && mozi.hasAttribute("alap")) {
     csomag.target.id = mozi.getAttribute("alap");
@@ -224,10 +245,29 @@ addEventListener("load", () => {
     terem.addEventListener("click",function(){ugrik(csomag);}); //alapmozi, ha meghatároztad
   }
   window.addEventListener('beforeunload', function (e) {
-    var href = document.location.href;
-    var p = href.indexOf('#');
-    if (p > -1) window.history.pushState("", "", href.substring(0,p));
+    var p = document.location.href.indexOf('#');
+    if (p > -1) window.history.replaceState("", "", document.location.href.substring(0,p));
   });
+  var extra = document.getElementById("extra");
+  if (extra && href_nev() == "mozi") extra.style.display = "none";
+  window.addEventListener("scroll",() => {scroll_ido=Date.now()});
+}
+
+async function mozi_modul() {
+  var time_out = setTimeout(function(){alert("sikertelen művelet")},6000); //ha megakadna a külső művelet
+  const anyag = await fetch("/mozi-modul.html");
+  const html_szoveg = await anyag.text();
+  clearTimeout(time_out);
+  var parser = new DOMParser();
+  var modul = parser.parseFromString(html_szoveg,"text/html");
+  var bevezeto = document.getElementById("bevezeto");
+  var mozi_helye = document.getElementById(mozi_keret);
+  mozi_helye.innerHTML = mozi_helye.innerHTML+html_szoveg;
+  elokeszites();
+}
+
+window.addEventListener("load", () => {
+  mozi_modul();
 });
 
 })();
