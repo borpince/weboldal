@@ -51,18 +51,14 @@ var mozi_modul_html = '<div id="terem" class="box-img">\
 <input type="image" id="youtube" src="https://kep.pince.eu/yt60.webp">\
 </span>\
 <p>\
-Videok beágyazása helyett 🎦 jellel bevezetett hivatkozások visznek a fenti moziba, hogy a látvánnyal kísért száraz szöveg jobban csússzon.\
-Így válik igazán élvezhetővé, izgalmassá és ismeretterjesztővé. Ha elfogadjuk a régi bölcsességet, hogy egy kép többet mond ezer szónál, akkor a hangosfilm ennél is nagyobb előnyét nem kell külön méltatni.\
-<br>\
-A szövegben található 🎦hivatkozásokról a megjelenítés mindig a fenti moziba ugrik, ahonnan kilépve, vagy a végére érve ismét az a szövegrész kerül eléd, ahonnan "moziba mentél".\
-Segít visszatalálni az olvasnivalóhoz a visszatéréskor villogó hivatkozás.\
-<span id="extra">Részletes leírását találod a technológiának <a href="/it/mozi.html">a mi mozink</a> című írásban.</span>\
+Videok beágyazása helyett 🎦 jellel bevezetett hivatkozások visznek a fenti moziba, hogy a látvánnyal kísért száraz szöveg jobban csússzon. Így válik igazán élvezhetővé, izgalmassá és ismeretterjesztővé. Ha elfogadjuk a régi bölcsességet, hogy egy kép többet mond ezer szónál, akkor a hangosfilm ennél is nagyobb előnyét nem kell külön méltatni.\
+<br>A szövegben található 🎦hivatkozásokról a megjelenítés mindig a fenti moziba ugrik, ahonnan kilépve, vagy a végére érve ismét az a szövegrész kerül eléd, ahonnan "moziba mentél". Segít visszatalálni az olvasnivalóhoz a visszatéréskor villogó hivatkozás.\
+<span id="extra"> Részletes leírását találod a technológiának <a href="/it/mozi.html">a mi mozink</a> című írásban.</span>\
 <details>\
- <summary>a szövegből összegyűjtött 🎦hivatkozások listája</summary>\
- <object name="vtoc"></object>\
+<summary>a szövegből összegyűjtött 🎦hivatkozások listája</summary>\
+<object name="vtoc"></object>\
 </details>\
-</p>\
-';
+</p>';
 
 function mozihoz() {
   if (helyzet) video.scrollIntoView(); else keret.scrollIntoView();
@@ -254,7 +250,7 @@ function elokeszites() {
 
   var naptar = document.getElementById("naptar");
   var br = null;
-  if (naptar && naptar.style.display) br = document.createElement("br");
+  if (naptar && (naptar.style.display != "none")) br = document.createElement("br");
   var balmenu = document.getElementById("balmenu");
   if (br) balmenu.appendChild(br);
   moziba = document.createElement("button");
@@ -283,11 +279,12 @@ async function mozi_modul() {
   const anyag = await fetch("/mozi-modul.html");
   mozi_modul_html = await anyag.text();
   clearTimeout(time_out);
-  //alternatív megoldás:
   /*
+  //alternatív megoldás:
     mozi_modul_html = mozi_modul_html.replace(/  /g," ");
-    mozi_modul_html = tar.replace(/\r/g,"\\\r");
-    console.log(tar); //ez megy a mozi_modul_html-be
+    mozi_modul_html = mozi_modul_html.replace(/\n /g,"\n");
+    mozi_modul_html = mozi_modul_html.replace(/\r/g,"\\\r");
+    console.log(mozi_modul_html); //ez megy a mozi_modul_html-be
   */
   var mozi_helye = document.getElementById(mozi_keret);
   mozi_helye.innerHTML = mozi_helye.innerHTML+mozi_modul_html;
