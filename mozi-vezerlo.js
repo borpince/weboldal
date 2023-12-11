@@ -249,15 +249,17 @@ function elokeszites() {
   youtube.setAttribute("title","megtekinthető itt: YouTube");
 
   var naptar = document.getElementById("naptar");
-  var br = null;
-  if (naptar && (naptar.style.display != "none")) br = document.createElement("br");
-  var balmenu = document.getElementById("balmenu");
-  if (br) balmenu.appendChild(br);
-  moziba = document.createElement("button");
-  moziba.setAttribute("id",moziba_txt);
-  moziba.innerHTML = jelek.mozi[0];
-  moziba.addEventListener("click",mozihoz);
-  balmenu.appendChild(moziba);
+  setTimeout(function(){
+    var br = null;
+    if (naptar && (naptar.style.display === "inline")) br = document.createElement("br");
+    var balmenu = document.getElementById("balmenu");
+    if (br) balmenu.appendChild(br);
+    moziba = document.createElement("button");
+    moziba.setAttribute("id",moziba_txt);
+    moziba.innerHTML = jelek.mozi[0];
+    moziba.addEventListener("click",mozihoz);
+    balmenu.appendChild(moziba);
+  },200);
   var mozi = document.getElementById(mozi_txt);
   if (mozi && mozi.hasAttribute("alap")) {
     csomag.target.id = mozi.getAttribute("alap");
@@ -288,11 +290,10 @@ async function mozi_modul() {
   */
   var mozi_helye = document.getElementById(mozi_keret);
   mozi_helye.innerHTML = mozi_helye.innerHTML+mozi_modul_html;
-  elokeszites();
 }
 
 window.addEventListener("load", () => {
-  mozi_modul();
+  mozi_modul().then(elokeszites());
 });
 
 })();
