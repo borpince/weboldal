@@ -134,6 +134,61 @@
           </p>
         </div>
       </div>
+      <h1 id="2023-12-24" alcim="2FA: időt nyerünk">2FA: időt nyerünk</h1>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Akciófilmekben látni izgalmas jeleneteket, ahol kegyetlen, felfegyverzett, marcona szereplők kitartóan üldöznek kétségbeesetten menekülő embereket.
+            Ez önmagában is izgalmas, de tovább szítják a feszültséget azzal, amikor az egyik szereplő önfeláldozóan kiválik a menekülő csapatból az üldözők feltartásának szándékával.
+            Ennek a szereplőnek rendszerint elfogy a lőszere, legyűri a túlerőben lévő ellenség, de a többiek közben egérutat nyernek.
+            Utópisztikus történetekben gyógyíthatatlan betegeket fagyasztanak le azzal a szándékkal, hogy majd 100 év múlva felébresztik őket.
+            Ezzel is időt nyernek addig, amíg az orvostudomány eléri a betegség gyógyításához szükséges fejlettséget.
+            A hackerekkel vívott heroikus küzdelemben is van jelentősége ennek a harcmodornak. Időt kell nyerni.
+            <br>
+            Ahogy az orvostudomány fejlődik, úgy a számítógépes rendszerek védelme is egyre fejlettebb, de a hackerek is egyre ügyesebbek.
+            Újabb és újabb akadályokat kell gördíteni eléjük, amivel gátat szabunk pimasz nyomulásuknak.
+            Nem csak a hackertevékenység gyűrűzött be régiónkba. Eredetileg az USA-ban jelent meg az iskolai lövöldözés, aminek már közvetlen közelünkben is akadnak követői, mint például az a vadbarom, aki egy prágai egyetemen kezdett <a href="https://24.hu/belfold/2023/12/21/praga-lovoldozes/">gyilkolászni</a>.
+            Az egyik potenciális áldozat nem vette ezt tréfára, és barikádot épített az ajtó elé, amivel időt, s ezzel életet nyert.
+          </p>
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/barikad.webp">
+            </div>
+            <figcaption>ajtótorlasz – forrás: <a href="https://twitter.com/jakobweizman/status/1737849335386452138">Twitter</a></figcaption>
+          </figure>
+          <p>
+            A rossz szándékú, adattolvaj gazemberek nem életveszélyesek. Ők viszonylag szelíden és barátságosan, csupán lopni készülnek.
+            Ellenük is építhetünk barikádot. A jelszavak alkalmazásának ez a célja, de a behatolók módszerei egyre kifinomultabbak és rafináltabbak,
+            és ahogy az ajtózárak sem jelentenek akadályt egy jó szakembernek, úgy egy hozzáértő a jelszóval védett rendszerekkel is boldogulhat.
+            <br>
+            Egy ideje rendelkezésre áll a kétlépcsős azonosítás (<a href="https://en.wikipedia.org/wiki/Multi-factor_authentication">MFA, 2FA, U2F</a>), ami nem kis bosszúságot okoz a hackereknek.
+            Ez sem mindenható módszer, nem áthatolhatatlan védekezés, de megnehezíti a zsiványok dolgát, akik vagy visszarettennek az akadály láttán, vagy idővel feladják a küzdelmet.
+            Nem intézek online banki ügyeket, ezért néhány éve, a Google bejelentkezésnél találkoztam először ezzel a technikával, ahol SMS-ben kapja meg az ügyfél a belépéshez szükséges, egyszer használatos kódot.
+            Aztán megjelent a <a href="https://en.wikipedia.org/wiki/Google_Authenticator">Google Authenticator</a>, ami offline működik, és a jelszó mellé ad egy TOTP (time-based one-time password) vagy HOTP (HMAC-based one-time password) kódot az ügyfél azonosításához.
+            <br>
+            Most jött el az ideje annak, hogy az állandó internetkapcsolat révén veszélynek kitett itthoni számítógépeken bevessem ezt a védekezési módszert a támadók ellen, mert olyan mértéket öltött a behatolási kísérletek száma, ami elérte a komoly aggodalomra okot adó szintet.
+            Általában igaz, hogy a kitartóan végzett, szorgalmas munka meghozza gyümölcsét, és ez érvényes a számítógépes bűnözőkre is.
+            Addig baszakodnak, amíg egyszer siker koronázza tevékenységüket, és korlátozás nélkül turkálnak az adataink között.
+            A kétlépcsős azonosításhoz való eszközök szabadon és ingyenesen hozzáférhetők (forráskódja a <a href="https://github.com/google/google-authenticator">GitHubon</a> is elérhető). Csak a szándék, és a szükséges műveletek elvégzése kell a bevezetéséhez.
+            Én megtettem, és javaslom neked is, ha van mit féltened.
+            <br><br>
+            Egy új tényező, a "verification code" ismeretét firtató kérdéssel bővül a bejelentkezési protokoll, amire egyszerű a válasz egy megfelelően paraméterezett <a href="https://play.google.com/store/search?q=authenticator&c=apps&hl=hu_HU">hitelesítő alkalmazás</a> használatával.
+            Meglepően nagy választékban állnak rendelkezésre mindenféle gyártóknak programjai, amikből vérmérsékletednek és egyéni igényeidnek megfelelően kiszemelheted a legmegfelelőbbnek tűnő példányt, akár ingyenes, akár fizetős változatban.
+            <br>
+            Eddig csak a "password" iránti érdeklődéssel szembesültek a faszkalapok, de mától ezzel az újdonsággal kedveskedek nekik. Karácsony van.
+            Most egy darabig csak vigyorgok, és önelégülten nézem a sikertelen próbálkozások nyomait a naplóban, de nem győzöm hangoztatni, hogy a rosszfiúk munkájának nehezítésével csak időt nyertem. Miért?
+            Azért, mert idővel egyre többen alkalmazzák ezt a módszert, aminek az lesz a következménye, hogy a hackerek egyre csökkenő számban találnak könnyen feltörhető célpontot, és ők is fejleszteni fogják módszereiket, eszköztárukat.
+            Nem szabad lebecsülni őket, mert szép számmal akadnak közöttük különösen jó képességű szakemberek, akik mindenre találnak megoldást.
+            <br>
+            A legújabb védőbástyát kiegészíti egy <a href="https://en.wikipedia.org/wiki/Reverse_proxy">reverse proxy</a>, egy <a href="https://en.wikipedia.org/wiki/PF_(firewall)">packet filter</a> és az <a href="https://www.sshguard.net/">SSHguard</a>.
+            Nem árulok el ezzel különösebb titkot, mert a pengedrót is látszik a fal tetején, a biztonsági kamerák is ott virítanak minden sarkon, és ha a betörő bekukucskál a kapuhasadékon, akkor az udvaron láthatja a rottweilereket is.
+            Nem hozzám fog betörni, hanem keres egy könnyebben leküzdhető, kisebb ellenállást mutató áldozatot.
+            <br>
+            A vadonatúj védművek mögött helyet foglalva szétáradt bennem a nyugalom. Elégedetten hátradőlök, hogy aztán kisvártatva elém kerüljön valakinek a nem igazán friss <a href="https://www.helpnetsecurity.com/2022/10/11/2fa-is-over-long-live-3fa/">értekezése</a> arról, hogy a 2FA már elavult, nem elégséges védekezés.
+            Higgadtan végigolvasom, és megtudom belőle: van helyette a 3FA. Ez a gyakorlatban annyit tesz, hogy nem sokáig <a href="/it/baber.html">ülhetek a babérokon</a>.
+          </p>
+        </div>
+      </div>
     </div>
     <div class="footer"></div>
   </section>    
