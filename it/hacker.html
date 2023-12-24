@@ -163,7 +163,7 @@
             <br>
             Egy ideje rendelkezésre áll a kétlépcsős azonosítás (<a href="https://en.wikipedia.org/wiki/Multi-factor_authentication">MFA, 2FA, U2F</a>), ami nem kis bosszúságot okoz a hackereknek.
             Ez sem mindenható módszer, nem áthatolhatatlan védekezés, de megnehezíti a zsiványok dolgát, akik vagy visszarettennek az akadály láttán, vagy idővel feladják a küzdelmet.
-            Nem intézek online banki ügyeket, ezért néhány éve, a Google bejelentkezésnél találkoztam először ezzel a technikával, ahol SMS-ben kapja meg az ügyfél a belépéshez szükséges, egyszer használatos kódot.
+            Nem intézek online banki ügyeket, ezért néhány éve a Google bejelentkezésnél találkoztam először ezzel a technikával, ahol SMS-ben kapja meg az ügyfél a belépéshez szükséges, egyszer használatos kódot.
             Aztán megjelent a <a href="https://en.wikipedia.org/wiki/Google_Authenticator">Google Authenticator</a>, ami offline működik, és a jelszó mellé ad egy TOTP (time-based one-time password) vagy HOTP (HMAC-based one-time password) kódot az ügyfél azonosításának megerősítéséhez.
             <br>
             Most jött el az ideje annak, hogy az állandó internetkapcsolat révén veszélynek kitett itthoni számítógépeken bevessem ezt a védekezési módszert a támadók ellen, mert olyan mértéket öltött a behatolási kísérletek száma, ami elérte a komoly aggodalomra okot adó szintet.
@@ -172,7 +172,7 @@
             A kétlépcsős azonosításhoz való eszközök szabadon és ingyenesen hozzáférhetők (forráskódja a <a href="https://github.com/google/google-authenticator">GitHubon</a> elérhető). Csak a szándék, és a szükséges műveletek elvégzése kell hadrendbe állításához.
             Én megtettem, és javaslom neked is, ha van mit féltened.
             <br><br>
-            Egy új tényező, a "verification code" ismeretét firtató kérdéssel bővül a bejelentkezési protokoll, amire egyszerű a válasz egy megfelelően paraméterezett <a href="https://play.google.com/store/search?q=authenticator&c=apps&hl=hu_HU">hitelesítő alkalmazás</a> használatával.
+            Új szelek fújnak. Egy új tényező, a "verification code" ismeretét firtató kérdéssel bővül a bejelentkezési protokoll, amire egyszerű a válasz egy megfelelően paraméterezett <a href="https://play.google.com/store/search?q=authenticator&c=apps&hl=hu_HU">hitelesítő alkalmazás</a> használatával.
             Meglepően nagy választékban állnak rendelkezésre mindenféle gyártók programjai, amikből vérmérsékletednek és egyéni igényeidnek megfelelően kiszemelheted a legmegfelelőbbnek tűnő példányt.
             <br>
             Eddig csak a "password" iránti érdeklődéssel szembesültek a faszkalapok, de mától ezzel az újdonsággal kedveskedek nekik. Karácsony van.
@@ -184,7 +184,10 @@
             Nem árulok el ezzel különösebb titkot, mert a pengedrót is látszik a fal tetején, a biztonsági kamerák is ott virítanak minden sarkon, és ha a betörő bekukucskál a kapuhasadékon, akkor az udvaron láthatja a rottweilereket is.
             Nem hozzám fog betörni, hanem keres egy könnyebben leküzdhető, kisebb ellenállást mutató prédát.
             <br>
-            A vadonatúj védművek mögött helyet foglalva szétáradt bennem a nyugalom. Elégedetten hátradőlök, hogy aztán kisvártatva elém kerüljön valakinek a nem igazán friss <a href="https://www.helpnetsecurity.com/2022/10/11/2fa-is-over-long-live-3fa/">értekezése</a> arról, hogy a 2FA már elavult, nem elégséges védekezés.
+            Szilárd alapokra kell fektetni a biztonságra törekvő igényeket, ami kizárja az asztali számítógépeken már régóta a legnépszerűbbnek és legelterjedtebbnek számító Windows alkalmazását.
+            Hétköznapi célokra szabad használni, hiszen verébre minek ágyúval lőni, de ahogy szarból nem lehet várat építeni, úgy a Windows-nak is vannak korlátai, tehát megbízhatóan és biztonságosan működő szolgáltatást nem alapozhatsz rá.
+            <br><br>
+            A vadonatúj védművek mögött helyet foglalva szétáradt bennem a karácsonyi nyugalom. Elégedetten hátradőlök, hogy aztán kisvártatva elém kerüljön valakinek a nem igazán friss <a href="https://www.helpnetsecurity.com/2022/10/11/2fa-is-over-long-live-3fa/">értekezése</a> arról, hogy a 2FA már elavult, nem elégséges védekezés.
             Higgadtan végigolvasom, és megtudom belőle: van helyette a 3FA. Ez a gyakorlatban annyit tesz, hogy nem sokáig <a href="/it/baber.html">ülhetek a babérokon</a>.
           </p>
         </div>
