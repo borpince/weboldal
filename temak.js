@@ -105,7 +105,9 @@ var temak =
         {cim:"elveszve a nagyvilágban", subfolder:"/rem", nev:"elveszve", ver:0, kelt:"2023-10-13"},
         {cim:"apahiány", subfolder:"/rem", nev:"apahiany", ver:0, kelt:"2023-10-22"},
         {cim:"játsszunk tellvilmost!", subfolder:"/rem", nev:"tellvilmos", ver:0, kelt:"2023-10-18"},
-        {cim:"adóhivatal", subfolder:"/rem", nev:"adohivatal", ver:0, kelt:"2023-10-28"}
+        {cim:"adóhivatal", subfolder:"/rem", nev:"adohivatal", ver:0, kelt:"2023-10-28"},
+        {cim:"vihar a biliben", subfolder:"/rem", nev:"viharbili", ver:0, kelt:"2015-09-16"},
+        {cim:"piaci rés", subfolder:"/rem", nev:"piacires", ver:0, kelt:"2024-01-02"}
       ],
       "m": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
