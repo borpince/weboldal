@@ -178,7 +178,8 @@ function hiba_eseten(event) {
 
 function vtoc(object) {
   var tb = document.getElementsByName(mozi_txt);
-  for (var i = 0; i < tb.length; i++)
+  var i = 0;
+  while ((i < tb.length) && (i < 48))
     if (tb[i].hasAttribute("title")) {
       var eredeti = document.createElement('a');
       eredeti.innerHTML = '🔗'; //⊙, 🞖
@@ -195,6 +196,7 @@ function vtoc(object) {
       cim.setAttribute("media",mozi_txt);
       cim.innerHTML = `${tb[i].innerHTML}<br>`;
       object.appendChild(cim);
+      i++;
     }
   tb = document.getElementsByTagName("a");
   var db = 0;
@@ -206,6 +208,11 @@ function vtoc(object) {
   if (db == 0) {
     var elotte = document.createElement('SPAN');
     elotte.innerHTML = "(üres)";
+    object.appendChild(elotte);
+  }
+  if (tb.length > 48) {
+    var elotte = document.createElement('SPAN');
+    elotte.innerHTML = "(48 elemre korlátozva)";
     object.appendChild(elotte);
   }
 }

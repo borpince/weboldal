@@ -31,7 +31,7 @@ var temak =
     lista:{
       "2020": [{cim:"№ 1: cabernet sauvignon", nev:"01", ver:0, kelt:"2021-10-26"}],
       "2022": [
-        {cim:"№ 2: oportó",nev:"02",ver:"2023-05-12", kelt:"2022-10-14"},
+        {cim:"№ 2: oportó",nev:"02",ver:"2024-01-05", kelt:"2022-10-14"},
         {cim:"№ 3: rozé",nev:"03", ver:"2023-09-25", kelt:"2022-10-14"},
         {cim:"№ 4: kékfrankos",nev:"04",ver:"2023-07-23", kelt:"2022-10-14"}
       ],
