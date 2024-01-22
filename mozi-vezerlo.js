@@ -25,6 +25,7 @@ var moziba_txt = "moziba";
 var player = null;
 var betoltve = "";
 var cnt = 0;
+var secc = 0;
 var helyzet = null;
 var id_tar = "";
 var vezerlo_tb = ["■","&#x25b6"]; //❙❙,⯈ &#x25b6
@@ -43,7 +44,7 @@ var mozi_modul_html = '<div id="terem" class="box-img">\
 <img src="https://kep.pince.eu/mozi2.webp">\
 </div>\
 <div id="video" style="display:none" class="video-container marg">\
-<div id="mozi" alap="5_YUu0oLHTU"></div>\
+<div id="mozi"></div>\
 </div>\
 <span id="gombsor" style="display:none">\
 <button id="kilepes"></button>&nbsp;&nbsp;\
@@ -77,8 +78,8 @@ function indit(sec,alapmozi) {
     setTimeout(function() {indit(sec,alapmozi);},200);
     cnt++;
   } else {
-    player.pauseVideo();
-    player.seekTo(sec);
+    //player.pauseVideo();
+    //player.seekTo(sec); //valtozik_a_helyzet() intézi
     player.playVideo();
     video.style.display = "inline";
     terem.style.display = "none";
@@ -95,12 +96,13 @@ function hanyad_most() {
 
 function ugrik(event) {
   if (!mozi_mukodik) return;
-  var sec = 0;
+  var sec = 1;
   var p = event.target.id.trim().indexOf(" ");
   if (p > -1) {
     vid = event.target.id.substring(0,p);
     sec = event.target.id.substring(p).trim();
   } else vid = event.target.id.trim();
+  secc = sec;
   mozi_mehet = false;
   if (!player) {
     player = new YT.Player(mozi_txt,{videoId:vid,playerVars:{rel:0},events:{'onReady':mehet_a_musor,'onStateChange':valtozik_a_helyzet,'onError':hiba_eseten}});
@@ -156,6 +158,7 @@ function eredet(event) {
 
 function vege_a_musornak() {
   player.pauseVideo();
+  secc = 1;
   if (document.fullscreenElement)
     document.exitFullscreen()
       .then(() => visszateres())
@@ -165,6 +168,10 @@ function vege_a_musornak() {
 
 function valtozik_a_helyzet(event) {
   if (player.getPlayerState() == YT.PlayerState.ENDED) vege_a_musornak();
+  if ((player.getPlayerState() == YT.PlayerState.PLAYING) && (secc > 0)) {
+    player.seekTo(secc);
+    secc = 0;
+  }
 }
 
 function megtekintes() {
@@ -179,7 +186,7 @@ function hiba_eseten(event) {
 function vtoc(object) {
   var tb = document.getElementsByName(mozi_txt);
   var i = 0;
-  while ((i < tb.length) && (i < 48))
+  while (i < tb.length)
     if (tb[i].hasAttribute("title")) {
       var eredeti = document.createElement('a');
       eredeti.innerHTML = '🔗'; //⊙, 🞖
@@ -210,11 +217,13 @@ function vtoc(object) {
     elotte.innerHTML = "(üres)";
     object.appendChild(elotte);
   }
+  /*
   if (tb.length > 48) {
     var elotte = document.createElement('SPAN');
     elotte.innerHTML = "(48 elemre korlátozva)";
     object.appendChild(elotte);
   }
+  */
 }
 
 function elokeszites() {
@@ -267,9 +276,8 @@ function elokeszites() {
     moziba.addEventListener("click",mozihoz);
     balmenu.appendChild(moziba);
   },200);
-  var mozi = document.getElementById(mozi_txt);
-  if (mozi && mozi.hasAttribute("alap")) {
-    csomag.target.id = mozi.getAttribute("alap");
+  if (keret && keret.hasAttribute("alap")) {
+    csomag.target.id = keret.getAttribute("alap");
     terem.style.cursor = "pointer";
     terem.addEventListener("click",function(){ugrik(csomag);}); //alapmozi, ha meghatároztad
   }
@@ -278,7 +286,7 @@ function elokeszites() {
     if (p > -1) window.history.replaceState("", "", document.location.href.substring(0,p));
   });
   var extra = document.getElementById("extra");
-  if (extra && href_nev() == "mozi") extra.style.display = "none";
+  if (extra && href_nev() == mozi_txt) extra.style.display = "none"; //"Részletes leírás" hivatkozás kizárása a részletes leírásból
   window.addEventListener("scroll",() => {scroll_ido=Date.now()});
 }
 
