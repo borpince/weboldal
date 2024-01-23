@@ -78,8 +78,8 @@ function indit(sec,alapmozi) {
     setTimeout(function() {indit(sec,alapmozi);},200);
     cnt++;
   } else {
-    //player.pauseVideo();
-    //player.seekTo(sec); //valtozik_a_helyzet() intézi
+    player.pauseVideo();
+    player.seekTo(sec); //hatásosan valtozik_a_helyzet() intézi
     player.playVideo();
     video.style.display = "inline";
     terem.style.display = "none";
