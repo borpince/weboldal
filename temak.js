@@ -107,9 +107,9 @@ var temak =
         {cim:"játsszunk tellvilmost!", subfolder:"/rem", nev:"tellvilmos", ver:0, kelt:"2023-10-18"},
         {cim:"adóhivatal", subfolder:"/rem", nev:"adohivatal", ver:0, kelt:"2023-10-28"},
         {cim:"vihar a biliben", subfolder:"/rem", nev:"viharbili", ver:0, kelt:"2015-09-16"},
-        {cim:"piaci rés", subfolder:"/rem", nev:"piacires", ver:0, kelt:"2024-01-02"},
-        {cim:"#metoo jelenség", subfolder:"/rem", nev:"metoo", ver:0, kelt:"2024-02-05"},
-        {cim:"lányos apák nyomorúsága", subfolder:"/rem", nev:"lanyosapa", ver:0, kelt:"2024-02-06"}
+        {cim:"piaci rés", subfolder:"/rem", nev:"piacires", ver:0, kelt:"2024-01-10"},
+        {cim:"🎦#metoo jelenség", subfolder:"/rem", nev:"metoo", ver:0, kelt:"2024-02-05"},
+        {cim:"🎦lányos apák nyomorúsága", subfolder:"/rem", nev:"lanyosapa", ver:0, kelt:"2024-02-06"}
       ],
       "m": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
@@ -137,7 +137,7 @@ var temak =
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:0, kelt:"2022-11-28"}
       ],
       "e": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "f": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
+      "f": [{cim:"🎦jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
       "g": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
       "h": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2023-12-28", kelt:"2023-06-04"}],
       "i": [{cim:"arculati elem", nev:"arculat", ver:"2023-02-14", kelt:"2022-12-06"}],
