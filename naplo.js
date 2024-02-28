@@ -4,7 +4,7 @@
   var oi = 0;
   var utmut = document.getElementById("utmut");
   var rendezes = document.createElement('button');
-  var forditva = false;
+  var forditva = true;
   var alcimekkel = document.createElement('input');
   var szuro = document.createElement('input');
   var naplo = null;
