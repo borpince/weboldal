@@ -53,7 +53,7 @@ var mozi_modul_html = '<div id="terem" class="box-img">\
 </span>';
 var mozi_modul_txt = '<p>\
 Videok beágyazása helyett 🎦 jellel bevezetett hivatkozások visznek a fenti moziba, hogy a látvánnyal kísért száraz szöveg jobban csússzon. Így válik igazán élvezhetővé, izgalmassá és ismeretterjesztővé. Ha elfogadjuk a régi bölcsességet, hogy egy kép többet mond ezer szónál, akkor a hangosfilm ennél is nagyobb előnyét nem kell külön méltatni.\
-<br>A szövegben található 🎦hivatkozásokról a megjelenítés mindig a fenti moziba ugrik, ahonnan kilépve, vagy a végére érve ismét az a szövegrész kerül eléd, ahonnan "moziba mentél". Segít visszatalálni az olvasnivalóhoz a visszatéréskor villogó hivatkozás.\
+<br>A szövegben található 🎦hivatkozásokról a megjelenítés mindig ebbe a moziba ugrik, ahonnan kilépve, vagy a végére érve ismét az a szövegrész kerül eléd, ahonnan "moziba mentél". Segít visszatalálni az olvasnivalóhoz a visszatéréskor villogó hivatkozás.\
 <span id="extra"> Részletes leírását találod a technológiának <a href="/it/mozi.html">a mi mozink</a> című írásban.</span>\
 <details>\
 <summary>a szövegből összegyűjtött 🎦hivatkozások listája</summary>\
