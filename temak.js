@@ -92,7 +92,8 @@ var temak =
         {cim:"XI. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2022", ver:0, kelt:"2022-10-17"},
         {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023", ver:0, kelt:"2023-04-17"},
         {cim:"XIV. Pannon Borrégió Top25", subfolder:"/bv", nev:"top25pb2023", ver:0, kelt:"2023-06-12"},
-        {cim:"XII. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2023", ver:0, kelt:"2023-09-28"}
+        {cim:"XII. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2023", ver:0, kelt:"2023-09-28"},
+        {cim:"nem szokunk rá", subfolder:"/bv", nev:"aszu", ver:0, kelt:"2024-03-20"}
       ],
       "i": [{cim:"hordólelet", nev:"hordo", ver:"2023-06-30", kelt:"2023-05-29"}],
       "j": [{cim:"fent vagy lent?", nev:"fent", ver:0, kelt:"2023-07-04"}],
@@ -108,16 +109,16 @@ var temak =
         {cim:"adóhivatal", subfolder:"/rem", nev:"adohivatal", ver:0, kelt:"2023-10-28"},
         {cim:"vihar a biliben", subfolder:"/rem", nev:"viharbili", ver:0, kelt:"2015-09-16"},
         {cim:"piaci rés", subfolder:"/rem", nev:"piacires", ver:0, kelt:"2024-01-10"},
-        {cim:"🎦#metoo jelenség", subfolder:"/rem", nev:"metoo", ver:0, kelt:"2024-02-05"},
-        {cim:"🎦lányos apák nyomorúsága", subfolder:"/rem", nev:"lanyosapa", ver:0, kelt:"2024-02-06"},
-        {cim:"🎦istentelen zűrzavar alakul", subfolder:"/rem", nev:"zurzavar", ver:0, kelt:"2024-03-15"}
+        {cim:"#metoo jelenség", subfolder:"/rem", nev:"metoo", ver:0, kelt:"2024-02-05"},
+        {cim:"lányos apák nyomorúsága", subfolder:"/rem", nev:"lanyosapa", ver:0, kelt:"2024-02-06"},
+        {cim:"istentelen zűrzavar alakul", subfolder:"/rem", nev:"zurzavar", ver:0, kelt:"2024-03-15"}
       ],
       "m": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
         {cim:"kapisgálom", subfolder:"/orom", nev:"kapisgal", ver:0, kelt:"2023-11-04"},
         {cim:"gebasz", subfolder:"/orom", nev:"gebasz", ver:0, kelt:"2023-11-06"},
-        {cim:"🎦a baján Péter Bencéje", subfolder:"/orom", nev:"bayan", ver:0, kelt:"2023-12-10"},
-        {cim:"🎦frauenkirche", subfolder:"/orom", nev:"frauenkirche", ver:0, kelt:"2024-02-22"},
+        {cim:"a baján Péter Bencéje", subfolder:"/orom", nev:"bayan", ver:0, kelt:"2023-12-10"},
+        {cim:"frauenkirche", subfolder:"/orom", nev:"frauenkirche", ver:0, kelt:"2024-02-22"},
         {cim:"majomparádé", subfolder:"/orom", nev:"majom", ver:"2024-03-15", kelt:"2015-05-20"},
       ]
     }
@@ -139,7 +140,7 @@ var temak =
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:0, kelt:"2022-11-28"}
       ],
       "e": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "f": [{cim:"🎦jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
+      "f": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
       "g": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
       "h": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2023-12-28", kelt:"2023-06-04"}],
       "i": [{cim:"arculati elem", nev:"arculat", ver:"2023-02-14", kelt:"2022-12-06"}],
@@ -147,7 +148,7 @@ var temak =
       "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}],
       "l": [{cim:"NFC-címke: helyzetelemzés", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"}],
       "m": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
-      "n": [{cim:"🎦a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}]
+      "n": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}]
     }
   },
 }
