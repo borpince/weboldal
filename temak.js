@@ -93,7 +93,7 @@ var temak =
         {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023", ver:0, kelt:"2023-04-17"},
         {cim:"XIV. Pannon Borrégió Top25", subfolder:"/bv", nev:"top25pb2023", ver:0, kelt:"2023-06-12"},
         {cim:"XII. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2023", ver:0, kelt:"2023-09-28"},
-        {cim:"nem szokunk rá", subfolder:"/bv", nev:"aszu", ver:0, kelt:"2024-03-19"}
+        {cim:"nem szokunk rá", subfolder:"/bv", nev:"aszu", ver:"2024-03-21", kelt:"2024-03-19"}
       ],
       "i": [{cim:"hordólelet", nev:"hordo", ver:"2023-06-30", kelt:"2023-05-29"}],
       "j": [{cim:"fent vagy lent?", nev:"fent", ver:0, kelt:"2023-07-04"}],
