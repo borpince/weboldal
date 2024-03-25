@@ -111,7 +111,7 @@ var temak =
         {cim:"piaci rés", subfolder:"/rem", nev:"piacires", ver:0, kelt:"2024-01-10"},
         {cim:"#metoo jelenség", subfolder:"/rem", nev:"metoo", ver:0, kelt:"2024-02-05"},
         {cim:"lányos apák nyomorúsága", subfolder:"/rem", nev:"lanyosapa", ver:0, kelt:"2024-02-06"},
-        {cim:"istentelen zűrzavar alakul", subfolder:"/rem", nev:"zurzavar", ver:0, kelt:"2024-03-15"}
+        {cim:"istentelen zűrzavar alakul", subfolder:"/rem", nev:"zur-zavar", ver:0, kelt:"2024-03-15"}
       ],
       "m": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
