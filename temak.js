@@ -29,7 +29,7 @@ var temak =
     folder: "/borok",
     tema:"borok, évjáratok",
     lista:{
-      "2020": [{cim:"№ 1: cabernet sauvignon", nev:"01", ver:0, kelt:"2021-10-26"}],
+      "2020": [{cim:"№ 1: cabernet sauvignon", nev:"01", ver:"2024-04-25", kelt:"2021-10-26"}],
       "2022": [
         {cim:"№ 2: oportó",nev:"02",ver:"2024-04-21", kelt:"2022-10-14"},
         {cim:"№ 3: rozé",nev:"03", ver:"2023-09-25", kelt:"2022-10-14"},
