@@ -1,4 +1,7 @@
 (function() {
+  var scroll_ido = 0;
+  var foglalt = false;
+  var ide_ugrott = "";
 
   function jelmagyarazat(object) {
     var szukit = object.getAttribute("szukit");
@@ -45,7 +48,7 @@
     return (f_ver > t_ver);
   }
 
-  function toc(object) { //! 48 jelzesek.html
+  function toc(object) { //! 51 jelzesek.html
     var tmdex = letezik(glob.href_nev,true);
     if (tmdex.tortenet) for (var i = 0; i < tmdex.tortenet.length; i++) {
       var elotte = document.createElement('SPAN');
@@ -60,7 +63,7 @@
       cim.innerHTML = `${tmdex.tortenet[i].cim}<br>`;
       object.appendChild(cim);
     }
-  } //! 63 jelzesek.html
+  } //! 66 jelzesek.html
 
   function alcim_lista_gyarto(object) {
     if (glob.alcimek.size > 0) {
@@ -116,7 +119,7 @@
 
     function valasztek(tk,alcimekkel) { //tk: téma kulcs (pl. borok)
       
-      function opt_gyarto(le,elem,kulon_tema,kulcs,alcim) { //le: lista elem //! 119 jelzesek.html
+      function opt_gyarto(le,elem,kulon_tema,kulcs,alcim) { //le: lista elem //! 122 jelzesek.html
         var o = document.createElement('option');
         o.folder = temak[tk].folder;
         o.subfolder = le.hasOwnProperty("subfolder") ? le.subfolder:"";
@@ -135,7 +138,7 @@
           var alc = alcimek_sum.get(`${tk}${o.subfolder}/${le.nev}`);
           if (alc) for (var key in alc) opt_gyarto(le,elem,kulon_tema,key,alc[key]);
         }
-      } //! 138 jelzesek.html
+      } //! 141 jelzesek.html
 
       for (var lek in temak[tk].lista) { //lek: lista elem kulcs (pl. "2020", "a", "b" stb.)
         if (lek.length > 1) { //csoportokba szedett témák (leginkább a "borok")
@@ -398,7 +401,7 @@
       var utolso = 6;
       rend.forEach(function (value,key) {
         if (db < utolso) {
-          var cim = document.createElement('a'); //! 401 jelzesek.html
+          var cim = document.createElement('a'); //! 404 jelzesek.html
           cim.setAttribute("href",value.path);
           cim.setAttribute("target","_parent");
           cim.setAttribute("style","font-size:x-large");
@@ -409,7 +412,7 @@
           sor.setAttribute("class","vitem");
           sor.appendChild(span);
           sor.appendChild(cim);
-          ajanlo.appendChild(sor); //! 412 jelzesek.html
+          ajanlo.appendChild(sor); //! 415 jelzesek.html
         }
         db++;
       });
@@ -449,10 +452,26 @@
         }
       }
     }
-    nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 452 hamburger.html
+    nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 455 hamburger.html
     balmenu = document.getElementById("balmenu");
     var eltuntet_y = "-250px"; //egyszerűbb a számolgatásnál
     window.addEventListener("scroll",() => {
+      scroll_ido = Date.now();
+      if (!foglalt) { //select ne takarja ki a szöveget, ha nem H1 az ugrás célja
+        foglalt = true;
+        var alma = setInterval(function() {
+          if (Date.now()-scroll_ido > 200) {
+            var p = window.location.href.lastIndexOf('#');
+            var cimke = document.getElementById(window.location.href.substring(p+1));
+            if ((p > -1) && cimke && (cimke.nodeName != "H1") && (cimke != ide_ugrott)) {
+              window.scrollBy(0,-50);
+              ide_ugrott = cimke; //különben elmászik a scroll
+            }
+            clearInterval(alma);
+            setTimeout(function() {foglalt = false},200);
+          }
+        },160);
+      }
       nezettseg_frissit();
       if (nav_wrapper && alcimek_helye) {
         //ha megjelennek az alcímek, akkor eltüntetem a nav-wrappert, mert különben a "kitakart" linkek nem működnek
@@ -475,7 +494,7 @@
         latszik = !latszik; hamburger_megnyomva = true;
         left_side[0].style.top = (latszik ? "0":eltuntet_y);
       });
-    } //! 478 hamburger.html
+    } //! 497 hamburger.html
     /*
     setTimeout(function(){
       if (!hamburger_megnyomva) {
@@ -489,11 +508,7 @@
     //pontatlan page jump igazítás:
     var p = window.location.href.lastIndexOf('#');
     var cimke = document.getElementById(window.location.href.substring(p+1));
-    if ((p > -1) && cimke) {
-      setTimeout(function () {
-        cimke.scrollIntoView();
-      },900);
-    }
+    if ((p > -1) && cimke) setTimeout(function() {cimke.scrollIntoView()},900);
     parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
   });
 
