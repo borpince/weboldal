@@ -173,8 +173,6 @@ var jelek = {
 var glob = {
   href_nev: "",
   cim: "", //<title> kitöltéséhez
-  cookie_eloke: "nézett:",
-  ttl_nap: 400,
   vegleges: null,
   hamburger: document.getElementById("hamburger"),
   naptar: document.getElementById("naptar"),
