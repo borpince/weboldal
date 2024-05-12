@@ -2,6 +2,7 @@
   var scroll_ido = 0;
   var foglalt = false;
   var ide_ugrott = "";
+  var nezett_txt = "nézett:";
 
   function jelmagyarazat(object) {
     var szukit = object.getAttribute("szukit");
@@ -268,27 +269,22 @@
   }
 
   function tema_kulcs() {
-    return glob.cookie_eloke+glob.href_nev;
+    return nezett_txt+glob.href_nev;
   }
 
   function nezettseg_betolt() {
     try {
-      var adatok = document.cookie.split(";");
-      for (var i = 0; i < adatok.length; i++) {
-        if (adatok[i].trim().indexOf(glob.cookie_eloke) == 0) {
-          var p = adatok[i].trim().indexOf('=');
-          glob.nezett.set(adatok[i].trim().substring(glob.cookie_eloke.length,p),JSON.parse(adatok[i].trim().substring(p+1)));
+      Object.keys(localStorage).forEach(function(key) {
+        if (key.indexOf(nezett_txt) == 0) {
+          var adat = localStorage.getItem(key);
+          glob.nezett.set(key.substring(nezett_txt.length,key.length),JSON.parse(adat));
         }
-      }
+      });
     } catch(hiba) { window.alert("nem sikerült beolvasni a nézettségi adatokat") };
   }
 
   function nezettseget_tarol(dat) {
-    var d = new Date();
-    dat.lejarat = d.getTime() + (glob.ttl_nap*86400000);
-    d.setTime(dat.lejarat);
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = tema_kulcs() + "=" + JSON.stringify(dat) + ";" + expires + ";path=/";
+    localStorage.setItem(tema_kulcs(),JSON.stringify(dat));
   }
 
   function kjelzo_frissit(elso=false) {
@@ -429,8 +425,24 @@
   var balmenu = null;
   var latszik = true;
 
+  function nezettseg_athelyezes() {
+    try {
+      var adatok = document.cookie.split(";");
+      for (var i = 0; i < adatok.length; i++) {
+        var p = adatok[i].trim().indexOf('=');
+        if (p > -1) {
+          var nev = adatok[i].trim().substring(0,p);
+          var adat = adatok[i].trim().substring(p+1);
+          localStorage.setItem(nev,adat);
+          cookieStore.delete(nev);
+        }
+      }
+    } catch(hiba) {console.log("sikertelen áthelyezés")};
+  }
+
   addEventListener("load", () => {
     alcimek_konzerv_betolt(); //alcimek_sum tartalma nem kell hirtelen, nincs szükség cb funkcióra
+    nezettseg_athelyezes();
     elore_hatra();
     nezettseg_betolt();
     nezettseg_frissit(true);

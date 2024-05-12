@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
   <title>borospince</title>
-  <meta name="description" content="Segédlet a bekeverendő kénmennyiség kiszámolására: adott a must, cefre vagy bor térfogata, amihez a megfelelő mennyiségű SO2 tartalmú anyagot adagolva a kívánt kén-dioxid szint beállítható.">
+  <meta name="description" content="Segédlet a bekeverendő kénmennyiség kiszámolására: adott a must, cefre vagy bor térfogata, amihez a megfelelő mennyiségű SO2 tartalmú anyagot adagolva a kívánt kénessav szint beállítható.">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,24 +44,14 @@
       </div>
     </div>
     <div class="content">
+      <h1>Kénezési segédlet borászoknak</h1>
       <div id="tartalom" class="box" style="display:none">
-        <div class="box-text-update">
-          <p>
-            Fontos figyelmeztetés!
-            <br>
-            Olyan megoldás született e segédlet létrehozásánál, ami használja a személyiségi jogaikra érzékeny polgárok nyugalmának megzavarására alkalmas, hírhedten félelmetes, és ezért a <a href="https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX%3A32016R0679&qid=1672580877783">GDPR</a>-ben szabályozott "<a href="https://hu.wikipedia.org/wiki/HTTP-s%C3%BCti">cookie</a>" technikát.
-            Azonban itt kivételesen nem statisztikai- vagy marketigcélokra tárolok adatokat a böngészőt futtató eszközön (számítógép, laptop, okostelefon, tablet stb.), hanem kizárólag a kénezendő tételekkel kapcsolatosan.
-            Azért, hogy ezek később jegyzet gyanánt rendelkezésre álljanak.
-            <br>
-            Ha nem szeretnél ilyet, akkor hagyd el ezt a weboldalt.
-          </p>
-        </div>
         <div class="box-text">
           <p>
-            Must vagy cefre kénezésénél nincs szükség magas tudományokra, se laborvizsgálatra. Adott a kezelendő anyag térfogata, amihez a megfelelő mennyiségű SO<sub>2</sub> tartalmú anyagot keverve a kívánt kén-dioxid szint beállítható.
+            Must vagy cefre kénezésénél nincs szükség magas tudományokra, se laborvizsgálatra. Adott a kezelendő anyag térfogata, amihez a megfelelő mennyiségű SO<sub>2</sub> tartalmú anyagot keverve a kívánt kénessav szint beállítható.
             Szélsőségesen egyszerű feladat, mert nulláról indulva, SO<sub>2</sub> tartalom hiányában kell meghatározni a kénezőanyag mértékét.
             <br>
-            Bonyolódik az ügy, ha elillant vagy lekötött SO<sub>2</sub> pótlására adagolnám a hiányzó mennyiséget. Ennek első lépése a mérés, a jelenlegi szabad kén-dioxid szint megállapítása.
+            Bonyolódik az ügy, ha elillant vagy lekötött SO<sub>2</sub> pótlására adagolnám a hiányzó mennyiséget. Ennek első lépése a mérés, a jelenlegi szabad kénessav szint megállapítása.
             Ekkor az elérendő szint és a mérési eredmény különbsége az egyik tényező abban a képletben, amiben szerepel a kénezendő tétel mennyisége, és a kénezéshez használt anyag töménysége is.
             <br>
             ⚠️A megcélzott szint eléréséhez a kiszámolt mennyiség dupláját kell adagolni.⚠️<br>
@@ -181,15 +171,13 @@
         </div>
         <div class="box-text">
           <p>
-            Nincs mennyiségi korlátja a feljegyezhető adatok számának, viszont az időbeli korlát <a href="https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#attribute-expires">400 nap</a>, aminek elteltével a bejegyzett sor törlődik (<a href="https://en.wikipedia.org/wiki/Time_to_live">TTL</a>).
-            A "lista törlése" lehetőséggel azonnal eltávolíthatók a kénezési jegyzet listázott elemei. Ha ez egy szűrt lista, akkor csupán a szűrőnek megfelelő tételekre vonatkozik, de szűretlen listára alkalmazva minden adat ugrik.
-            Ugyanígy eltünteti az összes adatot a böngésző "cookie-k törlése" műveletének indítása.
-            A böngészők inkognitó üzemmódjában nem marad nyoma semminek, ezért az ebben az üzemmódban rögzített kénezési adatokat sem őrzi meg.
+            Nincs mennyiségi korlátja a feljegyezhető adatok számának.
+            A kénezési jegyzet listázott elemei a "lista törlése" lehetőséggel eltávolíthatók. Ha ez egy szűrt lista, akkor csupán a szűrőnek megfelelő tételekre vonatkozik, de szűretlen listára alkalmazva minden adat ugrik.
             <br>
             Látszólag nincs sok haszna a fordított szűrésnek, de ha például azokra a tételekre vagy kíváncsi, amikhez nem térfogatra (ml), hanem súlyra (mg) adagoltad a kénezőanyagot, akkor ez nem fog menni az "mg" szerinti szűréssel, mert az "mg/l" szöveg minden sorban szerepel.
-            Szűrj "ml" szerint, majd vedd az eredmény fordítottját, amikor minden olyan sor megjelenik a találatok között, amik nem tartalmazzák az "ml" szöveget. Így máris megvan a kívánt eredmény, amit "kálium"-ra szűrve egyszerűbben is megkaphatsz, de az nem világít rá a fordított szűrés lényegére.
+            Szűrj "ml" szerint, majd vedd az eredmény fordítottját, amikor minden olyan sor megjelenik a találatok között, amik nem tartalmazzák az "ml" szöveget. Így máris megvan a kívánt eredmény, amit "por"-ra szűrve egyszerűbben is megkaphatsz, de az nem világít rá a fordított szűrés lényegére.
             <br>
-            Hasznos lehet egy mentés/betöltés funkció, mert a <a href="https://support.google.com/chrome/answer/185277?hl=hu&co=GENIE.Platform%3DDesktop">szinkronizálás</a> nem viszi át a cookie tár tartalmát egyik eszközről a másikra.
+            Hasznos lehet egy mentés/betöltés funkció, mert a <a href="https://support.google.com/chrome/answer/185277?hl=hu&co=GENIE.Platform%3DDesktop">szinkronizálás</a> nem viszi át a böngésző program <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">localStorage</a> tartalmát egyik eszközről a másikra.
           </p>
         </div>
         <button id="ment" class="nagybutton">mentés</button>
@@ -200,7 +188,7 @@
             Üres lista esetén nem szorul magyarázatra az adatok betöltésének hatása, ellenben létező adatokra töltve összefésülöm a két kénezési adatsort azt az egyszerű szabályt alkalmazva, hogy egy dátumhoz nem tartozhat többször ugyanaz a tétel név, mint ahogy nem is kénezzük ugyanazt naponta többször.
             Ilyen esetben a listában lévő marad, a file-ból betöltött sor viszont nem lesz hasznosítva.
             <br>
-            Van a betöltésnek egy mellékhatása: újraindul a 400 napos számláló a betöltött adat törlődéséig.
+            A mentett adatokat "kénezési_adatok.json" néven találod a letöltéseket tároló mappában.
           </p>
         </div>
       </div>
@@ -238,8 +226,7 @@
   var adag_tb = [];
   var jel_tb = [];
   var jel_tb2 = [];
-  var cookie_eloke = "kén:";
-  var ttl_nap = 400;
+  var ken_txt = "kén:";
 
   const download = (path, file_nev) => {
     const kamu = document.createElement('a');
@@ -263,7 +250,7 @@
   ment.addEventListener("click",mentes);
 
   function adag_kulcs(dat) {
-    return cookie_eloke+dat.dtm+'.'+dat.nev;
+    return ken_txt+dat.dtm+'.'+dat.nev;
   }
 
   function kulcs_index(kulcs) {
@@ -278,12 +265,8 @@
   }
 
   function adag_tarol(dat) {
-    var d = new Date();
-    dat.lejarat = d.getTime() + (ttl_nap*86400000);
-    d.setTime(dat.lejarat);
-    var expires = "expires="+ d.toUTCString();
     adag_tb.push(dat);
-    document.cookie = adag_kulcs(dat) + "=" + JSON.stringify(dat) + ";" + expires + ";path=/";
+    localStorage.setItem(adag_kulcs(dat),JSON.stringify(dat));
   }
 
   function megfelel(i) {
@@ -292,18 +275,13 @@
     } else return jel_tb[i];
   }
 
-  function ttl(t) {
-    var d = new Date();
-    return Math.floor((t-d.getTime())/86400000).toString().padStart(6,' ')+"  ";
-  }
-
   function adag_sorok(dat) {
     if ((dat != undefined) && (dat.sor != "")) {
-      info.innerHTML += dat.sor+ttl(dat.lejarat)+"\n";
+      info.innerHTML += dat.sor+"\n";
     } else {
       info.innerHTML = "";
       for (var i = 0; i < adag_tb.length; i++)
-        if (megfelel(i)) info.innerHTML += adag_tb[i].sor+ttl(adag_tb[i].lejarat)+"\n";
+        if (megfelel(i)) info.innerHTML += adag_tb[i].sor+"\n";
     }
     info.scrollTop = info.scrollHeight;
     info.focus();
@@ -349,15 +327,13 @@
     fejlec.scrollLeft = info.scrollLeft;
   };
 
-  function helyben_tarolt_adatok_cookiebol() {
+  function helyben_tarolt_adatok_tarbol() {
     try {
-      var adagok = document.cookie.split(";");
-      for (var i = 0; i < adagok.length; i++) {
-        if (adagok[i].trim().indexOf(cookie_eloke) == 0) {
-          var p = adagok[i].indexOf('=');
-          adag_tb.push(JSON.parse(adagok[i].substring(p+1)));
+      Object.keys(localStorage).forEach(function(key) {
+        if (key.indexOf(ken_txt) == 0) {
+          adag_tb.push(JSON.parse(localStorage.getItem(key)));
         }
-      }
+      });
       adag_tb.sort(function(a,b) {
         if(a.dtm > b.dtm) return 1;
         if(a.dtm < b.dtm) return -1;
@@ -483,7 +459,7 @@
     try {
       for (var i = adag_tb.length-1; i > -1; i--)
         if (megfelel(i)) {
-          cookieStore.delete(adag_kulcs(adag_tb[i]));
+          localStorage.removeItem(adag_kulcs(adag_tb[i]));
           adag_tb.splice(i,1);
           torolt_db++;
         }
@@ -632,7 +608,7 @@
         mit_lista_gyarto();
         anyag_lista_gyarto();
         if (fejlec.innerHTML == "") fejlec.innerHTML = csomag.fejlec;
-        helyben_tarolt_adatok_cookiebol();
+        helyben_tarolt_adatok_tarbol();
         talalat_db(); //megfelel miatt
         var ertekel = document.getElementById("ertekel");
         ertekel.style.display = "";

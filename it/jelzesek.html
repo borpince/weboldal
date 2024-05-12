@@ -193,27 +193,8 @@
             További tökéletlenséggel kell számolni, ha átméretezed a böngészőablakot, megváltoztatod az oldalarányt. Ez esetben a korábbi pozíciókhoz görgetés pontossága romolhat, különösen a képeket is tartalmazó fejezeteknél.
             Tökéletességre törekedve még mindig gondolkodnék a megoldáson, és valószínűleg soha nem érnék a végére, ha a betoldásos bővítést is kezelhetővé kívánnám tenni. Így viszont elég hamar elkészült, és a hiányosságok ellenére jól használható.
             <br>
-            A könyvjelző működéséhez szükséges adatot a megjelenítés számaival együtt tárolom, ezért a könyvjelző csak attól kezdve működik, hogy ez a cookie elkészül (amikor a megtekintési arány százalékos értéke első alkalommal megjelenik).
+            A könyvjelző működéséhez szükséges adatot a megjelenítés számaival együtt tárolom, ezért a könyvjelző csak attól kezdve működik, hogy ez a rekord elkészül (amikor a megtekintési arány százalékos értéke első alkalommal megjelenik).
             Rövid időről van szó, ezért ez a jelenség talán nem is hiányosság, hanem sajátosság.
-          </p>
-        </div>
-      </div>
-      <div class="box">
-        <div class="box-text">
-          <p>
-            Ez a fejlesztés szolgálja úgy a látogatók kényelmét, mint a webhely karbantartásával, a tartalom elhelyezésével foglalkozó személyzetét.
-            Bizonyos funkciók megvalósításához szükséges tárolni a megjelenítés adatait, amikből praktikusan cookie-k készülnek.
-            E technika használatának azonban következményei vannak. Ezek közül a kínosabb az, hogy a cookie-k törlésével megsemmisülnek ezek az adatok, tehát a korábbi megtekintésekre vonatkozó jelzések eltűnnek.
-            A másik következmény, hogy a GDPR megjelenése óta a cookie-t használó weboldalak veszélyesnek számítanak. A minduntalan megjelenő "ez a weboldal sütiket használ" figyelmeztetésekről a középkori leprások jutnak eszembe,
-            akiknek kolomppal, csengettyűvel kellett jelezniük veszélyes állapotukat, de a "vigyázz, a kutya harap" figyelmeztetés is hasonló hangulatú.
-            <br><br>
-            ⚠️Vigyázz, a weboldal sütiket használ!
-            <br>
-            ⚠️Sérülhetnek a személyiségi jogaid!
-            <br>
-            ⚠️Zu Risiken und Nebenwirkungen lesen Sie die Packungsbeilage und fragen Sie Ihren Arzt oder Apotheker!
-            <br>
-            ⚠️Mikrohullámú sütőben ne száríts macskát!
           </p>
         </div>
       </div>
@@ -385,9 +366,9 @@
           <p>
             Elkanyarodtam az eredeti témától. Néhány napja elkészült a legfrissebb történeteket ajánló funkció, és szinte kínálja magát ennek kiegészítése, a régebben megjelent, de időközben újabb tartalommal bővült írások ajánlása.
             Ennek kivitelezése a "ver" adatmező tartalma alapján lenne lehetséges, amennyiben az nem egy számot, hanem a bővítés dátumát tartalmazná.
-            Ezentúl így lesz, de gondoskodni kell az eddig cookie-ként tárolt adatokkal való kompatibilitásról, ami nem is olyan bonyolult, ha kihasználom a JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date objektumának</a> azt a tulajdonságát,
+            Ezentúl így lesz, de gondoskodni kell a korábban tárolt adatokkal való kompatibilitásról, ami nem is olyan bonyolult, ha kihasználom a JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date objektumának</a> azt a tulajdonságát,
             hogy létrehozásakor (szakemberek ezt a műveletet <a href="https://hu.wikipedia.org/wiki/P%C3%A9ld%C3%A1ny_(sz%C3%A1m%C3%ADt%C3%B3g%C3%A9pes_programoz%C3%A1s)">példányosításnak</a> nevezik) elfogad egész szám paramétert és dátumformátumú szöveget egyaránt.
-            A "közös nevező" a <a href="https://en.wikipedia.org/wiki/Unix_time">unix time</a> lesz, aminek révén az egyneművé varázsolt adatok összehasonlíthatók.
+            A közös nevező a <a href="https://en.wikipedia.org/wiki/Unix_time">unix time</a> lesz, aminek révén az egyneművé varázsolt adatok összehasonlíthatók.
             <br>
             A feladat megoldása ráhúzható az ajánló kaptafájára, ezért hamar elkészült. A rendszer kicsit bonyolultabb lett, mert az írás közzétételi dátuma és a történeti dátum mellé látszólag bejött egy harmadik fajtája a nyilvántartott időpontoknak, de ez így nem igaz.
             Ez nem egy újabb fajta, hanem csupán egy újabb helyen, a JSON adatszerkezet "ver" adatmezőjében tárolt dátum, ami a történet folytatásának alcíméhez rendelt dátum másolata.
