@@ -96,7 +96,7 @@ var temak =
         {cim:"XII. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2023", ver:0, kelt:"2023-09-28"},
         {cim:"nem szokunk rá", subfolder:"/bv", nev:"aszu", ver:"2024-03-21", kelt:"2024-03-19"}
       ],
-      "i": [{cim:"hordólelet", nev:"hordo", ver:"2024-04-28", kelt:"2023-05-29"}],
+      "i": [{cim:"hordólelet", nev:"hordo", ver:"2024-05-15", kelt:"2023-05-29"}],
       "j": [{cim:"fent vagy lent?", nev:"fent", ver:0, kelt:"2023-07-04"}],
       "k": [{cim:"próféták", nev:"profetak", ver:0, kelt:"2023-10-07"}],
       "l": [
