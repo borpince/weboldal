@@ -82,7 +82,8 @@ var temak =
         {cim:"tavasz", subfolder:"/kert", nev:"tavasz", ver:0, kelt:"2023-03-09"},
         {cim:"tavaszodik I", subfolder:"/kert", nev:"tavaszodik", ver:0, kelt:"2022-08-15"},
         {cim:"tavaszodik II", subfolder:"/kert", nev:"tavaszodik2", ver:0, kelt:"2023-02-24"},
-        {cim:"tavaszodik III", subfolder:"/kert", nev:"tavaszodik3",ver:"2023-05-26", kelt:"2023-03-11"}
+        {cim:"tavaszodik III", subfolder:"/kert", nev:"tavaszodik3",ver:"2023-05-26", kelt:"2023-03-11"},
+        {cim:"csigasör", subfolder:"/kert", nev:"csigasor", ver:0, kelt:"2024-05-16"}
       ],
       "d": [{cim:"szárnypróbálgatás", nev:"00", ver:0, kelt:"2021-10-13"}],
       "e": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021", ver:0, kelt:"2022-06-27"}],
