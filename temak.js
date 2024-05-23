@@ -97,10 +97,11 @@ var temak =
         {cim:"XII. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2023", ver:0, kelt:"2023-09-28"},
         {cim:"nem szokunk rá", subfolder:"/bv", nev:"aszu", ver:"2024-03-21", kelt:"2024-03-19"}
       ],
-      "i": [{cim:"hordólelet", nev:"hordo", ver:"2024-05-15", kelt:"2023-05-29"}],
-      "j": [{cim:"fent vagy lent?", nev:"fent", ver:0, kelt:"2023-07-04"}],
-      "k": [{cim:"próféták", nev:"profetak", ver:0, kelt:"2023-10-07"}],
-      "l": [
+      "i": [{cim:"hordólelet", nev:"hordo", ver:"2024-05-22", kelt:"2023-05-29"}],
+      "j": [{cim:"hordómatuzsálem", nev:"hordo2", ver:0, kelt:"2024-05-23"}],
+      "k": [{cim:"fent vagy lent?", nev:"fent", ver:0, kelt:"2023-07-04"}],
+      "l": [{cim:"próféták", nev:"profetak", ver:0, kelt:"2023-10-07"}],
+      "m": [
         {cim:"rémtörténetek", subfolder:"/rem", nev:"remtortenet", ver:0, kelt:"2023-10-08"},
         {cim:"jöjjön azonnal!", subfolder:"/rem", nev:"jojjon", ver:0, kelt:"2023-10-09"},
         {cim:"házirend", subfolder:"/rem", nev:"hazirend", ver:0, kelt:"2023-10-10"},
@@ -116,7 +117,7 @@ var temak =
         {cim:"istentelen zűrzavar alakul", subfolder:"/rem", nev:"zur-zavar", ver:"2024-05-09", kelt:"2024-03-15"},
         {cim:"téglaboltozat és gyökerek", subfolder:"/rem", nev:"gyokerek", ver:0, kelt:"2024-04-05"}
       ],
-      "m": [
+      "n": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
         {cim:"kapisgálom", subfolder:"/orom", nev:"kapisgal", ver:0, kelt:"2023-11-04"},
         {cim:"gebasz", subfolder:"/orom", nev:"gebasz", ver:0, kelt:"2023-11-06"},
