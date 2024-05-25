@@ -49,7 +49,7 @@
     return (f_ver > t_ver);
   }
 
-  function toc(object) { //! 51 jelzesek.html
+  function toc(object) { //! 52 jelzesek.html
     var tmdex = letezik(glob.href_nev,true);
     if (tmdex.tortenet) for (var i = 0; i < tmdex.tortenet.length; i++) {
       var elotte = document.createElement('SPAN');
@@ -64,7 +64,7 @@
       cim.innerHTML = `${tmdex.tortenet[i].cim}<br>`;
       object.appendChild(cim);
     }
-  } //! 66 jelzesek.html
+  } //! 67 jelzesek.html
 
   function alcim_lista_gyarto(object) {
     if (glob.alcimek.size > 0) {
@@ -120,7 +120,7 @@
 
     function valasztek(tk,alcimekkel) { //tk: téma kulcs (pl. borok)
       
-      function opt_gyarto(le,elem,kulon_tema,kulcs,alcim) { //le: lista elem //! 122 jelzesek.html
+      function opt_gyarto(le,elem,kulon_tema,kulcs,alcim) { //le: lista elem //! 123 jelzesek.html
         var o = document.createElement('option');
         o.folder = temak[tk].folder;
         o.subfolder = le.hasOwnProperty("subfolder") ? le.subfolder:"";
@@ -139,7 +139,7 @@
           var alc = alcimek_sum.get(`${tk}${o.subfolder}/${le.nev}`);
           if (alc) for (var key in alc) opt_gyarto(le,elem,kulon_tema,key,alc[key]);
         }
-      } //! 141 jelzesek.html
+      } //! 142 jelzesek.html
 
       for (var lek in temak[tk].lista) { //lek: lista elem kulcs (pl. "2020", "a", "b" stb.)
         if (lek.length > 1) { //csoportokba szedett témák (leginkább a "borok")
@@ -397,7 +397,7 @@
       var utolso = 6;
       rend.forEach(function (value,key) {
         if (db < utolso) {
-          var cim = document.createElement('a'); //! 404 jelzesek.html
+          var cim = document.createElement('a'); //! 400 jelzesek.html
           cim.setAttribute("href",value.path);
           cim.setAttribute("target","_parent");
           cim.setAttribute("style","font-size:x-large");
@@ -408,7 +408,7 @@
           sor.setAttribute("class","vitem");
           sor.appendChild(span);
           sor.appendChild(cim);
-          ajanlo.appendChild(sor); //! 415 jelzesek.html
+          ajanlo.appendChild(sor); //! 411 jelzesek.html
         }
         db++;
       });
@@ -464,7 +464,7 @@
         }
       }
     }
-    nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 455 hamburger.html
+    nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 467 hamburger.html
     balmenu = document.getElementById("balmenu");
     var eltuntet_y = "-250px"; //egyszerűbb a számolgatásnál
     window.addEventListener("scroll",() => {
@@ -499,6 +499,11 @@
         y_elozo = y_most;
       }
     });
+    if (glob.lejjebb) {
+      glob.lejjebb.addEventListener("click",() => {
+        window.scrollBy(0,window.innerHeight);
+      });
+    }
     left_side = document.getElementsByClassName("left-side");
     if (glob.hamburger && left_side) {
       left_side[0].style.top = "0"; //első alkalommal nem működik a "transition"
@@ -506,7 +511,7 @@
         latszik = !latszik; hamburger_megnyomva = true;
         left_side[0].style.top = (latszik ? "0":eltuntet_y);
       });
-    } //! 497 hamburger.html
+    } //! 514 hamburger.html
     /*
     setTimeout(function(){
       if (!hamburger_megnyomva) {

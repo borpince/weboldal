@@ -181,6 +181,7 @@ var glob = {
   naptar: document.getElementById("naptar"),
   hol_tart: document.getElementById("holtart"),
   kjelzo: document.getElementById("kjelzo"),
+  lejjebb: document.getElementById("arrow_down"),
   alcimek: new Map(),
   nezett: new Map(),
   select_tb: [],
