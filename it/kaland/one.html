@@ -59,7 +59,25 @@
             Régóta kínálnak ilyen szolgáltatást erre szakosodott profik (noip, dyndns, duckdns stb.), de én egészen biztosan jobban ismerem saját igényeimet náluk, és jobban meg tudok felelni ezeknek.
             <br>
             Ha az általam gyártott algoritmus sokat késne az IP-cím változásának észlelésével, és ebből összejönne évente 8 óra 45 perc üzemszünet, akkor pont ott lennék rendelkezésre állási mutatóban, mint az általam nagyra becsült Invitech a büszkén hirdetett 99.999%-kal.
-            A Cloudflare "unparalleled redundancy and 100% uptime" szöveggel ajánlja szolgáltatását, ami irigylésre méltó önbizalomról árulkodik. Azt kell feltételeznem, hogy emögött van elegendő tudás, tapasztalat és erőforrás, noha nekik is van sötét folt a múltjukban. Ők sem tudnak mit kezdeni olyan tényezőkkel, amik rafináltabban támadnak annál, mint amire szokványos észjárás mellett számítani lehet.
+          </p>
+        </div>
+        <div id="2024-05-26" alcim="az embernek csak két lába van" class="box-text-update">
+          <p>
+            Furcsa szerzet az ember. Képes tartósan két lábon lépdelni, ezért ügyesebbnek képzeli magát a lónál, ami ugye négy lábon jár.
+            Ez még hagyján, de okosabbnak és szebbnek is tartja magát számtalan élőlénynél, pedig van kívánnivaló minden téren.
+            Szenvedek én is rendesen az emberszabásúakra jellemző hiányosságoktól, s ezt egy adag figyelmetlenséggel igyekszem pótolni olykor.
+            Mint például akkor, amikor kiszámolom 365 napnak a 0.001%-át, és kijön 8 óra 45 perc.
+            <br>
+            Szerencsére lelkesen olvasom magamat hibák után kutatva, és ez a mostani ma már a második amellett, hogy egy helyen <a href="https://github.com/borpince/weboldal/commit/8352dd58fa2d8230ea40398011a4dd7b6839f08c">jegyezem</a> szerepelt jegyzem helyett,
+            de ez az elírás csak néhány napig mutatkozott. Ezzel szemben már másfél éve tündökölt a fenti szövegben a hibás érték, amikor felfedeztem a két nagyságrendnyi tévedésemet.
+            Mert helyesen nem 525 perc, hanem a századrésze: 5.25, tehát 5 perc 15 másodperc. Legfeljebb ekkora üzemszünetet enged meg évente az 5 kilences rendelkezésre állás.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            A Cloudflare "unparalleled redundancy and 100% uptime" szöveggel ajánlja szolgáltatását, ami irigylésre méltó önbizalomról árulkodik.
+            Azt kell feltételeznem, hogy emögött van elegendő tudás, tapasztalat és erőforrás, noha nekik is van sötét folt a múltjukban.
+            Ők sem tudnak mit kezdeni olyan tényezőkkel, amik rafináltabban támadnak annál, mint amire szokványos észjárás mellett számítani lehet.
           </p>
         </div>
         <div id="ordog" class="box-text">
@@ -124,7 +142,7 @@
         <div class="box-text">
           <p>
             Mint azt már meséltem, ösztöneimre hallgatva bízom ebben a csapatban, és egyre-másra veszem igénybe különböző szolgáltatásaikat.
-            Előnyőket-hátrányokat mérlegelve, hosszas vívódás után döntöttem úgy, hogy a statikus weboldalakat saját webszerverről a <a href="https://developers.cloudflare.com/pages/">Cloudflare Pages</a> által biztosított tárhelyre költöztetem.
+            Előnyöket-hátrányokat mérlegelve, hosszas vívódás után döntöttem úgy, hogy a statikus weboldalakat saját webszerverről a <a href="https://developers.cloudflare.com/pages/">Cloudflare Pages</a> által biztosított tárhelyre költöztetem.
             A rendszeres frissítésre nem szoruló, változatlan tartalmat (jellemzően képanyag) nem itt helyezem el, mert kitaláltak arra egy másik megoldást, a <a href="https://developers.cloudflare.com/r2/">Cloudflare R2</a>-t. Milyen előnyökkel jár mindez? Csupa olyannal, mint amiért hajdani BBS szerveremet telefonközpontban üzemeltettem volna.
             100% rendelkezésre állás, gyakorlatilag korlátlan erőforrások, irgalmatlan sávszélesség, iszonyatos sebesség, <a href="https://www.cloudflare.com/network/">275 adatközpont</a> világszerte (folyamatosan szaporodnak – tegnap még 250 szerepelt a brosúrában). Elég rendesen odateszik magukat azért, hogy a <code>pince.eu</code> domain alatt közzétett tartalomhoz a világ internetre csatlakozott népességének 95%-a 0.05 másodpercen belül hozzáférhessen.
           </p>

@@ -141,7 +141,7 @@ var temak =
         {cim:"JPEG ➔ WebP", subfolder:"/kaland", nev:"konvert", ver:0, kelt:"2022-11-28"},
         {cim:"gondolatok a biztonságról", subfolder:"/kaland", nev:"biztonsag", ver:0, kelt:"2022-11-28"},
         {cim:"adalék a sikerhez", subfolder:"/kaland", nev:"adalek", ver:0, kelt:"2022-11-28"},
-        {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:0, kelt:"2022-11-28"}
+        {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:"2024-05-26", kelt:"2022-11-28"}
       ],
       "e": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
       "f": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
