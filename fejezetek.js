@@ -68,6 +68,7 @@
 
   function alcim_lista_gyarto(object) {
     if (glob.alcimek.size > 0) {
+      var ora = object.hasAttribute("ora");
       object.setAttribute("class","box box-text");
       object.setAttribute("style",`margin-left:0;align-items:center;justify-content:center;text-align:left;font-size:20px;flex-flow:column wrap`);
       var ul = document.createElement('ul');
@@ -79,15 +80,14 @@
         utolso_nap = key;
         var li = document.createElement('li');
         var span = document.createElement('span');
-        span.innerHTML = `&#8201;${key.substring(0,10)}&#8194;`;  //thin space
+        var ertek = ora ? key.substring(11):key.substring(0,10); //11: a "T" pozíciója
+        span.innerHTML = `&#8201;${ertek}&#8194;`;  //thin space
         var cim = document.createElement('a');
         cim.setAttribute("href",`#${key}`);
         cim.innerHTML = value;
-        li.appendChild(span);
-        li.appendChild(cim);
-        ul.appendChild(li);
+        li.appendChild(span); li.appendChild(cim); ul.appendChild(li);
       });
-      var idotartam = Math.round((new Date(utolso_nap) - new Date(elso_nap)) / 86400000);
+      var idotartam = Math.round((new Date(utolso_nap) - new Date(elso_nap)) / (ora ? 60000:86400000)); //percek:napok
       object.innerHTML = object.innerHTML.replace("{x}",++idotartam); //legalább 1 napos időtartam
       object.appendChild(ul);
     }
@@ -485,14 +485,14 @@
         },160);
       }
       nezettseg_frissit();
-      if (nav_wrapper && alcimek_helye) {
+      if (nav_wrapper && alcimek_helye && latszik) {
         //ha megjelennek az alcímek, akkor eltüntetem a nav-wrappert, mert különben a "kitakart" linkek nem működnek
         var rect_al = alcimek_helye.getBoundingClientRect();
         var rect_bal = balmenu.getBoundingClientRect();
         var y_most = window.pageYOffset;
         var kilog_fent = rect_al.top < 0;
         var kilog_lent = rect_al.bottom > window.innerHeight;
-        var bmym = latszik ? rect_bal.height+20:0; //balmenu y méret, +20:alcímek font-size
+        var bmym = rect_bal.height+20; //balmenu y méret, +20:alcímek font-size
         var lathato = ((rect_al.top < window.innerHeight) && !kilog_fent) || (!kilog_lent && ((rect_al.bottom - 30) > 0) || (kilog_fent && kilog_lent));
         if (((y_elozo > y_most) && (rect_al.top > bmym)) || !lathato) nav_wrapper[0].style.top = "20px";
           else if (lathato && (rect_al.top < bmym)) nav_wrapper[0].style.top = eltuntet_y;

@@ -126,7 +126,8 @@ var temak =
         {cim:"majomparádé", subfolder:"/orom", nev:"majom", ver:"2024-03-15", kelt:"2015-05-20"},
       ],
       "o": [
-        {cim:"nyamt", subfolder:"/nyamt", nev:"kulinaris", ver:0, kelt:"2024-06-01"}
+        {cim:"nyamt", subfolder:"/nyamt", nev:"kulinaris", ver:0, kelt:"2024-06-01"},
+        {cim:"pörkölt JMO módra", subfolder:"/nyamt", nev:"porkolt", ver:0, kelt:"2024-06-02"}
       ]
     }
   },
