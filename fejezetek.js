@@ -80,7 +80,7 @@
         utolso_nap = key;
         var li = document.createElement('li');
         var span = document.createElement('span');
-        var ertek = ora ? key.substring(11):key.substring(0,10); //11: a "T" pozíciója
+        var ertek = ora ? key.substring(11,16):key.substring(0,10); //11: a "T" pozíciója
         span.innerHTML = `&#8201;${ertek}&#8194;`;  //thin space
         var cim = document.createElement('a');
         cim.setAttribute("href",`#${key}`);

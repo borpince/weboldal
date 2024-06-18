@@ -128,7 +128,8 @@ var temak =
       ],
       "o": [
         {cim:"nyamt", subfolder:"/nyamt", nev:"kulinaris", ver:0, kelt:"2024-06-01"},
-        {cim:"pörkölt JMO módra", subfolder:"/nyamt", nev:"porkolt", ver:0, kelt:"2024-06-02"}
+        {cim:"pörkölt JMO módra", subfolder:"/nyamt", nev:"porkolt", ver:0, kelt:"2024-06-02"},
+        {cim:"babgulyás, rétes", subfolder:"/nyamt", nev:"babgulyas", ver:0, kelt:"2024-06-18"}
       ]
     }
   },
