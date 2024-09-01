@@ -58,6 +58,7 @@ ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a 
 */
   var hibaoldal = document.getElementById("container_cs2020");
   var nev = href_nev();
+  if (nev == "cs2020") nev = "01"; //régi QR-kód érdekében
   var tmdex = letezik(nev,true);
   if (tmdex.folder) {
     var path = `${tmdex.folder}${tmdex.subfolder}/${nev}.html`;
