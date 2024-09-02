@@ -85,13 +85,14 @@ https://pince.eu/it/kaland/konvert.html
 https://pince.eu/it/kaland/biztonsag.html
 https://pince.eu/it/kaland/adalek.html
 https://pince.eu/it/kaland/one.html
+https://pince.eu/it/cimke/borcimke.html
+https://pince.eu/it/cimke/arculat.html
+https://pince.eu/it/cimke/nfc_helyzet.html
+https://pince.eu/it/cimke/rendszerhiba.html
 https://pince.eu/it/baber.html
 https://pince.eu/it/jelzesek.html
 https://pince.eu/it/hamburger.html
 https://pince.eu/it/hacker.html
-https://pince.eu/it/arculat.html
-https://pince.eu/it/cimke.html
-https://pince.eu/it/nfc_helyzet.html
 https://pince.eu/it/avatar.html
 https://pince.eu/it/mozi.html
 https://pince.eu/it/negativ-reklam.html

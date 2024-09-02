@@ -663,6 +663,41 @@
     }
   ],
   [
+    "it/cimke/borcimke",
+    {
+      "2021-07-09T12:00": "kudarcos kísérlet",
+      "2021-07-09T14:00": "előnyök-hátrányok",
+      "2021-08-02": "beruházás",
+      "2021-08-10": "címketervezés",
+      "2022-09-20": "epilógus"
+    }
+  ],
+  [
+    "it/cimke/arculat",
+    {
+      "2020-02-16": "történelmi pillanat",
+      "2022-08-24": "az inspiráció",
+      "2022-11-27": "a skicc",
+      "2022-11-28": "1. változat",
+      "2022-12-03": "2. változat",
+      "2022-12-06": "3. változat",
+      "2023-02-14": "4. változat"
+    }
+  ],
+  [
+    "it/cimke/nfc_helyzet",
+    {
+      "2023-06-16": "évforduló"
+    }
+  ],
+  [
+    "it/cimke/rendszerhiba",
+    {
+      "2024-06-30": "2021/2117/EU szerinti kiegészítés",
+      "2024-09-01": "nyelvek bővítése"
+    }
+  ],
+  [
     "it/baber",
     {
       "2022-11-02T08:00": "szakadatlan fejlődés",
@@ -707,34 +742,6 @@
       "2023-06-04T10:00": "védekezünk",
       "2023-12-24": "2FA: időt nyerünk",
       "2023-12-28": "eső előtt köpönyeg"
-    }
-  ],
-  [
-    "it/arculat",
-    {
-      "2020-02-16": "történelmi pillanat",
-      "2022-08-24": "az inspiráció",
-      "2022-11-27": "a skicc",
-      "2022-11-28": "1. változat",
-      "2022-12-03": "2. változat",
-      "2022-12-06": "3. változat",
-      "2023-02-14": "4. változat"
-    }
-  ],
-  [
-    "it/cimke",
-    {
-      "2021-07-09T12:00": "kudarcos kísérlet",
-      "2021-07-09T14:00": "előnyök-hátrányok",
-      "2021-08-02": "beruházás",
-      "2021-08-10": "címketervezés",
-      "2022-09-20": "epilógus"
-    }
-  ],
-  [
-    "it/nfc_helyzet",
-    {
-      "2023-06-16": "évforduló"
     }
   ],
   [

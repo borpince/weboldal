@@ -150,17 +150,19 @@ var temak =
         {cim:"adalék a sikerhez", subfolder:"/kaland", nev:"adalek", ver:0, kelt:"2022-11-28"},
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:"2024-05-26", kelt:"2022-11-28"}
       ],
-      "e": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "f": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
-      "g": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
-      "h": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2023-12-28", kelt:"2023-06-04"}],
-      "i": [{cim:"arculati elem", nev:"arculat", ver:"2023-02-14", kelt:"2022-12-06"}],
-      "j": [{cim:"címke, borcímke", nev:"cimke", ver:0, kelt:"2022-09-20"}],
-      "k": [{cim:"NFC-címke (YouTube)", nev:"https://www.youtube.com/channel/UCVrU5VcLeS4NfbDfU4Zb16g", ver:0, kelt:"2022-07-03"}],
-      "l": [{cim:"NFC-címke: helyzetelemzés", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"}],
-      "m": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
-      "n": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
-      "o": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}]
+      "e": [
+        {cim:"borcímkés történetek", subfolder:"/cimke", nev:"cimke", ver:0, kelt:"2022-09-20"},
+        {cim:"arculati elem", subfolder:"/cimke", nev:"arculat",  ver:"2023-02-14", kelt:"2022-12-06"},
+        {cim:"NFC-címke: helyzetelemzés", subfolder:"/cimke", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"},
+        {cim:"rendszerhiba", subfolder:"/cimke", nev:"rendszerhiba", ver:0, kelt:"2024-09-02"}
+      ],
+      "f": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
+      "g": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
+      "h": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
+      "i": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2023-12-28", kelt:"2023-06-04"}],
+      "j": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
+      "k": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
+      "l": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}]
     }
   },
 }
