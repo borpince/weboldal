@@ -100,9 +100,12 @@
             Nem szerepelnek a boros könyvben, de az Egyesült Királyság egy másik leigázott népének tartománya Skócia.
             Jópofa emberek élhetnek ott a bohókás viseletük valamint a róluk szóló viccek alapján, és az angol elnyomás ellenére 60 ezren beszélik a skót gael nyelvet.
           </p>
-        </div>
-        <div class="box-img">
-          <img src="https://kep.pince.eu/skot.webp">
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/skot.webp">
+            </div>
+            <figcaption>a kép forrása: <a href="https://beautyalongtheroad.wordpress.com/2014/04/01/a-slice-of-scottish-streetlife/">BeautyAlongTheRoad</a></figcaption>
+          </figure>
         </div>
         <div id="2024-09-01" alcim="nyelvek bővítése" class="box-text">
           <p>
@@ -112,19 +115,17 @@
             ennél fogva kétbetűs országkódjuk sincs.
             <br>
             Technikailag nem baj, hiszen rövidített azonosítónak megteszi a FIFA-kód is, vagy éppen kitalálhatok valamit hasra ütve. SCO és WAL kerül az országadatbázis rekordjaiba,
-            amiben az ID mellett helyet kapnak olyan adatok is, mint például a nyelvkód.
-            Ez utóbbi tekintetében nem olyan sanyarú a helyzete az angol uralom alá vont országoknak,
+            amiben az ID mellett helyet kapnak más adatok is, mint például a nyelvkód.
+            Ez utóbbi tekintetében nem olyan sanyarú a helyzetük az angol uralom alá vont országoknak,
             mert ősi nyelveik még nem haltak ki, és nem hiányoznak a nyelveket felsoroló <a href="https://hu.wikipedia.org/wiki/ISO_639-1_nyelvk%C3%B3dok_list%C3%A1ja">szabványból</a>.
-            Könnyen illeszkednek a megszokott kétbetűs kódok közé: "gd" mint gàidhlig, és "cy" mint cymraeg.
-            Probléma látszólag megoldva. Remekül működik majd a nyelvek közötti választás úgy, mint eddig.
-            A kibővült választék nem okoz gondot, inkább elégedettséget szül azokban, akik megtalálják a listában a nekik valót.
+            Könnyen illeszkednek a szokásosan kétbetűs kódok közé: "gd" mint gàidhlig, és "cy" mint cymraeg.
+            Probléma látszólag megoldva. A kibővült választék nem okoz gondot, inkább elégedettséget szül azokban, akik megtalálják a listában a nekik valót.
             Hol jelentkezik hát a rendszerhiba?
             <br><br>
-            Számítottam a rendszerbe foglalt nyelvek folyamatos bővülésére, ezért az itt-ott felbukkanó ismertetőszövegekben nem konstans értékek
+            Számítottam a nyelvek választékának folyamatos bővülésére, ezért az itt-ott felbukkanó ismertetőszövegekben nem megkövesedett konstans értékek
             tájékoztatnak a választható országok és nyelvek számáról, hanem változók.
-            Ezek a változók pedig úgy kapnak értéket, hogy a szöveg megjelenítésének idején lekérdezem az adatbázisok méretét
-            egy <code>redis.dbsize()</code> utasítással, és a kapott érték kerül a szövegbe. Ezzel a megoldással a tájékoztatás utólagos módosítás nélkül
-            is mindig naprakész.
+            Ezek a változók a szöveg megjelenítésének idején, az adatbázisok méretének lekérdezésével kapnak értéket.
+            Ezzel a megoldással a tájékoztatás utólagos módosítás nélkül is mindig naprakész, és elméletileg hibátlan.
             <br>
             Skócia és Wales felvételével nyilván szaporodtak a rekordok az adatbázisokban, aminek eredményeként kettővel több országról tájékoztatom a közönséget, noha az országok száma igazából nem nőtt.
             A tájékoztatás ettől fogva pontatlan, pongyola.
