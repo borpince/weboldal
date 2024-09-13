@@ -85,7 +85,7 @@ https://pince.eu/it/kaland/konvert.html
 https://pince.eu/it/kaland/biztonsag.html
 https://pince.eu/it/kaland/adalek.html
 https://pince.eu/it/kaland/one.html
-https://pince.eu/it/cimke/borcimke.html
+https://pince.eu/it/cimke/cimke.html
 https://pince.eu/it/cimke/arculat.html
 https://pince.eu/it/cimke/nfc_helyzet.html
 https://pince.eu/it/cimke/rendszerhiba.html
