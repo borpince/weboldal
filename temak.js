@@ -36,7 +36,10 @@ var temak =
         {cim:"№ 4: kékfrankos",nev:"04",ver:"2024-04-20", kelt:"2022-10-14"}
       ],
       "2023": [{cim:"№ 5: tramini", nev:"05", ver:"2024-02-06", kelt:"2023-09-29"}],
-      "2024": [{cim:"№ 6: lucifer küvé", nev:"06", ver:0, kelt:"2024-05-08"}]
+      "2024": [
+        {cim:"№ 6: lucifer küvé", nev:"06", ver:0, kelt:"2024-05-08"},
+        {cim:"№ 7: bormentő küvé", nev:"07", ver:0, kelt:"2024-10-13"}
+      ]
     }
   },
   "tech": {
