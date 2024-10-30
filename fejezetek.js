@@ -466,7 +466,7 @@
     }
     nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 467 hamburger.html
     balmenu = document.getElementById("balmenu");
-    var eltuntet_y = "-250px"; //egyszerűbb a számolgatásnál
+    var eltuntet_y = "-300px"; //egyszerűbb a számolgatásnál
     window.addEventListener("scroll",() => {
       scroll_ido = Date.now();
       if (!foglalt) { //select ne takarja ki a szöveget, ha nem H1 az ugrás célja
