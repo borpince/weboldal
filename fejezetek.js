@@ -417,7 +417,7 @@
   // –  –  –  –  –  –  –  –  –  –  –  –  –  –  – 
 
   glob.href_nev = href_nev();
-  var hamburger_megnyomva = false;
+  var hamar = null;
   var y_elozo = window.pageYOffset;
   var alcimek_helye = null;
   var nav_wrapper = null;
@@ -508,18 +508,18 @@
     if (glob.hamburger && left_side) {
       left_side[0].style.top = "0"; //első alkalommal nem működik a "transition"
       glob.hamburger.addEventListener("click",() => {
-        latszik = !latszik; hamburger_megnyomva = true;
+        latszik = !latszik; clearTimeout(hamar);
         left_side[0].style.top = (latszik ? "0":eltuntet_y);
       });
     } //! 514 hamburger.html
-    /*
-    setTimeout(function(){
-      if (!hamburger_megnyomva) {
+    
+    hamar = setTimeout(function() {
+      if (left_side[0]) {
         left_side[0].style.top = eltuntet_y;
         latszik = !latszik;
       }
-    },6000);
-    */
+    },800);
+    
     legujabb_tortenetek("ajanlo");
     legujabb_tortenetek("bovult");
     //pontatlan page jump igazítás:
