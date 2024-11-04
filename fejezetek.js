@@ -513,12 +513,13 @@
       });
     } //! 514 hamburger.html
     
-    hamar = setTimeout(function() {
-      if (left_side[0]) {
-        left_side[0].style.top = eltuntet_y;
-        latszik = !latszik;
-      }
-    },100);
+    if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo"))
+      hamar = setTimeout(function() {
+        if (left_side[0]) {
+          left_side[0].style.top = eltuntet_y;
+          latszik = !latszik;
+        }
+      },100);
     
     legujabb_tortenetek("ajanlo");
     legujabb_tortenetek("bovult");
