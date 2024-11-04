@@ -472,7 +472,7 @@
       if (!foglalt) { //select ne takarja ki a szöveget, ha nem H1 az ugrás célja
         foglalt = true;
         var alma = setInterval(function() {
-          if (Date.now()-scroll_ido > 200) {
+          if (latszik && (Date.now()-scroll_ido > 200)) {
             var p = window.location.href.lastIndexOf('#');
             var cimke = document.getElementById(window.location.href.substring(p+1));
             if ((p > -1) && cimke && (cimke.nodeName != "H1") && (cimke != ide_ugrott)) {
@@ -518,7 +518,7 @@
         left_side[0].style.top = eltuntet_y;
         latszik = !latszik;
       }
-    },800);
+    },100);
     
     legujabb_tortenetek("ajanlo");
     legujabb_tortenetek("bovult");
