@@ -90,9 +90,15 @@ var temak =
       ],
       "d": [{cim:"szárnypróbálgatás", nev:"00", ver:0, kelt:"2021-10-13"}],
       "e": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021", ver:0, kelt:"2022-06-27"}],
-      "f": [{cim:"hitvallás", nev:"semmiflanc", ver:0, kelt:"2022-07-04"}],
-      "g": [{cim:"tengöri nóta", nev:"tengori", ver:0, kelt:"2023-02-09"}],
-      "h": [
+      "f": [
+        {cim:"vélemény", subfolder: "/velemeny", nev:"velemeny", ver:0, kelt:"2022-07-04"},
+        {cim:"hitvallás", subfolder: "/velemeny", nev:"semmiflanc", ver:0, kelt:"2022-07-04"},
+        {cim:"tengöri nóta", subfolder: "/velemeny", nev:"tengori", ver:0, kelt:"2023-02-09"},
+        {cim:"fent vagy lent?", subfolder: "/velemeny", nev:"fent", ver:0, kelt:"2023-07-04"},
+        {cim:"próféták", subfolder: "/velemeny", nev:"profetak", ver:0, kelt:"2023-10-07"},
+        {cim:"köntörfal", subfolder: "/velemeny", nev:"kontorfal", ver:0, kelt:"2024-11-08"}
+      ],
+      "g": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
         {cim:"XI. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2022", ver:0, kelt:"2022-10-17"},
         {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023", ver:0, kelt:"2023-04-17"},
@@ -101,11 +107,9 @@ var temak =
         {cim:"nem szokunk rá", subfolder:"/bv", nev:"aszu", ver:"2024-03-21", kelt:"2024-03-19"},
         {cim:"fejfájós gyötrelem", subfolder:"/bv", nev:"fejfajos", ver:0, kelt:"2024-11-04"}
       ],
-      "i": [{cim:"hordólelet", nev:"hordo", ver:"2024-05-22", kelt:"2023-05-29"}],
-      "j": [{cim:"hordómatuzsálem", nev:"hordo2", ver:0, kelt:"2024-05-23"}],
-      "k": [{cim:"fent vagy lent?", nev:"fent", ver:0, kelt:"2023-07-04"}],
-      "l": [{cim:"próféták", nev:"profetak", ver:0, kelt:"2023-10-07"}],
-      "m": [
+      "h": [{cim:"hordólelet", nev:"hordo", ver:"2024-05-22", kelt:"2023-05-29"}],
+      "i": [{cim:"hordómatuzsálem", nev:"hordo2", ver:0, kelt:"2024-05-23"}],
+      "j": [
         {cim:"rémtörténetek", subfolder:"/rem", nev:"remtortenet", ver:0, kelt:"2023-10-08"},
         {cim:"jöjjön azonnal!", subfolder:"/rem", nev:"jojjon", ver:0, kelt:"2023-10-09"},
         {cim:"házirend", subfolder:"/rem", nev:"hazirend", ver:0, kelt:"2023-10-10"},
@@ -123,7 +127,7 @@ var temak =
         {cim:"rossz nevelés", subfolder:"/rem", nev:"neveles", ver:0, kelt:"2024-06-10"},
         {cim:"sok az alja", subfolder:"/rem", nev:"alja", ver:0, kelt:"2024-06-20"}
       ],
-      "n": [
+      "k": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
         {cim:"kapisgálom", subfolder:"/orom", nev:"kapisgal", ver:0, kelt:"2023-11-04"},
         {cim:"gebasz", subfolder:"/orom", nev:"gebasz", ver:0, kelt:"2023-11-06"},
@@ -132,7 +136,7 @@ var temak =
         {cim:"majomparádé", subfolder:"/orom", nev:"majom", ver:"2024-03-15", kelt:"2015-05-20"},
         {cim:"fallabdás banda", subfolder:"/orom", nev:"fallabda", ver:0, kelt:"2024-10-21"},
       ],
-      "o": [
+      "l": [
         {cim:"nyamt", subfolder:"/nyamt", nev:"kulinaris", ver:0, kelt:"2024-06-01"},
         {cim:"pörkölt JMO módra", subfolder:"/nyamt", nev:"porkolt", ver:0, kelt:"2024-06-02"},
         {cim:"babgulyás, rétes", subfolder:"/nyamt", nev:"babgulyas", ver:0, kelt:"2024-06-18"},
