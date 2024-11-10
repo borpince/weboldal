@@ -91,7 +91,7 @@ var temak =
       "d": [{cim:"szárnypróbálgatás", nev:"00", ver:0, kelt:"2021-10-13"}],
       "e": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021", ver:0, kelt:"2022-06-27"}],
       "f": [
-        {cim:"vélemény", subfolder: "/velemeny", nev:"velemeny", ver:0, kelt:"2024-11-10"},
+        {cim:"vélemények", subfolder: "/velemeny", nev:"velemeny", ver:0, kelt:"2024-11-10"},
         {cim:"hitvallás", subfolder: "/velemeny", nev:"semmiflanc", ver:0, kelt:"2022-07-04"},
         {cim:"tengöri nóta", subfolder: "/velemeny", nev:"tengori", ver:0, kelt:"2023-02-09"},
         {cim:"fent vagy lent?", subfolder: "/velemeny", nev:"fent", ver:0, kelt:"2023-07-04"},
