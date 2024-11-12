@@ -97,7 +97,8 @@ var temak =
         {cim:"fent vagy lent?", subfolder: "/velemeny", nev:"fent", ver:0, kelt:"2023-07-04"},
         {cim:"próféták", subfolder: "/velemeny", nev:"profetak", ver:0, kelt:"2023-10-07"},
         {cim:"köntörfal", subfolder: "/velemeny", nev:"kontorfal", ver:0, kelt:"2024-11-09"},
-        {cim:"hol lakik vogel evelin?", subfolder: "/velemeny", nev:"vogel", ver:0, kelt:"2024-11-11"}
+        {cim:"hol lakik vogel evelin?", subfolder: "/velemeny", nev:"vogel", ver:0, kelt:"2024-11-11"},
+        {cim:"szabad-e harcolni?", subfolder: "/velemeny", nev:"harcolni", ver:0, kelt:"2024-11-12"}
       ],
       "g": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
