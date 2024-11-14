@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="Rázós téma: hogyan alakítják időjárási hatások az elektromos energia tőzsdei árát?">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
+          </div>
+        </div>
+        <select name="olv"></select>
+      </div>
+    </div>
+    <div class="content">
+      <div class="box-text">
+        <p style="z-index:1"><a name="elozo"></a></p>
+      </div>
+      <h1>Rázós téma</h1>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Nagyon ritkán fordul elő társasági összejöveteleken, hogy hozzám kerül a szó.
+            Ha ilyenkor a politika és a társadalmi berendezkedés lenne a beszélgetés témája,
+            és valami nagyon okosat szeretnék mondani, akkor e ritka alkalmakkor annak a véleményemnek adok hangot,
+            hogy az ország irányításában azoknak a szakembereknek kellene helyet kapniuk,
+            akik a villamosenergia-rendszert üzemeltetik. Miért? Mert tapasztalatom szerint ez a rendszer kiemelkedő megbízhatósággal működik.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Nemrég olyan hírek érkeztek Kubából, a vidám karibi szigetállamból, ami cseppet sem irigylésre méltó.
+            2024 októberében napokig nem volt áram az egész országban, és novemberben is ellátási zavarok tapasztalhatók.
+            Egy ilyen helyzetben a víztározók kiürülnek, a mélyhűtött élelmiszerek tönkremennek, a hírközlés nem működik,
+            lényegében középkori állapotok uralkodnak.
+            Minket magyarokat nem fenyeget ez a veszély, biztonságban vagyunk.
+            <br>
+            Gyanúsan cseng az utolsó mondat, ismerős magabiztosságot áraszt. Vajon ki szokott így fogalmazni beszédeiben?
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/magabiztos.webp">
+          </div>
+          <p>
+            A mindig szolgálatkész <a href="https://copilot.microsoft.com/">Copilot</a> megerősíti gyanúmat,
+            de nekem nincs olyan mértékű megalapozatlan önbizalmam, mint a miniszterelnöknek, ezért inkább kérdezem: biztonságban vagyunk?
+            <br>
+            2024. november 12. óta erről nem vagyok teljes mértékben meggyőződve.
+            Az <a href="https://hupx.hu/hu/">áramtőzsdén</a> ezen a napon súrolta alulról a 900 eurós szintet a megawattóránkénti ár.
+            Biztonsági szempontból nem tudom megítélni ezt a kimagasló értéket, de ránézésre kurva drágának tűnik,
+            amit alátámaszt a következő számolgatás. Forintra és kWh-ra lefordítva, 410 HUF/EUR árfolyam mellett,
+            a magyar jövedelmekhez viszonyítva félelmetes, 367 Ft/kWh érték jön ki (ÁFA nélkül).
+            Az áram tőzsdei ára óráról órára változik, és ezen a napon a déli 12-kor érvényes ár sem volt alacsony:
+            269.1 €/MWh, ami átszámítva 110 Ft/kWh (szintén ÁFA nélkül).
+          </p>
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/hupx-1112.webp">
+            </div>
+            <figcaption>forrás: <a href="https://hupx.hu/hu/">HUPX</a></figcaption>
+          </figure>
+          <p>
+            Miért pont a déli órákban érvényes árat figyelem? Optimális tájolású napelemes erőművek felhőtlen égbolt alatt ebben az időszakban termelnek a leghatékonyabban.
+            Oda kell figyelni rájuk, mert összesített teljesítményük a paksi atomerőmű háromszorosát teszi ki.
+            Ha süt a Nap, akkor energiabőség lép fel, de a vizsgált időszakban már egy ideje köd borította Európa egészét,
+            ami rossz hatással volt a napelemes erőművek teljesítményére. A szokásos mennyiségnek a tizede sem jött ki a rendszerből,
+            ezért három paksnyi energia hiányzott már napok óta, ahogy azt az alábbi ábra mutatja.
+          </p>            
+          <div class="box-img">
+            <img src="https://kep.pince.eu/termel-24nov.webp">
+          </div>
+          <p>
+            Egy derűs, verőfényes napon sokkal vidámabb árak alakulnak a tőzsdén,
+            nem az imént bemutatott lehangoló, borongós, vészjósló hangulat jellemző. Jól gondolom? Mindjárt kiderül.
+            <br>
+            Megvizsgálom a helyzetet egy kedvezőbb körülményeket mutató napon. Legyen ez 2024. október 20,
+            egy kellemes őszi nap.
+          </p>
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/hupx-1020.webp">
+            </div>
+            <figcaption>forrás: <a href="https://hupx.hu/hu/">HUPX</a></figcaption>
+          </figure>
+          <p>
+            Ezen a napon déli 12 órakor gyakorlatilag ingyen adták a villanyt, aztán egy rövid ideig fizettek is az átvételéért (negatív ár).
+            Ha benne lennék a buliban, és a tőzsdén szerezhetnék áramot,
+            akkor ebben a helyzetben egy gombóc fagyi árából két évre elegendő elektromos energiát vásárolhatnék magamnak úgy,
+            hogy villannyal fűtök, állandóan bekapcsolva tartok 4-5 számítógépet, routereket,
+            napi 24 órában működnek a pincében légszárítók, ráadásul fogyaszt még a háztartás szokványos része is hűtőgépekkel, porszívóval stb.
+            <br>
+            Ehhez persze nem elég benne lenni a buliban. Tárolni is kell a bagóért megszerzett energiát, ami kemény dió.
+            Bele is törik a foga a nagy többségnek, mert a tárolás nem egyszerű, nem is olcsó mulatság.
+            Én is ebben a cipőben járok. A nagy sanyarúság közepette sajnos nem tudok egy vagyont költeni akkumulátoros tárolóra,
+            ami legfeljebb egy-két nap áthidalására képes. Az én helyzetem érthető, mert csóró vagyok,
+            de hogy lehet az, hogy egy országméretű közösség befizetett adóiból még nem jött létre olyan tároló,
+            ami a magyar polgárok energiabiztonságát szolgálná? Ha szívesen hallgatnál hosszas mellébeszélést és tartalmatlan hablatyot,
+            akkor ezt a kérdést Orbán Viktornak kéne feltenned. Nincs lehetőség kérdezni tőle, választ sem kapunk,
+            de a sokoldalú mesterséges intelligencia erre is nyújt megoldást.
+            Sőt, arra is képes, hogy az igazat adja a szájába egy különben csak hazudozásra és <a href="/olv/velemeny/kontorfal.html">köntörfalazásra</a> képes politikusnak.
+            Íme az eredmény:
+          </p>
+        </div>
+        <div class="box-text">
+          <div class="video-container marg">
+            <iframe src="https://www.youtube.com/embed/jIzptEF0SxI" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="box-text">
+          <p>
+            Az alábbi térképen az EU-s államok euróban feltüntetett elektromosenergia-árainak mértékét színekkel is jelölik a gyors áttekinthetőséget segítve.
+            Egy Magyarország-formájú piros folt jelzi, hogy 2024. november 13-án nálunk a legdrágább az áram,
+            miközben a szerencsésebb történelmi múlttal rendelkező országok kizöldülve mutatják a náluk fogyasztható áram olcsóságát.
+            Elég zöldek a szovjet elnyomás alól velünk együtt felszabadult balti államok és a lengyelek, valamint a csehek is.
+            Hogy csinálják? A "szerencsés" országok között kakukktojásként a görögök tűnnek fel rossz színben – talán még mindig nem heverték ki a 2004-es olimpiarendezést.
+          </p>
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/eu-arterkep.webp">
+            </div>
+            <figcaption>áramdíjak Európában 2024.11.13-án – forrás: <a href="https://euenergy.live/">euenergy.live</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="box-text">
+        <p><a name="kovetkezo"></a></p>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/temak.js"></script>
+<script src="/fejezetek.js"></script>
