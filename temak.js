@@ -100,6 +100,7 @@ var temak =
         {cim:"hol lakik vogel evelin?", subfolder: "/velemeny", nev:"vogel", ver:0, kelt:"2024-11-11"},
         {cim:"szabad-e harcolni?", subfolder: "/velemeny", nev:"harcolni", ver:0, kelt:"2024-11-12"},
         {cim:"rázós téma", subfolder: "/velemeny", nev:"megrazo", ver:0, kelt:"2024-11-14"},
+        {cim:"titok vagy fogalomzavar", subfolder: "/velemeny", nev:"titok", ver:0, kelt:"2024-11-15"},
       ],
       "g": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
