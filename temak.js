@@ -102,6 +102,7 @@ var temak =
         {cim:"szabad-e harcolni?", subfolder: "/velemeny", nev:"harcolni", ver:0, kelt:"2024-11-12"},
         {cim:"rázós téma", subfolder: "/velemeny", nev:"megrazo", ver:0, kelt:"2024-11-14"},
         {cim:"titok vagy fogalomzavar", subfolder: "/velemeny", nev:"titok", ver:0, kelt:"2024-11-15"},
+        {cim:"szálka és gerenda", subfolder: "/velemeny", nev:"szalka", ver:0, kelt:"2024-11-19"}
       ],
       "g": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
