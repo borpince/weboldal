@@ -93,10 +93,15 @@ var temak =
       "e": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021", ver:0, kelt:"2022-06-27"}],
       "f": [
         {cim:"vélemények", subfolder: "/velemeny", nev:"velemeny", ver:0, kelt:"2024-11-10"},
+        {cim:"vihar a biliben", subfolder:"/velemeny", nev:"viharbili", ver:0, kelt:"2015-09-16"},
         {cim:"hitvallás", subfolder: "/velemeny", nev:"semmiflanc", ver:0, kelt:"2022-07-04"},
         {cim:"tengöri nóta", subfolder: "/velemeny", nev:"tengori", ver:0, kelt:"2023-02-09"},
         {cim:"fent vagy lent?", subfolder: "/velemeny", nev:"fent", ver:0, kelt:"2023-07-04"},
         {cim:"próféták", subfolder: "/velemeny", nev:"profetak", ver:0, kelt:"2023-10-07"},
+        {cim:"piaci rés", subfolder:"/velemeny", nev:"piacires", ver:0, kelt:"2024-01-10"},
+        {cim:"#metoo jelenség", subfolder:"/velemeny", nev:"metoo", ver:0, kelt:"2024-02-05"},
+        {cim:"istentelen zűrzavar alakul", subfolder:"/velemeny", nev:"zur-zavar", ver:"2024-07-14", kelt:"2024-03-15"},
+        {cim:"sok az alja", subfolder:"/velemeny", nev:"alja", ver:0, kelt:"2024-06-20"},
         {cim:"köntörfal", subfolder: "/velemeny", nev:"kontorfal", ver:0, kelt:"2024-11-09"},
         {cim:"hol lakik vogel evelin?", subfolder: "/velemeny", nev:"vogel", ver:0, kelt:"2024-11-11"},
         {cim:"szabad-e harcolni?", subfolder: "/velemeny", nev:"harcolni", ver:0, kelt:"2024-11-12"},
@@ -124,14 +129,9 @@ var temak =
         {cim:"apahiány", subfolder:"/rem", nev:"apahiany", ver:0, kelt:"2023-10-22"},
         {cim:"játsszunk tellvilmost!", subfolder:"/rem", nev:"tellvilmos", ver:0, kelt:"2023-10-18"},
         {cim:"adóhivatal", subfolder:"/rem", nev:"adohivatal", ver:0, kelt:"2023-10-28"},
-        {cim:"vihar a biliben", subfolder:"/rem", nev:"viharbili", ver:0, kelt:"2015-09-16"},
-        {cim:"piaci rés", subfolder:"/rem", nev:"piacires", ver:0, kelt:"2024-01-10"},
-        {cim:"#metoo jelenség", subfolder:"/rem", nev:"metoo", ver:0, kelt:"2024-02-05"},
         {cim:"lányos apák nyomorúsága", subfolder:"/rem", nev:"lanyosapa", ver:0, kelt:"2024-02-06"},
-        {cim:"istentelen zűrzavar alakul", subfolder:"/rem", nev:"zur-zavar", ver:"2024-07-14", kelt:"2024-03-15"},
         {cim:"téglaboltozat és gyökerek", subfolder:"/rem", nev:"gyokerek", ver:"2024-06-09", kelt:"2024-04-05"},
-        {cim:"rossz nevelés", subfolder:"/rem", nev:"neveles", ver:0, kelt:"2024-06-10"},
-        {cim:"sok az alja", subfolder:"/rem", nev:"alja", ver:0, kelt:"2024-06-20"}
+        {cim:"rossz nevelés", subfolder:"/rem", nev:"neveles", ver:0, kelt:"2024-06-10"}
       ],
       "k": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
