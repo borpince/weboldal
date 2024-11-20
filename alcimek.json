@@ -437,6 +437,24 @@
     }
   ],
   [
+    "olv/velemeny/zur-zavar",
+    {
+      "2024-03-15T08:00": "alapgondolat",
+      "2024-04-11": "ennek soha nem lesz vége",
+      "2024-05-09": "hitelesség",
+      "2024-07-14": "nem javul a helyzet, de fokozódik"
+    }
+  ],
+  [
+    "olv/velemeny/alja",
+    {
+      "2013-09-02": "külföldi egyetem",
+      "2019-02-01": "anya csak egy van",
+      "2024-06-11": "katonatisztek ejtőernyőznek a tankerületekhez",
+      "2024-06-17": "elméleti testnevelés"
+    }
+  ],
+  [
     "olv/bv/bm2022",
     {
       "2022-09-24T16:20": "cserkészöv",
@@ -531,15 +549,6 @@
     }
   ],
   [
-    "olv/rem/zur-zavar",
-    {
-      "2024-03-15T08:00": "alapgondolat",
-      "2024-04-11": "ennek soha nem lesz vége",
-      "2024-05-09": "hitelesség",
-      "2024-07-14": "nem javul a helyzet, de fokozódik"
-    }
-  ],
-  [
     "olv/rem/gyokerek",
     {
       "2024-03-25": "előzmények",
@@ -554,15 +563,6 @@
     {
       "1975-09-15": "első beadandó műszakirajz",
       "1975-10-20": "éghajlati táblázat"
-    }
-  ],
-  [
-    "olv/rem/alja",
-    {
-      "2013-09-02": "külföldi egyetem",
-      "2019-02-01": "anya csak egy van",
-      "2024-06-11": "katonatisztek ejtőernyőznek a tankerületekhez",
-      "2024-06-17": "elméleti testnevelés"
     }
   ],
   [
