@@ -32,14 +32,11 @@ https://pince.eu/olv/igykeszult/horgany.html
 https://pince.eu/olv/igykeszult/korlat.html
 https://pince.eu/olv/igykeszult/pinceajto.html
 https://pince.eu/olv/igykeszult/patak.html
-https://pince.eu/olv/cseppkovek.html
 https://pince.eu/olv/kert/tavasz.html
 https://pince.eu/olv/kert/tavaszodik.html
 https://pince.eu/olv/kert/tavaszodik2.html
 https://pince.eu/olv/kert/tavaszodik3.html
 https://pince.eu/olv/kert/csigasor.html
-https://pince.eu/olv/00.html
-https://pince.eu/olv/elmaradt2021.html
 https://pince.eu/olv/velemeny/velemeny.html
 https://pince.eu/olv/velemeny/viharbili.html
 https://pince.eu/olv/velemeny/semmiflanc.html
@@ -57,6 +54,7 @@ https://pince.eu/olv/velemeny/megrazo.html
 https://pince.eu/olv/velemeny/titok.html
 https://pince.eu/olv/velemeny/szalka.html
 https://pince.eu/olv/velemeny/ping.html
+https://pince.eu/olv/velemeny/torveny.html
 https://pince.eu/olv/bv/borverseny.html
 https://pince.eu/olv/bv/bm2022.html
 https://pince.eu/olv/bv/podumon2023.html
@@ -64,8 +62,6 @@ https://pince.eu/olv/bv/top25pb2023.html
 https://pince.eu/olv/bv/bm2023.html
 https://pince.eu/olv/bv/aszu.html
 https://pince.eu/olv/bv/fejfajos.html
-https://pince.eu/olv/hordo.html
-https://pince.eu/olv/hordo2.html
 https://pince.eu/olv/rem/remtortenet.html
 https://pince.eu/olv/rem/jojjon.html
 https://pince.eu/olv/rem/hazirend.html
@@ -88,6 +84,11 @@ https://pince.eu/olv/nyamt/kulinaris.html
 https://pince.eu/olv/nyamt/porkolt.html
 https://pince.eu/olv/nyamt/babgulyas.html
 https://pince.eu/olv/nyamt/rehab.html
+https://pince.eu/olv/hordo.html
+https://pince.eu/olv/hordo2.html
+https://pince.eu/olv/cseppkovek.html
+https://pince.eu/olv/00.html
+https://pince.eu/olv/elmaradt2021.html
 https://pince.eu/it/gondolatok.html
 https://pince.eu/it/hmk_naptar.html
 https://pince.eu/it/hmk_naplo.html
