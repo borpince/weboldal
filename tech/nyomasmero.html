@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="Nyomásmérő nélkül hogyan ellenőrizhető a bortartály fedélzáró tömlőjének feszessége? Empirikusan, ahogy a művelt francia mondaná.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
+          </div>
+        </div>
+        <select name="tech"></select>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Minek ide nyomásmérő?</h1>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Elment a kedvem a paraffinolaj alkalmazásától,
+            amikor a 2020-as cabernet sauvignont legutóbb <a href="/borok/01.html#2024-04-25">másik edénybe fejtettem</a>,
+            ezért minden tartály úszófedelét tömlős változatra cseréltem.
+            Ez macerásabb a bor apadásával együtt süllyedő paraffinolajas záráshoz képest,
+            mert minden alkalommal le kell ereszteni a tömlőt, amikor bort adagolok a tartály csapján keresztül, aztán meg felfújni.
+          </p>
+          <figure>
+            <div class="box-img-wide">
+              <img src="https://kep.pince.eu/uszofedel.webp">
+            </div>
+            <figcaption>forrás: <a href="https://atinox.hu/pumpas-uszofedel-540-mm-2/">atinox.hu</a></figcaption>
+          </figure>
+          <p>
+            A tétel tiszta megbontásán kívül más előnyét nem látom, hátrányát viszont annál többet.
+            Az egyik ezek közül az úszófedél-készlethez mellékelt pumpára szerelt nyomásmérő,
+            ami érthetetlen módon nem párás környezetnek ellenálló fajta.
+          </p>
+          <figure>
+            <div class="box-img-wide">
+              <img src="https://kep.pince.eu/nyomasmero.webp">
+            </div>
+            <figcaption>forrás: <a href="https://boraszatieszkozok.com/Pumpa-tomlohoz">boraszatieszkozok.com</a></figcaption>
+          </figure>
+          <p>
+            Új korában megtévesztően csillog-villog azt a benyomást keltve, hogy ez egy remek cucc,
+            jól fog működni. Azonban a párás pinceklíma idővel kikezdi a túlnyomórészt fém alkatrészekből összeállított mérőszerkezetet,
+            és csurom rozsda lesz kívül-belül.
+          </p>
+          <div class="box-img-wide">
+            <img src="https://kep.pince.eu/nyomas-rozsda.webp">
+          </div>
+          <p>
+            Ebben az állapotban már nem mér nyomást, ami segítene a zöld mezőben jelzett értékek szerint beállítani a tömlő optimális feszességét,
+            ráadásul a mérőszerkezet lelke, a fogasléchez kapcsolódó duplafalú rugó a korrózió miatt egyszer csak ereszteni fogja a levegőt.
+            Ennek káros következményeként a tömlő lassan leereszt, a tartály fala és az úszófedél közötti fedetlen részen a bor szabadon marad – tönkreteszi az oxigén,
+            ha nem veszem észre időben a rendellenességet.
+            <br>
+            A borospincében 80% körüli a páratartalom, és azt a környezetet nagyjából 3 évig bírták a nyomásmérők.
+            Szerintem ezt az összeállítást (pumpa, nyomásmérő stb.) nem mérnökember tervezte,
+            mert annak kiterjed a figyelme a pincekörnyezetben uralkodó hatásokra,
+            és rozsdamentes alkatrészekből készült, vagy párazáró készülékházba szerelt műszert ír elő.
+            Annak is van valamennyi valószínűsége, hogy ez oly mértékben megdrágítja az eszközt,
+            ami eladhatatlanná teszi, és ezen a ponton vették át az irányítást a marketingesek.
+            <br>
+            Érdekes lenne a műszer belsejének állapotát is megvizsgálni,
+            de ennek a szándékomnak útját állták az elrohadt süllyesztett fejű csavarok,
+            amiknek eltávolítása nem sikerült egyszerű módszerekkel, a roncsolásos megoldástól pedig kellő elszántság híján visszarettentem.
+            <br>
+            Jó eséllyel a készlethez mellékelt szorítóbilincsek is az árcsökkentő szándék következtében néznek ki úgy néhány év elteltével,
+            mint az alábbi képen. A nyomásmérők mellett ezek is cserére szorulnak.
+          </p>
+          <div class="box-img-wide">
+            <img src="https://kep.pince.eu/szorito-bilincs.webp">
+          </div>
+          <p>
+            Elgondolkodtam a műszerek cseréjén, és felülbíráltam az eredeti elképzelést.
+            Minek ide nyomásmérő? Miért bonyolították el ennyire az ügyet?
+            Eszembe jutott, hogy a bicikli gumiját is pumpával fújom fel,
+            és a nyomást kézzel ellenőrzöm. Ha erre képes vagyok, miért ne működhetne ez a módszer az úszófedél tömlőjénél is?
+            Működhet.
+          </p>
+          <div class="box-img-wide">
+            <img src="https://kep.pince.eu/pumpa-csavar.webp">
+          </div>
+          <p>
+            A tönkrement nyomásmérőt eltávolítva csupán a szabadon maradt menetes furatban kell útját állni a levegőnek,
+            ami egy teflonszalaggal tömített csavarral egyszerűen és kedvező költséggel megoldható.
+            <a href="http://www.tscsavar.hu/">Kedvenc csavarboltomban</a> nem tudtak optimális méretet adni,
+            de sebaj. Így is működik, és még ez a böszme csavar is csak töredékébe kerül az új műszer árának.
+            A teflonszalag megfelelő menetszámát soha nem tudom eltalálni, ezért az első kísérlet szivárgást mutatott.
+            Nem fogok tovább bajlódni ezzel, fogom hát az alkalmasabb teflon zsinórt, amivel elsőre összejött a tömített állapot.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Lett volna jobb megoldás a csavaros egyszerűsítésnél is, ha a kezdetektől bevonnak a tervezésbe,
+            de kezdő borászként mindig kész tények elé állítottak, és a bortartályokat fedelekkel,
+            pumpával és a többi kellékével együtt árulták a borászboltokban.
+            A mai eszemmel az úszófedél tömlőjére <i>Schrader (AV) szelepet</i> szerelnék, és egy közönséges biciklipumpával fújom fel mindet.
+            Ezzel a megoldással nem csak egyszerűsödik a helyzet, de egy csomó nyomásmérős pumpát ott hagyhatok a boltokban,
+            ami jelentős megtakarítást eredményez.
+          </p>
+          <figure>
+            <div class="box-img-wide">
+              <img src="https://kep.pince.eu/schrader.webp">
+            </div>
+            <figcaption>forrás: <a href="https://www.wistio.com/tubed-vs-tubeless/">wistio.com</a></figcaption>
+          </figure>
+          <p>
+            Nyomásmérő nélkül hogyan ellenőrizhető a fedélzáró tömlő feszessége? Empirikusan, ahogy a művelt francia mondaná.
+          </p>
+          <div class="box-img-wide">
+            <img src="https://kep.pince.eu/egyujjas.webp">
+          </div>
+          <p>
+            Ismerős valahonnan a fenti kép a bortartályban matató manusról? Engem is erősen emlékeztet valamire.
+          </p>
+          <div class="box-img-wide">
+            <img src="https://kep.pince.eu/teremtes2.webp">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/temak.js"></script>
+<script src="/fejezetek.js"></script>
