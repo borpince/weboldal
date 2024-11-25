@@ -513,7 +513,7 @@
       });
     } //! 514 hamburger.html
     
-    if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo") && (glob.href_nev != "404"))
+    if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo") && letezik(nev,false).tortenet)
       hamar = setTimeout(function() {
         if (left_side[0]) {
           left_side[0].style.top = eltuntet_y;
