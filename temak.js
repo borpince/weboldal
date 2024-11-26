@@ -107,7 +107,8 @@ var temak =
         {cim:"titok vagy fogalomzavar", subfolder: "/velemeny", nev:"titok", ver:0, kelt:"2024-11-15"},
         {cim:"szálka és gerenda", subfolder: "/velemeny", nev:"szalka", ver:0, kelt:"2024-11-19"},
         {cim:"ping és beacon", subfolder:"/velemeny", nev:"ping", ver:0, kelt:"2024-11-21"},
-        {cim:"összeütközés a törvénnyel", subfolder:"/velemeny", nev:"torveny", ver:0, kelt:"2024-11-22"}
+        {cim:"összeütközés a törvénnyel", subfolder:"/velemeny", nev:"torveny", ver:0, kelt:"2024-11-22"},
+        {cim:"játék a szavakkal", subfolder:"/velemeny", nev:"jatek", ver:0, kelt:"2024-11-27"}
       ],
       "d": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
