@@ -172,7 +172,7 @@ var temak =
       ],
       "e": [
         {cim:"borcímkés történetek", subfolder:"/cimke", nev:"cimke", ver:0, kelt:"2022-09-20"},
-        {cim:"arculati elem", subfolder:"/cimke", nev:"arculat",  ver:"2023-02-14", kelt:"2022-12-06"},
+        {cim:"arculati elem", subfolder:"/cimke", nev:"arculat",  ver:"2024-11-28", kelt:"2022-12-06"},
         {cim:"NFC-címke: helyzetelemzés", subfolder:"/cimke", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"},
         {cim:"rendszerhiba", subfolder:"/cimke", nev:"rendszerhiba", ver:0, kelt:"2024-09-02"}
       ],
