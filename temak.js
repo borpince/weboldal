@@ -109,7 +109,8 @@ var temak =
         {cim:"ping és beacon", subfolder:"/velemeny", nev:"ping", ver:0, kelt:"2024-11-21"},
         {cim:"összeütközés a törvénnyel", subfolder:"/velemeny", nev:"torveny", ver:0, kelt:"2024-11-22"},
         {cim:"játék a szavakkal", subfolder:"/velemeny", nev:"jatek", ver:0, kelt:"2024-11-27"},
-        {cim:"botrányzat", subfolder:"/velemeny", nev:"botrany", ver:0, kelt:"2024-11-29"}
+        {cim:"botrányzat", subfolder:"/velemeny", nev:"botrany", ver:0, kelt:"2024-11-29"},
+        {cim:"sza?atossági igény", subfolder:"/velemeny", nev:"szabatos", ver:0, kelt:"2024-12-02"}
       ],
       "d": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
@@ -239,6 +240,7 @@ function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
 }
 
 function karikas_szam(szam) {
+  if (szam > 20) return "&#"+(12881+szam-21);
   return "&#"+(9311+szam);
 }
 
