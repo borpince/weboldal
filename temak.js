@@ -101,7 +101,7 @@ var temak =
         {cim:"istentelen zűrzavar alakul", subfolder:"/velemeny", nev:"zur-zavar", ver:"2024-07-14", kelt:"2024-03-15"},
         {cim:"sok az alja", subfolder:"/velemeny", nev:"alja", ver:0, kelt:"2024-06-20"},
         {cim:"köntörfal", subfolder: "/velemeny", nev:"kontorfal", ver:0, kelt:"2024-11-09"},
-        {cim:"hol lakik vogel evelin?", subfolder: "/velemeny", nev:"vogel", ver:0, kelt:"2024-11-11"},
+        {cim:"hol lakik vogel evelin?", subfolder: "/velemeny", nev:"vogel", ver:"2024-12-02", kelt:"2024-11-11"},
         {cim:"szabad-e harcolni?", subfolder: "/velemeny", nev:"harcolni", ver:0, kelt:"2024-11-12"},
         {cim:"rázós téma", subfolder: "/velemeny", nev:"megrazo", ver:0, kelt:"2024-11-14"},
         {cim:"titok vagy fogalomzavar", subfolder: "/velemeny", nev:"titok", ver:0, kelt:"2024-11-15"},
