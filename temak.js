@@ -111,7 +111,7 @@ var temak =
         {cim:"játék a szavakkal", subfolder:"/velemeny", nev:"jatek", ver:0, kelt:"2024-11-27"},
         {cim:"botrányzat", subfolder:"/velemeny", nev:"botrany", ver:0, kelt:"2024-11-29"},
         {cim:"sza?atossági igény", subfolder:"/velemeny", nev:"szabatos", ver:0, kelt:"2024-12-02"},
-        {cim:"mágus", subfolder:"/velemeny", nev:"magus", ver:0, kelt:"2024-12-06"}
+        {cim:"mágikus vonzerő", subfolder:"/velemeny", nev:"magus", ver:0, kelt:"2024-12-06"}
       ],
       "d": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
