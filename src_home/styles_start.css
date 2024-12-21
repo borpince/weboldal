@@ -751,14 +751,14 @@ ol,ul {list-style:none;}
   animation-delay: 9s;
 }
 .slideshow li:nth-child(4) span {
-  background-image: url(https://kep.pince.eu/dia_3_P1070320.webp);
+  background-image: url(https://kep.pince.eu/dia_3_IMG_0841.webp);
   -webkit-animation-delay: 15s;
   -moz-animation-delay: 15s;
   -o-animation-delay: 15s;
   -ms-animation-delay: 15s;
   animation-delay: 15s;
 }
-	
+
 @-webkit-keyframes imageAnimation { 
 	0% {
     opacity: 0;
