@@ -155,7 +155,8 @@ var temak =
       "i": [{cim:"hordómatuzsálem", nev:"hordo2", ver:0, kelt:"2024-05-23"}],
       "j": [{cim:"cseppköves emlékek", nev:"cseppkovek", ver:0, kelt:"2023-01-09"}],
       "k": [{cim:"szárnypróbálgatás", nev:"00", ver:0, kelt:"2021-10-13"}],
-      "l": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021", ver:0, kelt:"2022-06-27"}]
+      "l": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021", ver:0, kelt:"2022-06-27"}],
+      "m": [{cim:"jó pap holtig hülyül", nev:"holtig", ver:0, kelt:"2025-01-06"}]
     }
   },
   "it": {
