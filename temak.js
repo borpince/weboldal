@@ -185,7 +185,7 @@ var temak =
       "f": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
       "g": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
       "h": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
-      "i": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2023-12-28", kelt:"2023-06-04"}],
+      "i": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2025-01-20", kelt:"2023-06-04"}],
       "j": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
       "k": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
       "l": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}]
