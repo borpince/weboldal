@@ -113,7 +113,8 @@ var temak =
         {cim:"sza?atossági igény", subfolder:"/velemeny", nev:"szabatos", ver:0, kelt:"2024-12-02"},
         {cim:"mágikus vonzerő", subfolder:"/velemeny", nev:"magus", ver:0, kelt:"2024-12-06"},
         {cim:"a jog nem egzakt tudomány", subfolder:"/velemeny", nev:"egzakt", ver:0, kelt:"2024-12-18"},
-        {cim:"jesus bleibet meine freude", subfolder:"/velemeny", nev:"fantazia", ver:0, kelt:"2025-01-16"}
+        {cim:"jesus bleibet meine freude", subfolder:"/velemeny", nev:"fantazia", ver:0, kelt:"2025-01-16"},
+        {cim:"életünk és a bor", subfolder:"/velemeny", nev:"hamvas", ver:0, kelt:"2025-02-01"}
       ],
       "d": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
