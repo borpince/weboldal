@@ -124,7 +124,8 @@ var temak =
         {cim:"XIV. Pannon Borrégió Top25", subfolder:"/bv", nev:"top25pb2023", ver:0, kelt:"2023-06-12"},
         {cim:"XII. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2023", ver:0, kelt:"2023-09-28"},
         {cim:"nem szokunk rá", subfolder:"/bv", nev:"aszu", ver:"2024-03-21", kelt:"2024-03-19"},
-        {cim:"fejfájós gyötrelem", subfolder:"/bv", nev:"fejfajos", ver:0, kelt:"2024-11-04"}
+        {cim:"fejfájós gyötrelem", subfolder:"/bv", nev:"fejfajos", ver:0, kelt:"2024-11-04"},
+        {cim:"ruppert", subfolder:"/bv", nev:"ruppert", ver:0, kelt:"2025-02-18"},
       ],
       "e": [
         {cim:"rémtörténetek", subfolder:"/rem", nev:"remtortenet", ver:0, kelt:"2023-10-08"},
