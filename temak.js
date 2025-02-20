@@ -115,7 +115,8 @@ var temak =
         {cim:"a jog nem egzakt tudomány", subfolder:"/velemeny", nev:"egzakt", ver:0, kelt:"2024-12-18"},
         {cim:"jesus bleibet meine freude", subfolder:"/velemeny", nev:"fantazia", ver:0, kelt:"2025-01-16"},
         {cim:"életünk és a bor", subfolder:"/velemeny", nev:"hamvas", ver:0, kelt:"2025-02-01"},
-        {cim:"milyen hülyének lenni?", subfolder:"/velemeny", nev:"hulye", ver:0, kelt:"2025-02-16"}
+        {cim:"milyen hülyének lenni?", subfolder:"/velemeny", nev:"hulye", ver:0, kelt:"2025-02-16"},
+        {cim:"nem kerget a tatár", subfolder:"/velemeny", nev:"tatar", ver:0, kelt:"2025-02-20"}
       ],
       "d": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
