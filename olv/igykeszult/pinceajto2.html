@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="A pinceajtó végső megoldása már csak a hőmérséklet és a páratartalom szabályozását célozza, és csupán optikailag mutatja magát pinceajtónak – ez volna a színpadi látványosság. Néhány kanyar után megérkezünk a színésznőcskék színpadi varázsát megsemmisítő szürke, kiélt, szottyadt, ráncos, vágylohasztó valósághoz.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css?v=l">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/x-icon">
+</head>
+<style>
+  li::marker {
+    font-size: x-large;
+  }
+</style>  
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
+          </div>
+        </div>
+        <select name="olv"></select>
+      </div>
+    </div>
+    <div class="content">
+      <div class="box-text">
+        <p style="z-index:1"><a name="elozo"></a></p>
+      </div>
+      <h1>Pinceajtó v2.0</h1>
+      <div><p>formabontó megoldás: színpadi látványosság</p></div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Öt éve épült a <a href="/olv/igykeszult/pince.html">borospince</a>, és kereken két év telt el a bejáratot záró praktikus <a href="/olv/igykeszult/pinceajto.html">nyílástakaró</a> elkészülte óta.
+            Remekül tartja a párát, jól elválasztja egymástól a pincét és az előteret, tökéletlen illesztése folytán ideális szellőzést garantál –
+            csak jókat mondhatok róla, ha nem nézem külalakját. A Chokito reklámból ismert <cite>ronda és finom</cite> mintájára áltathatom magam a <i>ronda és praktikus</i> szlogennel,
+            mégsem hagy nyugodni a kinézete. Nem vagyok különösebben izgága, de évek alatt bennem is feszülni kezd a nyomasztó érzés, hogy még mindig nem voltam képes jó ízlést tükröző kivitelben ajtót gyártani.
+            A hirtelen készült, és ideiglenesnek szánt nyílászáró <a href="/olv/igykeszult/pinceajto.html#nemkell">megmentett</a> a kényszeres kapkodástól, de ha valaminek az ideiglenessége években mérhető,
+            akkor az kezd hasonlítani a Magyarországon 47 évig "ideiglenesen" állomásozó szovjet csapatok jelenlétének átmenetiségére.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div id="2024-12-02" alcim="álom egy pinceajtóról"><p>Álom egy pinceajtóról</p></div>
+        <br>
+        <div class="box-text">
+          <p>
+            A fa kétségtelenül nemes anyag. Jól mutat, szépen patinásodik, és aki ad magára, az tölgy pallóból készít ajtót borospincéjének bejáratára.
+            Nem tartozom közéjük, mert a fa használatát elvetettem, mivel 80-90%-os páratartalmú környezetben nem tartós.
+            Kinéztem helyette a faerezetű <a href="https://en.wikipedia.org/wiki/Wood%E2%80%93plastic_composite">WPC</a>-t, ami valószínűleg a világ végéig kitartana romlás nélkül.
+            Különösen akkor, amikor a beépítés helyén nem süti Nap, nem veri eső, nem fújja szél.
+            Kiválasztottam a megfelelelő anyagot, erősen elgondolkodtam a kivitelezésen, tartószerkezeten, csapágyazáson,
+            és ehhez hasonló megoldást képzeltem el:
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-tengely.webp">
+          </div>
+          <p>
+            Nem alakra és mintázatra, hanem a felfüggesztésre vonatkozik a hasonlóság. Hagyományos zsanérok helyett ugyanilyen tengelyre szerelve láttam jónak megoldani a nagy tömegű ajtólap nyitását-zárását,
+            csakhogy ezzel további műszaki bonyodalmak tárultak fel. Hordók és szüretelődézsák ki- és becipelésének idején szükség van a pincebejárat teljes keresztmetszetére,
+            ami ebben a tengelyes kivitelben az ajtó ideiglenes eltávolítását kívánja olyan elmés szerkezettel, hogy a nagy és nehéz konstrukció mozgatásához ne kelljen minduntalan segítséget hívni.
+            Hogy haladjon az ügy, nekilátok az ajtólapnak, a kiakasztható tengely megoldásán ráérek közben spekulálni.
+          </p>
+        </div>
+        <div id="2025-01-28" alcim="nagyravágyó terv sutba dobása"><p>Nagyravágyó terv sutba dobása</p></div>
+        <br>
+        <div class="box-text">
+          <p>
+            Komótosan fogok hozzá. Meglátogatok néhány kereskedést, ahol faforgács és műanyag keverékéből fröccsöntött deszkákat árulnak,
+            helyenként minta után értékesítenek: rendeljem meg, fizessem ki, ők majd szólnak, ha megérkezett az anyag. Ehhez még fel kell bátorodnom, de addig is foglalkozok az előkészítő műveletekkel.
+            A pince közelében elhelyezett szerszámokkal olyan illúziót keltek magamban és környezetemben, mintha valami beindult volna.
+            Lám, halad az ügy. Hosszas méricskélés után feljelöltem a terméskő falra azokat a vonalakat, amik mentén gyémántkoronggal ki kell igazítani az egykoron elnagyolt falazás pontatlanságait,
+            hogy az ajtólap megfelelően illeszkedhessen a nyílásba, de nagy szerencsémre nem kezdtem bele visszafordíthatalan műveletekbe, amik szembeötlően heves munkafolyamatra utalnának.
+            WPC anyagot sem hoztam még haza, amivel kezdetét vette volna vagdosás, fúrás-faragás.
+            Szerencsésnek nevezem a helyzetet, pedig mintha megtorpant volna a lendület, ami enyhébb megfogalmazása annak, hogy az igazi, masszív pinceajtó irányába tartó nagyravágyó tervemet ejtettem.
+            Talán születik jó megoldása a feladatnak, ha még mindig ezen rágódok, de egyre aggasztóbb tartalommal jelentkeznek az épített környezet óhatatlan roncsolását bemutató látomásaim,
+            amikben a légkalapács is előkerül, hogy a majdani ajtó függőleges forgástengelyének megfelelő rögzítését biztosítsam.
+            Téglák fordulnak ki a boltozatból, darabok hasadnak le a terméskőből – megéri az átalakítással járó rizikót vállalni?
+            Kételkedni kezdek szakmai alkalmasságomban, és elfogyott a türelmem. Közelebb járok az igazsághoz a <cite>túl nagy fába vágtam a fejszémet</cite>
+            és a <cite>beletört a bicskám</cite> hasonlatokkal, és illik ide a <cite>sokat akar a szarka, de nem bírja a farka</cite> mondás is.
+            <br>
+            Van itt még egy nagyon erős érv a pinceajtó hagyományosan elvárt robusztus kivitele ellen. Beltéri ajtó, amihez zárható bejárati ajtókon át vezet az út,
+            tehát nem behatolás elleni védekezésre készül, vagyonvédelmi szerepe nincs. Egyszer régen a zárható pinceajtó áldásáról <a href="/borok/04.html#vicc">értekeztem</a>, ami megvéd a besurranó tolvajok kártételétől,
+            de akkor is csak viccelődtem.
+            A pára- és hővédelmi hatás megőrzése mellett mostantól csupán a kedvező látványélmény megteremtése a cél, ami pofonegyszerű optikai hatással megoldható.
+            <br>
+            Nem ez az első olyan döntésem, ahol eltérek a szokványos megoldástól. Három gyerekem született két fészekaljából úgy, hogy sosem nősültem, pedig a házasságkötés szokása mélyen beleivódott a társadalomba.
+            Legalább annyira, mint a tölgyfából készülő vaskos pinceajó iránti elvárás, amihez akkora pincekulcs jár, hogy azzal verekedni is lehet.
+          </p>
+        </div>
+        <div id="2025-01-31" alcim="színház az egész világ"><p>Színház az egész világ</p></div>
+        <br>
+        <div class="box-text">
+          <p>
+            Végérvényesen lemondtam ennek a szép feladatnak igényes, bonyolult, kockázatos és feleslegesen drága megoldásáról, ám ezzel a döntéssel nem szűnt meg a sóvárgás a mostani megoldásnál esztétikusabb pinceajtó iránt, ezért a töprengés folytatódik.
+            Színházi élményeim jutnak eszembe, ahol a nézőtérről szemlélve pompázatos hatást keltenek a díszletek,
+            csakhogy láttam ezeket közelről és hátulról is – lehangoló élmény. Ugyanígy láttam közelről a szereplőket előadás után a színészklubban, akik színpadi megjelenésük alapján roppant vonzóak,
+            de az előadás után  megszűnik varázsuk, amint levedlenek magukról sminket, műszempillát, parókát, viszont marad a szürke, kiélt, szottyadt, ráncos, vágylohasztó valóság.
+            <br>
+            Ugyanezt az ősi trükköt, a felhordott máz hatásvadász módszerét fogom alkalmazni a látvány javítására a pince nyílástakaróján. Már azzal az egyszerű művelettel is sokat javulna a megjelenés, ha festékkel fedném a randa felületet.
+            Ebből jön az ötlet, hogy ha festék, akkor miért ragadnék le az egyszínű egyszerűségnél, amikor elláthatom a felületet mintázattal is,
+            és ez a mintázat miért ne alakítsa egy kedvező látványt mutató ajtó képét? Ha jól néz ki a színpadon, akkor itt sem fog rosszul mutatni.
+          </p>
+        </div>
+        <div id="2025-02-05" alcim="grafikai előkészítés"><p>Grafikai előkészítés</p></div>
+        <br>
+        <div class="box-text">
+          <p>
+            Van nekem elég bő fantáziám, el tudok képzelni mindenféle látványt, de most a türelmetlenség a lustasággal karöltve abba az irányba terel,
+            ahonnan készen kapom az ötleteket. Mások által korábban megalkotott ajtókat fogok nézegetni, és ezekből választok tetszetős mintát.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-mintak.webp">
+          </div>
+          <p>
+            A vizsgálat alá vont ajtók egy része középkori darab, kovácsolt vasalattal, szegekkel és szegecsekkel. Nem ismerték a csavart a régiek, és kezdetleges módszereikkel míves darabokat hoztak létre.
+            Óriási a választék, reggelig böngészhetném, de fegyelmezetten felhagyok a további keresgéléssel, amikor elegendő mintát gyűjtöttem. Ezek között látok olyat, ami ránézésre egy az egyben illene az ajtónyílásba,
+            nem kellene vele sokat bíbelődni. Aztán hosszas vívódás után mégis arra esik a választás, amivel keményen meg kell küzdenem.
+          </p>
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/ajto-ax.webp">
+            </div>
+            <figcaption>eredeti</figcaption>
+          </figure>
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/ajto-nrm.webp">
+            </div>
+            <figcaption>átdolgozott</figcaption>
+          </figure>
+          <p>
+            Abból fakad a küzdelem, hogy nem értek a képfeldolgozó programokhoz, ezért a speciális műveletek előtt tovább kell képeznem magam.
+            Első lépésben a nem szemből fényképezett ajtó axonometriáját szüntetem meg, majd eltávolítom a felesleges árnyékokat, növelem a felbontást és a kontrasztot.
+            Aztán a pince bejáratának méretéhez igazítom a tuningolt kép dimenzióit, végül látványterv készül:
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-falban.webp">
+          </div>
+        </div>
+        <div id="2025-02-06" alcim="alkalmas nyomtató kerestetik"><p>Alkalmas nyomtató kerestetik</p></div>
+        <br>
+        <div class="box-text">
+          <p>
+            Nekem tetszik, és ezzel megpecsételődött sorsom, mert most kereshetek egy olyan vállalkozást,
+            akik képesek megfelelő minőségben, és alkalmas vászonra nyomtatni az ajtó képét 1550×2154 mm méretben.
+            <br>
+            PDF-ben kérik a nyomtatandó anyagot. Első nekifutásra legyártom 96 DPI-vel, ami viszonylag nagyméretű file-t eredményez,
+            ezért teszek egy újabb kísérletet 72-vel – egy nagyságrenddel csökken a méret.
+            <br>
+            – Föl kell mennünk az emeletre, mert a lenti ajtón nem fért be a nyomtató – mentegetőzik a szakember.
+            Az emeleten jelmezkölcsönző működik, itt bújik meg a gépegység a ruhafogasok mögött.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-nyomtat0.webp">
+          </div>
+          <p>
+            Szerencsém van a típussal, mert a nyomat hossza nem korlátozott, a befűzhető tekercs szélessége pedig 1625 mm (64 hüvelyk), amibe pont belefér a pinceajtó 1:1 arányú képe szegéllyel együtt.
+            Eredetileg a 225 literes boroshordót ölrekapva cippelő ember kiterjedéséhez méreteztem a pincebejárat szélességét,
+            erre most kiderül, hogy a rendelkezésre álló nyomtató tekintetében is megfelelő méretet határoztam meg az építés idején.
+            Bölcs előrelátás? Fenéket. Mázli.
+            <br>
+            Volt egy olyan szakasza a nyomtatás előkészítésének, amikor megmakacsolta magát a nyomtatóvezérlő program.
+            Úgy tűnt, hogy hosszúra nyúlik a megoldás keresése, ezért magára hagytam a szakembert, és beszédbe elegyedtem a jelmezkölcsönzőt felügyelő nénivel.
+            Arról számolt be, hogy férfiak gyakran kérnek női jelmezeket, és csillogó szemmel ecsetelte, hogy milyen jól áll némelyiknek.
+            Aztán én meséltem neki arról, amikor a színházban rühjárvány tört ki a koszos jelmezektől,
+            amit rossz nyelvek szerint igazából az öltöztetőnők terjesztettek. Az egész társulat véresre vakarta magát, mert a rühesség nem olyan állapot,
+            aminél a fejlett tudat fegyelmezetten eltekint az illetlen vakarózástól. Azt meg KELL vakarni. Éppen belekezdtem volna abba a történetbe,
+            hogy a színtársulat férfitagjai közül is sokan szívesen viseltek volna női ruhát, mert ők nem titkoltan saját nemükhöz vonzódtak,
+            de egyszer csak beindult a nyomtató, és ezután kisvártatva megjelent az eredmény.
+          </p>
+        </div>
+        <div class="box-text-update">
+          <p>
+            Az 1980-81-es évadban történt, amikor a Pécsi Nemzeti Színház hátsó traktusában igyekeztem a színpad felé, s ekkor felpattant a lépcső alján nyíló ajtó, ahonnan kipenderült a gazdasági igazgatónő titkárférfija.
+            Haladtam tovább felfelé, és a lépcsőfordulóhoz érve találkozott pillantásunk. A fickó megnyerően vigyorgott, szólásra nyílt bajszos szája, én pedig illendően megtorpantam.
+            Tetőtől talpig alaposan végigmért, mert addig csak a hátamat bámulhatta, aztán csettintett a nyelvével.
+            Fejét egy kicsit oldalra billentve kacsintott, majd kitört belőle a kendőzetlen csodálat:
+            <br>
+            – Hmmm&#8230; de csinosak ezek a mai fiatalok!
+            <br>
+            Ebből nem lesz építő beszélgetés – gondoltam, és futottam tovább. Ez volt az első fura élményem az intézményben, amikor egy faszitól bókot kaptam a megjelenésemre.
+            Nem volt egyedi eset. Később további társulati tagok is félreérthető rokonszenvet mutattak. Mindannyian nagyon rendes emberek, kedveltem őket,
+            de egyoldalú szerelmük plátói szinten rekedt, mert már akkor is kifejezetten a nőkhöz vonzódtam.
+            <br>
+            Szerencsére voltak egészséges élményeim is ebből a korszakból. Például amikor közös uszodalátogatást szerveztünk az egykoron nagyhírű Pécsi Balett egyik nőnemű táncosával.
+            Lényegében bemutatta az árut, én meg attól viszolyogtam, hogy idősebb nálam. 19 voltam, ő meg 30 (idősödve egyre többet <a href="/olv/orom/kapisgal.html#kesergo">bosszankodok</a> fiatalkorom kihagyott lehetőségei miatt).
+            A színházművészeti lexikonban <cite>szép vonalú, dekoratív táncosnőként</cite> jellemzik,
+            amit testközelből érzékelhettem, mégis mulyán viselkedtem. Mai eszemmel úgy értékelem a helyzetet, hogy balga módon nem éltem a lehetőséggel, és elmulasztottam egy legszebb életkorában lévő nő szerelmét,
+            aki Hamvas Béla szavait juttatja eszembe a <a href="/olv/velemeny/hamvas.html#csucspont">szekszárdi borról</a>.
+            A másik oldalon a pillangóhatás réme jelenik meg, és érzem a veszélyét annak, hogyha akkor bemászok egy fejlett mozgáskultúrájú táncosnő ágyába,
+            akkor talán tovább maradok a társulatban, és nagy valószínűséggel alkoholista lesz belőlem. Valós veszély ez ott, ahol házon belül italmérés működik.
+            Aki épp nincs színpadon, az a kocsmapultot támasztva várja jelenését, ha nem egy asztalnál ülve poharazgat. Tudod, hogyan működik a rendszer a színházban?
+            Az egész ház ki van hangosítva, mindenhol hallani az ügyelő szavát, amikor színpadra szólít valakit. A kocsmában is. <cite>Bitte auf die Bühne!</cite> – ahogy a Bártfai mondogatta egykoron.
+          </p>
+        </div>
+        <div class="box-text">
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-nyomtat.webp">
+          </div>
+        </div>
+      </div>
+      <div id="2025-02-07" alcim="siker, ami ritka"><p>Siker, ami ritka</p></div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Nem vet szét az ideg amíg hazaérek, mert már nyomtatás közben is rendben lévőnek tűnt a kinézet.
+            Itthon mégis első dolgom az ellenőrzés: nyomat padlóra terítve, íves nyílástakaró ráfektetve. Ha fedik egymást, akkor eddig sikeres a vállalkozás.
+            Az íves rész eltér az ajtónyílás szabályos félkörívétől, de ez már a látványterven is látszott, és megbékéltem vele.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-ellenor.webp">
+          </div>
+          <p>
+            Az első hevületen túl fogok egy mérőszalagot, és egyszerűen megmérem széltét-hosszát. Milliméterre stimmel a tervezett mérettel.
+            Ha eltérést látnék, akkor is a mérőeszköz pontatlanságára gyanakodnék, mert a <a href="https://www.epson.hu/hu_HU/term%C3%A9kek/nyomtat%C3%B3k/large-format/surecolor-s80610l/p/29190">nyomtató</a> profi cucc,
+            a nyomat hordozója pedig üvegszállal erősített anyag. Súlya 1.88 kg, amiből a szabásnál kb. 20% leesik, viszont egyéb szerelékek hozzáadódnak,
+            így az optikai elégedettséget biztosító tartozékkal kiegészített nyílástakaró végleges súlyát 3.5 kilóra becsülöm.
+            Ez különösen kedvező a WPC-s tervek 60 és 70 kiló közötti súlyához képest, a tölgyből készítendő darab mázsás terhével összevetve pedig olyan, mintha nem is létezne.
+            Ezt a méretéhez képest rendkívül könnyű kivitelt jó szélben akár reptetni is lehetne, ha kivinném a rétre, és madzagokat kötnék rá.
+            Bodóczky István sárkányépítésről szóló könyvében olvastam kiskoromban, hogy rendeznek olyan sárkányeregető összejöveteleket,
+            ahol mindenféle, eredetileg nem sárányvitorlának tervezett tárgy eregetésével próbálkoznak, mint például esőkabát.
+            Egy ilyen bulin nagy sikerem lenne, ahogy megjelenek egy pinceajtóval.
+          </p>
+        </div>
+        <div id="2025-02-10" alcim="kivitelezés"><p>A kivitelezés bátortalan lépései</p></div>
+        <br>
+        <div class="box-text">
+          <p>
+            Nem áll rendelkezésemre kiforrott technológia a nagyjából 3 m<sup>2</sup>-es műanyag molinó ráfeszítéséhez a meglévő nyílástakaró hajlított kontúrléceire.
+            Volt egy egész hétvégém, hogy kigondoljak valami barkácsmegoldást, és hétfőn belevágjak. Összeszedtem kellékeket, szerszámokat, és óvatos léptekkel levonultam a futófolyosónak újabban <i>közösségi tér</i> névvel illetett részére,
+            ahol már péntek óta kiterítve hever a nyomat, rajta a méret helyességének ellenőrzésére rádobott, ideiglenes nyílászáróval.
+            Nem árt az óvatosság, mert ha rossz az elgondolás, akkor nem a kívánalom szerint fog mutatni a díszlet, talán meg sem áll a helyén.
+            Összecsapni sem akarom, mert tartós megoldás a cél.
+            <br>
+            Méricskéléssel kezdem. Meghúzom az első, félszeg vonalat a molinó hátulján, de még nem vágok semmit.
+            Közben megalkotom a szöszmötölés itthoni definícióját: fontos műveletek megfontolt halogatása.
+            Van gyakorlatom ebben, mert a pince előtti <a href="/olv/igykeszult/padlo.html">padlóburkolat</a> és a futófolyosót lezáró <a href="/olv/igykeszult/kapu.html">kapu</a>
+            építése is alapos, sokszor ellenőrzött mérésekkel kezdődött, és az eredmény elégedettséggel töltött el.
+            Igen ám, de azóta eltelt öt év. Ennyivel bölcsebb lettem, de nem adják ingyen a tapasztalatot. Korábban magabiztos mozgásom lelassult, határtalan önbizalmam alábbhagyott, amiben része volt az igazi pinceajtó gyártására készülve elszenvedett fiaskónak is.
+            <br>
+            A kudarcot átvészeltem, és megtaláltam az igazán idevaló megoldást, aminek látom buktatóját is.
+            A molinó miatt duplájára növekszik a mostanáig pillekönnyű nyílászáró súlya, ami kétségessé teszi az eddigi működési elv sikeres továbbvitelét: a rugalmas szerkezet befeszül a boltíves nyílásba,
+            és bármilyen zsanér, vasalat vagy a szerkezetet rögzítő alkatrész (például kampó) nélkül áll a helyén.
+            A tartásért felelős lécek alig vastagabbak a pipaszárnál, ezért a súlynövekedés összerogyással fenyeget, aminek kivédésére beépítek egy keresztmerevítőt.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-merevit.webp">
+          </div>
+          <p>
+            Az íves formát biztosító műanyag <a href="/olv/igykeszult/pinceajto.html#lec">szegélylécek</a> mellett újfajta építőelemként jelenik meg a szintén rugalmas műanyagból készült redőnyléc.
+            Az alagsorban felhalmozott rengeteg kacat között találtam egy köteget, a méret kérdéses.
+            Az alkalmasságot most nem méréssel, hanem gyakorlati módszerrel állapítom meg: beteszem a helyére a szerkezetet, és odaillesztem a redőnylécet a tervezett rögzítési pontokhoz.
+            Nem szokott ötösöm lenni a lottón, ezért cserébe az a legkevesebb, hogy a rendelkezésre álló kétféle méret közül a rövidebb pont megfelelő, vágni sem kell belőle.
+            A tétova méricskélés még most is tartana, míg ezzel az odaillesztős módszerrel azonnal eredményre jutottam.
+          </p>
+        </div>
+        <div id="2025-02-14" alcim="a világegyetem érzékeny egyensúlya"><p>A világegyetem érzékeny egyensúlya</p></div>
+        <br>
+        <div class="box-text">
+          <p>
+            Nagyon igyekszem, de nem csak rajtam múlik a kényes egyensúly fenntartása. Nem szeretem a műanyagot. A fával ellentétben idővel nem patinásodik, hanem karcos lesz, megcsúnyul.
+            Az ember legszívesebben kihajítaná, de mit tesz a helyébe? Ugyanolyan műanyagot, tehát óvatosan azzal a kihajítással.
+            <br>            
+            Pincébe kerülve a bor nem érintkezik műanyagokkal. Tölgyfa hordóban érlelem, rozsdamentes acéltartályokban és üvegballonokban tárolom, üvegből készült lopóval, mintavevővel, üvegpohárba, -kancsóba, -palackba töltöm.
+            Aztán közbeszól a fejlett világ, és a dézsák, vödrök, tölcsérek, tömlők mind műanyagból készülnek, de ha odafigyelve intézem a műveleteket, akkor ezek rövid időre érintkeznek a borral, ami remélhetőleg elfogadható kompromisszum.
+            <br>
+            Hiába minden műanyagellenes igyekezet, mert a famentes kivitelben készülő nyílászáróval nagyon belenyúltam a sűrűjébe. Ennek minden porcikája műanyag:
+          </p>
+          <ul>
+            <li><p>melegházi fólia</p></li>
+            <li><p>távtartó pufizacskó</p></li>
+            <li><p>gyorskötöző</p></li>
+            <li><p>szegélyléc</p></li>
+            <li><p>redőnyléc</p></li>
+            <li><p>molinó</p></li>
+            <li><p>sodrott zsinór</p></li>
+            <li><p>geotextil</p></li>
+            <li><p>kábelcsatorna</p></li>
+          </ul>
+          <p>
+            Mit keres a sorban a villanyszerelés kellékeként szolgáló kábelcsatorna? Az itthoni elfekvő készletben találtam. Lepattintható fedelétől megfosztva könnyű,
+            rugalmas, U-profilos léc, amivel a molinót szorítom a kontúrlécekhez. Nem bevált módszer, most fog bemutatkozni, reménykedek az alkalmasságában.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-szabas.webp">
+          </div>
+          <p>
+            Leválasztottam a molinóról a haszontalan részeket. Szakemberek ezt a műveletet hívják szabásnak? A levágott rész 0.36 kg-t nyom,
+            ami az egésznek kereken 19%-a. Húszra saccoltam, egy igazi mázlista vagyok. Kár, hogy ezen a pontos becslésen az égvilágon semmi nem múlik.
+            A kiszabott molinó és a szerkezet eddigi súlya együttesen 3.32 kg, így a véglegesre becsült 3.5 kg tarthatónak tűnik.
+          </p>
+        </div>
+        <div id="2025-02-19" alcim="nem kerget a tatár"><p>Nem kerget a tatár</p></div>
+        <br>
+        <div class="box-text">
+          <p>
+            Múlt péntek óta nem dolgoztam a pinceajtó látványának fejlesztésén, azóta hever érintetlenül a futófolyosó padlóján kiterítve.
+            Engem valóban nem kerget tatár, és a pinceajtó sem szalad el, de ma már szerda, ideje lenne visszatérni ehhez a fontos munkához.
+            Egy kicsit elkalandoztam az elmúlt napokban, de nem tétlenséggel telt az idő, hanem már megint kijött belőlem néhány keresetlen gondolat annak következtében,
+            hogy ide az erdő szélére is eljutnak a hírek. Emiatt a hétvégén azon rágódtam, hogy <a href="/olv/velemeny/hulye.html">milyen hülyének lenni</a>?
+            Ezt követte a <a href="/olv/bv/ruppert.html">péntek esti borkóstoló</a> leülepedett emlékeinek rögzítése, amíg friss az élmény.
+            Aztán visszatértem volna a kétkezi munkához, de ez a sötétre sikeredett tatáros szakasz hízni kezdett, majd egyszer csak kiszakadt innen, hogy <a href="/olv/velemeny/tatar.html">önálló életre keljen</a>,
+            mert ez már nem is a pinceajtóról szól. Ha még nem döntöttél adód 1%-ának felajánlásáról, akkor az ebben foglalt érvekkel talán meggyőzlek, hogy érdemes <a href="https://wikimedia.hu/wiki/Adom%C3%A1nyoz%C3%A1si_inform%C3%A1ci%C3%B3k">támogatni a Wikipédia működését</a>.
+          </p>
+        </div>
+        <div id="2025-02-21" alcim="a nagy visszatérés"><p>A nagy visszatérés</p></div>
+        <br>
+        <div class="box-text">
+          <p>
+            Munkaszervezési leleményként mutatom be azt a módszert, hogy nem reggel készítem elő a történet következő szakaszát,
+            hanem előző este. Így nem fordulhat elő olyan eset, mint például szerdán, amikor annyira belefeledkeztem az írásba,
+            hogy a pinceajtó munkálatai újabb két nap halasztást szenvedtek. Felfedeztem még egy tényezőt, ami nem teszi vonzóvá a futófolyosón végzett munkát.
+            A hideget. Fűtetlen, föld alatti helyiség, ahol télvíz idején 7 és 8 ℃ közé süllyed a hőmérséklet. Nem igazán komfortos ilyen környezetben dolgozni.
+            Ezen a hőmérsékleten már szívesen húz kesztyűt az ember gémberedés ellen, csakhogy ennél a munkánál hátráltatná a finom mozdulatokat, visszaveti a kézügyességet.
+            <br>
+            Hosszas előkészítés után végre eljutottam odáig, hogy minden adott az ajtóformára szabott molinó keretre feszítéséhez.
+            Semmi garancia nincs arra, hogy a kialakult forma pontosan illeszkedik az ajtónylásba, ezért ideiglenes, ennek fejében gyors megoldást alkalmazok.
+            Megfelelő méretű iratcsipeszekkel erősítem a molinót a kerethez. Ha beválik a forma és az illesztés, akkor véglegesítem a rögzítést masszívabb megoldással.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-csipesz2.webp">
+          </div>
+          <p>
+            Na, most lehetne izgulni, mert eddig nem láttam a körbevagdosott molinó képes felét, csak a fehér hátulját, amire prímán lehet ceruzával rajzolni.
+            Egyben van az egész, most lehet megfordítani, és kiértékelni a helyzetet. Izgalomra azért sincs ok, mert ha egy kicsit elcsúszott a kép valamelyik irányba,
+            az most láthatóvá válik. Csipeszek le, igazít, csippeszek vissza, újabb vizsgálat, és egyszer csak jó lesz. Felesleges izgulni,
+            mert kevés dolgot mértek meg ilyen alapossággal, mint a molinó hátuljára rajzolt körvonalakat. Megvolt a fordítás. A kép széle tökéletesen illeszkedik a konturléchez, igazítani sem kell rajta, mehet a helyére.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-proba2.webp">
+          </div>
+          <p>
+            Illene ide a <cite>mint a mellékelt ábra mutatja</cite> elcsépelt frázisa, mert a látvány magáért beszél.
+            Így képzeltem el, a látványterv is ilyennek mutatta, bár ott minden tökéletes, míg a való életben, gyér fényviszonyok mellett fényképezve fakóbb a megjelenés.
+            Ennek ellenére úgy látom, hogy ez a megoldás ideiglenesen a helyére dobva is piszok jól néz ki.
+            Tényleg olyan, mint egy középkori piceajtó, ez passzol igazán a kőfalhoz. Most már annak is örülök, hogy a zárókövet belógatva csináltattam a kőművesmesterrel,
+            mert így az igazi.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Sok tanulsággal szolgál ez az ügy. Ezek közül a <i>késleltetett döntések elvének</i> alkalmazása a legsúlyosabb.
+            Mit mond erről a szolgálatomba szegődött mesterséges intelligencia?
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/ajto-dontes.webp">
+          </div>
+          <p>
+            Az ideiglenes nyílástakaró készítését dokumentálva megfogalmaztam azt a gondolatot, amivel a <a href="/olv/igykeszult/pinceajto.html#2020-06-08">halogatás észszerűségét</a> magyaráztam, összhangban ezzel az elvvel.
+            Ezzel szemben dolgozott az erőteljes vágy valami pofásabb megoldás iránt, és ezzel összefüggésben jön elő a másik fontos tanulság: a türelem ideális pinceajtót terem. Mert a most készülő darab az én szemszögemből az. Nem csupán ideális, de egyben optimális.
+            A gyártáshoz szükséges molinónyomtató technológia régóta rendelkezésre áll, tehát nem azért nem vágtam bele korábban ebbe a formabontó megoldásba, mert bármilyen eszköz vagy anyag hiányzott volna. A fejemből hiányzott a szükséges lelemény.
+            <br>
+            Egy igazi pinceajtóért kisebb vagyont kérnek az asztalosok, ehhez képest az itt bemutatott megoldásért szinte kabátgombokkal fizettem. Csak a molinónyomtatás és az iratcsippeszek kerültek pénzbe, minden mást megtaláltam az itthoni vackok között, ráadásul a nyilásba feszülő váz már készen volt.
+            Most jön az a rész, amikor a csipeszeket végleges rögzítésre cserélem. Rengeteg lyukat fúrtam korábban a kontúrlécekbe, hogy ezeken keresztülfűzött gyorskötözőkkel rögzíthessem a molinót. Ez a keserves meló rám vár, de téged ezzel már nem fárasztalak.
+          </p>
+        </div>
+      </div>
+      <div class="box-text">
+        <p><a name="kovetkezo"></a></p>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/temak.js"></script>
+<script src="/fejezetek.js"></script>
