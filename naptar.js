@@ -380,8 +380,8 @@
   }
 
   async function file_okbol_feltoltve(obj) {
-    var cucc = new Map(); //! alcimek.json-t ideiglenesen kitörölni/átnevezni!
-    var summ = new Map(); //!
+    //var cucc = new Map(); //! alcimek.json-t ideiglenesen kitörölni/átnevezni!
+    //var summ = new Map(); //!
     tarea_gyarto(obj);
     var forras_nev = (alcimek_sum) ? alcimek_fl_nev+" konzervből":"https://"+window.location.hostname+" weboldalról";
     sum_info = forras_nev+" összegyűjtött történetek:\n\n";
@@ -422,19 +422,19 @@
               for (var key in alc) glob.alcimek.set(key,alc[key]);
               sum_info += glob.tortenet_db+": "+url+"\n";
             }
-            /* */ //!
+            /* //!
             var content = null;
             try {
               content = doc.querySelector('meta[name="description"]').getAttribute("content");
             } catch(e) {};
             if (content) summ.set(`${tk}${csomag.subfolder}/${csomag.nev}`,content);
-            /* */
+            */
             if (glob.alcimek.size == 0) {
               csomag.esemenyek[le.kelt] = le.cim;
             } else {
                 csomag.esemenyek = Object.fromEntries(glob.alcimek);
                 for (var key in csomag.esemenyek) sum_info += "&emsp;&emsp;&emsp;"+key.substring(0,10)+" "+csomag.esemenyek[key]+"\n";
-                cucc.set(`${tk}${csomag.subfolder}/${csomag.nev}`,csomag.esemenyek); //!
+                //cucc.set(`${tk}${csomag.subfolder}/${csomag.nev}`,csomag.esemenyek); //!
               }
             gyujto_tb.push(csomag);
             tarea.innerHTML = sum_info;
@@ -442,7 +442,7 @@
           }
         }
     kitakar();
-    mentes(cucc,summ); //!
+    //mentes(cucc,summ); //!
     return gyujto_tb;
   }
 
