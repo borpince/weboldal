@@ -249,6 +249,8 @@
         rendezes.onclick = function() {forditva = ! forditva; naplo_gyarto();}
         summal.onchange = function() {naplo_gyarto();}
         alcimekkel.onchange = function() {naplo_gyarto();}
+        const searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has('sum')) summal.checked = true;
       }
     }
   });

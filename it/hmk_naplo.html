@@ -92,6 +92,17 @@
             A <cite>meta name="description" content="szöveg"</cite> adatot eredetileg a keresőmotorok miatt szerepeltetem a HTML file-ban,
             de most felhasználom a naplóban is, mert a <i>"szöveg"</i> minden esetben a weboldal rövid összefoglalója, kivonata. Két legyet ütök egy csapásra azzal,
             hogy ezt a szöveget az írás összefoglalójaként – kívánságra – megjelenítem a naplóban is.
+            <br>
+            Továbbra sem értek mindenhez, ezért az <a href="https://hu.wikipedia.org/wiki/Mesters%C3%A9ges_intelligencia">MI</a> segítségét kérem egy olyan utasításhoz,
+            amivel kinyerhetem a <i>content</i> attribútum értékét a HTML dokumentumból. A következőt javasolja:
+            <br>
+            <code class="fekete-hatter">let content = doc.querySelector('meta[name="description"]').getAttribute("content");</code>
+            <br>
+            Az adatot a HTML file nevéből és a webhely struktúrájában elfoglalt helyéből képzett kulcshoz rendelve tárolom:
+            <br>
+            <code class="fekete-hatter">if (content) summ.set(`${tk}${csomag.subfolder}/${csomag.nev}`,content);</code>
+            <br>
+            Innen szedem elő, amikor a naplósorokat megjelenítő táblázatba illesztem. Tekintsd meg az <a href="/naplo.html?sum">eredményt</a>!
           </p>
         </div>
       </div>
