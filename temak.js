@@ -326,7 +326,8 @@ function alcim_gyujto(doc) {
   }
 }
 
-var alcimek_sum = null;
+var alcimek_sum = null; //az összes alcím írásonként
+var summa_sum = null; //az összes '<meta name="description" content' írásonként
 var alcimek_fl_nev = "/alcimek.json";
 
 function alcimek_konzerv_betolt(cb) {
@@ -334,7 +335,8 @@ function alcimek_konzerv_betolt(cb) {
     fetch(alcimek_fl_nev)
     .then((res) => res.text())
     .then((text) => {
-      alcimek_sum = new Map(JSON.parse(text));
+      alcimek_sum = new Map(JSON.parse(text).alc);
+      summa_sum = new Map(JSON.parse(text).sum);
       if (cb != undefined) cb();
     })
     .catch(function(error) {
