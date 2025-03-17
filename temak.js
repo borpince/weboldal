@@ -149,6 +149,7 @@ var temak =
         {cim:"a baján Péter Bencéje", subfolder:"/orom", nev:"bayan", ver:0, kelt:"2023-12-10"},
         {cim:"frauenkirche", subfolder:"/orom", nev:"frauenkirche", ver:0, kelt:"2024-02-22"},
         {cim:"majomparádé", subfolder:"/orom", nev:"majom", ver:"2024-03-15", kelt:"2015-05-20"},
+        {cim:"deszkamodell", subfolder:"/orom", nev:"deszka", ver:"2025-03-17", kelt:"2017-02-10"},
         {cim:"fallabdás banda", subfolder:"/orom", nev:"fallabda", ver:0, kelt:"2024-10-21"},
         {cim:"kedvesem, a divatguru", subfolder:"/orom", nev:"divat", ver:0, kelt:"2025-03-01"}
       ],
