@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="Egyszer minden tönkremegy. Most az alagsori világítás időzítőkapcsolóján volt a sor, amit lépcsőházi automatának is hívnak. Nem cserével oldottam meg a javítást, hanem egy MCU vezérelte okos megoldást gyártottam helyette.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/x-icon">
+</head>
+<style>
+  li,li::marker {
+    font-size: x-large;
+  }
+</style>
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
+          </div>
+        </div>
+        <select name="olv"></select>
+      </div>
+    </div>
+    <div class="content">
+      <div class="box-text">
+        <p style="z-index:1"><a name="elozo"></a></p>
+      </div>
+      <h1>Egyszer minden tönkremegy</h1>
+      <div class="box">
+        <div class="box-text-update">
+          <p>
+            Nem ez az első olyan beszámoló, ami ijesztő címe ellenére helyet kap az <i>örömteli történetek</i> témacsoportjában (ilyen volt a <a href="/olv/orom/gebasz.html">gebasz</a> is).
+            Rendszeresen előveszem régi írásaimmal hibák, zagyva fogalmazás és halott linkek után kutatva. Így találkoztam a minap <a href="/olv/orom/deszka.html">Deszkamodell</a> című, az <a href="https://hu.wikipedia.org/wiki/Dolgok_internetje">IoT</a> hőskorában fogalmazott jegyzetemmel.
+            Ennek keletkezésekor már hazánkban is működött a 4G mobilinternet, mindenféle gyártók elárasztották a piacot olcsó mikroszámítógépekkel és ezekhez való érzékelőkkel (hőmérő, légnyomásmérő, giroszkóp, GPS-vevő stb.), amik hozzám is eljutottak.
+            Ekkor vált lehetővé komolyabban belevágni korábban buta dolgok okosításába, mert minden körülmény ennek kedvezett. Gyerekeim ez idő tájt távoli országok egyetemeire jártak, nem kellett róluk közvetlenül és napi szinten gondoskodnom. Csak a létfenntartásukhoz elegendő lóvét kellett utánuk küldeni,
+            de az időmmel már szabadon gazdálkodtam.
+            <br>
+            Minden rendelkezésre állt ahhoz, hogy alkossak valami okos eszközt, mindössze a hozzá való speciális tudás és a késztetés hibádzott. Csak az első lépés nehéz, kezdjük hát a másodikkal – javasolják viccelődve a hozzáértők.
+            A garázskapu deszkamodellel okosított megoldásának idején már nem voltam teljesen felkészületlen, mert nem az volt az első ilyen munkám. Az alapokat korábban sajátítottam el, amikor még csak a mikroszámítógépek és a hozzájuk illeszthető érzékelők terén szereztem jártasságot.
+            A mindent elindító késztetés egy háztatási esemény, az alagsori világítás időzítőkapcsolójának meghibásodása volt, amit egy józanul és hatékonyan cselekvő férfiember annak cseréjével javítana, de én nem erről a végletes egyszerűségről vagyok ismert.
+            Egyszer a <cite>konyhai világítás működésének helyreállítása érdekében végzett munkával</cite> (a körülményes fogalmazás már eleve gyanús) mutattam be az egyszerűen megoldható helyzeteket <a href="/it/jelzesek.html#konyha">elbonyolítani képes</a> tehetségemet – a legjobb szándék mellett persze.
+            <br>
+            Tehát egy szokványos, időzítős világításvezérlő pótlása volt a feladat, ami 2014 karácsonya előtt romlott el, és aminek 2015 januárjában született mikroszámítógépre alapozott megoldása – ez volt az első, puhatolózó lépésem ebbe a szakirányba. Ennek történetét közlöm most egy évtized elteltével, amihez minden rendelkezésre áll.
+            Az eszköz azóta is kifogástalanul működik, megtaláltam a korabeli tervet, az MCU-t működtető forrásprogramot, egy szövegkezdeményt, aminek akkori publikálása elmaradt, és megvannak az emlékeim is.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Történészek a <a href="https://en.wikipedia.org/wiki/Phoebus_cartel">Phoebus-kartellt</a> azonosítják a fogyasztói társadalom átverésére alakult szövetségek előfutáraként. A villanykörték gyártásával foglalkozó cégek minden hájjal megkent vezetői úgy döntöttek,
+            hogy a gyártmányaik előállításánál alkalmazott technológiába olyan eljárásokat csempésznek, amik az izzólámpák élettartamát 1000 üzemórára csökkentik. A <a href="https://hu.wikipedia.org/wiki/Tervezett_elavul%C3%A1s">tervezett avulás</a> gyakorlati bevezetésének dicsősége azonban nem a villanykörte-összeesküvés résztvevőit illeti,
+            hanem egy igazi nagypályást: a Teremtőt. Az élőlények csíráznak, kikelnek, megszületnek, aztán növekednek, öregszenek, majd elpusztulnak. Semmi sem tart örökké.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/tonkre-lampak.webp">
+          </div>
+          <p>⚠️Ebből a beszámolóból legfeljebb ötleteket és ösztönzést kaphatsz, nem a kész megoldás komplett dokumentációját.</p>
+        </div>
+      </div>
+      <div class="box">
+        <div  id="2014-12-20" alcim="ez bizony tönkrement" class="box-text">
+          <p>
+            Ilyen körülmények között nem számít döbbenetesnek, ha valami tönkremegy, de az érdeklődőbbje keresi az okát. Így találtam rá a villanyóra-szekrényben az 1986-ban gyártott <i>Ganz GLE 2</i> lépcsőházi időzítőkapcsolóra, ami nálunk az alagsor világítását vezérli.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/tonkre-gle2.webp">
+          </div>
+          <p>
+            28 évet szolgált a szocialista magyar ipar terméke, le a kalappal. Hibás állapotában sem hagyja cserben a háziakat, mert nem borult sötétbe a pince. Ellenkezőleg. Valószínűleg egész nap fényárban úszott minden, mert csak este vettem észre a lentről beszűrődő világot.
+            Internetre kapcsolt számítógép segítségével hamar sorstársakra leltem, akik a náluk meghibásodott időkapcsolók javítására tett erőfeszítéseiket <a href="https://www.hobbielektronika.hu/forum/topic_11046.html?pg=0">megosztották</a> az elektronikában jártas hozzáértőkkel. Az itt olvasottak,
+            és a jelenleg kapható helyettesítő termék (<a href="http://www.ganzkk.hu/magyar/gle5.htm">Ganz GLE 5</a>) árcédulája elriasztott a kézenfekvő megoldásoktól. Annyi vesződséggel, amennyi a javítással jár, és annyi ráfordítással, amennyibe egy új időrelé kerülne, vidáman legyártható egy saját konstrukció.
+            <br><br>
+            Nem akarom feltalálni a spanyolviaszt, ezért nem lehet célom közönséges időzítőkapcsoló létrehozása, hiszen ilyet boltban is kapni. Ha rászánom az időt az alkotásra, akkor bele kell tenni olyan funkciókat is, amik a profi cuccból hiányoznak. Miért nem jó úgy, ahogy van? Például azért,
+            mert rendszeres forrása a bosszúságnak, hogy az alagsori világítás csak az időzítés lejártakor kapcsol ki, és az is okoz kellemetlenséget, ha hirtelen támadt sötétségben kell tapogatózni a villanykapcsoló után. Nagyratörő vágyaktól hajtva a következő elvárások merültek fel az új időrelével szemben:
+          </p>
+          <ul>
+            <li>bekapcsolás</li>
+            <li>időzített kikapcsolás az időtartam lejáratakor<br>(ennyit tud egy szokványos eszköz, a továbbiak extra kívánságok)</li>
+            <li>kikapcsolt állapotban ne fogyasszon (a Ganz kapcsolója 28 évig folyamatosan áram alatt volt)</li>
+            <li>figyelmeztetés a világítás lekapcsolása előtt (lehetőséget teremt még világosban intézkedni)</li>
+            <li>világítási időtartam hosszabbítása</li>
+            <li>kényszerített kikapcsolás (a beállított időtartam lejárta előtt)</li>
+            <li>takarítás üzemmód</li>
+            <li>véletlenszerű világítás (betörőriasztó)</li>
+            <li>tanulás (optimális világítási időtartam beállítása korábbi események adatait elemezve)</li>
+            <li>setup</li>
+          </ul>
+          <p>
+            <b>1. kutatás</b>
+            <br>
+            Árul ilyet valaki? Pont ilyet nem találtam. Kapható hangvezérlésű, mozgásérzékelős és ezek ötvözete, akár a lámpatestbe építve is. Az elképzelésem szerint működő speciális kütyü sajnos hiányzik a boltok polcairól, és webáruházak kínálatában sem szerepel. Nincs mese, csinálni kell egyet.
+            <br><br>
+            <b>2. alkatrészigény</b>
+            <br>
+            Ehhez szükség van egy tervre, aminek csak <i>hevenyészett</i> példánya létezik, de arra jó, hogy fel lehet mérni róla a szükséges összetevőket.
+            Csak a szemetet hajítom ki, semmi mást, ezért a rengeteg kacat között hosszabb-rövidebb kutatás után megtalálok bármit, ami a múltban keletkezett. Így került elő a terv is, ami igazából egy befejezetlen skicc.
+            Digitalizált változatát most egészítettem ki jól olvasható elnevezésekkel – lényegében ezek írják le az alkatrészigényt.
+            <div class="box-img">
+              <img src="https://kep.pince.eu/tonkre-terv.webp">
+            </div>
+          </p>
+          <ul>
+            <li>5 voltos tápegység</li>
+            <li>Arduino Uno (MCU)</li>
+            <li>2 csatornás relé modul (5V DC)</li>
+            <li>RM14 relé (230V AC)</li>
+            <li>vezetékek</li>
+            <li>sorkapocs</li>
+            <li>falon kívüli konnektoraljzat</li>
+          </ul>
+        </div>
+        <div id="2015-01-23" alcim="a terv megvalósult" class="box-text">
+          <p>
+            Egy jó adag fantáziát beletéve sem derül ki a tervől, hogyan működik, mert lényeges elemek hiányoznak róla. Viszont az alábbi prototípusról nem hiányoznak a szükséges madzagok, mert tényleg az Arduino vezérli a 2 csatornás relé modult, csakhogy a hozzá való vezetékek a kezdetleges terven nem tűnnek fel.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/tonkre-kutyu.webp">
+          </div>
+          <p>
+            Az elvárások közül a <cite>kikapcsolt állapotban ne fogyasszon</cite> azonnal teljesül azzal, hogy az RM14 relé alaphelyzetben nyitott érintkezői útját állják az áramnak, ami csak akkor indul meg az 5 voltos tápegység felé,
+            amikor az alagsori világításkapcsolók valamelyikével ezt a relét működésbe hozzák. Ezzel az Arduino tápot kap, és elindul. Nagyon gyors MCU, néhány ms elteltével működni kezd benne a program (firmware), aminek első dolga meghúzni a TAP_RELAY_PIN-nel vezérelt 5 voltos relét (balodali kék),
+            amivel összeköti saját tápegységét az áramhálózattal. Így marad fenn működése azután is, hogy a világításkapcsolót elengedik.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/tonkre-setup.webp">
+          </div>
+          <p>
+            Ezt követően már az Arduinoban futó program dönti el, hogy mi történjen – akár le is kapcsolhatja magát, ha lejár az időzítés.
+            A relé modul másik darabjának feladata a lámpa állapotának váltása, ami egyrészt a világítást szolgálja, másrészt villogtatással küldhet üzeneteket.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/tonkre-lekapcs.webp">
+          </div>
+          <p>
+            <b>UI (user interface, <a href="https://hu.wikipedia.org/wiki/Felhaszn%C3%A1l%C3%B3i_fel%C3%BClet">felhasználói felület</a>)</b>
+            <br>
+            A hagyományos lépcsőházi automata és az ember közötti kapcsolat egyirányú: a legközelebbi lámpakapcsolóval jelzem a világítás bekapcsolása iránti igényemet. Ennél több dolgom nincs, mert miután fény gyúl, az magától kialszik a beállított időtartam elteltével.
+            <br>
+            A maszek időrelé extra szolgáltatásainak teljesítéséhez mindenképpen szükség van kétirányú kapcsolatra, és az eddigi egy nyomintásból álló jelzésnél bonyolultabb jelzésrendszerre, de az UI nem bonyolódhat el a költségvetés rovására.
+            A kezelő a kapcsoló nyomkodásával, az eszköz pedig a lámpa villogtatásával küld <a href="https://hu.wikipedia.org/wiki/Morzek%C3%B3d">morzejeleket</a>, ezzel az UI kialakításához nincs szükség újabb alkatrészekre.
+            Az output fényjelzés lesz, input eszköznek pedig továbbra is megteszi a lámpakapcsoló. Az RM14 relé összesen 4 váltóérintkezőt kínál. Ezekből egyet a tápellátás beindítására használok,
+            egy másikkal az Arduinot értesítem a lámpakapcsoló működtetéséről. Ez kapcsolódik a narancs-fehér sodort vezetékpáron keresztül a GND-hez és a 12-es PIN-hez, ami már a tervnek nevezett skiccen is eltökélt szándéknak látszik.
+          </p>
+        </div>
+        <div class="box-text-update">
+          <p>
+            Más helyzetekben is éltem már szélsőségesen egyszerű UI alkalmazásával. Kiskoromban is létezett a memóriajáték, ami máig sem ment ki a divatból. Kártyapárokat tartalmazó paklit kevernek össze,
+            majd ezeket lefelé fordítva az asztalra helyezik. Felváltva próbálkoznak a játékosok, és az a lényeg, hogy megtaláljam a megfordított, és így láthatóvá vált kártya párját. Ha sikertelen a kísérlet, akkor a kártyákat lefelé fordítva vissza kell helyezni eredeti helyükre,
+            viszont találat esetén magamhoz vehetem őket. A játék kezdetén csak szerencsével sikerülhet két egyforma képet kiválasztani, de minél több kártyát megnézünk és visszatesszük, annál nagyobb eséllyel emlékezhetünk a megtalálandó kártya helyére. Az a győztes, aki több kártyát gyűjt.
+            <br>
+            Kisgyerekeim anyukájával múlattuk az időt eképpen gyakran, és idővel megelégeltem az új játék kezdetét megelőző keverést, de méginkább a kártyák fáradságos elhelyezését szabályos rendben. Időrabló, unalmas tevékenység, mégis szükség van rá.
+            Hogyan orvosolja ezt a kellemetlen helyzetet egy informatikai szakember? Ír egy számítógépes programot, ami megkeveri a virtuális paklit, és villámgyorsan kirajzolja a képernyőre, ahol a játékosok a kártyákra bökdösve tudják azokat megfordítani és megnézni.
+            Az egyező párokat a program leveszi a képernyőről, és elszámolja a rátermett játékosnak.
+            <br>
+            A program lényegi részének elkészültével újabb kihívást kerestem. Képes vagyok-e beépíteni az algoritmusba olyan mechanizmust, ami előnyt biztosít a bennfentes játékosnak?
+            1. megoldás: az első kártya megfordítása után végighúzom az egeret a képernyőn előbb vízszintesen, aztán függőlegesen, s közben a szemem sarkából a billentyűzet <a href="https://en.wikipedia.org/wiki/Scroll_Lock">Scroll Lock</a> feliratú lámpáját figyelem.
+            Amikor stimmel a sor vagy az oszlop, ahol a kártya párja helyet foglal, akkor ez a különben semmire sem használt lámpa felvillan. Nekem csak annyi a dolgom, hogy a metszéspontban lévő kártyát megfordítva begyűjtsem az érte járó pontot, és hangot adjak meglepetésemnek,
+            hogy már megint mekkora mázlim van. 2. megoldás: A Scroll Lock lámpájának jelzése helyett megmozgatom a merevlemez (HDD, winchester) író-olvasó fejét, amit a régi gépekben jellegzetes hanghatás kísért – aki tudta, mire kell figyelnie, az hallhatta.
+            <br>
+            Az asszonyt elég hamar beavattam a trükkbe – inkább poénnak szántam, minthogy tényleges csalásra használtam volna. A továbbiakban nem is így hívtuk, hanem technikai érdekességnek. Az akkor kifundált megoldás ma már nem lenne életképes,
+            mert a legtöbb billentyűzetről hányzik a visszajelző lámpa, a HDD-t meg felváltotta a mozgó alkatrészek nélkül, hangtalanul működő SSD,
+            ráadásul az érintőképernyős masináknál nem használnak egeret.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Elő kellett vennem minden találékonyságomat ahhoz, hogy az egy árva nyomógombbal működő, és csupán hosszú és rövid fényjeleket villantó UI használatához megjegyezhető morzekódokat rendeljek a különböző működések beindításához és a visszajelzésekhez.
+            A lámpakapcsoló nyomkodásával elérhető hatások:
+          </p>
+          <ul>
+            <li>bekapcsolás: 1 nyomás (impulzus)
+              <br>nincs megkötés a kapcsoló nyomvatartásának időtartamára</li>
+            <li>hosszabbítás: 1-5 rövid impulzus 1-5 perc hosszabbítást eredményez</li>
+            <li>takarítás: 1-3 rövid impulzust egy hosszú követ
+              <br>10,20,30 percig világít a lámpa </li>
+            <li>lekapcsolás: 1 hosszú impulzus</li>
+            <li>setup: 2 hosszú impulzus</li>
+          </ul>
+          <p>
+            Az UI kialakítása a kívánalmaknak megfelelően nem igényel további alkatrészeket, de ennek fejében meglehetősen spártai.
+            Visszajelzések a lámpa villogtatásával:
+          </p>
+          <ul>
+            <li>nyugtázás/elfogadás: 1 hosszú villanás</li>
+            <li>elutasítás: 2 rövid villanás</li>
+            <li>figyelmeztetés: 3 rövid villanás a világítási idő lejárta előtt x másodperccel</li>
+          </ul>
+          <p>
+            Mi számít rövidnek vagy hosszúnak? Mennyi az <i>x másodperc</i>? 
+            Ezeknek a paramétereknek megváltoztatására biztosít lehetőséget a rendszer <i>setup</i> ága, de a morzekódos módszerrel nem igazán kényelmes beállításokat eszközölni. Könnyű téveszteni, ha valaki nem elég ügyes e téren.
+            Egyszer használtam – a tesztelésnél – , és azóta sem. Sokkal barátságosabb UI készíthető egy hagyományos számítógép (laptop, okostelefon, tablet) lehetőségeit kiaknázva,
+            ám ez az MCU vezérlésű időzítőkapcsoló Arduino Unora épül, aminek nincs praktikus kapcsolata a külvilággal,
+            ezért kiegészítő elemek nélkül nem csatlakozhat sem galvanikusan, sem Wi-Fi-n keresztül hálózathoz. Más lenne a helyzet, ha kicsit később vágok bele ebbe a munkába,
+            mert akkor jó eséllyel az <a href="https://en.wikipedia.org/wiki/ESP8266">ESP8266</a>-ot választom. Ez az apró, de hatékony SoC 2014 augusztusában jelent meg, széles körben pedig 2015-től terjedt el és vált közismertté,
+            ezért nem ismertem akkor, amikor az időzítőkapcsoló kiváltásán dolgoztam. A garázskapu okosításához már ezt a <a href="/olv/orom/deszka.html#esp">Wi-Fi-s eszközt vetettem be</a>,
+            amivel szinte gyerekjáték hálózatra kapcsolódni, és böngészővel megnyitható, kényelmes kezelőfelülettel ellátni.
+            Az időzítőkapcsoló tervezett <i>véletlenszerű világítás (betörőriasztó)</i> üzemmódjának csak a helye van meg. Azért nem fejtettem ki, mert hiányzik a rendszerből a <a href="https://lastminuteengineers.com/ds3231-rtc-arduino-tutorial/">DS3231 RTC modul</a>,
+            ami a pontos idő értékét szolgáltatná. Ezt a kiegészítést is szükségtelenné teszi az ESP8266, mert a Wi-Fi-n keresztül internetre csatlakozva egy <a href="https://hu.wikipedia.org/wiki/H%C3%A1l%C3%B3zati_id%C5%91_protokoll">NTP</a> kéréssel az óra is pontosan jár.
+            Erre pedig szükség van ahhoz, hogy észszerűen csak az esti és éjszakai órákban működjön a betörőriasztó.
+            <br>
+            Az elkészült időzítőkapcsoló sok paraméter változtatását megengedi, köztük a visszajelzések villogásának frekvenciáját és a villogtató impulzussorozat kitöltési tényezőjének meghatározását
+            (sötét-világos arány), de ki fogja ezt ügyesen elmorzézni a lámpakapcsolóval?
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/tonkre-villog.webp">
+          </div>
+        </div>
+      </div>
+      <div class="box-text">
+        <p><a name="kovetkezo"></a></p>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/temak.js"></script>
+<script src="/fejezetek.js"></script>

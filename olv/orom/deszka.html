@@ -166,7 +166,7 @@
             </div>
             <figcaption>Arduino Nano</figcaption>
           </figure>
-          <p>
+          <p id="esp">
             A feldolgozott adatokból kiderül, hol áll a kapu, esetleg mozog-e, nyílik vagy csukódik, és milyen sebességgel. Ezeket az adatokat az idő múlásának függvényében és egymáshoz képest vizsgálva észlelhető a rendellenesség, például az elakadás vagy a nyitva felejtett kapu.
             Ez így remek, csakhogy ezek az adatok mit sem érnek az Arduino belügyeként. Ki kell nyerni őket, amihez minden valamirevaló <a href="https://en.wikipedia.org/wiki/Microcontroller">MCU</a> szolgál <a href="https://hu.wikipedia.org/wiki/Univerz%C3%A1lis_aszinkron_ad%C3%B3vev%C5%91">UART</a> csatlakozással.
             A garázskapu helyzetére vonatkozó adatok az RX-TX vezetékpáron jutnak el egy vagányabb MCU-hoz (igazából egy <a href="https://hu.wikipedia.org/wiki/Egylapk%C3%A1s_rendszer">SoC</a>), egy ESP8266-hoz (a továbbiakban esp), aminek WLAN (Wi-Fi) kapcsolata révén az Arduinoból érkező adatok az internet közvetítésével kijuthatnak a nagyvilágba.
