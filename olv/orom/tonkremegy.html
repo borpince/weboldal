@@ -151,7 +151,7 @@
             A hagyományos lépcsőházi automata és az ember közötti kapcsolat egyirányú: a legközelebbi lámpakapcsolóval jelzem a világítás bekapcsolása iránti igényemet. Ennél több dolgom nincs, mert miután fény gyúl, az magától kialszik a beállított időtartam elteltével.
             <br>
             A maszek időrelé extra szolgáltatásainak teljesítéséhez mindenképpen szükség van kétirányú kapcsolatra, és az eddigi egy nyomintásból álló jelzésnél bonyolultabb jelzésrendszerre, de az UI nem bonyolódhat el a költségvetés rovására.
-            A kezelő a kapcsoló nyomkodásával, az eszköz pedig a lámpa villogtatásával küld <a href="https://hu.wikipedia.org/wiki/Morzek%C3%B3d">morzejeleket</a>, ezzel az UI kialakításához nincs szükség újabb alkatrészekre.
+            A kezelő a kapcsoló nyomkodásával, az eszköz pedig a lámpa villogtatásával küld <a href="https://hu.wikipedia.org/wiki/Morzek%C3%B3d">morzejeleket</a>, ezzel az UI kialakításához nincs szükség további alkatrészekre.
             Az output fényjelzés lesz, input eszköznek pedig továbbra is megteszi a lámpakapcsoló. Az RM14 relé összesen 4 váltóérintkezőt kínál. Ezekből egyet a tápellátás beindítására használok,
             egy másikkal az Arduinot értesítem a lámpakapcsoló működtetéséről. Ez kapcsolódik a narancs-fehér sodort vezetékpáron keresztül a GND-hez és a 12-es PIN-hez, ami már a tervnek nevezett skiccen is eltökélt szándéknak látszik.
           </p>
@@ -162,7 +162,7 @@
             majd ezeket lefelé fordítva az asztalra helyezik. Felváltva próbálkoznak a játékosok, és az a lényeg, hogy megtaláljam a megfordított, és így láthatóvá vált kártya párját. Ha sikertelen a kísérlet, akkor a kártyákat lefelé fordítva vissza kell helyezni eredeti helyükre,
             viszont találat esetén magamhoz vehetem őket. A játék kezdetén csak szerencsével sikerülhet két egyforma képet kiválasztani, de minél több kártyát megnézünk és visszatesszük, annál nagyobb eséllyel emlékezhetünk a megtalálandó kártya helyére. Az a győztes, aki több kártyát gyűjt.
             <br>
-            Kisgyerekeim anyukájával múlattuk az időt eképpen gyakran, és idővel megelégeltem az új játék kezdetét megelőző keverést, de méginkább a kártyák fáradságos elhelyezését szabályos rendben. Időrabló, unalmas tevékenység, mégis szükség van rá.
+            Kisgyerekeim anyukájával múlattuk az időt eképpen gyakran, és idővel megelégeltem az új játék kezdetét megelőző keverést, de még inkább a kártyák fáradságos elhelyezését szabályos rendben. Időrabló, unalmas tevékenység, mégis szükség van rá.
             Hogyan orvosolja ezt a kellemetlen helyzetet egy informatikai szakember? Ír egy számítógépes programot, ami megkeveri a virtuális paklit, és villámgyorsan kirajzolja a képernyőre, ahol a játékosok a kártyákra bökdösve tudják azokat megfordítani és megnézni.
             Az egyező párokat a program leveszi a képernyőről, és elszámolja a rátermett játékosnak.
             <br>
@@ -203,11 +203,11 @@
             Mi számít rövidnek vagy hosszúnak? Mennyi az <i>x másodperc</i>? 
             Ezeknek a paramétereknek megváltoztatására biztosít lehetőséget a rendszer <i>setup</i> ága, de a morzekódos módszerrel nem igazán kényelmes beállításokat eszközölni. Könnyű téveszteni, ha valaki nem elég ügyes e téren.
             Egyszer használtam – a tesztelésnél – , és azóta sem. Sokkal barátságosabb UI készíthető egy hagyományos számítógép (laptop, okostelefon, tablet) lehetőségeit kiaknázva,
-            ám ez az MCU vezérlésű időzítőkapcsoló Arduino Unora épül, aminek nincs praktikus kapcsolata a külvilággal,
+            ám ez az MCU vezérlésű időzítőkapcsoló Arduino Unora épül, aminek egyszerű <a href="https://docs.arduino.cc/retired/hacking/software/PortManipulation/">I/O portjain</a> kívül nincs más kapcsolata a külvilággal,
             ezért kiegészítő elemek nélkül nem csatlakozhat sem galvanikusan, sem Wi-Fi-n keresztül hálózathoz. Más lenne a helyzet, ha kicsit később vágok bele ebbe a munkába,
             mert akkor jó eséllyel az <a href="https://en.wikipedia.org/wiki/ESP8266">ESP8266</a>-ot választom. Ez az apró, de hatékony SoC 2014 augusztusában jelent meg, széles körben pedig 2015-től terjedt el és vált közismertté,
             ezért nem ismertem akkor, amikor az időzítőkapcsoló kiváltásán dolgoztam. A garázskapu okosításához már ezt a <a href="/olv/orom/deszka.html#esp">Wi-Fi-s eszközt vetettem be</a>,
-            amivel szinte gyerekjáték hálózatra kapcsolódni, és böngészővel megnyitható, kényelmes kezelőfelülettel ellátni.
+            amivel szinte gyerekjáték LAN-ra és internetre kapcsolódni, továbbá böngészővel megnyitható, kényelmes kezelőfelülettel ellátni.
             Az időzítőkapcsoló tervezett <i>véletlenszerű világítás (betörőriasztó)</i> üzemmódjának csak a helye van meg. Azért nem fejtettem ki, mert hiányzik a rendszerből a <a href="https://lastminuteengineers.com/ds3231-rtc-arduino-tutorial/">DS3231 RTC modul</a>,
             ami a pontos idő értékét szolgáltatná. Ezt a kiegészítést is szükségtelenné teszi az ESP8266, mert a Wi-Fi-n keresztül internetre csatlakozva egy <a href="https://hu.wikipedia.org/wiki/H%C3%A1l%C3%B3zati_id%C5%91_protokoll">NTP</a> kéréssel az óra is pontosan jár.
             Erre pedig szükség van ahhoz, hogy észszerűen csak az esti és éjszakai órákban működjön a betörőriasztó.
