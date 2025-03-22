@@ -152,7 +152,8 @@ var temak =
         {cim:"deszkamodell", subfolder:"/orom", nev:"deszka", ver:"2025-03-17", kelt:"2017-02-10"},
         {cim:"fallabdás banda", subfolder:"/orom", nev:"fallabda", ver:0, kelt:"2024-10-21"},
         {cim:"kedvesem, a divatguru", subfolder:"/orom", nev:"divat", ver:0, kelt:"2025-03-01"},
-        {cim:"egyszer minden tönkremegy", subfolder:"/orom", nev:"tonkremegy", ver:0, kelt:"2025-03-20"}
+        {cim:"egyszer minden tönkremegy", subfolder:"/orom", nev:"tonkremegy", ver:0, kelt:"2025-03-20"},
+        {cim:"mesés valóság", subfolder:"/orom", nev:"meses", ver:0, kelt:"2025-03-22"}
       ],
       "g": [
         {cim:"nyamt", subfolder:"/nyamt", nev:"kulinaris", ver:0, kelt:"2024-06-01"},
