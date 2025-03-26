@@ -140,7 +140,8 @@ var temak =
         {cim:"adóhivatal", subfolder:"/rem", nev:"adohivatal", ver:0, kelt:"2023-10-28"},
         {cim:"lányos apák nyomorúsága", subfolder:"/rem", nev:"lanyosapa", ver:0, kelt:"2024-02-06"},
         {cim:"téglaboltozat és gyökerek", subfolder:"/rem", nev:"gyokerek", ver:"2024-06-09", kelt:"2024-04-05"},
-        {cim:"rossz nevelés", subfolder:"/rem", nev:"neveles", ver:0, kelt:"2024-06-10"}
+        {cim:"rossz nevelés", subfolder:"/rem", nev:"neveles", ver:0, kelt:"2024-06-10"},
+        {cim:"nyakunkon a világvége", subfolder:"/rem", nev:"vilagvege", ver:0, kelt:"2025-03-26"}
       ],
       "f": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
