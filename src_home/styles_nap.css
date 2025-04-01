@@ -1,3 +1,13 @@
+.gomb {
+  font-size: large;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.zoldul:hover {
+  background-color: green;
+}
 #utmut {
   margin-top: 25px;
   font-size: x-large;

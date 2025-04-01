@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="Eddig elmaradt a tavasz, én meg túl kényes vagyok esőben és hidegben kerti munkákkal foglalkozni. Amennyi fáradságot a kertre szántam volna, annyiból végre elkészült a rég vágyott katalógus – ideje volt már.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/x-icon">
+</head>
+<style>
+  .szint1 {padding-left: 25px;}
+  .szint2 {padding-left: 40px;}
+  .szint3 {padding-left: 60px;}
+  details {
+    cursor: pointer;
+  }
+  summary {
+    font-weight: bold;
+  }
+</style>
+<body>
+  <div id="overlay"><p class="loader"></p></div>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
+          </div>
+        </div>
+        <select name="it"></select>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Hogyan működik: katalógus</h1>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            A <code>pince.eu</code> történetei közül kettő is kötődik ehhez a témához, bár szokványos észjárással nehéz összefüggést találni Mecseknádasd, <a href="/olv/rem/elveszve.html">Budapest</a> és a <i>katalógus</i> között.
+            A néhány utcából álló faluban nem lehet eltévedni. Helyismeret nélkül is könnyen rátaláltam a <a href="/olv/bv/top25pb2023.html">borkóstoló</a> helyszínére, ellenben egy pesti célpontot meg sem próbálnék segédeszköz nélkül megközelíteni.
+            Ehhez régebben elég volt egy térkép, és mindenhová odataláltam, de ebben a kényelmes világban fejlett eszközök segítenek a bajban.
+            Mankó, járókeret, szemüveg, pacemaker és inkontinencia betét mellett mindenkinek ott lehet a keze ügyében az útvonaltervező program, ami gondtalanná teszi a tájékozódást – ha éppen nem egy <a href="https://kozlekedesbiztonsag.kti.hu/a-gps-nek-hisz-vagy-a-szemenek/">szakadékba navigál</a> az okos eszköz.
+            Ritkán fordul elő ilyen baleset, és a ma embere ezek miatt a kütyük miatt veszíti el önállóságát, és függővé válva életképtelen lesz nélkülük.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Nem jár ilyen veszélyekkel a <i>katalógus</i>. Régi találmány. Először könyvtárakban találkoztam vele, és semmi bajom nem lett a használatától, viszont hamarabb megtaláltam a keresett könyvet.
+            Az itteni <i>katalógus</i> a <code>pince.eu</code> webhelyen tárolt tartalmakat kínálja a nyitóoldalon szolgáló menühöz képest más módon.
+            A menü témakörönkénti csoportosítással szűkíti le a kört, és vezet abba az irányba, ahol az érdeklődésre számot tartó anyagra rábukkanhatok. Csakhogy kerülhetek zsákutcába, ahonnan kikeveredni leghatékonyabban a kiindulóponthoz visszatérve lehet: <sub><span style="font-size:xx-large" class="material-icons-outlined">&#xe88a;</span></sub>.
+            Ez jó módszer, de kezdhetem előlről a kutatást.
+            <br>
+            Éppen ideje volt létrehozni az eligazodást segítő <i>katalógust</i>. Korábban nem volt fájdalmas a hiánya, mint ahogy faluhelyen is jól boldogulok tájékozódási pontok és térkép nélkül.
+            Azonban mára olyan mértékűvé szaporodott a <code>pince.eu</code>-n fellelhető olvasnivalók száma, ami indokolttá és szükségessé teszi ezt az intézményt.
+            A <i>katalógus</i> a fa törzséből növő ágakhoz hasonlóan ábrázolja a különböző témakörökön belüli, és az ezekhez tartozó témacsoportok anyagait.
+            Könnyű úrrá lenni az ágas-bogas szerkezeten, mert a témaelnevezésekre nyomva (📁jelzésű sorok) az ágak az elágazó struktúrák tálalásánál szokásos módon egyenként kibonthatók és bezárhatók.
+            A <button id="valt" class="gomb zoldul">&#x25BC; &#x25BA;</button> gombra nyomva a művelet az összes ágra hat.
+          </p>
+        </div>
+        <iframe id="katalogus" src="/katalogus-fa.html" style="width:65%;min-width:400px;height:600px;float:left;display:inline flex;border: 5px solid whitesmoke;padding:3px;flex-flow: row nowrap;"></iframe>
+        <br>
+        <div class="box-text">
+          <p>
+            A <code>pince.eu</code>-n tárolt dokumentumok időrendi felsorolását mutatja egy másik tájékoztató, a <a href="/naplo.html">napló</a>. A naplóban megjelenő adatsorokhoz hasonlóan a <i>katalógus</i> is tartalmazhatja az
+            <br>
+            <input type="checkbox" id="sum" name="sum"><label for="sum">összefoglalókat</label>
+            <br>
+            <input type="checkbox" id="alc" name="alc"><label for="alc">alcímekeket</label>
+            <br>
+            <input type="checkbox" id="dat" name="dat" checked><label for="dat">dátumokat</label>
+            <br>
+            <input type="checkbox" id="jel" name="jel"><label for="jel">jeleket</label> (lásd: <a href="/it/jelzesek.html#2023-03-10T08:00">Jelzések haszna</a>)
+            <br>
+            amiknek megjelenése ezeknek a tényezőknek kipipálásával kezdeményezhető. A fejezetcímeket követő 🗓️ ikon után a <i>közzététel ideje</i> jelenik meg, az alcímek előtt a <i>történeti dátumok</i> szerepelnek.
+            Míg a napló listáját szemlélvén az <i>alcímek megjelenítését</i> választva a dátum szerinti rendezettségnek megfelelően keveredhetnek egymással a különböző témák eseményei, addig a <i>katalógusban</i> az eseményekre bontott történet részletei szigorúan a címhez kapcsolt ágban jelennek meg
+            – nincs keveredés, nem fésülöm össze az egymástól független eseményeket időrendjük szerint.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Azzal kezdtem az elején, hogy bizonyos körülmények szükségessé teszik a tájékozódást, mert különben eltévedünk. A <i>katalógus</i> segít eligazodni a terjedelmesre duzzadt webhely szövevényében,
+            és ez valóban jelentős segítség, aminek nem csak fontosságát hangsúlyozom, hanem könnyen elérhetővé teszem.
+            Előhívásához a jobb oldali egérgombbal nyomj egyet a képernyő bal felső sarkánál látható <i>hamburger</i> <sub><span style="font-size:x-large" class="material-icons-outlined">&#xe5d2;</span></sub> jelre.
+            Érintőképernyős készülékeken általában nincs egér, ott lefelé húzással működik ugyanez. Ez a hamburgeres módszer mindenhol alkalmazható, kivéve a webhely nyitóoldalán, viszont ott a menüből választható a <i>katalógus</i>.
+            <br>
+            Sok adat sűrűsödik ebben az új tájékoztató eszközben, ezért most sem mulasztom el megemlíteni, hogy a <code>pince.eu</code> weboldalait nem kisméretű kijelzőkre terveztem. Legalább tablet vagy laptop szolgáltat tűrhető eredményt, de leginkább egy asztali számítógéphez csatlakozó monitor nyújtja a legjobb teljesítményt.
+            Lehet zsonglőrködni, így-úgy forgatni, nagyítgatni okostelefonok parányi képeit, de az nem lesz az igazi. Ezt ez élményt ahhoz hasonlítom, mint amikor kulacsból, szívószállal iszunk bort. Pohárba töltve jobban jársz. Miért is? Itt nem fejtem ki részletesen, mert ezt a témát már körüljártam az <a href="/olv/velemeny/hamvas.html#poharba">Életünk és a bor</a> cím alatt.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script>
+addEventListener("load", () => {
+  var katalogus = document.getElementById("katalogus");
+  var sum = document.getElementById("sum");
+  sum.onchange = function () {katalogus.contentWindow.valto("sum");}
+  var alc = document.getElementById("alc");
+  alc.onchange = function () {katalogus.contentWindow.valto("alc");}
+  var dat = document.getElementById("dat");
+  dat.onchange = function () {katalogus.contentWindow.valto("dat");}
+  var jel = document.getElementById("jel");
+  jel.onchange = function () {katalogus.contentWindow.valto("jel");}
+  var valt = document.getElementById("valt");
+  valt.addEventListener("click",() => {katalogus.contentWindow.nyit_zar()});
+});  
+</script>
+<script src="/temak.js"></script>
+<script src="/fejezetek.js"></script>

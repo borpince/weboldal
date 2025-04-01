@@ -1,4 +1,13 @@
 /* https://code-boxx.com/html-css-news-ticker-horizontal-vertical */
+.gomb {
+  font-size: large;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.zoldul:hover {
+  background-color: green;
+}
 .vwrap, .vitem {
   height: 30px;
   line-height: 30px;
