@@ -110,6 +110,7 @@ https://pince.eu/olv/holtig.html
 https://pince.eu/it/gondolatok.html
 https://pince.eu/it/hmk_naptar.html
 https://pince.eu/it/hmk_naplo.html
+https://pince.eu/it/hmk_katalogus.html
 https://pince.eu/it/kaland/kaland.html
 https://pince.eu/it/kaland/webp.html
 https://pince.eu/it/kaland/kutatas.html

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+<head>
+  <title>oldaltérkép</title>
+  <meta name="robots" content="noindex">
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
+  <link rel="stylesheet" href="/src_home/styles_nap.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/x-icon">
+</head>
+<body style="width:100%;white-space: nowrap;">
+  <div id="overlay"><p class="loader"></p></div>
+  <section id="container">
+    <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="utmut"></button>
+          </div>
+        </div>
+        <select name="*"></select>
+      </div>
+    </div>
+    <div style="margin-top:120px;margin-left:70px;font-size:x-large;">
+      <button id="valt" class="gomb zoldul">&#x25BC; &#x25BA;</button>
+      <input type="checkbox" id="sum" name="sum"><label for="sum">összefoglaló</label>
+      <input type="checkbox" id="alc" name="alc"><label for="alc">alcímek</label>
+      <input type="checkbox" id="dat" name="dat" checked><label for="dat">dátumok</label>
+      <input type="checkbox" id="jel" name="jel"><label for="jel">jelek</label>
+    </div>
+    <iframe id="katalogus" src="/katalogus-fa.html"></iframe>
+  </section>
+</body>
+</html>
+<script>
+addEventListener("load", () => {
+  var katalogus = document.getElementById("katalogus");
+  var magas = 600;
+  if (window.innerHeight > magas) magas = window.innerHeight*0.71;
+  katalogus.setAttribute("style",`margin-left:70px;width:65%;min-width:400px;height:${magas}px;float:left;display:inline flex;border: 5px solid whitesmoke;padding:3px;flex-flow: row nowrap;`);
+  var sum = document.getElementById("sum");
+  sum.onchange = function () {katalogus.contentWindow.valto("sum");}
+  var alc = document.getElementById("alc");
+  alc.onchange = function () {katalogus.contentWindow.valto("alc");}
+  var dat = document.getElementById("dat");
+  dat.onchange = function () {katalogus.contentWindow.valto("dat");}
+  var jel = document.getElementById("jel");
+  jel.onchange = function () {katalogus.contentWindow.valto("jel");}
+  var valt = document.getElementById("valt");
+  valt.addEventListener("click",() => {katalogus.contentWindow.nyit_zar()});
+  var utmut = document.getElementById("utmut");
+  if (utmut) {
+    utmut.innerHTML = jelek.utmut[0];
+    utmut.addEventListener("click",() => {window.location.href = "/it/hmk_katalogus.html";});
+  }
+});
+</script>
+<script src="/temak.js"></script>
+<script src="/fejezetek.js"></script>

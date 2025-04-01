@@ -537,14 +537,14 @@
       window.onclick = function(event) {if (event.target == modal) {modal.style.display = "none";}}
       if (utmut) {
         utmut.innerHTML = jelek.utmut[0];
-        utmut.addEventListener("click",() => {window.location = "/it/hmk_naptar.html";});
+        utmut.addEventListener("click",() => {window.location.href = "/it/hmk_naptar.html";});
       }
     }
   });
 
 /*  
   linkek_helye.addEventListener('click', event => {
-    if (event.target.value != undefined) window.location = event.target.value;
+    if (event.target.value != undefined) window.location.href = event.target.value;
   });
 */
 

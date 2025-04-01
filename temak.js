@@ -21,7 +21,8 @@ var temak =
       "a": [{cim:"alcímek nélkül", nev:"", ver:0}],
       "b": [{cim:"alcímekkel", nev:"", ver:0}],
       "c": [{cim:"eseménynaptár", nev:"naptar", ver:0}],
-      "d": [{cim:"napló", nev:"naplo", ver:0}]
+      "d": [{cim:"katalógus", nev:"katalogus", ver:0}],
+      "e": [{cim:"napló", nev:"naplo", ver:0}]
       //
     }
   },
@@ -66,7 +67,7 @@ var temak =
     lista:{
       "a": [
         // subfolder elé azért került "/", mert a path összeállítása így egyszerűbb (select.onchange)
-        {cim:"magad uram...", subfolder:"/igykeszult", nev:"magad", ver:0, kelt:"2022-07-04"},
+        {cim:"magad uram...", subfolder:"/igykeszult", nev:"magad", ver:0, kelt:"2022-07-04", alt:"így készült"},
         {cim:"futófolyosó: födém", subfolder:"/igykeszult", nev:"fodem", ver:"2023-09-12", kelt:"2022-08-15"},
         {cim:"borospince", subfolder:"/igykeszult", nev:"pince", ver:0, kelt:"2022-08-15"},
         {cim:"vizesblokk", subfolder:"/igykeszult", nev:"vizesblokk", ver:0, kelt:"2022-08-15"},
@@ -84,14 +85,14 @@ var temak =
         {cim:"patak menti munkák", subfolder:"/igykeszult", nev:"patak", ver:0, kelt:"2023-08-31"}
       ],
       "b": [
-        {cim:"tavasz", subfolder:"/kert", nev:"tavasz", ver:0, kelt:"2023-03-09"},
+        {cim:"tavasz", subfolder:"/kert", nev:"tavasz", ver:0, kelt:"2023-03-09",alt:"kerti munkák"},
         {cim:"tavaszodik I", subfolder:"/kert", nev:"tavaszodik", ver:0, kelt:"2022-08-15"},
         {cim:"tavaszodik II", subfolder:"/kert", nev:"tavaszodik2", ver:0, kelt:"2023-02-24"},
         {cim:"tavaszodik III", subfolder:"/kert", nev:"tavaszodik3",ver:"2023-05-26", kelt:"2023-03-11"},
         {cim:"csigasör", subfolder:"/kert", nev:"csigasor", ver:0, kelt:"2024-05-16"}
       ],
       "c": [
-        {cim:"vélemények", subfolder: "/velemeny", nev:"velemeny", ver:0, kelt:"2024-11-10"},
+        {cim:"vélemények", subfolder: "/velemeny", nev:"velemeny", ver:0, kelt:"2024-11-10", alt:"bárkinek lehet véleménye – ingyen adják"},
         {cim:"vihar a biliben", subfolder:"/velemeny", nev:"viharbili", ver:0, kelt:"2015-09-16"},
         {cim:"hitvallás", subfolder: "/velemeny", nev:"semmiflanc", ver:0, kelt:"2022-07-04"},
         {cim:"tengöri nóta", subfolder: "/velemeny", nev:"tengori", ver:0, kelt:"2023-02-09"},
@@ -120,7 +121,7 @@ var temak =
         {cim:"nem kerget a tatár", subfolder:"/velemeny", nev:"tatar", ver:0, kelt:"2025-02-20"}
       ],
       "d": [
-        {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18"},
+        {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18", alt:"borok, versenyek, kóstolók"},
         {cim:"XI. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2022", ver:0, kelt:"2022-10-17"},
         {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023", ver:0, kelt:"2023-04-17"},
         {cim:"XIV. Pannon Borrégió Top25", subfolder:"/bv", nev:"top25pb2023", ver:0, kelt:"2023-06-12"},
@@ -157,7 +158,7 @@ var temak =
         {cim:"mesés valóság", subfolder:"/orom", nev:"meses", ver:0, kelt:"2025-03-22"}
       ],
       "g": [
-        {cim:"nyamt", subfolder:"/nyamt", nev:"kulinaris", ver:0, kelt:"2024-06-01"},
+        {cim:"nyamt", subfolder:"/nyamt", nev:"kulinaris", ver:0, kelt:"2024-06-01", alt:"nyamt – kulináris függőség"},
         {cim:"pörkölt JMO módra", subfolder:"/nyamt", nev:"porkolt", ver:0, kelt:"2024-06-02"},
         {cim:"babgulyás, rétes", subfolder:"/nyamt", nev:"babgulyas", ver:0, kelt:"2024-06-18"},
         {cim:"rehab", subfolder:"/nyamt", nev:"rehab", ver:0, kelt:"2024-10-31"}
@@ -172,12 +173,14 @@ var temak =
   },
   "it": {
     folder: "/it",
-    tema:"IT a pincében",
+    tema:"IT a borospincében",
+    alt: "IT a borospincében, számítógép a háztájiban",
     lista:{
       "a": [{cim:"borászatról, weboldalról", nev:"gondolatok", ver:0, kelt:"2023-04-21"}],
       "b": [{cim:"hogyan működik: eseménynaptár", nev:"hmk_naptar", ver:0, kelt:"2023-05-28"}],
       "c": [{cim:"hogyan működik: napló", nev:"hmk_naplo", ver:"2025-02-26", kelt:"2023-06-20"}],
-      "d": [
+      "d": [{cim:"hogyan működik: katalógus", nev:"hmk_katalogus", ver:0, kelt:"2025-04-02"}],
+      "e": [
         {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland", ver:0, kelt:"2022-11-28"},
         {cim:"WebP", subfolder:"/kaland", nev:"webp", ver:0, kelt:"2022-11-28"},
         {cim:"alapkutatás, mérés", subfolder:"/kaland", nev:"kutatas", ver:0, kelt:"2022-11-28"},
@@ -186,19 +189,19 @@ var temak =
         {cim:"adalék a sikerhez", subfolder:"/kaland", nev:"adalek", ver:0, kelt:"2022-11-28"},
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:"2024-05-26", kelt:"2022-11-28"}
       ],
-      "e": [
+      "f": [
         {cim:"borcímkés történetek", subfolder:"/cimke", nev:"cimke", ver:0, kelt:"2022-09-20"},
         {cim:"arculati elem", subfolder:"/cimke", nev:"arculat",  ver:"2024-11-28", kelt:"2022-12-06"},
         {cim:"NFC-címke: helyzetelemzés", subfolder:"/cimke", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"},
         {cim:"rendszerhiba", subfolder:"/cimke", nev:"rendszerhiba", ver:0, kelt:"2024-09-02"}
       ],
-      "f": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "g": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
-      "h": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
-      "i": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2025-01-20", kelt:"2023-06-04"}],
-      "j": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
-      "k": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
-      "l": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}]
+      "g": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
+      "h": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
+      "i": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
+      "j": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2025-01-20", kelt:"2023-06-04"}],
+      "k": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
+      "l": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
+      "m": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}]
     }
   },
 }
@@ -217,7 +220,6 @@ var jelek = {
   mozi: ["🎦","mozi"], //📽
   sum: ["𝜮","összefoglaló"]
 }
-
 var glob = {
   href_nev: "",
   cim: "", //<title> kitöltéséhez
@@ -235,6 +237,7 @@ var glob = {
   url_page_jump: false,
   tortenet_db: 0
 }
+var gest = {start:{x:0,y:0},end:{x:0,y:0}}
 
 function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
   var jel = "&#8195;&#8197;&#8201;"
@@ -326,7 +329,7 @@ function alcim_gyujto(doc) {
         nev: le.nev,
         esemenyek: Object.fromEntries(glob.alcimek)
       }];
-      window.location = `/naptar.html?${btoa(encodeURI(JSON.stringify(csomag)))}`;
+      window.location.href = `/naptar.html?${btoa(encodeURI(JSON.stringify(csomag)))}`;
     });
   }
 }
@@ -359,8 +362,7 @@ function koho(txt,max) { //korlátozott hossz
 }
 
 function valasztas(path) {
-  window.location = path;
-  //console.log("ez:",window.location = path);
+  window.location.href = path;
 }
 
 function halvanyit() {
@@ -380,6 +382,42 @@ function halvanyit() {
   }
 }
 
-addEventListener("load", () => {setTimeout(() => {halvanyit();},700)});
+function katalogus() {
+  var kat = document.getElementById("katalogus");
+  var y = kat.getBoundingClientRect().top + window.pageYOffset - 10; // - (window.innerHeight/2);
+  window.scrollTo(0,y);
+  //fa.style = "width:90%;height:600px;float:left;display:inline flex;opacity:70%;";
+}
+
+function handleGesture(event) {
+  //event.preventDefault();
+  var dif = Math.abs(gest.end.y-gest.start.y)
+  if ((dif > 60) && (gest.end.y > gest.start.y)) {
+    window.location.href = "/katalogus.html";
+  }
+}
+
+function touch_start(event) {
+  gest.start.x = event.changedTouches[0].screenX;
+  gest.start.y = event.changedTouches[0].screenY;
+}
+
+function touch_end(event) {
+  gest.end.x = event.changedTouches[0].screenX;
+  gest.end.y = event.changedTouches[0].screenY;
+  handleGesture(event);
+}
+
+addEventListener("load", () => {
+  if (glob.hamburger) {
+    glob.hamburger.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      window.location.href = "/katalogus.html";
+    });
+    glob.hamburger.addEventListener('touchstart', touch_start, false);
+    glob.hamburger.addEventListener('touchend', touch_end, false);
+  }
+  setTimeout(() => {halvanyit();},700);
+});
 
 //console.log(`>${document.referrer}<`);

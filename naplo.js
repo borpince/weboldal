@@ -245,7 +245,7 @@
       oi--;
       if (utmut) {
         utmut.innerHTML = jelek.utmut[0];
-        utmut.addEventListener("click",() => {window.location = "/it/hmk_naplo.html";});
+        utmut.addEventListener("click",() => {window.location.href = "/it/hmk_naplo.html";});
         rendezes.onclick = function() {forditva = ! forditva; naplo_gyarto();}
         summal.onchange = function() {naplo_gyarto();}
         alcimekkel.onchange = function() {naplo_gyarto();}

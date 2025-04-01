@@ -32,7 +32,9 @@
             amit a bal felső sarokban látható házikóra nyomva érhetsz el.
             <br><br>
             Az oldaltérképnél is felkínált <a href="/naplo.html">naplóban</a> megszemlélheted a weboldalon fellelhető összes történet időrendi sorát akár alcímekkel, akár azok nélkül, és fordított sorrendben is.
-            Ugyanitt kulcsszavas szűrő segít leszűkíteni a választékot a keresett tartalom eléréséhez (<a href="/it/hmk_naplo.html">részletes ismertető</a>).
+            Ugyanitt kulcsszavas szűrő segít leszűkíteni a választékot a keresett tartalom eléréséhez.
+            További lehetőséget biztosít a tájékozódásra a témakörönként csoportosított írásokat felölelő <a href="/katalogus.html">katalógus</a>.
+            <br>
             A legújabb történetek iránti érdeklődés kielégítésére a következő írásokat ajánlom:
           </p>
         </div>
@@ -65,7 +67,7 @@ ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a 
     var url = `https://${window.location.hostname}${path}`;
     fetch(url, {method: 'HEAD'}) //biztos, ami biztos
       .then((response) => {
-        if ((response.ok) && (response.headers.get("content-type").indexOf("text/html") > -1)) window.location = path;
+        if ((response.ok) && (response.headers.get("content-type").indexOf("text/html") > -1)) window.location.href = path;
           else throw new Error();
       })
       .catch((error) => {hibaoldal.setAttribute("style","display:block");});

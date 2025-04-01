@@ -175,14 +175,14 @@
       for (var tk in temak) { //tk: téma kulcs (pl. borok)
         var option = document.createElement('option');
         option.value = "";
-        option.innerHTML = "– – "+temak[tk].tema;
+        option.innerHTML = jelek.folder[0]+temak[tk].tema;
         option.setAttribute("style","font-weight:bold");
         option.setAttribute("disabled","");
         select.appendChild(option);
         valasztek(tk,glob.alcimekkel);
       }
       //az eseménynaptárt vagy naplót betöltve nem "oldaltérkép" szöveg jelenik meg:
-      if ((glob.href_nev == "naptar") || (glob.href_nev == "naplo")) select.value = glob.href_nev;
+      if ((glob.href_nev == "naptar") || (glob.href_nev == "naplo") || (glob.href_nev == "katalogus")) select.value = glob.href_nev;
     }
 
     while (select.firstChild) select.removeChild(select.firstChild);
@@ -197,7 +197,7 @@
       case "menu":
         var option = document.createElement('option');
         option.value = "";
-        option.innerHTML = "– – "+temak[select.name].tema;
+        option.innerHTML = jelek.folder[0]+temak[select.name].tema;
         select.appendChild(option);
         valasztek(select.name,false);
       break;
@@ -225,7 +225,7 @@
         if (glob.href_nev == "menu") { // menüből
           parent.valasztas(path);
         } else { // történetből
-          window.location = path;
+          window.location.href = path;
         }
       } else {
         //oldaltérkép: alcímmekkel vagy azok nélkül - váltás
@@ -513,7 +513,7 @@
       });
     } //! 514 hamburger.html
     
-    if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo") && letezik(glob.href_nev,false).tortenet)
+    if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo") && (glob.href_nev != "katalogus") && letezik(glob.href_nev,false).tortenet)
       hamar = setTimeout(function() {
         if (left_side[0]) {
           left_side[0].style.top = eltuntet_y;
