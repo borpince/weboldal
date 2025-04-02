@@ -22,8 +22,8 @@ var temak =
       "b": [{cim:"alcímekkel", nev:"", ver:0}],
       "c": [{cim:"eseménynaptár", nev:"naptar", ver:0}],
       "d": [{cim:"katalógus", nev:"katalogus", ver:0}],
-      "e": [{cim:"napló", nev:"naplo", ver:0}]
-      //
+      "e": [{cim:"napló", nev:"naplo", ver:0}],
+      "f": [{cim:"keresés", nev:"keres", ver:0}]
     }
   },
   "borok": {
