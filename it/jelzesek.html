@@ -243,7 +243,7 @@
             Rengeteg adat, káprázik a szemem – nem mindig vagyok abban a hangulatban, amikor ez okozza a legkéjesebb mámort, de ha erre vágyom, akkor ne hiányozzon. Legyen hát kapcsolható. Ha úgy tetszik, akkor alcímekkel, máskor anélkül.
             <br>
             Az eredetileg mindenféle olvasmányos történetekhez és témákhoz hozzáférést engedő oldaltérkép listájának elejére beiktattam egy ebből a sorból kilógó témát, ezen belül szintén tájidegen címeket.
-            Ezek biztosítják a lehetőséget az alcímekkel dúsított és az alcímek nélküli megjelenés közötti váltásra, valamint innen is hívható az eseménynaptár és a napló. Ezek tehát nem történetek, hanem mint a téma elnevezéséből is kiderül: <b>kényelmi funkciók</b>.
+            Ezek biztosítják a lehetőséget az alcímekkel dúsított és az alcímek nélküli megjelenés közötti váltásra, valamint innen is hívható az eseménynaptár, a katalógus, a napló és a <code>pince.eu</code> tartalmára kihegyezett Google keresés. Ezek tehát nem történetek, hanem mint a téma elnevezéséből is kiderül: <b>kényelmi funkciók</b>.
             <br><br>
             <select name="*"></select>
           </p>
@@ -277,7 +277,7 @@
             A keresőgépek indexállománya nem követi a változást, ők egy darabig a régi helyre mutatva hozzák fel a találatot, amíg egyszer újra nem indexelik a weboldalt. Addig is tenni kell valamit, mert a 404-es hibaoldal mutogatása csak végső esetben megengedhető.
             <br>
             Az adatbázisba szervezett struktúra adataiból azonnal kideríthető, hogy a régi helyre mutató, elavult hivatkozásból kinyerhető név szerepel-e a listában. Ha igen, akkor az időszerű elérési útvonalat összerakva betölthető a keresett tartalom.
-            Ezt a feladatot végzi el a <code>404.html</code> végéhez ragasztott javascript <a href="https://github.com/borpince/weboldal/blob/main/404.html#L52-L64">toldalék</a>.
+            Ezt a feladatot végzi el a <code>404.html</code> végéhez ragasztott javascript <a href="https://github.com/borpince/weboldal/blob/main/404.html#L61-L74">toldalék</a>.
           </p>
         </div>
       </div>
@@ -299,7 +299,7 @@
             amit a témakörökben felsorolt történetek címeinek átvizsgálása jelent a legújabb tartalom után vadászva.
             <br>
             Jó alapokra építkezve villámgyorsan előáll az "ajánlónak" nevezett kiegészítés, ami a legújabb történetek címeit jeleníti meg.
-            Az egyszerűségét jól jellemzi, hogy a legbonyolultabb része az a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L400-L411">néhány sor</a>, ami elválasztja egymástól a történet címét az előtte álló dátumtól.
+            Egyszerűségét jól jellemzi, hogy a legbonyolultabb része az a <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L400-L411">néhány sor</a>, ami elválasztja egymástól a történet címét az előtte álló dátumtól.
             Néhány napon belül már másodszor merült fel ugyanaz a kérdés: <a href="/olv/igykeszult/korlat.html#2023-06-23">mi tartott ezen ilyen sokáig?</a> Miért nem hegesztettem meg jóval korábban, ha csak ennyi az egész?
             Ismét roppant elégedett vagyok az eredménnyel, ezért nem bírom megállni, hogy ne tegyek ide is egy példányt belőle:
           </p>
@@ -376,7 +376,7 @@
             A feladat megoldása ráhúzható az ajánló kaptafájára, ezért hamar elkészült. A rendszer kicsit bonyolultabb lett, mert az írás közzétételi dátuma és a történeti dátum mellé látszólag bejött egy harmadik fajtája a nyilvántartott időpontoknak, de ez így nem igaz.
             Ez nem egy újabb fajta, hanem csupán egy újabb helyen, a JSON adatszerkezet "ver" adatmezőjében tárolt dátum, ami a történet folytatásának alcíméhez rendelt dátum másolata.
             Tehát ez nem arról árulkodik, hogy mikor bővült új tartalommal a szöveg, hanem a folytatásként megfogalmazott esemény történeti dátuma.
-            Ehhez társul a cím, és ezek az adatok sorakoznak abban a listában, ami a folytatásos történeteket sorolja fel:
+            Ehhez társul a cím, és ezek az adatok sorakoznak abban a listában, ami a legújabb folytatásos történeteket sorolja fel:
           </p>
         </div>
         <div class="box-text-update">
@@ -405,16 +405,16 @@
           <p>
             Nem csupán hasznosak, de fontosak is a jelzések. Ez a bölcsesség leginkább akkor kerül előtérbe, amikor már baj van, mert elbambulnak, másra figyelnek és nem veszik figyelembe a jelzést.
             Ilyen esetről tudósít napjainkban a tiltó jelzést figyelmen kívül hagyó tehervonat és az állomáson várakozó személyvonat <a href="https://index.hu/belfold/2023/11/15/mav-vonat-tehervonat-vonatbaleset-frontalis-utkozes-sap/">ütközéséről szóló hír</a>.
-            Nincs ebben semmi vicces, mert a balesetnek van súlyos sérültje, és jelentős az anyagi kár, mégis az elhíresült felszólítás, az <i>"orosz hadihajó, húzz a faszba!"</i> jut eszembe az esetről,
+            Nincs ebben semmi vicces, mert a balesetnek van súlyos sérültje, és jelentős az anyagi kár, mégis az elhíresült felszólítás, az <cite>"orosz hadihajó, húzz a faszba!"</cite> jut eszembe az esetről,
             amiről készült <a href="https://hu.wikipedia.org/wiki/Orosz_hadihaj%C3%B3,_h%C3%BAzz_a_faszba!">Wikipédia</a> cikk és bélyeg is.
-            Miért? Azért, mert az ütközés előtt a vasútállomás hangosbemondójából álítólag többször felhangzott a <i>"<a href="https://index.hu/belfold/2023/11/17/vonatbaleset-sap-tehervonat-mozdonyvezeto-mav/">tehervonat, állj meg!</a>"</i> felszólítás.
+            Miért? Azért, mert az ütközés előtt a vasútállomás hangosbemondójából álítólag többször felhangzott a <a href="https://index.hu/belfold/2023/11/17/vonatbaleset-sap-tehervonat-mozdonyvezeto-mav/"><cite>"tehervonat, állj meg!"</cite></a> felszólítás.
             Ez is egy jelzés, de kétség kívül hatástalan.
             <br>
             A vasúton már ősidők óta rendkívül fontosak a megfelelő jelzések, mert a kötöttpályás közlekedésben nincs lehetőség kitérésre úgy, mint egy aszfaltozott úton a kormány félrerántásával.
             Feljettebb infrastuktúra mellett a jelzések kivédik a bizonytalan emberi tényezőből fakadó hatásokat, amire itt egy <a id="Z1jBA1bLgGc 2596" name="mozi" title="A mozdonyvezető egy napja">jó példa az ÖBB terültéről</a>,
             ahol <a id="Z1jBA1bLgGc 2804" name="mozi" title="A mozdonyvezető egy napja">nem lehet elindulni sem</a> csak úgy ukk-mukk-fukk, mert <a id="Z1jBA1bLgGc 3200" name="mozi" title="A mozdonyvezető egy napja">első a biztonság</a>.
             Ha nem figyelne kellőképpen a mozdonyvezető, akkor <a id="Z1jBA1bLgGc 5097.5" name="mozi" title="A mozdonyvezető egy napja">magától lefékez a vonat</a>.
-            Ez a fejlett biztonsági rendszer a jelzéseken alapul. Lehet jelezni úgy is, hogy a forgalmista a hangosbeszélőbe óbégat, de az legalább olyan haszontalan viselkedés, mint a <a id="nniPG07ab3I" name="mozi" title="Állj meg köcsög!">hiábavaló fenyegetés</a>.
+            Ez a fejlett biztonsági rendszer a jelzéseken alapul. Lehet jelezni úgy is, hogy a forgalmista a hangosbeszélőbe óbégat, de az legalább olyan haszontalan, mint amennyire hiábavaló.
             Nem javít a magyarországi vasúti közlekedés sanyarú helyzetén, de kíváncsi lennék, miért ütköznek össze vonatok a tilos jelzés ellenére akkor, amikor már régóta <a id="Z1jBA1bLgGc 5256" name="mozi" title="A mozdonyvezető egy napja">rendelkezésre áll a technika</a> az ilyen esetek elkerülésére.
             Érdemes elkerülni a bajt, mert egy több ezer tonna tömegű vasúti szerelvény vészfékezésének kezdetétől <a id="ldF6tug8ykg 124" name="mozi" title="vészfékezés">néhány száz métert megtesz a vonat</a> a leállásáig, és közben nagy pusztítást végez, ha nem szabad a pálya.
           </p>

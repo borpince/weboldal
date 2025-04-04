@@ -58,7 +58,7 @@ a keresőgépek által adott találat a korábbi állapot szerinti linket adja, 
 jön a 404-es hiba, de itt megvizsgálom a nevet, hogy szerepel-e a témák között
 ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a jó helyre
 */
-  var hibaoldal = document.getElementById("container_cs2020");
+  var hibaoldal = document.getElementById("container_cs2020"); //! 61 jelzések.html
   var nev = href_nev();
   if (nev == "cs2020") nev = "01"; //régi QR-kód érdekében
   var tmdex = letezik(nev,true);
@@ -71,5 +71,5 @@ ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a 
           else throw new Error();
       })
       .catch((error) => {hibaoldal.setAttribute("style","display:block");});
-  } else hibaoldal.setAttribute("style","display:block");
+  } else hibaoldal.setAttribute("style","display:block"); //! 74 jelzések.html
 </script>
