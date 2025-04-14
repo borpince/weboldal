@@ -129,6 +129,7 @@ var temak =
         {cim:"nem szokunk rá", subfolder:"/bv", nev:"aszu", ver:"2024-03-21", kelt:"2024-03-19"},
         {cim:"fejfájós gyötrelem", subfolder:"/bv", nev:"fejfajos", ver:0, kelt:"2024-11-04"},
         {cim:"ruppert", subfolder:"/bv", nev:"ruppert", ver:0, kelt:"2025-02-18"},
+        {cim:"riczu", subfolder:"/bv", nev:"riczu", ver:0, kelt:"2025-04-14"}
       ],
       "e": [
         {cim:"rémtörténetek", subfolder:"/rem", nev:"remtortenet", ver:0, kelt:"2023-10-08"},
