@@ -1,4 +1,19 @@
 /* https://code-boxx.com/html-css-news-ticker-horizontal-vertical */
+.bg {
+  background-image: url("https://kep.pince.eu/alak12sz_tegla.webp");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 250px;
+  height: 100vh;
+  margin: 0;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 9999;
+}
 .gomb {
   font-size: large;
   border-radius: 4px;

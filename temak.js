@@ -411,9 +411,7 @@ function touch_end(event) {
 }
 
 addEventListener("load", () => {
-  console.log(document.referrer.indexOf("pince."),href_nev()); //!
   if ((document.referrer.indexOf("pince.") < 0) && (href_nev() != "")) {
-    console.log("megy"); //!
     var div = document.createElement("div");
     div.setAttribute("id","hatter");
     div.setAttribute("class","bg");
