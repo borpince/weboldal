@@ -411,6 +411,13 @@ function touch_end(event) {
 }
 
 addEventListener("load", () => {
+  console.log(document.referrer.indexOf("pince.")); //!
+  if (document.referrer.indexOf("pince.") < 0) {
+    var div = document.createElement("div");
+    div.setAttribute("id","hatter");
+    div.setAttribute("class","bg");
+    document.body.append(div);
+  }
   if (glob.hamburger) {
     glob.hamburger.addEventListener('contextmenu', function(e) {
       e.preventDefault();
