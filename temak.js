@@ -58,7 +58,7 @@ var temak =
       "h": [{cim:"vödörsüllyesztő zsomp", nev:"zsomp", ver:0, kelt:"2022-12-06"}],
       "i": [{cim:"penész a pincében", nev:"sarkany", ver:0, kelt:"2023-05-13"}],
       "j": [{cim:"ászokfa helyett", nev:"aszokfa", ver:0, kelt:"2024-05-06"}],
-      "k": [{cim:"minek ide nyomásmérő?", nev:"nyomasmero", ver:0, kelt:"2024-11-23"}]
+      "k": [{cim:"minek ide nyomásmérő?", nev:"nyomasmero", ver:"2025-04-27", kelt:"2024-11-23"}]
     }
   },
   "olv": {
