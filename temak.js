@@ -411,9 +411,10 @@ function touch_end(event) {
 }
 
 addEventListener("load", () => {
-  if ((document.referrer.indexOf("pince.") < 0) && (href_nev() != "")) {
+  console.log('>'+letezik(href_nev(),false).tortenet+'<'); //!
+  if ((document.referrer.indexOf("pince.") < 0) && (href_nev() != "") && letezik(href_nev(),false).tortenet) {
     console.log('>'+href_nev()+'<'); //!
-    debugger;
+    console.log('*'+letezik(href_nev(),false).tortenet+'*'); //!
     var div = document.createElement("div");
     div.setAttribute("id","hatter");
     div.setAttribute("class","bg");
