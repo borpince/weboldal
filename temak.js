@@ -413,6 +413,7 @@ function touch_end(event) {
 addEventListener("load", () => {
   if ((document.referrer.indexOf("pince.") < 0) && (href_nev() != "")) {
     console.log('>'+href_nev()+'<'); //!
+    debugger;
     var div = document.createElement("div");
     div.setAttribute("id","hatter");
     div.setAttribute("class","bg");
