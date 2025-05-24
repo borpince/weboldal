@@ -86,10 +86,11 @@ var temak =
       ],
       "b": [
         {cim:"tavasz", subfolder:"/kert", nev:"tavasz", ver:0, kelt:"2023-03-09",alt:"kerti munkák"},
-        {cim:"tavaszodik I", subfolder:"/kert", nev:"tavaszodik", ver:0, kelt:"2022-08-15"},
-        {cim:"tavaszodik II", subfolder:"/kert", nev:"tavaszodik2", ver:0, kelt:"2023-02-24"},
-        {cim:"tavaszodik III", subfolder:"/kert", nev:"tavaszodik3",ver:"2023-05-26", kelt:"2023-03-11"},
-        {cim:"csigasör", subfolder:"/kert", nev:"csigasor", ver:0, kelt:"2024-05-16"}
+        {cim:"tavaszodik – 2021", subfolder:"/kert", nev:"tavaszodik", ver:0, kelt:"2022-08-15"},
+        {cim:"tavaszodik – 2022", subfolder:"/kert", nev:"tavaszodik2", ver:0, kelt:"2023-02-24"},
+        {cim:"tavaszodik – 2023", subfolder:"/kert", nev:"tavaszodik3",ver:"2023-05-26", kelt:"2023-03-11"},
+        {cim:"csigasör", subfolder:"/kert", nev:"csigasor", ver:0, kelt:"2024-05-16"},
+        {cim:"tavaszodik – 2025", subfolder:"/kert", nev:"tavaszodik4",ver:0, kelt:"2025-05-24"}
       ],
       "c": [
         {cim:"vélemények", subfolder: "/velemeny", nev:"velemeny", ver:0, kelt:"2024-11-10", alt:"bárkinek lehet véleménye – ingyen adják"},
