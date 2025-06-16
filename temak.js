@@ -81,8 +81,9 @@ var temak =
         {cim:"horganyzás", subfolder:"/igykeszult", nev:"horgany", ver:0, kelt:"2022-11-11"},
         {cim:"lépcsőkorlát", subfolder:"/igykeszult", nev:"korlat", ver:"2023-07-12", kelt:"2023-06-24"},
         {cim:"pinceajtó", subfolder:"/igykeszult", nev:"pinceajto", ver:0, kelt:"2023-07-06"},
+        {cim:"patak menti munkák", subfolder:"/igykeszult", nev:"patak", ver:0, kelt:"2023-08-31"},
         {cim:"pinceajtó v2.0", subfolder:"/igykeszult", nev:"pinceajto2", ver:0, kelt:"2025-02-22"},
-        {cim:"patak menti munkák", subfolder:"/igykeszult", nev:"patak", ver:0, kelt:"2023-08-31"}
+        {cim:"mesterségcímerek", subfolder:"/igykeszult", nev:"cimerek", ver:0, kelt:"2025-06-16"}
       ],
       "b": [
         {cim:"tavasz", subfolder:"/kert", nev:"tavasz", ver:0, kelt:"2023-03-09",alt:"kerti munkák"},
