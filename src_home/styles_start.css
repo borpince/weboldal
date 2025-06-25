@@ -729,11 +729,11 @@ ol,ul {list-style:none;}
   opacity: 0;
   z-index: 0;
   -webkit-backface-visibility: hidden;
-  -webkit-animation: imageAnimation 36s linear infinite 0s;
-  -moz-animation: imageAnimation 36s linear infinite 0s;
-  -o-animation: imageAnimation 36s linear infinite 0s;
-  -ms-animation: imageAnimation 36s linear infinite 0s;
-  animation: imageAnimation 36s linear infinite 0s;
+  -webkit-animation: imageAnimation 29s linear infinite 0s;
+  -moz-animation: imageAnimation 29s linear infinite 0s;
+  -o-animation: imageAnimation 29s linear infinite 0s;
+  -ms-animation: imageAnimation 29s linear infinite 0s;
+  animation: imageAnimation 29s linear infinite 0s;
 }
 .slideshow li div h3 {
   font-family: "helvetica neue", helvetica;
@@ -760,7 +760,7 @@ ol,ul {list-style:none;}
   animation-delay: 9s;
 }
 .slideshow li:nth-child(3) span {
-  background-image: url(https://kep.pince.eu/dia_3_IMG_0841.webp);
+  background-image: url(https://kep.pince.eu/dia-9-IMG_1358.webp);
   -webkit-animation-delay: 15s;
   -moz-animation-delay: 15s;
   -o-animation-delay: 15s;
@@ -768,20 +768,12 @@ ol,ul {list-style:none;}
   animation-delay: 15s;
 }
 .slideshow li:nth-child(4) span {
-	background-image: url(https://kep.pince.eu/dia-7-IMG_1303.webp);
+	background-image: url(https://kep.pince.eu/dia_5_IMG_1134.webp);
 	-webkit-animation-delay: 22s;
 	-moz-animation-delay: 22s;
 	-o-animation-delay: 22s;
 	-ms-animation-delay: 22s;
 	animation-delay: 22s;
-}
-.slideshow li:nth-child(5) span {
-	background-image: url(https://kep.pince.eu/dia_5_IMG_1134.webp);
-	-webkit-animation-delay: 29s;
-	-moz-animation-delay: 29s;
-	-o-animation-delay: 29s;
-	-ms-animation-delay: 29s;
-	animation-delay: 29s;
 }
   
 @-webkit-keyframes imageAnimation { 
