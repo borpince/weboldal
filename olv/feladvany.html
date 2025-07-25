@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>borospince</title>
+  <meta name="description" content="Mit csinál az ember, amikor betölti a lehető legkerekebb életkort? Régi korokban meg kellett kergetni egy szemrevaló szobalányt, a mai világban meg a különböző MI implementációk tesztelése kínálja magát. Életkorom kettőnek kerek hatványa, amiből a következőt nem érem meg. Hány éves vagyok? – így szól a kérdés, amivel a mesterséges intelligenciát foglalkoztatom kerek évfordulómon. Többségben hibás válaszok érkeznek, ami a technológia kiforratlanságára utal.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/borok/styles_cs2020.css?v=l">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <link rel="icon" href="/src_home/favicon.ico" type="image/x-icon">
+</head>
+<style>
+  li,li::marker {
+    font-size: x-large;
+  }
+</style>
+<body>
+  <div class="active-footer">
+    <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
+  </div>
+  <section id="container_cs2020">
+    <div class="nav-wrapper">
+      <div id="hamburger" class="nav-link-wrapper material-icons-outlined">&#xe5d2;</div>
+      <div class="left-side">
+        <div id="bigyo">
+          <div id="balmenu">
+            <div class="nav-link-wrapper">
+              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+            </div>
+            <button id="kjelzo"></button><br>
+            <button id="holtart"></button><br>
+            <button class="tlan" id="naptar"></button>
+          </div>
+        </div>
+        <select name="olv"></select>
+      </div>
+    </div>
+    <div class="content">
+      <h1 >Születésnapi feladvány</h1>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Minek csapongani, ha tudom, mit akarok? Megvan az irány, rendesen becéloztam, és már régóta jó úton haladok. A többség sok tekintetben nem ért egyet velem, de pont ez az, ami felnőtt korom érettebb szakaszában egyáltalán nem zavar, és ami fölöttébb örvendetes: nem is befolyásol.
+            Az egyik leginkább megütközést keltő szokásom a szokás hiánya, ami a szűkebb családi ünnepek és emléknapok semmibevételével alakult ki.
+            <br>
+            Ha jön a jeles nap, akkor a szokványos észjárást követve eszünkbe jut az érintett személy, és jelezzük neki figyelmességünket. Meghúzzuk a fülét, megajándékozzuk, vagy néhány keresetlen szó kíséretében felhánytorgatjuk egyre durvuló életkorát. Ez a magatartás jellemzően évente egyszer esedékes,
+            és a megemlékezések hevessége, kifejlete olykor szélsőségesen alakulhat.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Nem várok saját ötleteket a mesterséges intelligenciától, de lexikális ismereteket, végtelen tárgyi tudást és logikát annál inkább. A manapság oly divatos ágazat három képviselőjének tettem fel egy találós kérdést.
+            Azt feltételezem, hogy a számítógépes világ szülöttének nem okoz gondot a kettes számrendszer, villámgyorsan előkotorja feltornyozott tudásanyagából az emberi életkor felső határának tapasztalati értékét, és ezekből képes helyesen következtetni.
+            Nem először tévedek, de ez a mostani egyben csalódás is, mert a feladványban nincs semmi buktató, sem csapda, mégsem kapok rá jó választ azonnal.
+            <br>
+            <i>Életkorom kettőnek kerek hatványa, amiből a következőt nem érem meg. Hány éves vagyok?</i> Így szól a kérdés, amit elsőként a <a href="https://copilot.microsoft.com/">Copilot</a> kapott meg.
+          </p>
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/feladvany-cop.webp">
+            </div>
+            <figcaption>Copilot válasza</figcaption>
+          </figure>
+          <p>
+            Nem dőlhetnek hátra elégedetten a Microsoftnál, mert ebből a válaszból jól láthatóan van még mit csiszolni az algoritmusokon, és talán a felhalmozott tudásanyag feldolgozása is finomításra szorul. Következő versenyző a <a href="https://gemini.google.com/">Gemini</a>, ami megérti a magyarul feltett kérdést, de éreztetve velem <a href="/olv/velemeny/zur-zavar.html#helyzet">anyanyelvem jeletéktelenségét</a> a világban, angolul válaszol.
+          </p>
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/feladvany-gem.webp">
+            </div>
+            <figcaption>Gemini válasza</figcaption>
+          </figure>
+          <p>
+            Magasra tettem a lécet? Nem hiszem. Mégse tudta megugrani a Google által fejlesztett MI-változat sem, amit talán a kérdés zavarba ejtő egyszerűsége okozhat. Kettőből kettő vérzett el eddig a feladaton, és ezen a nagyon rossz arányon javíthat most minden MI őse, a <a href="https://chatgpt.com/">ChatGPT</a>.
+          </p>
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/feladvany-gpt.webp">
+            </div>
+            <figcaption>ChatGPT válasza</figcaption>
+          </figure>
+          <p>
+            A különböző aspiránsoktól kapott válaszokból kiviláglik a technológia kiforratlansága. Helyesen akkor jársz el, ha fenntartással fogadod az eredményt, utánagondolsz, és ellenőrzés nélkül nem fogadod el – mint ahogy az önvezető autónak sem adod át az irányítást, ha kedves az életed.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Kisgyerekeim anyukájának voltak ostoba szokásai. Például az, amikor hetekig rejtegette a jó előre megvásárolt ajándékot, amit csak az ünnepnapon volt hajlandó elővenni, és átadni a sóvárgó gyermeknek.
+            <cite>Kétszer ad, ki gyorsan ad.</cite> Ez a bölcsesség áll szemben a beidegződött szigorral, aminek lehet köze a vallásos neveltetéshez, mert akibe kiskorában belevernek dogmákat, az jó eséllyel felnőttként is úgy marad.
+            Nem tudtam azonosulni a "<cite>legalább 200 kilométerre el kell távolodnunk otthonunktól egy igazi nyaraláshoz</cite>" dogmájával sem, amit az asszony igyekezett minden évben érvényre juttani, én meg a békés viszony érdekében kényszeredetten, de elfogadtam ezt az igényt.
+            <br>
+            Nem értek egyet az <cite>ellentétek vonzzák egymást</cite> közhellyel sem.
+            Genetikai vonatkozásban lehet benne igazság, mert gyerekeink igen jól sikerültek, viszont a felek vaskosan eltérő meggyőződése széthúzáshoz vezet, aminek egy házasságban nincs helye, mert annak egyszer csak válás lesz a vége.
+            <br><br>
+            Az én világomban egy születésnap pont olyan, akár a többi, és ez fordítva is igaz. Minden nap karácsony. Ebben a helyzetben nincs értelme különbséget tenni naptári napok között, és várni a piros betűseket.
+            Akkor kapnak ezek a kivételes napok jelentőséget, amikor a megélhetésért küzdő jobbágy várja a vasárnapot, és annak a rendkívüli állapotnak örül, amikor nem kell keményen dolgozni az uradalmi birtokon. Végre itt a nap, amikor nem kell hajnalban kelni, majd húzni az igát, és izzadni napestig.
+            Miért e szenvedés? Mert a nagy többség által meghatározott szokások szerint ez a rend. Voltam én is <a href="/olv/orom/frauenkirche.html#rendes">rendes ember</a> egykoron. Beálltam a sorba, és tettem a dolgomat. Volt feladatom, amit feljebbvalóim mértek rám, én pedig a kialkudott béremért cserébe igyekeztem eleget tenni elvárásaiknak.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-text">
+          <p>
+            Viselje következményeit a férfiember, aki nőneműt enged háztartásába. Így esik meg velem rendszeresen, hogy az év egyik kutya közönséges napján valaki csillogó szemmel, fülig érő szájjal közli velem a hírt, hogy már megint öregedtem egy évvel.
+            Az ünnepléssel járó dínomdánom szerencsére csupán valami édesség elfogyasztására szorítkozik. Ez alkalommal piskóta alapra épülő, mascarpone sajttal dúsított, jéggel hűtött, gyümölcsös nyári torta készült, rajta betöltött éveim számára utaló felirattal.
+          </p>
+          <div class="box-img">
+            <img src="https://kep.pince.eu/feladvany-torta.webp">
+          </div>
+          <p>
+            Kedvesemmel aszimmetrikus viszonyt ápolunk, mert ugyan tudom a nevét, de a névnapjához tartozó dátumot nem jegyeztem meg. Akkor következtetek néha a jeles nap eljövetelére, amikor virágcsokrokkal, meg masnival átkötött csomagokkal érkezik haza.
+            Ismerem a közgondolkodást, ezért nem ütközök meg a "<i>mekkora bunkóság</i>" minősítésen, amivel kívülállók viselkedésemet illetik, és ahogy már említettem, ez a vélekedés egyáltalán nem zavar és nem is befolyásol.
+            <br>
+            <cite>Minek csapongani?</cite> Ezzel kezdtem ezeket a gondolatokat az elején.
+            Kedvesemet imádom, és ezt az érzést nem lehet és nem érdemes fokozni bizonyos napokon pusztán azért, mert a naptár szerint itt lenne az ideje. Messzire került gyerekeimre is minden nap gondolok. Eszembe sem jut évente egyszer-kétszer azzal felhívni magamra figyelmüket,
+            hogy valamilyen évfordulójuk eljövetelével eszembe juttatta őket az elektronikus naptár automata funkciója. Régen rossz lenne, ha így jutnának eszembe. Jobban járok, ha nem csapongok, és minden napomat egyformán kellemesen élem.
+          </p>
+        </div>
+        <div class="box-text-update">
+          <p>
+            Rokonaim néhány éve jelezték igényüket, hogy a kerek évfordulóra tekintettel nem a szokásos SMS-ben biztosítanának együttérzésükről, hanem személyesen, egy pincelátogatással egybekötve köszöntenének fel.
+            Akkoriban a borospince és környezete még meglehetősen kezdetleges állapotát mutatta, nem volt alkalmas komfortos vendéglátásra. Közöltem velük ezt az álláspontomat, és hangot adtam azon meggyőződésemnek, hogy a 60. születésnap csupán a tizes számrendszerben minősül kereknek.
+            Aztán javaslatot tettem arra, hogy ünnepeljük szándékuk szerint a 2<sup>6</sup>, igazán kerek évfordulómat néhány év múlva, mert addigra a pince épített környezete eljut arra a szintre, ami már nekem is tetszik.
+            <br>
+            Mostanra nem csak a kerek életkor következett be, hanem túl vagyok a <a href="https://pince.dega.hu/olv/igykeszult/patak.html">patak menti munkákon</a>, megvalósult a <i>közösségi tér</i>, melynek látványos eleme, az <a href="/olv/igykeszult/pinceajto2.html#izgalom">új pinceajtó</a> is elkészült végre,
+            és egyéb <a href="/olv/igykeszult/cimerek.html#oltar">látványosságok</a> is gyönyörködtetik a szemet. Kedvesen hívom a rokonokat – pedig nem szokásom családi eseményeket szervezni – , hogy most van itt az ideje a régóta tervezett látogatásnak, mert mára minden körülmény kedvezően alakult a borospincénél.
+            Mégsem lesz ebből látogatás, mert évekkel ezelőtt hiába érveltem azzal, hogy építési területen kellene keresztülvergődniük, a <a href="/olv/igykeszult/lepcso.html">lépcső</a> sincs a helyén. Bennük a visszautasítás élménye él a megfakult történetből, és ez kedvüket szegte.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </section>    
+</body>
+</html>
+<script src="/temak.js"></script>
+<script src="/fejezetek.js"></script>

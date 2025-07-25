@@ -171,7 +171,8 @@ var temak =
       "j": [{cim:"cseppköves emlékek", nev:"cseppkovek", ver:0, kelt:"2023-01-09"}],
       "k": [{cim:"szárnypróbálgatás", nev:"00", ver:0, kelt:"2021-10-13"}],
       "l": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021", ver:0, kelt:"2022-06-27"}],
-      "m": [{cim:"jó pap holtig hülyül", nev:"holtig", ver:0, kelt:"2025-01-06"}]
+      "m": [{cim:"jó pap holtig hülyül", nev:"holtig", ver:0, kelt:"2025-01-06"}],
+      "n": [{cim:"születésnapi feladvány", nev:"feladvany", ver:0, kelt:"2025-07-25"}]
     }
   },
   "it": {
