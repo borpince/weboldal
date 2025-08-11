@@ -206,7 +206,8 @@ var temak =
       "k": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
       "l": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
       "m": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}],
-      "n": [{cim:"elterelt figyelem", nev:"elterelve", ver:0, kelt:"2025-04-03"}]
+      "n": [{cim:"elterelt figyelem", nev:"elterelve", ver:0, kelt:"2025-04-03"}],
+      "o": [{cim:"egyről kettőre", nev:"egykettore", ver:0, kelt:"2025-08-11"}]
     }
   },
 }
