@@ -145,7 +145,8 @@ var temak =
         {cim:"lányos apák nyomorúsága", subfolder:"/rem", nev:"lanyosapa", ver:0, kelt:"2024-02-06"},
         {cim:"téglaboltozat és gyökerek", subfolder:"/rem", nev:"gyokerek", ver:"2024-06-09", kelt:"2024-04-05"},
         {cim:"rossz nevelés", subfolder:"/rem", nev:"neveles", ver:0, kelt:"2024-06-10"},
-        {cim:"nyakunkon a világvége", subfolder:"/rem", nev:"vilagvege", ver:0, kelt:"2025-03-26"}
+        {cim:"nyakunkon a világvége", subfolder:"/rem", nev:"vilagvege", ver:0, kelt:"2025-03-26"},
+        {cim:"késlekedés keserves következménye", subfolder:"/rem", nev:"kesedelem", ver:0, kelt:"2025-08-16"}
       ],
       "f": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
@@ -361,10 +362,11 @@ function alcimek_konzerv_betolt(cb) {
 }
 
 function koho(txt,max) { //korlátozott hossz
+  //jelenleg értelmetlen, mert kikerült a korlátozott szélességű főmenüből a legfrisebb írások kínálata
+  return txt;
   if (txt.length > max) {
     txt = txt.substring(0,max)+"…"; //horizontal ellipsis
   }
-  return txt;
 }
 
 function valasztas(path) {
