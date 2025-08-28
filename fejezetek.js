@@ -513,8 +513,7 @@
       });
     } //! 514 hamburger.html
     
-    var sima = (window.location.search.substring(1).trim() == "sima");
-    if (!sima && (glob.href_nev != "naptar") && (glob.href_nev != "naplo") && (glob.href_nev != "katalogus") && letezik(glob.href_nev,false).tortenet)
+    if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo") && (glob.href_nev != "katalogus") && letezik(glob.href_nev,false).tortenet)
       hamar = setTimeout(function() {
         if (left_side[0]) {
           left_side[0].style.top = eltuntet_y;
