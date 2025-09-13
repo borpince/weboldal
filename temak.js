@@ -122,7 +122,8 @@ var temak =
         {cim:"életünk és a bor", subfolder:"/velemeny", nev:"hamvas", ver:0, kelt:"2025-02-01"},
         {cim:"milyen hülyének lenni?", subfolder:"/velemeny", nev:"hulye", ver:0, kelt:"2025-02-16"},
         {cim:"nem kerget a tatár", subfolder:"/velemeny", nev:"tatar", ver:0, kelt:"2025-02-20"},
-        {cim:"hírcsokor", subfolder:"/velemeny", nev:"hircsokor", ver:0, kelt:"2025-08-28"}
+        {cim:"hírcsokor", subfolder:"/velemeny", nev:"hircsokor", ver:0, kelt:"2025-08-28"},
+        {cim:"korhatár-besorolás", subfolder:"/velemeny", nev:"korhatar", ver:0, kelt:"2025-09-14"}
       ],
       "d": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18", alt:"borok, versenyek, kóstolók"},
