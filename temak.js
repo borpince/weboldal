@@ -42,7 +42,7 @@ var temak =
         {cim:"№ 7: bormentő küvé", nev:"07", ver:0, kelt:"2024-10-13"},
         {cim:"№ 8: sárkány küvé", nev:"08", ver:0, kelt:"2024-11-17"}
       ],
-      "2025": [{cim:"№ 9: chardonnay", nev:"09", ver:"2025-09-11", kelt:"2025-08-31"}]
+      "2025": [{cim:"№ 9: chardonnay", nev:"09", ver:"2025-09-14", kelt:"2025-08-31"}]
     }
   },
   "tech": {
