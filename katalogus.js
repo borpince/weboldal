@@ -61,7 +61,7 @@ function katalogus_gyarto() {
       span.style.fontSize = "large";
       d.appendChild(span);
     }
-    a.setAttribute("href",`${tk}${subfolder}/${le.nev}.html`);
+    a.setAttribute("href",`${tk}${subfolder}/${le.nev}`);
     a.setAttribute("target","_parent");
     a.setAttribute("style","color:whitesmoke");
     a.innerHTML = le.cim;
@@ -88,7 +88,7 @@ function katalogus_gyarto() {
 
   function alc_div_gyarto(tk,nev,subfolder,level,key,alcim) {
     var a = document.createElement("a");
-    a.setAttribute("href",`${tk}${subfolder}/${nev}.html#${key}`);
+    a.setAttribute("href",`${tk}${subfolder}/${nev}#${key}`);
     a.setAttribute("target","_parent");
     a.setAttribute("style","color:whitesmoke");
     a.innerHTML = alc[key];
