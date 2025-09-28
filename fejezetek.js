@@ -352,7 +352,7 @@
     if (window.location.search.substring(1).trim() == "terkep") {
       var cim = "https://"+window.location.hostname;
       var txt = cim+"/index\n"; //ez nem szerepel a témák listájában
-      var redir_txt = "/index.html /index/ 301\n";
+      var redir_txt = "/index.html /index/ 301\n"; var link_txt = '<link rel="canonical" href="https://pince.eu/index/">\n';
       for (tk in temak)
         for (lek in temak[tk].lista)
           for (le_sub_idx in temak[tk].lista[lek]) {
@@ -361,11 +361,11 @@
             if ((le.nev.indexOf("//") == -1) && (le.hasOwnProperty("kelt"))) { //nem külső link, közzétéve
               var eleres = `${temak[tk].folder}${subfolder}/${le.nev}`;
               txt += `${cim}${eleres}\n`; //.html nélkül!
-              redir_txt += `${eleres}.html/ ${eleres}/ 301\n`;
+              redir_txt += `${eleres}.html ${eleres}/ 301\n`; link_txt += `<link rel="canonical" href="https://pince.eu${eleres}/">\n`;
             }
           }
       letoltes(txt,"sitemap.txt");
-      letoltes(redir_txt,"_redirects.txt");
+      letoltes(redir_txt,"_redirects.txt"); letoltes(link_txt,"link.txt");
     }
   }
 
