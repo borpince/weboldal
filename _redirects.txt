@@ -1,4 +1,4 @@
-/index.html /index/ 301
+/index.html /index 301
 /borok/01.html /borok/01 301
 /borok/02.html /borok/02 301
 /borok/03.html /borok/03 301
