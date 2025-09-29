@@ -27,7 +27,7 @@
         <div id="bigyo">
           <div id="balmenu">
             <div class="nav-link-wrapper">
-              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+              <a href="/index"><span class="material-icons-outlined">&#xe88a;</span></a>
             </div>
             <button id="kjelzo"></button><br>
             <button id="holtart"></button><br>
@@ -45,8 +45,8 @@
       <div class="box">
         <div class="box-text-update">
           <p>
-            Nem ez az első olyan beszámoló, ami ijesztő címe ellenére helyet kap az <i>örömteli történetek</i> témacsoportjában (ilyen volt a <a href="/olv/orom/gebasz.html">gebasz</a> is).
-            Rendszeresen előveszem régi írásaimat hibák, zagyva fogalmazás és halott linkek után kutatva. Így találkoztam a minap <a href="/olv/orom/deszka.html">Deszkamodell</a> című, az <a href="https://hu.wikipedia.org/wiki/Dolgok_internetje">IoT</a> hőskorában fogalmazott jegyzetemmel.
+            Nem ez az első olyan beszámoló, ami ijesztő címe ellenére helyet kap az <i>örömteli történetek</i> témacsoportjában (ilyen volt a <a href="/olv/orom/gebasz">gebasz</a> is).
+            Rendszeresen előveszem régi írásaimat hibák, zagyva fogalmazás és halott linkek után kutatva. Így találkoztam a minap <a href="/olv/orom/deszka">Deszkamodell</a> című, az <a href="https://hu.wikipedia.org/wiki/Dolgok_internetje">IoT</a> hőskorában fogalmazott jegyzetemmel.
             Ennek keletkezésekor már hazánkban is működött a 4G mobilinternet, mindenféle gyártók elárasztották a piacot olcsó mikroszámítógépekkel és ezekhez való érzékelőkkel (hőmérő, légnyomásmérő, giroszkóp, GPS-vevő stb.), amik hozzám is eljutottak.
             Ekkor vált lehetővé komolyabban belevágni korábban buta dolgok okosításába, mert minden körülmény ennek kedvezett. Gyerekeim ez idő tájt távoli országok egyetemeire jártak, nem kellett róluk közvetlenül és napi szinten gondoskodnom. Csak a létfenntartásukhoz elegendő lóvét kellett utánuk küldeni,
             de az időmmel már szabadon gazdálkodtam.
@@ -54,7 +54,7 @@
             Minden rendelkezésre állt ahhoz, hogy alkossak valami okos eszközt, mindössze a hozzá való speciális tudás és a késztetés hibádzott. Csak az első lépés nehéz, kezdjük hát a másodikkal – javasolják viccelődve a hozzáértők.
             A garázskapu deszkamodellel okosított megoldásának idején már nem voltam teljesen felkészületlen, mert nem az volt az első ilyen munkám. Az alapokat korábban sajátítottam el, amikor még csak a mikroszámítógépek és a hozzájuk illeszthető érzékelők terén szereztem jártasságot.
             A mindent elindító késztetés egy háztatási esemény, az alagsori világítás időzítőkapcsolójának meghibásodása volt, amit egy józanul és hatékonyan cselekvő férfiember annak cseréjével javítana, de én nem erről a végletes egyszerűségről vagyok ismert.
-            Egyszer a <cite>konyhai világítás működésének helyreállítása érdekében végzett munkával</cite> (a körülményes fogalmazás már eleve gyanús) mutattam be az egyszerűen megoldható helyzeteket <a href="/it/jelzesek.html#konyha">elbonyolítani képes</a> tehetségemet – a legjobb szándék mellett persze.
+            Egyszer a <cite>konyhai világítás működésének helyreállítása érdekében végzett munkával</cite> (a körülményes fogalmazás már eleve gyanús) mutattam be az egyszerűen megoldható helyzeteket <a href="/it/jelzesek#konyha">elbonyolítani képes</a> tehetségemet – a legjobb szándék mellett persze.
             <br>
             Tehát egy szokványos, időzítős világításvezérlő pótlása volt a feladat, ami 2014 karácsonya előtt romlott el, és aminek 2015 januárjában született mikroszámítógépre alapozott megoldása – ez volt az első, puhatolózó lépésem ebbe a szakirányba. Ennek történetét közlöm most egy évtized elteltével, amihez minden rendelkezésre áll.
             Az eszköz azóta is kifogástalanul működik, megtaláltam a korabeli tervet, az MCU-t működtető forrásprogramot, egy szövegkezdeményt, aminek akkori publikálása elmaradt, és megvannak az emlékeim is.
@@ -207,7 +207,7 @@
             ám ez az MCU vezérlésű időzítőkapcsoló Arduino Unora épül, aminek egyszerű <a href="https://docs.arduino.cc/retired/hacking/software/PortManipulation/">I/O portjain</a> kívül nincs más kapcsolata a külvilággal,
             ezért kiegészítő elemek nélkül nem csatlakozhat sem galvanikusan, sem Wi-Fi-n keresztül hálózathoz. Más lenne a helyzet, ha kicsit később vágok bele ebbe a munkába,
             mert akkor jó eséllyel az <a href="https://en.wikipedia.org/wiki/ESP8266">ESP8266</a>-ot választom. Ez az apró, de hatékony SoC 2014 augusztusában jelent meg, széles körben pedig 2015-től terjedt el és vált közismertté,
-            ezért nem ismertem akkor, amikor az időzítőkapcsoló kiváltásán dolgoztam. A garázskapu okosításához már ezt a <a href="/olv/orom/deszka.html#esp">Wi-Fi-s eszközt vetettem be</a>,
+            ezért nem ismertem akkor, amikor az időzítőkapcsoló kiváltásán dolgoztam. A garázskapu okosításához már ezt a <a href="/olv/orom/deszka#esp">Wi-Fi-s eszközt vetettem be</a>,
             amivel szinte gyerekjáték LAN-ra és internetre kapcsolódni, továbbá böngészővel megnyitható, kényelmes kezelőfelülettel ellátni.
             Az időzítőkapcsoló tervezett <i>véletlenszerű világítás (betörőriasztó)</i> üzemmódjának csak a helye van meg. Azért nem fejtettem ki, mert hiányzik a rendszerből a <a href="https://lastminuteengineers.com/ds3231-rtc-arduino-tutorial/">DS3231 RTC modul</a>,
             ami a pontos idő értékét szolgáltatná. Ezt a kiegészítést is szükségtelenné teszi az ESP8266, mert a Wi-Fi-n keresztül internetre csatlakozva egy <a href="https://hu.wikipedia.org/wiki/H%C3%A1l%C3%B3zati_id%C5%91_protokoll">NTP</a> kéréssel az óra is pontosan jár.
