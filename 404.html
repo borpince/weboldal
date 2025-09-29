@@ -16,7 +16,7 @@
     <div class="nav-wrapper">
       <div class="left-side">
         <div id="home" class="nav-link-wrapper" >
-          <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+          <a href="/index"><span class="material-icons-outlined">&#xe88a;</span></a>
         </div>
         <select name="*"></select>
       </div>
@@ -28,12 +28,12 @@
           <p>
             Elavult hivatkozásról jutottál ide? Rossz címet adtál meg?
             <br>
-            Sebaj. Indulj el a kályhától, a <code><a href="/index.html">pince.eu</a></code> nyitóoldalától,
+            Sebaj. Indulj el a kályhától, a <code><a href="/index">pince.eu</a></code> nyitóoldalától,
             amit a bal felső sarokban látható házikóra nyomva érhetsz el.
             <br><br>
-            Az oldaltérképnél is felkínált <a href="/naplo.html">naplóban</a> megszemlélheted a weboldalon fellelhető összes történet időrendi sorát akár alcímekkel, akár azok nélkül, és fordított sorrendben is.
+            Az oldaltérképnél is felkínált <a href="/naplo">naplóban</a> megszemlélheted a weboldalon fellelhető összes történet időrendi sorát akár alcímekkel, akár azok nélkül, és fordított sorrendben is.
             Ugyanitt kulcsszavas szűrő segít leszűkíteni a választékot a keresett tartalom eléréséhez.
-            További lehetőséget biztosít a tájékozódásra a témakörönként csoportosított írásokat felölelő <a href="/katalogus.html">katalógus</a>.
+            További lehetőséget biztosít a tájékozódásra a témakörönként csoportosított írásokat felölelő <a href="/katalogus">katalógus</a>.
             <br>
             A legújabb történetek iránti érdeklődés kielégítésére a következő írásokat ajánlom:
           </p>
@@ -42,7 +42,7 @@
           <div id="ajanlo" datummal csakcimek></div>
         </div>
         <div style="padding-bottom: 30px;padding-top: 10px;">
-          <a href="/index.html"><img src="https://kep.pince.eu/alak12sz.png" width="60%" height="60%"></a>
+          <a href="/index"><img src="https://kep.pince.eu/alak12sz.png" width="60%" height="60%"></a>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@ ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a 
   if (nev == "cs2020") nev = "01"; //régi QR-kód érdekében
   var tmdex = letezik(nev,true);
   if (tmdex.folder) {
-    var path = `${tmdex.folder}${tmdex.subfolder}/${nev}.html`;
+    var path = `${tmdex.folder}${tmdex.subfolder}/${nev}`;
     var url = `https://${window.location.hostname}${path}`;
     fetch(url, {method: 'HEAD'}) //biztos, ami biztos
       .then((response) => {

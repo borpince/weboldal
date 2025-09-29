@@ -18,7 +18,7 @@
         <div id="bigyo">
           <div id="balmenu">
             <div class="nav-link-wrapper">
-              <a href="/index.html"><span class="material-icons-outlined">&#xe88a;</span></a>
+              <a href="/index"><span class="material-icons-outlined">&#xe88a;</span></a>
             </div>
             <button id="utmut"></button>
           </div>
@@ -33,7 +33,7 @@
       <input type="checkbox" id="dat" name="dat" checked><label for="dat">dátumok</label>
       <input type="checkbox" id="jel" name="jel"><label for="jel">jelek</label>
     </div>
-    <iframe id="katalogus" src="/katalogus-fa.html"></iframe>
+    <iframe id="katalogus" src="/katalogus-fa"></iframe>
   </section>
 </body>
 </html>
@@ -56,7 +56,7 @@ addEventListener("load", () => {
   var utmut = document.getElementById("utmut");
   if (utmut) {
     utmut.innerHTML = jelek.utmut[0];
-    utmut.addEventListener("click",() => {window.location.href = "/it/hmk_katalogus.html";});
+    utmut.addEventListener("click",() => {window.location.href = "/it/hmk_katalogus";});
   }
 });
 </script>
