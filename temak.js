@@ -341,7 +341,7 @@ function alcim_gyujto(doc) {
         nev: le.nev,
         esemenyek: Object.fromEntries(glob.alcimek)
       }];
-      window.location.href = `/naptar.html?${btoa(encodeURI(JSON.stringify(csomag)))}`;
+      window.location.href = `/naptar?${btoa(encodeURI(JSON.stringify(csomag)))}`;
     });
   }
 }
