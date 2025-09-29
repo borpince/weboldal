@@ -406,7 +406,7 @@ function handleGesture(event) {
   //event.preventDefault();
   var dif = Math.abs(gest.end.y-gest.start.y)
   if ((dif > 60) && (gest.end.y > gest.start.y)) {
-    window.location.href = "/katalogus.html";
+    window.location.href = "/katalogus";
   }
 }
 
@@ -431,7 +431,7 @@ addEventListener("load", () => {
   if (glob.hamburger) {
     glob.hamburger.addEventListener('contextmenu', function(e) {
       e.preventDefault();
-      window.location.href = "/katalogus.html";
+      window.location.href = "/katalogus";
     });
     glob.hamburger.addEventListener('touchstart', touch_start, false);
     glob.hamburger.addEventListener('touchend', touch_end, false);
