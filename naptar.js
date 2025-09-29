@@ -112,7 +112,7 @@
             cim_elozo = tortenet.cim;
           }
           var cim = document.createElement('a');
-          cim.setAttribute("href",`${tortenet.folder}${tortenet.subfolder}/${tortenet.nev}.html#${key}`);
+          cim.setAttribute("href",`${tortenet.folder}${tortenet.subfolder}/${tortenet.nev}#${key}`);
           cim.setAttribute("style","margin:5px 0px 5px 8px;font-size:x-large");
           cim.innerHTML = `${tortenet.esemenyek[key]}`;
           var span = document.createElement('span');
@@ -405,7 +405,7 @@
           var kelt = (le.hasOwnProperty("kelt")) ? le.kelt:"";
           if (kelt && (le.nev.indexOf("//") == -1)) { //nem külső link
             glob.tortenet_db++;
-            var url = csomag.folder+csomag.subfolder+"/"+le.nev+".html";
+            var url = csomag.folder+csomag.subfolder+"/"+le.nev;
             if (!alcimek_sum) {
               time_out = setTimeout(gebasz_eseten,6000); //ha megakadna a külső művelet
               const anyag = await fetch(url);
@@ -468,7 +468,7 @@
             csomag.esemenyek[le.kelt] = le.cim;
             if (le.kelt) {
               glob.tortenet_db++;
-              sum_info += `${glob.tortenet_db}: ${csomag.folder}${csomag.subfolder}/${le.nev}.html, ${le.kelt.substring(0,10)}\n`;
+              sum_info += `${glob.tortenet_db}: ${csomag.folder}${csomag.subfolder}/${le.nev}, ${le.kelt.substring(0,10)}\n`;
               gyujto_tb.push(csomag);
             }
           }
@@ -526,7 +526,7 @@
       }
       i++;
     }
-    window.history.pushState("", "", "/index.html");
+    window.history.pushState("", "", "/index");
     if (talalt) {
       i--;
       ev_valaszto.onchange = function() {if (ev_valaszto.value) naptar_gyarto(obj_tb[i],ev_valaszto.value);}
@@ -537,7 +537,7 @@
       window.onclick = function(event) {if (event.target == modal) {modal.style.display = "none";}}
       if (utmut) {
         utmut.innerHTML = jelek.utmut[0];
-        utmut.addEventListener("click",() => {window.location.href = "/it/hmk_naptar.html";});
+        utmut.addEventListener("click",() => {window.location.href = "/it/hmk_naptar";});
       }
     }
   });

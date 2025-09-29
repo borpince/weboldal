@@ -383,12 +383,12 @@
             var sf = (le.subfolder != undefined) ? le.subfolder:"";
             switch(fajta) {
               case "ajanlo":
-                if (le.kelt != undefined) lista.set(le.kelt,{liem:le,path:`${temak[tk].folder}${sf}/${le.nev}.html`});
+                if (le.kelt != undefined) lista.set(le.kelt,{liem:le,path:`${temak[tk].folder}${sf}/${le.nev}`});
               break;
               case "bovult":
                 if (isNaN(le.ver)) try {
                   var d = new Date(le.ver);
-                  if (!isNaN(d)) lista.set(le.ver+db,{liem:le,path:`${temak[tk].folder}${sf}/${le.nev}.html#${le.ver}`});
+                  if (!isNaN(d)) lista.set(le.ver+db,{liem:le,path:`${temak[tk].folder}${sf}/${le.nev}#${le.ver}`});
                 } catch(err) {}
               break;
             }
