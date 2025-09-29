@@ -59,7 +59,7 @@
       var cim;
       if (i > 0) {
         cim = document.createElement('A');
-        cim.setAttribute("href",`${temak[tmdex.tk].folder}${tmdex.tortenet[i].subfolder}/${tmdex.tortenet[i].nev}.html`);
+        cim.setAttribute("href",`${temak[tmdex.tk].folder}${tmdex.tortenet[i].subfolder}/${tmdex.tortenet[i].nev}`);
       } else cim = document.createElement('SPAN');
       cim.innerHTML = `${tmdex.tortenet[i].cim}<br>`;
       object.appendChild(cim);
@@ -221,7 +221,7 @@
 
     select.onchange = function() {
       if (select.value) {
-        var path = (select.value.indexOf("//") > -1) ? select.value:`${select[select.selectedIndex].folder}${select[select.selectedIndex].subfolder}/${select.value}.html${select[select.selectedIndex].link}`;
+        var path = (select.value.indexOf("//") > -1) ? select.value:`${select[select.selectedIndex].folder}${select[select.selectedIndex].subfolder}/${select.value}${select[select.selectedIndex].link}`;
         if (glob.href_nev == "menu") { // menüből
           parent.valasztas(path);
         } else { // történetből
@@ -248,7 +248,7 @@
       for (var i = 0; i < halad_tb.length; i++) {
 
         function kitolt(txt) {
-          halad_tb[i].setAttribute("href",`${temak[tmdex.tk].folder}${tmdex.tortenet[idx].subfolder}/${tmdex.tortenet[idx].nev}.html`);
+          halad_tb[i].setAttribute("href",`${temak[tmdex.tk].folder}${tmdex.tortenet[idx].subfolder}/${tmdex.tortenet[idx].nev}`);
           halad_tb[i].innerHTML = `(${txt} fejezet: ${tmdex.tortenet[idx].cim})`;
         }
 

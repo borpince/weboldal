@@ -174,7 +174,7 @@
     }
 
     function path(v,kopasz=true) {
-      return `${temak[v.tk].folder}${v.subfolder}/${v.nev}.html${(v.obu && !kopasz) ? "#"+v.obu:""}`;
+      return `${temak[v.tk].folder}${v.subfolder}/${v.nev}${(v.obu && !kopasz) ? "#"+v.obu:""}`;
     }
 
     function listaelem(v) {
@@ -245,7 +245,7 @@
       oi--;
       if (utmut) {
         utmut.innerHTML = jelek.utmut[0];
-        utmut.addEventListener("click",() => {window.location.href = "/it/hmk_naplo.html";});
+        utmut.addEventListener("click",() => {window.location.href = "/it/hmk_naplo";});
         rendezes.onclick = function() {forditva = ! forditva; naplo_gyarto();}
         summal.onchange = function() {naplo_gyarto();}
         alcimekkel.onchange = function() {naplo_gyarto();}
