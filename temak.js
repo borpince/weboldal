@@ -153,7 +153,8 @@ var temak =
         {cim:"rossz nevelés", subfolder:"/rem", nev:"neveles", ver:0, kelt:"2024-06-10"},
         {cim:"nyakunkon a világvége", subfolder:"/rem", nev:"vilagvege", ver:0, kelt:"2025-03-26"},
         {cim:"késlekedés keserves következménye", subfolder:"/rem", nev:"kesedelem", ver:0, kelt:"2025-08-16"},
-        {cim:"elhagyott szakemberek", subfolder:"/rem", nev:"szakember", ver:0, kelt:"2025-08-23"}
+        {cim:"elhagyott szakemberek", subfolder:"/rem", nev:"szakember", ver:0, kelt:"2025-08-23"},
+        {cim:"kinek a szégyene?", subfolder:"/rem", nev:"szegyene", ver:0, kelt:"2025-10-21"}
       ],
       "f": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
