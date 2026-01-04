@@ -11,6 +11,11 @@
   <link rel="icon" href="/src_home/favicon.ico" type="image/x-icon">
   <link rel="canonical" href="https://pince.eu/it/egykettore">
 </head>
+<style>
+  li,li::marker {
+    font-size: x-large;
+  }
+</style>
 <body>
   <div class="active-footer">
     <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
@@ -113,12 +118,15 @@
             A világ nagy szerencséjére létezik egy lettországi vállalkozás, ahol nagy megbízhatóságú számítógép-hálózati berendezéseket gyártanak. Ez a <a href="https://mikrotik.com/">MikroTik</a>, aminek termékei lényegesen kedvezőbb áron biztosítják ugyanazt a minőséget, mint a tekintélyes Cisco.
           </p>
         </div>
-        <div id="2025-07-23" alcim="ATL 5G R16" class="box-text">
+        <div class="box-text">
           <p>
             A háztartásba beszivárgott híglevű és megbízhatatlan gyártmányok miatt kialakult szégyenteljes helyzeten elgondolkodva meghoztam a minőségi javulást célzó, egyben költségtakarékos döntést: MikroTik készülékekre cserélem az itthoni számítógéphálózat kínai gyártóktól származó kommersz elemeit.
             Minden részegysége egyformán fontos a hálózatnak, mégis az internetkapcsolatot biztosító modemmel kezdem. Nem ADSL-t fogok használni, mert távol a szolgáltató központjától, réz érpáron legfeljebb 12 Mbit/s letöltést, és 2 Mbit/s visszirányú sebességet garantálnak, ami messze van a szintén harmatgyenge 30/5 Mbit/s elméleti sebességtől.
             Dróton nem szolgáltat más a környéken, optikai kábelt nem húztak ki ide, nincs választék (sem verseny az ügyfelek kegyeiért), ezért egy rádiós LTE modemet állítok csatasorba.
           </p>
+        </div>
+        <object name="alcimek">az eszközök cseréjének, fejlesztésének lépései:</object>
+        <div id="2025-07-23" alcim="ATL 5G R16" class="box-text">
           <p style="font-size: xx-large;"><br><a href="https://mikrotik.com/product/atl_5g_r16">ATL 5G R16</a></p>
           <p>
             <br>
@@ -303,7 +311,7 @@
           <p style="font-size: xx-large;"><a href="https://www.zyxel.com/hu/hu/products/mobile-broadband/4g-lte-a-outdoor-router-lte7480-m804/specifications">Zyxel LTE7480</a></p>
           <p>
             <br>
-            Ez az egyik kompromisszumos kistesója az NR7501-nek. Ugyanolyan IP68 védelemmel, nagy nyereségű antennával, PoE tápellátással (802.3af/at). Nincs 5G NR, nincs 802.3bt, sem 10G Ethernet port, viszont van LTE Cat12, ami messze magasabb súlycsoport a lecserélt <a href="#2025-07-24">Mikrotik SXT LTE</a> Cat4 osztályához képest.
+            Ez az egyik kompromisszumos kistesója az NR7501-nek. Ugyanolyan IP68 védelemmel, nagy nyereségű antennával, PoE tápellátással (802.3af/at). Nincs 5G NR, nincs 802.3bt, sem 10Gb Ethernet port, viszont van LTE Cat12, ami messze magasabb súlycsoport a lecserélt <a href="#2025-07-24">Mikrotik SXT LTE</a> Cat4 osztályához képest.
           </p>
           <div class="box-img">
             <img src="https://kep.pince.eu/egykettore-zyxel.webp">
@@ -312,9 +320,10 @@
             Sóher fickóként megnyugvással mérek pénztárcakímélő, 6 watt körüli villanyfogyasztást. Addig tart a vidám és önfeledt ismerkedés a routerrel, amíg nem szembesülök a haladéktalanul legújabbra frissített firmware szegényes funkcióválasztékával, a beállításokat intézni engedő fapados kezelőfelülettel,
             ami intuitív és könnyen átlátható jelzőkkel illethető a legkevésbé. Hogy ez mekkora egy ótvar! (Ugyanezt kapja a méregdrága NR7501 típust vásárló kuncsaft is.)
             Kénytelen vagyok kikapcsolni DHCP-t, tűzfalat, NAT-ot, routingot, tehát lényegében mindent, amitől a cucc routernek nevezhető. Ebben a herélt <i>passthrough</i> üzemmódban használom, mert az üzemeltetők közreadott tapasztalatai szerint sima LTE modemként megbízható, stabil és kiszámítható, míg routerként csalódást okoz.
-            <br>
+          </p>
+          <p id="loszar">
             Hiába versenyeznek egymással a távközlési szektor mobilhálózati szolgáltatói (MNO), közülük csak a Magyar Telekom ad IPv6-ot, azt is host szinten, prefix delegation nélkül. Így csupán egy árva eszközt kapcsolhatok internetre, nincs lehetőségem rendes routerrel tovább osztani címeket (GUA). Miért erőlködök IPv6-tal,
-            amikor IPv4 címzésű hálózaton prímán megoszthatom az internetkapcsolatot a router mögötti gépekkel? Alapos okom van rá, mert az internetszolgáltatók nem adnak nyilvános IP-címet a hozzám hasonló lószarrugdosóknak. A magamfajtának meg kell elégednie az ISP LAN hálózatának NAT-olt 10.0.0.0/8-as címeivel,
+            amikor IPv4 címzésű hálózaton prímán megoszthatom az internetkapcsolatot a router mögötti gépekkel? Alapos okom van rá, mert az internetszolgáltatók nem adnak nyilvános IP-címet a hozzám hasonló lószarrugdosóknak. A magamfajtának meg kell elégednie az ISP belső hálózatának NAT-olt 10.0.0.0/8-as címeivel,
             ami pompás, de sajnos egyoldalú hozzáférést biztosít az internethez. Nyilvános IP-cím híján a nagyvilág felől nem vagyok közvetlenül elérhető, ami nélkül például itthoni webszervert üzemeltetni képtelenség.
             <br><br>
             Hogyan szerzek magamnak nyilvános IP-címet sanyarú körülmények közepette? A GUA IPv6 természeténél fogva (a tűzfalig) nyilvános. Ebben a rendszerben értelmét veszti NAT, port forwarding, DMZ host, minden cím közvetlenül elérhető, és ha a szolgáltató kegyesen ilyen címet oszt ki, akkor ennek révén az érdeklődők megcélozhatnak az internet irányából.
@@ -326,12 +335,154 @@
             Van nekem ilyen? Már hogy a fenébe lenne. Egy utolsó senki vagyok.
             Azóta van ez a szigorúság, és mérik szűkmarkúan a publikus IP-címeket, mióta kimerült az IPv4 címtér. A jelenlegi hiánygazdálkodást meg fogja szüntetni az IPv6, de ahhoz előbb széles körben el kell terjednie használatának.
             <br>
-            ⚠️A Telekomnál több előfizetés típus létezik. Nem értek hozzá, nem tudom megállapítani, hogy melyiket rendelték a LTE7480-ba helyezett SIM-hez, de biztosan nem üzleti. Valószínűleg ettől is függ, hogy az előfizetői végberendezésnek számító LTE7480 milyen IP-címet kap a szolgáltatótól.
-            Nem követendő módszer az itt bemutatott eljárás, nincs semmi garancia a publikus IP-cím tartósságára – meglehet, hogy csak ideiglenes mázlim van.
+            ⚠️A Telekomnál több előfizetés típus létezik. Nem értek hozzá, nem tudom megállapítani, hogy melyiket rendelték a LTE7480-ba helyezett SIM-hez, de biztosan nem üzleti. Valószínűleg ettől is függ, hogy az előfizetői végberendezésnek számító LTE7480 milyen IPv4 címet kap a szolgáltatótól az IPv6 mellé.
+            Nem követendő módszer az itt bemutatott eljárás, nincs semmi garancia a publikus IPv4 cím tartósságára – meglehet, hogy csak ideiglenes mázlim van.
+          </p>
+        </div>
+        <div id="2026-01-05T10:00" alcim="X440-G2-24p-10GE4" class="box-text">
+          <p style="font-size: xx-large;"><br><a href="https://documentation.extremenetworks.com/summit/GUID-4A8BE32C-840D-4D0D-9E6F-2DE45B474288.shtml">X440-G2-24p-10GE4</a></p>
+          <p>
+            <br>
+            Nem Mikrotik, nem is Zyxel. Az <a href="https://www.extremenetworks.com/">Extreme Networks</a> <i>enterprise campus edge switch</i> terméke. Teljesítményét és minőségét tekintve egy ligában játszik a Cisco-val, de annál egy kicsit megbízhatóbb.
+            Mit keres nálam egy ilyen készülék, hogy került ez ide?
+            <br>
+            A VoIP telefonok, biztonsági kamerák és egyéb poe-tápellátású eszközök szaporodásával komoly igény mutatkozott egy olyan berendezésre, ami nem csak az adatkapcsolatot biztosítja a hálózati eszközök között, hanem kielégíti azok elektromos energiaigényét is.
+            Léteznek PoE injektorok a feladat ellátásra, de mindegyikhez kell találni egy 230 voltos energiaforrást, és kis túlzással előbb-utóbb már egy új szabad konnektor kialakítása visz el jelentős energiát és figyelmet, nem beszélve a szünetmentes tápellátás nehézségeiről.
+            A hálózati eszközig mindenképpen oda kell húzni egy UTP-kábelt, és ezt figyelembe véve egy PoE switch alkalmazása praktikusabb – egy konnektorról egy csomó eszköz ellátva, felügyelve, összekötve, és 1, azaz egy UPS-ről kivédve az áramszünetet.
+            <br>
+            Hogyan engedhetek meg magamnak ilyen kaliberű cuccot? Egyrészt nem a legújabb típus (használt termék), másrészt ingyen volt. Első nekifutásra az elfogadott szokásoknak megfelelően megvásároltam, és tisztességesen kifizettem, aztán adódott egy működési zavar a birtokba vételénél.
+            Bekapcsolás után a hálózatra csatlakoztatva mi az első reflexszerű ismerkedés az eszközzel? Ping a <i>default gateway</i> címére, amire ez esetben nem a megnyugtató válasz érkezett, hanem valami aggasztó. <cite>PING: transmit failed. General failure</cite>.
+            Nem a megszokott eredménye a rutinszerű műveletnek, nem is egy elfogadható <cite>Destination Host Unreachable</cite> vagy egy ártatlan <cite>Request Timed Out</cite>, hanem valami igazán vérfagyasztó.
+            <br>
+            Az új jövevényen kívül a LAN minden más eleme kipróbált, ismert és jól működő készülék, tehát a hiba nyilván a switch-ben van. Értesítem az eladót a jelenségről, és kérdéseket teszek fel, amire dicséretes gyorsasággal érkezik a válasz.
+            Nyomjam meg a reset gombot, állítsam <i>factory default</i>-ra, és megjavul. Ha ilyen egyszerű lenne, akkor boldogulnék segítség nélkül, saját hatáskörben, de az X440-G2 nem kínálja ezt a megoldást, ugyanis gyárilag nem látták el reset gombbal.
+            Harsány levelezés útján megegyezünk abban az eladóval, hogy egy RJ45-FTDI-USB kábelt a <i>console</i> portba dugva felvehetem a kapcsolatot a döglöttnek tűnő switch-csel, és megfelelő CLI-parancsok kiadása után az eszköz kezes báránnyá válik.
+            Ebben egyetértünk, de felvetem, hogy a termék hirdetésében nem szerepelt olyan kitétel, hogy a vásárlónak rendelkeznie kell speciális kábellel (nem tartanak ilyet minden háztartásban), és otthonosan kell mozognia az EXOS (régebben ExtremeXOS) világában.
+            Becsületére válik az eladónak, hogy nem száll vitába ezzel az érveléssel, hanem azonnal visszautalja a vételárat, és nem kéri a switch visszaküldését. Derék ember, megérdemel egy kis reklámot: <a href="https://www.ebay.de/str/reontec">reontech – Startup für gebrauchte Elektronik</a>.
+            <br>
+            E kaland mellékhatásaként megjelent a háztartásban az immáron nélkülözhetetlen RJ45-FTDI-USB kábel (különös szerencsémre sikerült lila színben hozzájutni, ami remekül harmonizál a készülék festésével), és alapfokon megismerkedtem az EXOS CLI parancsaival.
+            Néhány hete még nem gondoltam volna, hogy ezzel a tudománnyal is fel kell vérteznem magam, ha boldogulni akarok az itthoni ügyek intézésével, de most már ezt is besöpörtem. Sőt, már azt is kiderítettem, hogy hiába építettek a switch-be 4 db SFP+ portot, azok nekem nem fognak 10Gb sebességgel működni.
+            Ez meg hogy lehet? Úgy, hogy hiába hever az ágyamban a kívánatos nő, ha nincs kulcsom az erényövhöz. Az SFP+ portok teljes sebességének kihasználásához licenc-et kellene vásárolnom 800-tól 2000 USD-ig terjedő áron (kereskedőfüggő, kisker, nagyker, akció stb.),
+            amit józan ésszel nyilván nem fogok megtenni, de sajnos igazából úgy kell értelmezni a helyzetet, hogy ezt a szolgáltatást sem lószarrugdosóknak találták ki, mint ahogy a magamfajták <a href="#loszar">publikus IP címet sem kapnak</a>.
+          </p>
+          <figure>
+            <div class="box-img">
+              <img src="https://kep.pince.eu/egykettore-lila.webp">
+            </div>
+            <figcaption>lila switch, lila madzag – ha már foglalkozni kell az üggyel, hozzuk ki belőle a legjobbat</figcaption>
+          </figure>
+        </div>
+        <div id="2026-01-05T11:00" alcim="QNAP TS-431XU-RP" class="box-text">
+          <p style="font-size: xx-large;"><br><a href="https://www.qnap.com/en/product/ts-431xu-rp/specs/hardware">QNAP TS-431XU-RP</a></p>
+          <p>
+            <br>
+            Egy újabb gyártó, egy újabb eszköz, amit az átlagember hosszas tépelődés után sem akarna üzembe helyezni otthonában. Némi vívódást követően mégis megtettem, nyomós okokkal. Az egyik ok a 2011 óta szolgáló Zyxel NSA310 és NSA320 NAS, amik a mai napig kifogástalanul működnek, de eljárt felettük az idő.
+            (Emlékszem arra, amikor az USB 3.0 megjelenésével szélsebesen közlekedtek adatok a PC és a külső HDD-k között. Addig voltam elégedett a 32 MB/s sebességgel, amíg a Zyxel NAS-ok nem produkáltak 40-50 MB/s értéket a gigabites hálózatra kötve.)
+            Egy másik ok a Zyxel firmware avultsága, amiből sehogy nem akar kijönni a ma már elengedhetetlen SMB3 protokoll szerinti file-átvitel. A következő ok sem súlytalan: régóta áll a <a href="/olv/igykeszult/padlo">futófolyosón</a> egy 27U magas 19"-os rackszekrény, amit azzal a szándékkal cipeltem haza, hogy egyszer feltöltöm bele való dolgokkal.
+            <br>
+            A QNAP NAS vonzó műszaki paraméterei is részt vettek meggyőzésemben:
+            <ul>
+              <li>19"-os rack kivitel</li>
+              <li>két darab 10Gb SFP+ port</li>
+              <li>redundáns tápegység</li>
+              <li>alacsony fogyasztás</li>
+              <li>erős 4 magos CPU</li>
+              <li>4 × 3.5"/2.5" SATA 6 Gb/s HDD/SSD, max. 72 TB tárhely</li>
+              <li>QTS 5.x</li>
+              <li>VJBOD</li>
+              <li>kiemelkedő megbízhatóság</li>
+              <li>Made in Taiwan (nem kínai)</li>
+            </ul>
+          </p>
+        </div>
+        <div id="2026-01-05T12:00" alcim="Supermicro" class="box-text">
+          <p style="font-size: xx-large;"><br><a href="https://www.supermicro.com/products/archive/motherboard/x8dtl-3f">Supermicro</a></p>
+          <p>
+            <br>
+            Így hirdették: "24 GB RAM (6x 4GB); 2x Intel® Xeon® Prozessor L5640; 1U RACK; Mainboard: Supermicro X8DTL-3F; 4x SAS/SATA HDD". Nem mai darab, de jó áron adták – nem bírtam otthagyni.
+            <ul>
+              <li>19"-os 1U magas rack kivitel</li>
+              <li>takarékos, alacsony fogyasztású Xeon CPU-k</li>
+              <li>12 cores, 24 threads</li>
+              <li>6 SATA2 port</li>
+              <li>8 SAS port</li>
+              <li>SAS815TQ backplane: SAS és SATA HDD-k használatához</li>
+              <li>4 db 3.5" HDD-fiók</li>
+              <li>2 db Intel 82574L Gigabit Ethernet port</li>
+              <li>stabil, megbízható, ipari minőség</li>
+              <li>remekül fut rajta a FreeBSD</li>
+            </ul>
+          </p>
+          <p>
+            Ezzel aztán nem volt semmilyen különös kaland. Bekapcsoltam, elindult, telepítettem rá egy 15-ös BSD-t, ami azóta is működik. Hamisítatlan szervertermi hangulatot biztosítanak a bekapcsoláskor jellegzetesen üvöltő ventilátorok, amik kezdetben a legmagasabb fordulatszámon pörögnek.
+            Elméletileg 22500 RPM, ami figyelemre méltó érték, mert nagyjából ennyit foroghat egy fogorvosi fúrógép is. Ha egyszerre indul a Supermicro, a QNAP és az Extreme switch, akkor a hanghatás alapján gondolhatok arra, hogy a rackszekrény drónt játszik, és helyből fel fog szállni.
+            Ha minden rendben van, akkor a ventilátorok fordulatszáma idővel átvált hőmérséklettől függő értékre, ami jelentős csökkenést eredményez, és így csukott szekrényajtó mellett 1 méterről már szinte kellemes 56 decibeles zajt mérek.
+          </p>
+        </div>
+        <div id="2026-01-05T13:00" alcim="SMT1500RMI2U" class="box-text">
+          <p style="font-size: xx-large;"><br><a href="https://www.se.com/hu/hu/product/SMT1500RMI2U/apc-smartups-line-interactive-1500va-rackmount-2u-230v-4x-iec-c13-aljzat-smartslot-avr-lcd/">SMT1500RMI2U</a></p>
+          <p>
+            <br>
+            A tömör típusjelzés egy "APC Smart-UPS 1500VA" szünetmentes tápegységet takar, aminek fontos szerepe van az adatvesztés, valamint a szolgáltatáskiesés kivédésében. Nálunk ritkán van áramszünet, de az ördög nem alszik. Ismered a <cite>"ha békét akarsz, készülj a háborúra"</cite>
+            mondást? Ugyanígy érvényes, hogy ha nyugalmat, biztonságot és zavartalan működést akarsz, akkor készülj az áramszünetre. Nem véltelenül ilyen rövid ez a fejezet, mert ha egy UPS-ről litániát kell írnom, akkor már baj van. Addig jó nekem, amíg láthatatlanul működik.
           </p>
         </div>
       </div>
-      <br><br><br><br><br><br><br><br>
+      <div class="box">
+        <div id="2026-01-05T14:00" alcim="rackszekrény" class="box-text">
+          <p style="font-size: xx-large;"><a href="https://powerbizt.hu/termekek/techson-600x600-27u-allo-rackszekreny">Rackszekrény</a></p>
+          <p>
+            <br>
+            Nézzük meg, mivé állt össze a hónapok óta gyűjtögetett eszközök halmaza. Mindegyik működhetne bárhová ledobva vagy elhelyezve, csak áramot kapjon, és csatlakozzon a hálózathoz. Minek ezt bonyolítani és megdrágítani holmi felesleges rackszekrénnyel?
+            Pont azért, amiért őseink kitalálták és alkalmazásba vették a polcot, a szekrényt, a fiókot és a ruhafogast. Aki szereti a rendet és az átláthatóságot, valamint igényli a könnyű eligazodást, az nem tud meglenni az ilyenfajta rendet biztosító berendezkedés nélkül.
+            Mondják viccesen, hogy <cite>a rend az egyszerű emberek mániája, a zseni a káoszban is boldogul</cite>. Nem vagyok zseni, ami abból is látszik, hogy néha a saját asztalomon sem találok meg dolgokat a több rétegben egymásra hányt elrendezés, a rend és az áttekinthetőség hiánya miatt.
+            Szükségem van segédeszközökre, szemüvegre az apró betűkhöz, a jegyzeteimre a felejthető adatok felidézéséhez, és most már a rackszekrény is elengedhetetlen a megfelelő komforthoz.
+            <br>
+            A borospince fenntartását informatikai háttérrel támogató eszközöket magába foglaló speciális szekrény a pohárszék mellett kapott helyet. Amennyire fejlett világunk terméke a rackszekrény, annyira régi, és a hétköznapi szóhasználatból kikopott szavunk a pohárszék. Ritka párosítás, ritka szomszédság,
+            talán nem is látható ilyen máshol, de ez a helyzet engem egy pillanatig sem nyugtalanít. Ellenkezőleg: szétárad bennem a nyugalom a rendbeszedett és jó színvonalú, ennélfogva megbízhatóan működő szerkezetek láttán. Sötétben is megnyugtató, mert az a bizonyos 56 decibeles zaj nem szűnik.
+            Jelzi a folyamatos, szakadatlan működést, a 24/7 üzemben dolgozó eszközök bináris biztonságot adó jelenlétét.
+            <br><br>
+            Mire jó ez a felhajtás? Miért zúgatom ezeket a masinákat, amikor a népesség túlnyomó része kényelmes életet él enélkül is? Mire alkalmas, milyen hasznot hajt? Járhatnék horgászni, ha nem tudok mit kezdeni a rengeteg szabadidőmmel. Tarthatnék horgászfelszerelést,
+            költhetném a pénzt csalira, etetőanyagra, horgászengedélyekre, és ülhetnék naphosszat a tóparton. Nem bonyolult tevékenység. Csak az úszóra kell figyelni, a horgászat befejeztével meg arra, hogy hazataláljak.
+            <br>
+            El akarod kerülni az időskori elhülyülést? Üzemeltess összetett számítógépes rendszert! Ezzel foglalkozva mindig adódik gondolkodtató feladat, nem fognak elrenyhülni az agytekervényeid. Ha a tűzfalszabályok megfogalmazásában nem teljesedik ki a tehetséged, akkor foglalkozhatsz programozással is.
+            Ebben a szakmában elérheted azt, amit egy civilizált-urbánus emberi közösség tagjaként, haszonleső polgárokkal körülvéve soha. A gép nem intrikus, nem felesel, végrehajtja utasításaidat, nem fárad, nem figyelmetlen, és az eredmény nem hangulatfüggő.
+            Addig megbízható egy rendszer, amíg nem válik részévé az emberi tényező: hazugság, csalás, hálátlanság, becstelenség, pökhendiség. A CPU utasításkészlete nem tartalmaz ilyesmiket.
+            <br>
+            A borospince előtti közösségi tér eddig jellemzően poharazós hangulatát a technikai sík felé hajlító rackszekrény berendezéseit egyelőre a következő feladatok ellátására szánom:
+            <ul>
+              <li>tűzfal</li>
+              <li>webszerver</li>
+              <li>Samba-szerver</li>
+              <li>adatbázis-szerver</li>
+              <li>alkalmazásszerver</li>
+              <li>E-mail szerver</li>
+              <li>API-szerver</li>
+              <li>VoIP-telefonközpont</li>
+              <li>IoT adatgyűjtő és -feldolgozó</li>
+            </ul>
+          </p>
+          <p>
+            Mi maradt ki a felsorolásból? Például a mesterséges intelligencia itthoni üzemeltetése. Természetesen voltak nagyravágyó terveim, hogyne lettek volna. Ha mindent tudni akarsz a <code>pince.eu</code> tartalmáról, akkor azt végig kell olvasnod, esetleg többször is, mintha vizsgára készülnél.
+            Fáradságos módja a tudomány megszerzésének, és ezen segíthetne az MI (AI). Megtanulja helyetted, és ezt követően minden kérdésedre válaszol. De szép is lenne!
+          </p>
+        </div>
+        <div class="box-text-update">
+          <p>
+            Belevágtam, de a kísérletek kudarca után elvetettem az ötletet. Idegen szolgáltatás igénybevételével gyorsan elszegényednék a rendszeres díjakat fizetve, ennyit pedig nem ér meg, hogy piszok menő legyen a weboldal, és elhelyezhessem rajta a beszélgetős MI-asszisztenst indító gombot.
+            Aztán próbáltam a Supermicro masinán futtatni az algoritmust, de elvérzett a két bika Xeon CPU, mert együttes teljesítményük is messze alatta marad a követelményeknek. Megvoltam már a webhely betanításával, majd jött a pudding próbája. Egész jó válaszokat kaptam, ígéretesnek minősítettem a kísérletet, de volt egy erős akadálya a technológia bevezetésének:
+            a szerény számítási teljesítmény következtében 7-8 percig tartott egy-egy válasz kidolgozása, ami gyakorlatilag használhatatlan, ez a várakozási idő elfogadhatatlan.
+            <br>
+            Kínomban elgondolkodtam a GPU-s megoldáson, ami akár másodpercen belüli válaszidővel kecsegtet.  Egy árverésen találtam <i>NVIDIA RTX A6000</i> VGA kártyát, gyanúsan alacsony szintről induló licittel. Nyilván átverés, de eljátszottam a gondolattal. Másnap már 800 USD fölé ment a licit,
+            ami még mindig rendkívül kedvező ár, de így sem érdekelt. Egy ilyen kártya kb. 300 wattot igényel, ami a rackszekrény jelenlegi fogyasztásának majdnem másfélszerese. Ebben is el lehet szegényedni (a teljes napelemes termelésünk majdnem felét felzabálná a rackszekrény, ha egy ilyen vas is belekerülne).
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Az itthoni infrastruktúra fejlesztésének hősi eposza ezzel még nem ért véget, csupán az eddig történések szavakba öntése és közzététele zárul ezzel a mondattal.
+          </p>
+        </div>
+      </div>
     </div>
   <div class="footer"></div>
   </section>    
