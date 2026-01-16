@@ -44,6 +44,7 @@ https://pince.eu/olv/kert/csigasor
 https://pince.eu/olv/kert/tavaszodik4
 https://pince.eu/olv/velemeny/velemeny
 https://pince.eu/olv/velemeny/viharbili
+https://pince.eu/olv/velemeny/kineka
 https://pince.eu/olv/velemeny/semmiflanc
 https://pince.eu/olv/velemeny/tengori
 https://pince.eu/olv/velemeny/fent
