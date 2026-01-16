@@ -127,7 +127,8 @@ var temak =
         {cim:"korhatár-besorolás", subfolder:"/velemeny", nev:"korhatar", ver:0, kelt:"2025-09-14"},
         {cim:"utógondozás, avagy lerágott csont", subfolder:"/velemeny", nev:"metoo2", ver:0, kelt:"2025-09-26"},
         {cim:"gyermekvédelem – törvényen kívül", subfolder:"/velemeny", nev:"gyermekvedelem", ver:0, kelt:"2025-10-01"},
-        {cim:"szépség", subfolder:"/velemeny", nev:"szepseg", ver:"2025-12-29", kelt:"2025-10-11"}
+        {cim:"szépség", subfolder:"/velemeny", nev:"szepseg", ver:"2025-12-29", kelt:"2025-10-11"},
+        {cim:"rokonlelkek", subfolder:"/velemeny", nev:"rokonlelkek", ver:0, kelt:"2026-01-16"}
       ],
       "d": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18", alt:"borok, versenyek, kóstolók"},
