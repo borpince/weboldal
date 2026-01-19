@@ -1,4 +1,60 @@
 /* https://code-boxx.com/html-css-news-ticker-horizontal-vertical */
+table {
+  border-collapse: collapse;
+  margin: 6px;
+}
+table th {
+  border: 1px solid white;
+  padding: 10px;
+  font-size: x-large;
+}
+table td {
+  border: 1px solid white;
+  padding: 6px;
+}
+.slideshow-instance {
+  max-width: auto;
+  position: relative;
+  margin: auto;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.mySlides {
+  display: none;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  transform: translateY(-50%);
+}
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 .bg {
   background-image: url("https://kep.pince.eu/alak12sz_tegla.webp");
   height: 100%; 
