@@ -129,7 +129,8 @@ var temak =
         {cim:"utógondozás, avagy lerágott csont", subfolder:"/velemeny", nev:"metoo2", ver:0, kelt:"2025-09-26"},
         {cim:"gyermekvédelem – törvényen kívül", subfolder:"/velemeny", nev:"gyermekvedelem", ver:0, kelt:"2025-10-01"},
         {cim:"szépség", subfolder:"/velemeny", nev:"szepseg", ver:"2025-12-29", kelt:"2025-10-11"},
-        {cim:"rokonlelkek", subfolder:"/velemeny", nev:"rokonlelkek", ver:0, kelt:"2026-01-16"}
+        {cim:"rokonlelkek", subfolder:"/velemeny", nev:"rokonlelkek", ver:0, kelt:"2026-01-16"},
+        {cim:"találkozás önmagammal", subfolder:"/velemeny", nev:"talalkozas", ver:0, kelt:"2026-01-22"}
       ],
       "d": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18", alt:"borok, versenyek, kóstolók"},
@@ -276,8 +277,10 @@ function nj(le,csnj="") { //nj: nézettség jelzése, le: lista elem
 }
 
 function karikas_szam(szam) {
-  if (szam > 20) return "&#"+(12881+szam-21);
-  return "&#"+(9311+szam);
+  return `[${szam}]`;
+  //if (szam > 35) return `(${szam})`;
+  //if (szam > 20) return "&#"+(12881+szam-21);
+  //return "&#"+(9311+szam);
 }
 
 function letezik(nev,sub) {
