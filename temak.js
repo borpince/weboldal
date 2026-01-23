@@ -199,6 +199,9 @@ var temak =
       "c": [{cim:"hogyan működik: napló", nev:"hmk_naplo", ver:"2025-02-26", kelt:"2023-06-20"}],
       "d": [{cim:"hogyan működik: katalógus", nev:"hmk_katalogus", ver:0, kelt:"2025-04-02"}],
       "e": [
+        {cim:"AI-strici", subfolder:"/ai", nev:"ai-strici", ver:0, kelt:"2026-01-24"}
+      ],
+      "f": [
         {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland", ver:0, kelt:"2022-11-28"},
         {cim:"WebP", subfolder:"/kaland", nev:"webp", ver:0, kelt:"2022-11-28"},
         {cim:"alapkutatás, mérés", subfolder:"/kaland", nev:"kutatas", ver:0, kelt:"2022-11-28"},
@@ -207,21 +210,21 @@ var temak =
         {cim:"adalék a sikerhez", subfolder:"/kaland", nev:"adalek", ver:0, kelt:"2022-11-28"},
         {cim:"1.1.1.1", subfolder:"/kaland", nev:"one", ver:"2024-05-26", kelt:"2022-11-28"}
       ],
-      "f": [
+      "g": [
         {cim:"borcímkés történetek", subfolder:"/cimke", nev:"cimke", ver:0, kelt:"2022-09-20"},
         {cim:"arculati elem", subfolder:"/cimke", nev:"arculat",  ver:"2024-11-28", kelt:"2022-12-06"},
         {cim:"NFC-címke: helyzetelemzés", subfolder:"/cimke", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"},
         {cim:"rendszerhiba", subfolder:"/cimke", nev:"rendszerhiba", ver:0, kelt:"2024-09-02"}
       ],
-      "g": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "h": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
-      "i": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
-      "j": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2025-01-20", kelt:"2023-06-04"}],
-      "k": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
-      "l": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
-      "m": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}],
-      "n": [{cim:"elterelt figyelem", nev:"elterelve", ver:0, kelt:"2025-04-03"}],
-      "o": [{cim:"egyről kettőre", nev:"egykettore", ver:"2026-01-03", kelt:"2025-08-11"}]
+      "h": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
+      "i": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
+      "j": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
+      "k": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2025-01-20", kelt:"2023-06-04"}],
+      "l": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
+      "m": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
+      "n": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}],
+      "o": [{cim:"elterelt figyelem", nev:"elterelve", ver:0, kelt:"2025-04-03"}],
+      "p": [{cim:"egyről kettőre", nev:"egykettore", ver:"2026-01-03", kelt:"2025-08-11"}]
     }
   },
 }

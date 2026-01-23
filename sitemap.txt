@@ -129,6 +129,7 @@ https://pince.eu/it/gondolatok
 https://pince.eu/it/hmk_naptar
 https://pince.eu/it/hmk_naplo
 https://pince.eu/it/hmk_katalogus
+https://pince.eu/it/ai/ai-strici
 https://pince.eu/it/kaland/kaland
 https://pince.eu/it/kaland/webp
 https://pince.eu/it/kaland/kutatas
