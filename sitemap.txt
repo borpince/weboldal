@@ -54,7 +54,6 @@ https://pince.eu/olv/velemeny/piacires
 https://pince.eu/olv/velemeny/metoo
 https://pince.eu/olv/velemeny/zur-zavar
 https://pince.eu/olv/velemeny/alja
-https://pince.eu/olv/velemeny/kontorfal
 https://pince.eu/olv/velemeny/vogel
 https://pince.eu/olv/velemeny/harcolni
 https://pince.eu/olv/velemeny/megrazo
@@ -72,7 +71,6 @@ https://pince.eu/olv/velemeny/hamvas
 https://pince.eu/olv/velemeny/hulye
 https://pince.eu/olv/velemeny/tatar
 https://pince.eu/olv/velemeny/hircsokor
-https://pince.eu/olv/velemeny/korhatar
 https://pince.eu/olv/velemeny/metoo2
 https://pince.eu/olv/velemeny/gyermekvedelem
 https://pince.eu/olv/velemeny/szepseg
@@ -131,6 +129,8 @@ https://pince.eu/it/hmk_naplo
 https://pince.eu/it/hmk_katalogus
 https://pince.eu/it/ai/ai
 https://pince.eu/it/ai/avatar
+https://pince.eu/it/ai/kontorfal
+https://pince.eu/it/ai/korhatar
 https://pince.eu/it/ai/ai-strici
 https://pince.eu/it/kaland/kaland
 https://pince.eu/it/kaland/webp

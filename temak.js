@@ -107,7 +107,6 @@ var temak =
         {cim:"#metoo jelenség", subfolder:"/velemeny", nev:"metoo", ver:0, kelt:"2024-02-05"},
         {cim:"istentelen zűrzavar alakul", subfolder:"/velemeny", nev:"zur-zavar", ver:"2024-07-14", kelt:"2024-03-15"},
         {cim:"sok az alja", subfolder:"/velemeny", nev:"alja", ver:0, kelt:"2024-06-20"},
-        {cim:"köntörfal", subfolder: "/velemeny", nev:"kontorfal", ver:0, kelt:"2024-11-09"},
         {cim:"hol lakik vogel evelin?", subfolder: "/velemeny", nev:"vogel", ver:"2024-12-02", kelt:"2024-11-11"},
         {cim:"szabad-e harcolni?", subfolder: "/velemeny", nev:"harcolni", ver:0, kelt:"2024-11-12"},
         {cim:"rázós téma", subfolder: "/velemeny", nev:"megrazo", ver:0, kelt:"2024-11-14"},
@@ -125,7 +124,6 @@ var temak =
         {cim:"milyen hülyének lenni?", subfolder:"/velemeny", nev:"hulye", ver:0, kelt:"2025-02-16"},
         {cim:"nem kerget a tatár", subfolder:"/velemeny", nev:"tatar", ver:0, kelt:"2025-02-20"},
         {cim:"hírcsokor", subfolder:"/velemeny", nev:"hircsokor", ver:0, kelt:"2025-08-28"},
-        {cim:"korhatár-besorolás", subfolder:"/velemeny", nev:"korhatar", ver:0, kelt:"2025-09-14"},
         {cim:"utógondozás, avagy lerágott csont", subfolder:"/velemeny", nev:"metoo2", ver:0, kelt:"2025-09-26"},
         {cim:"gyermekvédelem – törvényen kívül", subfolder:"/velemeny", nev:"gyermekvedelem", ver:0, kelt:"2025-10-01"},
         {cim:"szépség", subfolder:"/velemeny", nev:"szepseg", ver:"2025-12-29", kelt:"2025-10-11"},
@@ -201,6 +199,8 @@ var temak =
       "e": [
         {cim:"AI", subfolder:"/ai", nev:"ai", ver:0, kelt:"2026-01-24"}, //nem jelenik meg az ajánlóban a későbbi cikk azonos dátuma miatt
         {cim:"AI-avatar", subfolder:"/ai", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"},
+        {cim:"köntörfal", subfolder: "/ai", nev:"kontorfal", ver:0, kelt:"2024-11-09"},
+        {cim:"korhatár-besorolás", subfolder:"/ai", nev:"korhatar", ver:0, kelt:"2025-09-14"},
         {cim:"AI-strici", subfolder:"/ai", nev:"ai-strici", ver:0, kelt:"2026-01-24"}
       ],
       "f": [
