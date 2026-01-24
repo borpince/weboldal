@@ -129,6 +129,8 @@ https://pince.eu/it/gondolatok
 https://pince.eu/it/hmk_naptar
 https://pince.eu/it/hmk_naplo
 https://pince.eu/it/hmk_katalogus
+https://pince.eu/it/ai/ai
+https://pince.eu/it/ai/avatar
 https://pince.eu/it/ai/ai-strici
 https://pince.eu/it/kaland/kaland
 https://pince.eu/it/kaland/webp
@@ -145,7 +147,6 @@ https://pince.eu/it/baber
 https://pince.eu/it/jelzesek
 https://pince.eu/it/hamburger
 https://pince.eu/it/hacker
-https://pince.eu/it/avatar
 https://pince.eu/it/mozi
 https://pince.eu/it/negativ-reklam
 https://pince.eu/it/elterelve

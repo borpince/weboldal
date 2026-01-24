@@ -199,6 +199,8 @@ var temak =
       "c": [{cim:"hogyan működik: napló", nev:"hmk_naplo", ver:"2025-02-26", kelt:"2023-06-20"}],
       "d": [{cim:"hogyan működik: katalógus", nev:"hmk_katalogus", ver:0, kelt:"2025-04-02"}],
       "e": [
+        {cim:"AI", subfolder:"/ai", nev:"ai", ver:0, kelt:"2026-01-24"}, //nem jelenik meg az ajánlóban a későbbi cikk azonos dátuma miatt
+        {cim:"AI-avatar", subfolder:"/ai", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"},
         {cim:"AI-strici", subfolder:"/ai", nev:"ai-strici", ver:0, kelt:"2026-01-24"}
       ],
       "f": [
@@ -220,11 +222,10 @@ var temak =
       "i": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
       "j": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
       "k": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2025-01-20", kelt:"2023-06-04"}],
-      "l": [{cim:"AI avatar", nev:"avatar", ver:"2023-11-01", kelt:"2023-10-29"}],
-      "m": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
-      "n": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}],
-      "o": [{cim:"elterelt figyelem", nev:"elterelve", ver:0, kelt:"2025-04-03"}],
-      "p": [{cim:"egyről kettőre", nev:"egykettore", ver:"2026-01-03", kelt:"2025-08-11"}]
+      "l": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
+      "m": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}],
+      "n": [{cim:"elterelt figyelem", nev:"elterelve", ver:0, kelt:"2025-04-03"}],
+      "o": [{cim:"egyről kettőre", nev:"egykettore", ver:"2026-01-03", kelt:"2025-08-11"}]
     }
   },
 }
