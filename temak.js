@@ -315,7 +315,7 @@ function letezik(nev,sub) {
 }
 
 function alcim_gyujto(doc) {
-  var cimke_tb = doc.querySelectorAll("h1, div");
+  var cimke_tb = doc.querySelectorAll("h1, h2, div");
   var gyujto = new Map();
   for (var i = 0; i < cimke_tb.length; i++) {
     if (cimke_tb[i].hasAttribute("id")) try {
@@ -325,6 +325,7 @@ function alcim_gyujto(doc) {
         var alcim = cimke_tb[i].hasAttribute("alcim") ? cimke_tb[i].getAttribute("alcim"):"";
         switch (cimke_tb[i].nodeName) {
           case "H1":
+          case "H2":
             if (cimke_tb[i].innerHTML == "") cimke_tb[i].innerHTML = datum_str;
               else if (!alcim) alcim = cimke_tb[i].innerHTML;
           break;
