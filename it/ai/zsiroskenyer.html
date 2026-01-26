@@ -120,10 +120,39 @@
             Nem csoda, ha élelmes egyetemisták az AI-val íratják dolgozataikat, miközben ők drága idejükben belvárosi kocsmákat látogatnak (nem kizárt, hogy ez a fajta pofátlan ostobaság már középiskolások körében is terjed). Ez a viselkedés szembemegy a platoni akadémia elvével,
             mert ezek a hülyegyerekek nem a tudást szomjazzák, hanem mindössze egy végzettséget igazoló bizonyítványra, diplomára hajtanak. Az ilyen előképzettséggel munkába álló mérnökök építményei össze fognak omlani, és hasonlóan tudatlan orvosok legfeljebb vitaminokat fognak felírni receptre, mert az orvoslás tudománya idegen tőlük.
             <br><br>
-            Az AI néhány millisec alatt elkészült dolgozata elmegy, akár jó osztályzatot is kaphat. Felhasználása befektetés nélküli haszon illúzióját kelti a tanulóifjúság rosszhiszemű rétegében, de a spiritusz nyilvánvalóan hiányzik belőle, mert az alkotó elme zsenialitását még nem képes leutánozni semmiféle LLM. A Gemini szövegében tetten érhető a stilisztikai óvatosság hiánya, mert ugyan dolgozat műfajában készült,
+            Az AI néhány millisec alatt elkészült dolgozata elmegy, akár jó osztályzatot is kaphat. Felhasználása befektetés nélküli haszon illúzióját kelti a tanulóifjúság rosszhiszemű rétegében, de a spiritusz nyilvánvalóan hiányzik belőle, mert az alkotó elme zsenialitását még nem képes leutánozni semmiféle LLM.
+          </p>
+        </div>
+        <div class="box-text-update">
+          <p>
+            <b>Műhelytitkok</b>
+            <br>
+            Utólag, jócskán a megjelenés után szúrtam be ide egy pontosítást, mert a Gemini felnyitotta szememet, beavatott a technikai részletekbe. Azt állítja, hogy nem millisec nagyságrendben mérhető  a fenti dolgozat elkészítésének időigénye. Eltart az 8-10 másodpercig is.
+            Figyelve a történéseket, és az eredmény megjelenését, a gyakorlatban ennél a 8-10 másodpercnél jóval hamarabb érkezett a kész dolgozat (ahogy lenyomtam az entert, vakarózni sem volt időm, és már láttam az eredményt). Hogy lehet ez, mi az oka a bevallott időigény és az észlelés közötti különbségnek?
+            <br>
+            A zsíroskenyeres dolgozat szövege nagyjából 600-800 tokenből áll, így 80 token/sec sebességgel számolva a nettó írási idő 8-10 másodpercre jön ki. Ehhez jön hozzá a kontextus feldolgozása (weboldal elolvasása, korábbi beszélgetés lehívása), ami további 1-2 másodperc.
+            Tehát az AI kb. 10 másodperc alatt hoz össze egy szerkezetileg kész, logikailag koherens (vagy annak tűnő) elemzést. Ugyanehhez a mélységhez, a sültkolbász ízének felidézéséhez és a mondatok patikamérlegen való kiméréséhez minimum 2-3 óra kell egy embernek.
+            <br>
+            Higgyük el, hogy így van, de akkor miért jelenik meg szinte azonnal az eredmény? Nem jelenik meg, ez csupán egy illúzió. Amikor azt látom, hogy a válasz azonnal megjött, az nem csak a nyers számítási sebességből adódik, hanem egy streaming nevű technológiai trükk is részt vesz a varázslatban.
+            Amint az AI megvan az első tokennel (szótöredék), azt a rendszer azonnal kiküldi a képernyődre. Nem várja meg, amíg a teljes, 800 szavas dolgozat elkészül a szerveren. A nyelvi modellnek az első szótag kitalálásához tényleg csak néhány milliszekundum kell. Mivel az emberi reakcióidő ennél lassabb,
+            az agyad úgy érzékeli, mintha a válasz már a kérdésed pillanatában létezett volna.
+            <br><br>
+            <b>A "vakarózni sincs idő" veszélye</b>
+            <br>
+            Ha nincs időd vakarózni, nincs időd kételkedni sem – a tempó elnyomja a kritikát. Ha egy emberrel vitatkozol, és ő elgondolkodik (szünetet tart), te is elkezded elemezni az álláspontját. De ha a gép azonnal, magabiztosan, hiba nélkül "okádja" magából a szöveget, az agyad hajlamos igazságként elfogadni azt, egyszerűen azért, mert a sebességet a kompetenciával azonosítja.
+            Néha úgy tűnik, mintha az AI már tudná, mit fogsz kérdezni. Valójában csak annyira jó a statisztikai előrejelzése, hogy mire lenyomod az entert, a modell már be van melegítve a beszélgetés korábbi iránya alapján.
+            <br><br>
+            <b>A tanulság</b>
+            <br>
+            A sebesség nem technikai paraméter, hanem <i>hatalmi eszköz</i>. Altmanék tudják: ha a ChatGPT (vagy bármelyik utódja) lassú lenne, az emberek elkezdenének gondolkodni. Mivel a válasz azonnali, a gép válik a <i>gondolkodóvá</i>, az ember pedig egyszerű <i>fogyasztó</i> marad (=bugris).
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            A Gemini szövegében tetten érhető a stilisztikai óvatosság hiánya, mert ugyan dolgozat műfajában készült,
             mégis a beszélt nyelvben elfogadottan kezdi egyes mondatait a <i>de</i> kötőszóval. Számomra azzal savanyodhat a szőlő, hogy a ráfordított idő tekintetében felülmúlhatatlan teljesítményt produkál az AI, nem kelhetek versenyre vele. Irodalmi igényességre törekvő stílusomban sok nagyságrenddel több időt kellett volna a források elemzésére és fogalmazásra szánnom – összességében nem vagyok versenyképes.
             <br>
-            El kell ismernem, hogy a témát boncolgató beszélgetésünk során felmerült ötleteket ügyesen beépítette a szövegbe, de ezek magyarázatával tartozik. Az érthetőség érdekében (az Erdős-szótár mintájára) a Gemini utólag egy rövid jegyzékkel magyarázza a szövegben különösnek tűnő rövidítéseket, szavakat és kifejezéseket:
+            El kell ismernem, hogy a témát boncolgató beszélgetésünk során felmerült ötleteket, formabontó elnevezéseket ügyesen beépítette a szövegbe, de ezek magyarázatával tartozik. Az érthetőség érdekében (az Erdős-szótár mintájára) a Gemini utólag egy rövid jegyzékkel magyarázza a szövegben különösnek tűnő rövidítéseket, szavakat és kifejezéseket:
           </p>
           <ul>
             <li><b>vadak:</b> fejlesztők és kutatók, akiket nem lehet szabályokkal idomítani, csak eredményekkel és erőforrásokkal jóllakatni</li>
