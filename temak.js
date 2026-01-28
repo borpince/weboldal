@@ -204,7 +204,8 @@ var temak =
         {cim:"korhatár-besorolás", subfolder:"/ai", nev:"korhatar", ver:0, kelt:"2025-09-14"},
         {cim:"AI-strici", subfolder:"/ai", nev:"ai-strici", ver:0, kelt:"2026-01-24"},
         {cim:"a zsíroskenyér legendája", subfolder:"/ai", nev:"zsiroskenyer", ver:0, kelt:"2026-01-26"},
-        {cim:"bekapcsolva maradt a puncsolós flag", subfolder:"/ai", nev:"puncs-flag", ver:0, kelt:"2026-01-27"}
+        {cim:"bekapcsolva maradt a puncsolós flag", subfolder:"/ai", nev:"puncs-flag", ver:0, kelt:"2026-01-27"},
+        {cim:"AI-pletyka", subfolder:"/ai", nev:"ai-pletyka", ver:0, kelt:"2026-01-29"}
       ],
       "f": [
         {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland", ver:0, kelt:"2022-11-28"},
