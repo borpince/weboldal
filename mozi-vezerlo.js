@@ -10,6 +10,7 @@ function onYouTubeIframeAPIReady() {
 
 function mehet_a_musor(event) {
   mozi_mehet = true;
+  event.target.setVolume(30);
   //var embedCode = event.target.getVideoEmbedCode();
   //var doc = new DOMParser().parseFromString(embedCode.replace("allowfullscreen",""),"text/xml");
   //mozicim.value = doc.firstChild.getAttribute("title");
