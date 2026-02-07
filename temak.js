@@ -205,7 +205,8 @@ var temak =
         {cim:"AI-strici", subfolder:"/ai", nev:"ai-strici", ver:0, kelt:"2026-01-24"},
         {cim:"a zsíroskenyér legendája", subfolder:"/ai", nev:"zsiroskenyer", ver:0, kelt:"2026-01-26"},
         {cim:"bekapcsolva maradt a puncsolós flag", subfolder:"/ai", nev:"puncs-flag", ver:0, kelt:"2026-01-27"},
-        {cim:"AI-pletyka", subfolder:"/ai", nev:"ai-pletyka", ver:0, kelt:"2026-01-29"}
+        {cim:"AI-pletyka", subfolder:"/ai", nev:"ai-pletyka", ver:0, kelt:"2026-01-29"},
+        {cim:"hipochonder vibe coder", subfolder:"/ai", nev:"vibe-coding", ver:0, kelt:"2026-02-07"}
       ],
       "f": [
         {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland", ver:0, kelt:"2022-11-28"},
