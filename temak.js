@@ -99,6 +99,7 @@ var temak =
         {cim:"vihar a biliben", subfolder:"/velemeny", nev:"viharbili", ver:0, kelt:"2015-09-16"},
         {cim:"művészi ábrázolás", subfolder:"/velemeny", nev:"muveszi", ver:0, kelt:"2015-10-18"},
         {cim:"kinek a faszával verik a csalánt?", subfolder:"/velemeny", nev:"kineka", ver:"2026-01-14", kelt:"2015-12-01"},
+        {cim:"amit szabad jupiternek…", subfolder:"/velemeny", nev:"jupiter", ver:"2026-02-11", kelt:"2016-12-05"},
         {cim:"hitvallás", subfolder: "/velemeny", nev:"semmiflanc", ver:0, kelt:"2022-07-04"},
         {cim:"tengöri nóta", subfolder: "/velemeny", nev:"tengori", ver:0, kelt:"2023-02-09"},
         {cim:"fent vagy lent?", subfolder: "/velemeny", nev:"fent", ver:0, kelt:"2023-07-04"},
@@ -128,7 +129,7 @@ var temak =
         {cim:"gyermekvédelem – törvényen kívül", subfolder:"/velemeny", nev:"gyermekvedelem", ver:0, kelt:"2025-10-01"},
         {cim:"szépség", subfolder:"/velemeny", nev:"szepseg", ver:"2025-12-29", kelt:"2025-10-11"},
         {cim:"rokonlelkek", subfolder:"/velemeny", nev:"rokonlelkek", ver:0, kelt:"2026-01-16"},
-        {cim:"találkozás önmagammal", subfolder:"/velemeny", nev:"talalkozas", ver:0, kelt:"2026-01-22"}
+        {cim:"találkozás önmagammal", subfolder:"/velemeny", nev:"talalkozas", ver:"2026-02-12", kelt:"2026-01-22"}
       ],
       "d": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18", alt:"borok, versenyek, kóstolók"},

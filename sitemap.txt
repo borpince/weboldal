@@ -46,6 +46,7 @@ https://pince.eu/olv/velemeny/velemeny
 https://pince.eu/olv/velemeny/viharbili
 https://pince.eu/olv/velemeny/muveszi
 https://pince.eu/olv/velemeny/kineka
+https://pince.eu/olv/velemeny/jupiter
 https://pince.eu/olv/velemeny/semmiflanc
 https://pince.eu/olv/velemeny/tengori
 https://pince.eu/olv/velemeny/fent
