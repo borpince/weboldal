@@ -45,7 +45,7 @@
             Társasházi garzonban laksz? A szomszédok jelentette hatásokat nem fogom elemezni, viszont a lakás méretéből fakadó előnyök és hátrányok nagyjából kiegyenlítik egymást. Könnyen megtalálsz mindent, néhányat lépsz, és ott teremsz a kitűzött célnál.
             <br>
             Kiskoromban nekem is volt igazi <i>legénylakásom</i>. 38 m<sup>2</sup>-nyi alapterületével bőven megfelelt az elsődleges célnak: volt hajlékom, nem áztam, nem fáztam és elfértek benne a dolgaim, többek között az ágy. Magasan a hegyoldalban, messzire nyíló kilátással – jóval több kellemes emlék fűződik a helyhez, mint amennyi kellemetlen.
-            Ha még most is ott laknék, akkor nem bonyolítaná életemet a címben jelzett téma, mert ha annak a hajdni kis lakásnak bármely szegletébe ledobnék egy Wi-Fi routert, azzal az internetkapcsolat az előszobától az erkélyig a teljes kéglit lefedné.
+            Ha még most is ott laknék, akkor nem bonyolítaná életemet a címben jelzett téma, mert ha annak a hajdani kis lakásnak bármely szegletébe ledobnék egy Wi-Fi routert, azzal az internetkapcsolat az előszobától az erkélyig a teljes kéglit lefedné.
           </p>
         </div>
       </div>
@@ -60,7 +60,7 @@
             <a href="/it/egykettore#2026-02-14">újabb Wi-Fi eszközzel bővült</a> az adatátvitelt intéző berendezések sora, és attól tartok, hogy lesz ennek folytatása, ha a kert és a hegyoldal lefedettségét is meg kell oldani. <i>Homo sellarius</i> jelenlétével számolva elég felszögelni és csatlakoztatni a hálózathoz a Wi-Fi készülékeket,
             csakhogy a mi háztartásunkban számítani kell a <i>homo mobilis</i> megjelenésére is, ami új igényeket szül. A megfelelő térerő biztosításán felül mi lenne még méltányolható igény? Kapaszkodj meg: a GSM-technológiából ismert roaming, ami néhány nappal ezelőttig meg sem fordult a fejemben.
             <br>
-            A GSM-világban a <i>homo sapienst</i> kezdettől fogva elkényezetik a rezzenéstelen cellaváltásokkal, ezért az itthoni Wi-Fi rendszerben egy döcögősre sikerült AP-váltás a technikai visszaesés élményét hozná, amit nem engedhetek meg. Piszok szerencse, hogy nemcsak a frissen üzembeállított <i>cAP ax</i>,
+            A GSM-világban a <i>homo sapienst</i> kezdettől fogva elkényeztetik a rezzenéstelen cellaváltásokkal, ezért az itthoni Wi-Fi rendszerben egy döcögősre sikerült AP-váltás a technikai visszaesés élményét hozná, amit nem engedhetek meg. Piszok szerencse, hogy nemcsak a frissen üzembeállított <i>cAP ax</i>,
             hanem a korábban vásárolt <a href="">wAP ax</a> is teljesíti a 802.11r/k/v szabványok szerint működést, így a Wi-Fi roaming megvalósításának semmi akadálya.
             <br><br>
             Mitől lesz egy AP-váltás döcögős? A közkézen forgó Wi-Fi access pointok rendszerint külön alhálózatba gyűjtik a rájuk kapcsolódó klienseket. AP-t váltva tehát egy másik hálózatba kerülsz, új IP-címet kapsz a DHCP-től, lefut a teljes hitelesítési folyamat: a korábban felépült csatlakozásod szükségszerűen megszakad. A váltás után idővel a kapcsolat újraépül,
@@ -76,10 +76,10 @@
               Szükséged lesz a <a href="https://mikrotik.com/download/winbox">WinBox</a>-ra, mert hamarosan kirántjuk magunk alól a szőnyeget, és csak MAC-address révén azonosíthatjuk a készüléket (nem fog működni a böngészős csatlakozás). ⚠️A műveletek végrehajtása közben nálam most a v7.21.3 firmware működik.
               Meglehet, hogy más FW mellett a kipróbált CLI-parancsok eltérő paraméterezést igényelnek, és nem fog működni az útmutató – láttam már karón varnyút (a MikroTik gyakran változtat a rendszeren: fejlődés).</li>
             <li>Helyezd feszültség alá a készüléket PoE‑n vagy DC‑tápcsatlakozón keresztül, és a WinBox révén csatlakozz rá a LAN porton (a Wi-Fi kapcsolat hamarosan megszűnik, a WAN felől pedig alaphelyzetben nem engedélyezett a WinBox)</li>
-            <li>A: legtisztább helyzetben a csatlakozás után, amennyiben (kicsomagolás vagy reset után) első alkalommal használod a WinBoxot, eléd ugrik a <i>RouterOS Default Configuration</i> című tájékoztatás: ekkor válaszd a [Remove Configuration] lehetőséget</li>
+            <li>A: legtisztább helyzetben a csatlakozást követően, amennyiben (kicsomagolás vagy reset után) első alkalommal használod a WinBoxot, eléd ugrik a <i>RouterOS Default Configuration</i> című tájékoztatás: ekkor válaszd a [Remove Configuration] lehetőséget</li>
             <li>B: konfigurált állapotban ezeknek a műveleteknek valamelyike vezet jó útra:
               <ul>
-                <li>a készüléket az Ethernet csatalkozói melletti reset gombbal állítsd alaphelyzetbe, majd járj el az "A" opció szerint</li>
+                <li>a készüléket az Ethernet csatlakozói melletti reset gombbal állítsd alaphelyzetbe, majd járj el az "A" opció szerint</li>
                 <li>nem bajlódsz reset gombbal, hanem a WinBox <i>Quick Set</i> panelének [Reset Configuration] lehetőségét választva térsz az "A" opcióhoz vezető  útra</li>
                 <li>nyiss egy <i>terminálablakot</i> a WinBoxban, és add ki a konfigurációmentes állapotot eredményező CLI-parancsot:
                   <br>
@@ -221,7 +221,7 @@
             <br>
             Hosszas pöcsölés után sikerült olyan kedvezőtlen helyzetet teremteni, hogy a telefon beérte a közelebbi AP használatával, és végre vizsgálhattam a váltás körülményeit. A pinget nem tudtam értelmezni, a speedtest már jobban értékelhető eredményt adott, de az igazán meggyőző kísérlet a Wi-Fi hívás.
             Szemben a pufferelős videolejátszókkal, egy élő Voice over Wi-Fi (VoWiFi) vagy Messenger hanghívásnál nincs mit pufferelni, így bármilyen kiesés az adatfolyamban azonnal érezteti hatását. Semmilyen kihagyást, éteri hangot vagy kvartyogást nem hallottam szaladgálás közben, és ezzel az eredménnyel a Wi-Fi roaming itthoni bevezetésének erős szándékát siker koronázta.
-            Hozzáértés híján elség sok időt szántam az ügyre, de legalább nem unatkoztam.
+            Hozzáértés híján elég sok időt szántam az ügyre, de legalább nem unatkoztam.
           </p>
         </div>
       </div>
