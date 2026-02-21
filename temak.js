@@ -231,7 +231,8 @@ var temak =
       "l": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
       "m": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}],
       "n": [{cim:"elterelt figyelem", nev:"elterelve", ver:0, kelt:"2025-04-03"}],
-      "o": [{cim:"egyről kettőre", nev:"egykettore", ver:"2026-02-14", kelt:"2025-08-11"}]
+      "o": [{cim:"egyről kettőre", nev:"egykettore", ver:"2026-02-14", kelt:"2025-08-11"}],
+      "p": [{cim:"wi-fi roaming", nev:"roaming", ver:0, kelt:"2026-02-21"}]
     }
   },
 }
