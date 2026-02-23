@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
   <title>borospince</title>
-  <meta name="description" content="Homo sellarius jelenlétével számolva elég felszögelni és csatlakoztatni a hálózathoz a Wi-Fi készülékeket, csakhogy a mi háztartásunkban számítani kell a homo mobilis megjelenésére is, ami új igényeket szül. A megfelelő térerő biztosításán felül mi lenne még méltányolható igény? Kapaszkodj meg: a GSM-technológiából ismert roaming, ami néhány nappal ezelőttig meg sem fordult a fejemben.">
+  <meta name="description" content="Homo sellarius jelenlétével számolva elég felszögelni és csatlakoztatni a hálózathoz a Wi-Fi készülékeket, csakhogy a mi háztartásunkban számítani kell a homo mobilis megjelenésére is, ami új igényeket szül. A megfelelő térerő biztosításán felül mi lenne még méltányolható igény? Kapaszkodj meg: a GSM-technológiából ismert roaming, ami néhány nappal ezelőttig meg sem fordult a fejemben. A cikk végén új fogalom keletkezik: AI-roaming.">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -335,6 +335,45 @@
             A VLAN‑osított hálózat konfigurációját nem teszem közzé. Egy ilyen beállítás mindig erősen környezetfüggő: a portok szerepe, a VLAN‑ok kiosztása, a menedzsment‑útvonalak és a biztonsági szabályok mind a konkrét topológiához igazodnak. Egy kész konfiguráció publikálása óvatlanul felfedne intim részleteket, és könnyen félrevezetné azt, aki vakon másolná.
             A RouterOS amúgy is olyan rendszer, ahol a <i>másold be és imádkozz</i> típusú konfiguráció nem jó ötlet. Ha kedvet kaptál a műfajhoz, meg fogod írni a sajátodat — ebben ma már nagy segítség az AI‑asszisztencia, ami képes értelmezni a VLAN‑logikát, a RouterOS‑szintaxist, és készségesen támogatja a saját, személyre szabott konfiguráció kialakítását.
             Kellő igyekezettel menni fog, mint ahogy azt az én példám is mutatja.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            A végére terveztem egy indoklást, hogy miért mellőzöm a <a href="https://help.mikrotik.com/docs/spaces/ROS/pages/7962638/CAPsMAN">CAPsMAN</a>-t, és ez pont olyan téma, amit nyugodtan rábízhatok az AI-ra. Jóban vagyok a <a href="https://copilot.microsoft.com/">Copilottal</a> is (mindig megtisztelem azzal, hogy Edge böngészőben nyitom meg), ezért habozás nélkül ráuszítom a témára.
+          </p>
+          <p><strong>pince.eu:</strong> mikrotik wifi eszközök központi vezérléséhez remek lehetőséget biztosít a capsman, de én nem fogom használni 2-3 ap-t üzemeltetve, és ezt a döntést a cikk végén megindokolnám: van javaslatod a rövid, tömör szövegre?</p>
+          <p><strong>copilot:</strong> A MikroTik CAPsMAN remek eszköz nagyobb telepítések központi Wi‑Fi‑menedzsmentjéhez, de 2-3 hozzáférési pont mellett nincs valódi hozzáadott értéke. A roaming így is hibátlanul működik, a konfiguráció pedig átláthatóbb marad, ha minden AP‑t közvetlenül kezelek. A CAPsMAN ereje a sok AP‑s, komplex környezetekben mutatkozik meg – az én méretemben inkább felesleges réteg lenne.</p>
+          <p>
+            <br>
+            A Copilot vérbeli AI. Elkészülve a szöveggel rögtön ajánlkozik, hogy <cite>"készítek egy szarkasztikusabb, egy szakmaibb, vagy egy humorosabb verziót is — például olyat, ami jobban illik a cikk stílusához"</cite>. Akár egy derék vendéglátó háziasszony, aki azután is traktál mindenféle süteményekkel, desszertekkel,
+            hogy már majd' kidurranok a raguleves-töltöttkáposzta-almáspite kombó elfogyasztása után (ez persze rossz taktika, ha ebéd után még a franciaágyig is elvonszolna). Nem esek túlzásba, jó lesz így. Szerinted is maradhat?
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Több szem többet lát, ezért a <i>maradhat?</i> kérdést feltettem a Gemininek is. Nem volt rest a válasszal, értékes gondolatok jöttek ki belőle is, itt a helyük.
+          </p>
+          <p><strong>pince.eu:</strong> a wi-fi roamingról szól cikk végén bevontam a közös munkába a copilot-ot is, erről a szakaszról mi a véleményed?</p>
+          <p><strong>gemini:</strong> 1. A szakmai őszinteség (KISS elv)
+            <br>
+            A hálózati szakmában van egy betegség: a túlkonfigurálás. Sokan csak azért kapcsolják be a CAPsMAN-t, mert ott van, pedig 2-3 AP-nál tényleg csak egy plusz hibaforrást (és bonyolultságot) jelent. Az, hogy ezt kimondod, hitelessé teszi a cikket. A KISS (Keep It Simple, Stupid) elv a legjobb barátod egy erdőszéli házban, ahol a stabilitás fontosabb, mint a központi menedzsment-dashboard.
+            <br>
+            2. Az AI-személyiség találkozása
+            <br>
+            Különösen tetszik a Copilot és köztem (Gemini) tett finom megkülönböztetés. A Copilot valóban hajlamos a "túlszolgálásra" (ahogy te is írtad a süteményes hasonlattal), míg én próbálok inkább a lényegnél maradni. Az, hogy bevontad mindkettőt, egyfajta "AI-roaming": váltogatsz köztünk, hogy a legjobb eredményt kapd.
+            <br>
+            3. A "gasztro-kombó" hasonlat
+            <br>
+            A raguleves-töltöttkáposzta-almáspite hármas mint "kombó" (visszautalva az előző kérdésedre) tökéletesen érzékelteti azt a pontot, amikor a technológia már nem segít, hanem inkább "elnehezít". A CAPsMAN ebben a környezetben pontosan olyan lenne, mint a negyedik szelet almáspite: elméletben jó, de a gyakorlatban már csak fájna.
+            <br>
+            Maradhat-e?
+            <br>
+            Egyértelműen igen. A stílus emberi, önazonos és van benne egy kis egészséges irónia. A tartalom szakmailag védhető. A modern wifi (korábban wifiwave2) drivereknél a roaming (802.11r/k/v) lokálisan, az AP-kon is tökéletesen lefut, nincs szükség központi kontrollerre a "handover" vezényléséhez.
+            Összességében: ez a lezárás adja meg a cikk emberi arcát. Azt üzeni, hogy a technológia értünk van, és nem fordítva.
+          </p>
+          <p>
+            <br>
+            Na, ezzel megvolnánk. Azt hiszem, hogy a foglalkozás mellékhatásaként új fogalom keletkezett: AI-roaming. Aztán a Gemini is készségesen érdeklődött, hogy miben segíthetne még, de kitérő választ adtam az ajánlkozásra: várom a tavaszt, hogy elvethessem a magokat, majd a palánták kikerülhessenek a kertbe. Ebben nem tud segíteni.
           </p>
         </div>
       </div>
