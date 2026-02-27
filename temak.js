@@ -129,7 +129,8 @@ var temak =
         {cim:"gyermekvédelem – törvényen kívül", subfolder:"/velemeny", nev:"gyermekvedelem", ver:0, kelt:"2025-10-01"},
         {cim:"szépség", subfolder:"/velemeny", nev:"szepseg", ver:"2026-02-13", kelt:"2025-10-11"},
         {cim:"rokonlelkek", subfolder:"/velemeny", nev:"rokonlelkek", ver:0, kelt:"2026-01-16"},
-        {cim:"találkozás önmagammal", subfolder:"/velemeny", nev:"talalkozas", ver:"2026-02-12", kelt:"2026-01-22"}
+        {cim:"találkozás önmagammal", subfolder:"/velemeny", nev:"talalkozas", ver:"2026-02-12", kelt:"2026-01-22"},
+        {cim:"értem én a viccet?", subfolder:"/velemeny", nev:"kurtag", ver:0, kelt:"2026-02-27"}
       ],
       "d": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18", alt:"borok, versenyek, kóstolók"},
