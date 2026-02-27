@@ -256,9 +256,13 @@ while True:
             Az AI nem kelletlenkedik, nem próbál lebeszélni a <i>hülye ötletem kivitelezéséről</i>, hanem a paramétereket kéri, és már teszi is a dolgát. Praktikus kérdéssel kezdi: akusztikai elemzést végezzen audio hangsáv alapján (A), vagy strukturális vizsgálatot kérek a kottából (B)?
             Ha lúd, legyen kövér: jöhet mindkettő. Azt hihetném, hogy a kotta irány pontosabb eredményt ad, mert nem kell zörejek kiszűrésével bajlódni, de nem. A pontozott hang és a fermata az elméletileg tiszta számítást bizonytalanságba taszítja: a hang vagy szünet megnyújtásának időtartamát az előadó vagy a dirigens hasfájása határozza meg.
             További bonyodalmat okoz a vonósok pizzicatója, a zongoradarabok pedáljelzése és a szólamváltás  csatlakozási pontjainak apró hibahatárai (jitter) is, ami szintén nem egyszerűsíti a kiértékelést, de hál' istennek nekem csak annyi a dolgom, hogy hátradőlve megvárjam az eredményt.
-            <br>
+          </p>
+          <p id="kt">
             Az előadónak biztosított szabadság megjár a matematikai modellnek is, ezért a számított kitöltési tényező (a továbbiakban: KT) tól-ig érték lesz. A kotta feldolgozásával mégis pontosabb eredményre jutunk, mivel annak elemzésekor nem kell találgatni, hogy a megszólaló hang a zeneszerző utasítása, vagy valami nem kívánatos zörej.
             A hangfelvételek elemzéséhez <i>küszöbértéket</i> kér tőlem az AI, egy decibel-szintet, ami alatt "csöndnek" minősítheti a jelet az audio file tartalmának mérésénél. Erre szakértelem híján nem tudok konkrét értéket javasolni (a decibel-skála mindig misztikus világ marad nekem), ezért pszichoakusztikai megközelítést alkalmazunk: legyen olyan jelszinten a csönd határa, ami már túl halk ahhoz, hogy emberi füllel határozottan észlelhessük, azonosíthassuk forrását.
+          </p>
+          <p id="figy">
+            ⚠️Figyelmeztetés! Ez egy teljesen amatőr módszer, távol áll az akadémiai igényességtől: ne számíts reprodukálhatóságra vagy referenciapontosságra.
           </p>
         </div>
         <div class="box-text">
@@ -461,6 +465,36 @@ while True:
           <p>
             Ha egyszer elindítod a lejátszást, akkor véged van. Ez a 4'33" akkor is megy tovább, ha kikapcsolod a gépedet, és mostantól életed végéig ezt fogod hallani.
             Értem én a viccet? Nem, lófaszt sem értek, de ha érteném, azzal sem lehetnék igazán elégedett, mert aki valóban keményen tolja, az teremti a viccet.
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <h2 id="2026-02-28" alcim="az akadémiai világ megvédi igazát">Az akadémiai világ megvédi igazát</h2>
+        <div class="box-text">
+          <p>
+            Az emberi világ nem feltétlenül igazodik az akadémiai világhoz. Nincs ezzel gond egészen addig, amíg ezek között a világok között nem alakul ki véleménykülönbség, majd a vitát egy semmihez sem értő, de a jogértelmezés monopóliumával rendelkező intézmény dönti el.
+            Aki nem ért semmihez, az szakértőket alkalmaz, és véleményükre hagyatkozik. Helyes magatartás úgy általában, de ahol a közember száraz tudománnyal vitatkozik, ott érhetik meglepetések. Pontosabban: nem lehet igaza. Miért? Azért, mert a szakértő az akadémiai világból érkezik.
+            <br>
+            Ők nem a földön járnak, s ezt tapasztaltam akkor is, amikor valakinek a hibájából, mulasztásából egy fás-bokros területté vadult kertet kellett rendbehozni. Kárt okoztak nekem, ezért kértem az eredeti állapot helyreállítását, ami túl nagy munka volt ahhoz, hogy magam álljak neki.
+            Gyakorló szakembereket hívtam volna, kaptam is árajánlatot vaskos összegel, amit nem bántam, mert azt úgyis a károkozó fizeti – gondoltam szokásos naivságommal. Aztán jött egy szakértő, aki megállapította, hogy a terület egy fűnyíróval rendbehozható, és ennek megfelelően szerény díjat állapított meg,
+            ami messze nem fedezte a fűnyírónál jóval komolyabb technikával dolgozó szakemberek fizetségét, így a munka, s ezzel a terület rendbehozása elmaradt. A vak is látta, hogy a terület rendbetételéhez jóval vaskosabb eszközökre van szükség (traktor, lánctalpas munkagép, markoló stb.), de ha egy szakértő megmondta a tutit, akkor az meg van mondva.
+            <br><br>
+            Így szokott ez lenni a felsőbb hatalom által eldöntött vitáknál, és így lesz akkor is, amikor az érzékszervi tapasztalatnak ellentmondva a 4 perc csendből mégis zene lesz, mint ahogy Kurtág 7 suta hangja is gyönyörű melódia – mögmondta a szakértő.
+            <br>
+            Volt egy sejtésem, amit mérésekkel igazoltam: Kurtág élvezhetetlen, szőrmentén mért tartalmú zenéi mind szélsőségesen alacsony <a href="#kt">KT</a> értéket mutatnak. Jogi platformra tévedve a következő formulával lehet egyszerűen védekezni a viselkedésemet támadó ellenféllel szemben:
+            <cite>úgy jártam el, ahogy az adott helyzetben elvárható</cite>. Kidolgoztam a módszertant, és elvégeztem a vizsgált zenék összehasonlítását. Túl egyszerű ez ahhoz, hogy megfeleljen magasabb tudományoknak, ezért attól tartok, hogy eddigi érvelésem nem lenne igazán hatékony védekezés abban az esetben,
+            ha akadémiai követelményekkel szembesítenének. Mert ha valóban vitathatatlan, objektív, jól operacionalizált mérésekkel hasonlítom össze Kurtág zenéjét más szerzőkével, akkor a következő ismérvek közül néhánynak meg kellene jelennie a vizsgálatban.
+            <br>
+            <b>Operacionalizált változók</b>: hangköz-eloszlás, hangtartomány, csendek aránya időalapon, dinamikai szélsőértékek, motívumhossz statisztikai eloszlása, entrópia, formális komplexitás, hangmagasság-sűrűség, tempóvariancia.
+            <br>
+            <b>Kontrollcsoport/összehasonlítás</b>: mely szerzőkkel hasonlítottam össze? Mely műveket választottam? Azonos műfajú darabok? Azonos hangszerelés? Azonos terjedelmű művek?
+            <br>
+            <b>Módszertan objektív méréshez</b>: adatforrás (kotta, MIDI, elemző szoftver?), mérési protokoll, ismételhetőség, számszerű eredmények.
+            <br>
+            Ezek hiányában az objektív mérés nem bizonyítható. Pedig definiálok mérőszámot (KT), különválasztom a kotta- és audioelemzést, bevezetem a küszöbértéket a csend definíciójához, jelzem a bizonytalanságokat (fermata, jitter stb.),
+            intervallumként adom meg az eredményt – a módszertani szándék látszik. Hol sérül a vizsgálati eredmények vitathatatlan jellege? Ha nincs konkrét dB-érték megadva küszöbnek, a mérés nem reprodukálható pontosan, mert a csend definíciója filozófiailag problematikus.
+            A mérés validitása kérdéses, mert nem bizonyított, hogy a mért KT érték korrelál zenei teljesítménnyel, mint ahogy az sem, hogy minőségi mutató lenne. Egy igazi szakértő nem állna meg itt, hanem fejemre olvasná a kontrollmérések elmaradását, nem találná a számszerűsített hibahatárt,
+            sem a mintavételi frekvenciát, és elég gyorsan lekapna a tíz körmömről. Annyit tehetek előzetes védekezésként, hogy <a href="#figy">figyelmeztetéssel</a> egészítem ki a mérési módszertan szövegét.
           </p>
         </div>
       </div>
