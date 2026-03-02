@@ -96,6 +96,7 @@ var temak =
       ],
       "c": [
         {cim:"vélemények", subfolder: "/velemeny", nev:"velemeny", ver:0, kelt:"2024-11-10", alt:"bárkinek lehet véleménye – ingyen adják"},
+        {cim:"napsugarak hatása százszorszépekre", subfolder:"/velemeny", nev:"napsugarak", ver:"2026-03-02", kelt:"2015-05-03"},
         {cim:"vihar a biliben", subfolder:"/velemeny", nev:"viharbili", ver:0, kelt:"2015-09-16"},
         {cim:"művészi ábrázolás", subfolder:"/velemeny", nev:"muveszi", ver:0, kelt:"2015-10-18"},
         {cim:"kinek a faszával verik a csalánt?", subfolder:"/velemeny", nev:"kineka", ver:"2026-01-14", kelt:"2015-12-01"},
