@@ -273,7 +273,11 @@ body {
   justify-content: center;
   position: absolute;
   left: 0px;
-  transition: all .6s
+  transition: all .6s;
+
+  height: min-content;
+  max-height: 50px;
+  overflow: visible;
 }
 
 .nav-wrapper > .left-side > div, .nav-wrapper > .right-side > div, .nav-wrapper > .center > div {

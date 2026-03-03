@@ -426,7 +426,7 @@
   // –  –  –  –  –  –  –  –  –  –  –  –  –  –  – 
 
   glob.href_nev = href_nev();
-  var hamar = null;
+  //var hamar = null;
   var y_elozo = window.pageYOffset;
   var alcimek_helye = null;
   var nav_wrapper = null;
@@ -517,11 +517,11 @@
     if (glob.hamburger && left_side) {
       left_side[0].style.top = "0"; //első alkalommal nem működik a "transition"
       glob.hamburger.addEventListener("click",() => {
-        latszik = !latszik; clearTimeout(hamar);
+        latszik = !latszik; //clearTimeout(hamar);
         left_side[0].style.top = (latszik ? "0":eltuntet_y);
       });
     } //! 523 hamburger.html
-    
+/*
     if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo") && (glob.href_nev != "katalogus") && letezik(glob.href_nev,false).tortenet)
       hamar = setTimeout(function() {
         if (left_side[0]) {
@@ -529,7 +529,7 @@
           latszik = !latszik;
         }
       },100);
-
+*/
     legujabb_tortenetek("ajanlo");
     legujabb_tortenetek("bovult");
     //pontatlan page jump igazítás:
