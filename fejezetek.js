@@ -510,7 +510,10 @@
     });
     if (glob.lejjebb) {
       glob.lejjebb.addEventListener("click",() => {
-        window.scrollBy(0,window.innerHeight);
+        if (window.scrollY === 0) {
+          window.scrollBy(0,window.innerHeight);
+          setTimeout(function() {window.scrollBy(0,window.innerHeight/-1.6);},900);
+        }
       });
     }
     left_side = document.getElementsByClassName("left-side");
