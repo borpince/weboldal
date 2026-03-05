@@ -582,9 +582,11 @@
         var cikk = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx];
         var frissitve = (cikk.ver != 0) ? ` 🔄${cikk.ver}`:"";
         var tcs = temak[tmdex.tk].lista[tmdex.lek][0].cim;
+        var bevezeto = false;
         if ((tmdex.le_sub_idx == 0) && (tmdex.tortenet.length > 1) && (tmdex.tk != "borok")) {
+          bevezeto = true;
           var p = document.createElement("p");
-          p.innerHTML = `"${tcs}" témacsoport bevezetője, az alábbi alfejezetek követik:`;
+          p.innerHTML = `"${tcs}" témacsoport bevezetője, ami az alábbi alfejezeteket fogja össze:`; //pl. /it/ai/ai
           content.appendChild(p);
           var tortenetek = document.createElement("object");
           //tortenetek.setAttribute("class","box-text");
@@ -599,16 +601,17 @@
           }
         }
         var legyen_kozelebb = false;
-        if (glob.alcimek.size > 0) {
+        if ((tmdex.tortenet.length > 0) && !bevezeto) {
+          var link = `${temak[tmdex.tk].folder}${tmdex.tortenet[0].subfolder}/${tmdex.tortenet[0].nev}`;
           var alcimek = document.createElement("p");
           var p = document.createElement("p");
           if (glob.alcimek.size > 0) {
-            if (tmdex.tk == "borok") p.innerHTML = "a borkészítés folyamata a következő mozzanatokra lebontva:";
-              else if (tmdex.le_sub_idx > 0) p.innerHTML = `"${tcs}" témacsoport alfejezete, a következő szakaszokra tagolódik:`;
-                    else p.innerHTML = `a cikk a következő szakaszokra tagolódik:`;
+            if (tmdex.tk == "borok") p.innerHTML = "a borkészítés folyamata a következő mozzanatokra lebontva:"; //pl. /borok/01
+              else if (tmdex.le_sub_idx > 0) p.innerHTML = `<a style="color:#ffffff" href="${link}">${tcs}</a> témacsoport alfejezete, a következő szakaszokra tagolódik:`; //pl. /olv/igykeszult/pince
+                    else p.innerHTML = `a fejezet a következő szakaszokra tagolódik:`; //pl. /olv/hordo
             alcim_lista_gyarto(alcimek,false);
             legyen_kozelebb = true;
-          } else p.innerHTML = `"${tcs}" témacsoport alfejezete`;
+          } else p.innerHTML = `<a style="color:#ffffff" href="${link}">${tcs}</a> témacsoport alfejezete`; //pl. /olv/rem/jojjon
           content.appendChild(p);
           content.appendChild(alcimek);
         }
