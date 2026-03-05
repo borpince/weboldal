@@ -614,7 +614,7 @@
         }
         const metaDescription = document.querySelector('meta[name="description"]');
         textHolder.innerHTML = `
-          <p>${document.location.href}:[${cikk.cim}]</p>
+          <p>${document.location.pathname}:[${cikk.cim}]</p>
           <p>🗓️${cikk.kelt}${frissitve}</p>
           <p><b>${document.querySelector('h1')?.innerHTML}</b></p>
           <p>témakör: ${tmdex.alt ? tmdex.alt:tmdex.tema}</p>
