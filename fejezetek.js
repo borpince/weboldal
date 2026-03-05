@@ -66,10 +66,10 @@
     }
   } //! 67 jelzesek.html
 
-  function alcim_lista_gyarto(object) {
+  function alcim_lista_gyarto(object,csikkal=true) {
     if (glob.alcimek.size > 0) {
       var ora = object.hasAttribute("ora");
-      object.setAttribute("class","box box-text");
+      if (csikkal) object.setAttribute("class","box box-text"); else object.setAttribute("class","box-text");
       object.setAttribute("style",`margin-left:0;align-items:center;justify-content:center;text-align:left;font-size:20px;flex-flow:column wrap`);
       var ul = document.createElement('ul');
       ul.setAttribute("style",`margin-left:30px;padding-left:0;list-style-type:"${jelek.link[0]}"`);
@@ -494,19 +494,6 @@
         },160);
       }
       nezettseg_frissit();
-      if (nav_wrapper && alcimek_helye && latszik) {
-        //ha megjelennek az alcímek, akkor eltüntetem a nav-wrappert, mert különben a "kitakart" linkek nem működnek
-        var rect_al = alcimek_helye.getBoundingClientRect();
-        var rect_bal = balmenu.getBoundingClientRect();
-        var y_most = window.pageYOffset;
-        var kilog_fent = rect_al.top < 0;
-        var kilog_lent = rect_al.bottom > window.innerHeight;
-        var bmym = rect_bal.height+20; //balmenu y méret, +20:alcímek font-size
-        var lathato = ((rect_al.top < window.innerHeight) && !kilog_fent) || (!kilog_lent && ((rect_al.bottom - 30) > 0) || (kilog_fent && kilog_lent));
-        if (((y_elozo > y_most) && (rect_al.top > bmym)) || !lathato) nav_wrapper[0].style.top = "20px";
-          else if (lathato && (rect_al.top < bmym)) nav_wrapper[0].style.top = eltuntet_y;
-        y_elozo = y_most;
-      }
     });
     if (glob.lejjebb) {
       glob.lejjebb.addEventListener("click",() => {
@@ -523,7 +510,7 @@
         latszik = !latszik; //clearTimeout(hamar);
         left_side[0].style.top = (latszik ? "0":eltuntet_y);
       });
-    } //! 523 hamburger.html
+    } //! 513 hamburger.html
 /*
     if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo") && (glob.href_nev != "katalogus") && letezik(glob.href_nev,false).tortenet)
       hamar = setTimeout(function() {
@@ -540,6 +527,120 @@
     var cimke = document.getElementById(window.location.href.substring(p+1));
     if ((p > -1) && cimke) setTimeout(function() {cimke.scrollIntoView()},900);
     parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
+
+    function tudnihoz() {
+      let modal = document.getElementById("dinamikus_modal");
+      if (!modal) {
+        modal = document.createElement("div");
+        modal.id = "dinamikus_modal";
+        Object.assign(modal.style, {
+            position: "fixed",
+            zIndex: "9999",
+            left: "0",
+            top: "0",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+        });
+        const content = document.createElement("div");
+        Object.assign(content.style, {
+            backgroundColor: "#0F52BA",
+            color: "#333",
+            padding: "30px",
+            borderRadius: "12px",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+            position: "relative",
+            width: "fit-content",
+            maxWidth: "80vw",
+            minWidth: "200px",
+            maxHeight: "80vh",
+            overflowY: "auto",
+            display: "block"
+        });
+        const closeBtn = document.createElement("span");
+        closeBtn.innerHTML = "&times;";
+        Object.assign(closeBtn.style, {
+            position: "absolute",
+            top: "5px",
+            right: "15px",
+            cursor: "pointer",
+            fontSize: "28px",
+            color: "#999"
+        });
+        closeBtn.onclick = () => modal.style.display = "none";
+        modal.onclick = (e) => {if (e.target === modal) modal.style.display = "none"; };
+        content.onclick = (e) => {if (e.target.tagName === 'A') {modal.style.display = "none";}};
+        const textHolder = document.createElement("div");
+        content.appendChild(closeBtn);
+        content.appendChild(textHolder);
+        modal.appendChild(content);
+        document.body.appendChild(modal);
+        var tmdex = letezik(href_nev(),false);
+        var cikk = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx];
+        var frissitve = (cikk.ver != 0) ? ` 🔄${cikk.ver}`:"";
+        var tcs = temak[tmdex.tk].lista[tmdex.lek][0].cim;
+        if ((tmdex.le_sub_idx == 0) && (tmdex.tortenet.length > 1) && (tmdex.tk != "borok")) {
+          var p = document.createElement("p");
+          p.innerHTML = `"${tcs}" témacsoport bevezetője, az alábbi alfejezetek követik:`;
+          content.appendChild(p);
+          var tortenetek = document.createElement("object");
+          //tortenetek.setAttribute("class","box-text");
+          toc(tortenetek);
+          content.appendChild(tortenetek);
+          tortenetek.style.color = "#ffffff";
+          tortenetek.style.fontSize = "x-large";
+          const linkek = tortenetek.getElementsByTagName("a");
+          for (let link of linkek) {
+            link.style.color = "#ffffff";
+            link.style.textDecoration = "underline";
+          }
+        }
+        var legyen_kozelebb = false;
+        if (glob.alcimek.size > 0) {
+          var alcimek = document.createElement("p");
+          var p = document.createElement("p");
+          if (glob.alcimek.size > 0) {
+            if (tmdex.tk == "borok") p.innerHTML = "a borkészítés folyamata a következő mozzanatokra lebontva:";
+              else if (tmdex.le_sub_idx > 0) p.innerHTML = `"${tcs}" témacsoport alfejezete, a következő szakaszokra tagolódik:`;
+                    else p.innerHTML = `a cikk a következő szakaszokra tagolódik:`;
+            alcim_lista_gyarto(alcimek,false);
+            legyen_kozelebb = true;
+          } else p.innerHTML = `"${tcs}" témacsoport alfejezete`;
+          content.appendChild(p);
+          content.appendChild(alcimek);
+        }
+        const metaDescription = document.querySelector('meta[name="description"]');
+        textHolder.innerHTML = `
+          <p>${document.location.href}:[${cikk.cim}]</p>
+          <p>🗓️${cikk.kelt}${frissitve}</p>
+          <p><b>${document.querySelector('h1')?.innerHTML}</b></p>
+          <p>témakör: ${tmdex.alt ? tmdex.alt:tmdex.tema}</p>
+          <p style="background-color:#0047AB;padding:10px 20px">${metaDescription.getAttribute("content")}</p>
+        `;
+        var o_terkep = document.createElement("select");
+        if (!legyen_kozelebb) o_terkep.style.marginTop = "20px";
+        lista_gyarto(o_terkep);
+        content.appendChild(o_terkep);
+      }
+      modal.style.display = "flex";
+    }
+    if (glob.cim) { //info gomb (index, naplo, 404 stb. kiesik)
+      const selectElem = document.querySelector('select');
+      const infoChar = document.createElement("span");
+      infoChar.textContent = "ℹ️";
+      infoChar.style.cursor = "pointer";
+      infoChar.style.fontSize = "xx-large";
+      //infoChar.style.marginLeft = "10px";
+      infoChar.style.verticalAlign = "middle";
+      infoChar.style.position = "relative";
+      infoChar.style.top = "-12px";
+      infoChar.style.color = "white";
+      infoChar.addEventListener("click", () => {tudnihoz();});
+      if (selectElem) {selectElem.after(infoChar);}
+    }
   });
 
   if (glob.hol_tart) {

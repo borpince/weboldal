@@ -316,6 +316,7 @@ function letezik(nev,sub) {
           }
           tmdex.folder = temak[tmdex.tk].folder;
           tmdex.tema = temak[tmdex.tk].tema;
+          if (temak[tmdex.tk].alt) tmdex.alt = temak[tmdex.tk].alt;
           if (tmdex.le_sub_idx > 0) tmdex.tcs = temak[tmdex.tk].lista[tmdex.lek][0].cim;
           return tmdex;
         }
