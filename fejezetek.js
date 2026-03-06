@@ -617,10 +617,10 @@
         }
         const metaDescription = document.querySelector('meta[name="description"]');
         textHolder.innerHTML = `
-          <p>${document.location.pathname}:[${cikk.cim}]</p>
-          <p>🗓️${cikk.kelt}${frissitve}</p>
+          <p><i>${tmdex.alt ? tmdex.alt:tmdex.tema}</i></p>
           <p><b>${document.querySelector('h1')?.innerHTML}</b></p>
-          <p>témakör: ${tmdex.alt ? tmdex.alt:tmdex.tema}</p>
+          <p>🗓️${cikk.kelt}${frissitve}</p>
+          <p>${document.location.pathname}:[${cikk.cim}]</p>
           <p style="background-color:#0047AB;padding:10px 20px">${metaDescription.getAttribute("content")}</p>
         `;
         var o_terkep = document.createElement("select");

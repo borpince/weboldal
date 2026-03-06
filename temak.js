@@ -227,7 +227,7 @@ var temak =
         {cim:"rendszerhiba", subfolder:"/cimke", nev:"rendszerhiba", ver:0, kelt:"2024-09-02"}
       ],
       "h": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "i": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2023-11-17", kelt:"2023-03-21"}],
+      "i": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2026-03-07", kelt:"2023-03-21"}],
       "j": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
       "k": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2025-01-20", kelt:"2023-06-04"}],
       "l": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],

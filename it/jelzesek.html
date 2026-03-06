@@ -402,6 +402,45 @@
             Tehetség híján mozgóképes anyagokkal szemléltetem a leírtakat, amit ebben a speciális moziban kínálok a szürke szöveg illusztrációjaként.
           </p>
         </div>
+      </div>
+      <div class="box">
+        <div id="2026-03-07" alcim="információs panel" class="box-text">
+          <p>
+            Izgalmas, aggasztó, rémes, borzalmas, reménytelen. Így jellemezhető a helyzet, amikor saját egykori alkotásommal szembesülök módosítás, fejlesztés szándékával. Ilyenkor szoktam megfogadni, hogy a jövőben bővebben ellátom megjegyzésekkel a programsorokat, de aztán minden marad a régiben, és győz a magabiztos <cite>értem én ezt anélkül is</cite> érzés.
+            Jól dokumentáltak a változások, látom a legutóbbi komolyabb fejlesztés dátumát, mikor az előző szakaszban bemutatott <i>mi mozinkat</i> valósítottam meg 2023 novemberében. Régen volt, sok víz lefolyt azóta a Dunán, de lefolyt itt más is. Tramini készült abban az évben, és ez oly rég volt már, hogy közben mind <a href="/borok/05#2025-10-30">elfogyott</a>.
+            A tudás nem fogyott el a fejemből, de a rutin alábbhagyott az elmúlt hosszú időszak semmittevésével (ez csak a programozói munkára vonatkozik), ezért most hosszasan ismerkedtem korabeli elképzelésemmel – aludnom is kellett rá egyet, hogy elkapjam a fonalat.
+            <br>
+            Régi hiányosságot szüntetek meg az új funkciónak nekiveselkedve, amit sikerült egész gyorsan összehozni a meglévő algoritmusokra és adatszerkezetekre rácsodálkozva. Időbe telt ráhangolódni, de utána ment minden, mint az ágybaszarás. Annak idején legyártottam a webhelyen tárolt tartalom kényelmes kezeléséhez szükséges eljárásokat (JavaScript környezetben függvénynek hívják, de én Pascalon nevelkedtem), most csak használni kell őket, és minden megoldható.
+            <br>
+            Régi vágyamat teljesítettem ezzel a legújabb fejlesztéssel: elkészült az <i>információs panel</i>. A képernyő tetején, a fejezetcímek legördülő listája mellett jobbra elhelyezett ℹ️ ikon (Unicode: U+2139 information source) megnyomásával csalogatható elő. Az egyszerű UI tervezésekor versenyben volt még a ⓘ jel is (U+24D8 circled latin small letter i), de végül a kék színű változat mellett döntöttem — ez ihlette a modal panel színét is.
+          </p>
+        </div>
+        <div id="ai" class="box-text-update">
+          <p>
+            Meggyőződésem, hogy kiskoromban sokkal életképesebb voltam jelenlegi állapotomhoz képest. Most komoly fenyegetésként értékelném a szándékot, ha meg akarnának fosztani segédeszközeimtől. Mintha a féllábútól elvennék a mankót, úgy érezném magam. Egykoron képes voltam térkép alapján tájékozódni, és eljutni távoli helyekre.
+            Mára viszont annyira rászoktam a GPS-alapú navigációs kütyükre, hogy azt sem tudom, hová kéne nyúlnom térkép után. Aztán itt van az AI, ami elvégzi helyettem a favágómunkát. Nem akarok minden létező HTML dokumentumot kiegészíteni a most kitalált lehetőség kódjával,
+            ezért JavaScript révén  illesztem be az ℹ️ gombot és a hozzá fűződő dinamikus modal panel definícióit. Mindössze az új szolgáltatás logikáját kell kigondolnom és megfogalmaznom, a többit elvégzi a segéderő. Évtizedekkel korábbi szorgalmamba belefért megbízásonként többtízezer alacsonyszintű utasítást értelmesen megfogalmazni és fáradságos munkával beírni a programszövegbe, de ma már nagyon rühellném.
+          </p>
+        </div>
+        <div class="box-text">
+          <p>
+            Az <cite>in servitio lectoris</cite> szellemében készült <code>információs panel</code> az olvasott szöveg mellékes, de érdeklődésre számot tartó adatait jeleníti meg, amik vagy nem részei a weboldalt meghatározó HTML-kódnak, vagy ha részei is, nem jelennek meg a böngészőben (metaadatok).
+            <br><code>
+            &nbsp;<i>témakör</i>
+            <br>
+            &nbsp;cím a HTML-kód &lt;h1&gt; eleméből
+            <br>
+            &nbsp;🗓️közzététel 🔄legutolsó módosítás dátuma
+            <br>
+            &nbsp;path:[cím a menüben vagy alternatív cím]
+            <br>
+            &nbsp;összefoglaló vagy néhány jellemző mondat az írásból
+            <br></code>
+            A többi adat magáért beszél. Azért helyeztem el a panel alján az <i>oldaltérképet</i>, hogy pusztán ennek eléréshez ne legyen szükség visszanavigálni a főoldalra, megvárva annak betöltését, és az ott kínált <i>oldaltérképet</i> keresgélni.
+          </p>
+        </div>
+      </div>
+      <div class="box">
         <div class="box-text">
           <p>
             Nem csupán hasznosak, de fontosak is a jelzések. Ez a bölcsesség leginkább akkor kerül előtérbe, amikor már baj van, mert elbambulnak, másra figyelnek és nem veszik figyelembe a jelzést.
