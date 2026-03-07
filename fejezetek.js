@@ -527,6 +527,9 @@
     var cimke = document.getElementById(window.location.href.substring(p+1));
     if ((p > -1) && cimke) setTimeout(function() {cimke.scrollIntoView()},900);
     parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
+    var isAndroid = /Android/i.test(navigator.userAgent);
+    const textHolder = document.createElement("div");
+    var tmdex = letezik(href_nev(),false);
 
     function tudnihoz() {
       let modal = document.getElementById("dinamikus_modal");
@@ -564,8 +567,8 @@
         closeBtn.innerHTML = "&times;";
         Object.assign(closeBtn.style, {
             position: "absolute",
-            top: "5px",
-            right: "15px",
+            top: "15px",
+            right: "25px",
             cursor: "pointer",
             fontSize: "28px",
             color: "#999"
@@ -573,14 +576,10 @@
         closeBtn.onclick = () => modal.style.display = "none";
         modal.onclick = (e) => {if (e.target === modal) modal.style.display = "none"; };
         content.onclick = (e) => {if (e.target.tagName === 'A') {modal.style.display = "none";}};
-        const textHolder = document.createElement("div");
         content.appendChild(closeBtn);
         content.appendChild(textHolder);
         modal.appendChild(content);
         document.body.appendChild(modal);
-        var tmdex = letezik(href_nev(),false);
-        var cikk = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx];
-        var frissitve = (cikk.ver != 0) ? ` 🔄${cikk.ver}`:"";
         var tcs = temak[tmdex.tk].lista[tmdex.lek][0].cim;
         var bevezeto = false;
         if ((tmdex.le_sub_idx == 0) && (tmdex.tortenet.length > 1) && (tmdex.tk != "borok")) {
@@ -615,14 +614,6 @@
           content.appendChild(p);
           content.appendChild(alcimek);
         }
-        const metaDescription = document.querySelector('meta[name="description"]');
-        textHolder.innerHTML = `
-          <p><i>${tmdex.alt ? tmdex.alt:tmdex.tema}</i></p>
-          <p><b>${document.querySelector('h1')?.innerHTML}</b></p>
-          <p>🗓️${cikk.kelt}${frissitve}</p>
-          <p>${document.location.pathname}:[${cikk.cim}]</p>
-          <p style="background-color:#0047AB;padding:10px 20px">${metaDescription.getAttribute("content")}</p>
-        `;
         var o_terkep = document.createElement("select");
         if (!legyen_kozelebb) o_terkep.style.marginTop = "20px";
         lista_gyarto(o_terkep);
@@ -639,11 +630,51 @@
       //infoChar.style.marginLeft = "10px";
       infoChar.style.verticalAlign = "middle";
       infoChar.style.position = "relative";
-      infoChar.style.top = "-12px";
+      infoChar.style.top = isAndroid ? "-6px":"-12px";
       infoChar.style.color = "white";
       infoChar.addEventListener("click", () => {tudnihoz();});
-      if (selectElem) {selectElem.after(infoChar);}
+
+      if (selectElem) {
+
+        function elrendez() {
+          keskeny = window.innerWidth <= 768;
+          infoChar.style.marginRight = isAndroid ? "10px":"0px";
+          var cikk = temak[tmdex.tk].lista[tmdex.lek][tmdex.le_sub_idx];
+          var frissitve = (cikk.ver != 0) ? `&ensp;🔄&thinsp;${cikk.ver}`:"";
+          const metaDescription = document.querySelector('meta[name="description"]');
+          var txt = "";
+          if (keskeny) {
+            selectElem.before(infoChar);
+            infoChar.style.marginLeft = isAndroid ? "0px":"0px";
+            txt = '⚠️&thinsp;a <code>pince.eu</code> <a style="color:#ffffff" href="/it/gondolatok#strapa">bevallottan</a> nem mobilbarát tartalom, kisméretű kijelzőkön nem mutat jól<br><br>';
+          } else {
+            selectElem.after(infoChar);
+            infoChar.style.marginLeft = isAndroid ? "10px":"0px";
+          }
+        textHolder.innerHTML = `
+          <p>${txt}<i>${tmdex.alt ? tmdex.alt:tmdex.tema}</i></p>
+          <p><b>${document.querySelector('h1')?.innerHTML}</b></p>
+          <p>🗓️&thinsp;${cikk.kelt}${frissitve}</p>
+          <p>${document.location.pathname}:[${cikk.cim}]</p>
+          <p></p>
+          <p style="background-color:#0047AB;padding:10px 20px">${metaDescription.getAttribute("content")}</p>
+        `;
+        }
+
+        const debounce = (func, delay) => {
+          let timeout;
+          return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), delay);
+          };
+        };
+
+        elrendez();
+        window.visualViewport.addEventListener("resize", debounce(elrendez, 600));
+      }
+
     }
+
   });
 
   if (glob.hol_tart) {
