@@ -245,7 +245,7 @@ var jelek = {
   web: ["🌐","külső hivatkozás (external link)"],
   link: ["🔗","hivatkozás (link)"],
   folder: ["📁","több fejezetet magába foglaló témacsoport"],
-  tcs_idx: ["ⓝ","témacsoport számmal jelzett fejezete"], //témacsoporton belüli index
+  tcs_idx: ["[n]","témacsoport számmal jelzett fejezete"], //témacsoporton belüli index
   konyv: ["📖","könyvjelző kikapcsolva"],
   jelzo: ["🔖","könyvjelző bekapcsolva"],
   utmut: ["❔","használati útmutató"],
