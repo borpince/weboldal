@@ -532,7 +532,7 @@
     var tmdex = letezik(href_nev(),false);
     const extraShorts = ['a','az','ha','van','egy','is','be','ki','le','fel','meg','el','át','rá','ide','oda','de','se','sem','én','te','ő','mi','ti','ők','ezt','azt','ez','az','itt','ott','már','még','most','ma','túl','mit','hol'];
     const extraStopWords = ['úgy','így','tehát','hiszen','pedig','viszont','talán','néha','majd','minden','mindenki','mindegyik','valami','valaki','néhány','több','sok','kevés','egész','összes','más','másik','alatt','felett','előtt','mögött','nélkül','szerint','által','ellen','közé','felé','például','stb','tulajdonképpen','szóval','mondjuk','nézzük','alapján','esetén','során','valamint','szintén','egyéb','mielőtt','mialatt','hisz','ugyanis','ráadásul','elég','alig','éppen','épp','felől','iránt','miatt','végett'];
-    const stopWords = new Set(['és','vagy','hogy','nem','igen','mert','mint','tesz','számára','vagyok','vagyunk','lett','volt','lesz','annak','ennek','ennél','annál','ebben','abban','akkor','ami','amit','amely','amelyet','amelyik','amikor','amivel','nevű','névvel','volna','nagy','nagyon','csak','ilyen','olyan','ennyi','annyi','ennyire','annyira','mellett','aztán','ahogy','kellett','kell','hanem','után','arra','erre','arról','erről','mégis','között','ahol','ezért','aminek','egyik','lehet','hozzá','azzal','ezzel','azon','ezek','azok','hogyan',...extraStopWords,...extraShorts]);
+    const stopWords = new Set(['és','vagy','hogy','nem','igen','mert','mint','tesz','számára','vagyok','vagyunk','lett','volt','lesz','lenne','annak','ennek','ennél','annál','ebben','abban','akkor','nincs','aki','akivel','akinek','ami','amit','amely','amelyet','amelyik','amikor','amivel','nevű','névvel','volna','nagy','nagyon','csak','ilyen','olyan','ennyi','annyi','ennyire','annyira','mellett','aztán','ahogy','kellett','kell','hanem','után','arra','erre','arról','erről','mégis','között','ahol','ezért','aminek','egyik','lehet','hozzá','azzal','ezzel','azon','ezek','azok','hogyan',...extraStopWords,...extraShorts]);
 
     function stat() {
       const container = document.getElementById('container_cs2020');
@@ -547,7 +547,7 @@
           .replace(/^[^a-z0-9áéíóöőúüű]+/gi, '')
           .replace(/[^a-z0-9áéíóöőúüű]+$/gi, '')
         )
-        .filter(word => word.length > 1 && !stopWords.has(word));
+        .filter(word => word.length > 1 && !stopWords.has(word) && !/^\d+$/.test(word));
       const density = words.length > 0 ? (((words.length-cleanWords.length)/words.length)*100).toFixed(1) : 0;
       const frequencyMap = {};
       cleanWords.forEach(word => {frequencyMap[word] = (frequencyMap[word] || 0) + 1;});
