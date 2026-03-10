@@ -530,6 +530,33 @@
     var isAndroid = /Android/i.test(navigator.userAgent);
     const textHolder = document.createElement("div");
     var tmdex = letezik(href_nev(),false);
+    const extraShorts = ['a','az','ha','van','egy','is','be','ki','le','fel','meg','el','át','rá','ide','oda','de','se','sem','én','te','ő','mi','ti','ők','ezt','azt','ez','az','itt','ott','már','még','most','ma','túl','mit','hol'];
+    const extraStopWords = ['úgy','így','tehát','hiszen','pedig','viszont','talán','néha','majd','minden','mindenki','mindegyik','valami','valaki','néhány','több','sok','kevés','egész','összes','más','másik','alatt','felett','előtt','mögött','nélkül','szerint','által','ellen','közé','felé','például','stb','tulajdonképpen','szóval','mondjuk','nézzük','alapján','esetén','során','valamint','szintén','egyéb','mielőtt','mialatt','hisz','ugyanis','ráadásul','elég','alig','éppen','épp','felől','iránt','miatt','végett'];
+    const stopWords = new Set(['és','vagy','hogy','nem','igen','mert','mint','tesz','számára','vagyok','vagyunk','lett','volt','lesz','annak','ennek','ennél','annál','ebben','abban','akkor','ami','amit','amely','amelyet','amelyik','amikor','amivel','nevű','névvel','volna','nagy','nagyon','csak','ilyen','olyan','ennyi','annyi','ennyire','annyira','mellett','aztán','ahogy','kellett','kell','hanem','után','arra','erre','arról','erről','mégis','között','ahol','ezért','aminek','egyik','lehet','hozzá','azzal','ezzel','azon','ezek','azok','hogyan',...extraStopWords,...extraShorts]);
+
+    function stat() {
+      const container = document.getElementById('container_cs2020');
+      const clone = container.cloneNode(true);
+      let text = clone.innerText || clone.textContent;
+      text = text.replace(/<[^>]+>/g, '');
+      text = text.replace(/\d{4}-\d{2}-\d{2}(T\d{2}:\d{2})?/g, ' ');
+      const cleanText = text.trim().replace(/\s+/g, ' ');
+      const words = cleanText.split(/\s+/).filter(word => word.length > 1);
+      const cleanWords = words
+        .map(word => word.toLowerCase()
+          .replace(/^[^a-z0-9áéíóöőúüű]+/gi, '')
+          .replace(/[^a-z0-9áéíóöőúüű]+$/gi, '')
+        )
+        .filter(word => word.length > 1 && !stopWords.has(word));
+      const density = words.length > 0 ? (((words.length-cleanWords.length)/words.length)*100).toFixed(1) : 0;
+      const frequencyMap = {};
+      cleanWords.forEach(word => {frequencyMap[word] = (frequencyMap[word] || 0) + 1;});
+      const sortedKeywords = Object.entries(frequencyMap)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 7); //az első 7 leggyakoribb
+      const kulcsszoSzoveg = sortedKeywords.map(([word, count]) => `${word} (<b>${count}</b>)`).join(', ');
+      return `karakterszám: <b>${cleanText.length}</b>, szavak: <b>${words.length}</b>, becsült olvasási idő: <b>${Math.ceil(words.length/200)}-${Math.ceil(words.length/130)}</b> perc, rizsa-index: <b>${density}%</b><br>leggyakoribb szavak: ${kulcsszoSzoveg}`;
+    }
 
     function tudnihoz() {
       let modal = document.getElementById("dinamikus_modal");
@@ -576,6 +603,7 @@
         closeBtn.onclick = () => modal.style.display = "none";
         modal.onclick = (e) => {if (e.target === modal) modal.style.display = "none"; };
         content.onclick = (e) => {if (e.target.tagName === 'A') {modal.style.display = "none";}};
+        window.onkeydown = (e) => {if (e.key === "Escape") {modal.style.display = "none";}};
         content.appendChild(closeBtn);
         content.appendChild(textHolder);
         modal.appendChild(content);
@@ -621,6 +649,7 @@
       }
       modal.style.display = "flex";
     }
+
     if (glob.cim) { //info gomb (index, naplo, 404 stb. kiesik)
       const selectElem = document.querySelector('select');
       const infoChar = document.createElement("span");
@@ -651,14 +680,15 @@
             selectElem.after(infoChar);
             infoChar.style.marginLeft = isAndroid ? "10px":"0px";
           }
-        textHolder.innerHTML = `
-          <p>${txt}<i>${tmdex.alt ? tmdex.alt:tmdex.tema}</i></p>
-          <p><b>${document.querySelector('h1')?.innerHTML}</b></p>
-          <p>🗓️&thinsp;${cikk.kelt}${frissitve}</p>
-          <p>${document.location.pathname}:[${cikk.cim}]</p>
-          <p></p>
-          <p style="background-color:#0047AB;padding:10px 20px">${metaDescription.getAttribute("content")}</p>
-        `;
+          textHolder.innerHTML = `
+            <p>${txt}<i>${tmdex.alt ? tmdex.alt:tmdex.tema}</i></p>
+            <p><b>${document.querySelector('h1')?.innerHTML}</b></p>
+            <p>🗓️&thinsp;${cikk.kelt}${frissitve}</p>
+            <p>${document.location.pathname}:[${cikk.cim}]</p>
+            <p style="background-color:#0047AB;padding:10px 20px">${metaDescription.getAttribute("content")}</p>
+            <p>${stat()}</p>
+            <hr>
+          `;
         }
 
         const debounce = (func, delay) => {
@@ -669,7 +699,6 @@
           };
         };
 
-        elrendez();
         window.visualViewport.addEventListener("resize", debounce(elrendez, 600));
       }
 
