@@ -557,7 +557,12 @@
         .sort((a, b) => b[1] - a[1])
         .slice(0, 7); //az első 7 leggyakoribb
       const kulcsszoSzoveg = sortedKeywords.map(([word, count]) => `${word} (<b>${count}</b>)`).join(', ');
-      return `karakterszám: <b>${cleanText.length}</b>, szavak: <b>${words.length}</b>, becsült olvasási idő: <b>${Math.ceil(words.length/200)}-${Math.ceil(words.length/130)}</b> perc, rizsa-index: <b>${density}%</b><br>leggyakoribb szavak: ${kulcsszoSzoveg}`;
+      const diagramHtml = `
+        <span class="arany-bar" title="töltelék (${density}%), hasznos (${(100-density).toFixed(1)}%)">
+          <span class="arany-fill" style="width: ${density}%;"></span>
+        </span>
+      `;
+      return `karakterszám: <b>${cleanText.length}</b>, szavak: <b>${words.length}</b>, becsült olvasási idő: <b>${Math.ceil(words.length/200)}-${Math.ceil(words.length/130)}</b> perc, töltelék-index: <b>${density}%</b>${diagramHtml}<br>leggyakoribb szavak: ${kulcsszoSzoveg}`;
     }
 
     function tudnihoz() {

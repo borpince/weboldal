@@ -1,4 +1,22 @@
 /* https://code-boxx.com/html-css-news-ticker-horizontal-vertical */
+.arany-bar {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 12px;
+  border: 1px solid #ccc;
+  margin-left: 8px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+.arany-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: black;
+}
 table {
   border-collapse: collapse;
   margin: 6px;
