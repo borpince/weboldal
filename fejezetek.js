@@ -532,11 +532,13 @@
     var tmdex = letezik(href_nev(),false);
     const extraShorts = ['a','az','ha','van','egy','is','be','ki','le','fel','meg','el','át','rá','ide','oda','de','se','sem','én','te','ő','mi','ti','ők','ezt','azt','ez','az','itt','ott','már','még','most','ma','túl','mit','hol'];
     const extraStopWords = ['úgy','így','tehát','hiszen','pedig','viszont','talán','néha','majd','minden','mindenki','mindegyik','valami','valaki','néhány','több','sok','kevés','egész','összes','más','másik','alatt','felett','előtt','mögött','nélkül','szerint','által','ellen','közé','felé','például','stb','tulajdonképpen','szóval','mondjuk','nézzük','alapján','esetén','során','valamint','szintén','egyéb','mielőtt','mialatt','hisz','ugyanis','ráadásul','elég','alig','éppen','épp','felől','iránt','miatt','végett'];
-    const stopWords = new Set(['és','vagy','hogy','nem','igen','mert','mint','tesz','számára','vagyok','vagyunk','lett','volt','lesz','lenne','annak','ennek','ennél','annál','ebben','abban','akkor','nincs','aki','akivel','akinek','ami','amit','amely','amelyet','amelyik','amikor','amivel','nevű','névvel','volna','nagy','nagyon','csak','ilyen','olyan','ennyi','annyi','ennyire','annyira','mellett','aztán','ahogy','kellett','kell','hanem','után','arra','erre','arról','erről','mégis','között','ahol','ezért','aminek','egyik','lehet','hozzá','azzal','ezzel','azon','ezek','azok','hogyan',...extraStopWords,...extraShorts]);
+    const stopWords = new Set(['és','vagy','avagy','hogy','ne','nem','igen','neki','nekem','neked','nekünk','nektek','nekik','mert','milyen','mint','maga','magát','kerül','került','tesz','számára','vagyok','vagyunk','vagytok','vannak','legyen','legyenek','lett','volt','voltam','lesz','lenne','ehhez','ahhoz','annak','ennek','ennél','annál','ebbe','abba','ebben','abban','ebből','abból','ettől','attól','akkor','nincs','aki','akivel','akinek','ami','amit','amely','amelyet','amelyik','amikor','amivel','nevű','névvel','volna','nagy','nagyon','csak','ilyen','olyan','ennyi','annyi','ennyire','annyira','mellett','aztán','ahogy','kellett','kell','hanem','után','arra','erre','arról','erről','mégis','között','ahol','ezért','azért','aminek','egyik','lehet','hozzá','azzal','ezzel','azon','ezek','azok','hogyan',...extraStopWords,...extraShorts]);
 
     function stat() {
       const container = document.getElementById('container_cs2020');
       const clone = container.cloneNode(true);
+      const junk = clone.querySelectorAll('script, style, noscript, select');
+      junk.forEach(el => el.remove());
       let text = clone.innerText || clone.textContent;
       text = text.replace(/<[^>]+>/g, '');
       text = text.replace(/\d{4}-\d{2}-\d{2}(T\d{2}:\d{2})?/g, ' ');
