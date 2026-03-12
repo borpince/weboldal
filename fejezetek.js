@@ -530,13 +530,14 @@
     var isAndroid = /Android/i.test(navigator.userAgent);
     const textHolder = document.createElement("div");
     var tmdex = letezik(href_nev(),false);
-    const extraShorts = ['a','az','ha','van','egy','is','be','ki','le','fel','meg','el','át','rá','ide','oda','de','se','sem','én','te','ő','mi','ti','ők','ezt','azt','ez','az','itt','ott','már','még','most','ma','túl','mit','hol'];
+    const extraShorts = ['a','az','ha','van','egy','is','be','ki','le','fel','meg','el','át','rá','ide','oda','de','se','sem','én','te','ő','mi','ti','ők','ezt','azt','ez','az','itt','ott','már','még','most','ma','túl','mit','hol']; //! 533  jelzesek.html
     const extraStopWords = ['úgy','így','tehát','hiszen','pedig','viszont','talán','néha','majd','minden','mindenki','mindegyik','valami','valaki','néhány','több','sok','kevés','egész','összes','más','másik','alatt','felett','előtt','mögött','nélkül','szerint','által','közé','felé','például','stb','tulajdonképpen','szóval','mondjuk','nézzük','alapján','esetén','során','valamint','szintén','egyéb','mielőtt','mialatt','hisz','ugyanis','ráadásul','elég','alig','éppen','épp','felől','iránt','miatt','végett'];
     const kiegStopWords = ['bár','mintha','ahányszor','ameddig','amíg','miközben','holott','noha','ám','ámde','azonban','ugye','hát','na','különben','egyébként','amúgy','bizony','persze','természetesen','valójában','igazából','gyakorlatilag','lényegében','tényleg','pont','pontosan','mindig','soha','néhol','valahol','bárhol','sehogy','valahogy','körülbelül','nagyjából','kb','valamelyik','akárki','akármi','bárki','bármi','senki','semmi','mindenféle','ilyesmi','olyasmi','kellene','lehetne','szokott','szoktam','mondja','máshogy','később','előbb'];
     const stopWords = new Set(['és','vagy','avagy','hogy','ne','nem','igen','neki','nekem','neked','nekünk','nektek','nekik','mert','milyen','mint','maga','magát','kerül','került','tesz','számára','vagyok','vagyunk','vagytok','vannak','legyen','legyenek','lett','volt','voltam','lesz','lenne','ehhez','ahhoz','annak','ennek','ennél','annál','ebbe','abba','ebben','abban','ebből','abból','ettől','attól','akkor','nincs','aki','akivel','akinek','ami','amit','amely','amelyet','amelyik','amikor','amivel','nevű','névvel','volna','nagyon','csak','ilyen','olyan','ennyi','annyi','ennyire','annyira','mellett','aztán','ahogy','kellett','kell','hanem','után','arra','erre','arról','erről','mégis','között','ahol','ezért','azért','aminek','egyik','lehet','hozzá','azzal','ezzel','azon','ezek','azok','hogyan',...extraStopWords,...extraShorts,...kiegStopWords]);
 
     function stat() {
       const container = document.getElementById('container_cs2020');
+      if (!container) return;
       const clone = container.cloneNode(true);
       const junk = clone.querySelectorAll('script, style, noscript, select');
       junk.forEach(el => el.remove());
@@ -546,28 +547,19 @@
       const cleanText = text.trim().replace(/\s+/g, ' ');
       const allWords = cleanText.split(/\s+/).filter(word => word.length > 0);
       const words = cleanText.split(/\s+/).filter(word => word.length > 1);
-      const cleanWords = words
-        .map(word => word.toLowerCase()
-          .replace(/^[^a-z0-9áéíóöőúüű]+/gi, '')
-          .replace(/[^a-z0-9áéíóöőúüű]+$/gi, '')
-        )
-        .filter(word => word.length > 1 && !stopWords.has(word) && !/^\d+$/.test(word));
+      const cleanWords = words.map(word => word.toLowerCase()
+        .replace(/^[^a-z0-9áéíóöőúüű]+/gi, '').replace(/[^a-z0-9áéíóöőúüű]+$/gi, '')
+      ).filter(word => word.length > 1 && !stopWords.has(word) && !/^\d+$/.test(word));
       const charCount = cleanText.replace(/\s+/g, '').length;
       const cleanCharsCount = cleanWords.join('').length;
       const density = words.length > 0 ? (((words.length-cleanWords.length)/words.length)*100).toFixed(1) : 0;
       const frequencyMap = {};
       cleanWords.forEach(word => {frequencyMap[word] = (frequencyMap[word] || 0) + 1;});
-      const sortedKeywords = Object.entries(frequencyMap)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 8); //az első 7 leggyakoribb
+      const sortedKeywords = Object.entries(frequencyMap).sort((a, b) => b[1] - a[1]).slice(0, 8);
       const kulcsszoSzoveg = sortedKeywords.map(([word, count]) => `${word} (<b>${count}</b>)`).join(', ');
-      const diagramHtml = `
-        <span class="arany-bar" title="töltelék (${density}%), hasznos (${(100-density).toFixed(1)}%)">
-          <span class="arany-fill" style="width: ${density}%;"></span>
-        </span>
-      `;
+      const diagramHtml = `<span class="arany-bar" title="töltelék (${density}%), hasznos (${(100-density).toFixed(1)}%)"><span class="arany-fill" style="width: ${density}%;"></span></span>`;
       return `karakter <b>${charCount}</b>, szó <b>${allWords.length}</b>:<b>${cleanWords.length}</b> (<b>${(charCount/allWords.length).toFixed(1)}</b>:<b>${(cleanCharsCount/cleanWords.length).toFixed(1)}</b>), olvasási idő <b>${Math.ceil(words.length/200)}-${Math.ceil(words.length/130)}</b> perc, töltelék <b>${density}%</b>${diagramHtml}<br>leggyakoribb szavak: ${kulcsszoSzoveg}<br>(a statisztika számai <a style="color:#ffffff" href="/it/jelzesek#magyarazat">magyarázatra</a> szorulnak)`;
-    }
+    } //! 562 jelzesek.html
 
     function tudnihoz() {
       let modal = document.getElementById("dinamikus_modal");

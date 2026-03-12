@@ -11,6 +11,11 @@
   <link rel="icon" href="/src_home/favicon.ico" type="image/x-icon">
   <link rel="canonical" href="https://pince.eu/it/jelzesek">
 </head>
+<style>
+  li,li::marker {
+    font-size: x-large;
+  }
+</style>
 <body>
   <div class="active-footer">
     <a onclick="window.scrollTo(0,0);"><span class="back-to-top"><span class="material-icons-outlined">&#xe5ce;</span></span></a>
@@ -422,25 +427,45 @@
             ezért JavaScript révén  illesztem be az ℹ️ gombot és a hozzá fűződő dinamikus modal panel definícióit. Mindössze az új szolgáltatás logikáját kell kigondolnom és megfogalmaznom, a többit elvégzi a segéderő. Évtizedekkel korábbi szorgalmamba belefért megbízásonként többtízezer alacsonyszintű utasítást értelmesen megfogalmazni és fáradságos munkával beírni a programszövegbe, de ma már nagyon rühellném.
           </p>
         </div>
-        <div class="box-text">
+        <div id="magyarazat" class="box-text">
           <p>
             Az <cite>in servitio lectoris</cite> szellemében készült <code>információs panel</code> az olvasott szöveg mellékes, de érdeklődésre számot tartó adatait jeleníti meg, amik vagy nem részei a weboldalt meghatározó HTML-kódnak, vagy ha részei is, zömük nem jelenik meg a böngészőben (metaadatok).
-            <br><code>
-            &nbsp;<i>témakör</i>
             <br>
-            &nbsp;cím a HTML-kód &lt;h1&gt; eleméből
+            &nbsp;&nbsp;<i>témakör</i>
             <br>
-            &nbsp;🗓️közzététel 🔄legutolsó módosítás dátuma
+            &nbsp;&nbsp;cím a HTML-kód &lt;h1&gt; eleméből
             <br>
-            &nbsp;path:[cím a menüben vagy alternatív cím]
+            &nbsp;&nbsp;🗓️közzététel 🔄legutolsó módosítás dátuma
             <br>
-            &nbsp;összefoglaló vagy néhány jellemző mondat az írásból
+            &nbsp;&nbsp;path:[cím a menüben vagy alternatív cím]
             <br>
-            &nbsp;karakterszám, szavak, becsült olvasási idő [felületesen-odafigyelve], töltelék-index: töltelékszavak aránya
+            &nbsp;&nbsp;összefoglaló vagy néhány jellemző mondat az írásból
             <br>
-            &nbsp;leggyakoribb szavak
-            <br></code>
-            A többi adat magáért beszél. Azért helyeztem el a panel alján az <i>oldaltérképet</i>, hogy pusztán ennek eléréshez ne legyen szükség visszanavigálni a főoldalra, megvárva annak betöltését, és az ott kínált <i>oldaltérképet</i> keresgélni.
+            &nbsp;&nbsp;karakter, szó, olvasási idő [felületesen-odafigyelve], töltelék: töltelékszavak aránya
+            <br>
+            &nbsp;&nbsp;leggyakoribb szavak
+            <br>
+            A többi adat magáért beszél. Azért helyeztem el a panel alján az <i>oldaltérképet</i>, hogy pusztán ennek eléréshez ne legyen szükség visszanavigálni a főoldalra, megvárva annak betöltését, és az ott kínált <i>oldaltérkép</i> után kutatni.
+            <br>
+            Időközben jelentősen bővült a vizsgált szövegből készült statisztika, ezért az adatok magyarázatra szorulnak.
+          </p>
+          <ul>
+            <li><b>karakter</b>
+              <br>szóközök, tabulátorok, sortörés, összességében <a href="https://hu.wikipedia.org/wiki/White_space">whitespace</a> karakterek nélküli, de az írásjeleket tartalmazó mennyiség</li>
+            <li><b>szó</b> A:B (C:D)
+              <br>A – a vizsgált szöveg teljes szókészlete: azon szövegegységek darabszáma, amiket egymástól bármilyen <i>whitespace</i> karakter választ el
+              <br>B – a minőséget, a valós tartalmat adó normalizált, írásjelektől megfosztott, válogatott szavak darabszáma, kiszűrve közülük töltelékszavakat, számokat, névelőket, kötőszavakat stb.
+              <br>C – "A" szókészlet szavainak átlagos hossza
+              <br>D – "B" szókészlet szavainak átlagos hossza
+            </li>
+            <li><b>olvasási idő</b>
+              <br>becsült érték, amit sok tényző alakít: szöveg nehézsége, téma ismerete, olvasás célja stb.</li>
+            <li><b>töltelék</b>
+              <br>tartalmat nem adó, de a szöveg gördülékenységét biztosító töltelékszavak aránya a szöveg egészéhez viszonyítva</li>
+          </ul>
+          <p>
+            A statisztikai adatokat szolgáltató algoritmus a Gemini, a Copilot és a ChatGPT segítségével készült – nagyon rákaptam az AI használatára (a regex bevetése miatt is indokolt, mert ezt a tudományt soha nem fogom elsajátítani). Napokig tartó tesztelés során alakult és fejlődött, amíg ezt az állapotát elérte, és tűrhető eredményt ad.
+            Súlyos buktatói voltak a fejlesztésnek, de most elégedett vagyok a működéssel, nem tuningolom tovább. Ha te is elégedett vagy, akkor használd bátran saját weboldaladhoz: <a href="https://github.com/borpince/weboldal/blob/main/fejezetek.js#L533-L562">itt</a> találod a beépítéshez szükséges kódot.
           </p>
         </div>
       </div>
