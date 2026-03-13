@@ -539,7 +539,7 @@
       const container = document.getElementById('container_cs2020');
       if (!container) return;
       const clone = container.cloneNode(true);
-      const junk = clone.querySelectorAll('script, style, noscript, select');
+      const junk = clone.querySelectorAll('script, style, noscript, select, textarea');
       junk.forEach(el => el.remove());
       let text = clone.innerText || clone.textContent;
       text = text.replace(/<[^>]+>/g, '');
