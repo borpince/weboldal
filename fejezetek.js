@@ -641,7 +641,7 @@
                     else p.innerHTML = `a fejezet a következő szakaszokra tagolódik:`; //pl. /olv/hordo
             alcim_lista_gyarto(alcimek,false);
             legyen_kozelebb = true;
-          } else p.innerHTML = `<a style="color:#ffffff" href="${link}">${tcs}</a> témacsoport alfejezete`; //pl. /olv/rem/jojjon
+          } else if (tmdex.tcs) p.innerHTML = `<a style="color:#ffffff" href="${link}">${tcs}</a> témacsoport alfejezete`; //pl. /olv/rem/jojjon
           content.appendChild(p);
           content.appendChild(alcimek);
         }
