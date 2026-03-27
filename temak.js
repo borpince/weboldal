@@ -100,6 +100,7 @@ var temak =
         {cim:"vihar a biliben", subfolder:"/velemeny", nev:"viharbili", ver:0, kelt:"2015-09-16"},
         {cim:"művészi ábrázolás", subfolder:"/velemeny", nev:"muveszi", ver:0, kelt:"2015-10-18"},
         {cim:"kinek a faszával verik a csalánt?", subfolder:"/velemeny", nev:"kineka", ver:"2026-01-14", kelt:"2015-12-01"},
+        {cim:"add vissza a lovagkeresztet…", subfolder:"/velemeny", nev:"lovag", ver:"2026-03-28", kelt:"2016-08-22"},
         {cim:"amit szabad jupiternek…", subfolder:"/velemeny", nev:"jupiter", ver:"2026-02-11", kelt:"2016-12-05"},
         {cim:"hitvallás", subfolder: "/velemeny", nev:"semmiflanc", ver:0, kelt:"2022-07-04"},
         {cim:"tengöri nóta", subfolder: "/velemeny", nev:"tengori", ver:0, kelt:"2023-02-09"},
