@@ -46,6 +46,7 @@ https://pince.eu/olv/velemeny/velemeny
 https://pince.eu/olv/velemeny/napsugarak
 https://pince.eu/olv/velemeny/viharbili
 https://pince.eu/olv/velemeny/muveszi
+https://pince.eu/olv/velemeny/lofej
 https://pince.eu/olv/velemeny/kineka
 https://pince.eu/olv/velemeny/lovag
 https://pince.eu/olv/velemeny/jupiter
