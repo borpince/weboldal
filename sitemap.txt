@@ -19,6 +19,16 @@ https://pince.eu/tech/zsomp
 https://pince.eu/tech/sarkany
 https://pince.eu/tech/aszokfa
 https://pince.eu/tech/nyomasmero
+https://pince.eu/olv/talalkozas/talalkozas
+https://pince.eu/olv/talalkozas/napsugarak
+https://pince.eu/olv/talalkozas/majom
+https://pince.eu/olv/talalkozas/viharbili
+https://pince.eu/olv/talalkozas/muveszi
+https://pince.eu/olv/talalkozas/kineka
+https://pince.eu/olv/talalkozas/lofej
+https://pince.eu/olv/talalkozas/lovag
+https://pince.eu/olv/talalkozas/jupiter
+https://pince.eu/olv/talalkozas/deszka
 https://pince.eu/olv/igykeszult/magad
 https://pince.eu/olv/igykeszult/fodem
 https://pince.eu/olv/igykeszult/pince
@@ -43,13 +53,6 @@ https://pince.eu/olv/kert/tavaszodik3
 https://pince.eu/olv/kert/csigasor
 https://pince.eu/olv/kert/tavaszodik4
 https://pince.eu/olv/velemeny/velemeny
-https://pince.eu/olv/velemeny/napsugarak
-https://pince.eu/olv/velemeny/viharbili
-https://pince.eu/olv/velemeny/muveszi
-https://pince.eu/olv/velemeny/lofej
-https://pince.eu/olv/velemeny/kineka
-https://pince.eu/olv/velemeny/lovag
-https://pince.eu/olv/velemeny/jupiter
 https://pince.eu/olv/velemeny/semmiflanc
 https://pince.eu/olv/velemeny/tengori
 https://pince.eu/olv/velemeny/fent
@@ -79,7 +82,6 @@ https://pince.eu/olv/velemeny/metoo2
 https://pince.eu/olv/velemeny/gyermekvedelem
 https://pince.eu/olv/velemeny/szepseg
 https://pince.eu/olv/velemeny/rokonlelkek
-https://pince.eu/olv/velemeny/talalkozas
 https://pince.eu/olv/velemeny/kurtag
 https://pince.eu/olv/velemeny/impulzus
 https://pince.eu/olv/bv/borverseny
@@ -112,8 +114,6 @@ https://pince.eu/olv/orom/kapisgal
 https://pince.eu/olv/orom/gebasz
 https://pince.eu/olv/orom/bayan
 https://pince.eu/olv/orom/frauenkirche
-https://pince.eu/olv/orom/majom
-https://pince.eu/olv/orom/deszka
 https://pince.eu/olv/orom/fallabda
 https://pince.eu/olv/orom/divat
 https://pince.eu/olv/orom/tonkremegy

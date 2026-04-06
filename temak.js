@@ -67,6 +67,18 @@ var temak =
     tema:"olvasnivaló",
     lista:{
       "a": [
+        {cim:"találkozás önmagammal", subfolder:"/talalkozas", nev:"talalkozas", ver:"2026-02-12", kelt:"2026-01-22"},
+        {cim:"napsugarak hatása százszorszépekre", subfolder:"/talalkozas", nev:"napsugarak", ver:"2026-03-02", kelt:"2015-05-03"},
+        {cim:"majomparádé", subfolder:"/talalkozas", nev:"majom", ver:"2024-03-15", kelt:"2015-05-20"},
+        {cim:"vihar a biliben", subfolder:"/talalkozas", nev:"viharbili", ver:0, kelt:"2015-09-16"},
+        {cim:"művészi ábrázolás", subfolder:"/talalkozas", nev:"muveszi", ver:0, kelt:"2015-10-18"},
+        {cim:"kinek a faszával verik a csalánt?", subfolder:"/talalkozas", nev:"kineka", ver:"2026-01-14", kelt:"2015-12-01"},
+        {cim:"lófej", subfolder:"/talalkozas", nev:"lofej", ver:"2026-04-05", kelt:"2015-12-23"},
+        {cim:"add vissza a lovagkeresztet…", subfolder:"/talalkozas", nev:"lovag", ver:"2026-03-28", kelt:"2016-08-22"},
+        {cim:"amit szabad jupiternek…", subfolder:"/talalkozas", nev:"jupiter", ver:"2026-02-11", kelt:"2016-12-05"},
+        {cim:"deszkamodell", subfolder:"/talalkozas", nev:"deszka", ver:"2025-03-17", kelt:"2017-02-10"},
+      ],
+      "b": [
         // subfolder elé azért került "/", mert a path összeállítása így egyszerűbb (select.onchange)
         {cim:"magad uram...", subfolder:"/igykeszult", nev:"magad", ver:0, kelt:"2022-07-04", alt:"így készült"},
         {cim:"futófolyosó: födém", subfolder:"/igykeszult", nev:"fodem", ver:"2023-09-12", kelt:"2022-08-15"},
@@ -86,7 +98,7 @@ var temak =
         {cim:"pinceajtó v2.0", subfolder:"/igykeszult", nev:"pinceajto2", ver:0, kelt:"2025-02-22"},
         {cim:"mesterségcímerek", subfolder:"/igykeszult", nev:"cimerek", ver:"2025-08-30", kelt:"2025-06-16"}
       ],
-      "b": [
+      "c": [
         {cim:"tavasz", subfolder:"/kert", nev:"tavasz", ver:0, kelt:"2023-03-09",alt:"kerti munkák"},
         {cim:"tavaszodik – 2021", subfolder:"/kert", nev:"tavaszodik", ver:0, kelt:"2022-08-15"},
         {cim:"tavaszodik – 2022", subfolder:"/kert", nev:"tavaszodik2", ver:0, kelt:"2023-02-24"},
@@ -94,15 +106,8 @@ var temak =
         {cim:"csigasör", subfolder:"/kert", nev:"csigasor", ver:0, kelt:"2024-05-16"},
         {cim:"tavaszodik – 2025", subfolder:"/kert", nev:"tavaszodik4",ver:0, kelt:"2025-05-24"}
       ],
-      "c": [
+      "d": [
         {cim:"vélemények", subfolder: "/velemeny", nev:"velemeny", ver:0, kelt:"2024-11-10", alt:"bárkinek lehet véleménye – ingyen adják"},
-        {cim:"napsugarak hatása százszorszépekre", subfolder:"/velemeny", nev:"napsugarak", ver:"2026-03-02", kelt:"2015-05-03"},
-        {cim:"vihar a biliben", subfolder:"/velemeny", nev:"viharbili", ver:0, kelt:"2015-09-16"},
-        {cim:"művészi ábrázolás", subfolder:"/velemeny", nev:"muveszi", ver:0, kelt:"2015-10-18"},
-        {cim:"kinek a faszával verik a csalánt?", subfolder:"/velemeny", nev:"kineka", ver:"2026-01-14", kelt:"2015-12-01"},
-        {cim:"lófej", subfolder:"/velemeny", nev:"lofej", ver:"2026-04-05", kelt:"2015-12-23"},
-        {cim:"add vissza a lovagkeresztet…", subfolder:"/velemeny", nev:"lovag", ver:"2026-03-28", kelt:"2016-08-22"},
-        {cim:"amit szabad jupiternek…", subfolder:"/velemeny", nev:"jupiter", ver:"2026-02-11", kelt:"2016-12-05"},
         {cim:"hitvallás", subfolder: "/velemeny", nev:"semmiflanc", ver:0, kelt:"2022-07-04"},
         {cim:"tengöri nóta", subfolder: "/velemeny", nev:"tengori", ver:0, kelt:"2023-02-09"},
         {cim:"fent vagy lent?", subfolder: "/velemeny", nev:"fent", ver:0, kelt:"2023-07-04"},
@@ -132,11 +137,10 @@ var temak =
         {cim:"gyermekvédelem – törvényen kívül", subfolder:"/velemeny", nev:"gyermekvedelem", ver:0, kelt:"2025-10-01"},
         {cim:"szépség", subfolder:"/velemeny", nev:"szepseg", ver:"2026-02-13", kelt:"2025-10-11"},
         {cim:"rokonlelkek", subfolder:"/velemeny", nev:"rokonlelkek", ver:0, kelt:"2026-01-16"},
-        {cim:"találkozás önmagammal", subfolder:"/velemeny", nev:"talalkozas", ver:"2026-02-12", kelt:"2026-01-22"},
         {cim:"értem én a viccet?", subfolder:"/velemeny", nev:"kurtag", ver:0, kelt:"2026-02-27"},
         {cim:"impulzusok", subfolder:"/velemeny", nev:"impulzus", ver:0, kelt:"2026-03-15"}
       ],
-      "d": [
+      "e": [
         {cim:"borok, versenyek", subfolder:"/bv", nev:"borverseny", ver:0, kelt:"2023-04-18", alt:"borok, versenyek, kóstolók"},
         {cim:"XI. Villányi Prémium Bormustra", subfolder:"/bv", nev:"bm2022", ver:0, kelt:"2022-10-17"},
         {cim:"IX. Portugieser du Monde", subfolder:"/bv", nev:"podumon2023", ver:0, kelt:"2023-04-17"},
@@ -147,7 +151,7 @@ var temak =
         {cim:"ruppert", subfolder:"/bv", nev:"ruppert", ver:0, kelt:"2025-02-18"},
         {cim:"riczu", subfolder:"/bv", nev:"riczu", ver:0, kelt:"2025-04-14"}
       ],
-      "e": [
+      "f": [
         {cim:"rémtörténetek", subfolder:"/rem", nev:"remtortenet", ver:0, kelt:"2023-10-08"},
         {cim:"jöjjön azonnal!", subfolder:"/rem", nev:"jojjon", ver:0, kelt:"2023-10-09"},
         {cim:"házirend", subfolder:"/rem", nev:"hazirend", ver:0, kelt:"2023-10-10"},
@@ -165,33 +169,31 @@ var temak =
         {cim:"kinek a szégyene?", subfolder:"/rem", nev:"szegyene", ver:0, kelt:"2025-10-21"},
         {cim:"akár a moziban", subfolder:"/rem", nev:"moziban", ver:0, kelt:"2025-10-25"}
       ],
-      "f": [
+      "g": [
         {cim:"örömteli történetek", subfolder:"/orom", nev:"oromteli", ver:0, kelt:"2023-10-20"},
         {cim:"kapisgálom", subfolder:"/orom", nev:"kapisgal", ver:0, kelt:"2023-11-04"},
         {cim:"gebasz", subfolder:"/orom", nev:"gebasz", ver:0, kelt:"2023-11-06"},
         {cim:"a baján Péter Bencéje", subfolder:"/orom", nev:"bayan", ver:0, kelt:"2023-12-10"},
         {cim:"frauenkirche", subfolder:"/orom", nev:"frauenkirche", ver:0, kelt:"2024-02-22"},
-        {cim:"majomparádé", subfolder:"/orom", nev:"majom", ver:"2024-03-15", kelt:"2015-05-20"},
-        {cim:"deszkamodell", subfolder:"/orom", nev:"deszka", ver:"2025-03-17", kelt:"2017-02-10"},
         {cim:"fallabdás banda", subfolder:"/orom", nev:"fallabda", ver:0, kelt:"2024-10-21"},
         {cim:"kedvesem, a divatguru", subfolder:"/orom", nev:"divat", ver:0, kelt:"2025-03-01"},
         {cim:"egyszer minden tönkremegy", subfolder:"/orom", nev:"tonkremegy", ver:0, kelt:"2025-03-20"},
         {cim:"mesés valóság", subfolder:"/orom", nev:"meses", ver:0, kelt:"2025-03-22"},
         {cim:"szegénységben élünk", subfolder:"/orom", nev:"szegenyseg", ver:0, kelt:"2026-01-28"}
       ],
-      "g": [
+      "h": [
         {cim:"nyamt", subfolder:"/nyamt", nev:"kulinaris", ver:0, kelt:"2024-06-01", alt:"nyamt – kulináris függőség"},
         {cim:"pörkölt JMO módra", subfolder:"/nyamt", nev:"porkolt", ver:0, kelt:"2024-06-02"},
         {cim:"babgulyás, rétes", subfolder:"/nyamt", nev:"babgulyas", ver:0, kelt:"2024-06-18"},
         {cim:"rehab", subfolder:"/nyamt", nev:"rehab", ver:0, kelt:"2024-10-31"}
       ],
-      "h": [{cim:"hordólelet", nev:"hordo", ver:"2024-05-22", kelt:"2023-05-29"}],
-      "i": [{cim:"hordómatuzsálem", nev:"hordo2", ver:0, kelt:"2024-05-23"}],
-      "j": [{cim:"cseppköves emlékek", nev:"cseppkovek", ver:0, kelt:"2023-01-09"}],
-      "k": [{cim:"szárnypróbálgatás", nev:"00", ver:0, kelt:"2021-10-13"}],
-      "l": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021", ver:0, kelt:"2022-06-27"}],
-      "m": [{cim:"jó pap holtig hülyül", nev:"holtig", ver:0, kelt:"2025-01-06"}],
-      "n": [{cim:"születésnapi feladvány", nev:"feladvany", ver:0, kelt:"2025-07-25"}]
+      "i": [{cim:"hordólelet", nev:"hordo", ver:"2024-05-22", kelt:"2023-05-29"}],
+      "j": [{cim:"hordómatuzsálem", nev:"hordo2", ver:0, kelt:"2024-05-23"}],
+      "k": [{cim:"cseppköves emlékek", nev:"cseppkovek", ver:0, kelt:"2023-01-09"}],
+      "l": [{cim:"szárnypróbálgatás", nev:"00", ver:0, kelt:"2021-10-13"}],
+      "m": [{cim:"meghiúsult szőlőbeszerzés", nev:"elmaradt2021", ver:0, kelt:"2022-06-27"}],
+      "n": [{cim:"jó pap holtig hülyül", nev:"holtig", ver:0, kelt:"2025-01-06"}],
+      "o": [{cim:"születésnapi feladvány", nev:"feladvany", ver:0, kelt:"2025-07-25"}]
     }
   },
   "it": {
