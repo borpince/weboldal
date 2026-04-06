@@ -46,7 +46,7 @@
         <div class="box-text-update">
           <p>
             Nem ez az első olyan beszámoló, ami ijesztő címe ellenére helyet kap az <i>örömteli történetek</i> témacsoportjában (ilyen volt a <a href="/olv/orom/gebasz">gebasz</a> is).
-            Rendszeresen előveszem régi írásaimat hibák, zagyva fogalmazás és halott linkek után kutatva. Így találkoztam a minap <a href="/olv/orom/deszka">Deszkamodell</a> című, az <a href="https://hu.wikipedia.org/wiki/Dolgok_internetje">IoT</a> hőskorában fogalmazott jegyzetemmel.
+            Rendszeresen előveszem régi írásaimat hibák, zagyva fogalmazás és halott linkek után kutatva. Így találkoztam a minap <a href="/olv/talalkozas/deszka">Deszkamodell</a> című, az <a href="https://hu.wikipedia.org/wiki/Dolgok_internetje">IoT</a> hőskorában fogalmazott jegyzetemmel.
             Ennek keletkezésekor már hazánkban is működött a 4G mobilinternet, mindenféle gyártók elárasztották a piacot olcsó mikroszámítógépekkel és ezekhez való érzékelőkkel (hőmérő, légnyomásmérő, giroszkóp, GPS-vevő stb.), amik hozzám is eljutottak.
             Ekkor vált lehetővé komolyabban belevágni korábban buta dolgok okosításába, mert minden körülmény ennek kedvezett. Gyerekeim ez idő tájt távoli országok egyetemeire jártak, nem kellett róluk közvetlenül és napi szinten gondoskodnom. Csak a létfenntartásukhoz elegendő lóvét kellett utánuk küldeni,
             de az időmmel már szabadon gazdálkodtam.
@@ -207,7 +207,7 @@
             ám ez az MCU vezérlésű időzítőkapcsoló Arduino Unora épül, aminek egyszerű <a href="https://docs.arduino.cc/retired/hacking/software/PortManipulation/">I/O portjain</a> kívül nincs más kapcsolata a külvilággal,
             ezért kiegészítő elemek nélkül nem csatlakozhat sem galvanikusan, sem Wi-Fi-n keresztül hálózathoz. Más lenne a helyzet, ha kicsit később vágok bele ebbe a munkába,
             mert akkor jó eséllyel az <a href="https://en.wikipedia.org/wiki/ESP8266">ESP8266</a>-ot választom. Ez az apró, de hatékony SoC 2014 augusztusában jelent meg, széles körben pedig 2015-től terjedt el és vált közismertté,
-            ezért nem ismertem akkor, amikor az időzítőkapcsoló kiváltásán dolgoztam. A garázskapu okosításához már ezt a <a href="/olv/orom/deszka#esp">Wi-Fi-s eszközt vetettem be</a>,
+            ezért nem ismertem akkor, amikor az időzítőkapcsoló kiváltásán dolgoztam. A garázskapu okosításához már ezt a <a href="/olv/talalkozas/deszka#esp">Wi-Fi-s eszközt vetettem be</a>,
             amivel szinte gyerekjáték LAN-ra és internetre kapcsolódni, továbbá böngészővel megnyitható, kényelmes kezelőfelülettel ellátni.
             Az időzítőkapcsoló tervezett <i>véletlenszerű világítás (betörőriasztó)</i> üzemmódjának csak a helye van meg. Azért nem fejtettem ki, mert hiányzik a rendszerből a <a href="https://lastminuteengineers.com/ds3231-rtc-arduino-tutorial/">DS3231 RTC modul</a>,
             ami a pontos idő értékét szolgáltatná. Ezt a kiegészítést is szükségtelenné teszi az ESP8266, mert a Wi-Fi-n keresztül internetre csatlakozva egy <a href="https://hu.wikipedia.org/wiki/H%C3%A1l%C3%B3zati_id%C5%91_protokoll">NTP</a> kéréssel az óra is pontosan jár.
