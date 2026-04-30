@@ -154,6 +154,7 @@ https://pince.eu/it/cimke/cimke
 https://pince.eu/it/cimke/arculat
 https://pince.eu/it/cimke/nfc_helyzet
 https://pince.eu/it/cimke/rendszerhiba
+https://pince.eu/it/villany/villany
 https://pince.eu/it/baber
 https://pince.eu/it/jelzesek
 https://pince.eu/it/hamburger

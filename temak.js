@@ -231,15 +231,18 @@ var temak =
         {cim:"NFC-címke: helyzetelemzés", subfolder:"/cimke", nev:"nfc_helyzet", ver:0, kelt:"2023-06-16"},
         {cim:"rendszerhiba", subfolder:"/cimke", nev:"rendszerhiba", ver:0, kelt:"2024-09-02"}
       ],
-      "h": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "i": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2026-03-07", kelt:"2023-03-21"}],
-      "j": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
-      "k": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2025-01-20", kelt:"2023-06-04"}],
-      "l": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
-      "m": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}],
-      "n": [{cim:"elterelt figyelem", nev:"elterelve", ver:0, kelt:"2025-04-03"}],
-      "o": [{cim:"egyről kettőre", nev:"egykettore", ver:"2026-02-14", kelt:"2025-08-11"}],
-      "p": [{cim:"wi-fi roaming", nev:"roaming", ver:0, kelt:"2026-02-21"}]
+      "h": [
+        {cim:"házivillany: PV, HP, EV", subfolder:"/villany", nev:"villany", ver:0, kelt:"2026-04-30"}
+      ],
+      "i": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
+      "j": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2026-03-07", kelt:"2023-03-21"}],
+      "k": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
+      "l": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2025-01-20", kelt:"2023-06-04"}],
+      "m": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
+      "n": [{cim:"a negatív reklám hatása", nev:"negativ-reklam", ver:0, kelt:"2024-05-14"}],
+      "o": [{cim:"elterelt figyelem", nev:"elterelve", ver:0, kelt:"2025-04-03"}],
+      "p": [{cim:"egyről kettőre", nev:"egykettore", ver:"2026-02-14", kelt:"2025-08-11"}],
+      "q": [{cim:"wi-fi roaming", nev:"roaming", ver:0, kelt:"2026-02-21"}]
     }
   },
 }
