@@ -232,7 +232,8 @@ var temak =
         {cim:"rendszerhiba", subfolder:"/cimke", nev:"rendszerhiba", ver:0, kelt:"2024-09-02"}
       ],
       "h": [
-        {cim:"házivillany: PV, HP, EV", subfolder:"/villany", nev:"villany", ver:0, kelt:"2026-04-30"}
+        {cim:"házivillany: PV, HP, EV", subfolder:"/villany", nev:"villany", ver:0, kelt:"2026-04-30"},
+        {cim:"napelemek – első nekifutás", subfolder:"/villany", nev:"napelem-1", ver:0, kelt:"2026-05-02"}
       ],
       "i": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
       "j": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2026-03-07", kelt:"2023-03-21"}],
