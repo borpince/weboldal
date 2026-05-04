@@ -234,7 +234,8 @@ var temak =
       "h": [
         {cim:"házivillany: PV, HP, EV", subfolder:"/villany", nev:"villany", ver:0, kelt:"2026-04-30"},
         {cim:"napelemek – első nekifutás", subfolder:"/villany", nev:"napelem-1", ver:0, kelt:"2026-05-02"},
-        {cim:"hőszivattyú", subfolder:"/villany", nev:"hosziv", ver:0, kelt:"2026-05-04"}
+        {cim:"hőszivattyú", subfolder:"/villany", nev:"hosziv", ver:0, kelt:"2026-05-04"},
+        {cim:"ellenség a háztetőn", subfolder:"/villany", nev:"ellenseg", ver:0, kelt:"2026-05-05"}
       ],
       "i": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
       "j": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2026-03-07", kelt:"2023-03-21"}],
