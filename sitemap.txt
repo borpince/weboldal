@@ -158,6 +158,7 @@ https://pince.eu/it/villany/villany
 https://pince.eu/it/villany/napelem-1
 https://pince.eu/it/villany/hosziv
 https://pince.eu/it/villany/ellenseg
+https://pince.eu/it/villany/napelem-2
 https://pince.eu/it/baber
 https://pince.eu/it/jelzesek
 https://pince.eu/it/hamburger
