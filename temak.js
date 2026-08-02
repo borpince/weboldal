@@ -74,6 +74,7 @@ var temak =
         {cim:"művészi ábrázolás", subfolder:"/talalkozas", nev:"muveszi", ver:0, kelt:"2015-10-18"},
         {cim:"kinek a faszával verik a csalánt?", subfolder:"/talalkozas", nev:"kineka", ver:"2026-01-14", kelt:"2015-12-01"},
         {cim:"lófej", subfolder:"/talalkozas", nev:"lofej", ver:"2026-04-05", kelt:"2015-12-23"},
+        {cim:"lopakodó infláció", subfolder:"/talalkozas", nev:"lopakodo", ver:"2026-08-02", kelt:"2016-08-15"},
         {cim:"add vissza a lovagkeresztet…", subfolder:"/talalkozas", nev:"lovag", ver:"2026-03-28", kelt:"2016-08-22"},
         {cim:"amit szabad jupiternek…", subfolder:"/talalkozas", nev:"jupiter", ver:"2026-02-11", kelt:"2016-12-05"},
         {cim:"deszkamodell", subfolder:"/talalkozas", nev:"deszka", ver:"2025-03-17", kelt:"2017-02-10"},
