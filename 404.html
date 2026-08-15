@@ -45,13 +45,14 @@
         <div style="padding-bottom: 30px;padding-top: 10px;">
           <a href="/index"><img src="https://kep.pince.eu/alak12sz.png" width="60%" height="60%"></a>
         </div>
-        <div class="vonal"></div>
-        <div style="font-size:x-large;text-align:center">
-          <address>
-            <a href="mailto:admin@pince.eu">admin@pince.eu</a><br>
-            <a href="https://github.com/borpince">GitHub</a><br>
-            <a href="/it/ai/korhatar">korhatár-besorolás</a>
-          </address>
+        <div class="box-text">
+          <div style="font-size:x-large;text-align:center">
+            <address>
+              <a href="mailto:admin@pince.eu">admin@pince.eu</a><br>
+              <a href="https://github.com/borpince">GitHub</a><br>
+              <a href="/it/ai/korhatar">korhatár-besorolás</a>
+            </address>
+          </div>
         </div>
       </div>
     </div>
@@ -64,8 +65,7 @@
 /*
 megesik, hogy az átláthatóbb rendre törekedve átszervezem a weboldalt alkotó lapokat, csakhogy ez esetben
 a keresőgépek által adott találat a korábbi állapot szerinti linket adja, ami rossz helyre mutat
-jön a 404-es hiba, de itt megvizsgálom a nevet, hogy szerepel-e a témák között
-ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a jó helyre
+jön a 404-es hiba, de itt megvizsgálom a nevet, hogy szerepel-e a témák között; ha igen, akkor összerakom az érvényes url-t, és átirányítom a kérést a jó helyre
 */
   var hibaoldal = document.getElementById("container_cs2020"); //! 70 jelzések.html
   var nev = href_nev();
