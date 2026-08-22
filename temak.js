@@ -78,6 +78,7 @@ var temak =
         {cim:"add vissza a lovagkeresztet…", subfolder:"/talalkozas", nev:"lovag", ver:"2026-03-28", kelt:"2016-08-22"},
         {cim:"amit szabad jupiternek…", subfolder:"/talalkozas", nev:"jupiter", ver:"2026-02-11", kelt:"2016-12-05"},
         {cim:"deszkamodell", subfolder:"/talalkozas", nev:"deszka", ver:"2025-03-17", kelt:"2017-02-10"},
+        {cim:"veszélyes vizek", subfolder:"/talalkozas", nev:"veszelyes", ver:0, kelt:"2020-12-08"}
       ],
       "b": [
         // subfolder elé azért került "/", mert a path összeállítása így egyszerűbb (select.onchange)
