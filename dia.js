@@ -1,3 +1,4 @@
+//képaláírás: const diaData1 = [{src: "file",text:"szoveg"} vagy new Slideshow('#dia1', diaData1,{text:"szöveg"});
 class Slideshow {
 constructor(containerSelector, data, options = {}) {
     this.container = document.querySelector(containerSelector);
@@ -5,6 +6,7 @@ constructor(containerSelector, data, options = {}) {
     this.data = data;
     this.container.style.maxWidth = options.maxWidth || '60%';
     this.speed = options.speed || 4000;
+    this.text = options.text || "";
     this.slideIndex = 1;
     this.timer = null;
     this.isPaused = false;
@@ -21,8 +23,8 @@ constructor(containerSelector, data, options = {}) {
       const slideDiv = document.createElement('div');
       slideDiv.className = 'mySlides fade';
       slideDiv.onclick = () => this.togglePause();
-      slideDiv.innerHTML = `<img src="https://kep.pince.eu/${slide.src}.webp" style="width:100%">`;
-      //<div class="text">${slide.text}</div>
+      slideDiv.innerHTML = `<img src="https://kep.pince.eu/${slide.src}.webp" style="width:100%">
+      ${this.text ? `<div class="text">${this.text}</div>`:(slide.text ? `<div class="text">${slide.text}</div>` : "")}`;
       this.inner.appendChild(slideDiv);
     });
     this.prevBtn.onclick = () => this.plusSlides(-1);

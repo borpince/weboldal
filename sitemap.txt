@@ -26,6 +26,7 @@ https://pince.eu/olv/talalkozas/viharbili
 https://pince.eu/olv/talalkozas/muveszi
 https://pince.eu/olv/talalkozas/kineka
 https://pince.eu/olv/talalkozas/lofej
+https://pince.eu/olv/talalkozas/szajjal
 https://pince.eu/olv/talalkozas/lopakodo
 https://pince.eu/olv/talalkozas/lovag
 https://pince.eu/olv/talalkozas/jupiter
@@ -146,6 +147,7 @@ https://pince.eu/it/ai/zsiroskenyer
 https://pince.eu/it/ai/puncs-flag
 https://pince.eu/it/ai/ai-pletyka
 https://pince.eu/it/ai/vibe-coding
+https://pince.eu/it/ai/ai-oszver
 https://pince.eu/it/kaland/kaland
 https://pince.eu/it/kaland/webp
 https://pince.eu/it/kaland/kutatas
