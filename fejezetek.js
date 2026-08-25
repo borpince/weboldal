@@ -351,7 +351,9 @@
   function webhelyterkep_gyarto() {
     if (window.location.search.substring(1).trim() == "terkep") {
       var cim = "https://"+window.location.hostname;
-      var txt = cim+"/index\n"; //ez nem szerepel a témák listájában
+      var txt = cim+"/index\n"; //ez nem szerepel a témák listájában, xml is ezzel kezdődik
+      var xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+      xml += `<url><loc>${cim}/index</loc><lastmod>${new Date().toISOString().substring(0,10)}</lastmod></url>\n`;
       var redir_txt = "/index.html /index 301\n"; var link_txt = '<link rel="canonical" href="https://pince.eu/index">\n';
       for (tk in temak)
         for (lek in temak[tk].lista)
@@ -361,10 +363,13 @@
             if ((le.nev.indexOf("//") == -1) && (le.hasOwnProperty("kelt"))) { //nem külső link, közzétéve
               var eleres = `${temak[tk].folder}${subfolder}/${le.nev}`;
               txt += `${cim}${eleres}\n`; //.html nélkül!
+              xml += `<url><loc>${cim}${eleres}</loc><lastmod>${le.ver == 0 ? le.kelt:le.ver}</lastmod></url>\n`;
               redir_txt += `${eleres}.html ${eleres} 301\n`; link_txt += `<link rel="canonical" href="https://pince.eu${eleres}">\n`;
             }
           }
+      xml += `</urlset>`;
       letoltes(txt,"sitemap.txt");
+      letoltes(xml,"sitemap.xml");
       letoltes(redir_txt,"_redirects.txt"); letoltes(link_txt,"link.txt");
     }
   }
@@ -406,7 +411,7 @@
       var utolso = 6;
       rend.forEach(function (value,key) {
         if (db < utolso) {
-          var cim = document.createElement('a'); //! 409 jelzesek.html
+          var cim = document.createElement('a'); //! 414jelzesek.html
           cim.setAttribute("href",value.path);
           cim.setAttribute("target","_parent");
           cim.setAttribute("style","font-size:x-large");
@@ -417,7 +422,7 @@
           sor.setAttribute("class","vitem");
           sor.appendChild(span);
           sor.appendChild(cim);
-          ajanlo.appendChild(sor); //! 420 jelzesek.html
+          ajanlo.appendChild(sor); //! 425 jelzesek.html
         }
         db++;
       });
@@ -473,7 +478,7 @@
         }
       }
     }
-    nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 476 hamburger.html
+    nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 481 hamburger.html
     balmenu = document.getElementById("balmenu");
     var eltuntet_y = "-300px"; //egyszerűbb a számolgatásnál
     window.addEventListener("scroll",() => {
@@ -510,7 +515,7 @@
         latszik = !latszik; //clearTimeout(hamar);
         left_side[0].style.top = (latszik ? "0":eltuntet_y);
       });
-    } //! 513 hamburger.html
+    } //! 518 hamburger.html
 /*
     if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo") && (glob.href_nev != "katalogus") && letezik(glob.href_nev,false).tortenet)
       hamar = setTimeout(function() {
@@ -530,7 +535,7 @@
     var isAndroid = /Android/i.test(navigator.userAgent);
     const textHolder = document.createElement("div");
     var tmdex = letezik(href_nev(),false);
-    const extraShorts = ['a','az','ha','van','egy','is','be','ki','le','fel','meg','el','át','rá','ide','oda','de','se','sem','én','te','ő','mi','ti','ők','ezt','azt','ez','az','itt','ott','már','még','most','ma','túl','mit','hol']; //! 533  jelzesek.html
+    const extraShorts = ['a','az','ha','van','egy','is','be','ki','le','fel','meg','el','át','rá','ide','oda','de','se','sem','én','te','ő','mi','ti','ők','ezt','azt','ez','az','itt','ott','már','még','most','ma','túl','mit','hol']; //! 538  jelzesek.html
     const extraStopWords = ['úgy','így','tehát','hiszen','pedig','viszont','talán','néha','majd','minden','mindenki','mindegyik','valami','valaki','néhány','több','sok','kevés','egész','összes','más','másik','alatt','felett','előtt','mögött','nélkül','szerint','által','közé','felé','például','stb','tulajdonképpen','szóval','mondjuk','nézzük','alapján','esetén','során','valamint','szintén','egyéb','mielőtt','mialatt','hisz','ugyanis','ráadásul','elég','alig','éppen','épp','felől','iránt','miatt','végett'];
     const kiegStopWords = ['bár','mintha','ahányszor','ameddig','amíg','miközben','holott','noha','ám','ámde','azonban','ugye','hát','na','különben','egyébként','amúgy','bizony','persze','természetesen','valójában','igazából','gyakorlatilag','lényegében','tényleg','pont','pontosan','mindig','soha','néhol','valahol','bárhol','sehogy','valahogy','körülbelül','nagyjából','kb','valamelyik','akárki','akármi','bárki','bármi','senki','semmi','mindenféle','ilyesmi','olyasmi','kellene','lehetne','szokott','szoktam','mondja','máshogy','később','előbb'];
     const stopWords = new Set(['és','vagy','avagy','hogy','ne','nem','igen','neki','nekem','neked','nekünk','nektek','nekik','mert','milyen','mint','maga','magát','kerül','került','tesz','számára','vagyok','vagyunk','vagytok','vannak','legyen','legyenek','lett','volt','voltam','lesz','lenne','ehhez','ahhoz','annak','ennek','ennél','annál','ebbe','abba','ebben','abban','ebből','abból','ettől','attól','akkor','nincs','aki','akivel','akinek','ami','amit','amely','amelyet','amelyik','amikor','amivel','nevű','névvel','volna','nagyon','csak','ilyen','olyan','ennyi','annyi','ennyire','annyira','mellett','aztán','ahogy','kellett','kell','hanem','után','arra','erre','arról','erről','mégis','között','ahol','ezért','azért','aminek','egyik','lehet','hozzá','azzal','ezzel','azon','ezek','azok','hogyan',...extraStopWords,...extraShorts,...kiegStopWords]);
@@ -559,7 +564,7 @@
       const kulcsszoSzoveg = sortedKeywords.map(([word, count]) => `${word} (<b>${count}</b>)`).join(', ');
       const diagramHtml = `<span class="arany-bar" title="töltelék (${density}%), hasznos (${(100-density).toFixed(1)}%)"><span class="arany-fill" style="width: ${density}%;"></span></span>`;
       return `karakter <b>${charCount}</b>, szó <b>${allWords.length}</b>:<b>${cleanWords.length}</b> (<b>${(charCount/allWords.length).toFixed(1)}</b>:<b>${(cleanCharsCount/cleanWords.length).toFixed(1)}</b>), olvasási idő <b>${Math.ceil(words.length/200)}-${Math.ceil(words.length/130)}</b> perc, töltelék <b>${density}%</b>${diagramHtml}<br>leggyakoribb szavak: ${kulcsszoSzoveg}<br>(a statisztika számai <a style="color:#ffffff" href="/it/jelzesek#magyarazat">magyarázatra</a> szorulnak)`;
-    } //! 562 jelzesek.html
+    } //! 567 jelzesek.html
 
     function tudnihoz() {
       let modal = document.getElementById("dinamikus_modal");
