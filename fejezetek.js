@@ -530,7 +530,7 @@
     //pontatlan page jump igazítás:
     var p = window.location.href.lastIndexOf('#');
     var cimke = document.getElementById(window.location.href.substring(p+1));
-    setTimeout(function() {if ((p > -1) && cimke) cimke.scrollIntoView();},900);
+    setTimeout(function() {if ((p > -1) && cimke) cimke.scrollIntoView();},1100);
     parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
     var isAndroid = /Android/i.test(navigator.userAgent);
     const textHolder = document.createElement("div");
