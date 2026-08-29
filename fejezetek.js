@@ -671,6 +671,22 @@
       infoChar.style.color = "white";
       infoChar.addEventListener("click", () => {tudnihoz();});
 
+      //találkozás önmagammal címei alá eredeti megjelenés dátuma kerül
+      if ((tmdex.tortenet[0].subfolder == "/talalkozas") && (tmdex.le_sub_idx > 0)) {
+        const h1 = document.querySelector('h1');
+        if (h1) {
+          const p = document.createElement('p');
+          p.insertAdjacentHTML('beforeend',`<small>(⚠️eredeti közzététel: ${tmdex.tortenet[tmdex.le_sub_idx].kelt})</small>`);
+          h1.after(p);
+        }        
+        const h2 = document.querySelector('h2');
+        if (h2) {
+          const p = document.createElement('p');
+          p.insertAdjacentHTML('beforeend',`<small>(⚠️a visszatekintő gondolatok kelte: ${tmdex.tortenet[tmdex.le_sub_idx].ver})</small>`);
+          h2.before(p);
+        }        
+      }
+
       if (selectElem) {
 
         function elrendez() {
