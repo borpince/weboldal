@@ -68,6 +68,7 @@ var temak =
     lista:{
       "a": [
         {cim:"találkozás önmagammal", subfolder:"/talalkozas", nev:"talalkozas", ver:"2026-02-12", kelt:"2026-01-22"},
+        {cim:"eső előtt köpönyeg", subfolder:"/talalkozas", nev:"koponyeg", ver:"2026-08-29", kelt:"2015-03-31"},
         {cim:"napsugarak hatása százszorszépekre", subfolder:"/talalkozas", nev:"napsugarak", ver:"2026-03-02", kelt:"2015-05-03"},
         {cim:"majomparádé", subfolder:"/talalkozas", nev:"majom", ver:"2024-03-15", kelt:"2015-05-20"},
         {cim:"vihar a biliben", subfolder:"/talalkozas", nev:"viharbili", ver:0, kelt:"2015-09-16"},

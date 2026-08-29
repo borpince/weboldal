@@ -20,6 +20,7 @@ https://pince.eu/tech/sarkany
 https://pince.eu/tech/aszokfa
 https://pince.eu/tech/nyomasmero
 https://pince.eu/olv/talalkozas/talalkozas
+https://pince.eu/olv/talalkozas/koponyeg
 https://pince.eu/olv/talalkozas/napsugarak
 https://pince.eu/olv/talalkozas/majom
 https://pince.eu/olv/talalkozas/viharbili
