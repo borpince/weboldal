@@ -671,25 +671,52 @@
       infoChar.style.color = "white";
       infoChar.addEventListener("click", () => {tudnihoz();});
 
-      //találkozás önmagammal címei alá eredeti megjelenés dátuma kerül
+      function diffYMD(d_tb) {
+        let d1 = new Date(d_tb[0]);
+        let d2 = new Date(d_tb[1]);
+        if (d1 > d2) {[d1, d2] = [d2, d1];}
+        /*
+        let years = d2.getFullYear() - d1.getFullYear();
+        let months = d2.getMonth() - d1.getMonth();
+        let days = d2.getDate() - d1.getDate();
+        if (days < 0) {
+          months--;
+          const prevMonthLastDay = new Date(d2.getFullYear(), d2.getMonth(), 0).getDate();
+          days += prevMonthLastDay;
+        }
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+        return `${years} év, ${months} hónap, ${days} nap`;
+        */
+        const msDiff = d2 - d1;
+        const days = msDiff / (1000 * 60 * 60 * 24);
+        const years = days / 365.2425;
+        return Number(years.toFixed(1));
+      }
+
+      function beszur(index) {
+        var d_tb = [tmdex.tortenet[tmdex.le_sub_idx].kelt,tmdex.tortenet[tmdex.le_sub_idx].ver];
+        var txt = [`${d_tb[0]}: első megjelenés`,`${d_tb[1]}: visszatekintés ${diffYMD(d_tb)} év távlatából`];
+        var p = document.createElement('p');
+        p.insertAdjacentHTML('beforeend',`<small>(⚠️${txt[index]})</small>`);
+        return p;
+      }
+
+      //találkozás önmagammal címeihez az eredeti megjelenés dátuma kerül
       if ((tmdex.tortenet[0].subfolder == "/talalkozas") && (tmdex.le_sub_idx > 0)) {
         const h1 = document.querySelector('h1');
         if (h1) {
-          const p = document.createElement('p');
-          p.insertAdjacentHTML('beforeend',`<small>(⚠️eredeti közzététel: ${tmdex.tortenet[tmdex.le_sub_idx].kelt})</small>`);
-          h1.after(p);
+          h1.after(beszur(0));
         }
         var h2 = document.getElementById('ide');
         if (h2) {
-          const p = document.createElement('p');
-          p.insertAdjacentHTML('beforeend',`<small>(⚠️a visszatekintő gondolatok kelte: ${tmdex.tortenet[tmdex.le_sub_idx].ver})</small>`);
-          h2.before(p);
+          h2.before(beszur(1));
         } else {
           h2 = document.querySelector('h2');
           if (h2) {
-            const p = document.createElement('p');
-            p.insertAdjacentHTML('beforeend',`<small>(⚠️a visszatekintő gondolatok kelte: ${tmdex.tortenet[tmdex.le_sub_idx].ver})</small>`);
-            h2.before(p);
+            h2.before(beszur(1));
           }
         }
       }
