@@ -678,13 +678,20 @@
           const p = document.createElement('p');
           p.insertAdjacentHTML('beforeend',`<small>(⚠️eredeti közzététel: ${tmdex.tortenet[tmdex.le_sub_idx].kelt})</small>`);
           h1.after(p);
-        }        
-        const h2 = document.querySelector('h2');
+        }
+        var h2 = document.getElementById('ide');
         if (h2) {
           const p = document.createElement('p');
           p.insertAdjacentHTML('beforeend',`<small>(⚠️a visszatekintő gondolatok kelte: ${tmdex.tortenet[tmdex.le_sub_idx].ver})</small>`);
           h2.before(p);
-        }        
+        } else {
+          h2 = document.querySelector('h2');
+          if (h2) {
+            const p = document.createElement('p');
+            p.insertAdjacentHTML('beforeend',`<small>(⚠️a visszatekintő gondolatok kelte: ${tmdex.tortenet[tmdex.le_sub_idx].ver})</small>`);
+            h2.before(p);
+          }
+        }
       }
 
       if (selectElem) {
