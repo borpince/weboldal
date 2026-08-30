@@ -74,6 +74,7 @@ var temak =
         {cim:"vihar a biliben", subfolder:"/talalkozas", nev:"viharbili", ver:0, kelt:"2015-09-16"},
         {cim:"művészi ábrázolás", subfolder:"/talalkozas", nev:"muveszi", ver:0, kelt:"2015-10-18"},
         {cim:"kinek a faszával verik a csalánt?", subfolder:"/talalkozas", nev:"kineka", ver:"2026-01-14", kelt:"2015-12-01"},
+        {cim:"nem vagyunk egyformák", subfolder:"/talalkozas", nev:"egyforma", ver:"2026-08-31", kelt:"2015-12-18"},
         {cim:"lófej", subfolder:"/talalkozas", nev:"lofej", ver:"2026-04-05", kelt:"2015-12-23"},
         {cim:"jól kifogtuk idén is – 2015", subfolder:"/talalkozas", nev:"kifogtuk", ver:"2026-08-30", kelt:"2015-12-31"},
         {cim:"egy nagymenővel ebédeltem", subfolder:"/talalkozas", nev:"nagymeno", ver:"2026-08-28", kelt:"2016-01-19"},
