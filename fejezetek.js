@@ -1,6 +1,6 @@
 (function() {
   var scroll_ido = 0;
-  var foglalt = false;
+  //var foglalt = false;
   var ide_ugrott = "";
   var nezett_txt = "nézett:";
 
@@ -481,25 +481,23 @@
     nav_wrapper = document.getElementsByClassName("nav-wrapper");  //! 481 hamburger.html
     balmenu = document.getElementById("balmenu");
     var eltuntet_y = "-300px"; //egyszerűbb a számolgatásnál
+
     window.addEventListener("scroll",() => {
       scroll_ido = Date.now();
-      if (!foglalt) { //select ne takarja ki a szöveget, ha nem H1 az ugrás célja
-        foglalt = true;
-        var alma = setInterval(function() {
-          if (latszik && (Date.now()-scroll_ido > 300)) {
-            var p = window.location.href.lastIndexOf('#');
-            var cimke = document.getElementById(window.location.href.substring(p+1));
-            if ((p > -1) && cimke && (cimke.nodeName != "H1") && (cimke != ide_ugrott)) {
-              setTimeout(function() {window.scrollBy(0,-50);},1000);
-              ide_ugrott = cimke; //különben elmászik a scroll
-            }
-            clearInterval(alma);
-            setTimeout(function() {foglalt = false},200);
+      var alma = setInterval(function() {
+        if (latszik && (Date.now()-scroll_ido > 300)) {
+          var p = window.location.href.lastIndexOf('#');
+          var cimke = document.getElementById(window.location.href.substring(p+1));
+          if ((p > -1) && cimke && (cimke.nodeName != "H1") && (cimke != ide_ugrott)) {
+            setTimeout(function() {window.scrollBy(0,-50);},400);
+            ide_ugrott = cimke; //különben elmászik a scroll
           }
-        },160);
-      }
+          clearInterval(alma);
+        }
+      },160);
       nezettseg_frissit();
     });
+
     if (glob.lejjebb) {
       glob.lejjebb.addEventListener("click",() => {
         if (window.scrollY === 0) {
@@ -508,7 +506,9 @@
         }
       });
     }
+
     left_side = document.getElementsByClassName("left-side");
+
     if (glob.hamburger && left_side) {
       left_side[0].style.top = "0"; //első alkalommal nem működik a "transition"
       glob.hamburger.addEventListener("click",() => {
@@ -530,7 +530,7 @@
     //pontatlan page jump igazítás:
     var p = window.location.href.lastIndexOf('#');
     var cimke = document.getElementById(window.location.href.substring(p+1));
-    setTimeout(function() {if ((p > -1) && cimke) cimke.scrollIntoView();},1100);
+    setTimeout(function() {if ((p > -1) && cimke) cimke.scrollIntoView();},100);
     parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
     var isAndroid = /Android/i.test(navigator.userAgent);
     const textHolder = document.createElement("div");
