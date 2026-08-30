@@ -490,7 +490,7 @@
             var p = window.location.href.lastIndexOf('#');
             var cimke = document.getElementById(window.location.href.substring(p+1));
             if ((p > -1) && cimke && (cimke.nodeName != "H1") && (cimke != ide_ugrott)) {
-              window.scrollBy(0,-50);
+              setTimeout(function() {window.scrollBy(0,-50);},1000);
               ide_ugrott = cimke; //különben elmászik a scroll
             }
             clearInterval(alma);

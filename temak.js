@@ -75,6 +75,7 @@ var temak =
         {cim:"művészi ábrázolás", subfolder:"/talalkozas", nev:"muveszi", ver:0, kelt:"2015-10-18"},
         {cim:"kinek a faszával verik a csalánt?", subfolder:"/talalkozas", nev:"kineka", ver:"2026-01-14", kelt:"2015-12-01"},
         {cim:"lófej", subfolder:"/talalkozas", nev:"lofej", ver:"2026-04-05", kelt:"2015-12-23"},
+        {cim:"jól kifogtuk idén is – 2015", subfolder:"/talalkozas", nev:"kifogtuk", ver:"2026-08-30", kelt:"2015-12-31"},
         {cim:"egy nagymenővel ebédeltem", subfolder:"/talalkozas", nev:"nagymeno", ver:"2026-08-28", kelt:"2016-01-19"},
         {cim:"szájjal és lábbal", subfolder:"/talalkozas", nev:"szajjal", ver:"2026-08-24", kelt:"2016-07-28"},
         {cim:"lopakodó infláció", subfolder:"/talalkozas", nev:"lopakodo", ver:"2026-08-02", kelt:"2016-08-15"},
@@ -249,7 +250,7 @@ var temak =
         {cim:"villanyautó", subfolder:"/villany", nev:"villanyauto", ver:0, kelt:"2026-08-20"}
       ],
       "i": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
-      "j": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2026-03-07", kelt:"2023-03-21"}],
+      "j": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2026-08-30", kelt:"2023-03-21"}],
       "k": [{cim:"hamburger button", nev:"hamburger", ver:0, kelt:"2023-05-03"}],
       "l": [{cim:"nem hackernek való vidék", nev:"hacker", ver:"2025-01-20", kelt:"2023-06-04"}],
       "m": [{cim:"a mi mozink", nev:"mozi", ver:0, kelt:"2023-11-16"}],
