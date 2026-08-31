@@ -700,7 +700,7 @@
         var d_tb = [tmdex.tortenet[tmdex.le_sub_idx].kelt,tmdex.tortenet[tmdex.le_sub_idx].ver];
         var txt = [`${d_tb[0]}: első megjelenés`,`${d_tb[1]}: visszatekintés ${diffYMD(d_tb)} év távlatából`];
         var p = document.createElement('p');
-        p.insertAdjacentHTML('beforeend',`<small>(⚠️${txt[index]})</small>`);
+        p.insertAdjacentHTML('beforeend',`<small>⚠️${txt[index]}</small>`);
         return p;
       }
 
