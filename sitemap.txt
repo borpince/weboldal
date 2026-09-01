@@ -23,6 +23,7 @@ https://pince.eu/olv/talalkozas/talalkozas
 https://pince.eu/olv/talalkozas/koponyeg
 https://pince.eu/olv/talalkozas/napsugarak
 https://pince.eu/olv/talalkozas/majom
+https://pince.eu/olv/talalkozas/galamb
 https://pince.eu/olv/talalkozas/viharbili
 https://pince.eu/olv/talalkozas/muveszi
 https://pince.eu/olv/talalkozas/kineka
