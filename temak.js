@@ -72,7 +72,7 @@ var temak =
         {cim:"napsugarak hatása százszorszépekre", subfolder:"/talalkozas", nev:"napsugarak", ver:"2026-03-02", kelt:"2015-05-03"},
         {cim:"majomparádé", subfolder:"/talalkozas", nev:"majom", ver:"2024-03-15", kelt:"2015-05-20"},
         {cim:"a galamb eredendően kedves jószág", subfolder:"/talalkozas", nev:"galamb", ver:"2026-09-02", kelt:"2015-08-25"},
-        {cim:"vihar a biliben", subfolder:"/talalkozas", nev:"viharbili", ver:0, kelt:"2015-09-16"},
+        {cim:"vihar a biliben", subfolder:"/talalkozas", nev:"viharbili", ver:"2026-09-03", kelt:"2015-09-16"},
         {cim:"művészi ábrázolás", subfolder:"/talalkozas", nev:"muveszi", ver:0, kelt:"2015-10-18"},
         {cim:"kinek a faszával verik a csalánt?", subfolder:"/talalkozas", nev:"kineka", ver:"2026-01-14", kelt:"2015-12-01"},
         {cim:"nem vagyunk egyformák", subfolder:"/talalkozas", nev:"egyforma", ver:"2026-08-31", kelt:"2015-12-18"},
