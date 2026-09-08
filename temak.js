@@ -252,7 +252,8 @@ var temak =
         {cim:"napelemek – optimalizálás", subfolder:"/villany", nev:"napelem-2", ver:0, kelt:"2026-05-08"},
         {cim:"napelemek – kapacitásbővítés", subfolder:"/villany", nev:"napelem-3", ver:0, kelt:"2026-05-14"},
         {cim:"mérőhely szabványosítás", subfolder:"/villany", nev:"szabvany", ver:0, kelt:"2026-05-16"},
-        {cim:"villanyautó", subfolder:"/villany", nev:"villanyauto", ver:0, kelt:"2026-08-20"}
+        {cim:"villanyautó", subfolder:"/villany", nev:"villanyauto", ver:0, kelt:"2026-08-20"},
+        {cim:"AC-töltő", subfolder:"/villany", nev:"tolto", ver:0, kelt:"2026-09-08"}
       ],
       "i": [{cim:"ülni babérokon, kényelmesen", nev:"baber", ver:0, kelt:"2022-11-02"}],
       "j": [{cim:"jelzések haszna", nev:"jelzesek",ver:"2026-08-30", kelt:"2023-03-21"}],

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://pince.eu/index</loc><lastmod>2026-09-05</lastmod></url>
+<url><loc>https://pince.eu/index</loc><lastmod>2026-09-08</lastmod></url>
 <url><loc>https://pince.eu/borok/01</loc><lastmod>2024-04-25</lastmod></url>
 <url><loc>https://pince.eu/borok/02</loc><lastmod>2024-04-21</lastmod></url>
 <url><loc>https://pince.eu/borok/03</loc><lastmod>2023-09-25</lastmod></url>
@@ -132,7 +132,7 @@
 <url><loc>https://pince.eu/olv/orom/meses</loc><lastmod>2025-03-22</lastmod></url>
 <url><loc>https://pince.eu/olv/orom/szegenyseg</loc><lastmod>2026-01-28</lastmod></url>
 <url><loc>https://pince.eu/olv/orom/berendez</loc><lastmod>2026-07-14</lastmod></url>
-<url><loc>https://pince.eu/olv/orom/nyogdij</loc><lastmod>2026-09-05</lastmod></url>
+<url><loc>https://pince.eu/olv/orom/nyogdij</loc><lastmod>2026-09-06</lastmod></url>
 <url><loc>https://pince.eu/olv/nyamt/kulinaris</loc><lastmod>2024-06-01</lastmod></url>
 <url><loc>https://pince.eu/olv/nyamt/porkolt</loc><lastmod>2024-06-02</lastmod></url>
 <url><loc>https://pince.eu/olv/nyamt/babgulyas</loc><lastmod>2024-06-18</lastmod></url>
@@ -177,6 +177,7 @@
 <url><loc>https://pince.eu/it/villany/napelem-3</loc><lastmod>2026-05-14</lastmod></url>
 <url><loc>https://pince.eu/it/villany/szabvany</loc><lastmod>2026-05-16</lastmod></url>
 <url><loc>https://pince.eu/it/villany/villanyauto</loc><lastmod>2026-08-20</lastmod></url>
+<url><loc>https://pince.eu/it/villany/tolto</loc><lastmod>2026-09-08</lastmod></url>
 <url><loc>https://pince.eu/it/baber</loc><lastmod>2022-11-02</lastmod></url>
 <url><loc>https://pince.eu/it/jelzesek</loc><lastmod>2026-08-30</lastmod></url>
 <url><loc>https://pince.eu/it/hamburger</loc><lastmod>2023-05-03</lastmod></url>
