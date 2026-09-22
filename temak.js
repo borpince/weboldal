@@ -227,7 +227,8 @@ var temak =
         {cim:"bekapcsolva maradt a puncsolós flag", subfolder:"/ai", nev:"puncs-flag", ver:0, kelt:"2026-01-27"},
         {cim:"AI-pletyka", subfolder:"/ai", nev:"ai-pletyka", ver:0, kelt:"2026-01-29"},
         {cim:"hipochonder vibe coder", subfolder:"/ai", nev:"vibe-coding", ver:0, kelt:"2026-02-07"},
-        {cim:"AI-öszvér", subfolder:"/ai", nev:"ai-oszver", ver:0, kelt:"2026-08-24"}
+        {cim:"AI-öszvér", subfolder:"/ai", nev:"ai-oszver", ver:0, kelt:"2026-08-24"},
+        {cim:"biztos, ami biztos", subfolder:"/ai", nev:"biztos", ver:0, kelt:"2026-09-22"}
       ],
       "f": [
         {cim:"IT-kaland", subfolder:"/kaland", nev:"kaland", ver:0, kelt:"2022-11-28"},
