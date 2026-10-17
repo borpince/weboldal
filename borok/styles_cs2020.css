@@ -1,4 +1,35 @@
 /* https://code-boxx.com/html-css-news-ticker-horizontal-vertical */
+.anchor-flash {
+  position: relative;
+  overflow: hidden; /* Biztosítja, hogy a sáv ne lógjon ki a szakasz szélén túlra */
+}
+
+.anchor-flash::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60px; /* A szakasz bal oldala előtt kezdődik */
+  width: 60px;
+  background-color: color-mix(in srgb, #f0a500 80%, transparent);
+  animation: anchor-sweep 3s ease-in-out forwards;
+}
+
+@keyframes anchor-sweep {
+  0% {
+    left: -60px;
+    opacity: 1;
+  }
+  80% {
+    left: 100%; /* Végigvonul a szakasz jobb széléig */
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0; /* A végén eltűnik */
+  }
+}
+
 .arany-bar {
   display: inline-block;
   vertical-align: middle;

@@ -516,15 +516,15 @@
         left_side[0].style.top = (latszik ? "0":eltuntet_y);
       });
     } //! 518 hamburger.html
-/*
-    if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo") && (glob.href_nev != "katalogus") && letezik(glob.href_nev,false).tortenet)
-      hamar = setTimeout(function() {
-        if (left_side[0]) {
-          left_side[0].style.top = eltuntet_y;
-          latszik = !latszik;
-        }
-      },100);
-*/
+    /*
+        if ((glob.href_nev != "naptar") && (glob.href_nev != "naplo") && (glob.href_nev != "katalogus") && letezik(glob.href_nev,false).tortenet)
+          hamar = setTimeout(function() {
+            if (left_side[0]) {
+              left_side[0].style.top = eltuntet_y;
+              latszik = !latszik;
+            }
+          },100);
+    */
     legujabb_tortenetek("ajanlo");
     legujabb_tortenetek("bovult");
     //pontatlan page jump igazítás:
@@ -762,7 +762,17 @@
 
     }
 
-  });
+    if (window.location.hash) { //hivatkozásból megjelenített szakasz jelzése
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      const target = document.getElementById(id);
+      if (target) setTimeout(function () {
+        target.classList.remove('anchor-flash');
+        void target.offsetWidth;
+        target.classList.add('anchor-flash');
+      }, 1500);
+    }
+
+  }); //load
 
   if (glob.hol_tart) {
     glob.hol_tart.addEventListener("click",() => {folytat();});
@@ -792,4 +802,34 @@
   //https://css-tricks.com/can-javascript-detect-the-browsers-zoom-level/
   window.visualViewport.addEventListener("resize", nezettseg_frissit);
 
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('a[href*="#"]');
+    if (!link) return;
+    const url = new URL(link.href, location.href);
+    if (url.origin !== location.origin || url.pathname !== location.pathname || url.search !== location.search || !url.hash) return;
+    const id = decodeURIComponent(url.hash.slice(1));
+    const target = document.getElementById(id);
+    if (!target) return;
+    setTimeout(function() {
+      target.classList.remove('anchor-flash');
+      void target.offsetWidth;
+      target.classList.add('anchor-flash');
+    },1100);
+/*    
+.anchor-flash {
+  animation: anchor-bar 1.5s ease-out;
+}
+
+@keyframes anchor-bar {
+  0%, 100% {
+    box-shadow: inset 0 0 0 transparent;
+  }
+  15%, 75% {
+    box-shadow: inset 60px 0 0 #b87835;
+  }
+}
+*/
+
+  });
+  
 })();
