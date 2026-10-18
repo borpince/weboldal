@@ -768,6 +768,8 @@
   document.addEventListener('click', function (event) { //belső hivatkozásból megjelenített szakasz jelzése
     const link = event.target.closest('a[href*="#"]');
     if (!link) return;
+    const nameValue = link.getAttribute('name');
+    if (nameValue == "mozi") return;
     const url = new URL(link.href, location.href);
     if (url.origin !== location.origin || url.pathname !== location.pathname || url.search !== location.search || !url.hash) return;
     const id = decodeURIComponent(url.hash.slice(1));
