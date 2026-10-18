@@ -530,7 +530,7 @@
     //pontatlan page jump igazítás:
     var p = window.location.href.lastIndexOf('#');
     var cimke = document.getElementById(window.location.href.substring(p+1));
-    setTimeout(function() {if ((p > -1) && cimke) cimke.scrollIntoView();},100);
+    if ((p > -1) && cimke) setTimeout(function() {cimke.scrollIntoView();},100);
     parent.document.title = `borospince${(glob.cim != "") ? " – "+glob.cim:""}`;
     var isAndroid = /Android/i.test(navigator.userAgent);
     const textHolder = document.createElement("div");
@@ -707,17 +707,12 @@
       //találkozás önmagammal címeihez az eredeti megjelenés dátuma kerül
       if ((tmdex.tortenet[0].subfolder == "/talalkozas") && (tmdex.le_sub_idx > 0)) {
         const h1 = document.querySelector('h1');
-        if (h1) {
-          h1.after(beszur(0));
-        }
+        if (h1) {h1.after(beszur(0));}
         var h2 = document.getElementById('ide');
-        if (h2) {
-          h2.before(beszur(1));
-        } else {
+        if (h2) {h2.before(beszur(1));}
+          else {
           h2 = document.querySelector('h2');
-          if (h2) {
-            h2.before(beszur(1));
-          }
+          if (h2) {h2.before(beszur(1));}
         }
       }
 
@@ -762,17 +757,31 @@
 
     }
 
-    if (window.location.hash) { //hivatkozásból megjelenített szakasz jelzése
+    if (window.location.hash) { //külső hivatkozásból megjelenített szakasz jelzése
       const id = decodeURIComponent(window.location.hash.slice(1));
       const target = document.getElementById(id);
-      if (target) setTimeout(function () {
-        target.classList.remove('anchor-flash');
-        void target.offsetWidth;
-        target.classList.add('anchor-flash');
-      }, 1500);
+      villant(target);
     }
 
   }); //load
+
+  document.addEventListener('click', function (event) { //belső hivatkozásból megjelenített szakasz jelzése
+    const link = event.target.closest('a[href*="#"]');
+    if (!link) return;
+    const url = new URL(link.href, location.href);
+    if (url.origin !== location.origin || url.pathname !== location.pathname || url.search !== location.search || !url.hash) return;
+    const id = decodeURIComponent(url.hash.slice(1));
+    const target = document.getElementById(id);
+    villant(target);
+  });
+  
+  function villant(target) {
+    if (target) setTimeout(function() {
+      target.classList.remove('anchor-flash');
+      void target.offsetWidth;
+      target.classList.add('anchor-flash');
+    },1000);
+  }
 
   if (glob.hol_tart) {
     glob.hol_tart.addEventListener("click",() => {folytat();});
@@ -802,34 +811,4 @@
   //https://css-tricks.com/can-javascript-detect-the-browsers-zoom-level/
   window.visualViewport.addEventListener("resize", nezettseg_frissit);
 
-  document.addEventListener('click', function (event) {
-    const link = event.target.closest('a[href*="#"]');
-    if (!link) return;
-    const url = new URL(link.href, location.href);
-    if (url.origin !== location.origin || url.pathname !== location.pathname || url.search !== location.search || !url.hash) return;
-    const id = decodeURIComponent(url.hash.slice(1));
-    const target = document.getElementById(id);
-    if (!target) return;
-    setTimeout(function() {
-      target.classList.remove('anchor-flash');
-      void target.offsetWidth;
-      target.classList.add('anchor-flash');
-    },1100);
-/*    
-.anchor-flash {
-  animation: anchor-bar 1.5s ease-out;
-}
-
-@keyframes anchor-bar {
-  0%, 100% {
-    box-shadow: inset 0 0 0 transparent;
-  }
-  15%, 75% {
-    box-shadow: inset 60px 0 0 #b87835;
-  }
-}
-*/
-
-  });
-  
 })();
