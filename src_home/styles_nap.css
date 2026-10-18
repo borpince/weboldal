@@ -22,7 +22,7 @@
   font-size:medium;
   width:400px;
 }
-html {scroll-behavior: smooth;}
+html {scroll-behavior: auto;}
 body {
   font-family: arial;
   background: gray;
