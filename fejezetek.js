@@ -782,6 +782,7 @@
       target.classList.remove('anchor-flash');
       void target.offsetWidth;
       target.classList.add('anchor-flash');
+      history.replaceState(null, '', window.location.pathname + window.location.search); //horgony törlés
     },1000);
   }
 
