@@ -38,11 +38,11 @@ var temak =
       ],
       "2023": [{cim:"№ 5: tramini", nev:"05", ver:"2024-02-06", kelt:"2023-09-29"}],
       "2024": [
-        {cim:"№ 6: lucifer küvé", nev:"06", ver:0, kelt:"2024-05-08"},
+        {cim:"№ 6: lucifer küvé", nev:"06", ver:"2026-10-29T18:00", kelt:"2024-05-08"},
         {cim:"№ 7: bormentő küvé", nev:"07", ver:0, kelt:"2024-10-13"},
         {cim:"№ 8: sárkány küvé", nev:"08", ver:0, kelt:"2024-11-17"}
       ],
-      "2025": [{cim:"№ 9: chardonnay", nev:"09", ver:"2026-01-01", kelt:"2025-08-31"}],
+      "2025": [{cim:"№ 9: chardonnay", nev:"09", ver:"2026-11-01", kelt:"2025-08-31"}],
       "2026": [{cim:"№ 10: rajnai rizling", nev:"10", ver:0, kelt:"2026-10-04"}]
     }
   },
