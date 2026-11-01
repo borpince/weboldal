@@ -410,10 +410,10 @@ var alcimek_fl_nev = "/alcimek.json";
 function alcimek_konzerv_betolt(cb) {
   if (!alcimek_sum) {
     fetch(alcimek_fl_nev)
-    .then((res) => res.text())
-    .then((text) => {
-      alcimek_sum = new Map(JSON.parse(text).alc);
-      summa_sum = new Map(JSON.parse(text).sum);
+    .then((res) => res.json())
+    .then((data) => {
+      alcimek_sum = new Map(data.alc);
+      summa_sum = new Map(data.sum);
       if (cb != undefined) cb();
     })
     .catch(function(error) {
