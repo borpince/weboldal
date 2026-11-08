@@ -19,6 +19,9 @@ constructor(containerSelector, data, options = {}) {
   }
 
   init() {
+    this.counter = document.createElement('div');
+    this.counter.className = 'slide-counter';
+    this.container.appendChild(this.counter);
     this.data.forEach((slide) => {
       const slideDiv = document.createElement('div');
       slideDiv.className = 'mySlides fade';
@@ -41,6 +44,7 @@ constructor(containerSelector, data, options = {}) {
     slides.forEach(s => s.style.display = "none");
     slides[this.slideIndex - 1].style.display = "block";
     this.startTimer();
+    this.counter.textContent = `${this.slideIndex} / ${slides.length}`;
   }
 
   plusSlides(n) {
