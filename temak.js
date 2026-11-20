@@ -43,7 +43,10 @@ var temak =
         {cim:"№ 8: sárkány küvé", nev:"08", ver:0, kelt:"2024-11-17"}
       ],
       "2025": [{cim:"№ 9: chardonnay", nev:"09", ver:"2026-11-01", kelt:"2025-08-31"}],
-      "2026": [{cim:"№ 10: rajnai rizling", nev:"10", ver:0, kelt:"2026-10-04"}]
+      "2026": [
+        {cim:"№ 10: rajnai rizling", nev:"10", ver:0, kelt:"2026-10-04"},
+        {cim:"№ 11: alkimista küvé", nev:"11", ver:0, kelt:"2026-11-20"}
+      ]
     }
   },
   "tech": {

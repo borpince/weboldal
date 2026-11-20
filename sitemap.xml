@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://pince.eu/index</loc><lastmod>2026-10-05</lastmod></url>
+<url><loc>https://pince.eu/index</loc><lastmod>2026-11-20</lastmod></url>
 <url><loc>https://pince.eu/borok/01</loc><lastmod>2024-04-25</lastmod></url>
 <url><loc>https://pince.eu/borok/02</loc><lastmod>2024-04-21</lastmod></url>
 <url><loc>https://pince.eu/borok/03</loc><lastmod>2023-09-25</lastmod></url>
 <url><loc>https://pince.eu/borok/04</loc><lastmod>2024-04-20</lastmod></url>
 <url><loc>https://pince.eu/borok/05</loc><lastmod>2024-02-06</lastmod></url>
-<url><loc>https://pince.eu/borok/06</loc><lastmod>2024-05-08</lastmod></url>
+<url><loc>https://pince.eu/borok/06</loc><lastmod>2026-10-29T18:00</lastmod></url>
 <url><loc>https://pince.eu/borok/07</loc><lastmod>2024-10-13</lastmod></url>
 <url><loc>https://pince.eu/borok/08</loc><lastmod>2024-11-17</lastmod></url>
-<url><loc>https://pince.eu/borok/09</loc><lastmod>2026-01-01</lastmod></url>
-<url><loc>https://pince.eu/borok/10</loc><lastmod>2026-09-28</lastmod></url>
+<url><loc>https://pince.eu/borok/09</loc><lastmod>2026-11-01</lastmod></url>
+<url><loc>https://pince.eu/borok/10</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://pince.eu/borok/11</loc><lastmod>2026-11-20</lastmod></url>
 <url><loc>https://pince.eu/tech/kenezes</loc><lastmod>2023-01-02</lastmod></url>
 <url><loc>https://pince.eu/tech/vedogaz</loc><lastmod>2022-12-17</lastmod></url>
 <url><loc>https://pince.eu/tech/cimkezo</loc><lastmod>2022-06-27</lastmod></url>
@@ -178,7 +179,7 @@
 <url><loc>https://pince.eu/it/villany/napelem-2</loc><lastmod>2026-05-08</lastmod></url>
 <url><loc>https://pince.eu/it/villany/napelem-3</loc><lastmod>2026-05-14</lastmod></url>
 <url><loc>https://pince.eu/it/villany/szabvany</loc><lastmod>2026-05-16</lastmod></url>
-<url><loc>https://pince.eu/it/villany/villanyauto</loc><lastmod>2026-08-20</lastmod></url>
+<url><loc>https://pince.eu/it/villany/villanyauto</loc><lastmod>2026-11-08</lastmod></url>
 <url><loc>https://pince.eu/it/villany/tolto</loc><lastmod>2026-09-08</lastmod></url>
 <url><loc>https://pince.eu/it/villany/tarolo</loc><lastmod>2026-09-11</lastmod></url>
 <url><loc>https://pince.eu/it/baber</loc><lastmod>2022-11-02</lastmod></url>
