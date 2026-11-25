@@ -1,5 +1,6 @@
 html {scroll-behavior: auto;}
 /* https://code-boxx.com/html-css-news-ticker-horizontal-vertical */
+
 .anchor-flash {
   position: relative;
   overflow: hidden; /* Biztosítja, hogy a sáv ne lógjon ki a szakasz szélén túlra */
